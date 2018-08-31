@@ -4,7 +4,7 @@
   "description": "CSS flex grid, BEM compliant",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html --open --no-hmr",
+    "start": "parcel src/index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
