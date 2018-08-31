@@ -1,0 +1,30 @@
+{
+  "name": "bem-flex-grid",
+  "version": "0.0.1",
+  "description": "CSS flex grid, BEM compliant",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel src/index.html --open --no-hmr",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/avine/bem-flex-grid.git"
+  },
+  "keywords": [
+    "css3",
+    "flexbox",
+    "bem",
+    "sass"
+  ],
+  "author": "Stéphane Francel <contact@avine.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/avine/bem-flex-grid/issues"
+  },
+  "homepage": "https://github.com/avine/bem-flex-grid#readme",
+  "devDependencies": {
+    "node-sass": "^4.9.3",
+    "parcel-bundler": "^1.9.7"
+  }
+}
