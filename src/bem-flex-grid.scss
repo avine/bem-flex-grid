@@ -26,12 +26,15 @@ $bfg-breakpoints: (
 
 .bfg {
   display: flex;
-  flex-wrap: wrap;
   height: 100%; // Try to fit the parent node height when available
 
   .bfg {
     height: auto;
   }
+}
+
+.bfg--wrap {
+  flex-wrap: wrap;
 }
 
 .bfg__box {
