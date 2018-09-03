@@ -8,8 +8,10 @@ $bfg-fill: (
 ) !default;
 
 $bfg-breakpoints: (
+  xs: 576px,
+  sm: 768px,
   lg: 992px,
-  sm: 576px
+  xl: 1200px
 ) !default;
 
 @mixin bfg-media-breakpoint-up($size) {
@@ -33,6 +35,14 @@ $bfg-breakpoints: (
   }
 }
 
+.bfg--row {
+  flex-direction: row;
+}
+
+.bfg--col {
+  flex-direction: column;
+}
+
 .bfg--wrap {
   flex-wrap: wrap;
 }
@@ -46,48 +56,36 @@ $bfg-breakpoints: (
 
 @mixin bfg-boxes($size: '') {
   .bfg--row {
-    flex-direction: row;
-
-    > .bfg__box--#{$size}12 { max-width: 100%; }
-    > .bfg__box--#{$size}11 { max-width: calc(1100% / 12); }
-    > .bfg__box--#{$size}10 { max-width: calc(1000% / 12); }
-    > .bfg__box--#{$size}9 { max-width: 75%; }
-    > .bfg__box--#{$size}8 { max-width: calc(200% / 3); }
-    > .bfg__box--#{$size}7 { max-width: calc(700% / 12); }
-    > .bfg__box--#{$size}6 { max-width: 50%; }
-    > .bfg__box--#{$size}5 { max-width: calc(500% / 12); }
-    > .bfg__box--#{$size}4 { max-width: calc(100% / 3); }
-    > .bfg__box--#{$size}3 { max-width: 25%; }
-    > .bfg__box--#{$size}2 { max-width: calc(100% / 6); }
-    > .bfg__box--#{$size}1 { max-width: calc(100% / 12); }
+    > .bfg__box--#{$size + 12} { max-width: 100%; }
+    > .bfg__box--#{$size + 11} { max-width: (1100% / 12); }
+    > .bfg__box--#{$size + 10} { max-width: (1000% / 12); }
+    > .bfg__box--#{$size + 9} { max-width: 75%; }
+    > .bfg__box--#{$size + 8} { max-width: (200% / 3); }
+    > .bfg__box--#{$size + 7} { max-width: (700% / 12); }
+    > .bfg__box--#{$size + 6} { max-width: 50%; }
+    > .bfg__box--#{$size + 5} { max-width: (500% / 12); }
+    > .bfg__box--#{$size + 4} { max-width: (100% / 3); }
+    > .bfg__box--#{$size + 3} { max-width: 25%; }
+    > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
+    > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
   }
 
   .bfg--col {
-    flex-direction: column;
-
-    > .bfg__box--#{$size}12 { max-height: 100%; }
-    > .bfg__box--#{$size}11 { max-height: calc(1100% / 12); }
-    > .bfg__box--#{$size}10 { max-height: calc(1000% / 12); }
-    > .bfg__box--#{$size}9 { max-height: 75%; }
-    > .bfg__box--#{$size}8 { max-height: calc(200% / 3); }
-    > .bfg__box--#{$size}7 { max-height: calc(700% / 12); }
-    > .bfg__box--#{$size}6 { max-height: 50%; }
-    > .bfg__box--#{$size}5 { max-height: calc(500% / 12); }
-    > .bfg__box--#{$size}4 { max-height: calc(100% / 3); }
-    > .bfg__box--#{$size}3 { max-height: 25%; }
-    > .bfg__box--#{$size}2 { max-height: calc(100% / 6); }
-    > .bfg__box--#{$size}1 { max-height: calc(100% / 12); }
+    > .bfg__box--#{$size + 12} { max-height: 100%; }
+    > .bfg__box--#{$size + 11} { max-height: (1100% / 12); }
+    > .bfg__box--#{$size + 10} { max-height: (1000% / 12); }
+    > .bfg__box--#{$size + 9} { max-height: 75%; }
+    > .bfg__box--#{$size + 8} { max-height: (200% / 3); }
+    > .bfg__box--#{$size + 7} { max-height: (700% / 12); }
+    > .bfg__box--#{$size + 6} { max-height: 50%; }
+    > .bfg__box--#{$size + 5} { max-height: (500% / 12); }
+    > .bfg__box--#{$size + 4} { max-height: (100% / 3); }
+    > .bfg__box--#{$size + 3} { max-height: 25%; }
+    > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
+    > .bfg__box--#{$size + 1} { max-height: (100% / 12); }
   }
-}
 
-@include bfg-boxes();
-
-@include bfg-media-breakpoint-down(lg) {
-  @include bfg-boxes(md-);
-}
-
-@include bfg-media-breakpoint-down(sm) {
-  .bfg--not-sm {
+  .bfg--#{$size + disabled} {
     display: block;
     height: auto;
 
@@ -97,6 +95,20 @@ $bfg-breakpoints: (
       max-height: none;
     }
   }
+}
+
+@include bfg-boxes(); // any screen size including "xl"
+
+@include bfg-media-breakpoint-down(lg) {
+  @include bfg-boxes(lg-);
+}
+
+@include bfg-media-breakpoint-down(sm) {
+  @include bfg-boxes(sm-);
+}
+
+@include bfg-media-breakpoint-down(xs) {
+  @include bfg-boxes(xs-);
 }
 
 .bfg__content {

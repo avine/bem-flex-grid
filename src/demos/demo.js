@@ -6,8 +6,8 @@ const contents = [
   'Suspendisse egestas velit sit amet cursus cursus. Ut ultricies porttitor sapien quis eleifend. Fusce lobortis lacinia sem, eget tempor magna porta id. Pellentesque a congue nisi, in euismod erat. Cras consectetur, lectus nec eleifend tempor, augue dolor laoreet ante, ut condimentum dui nunc nec sem. Cras rutrum feugiat erat, ut porttitor tellus aliquam vitae. Proin at efficitur dui, sodales volutpat leo.'
 ];
 
-window.bfgFillBoxes = () => {
-  document.querySelectorAll('.bfg__box').forEach(box => {
+window.bfgFillBoxes = (selector) => {
+  document.querySelectorAll(`.bfg__box ${selector}`).forEach(box => {
     if (!box.classList.contains('bfg')) {
       const index = Math.round(Math.random() * (contents.length - 1));
       box.innerHTML = contents[index];

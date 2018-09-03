@@ -11,38 +11,27 @@
   <link rel="stylesheet" href="../bem-flex-grid.scss">
 
   <script src="demo.js"></script>
-
-  <style>
-    i {
-      display: block;
-      width: 300px;
-      height: 300px;
-      box-sizing: border-box;
-      border: 1px solid dodgerblue;
-      background-color: aliceblue;
-      padding: 1rem;
-    }
-  </style>
 </head>
 <body>
 
-  <div class="bfg bfg--col bfg--gap bfg--wrap">
-    <div class="bfg__box bfg__box--6">
-      <div class="bfg__content bfg__content--fill"><i>1</i></div>
+  <div class="bfg bfg--row bfg--gap  bfg--wrap bfg--xs-disabled">
+    <div class="bfg__box bfg__box--3 bfg__box--lg-4 bfg__box--sm-6">
+      <div class="bfg__content bfg__content--fill"></div>
     </div>
 
-    <div class="bfg__box bfg__box--6">
-      <div class="bfg__content bfg__content--fill"><i>2</i></div>
+    <div class="bfg__box bfg__box--3 bfg__box--lg-4 bfg__box--sm-6">
+      <div class="bfg__content bfg__content--fill"></div>
     </div>
 
-    <div class="bfg__box bfg__box--6">
-      <div class="bfg__content bfg__content--fill"><i>3</i></div>
+    <div class="bfg__box bfg__box--3 bfg__box--lg-4 bfg__box--sm-6">
+      <div class="bfg__content bfg__content--fill"></div>
     </div>
 
-    <div class="bfg__box bfg__box--6">
-      <div class="bfg__content bfg__content--fill"><i>4</i></div>
+    <div class="bfg__box bfg__box--3 bfg__box--lg-12 bfg__box--sm-6">
+      <div class="bfg__content bfg__content--fill"></div>
     </div>
   </div>
 
+  <script>bfgFillBoxes('.bfg__content')</script>
 </body>
 </html>
