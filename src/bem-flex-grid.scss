@@ -43,6 +43,18 @@ $bfg-breakpoints: (
   flex-direction: column;
 }
 
+.bfg--gap {
+  margin: 0 (-$bfg-gap / 2);
+
+  .bfg__box {
+    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
+  }
+
+  .bfg {
+    padding: 0;
+  }
+}
+
 .bfg--wrap {
   flex-wrap: wrap;
 }
@@ -51,38 +63,38 @@ $bfg-breakpoints: (
   flex: 1 1 100%;
   position: relative;
   overflow: auto;
-  display: flex;
+  box-sizing: border-box;
 }
 
 @mixin bfg-boxes($size: '') {
   .bfg--row {
-    > .bfg__box--#{$size + 12} { max-width: 100%; }
-    > .bfg__box--#{$size + 11} { max-width: (1100% / 12); }
-    > .bfg__box--#{$size + 10} { max-width: (1000% / 12); }
-    > .bfg__box--#{$size + 9} { max-width: 75%; }
-    > .bfg__box--#{$size + 8} { max-width: (200% / 3); }
-    > .bfg__box--#{$size + 7} { max-width: (700% / 12); }
-    > .bfg__box--#{$size + 6} { max-width: 50%; }
-    > .bfg__box--#{$size + 5} { max-width: (500% / 12); }
-    > .bfg__box--#{$size + 4} { max-width: (100% / 3); }
-    > .bfg__box--#{$size + 3} { max-width: 25%; }
-    > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
     > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
+    > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
+    > .bfg__box--#{$size + 3} { max-width: 25%; }
+    > .bfg__box--#{$size + 4} { max-width: (100% / 3); }
+    > .bfg__box--#{$size + 5} { max-width: (500% / 12); }
+    > .bfg__box--#{$size + 6} { max-width: 50%; }
+    > .bfg__box--#{$size + 7} { max-width: (700% / 12); }
+    > .bfg__box--#{$size + 8} { max-width: (200% / 3); }
+    > .bfg__box--#{$size + 9} { max-width: 75%; }
+    > .bfg__box--#{$size + 10} { max-width: (1000% / 12); }
+    > .bfg__box--#{$size + 11} { max-width: (1100% / 12); }
+    > .bfg__box--#{$size + 12} { max-width: 100%; }
   }
 
   .bfg--col {
-    > .bfg__box--#{$size + 12} { max-height: 100%; }
-    > .bfg__box--#{$size + 11} { max-height: (1100% / 12); }
-    > .bfg__box--#{$size + 10} { max-height: (1000% / 12); }
-    > .bfg__box--#{$size + 9} { max-height: 75%; }
-    > .bfg__box--#{$size + 8} { max-height: (200% / 3); }
-    > .bfg__box--#{$size + 7} { max-height: (700% / 12); }
-    > .bfg__box--#{$size + 6} { max-height: 50%; }
-    > .bfg__box--#{$size + 5} { max-height: (500% / 12); }
-    > .bfg__box--#{$size + 4} { max-height: (100% / 3); }
-    > .bfg__box--#{$size + 3} { max-height: 25%; }
-    > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
     > .bfg__box--#{$size + 1} { max-height: (100% / 12); }
+    > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
+    > .bfg__box--#{$size + 3} { max-height: 25%; }
+    > .bfg__box--#{$size + 4} { max-height: (100% / 3); }
+    > .bfg__box--#{$size + 5} { max-height: (500% / 12); }
+    > .bfg__box--#{$size + 6} { max-height: 50%; }
+    > .bfg__box--#{$size + 7} { max-height: (700% / 12); }
+    > .bfg__box--#{$size + 8} { max-height: (200% / 3); }
+    > .bfg__box--#{$size + 9} { max-height: 75%; }
+    > .bfg__box--#{$size + 10} { max-height: (1000% / 12); }
+    > .bfg__box--#{$size + 11} { max-height: (1100% / 12); }
+    > .bfg__box--#{$size + 12} { max-height: 100%; }
   }
 
   .bfg--#{$size + disabled} {
@@ -112,34 +124,16 @@ $bfg-breakpoints: (
 }
 
 .bfg__content {
-  flex: 1 1 100%;
   position: relative;
   overflow: auto;
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.bfg--gap {
-  margin: 0 (-$bfg-gap / 2);
-
-  .bfg__box {
-    box-sizing: border-box;
-    padding: 0 ($bfg-gap / 2);
-  }
-
-  .bfg {
-    padding: 0;
-  }
-
-  .bfg__content {
-    margin-bottom: $bfg-gap;
-  }
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 
 @mixin bem-flex-grid-fill($name, $fill) {
   .bfg__content--#{$name} {
     padding: map-get($fill, padding);
-    box-sizing: border-box;
     border-radius: map-get($fill, border-radius);
     border: 1px solid map-get($fill, border);
     background-color: map-get($fill, background);

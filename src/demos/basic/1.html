@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../demo.scss">
+  <link rel="stylesheet" href="../../bem-flex-grid.scss">
+
+  <script src="../demo.js"></script>
+</head>
+<body>
+  <div id="demo-description">
+    When not using <code>.bfg--wrap</code> all <code>.bfg__box</code> are displayed on one line.
+    In this case, the <code>.bfg--row</code> container always fit the inherited height.
+  </div>
+
+  <div class="bfg bfg--row">
+    <div class="bfg__box bfg__box--3"></div>
+    <div class="bfg__box bfg__box--3"></div>
+    <div class="bfg__box bfg__box--6"></div>
+  </div>
+
+  <script>bfgFillBoxes()</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../demo.scss">
+  <link rel="stylesheet" href="../../bem-flex-grid.scss">
+
+  <script src="../demo.js"></script>
+</head>
+<body>
+  <div id="demo-description">
+    When using <code>.bfg--wrap</code>, <code>.bfg__box</code> can be displayed on multiple lines.
+    In this case, the <code>.bfg--col</code> container can be bigger than the inherited width.
+  </div>
+
+  <div class="bfg bfg--col bfg--wrap">
+    <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg__box bfg__box--12"></div>
+  </div>
+
+  <script>bfgFillBoxes()</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="stylesheet" href="../demo.scss">
+  <link rel="stylesheet" href="../../bem-flex-grid.scss">
+
+  <script src="../demo.js"></script>
+</head>
+<body>
+  <div id="demo-description">
+    To always fit the inherited width, use a <code>.bfg--row</code> wrapper and use a separate <code>.bfg--col</code> for each col.
+  </div>
+
+  <div class="bfg bfg--row">
+    <div class="bfg__box bfg bfg--col">
+      <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg__box bfg__box--6"></div>
+    </div>
+    <div class="bfg__box bfg bfg--col">
+      <div class="bfg__box bfg__box--12"></div>
+    </div>
+  </div>
+
+  <script>bfgFillBoxes()</script>
+</body>
+</html>
