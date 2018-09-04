@@ -9,9 +9,8 @@ const inIframe = () => {
 const fillTypes = ['box', 'text'];
 
 const getFillType = () => {
-  let index = 0;
+  const index = parseInt(window.sessionStorage.getItem('bfgFillTypeIndex'), 10) || 0;
   if (!inIframe()) {
-    index = parseInt(window.sessionStorage.getItem('bfgFillTypeIndex'), 10) || 0;
     window.sessionStorage.setItem('bfgFillTypeIndex', (index + 1) % fillTypes.length);
   }
   return fillTypes[index];

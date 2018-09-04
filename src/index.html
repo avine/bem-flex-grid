@@ -9,25 +9,25 @@
   <link rel="shortcut icon" href="favicon.ico">
   <link rel="stylesheet" href="index.scss">
   <link rel="stylesheet" href="bem-flex-grid.scss">
+
+  <script src="index.js"></script>
+  <script src="demos/demo.js"></script>
 </head>
 <body>
   <h1>Bem Flex Grid</h1>
 
-  <div class="bfg bfg--row bfg--gap bfg--wrap">
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/basic/1.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/basic/2.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/basic/3.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/basic/4.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/basic/5.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/basic/6.html"></iframe></div></div>
-
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/a.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/1.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/2.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/3.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/4.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/5.html"></iframe></div></div>
-    <div class="bfg__box bfg__box--6"><div class="bfg__content"><iframe src="./demos/6.html"></iframe></div></div>
+  <div id="demo-container">
+    <a href="demos/basic/1.html"></a>
+    <a href="demos/basic/2.html"></a>
+    <a href="demos/basic/3.html"></a>
+    <a href="demos/basic/4.html"></a>
+    <a href="demos/basic/5.html"></a>
+    <a href="demos/basic/6.html"></a>
   </div>
+
+  <script>
+    showcase(document.getElementById('demo-container'));
+    bfgFillBoxes();
+  </script>
 </body>
 </html>
