@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="demo-index">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,16 +7,15 @@
   <title>Bem Flex Grid</title>
 
   <link rel="shortcut icon" href="favicon.ico">
-  <link rel="stylesheet" href="index.scss">
+  <link rel="stylesheet" href="demo.scss">
   <link rel="stylesheet" href="bem-flex-grid.scss">
 
-  <script src="index.js"></script>
-  <script src="demos/demo.js"></script>
+  <script src="demo.ts"></script>
 </head>
 <body>
   <h1>Bem Flex Grid</h1>
 
-  <div id="demo-container">
+  <div id="demo-showcase">
     <a href="demos/basic/1.html"></a>
     <a href="demos/basic/2.html"></a>
     <a href="demos/basic/3.html"></a>
@@ -25,9 +24,6 @@
     <a href="demos/basic/6.html"></a>
   </div>
 
-  <script>
-    showcase(document.getElementById('demo-container'));
-    bfgFillBoxes();
-  </script>
+  <script>Demo.showcase();</script>
 </body>
 </html>

@@ -1,3 +1,24 @@
+/* ===== Handle showcase ===== */
+
+const showcase = () => {
+  const element = document.getElementById('demo-showcase');
+  element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--sm-disabled';
+
+  const mapper = (anchor: HTMLAnchorElement) => `
+  <div class="bfg__box bfg__box--6">
+    <div class="bfg__content demo-showcase-item">
+      <iframe src="${anchor.href}" class="demo-showcase-iframe"></iframe>
+      <a href="${anchor.href}" class="demo-showcase-link">&nearrow;</a>
+    </div>
+  </div>`;
+
+  const mappedHtml = [];
+  element.querySelectorAll('a').forEach(anchor => mappedHtml.push(mapper(anchor)));
+  element.innerHTML = mappedHtml.join('\n') + '\n';
+};
+
+/* ===== Handle demo ===== */
+
 const inIframe = () => {
   try {
     return window.self !== window.top;
@@ -6,12 +27,17 @@ const inIframe = () => {
   }
 };
 
-const fillTypes = ['box', 'text'];
+const fillTypeIndex = {
+  get: () => parseInt(window.sessionStorage.getItem('Demo.fillTypeIndex'), 10) || 0,
+  set: (index: string) => window.sessionStorage.setItem('Demo.fillTypeIndex', index)
+};
+
+const fillTypes = ['container', 'text'];
 
 const getFillType = () => {
-  const index = parseInt(window.sessionStorage.getItem('bfgFillTypeIndex'), 10) || 0;
+  const index = fillTypeIndex.get();
   if (!inIframe()) {
-    window.sessionStorage.setItem('bfgFillTypeIndex', (index + 1) % fillTypes.length);
+    fillTypeIndex.set(((index + 1) % fillTypes.length).toString());
   }
   return fillTypes[index];
 };
@@ -28,27 +54,35 @@ const texts = [
 
 const getText = () => texts[Math.round(Math.random() * (texts.length - 1))];
 
-const getBox = () => '<div class="demo-box" title="Switch size"></div>';
+const getContainer = () => '<div class="demo-container" title="Switch size"></div>';
 
-const fillNode = (node) => {
-  if (!node.childElementCount) {
+const fillElement = (element) => {
+  if (!element.childElementCount) {
+    console.log(fillType);
     switch (fillType) {
-      case 'text': node.innerHTML = `${getText()} ${getText()}`; break;
-      case 'box': node.innerHTML = getBox(); break;
+      case 'text':
+        element.innerHTML = `${getText()} ${getText()}`;
+        break;
+      case 'container':
+        element.innerHTML = getContainer();
+        break;
     }
   }
 };
 
-window.bfgFillBoxes = () => {
-  document.querySelectorAll('.bfg__box').forEach(fillNode);
-  document.querySelectorAll('.bfg__content').forEach(fillNode);
+const fillGrids = () => {
+  document.querySelectorAll('.bfg__box').forEach(fillElement);
+  document.querySelectorAll('.bfg__content').forEach(fillElement);
 };
 
 window.addEventListener('click', (event) => {
-  if (event.target.classList.contains('demo-box')) {
-    event.target.classList.toggle('demo-box--alt');
+  const target = event.target as Element;
+  if (target.classList.contains('demo-container')) {
+    target.classList.toggle('demo-container--alt');
   }
 });
+
+/* ===== Handle description ===== */
 
 document.addEventListener('DOMContentLoaded', () => {
   const description = document.getElementById('demo-description');
@@ -57,3 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     description.addEventListener('dblclick', () => description.parentNode.removeChild(description));
   }
 });
+
+/* ===== Export as global ===== */
+
+window['Demo'] = { showcase, fillGrids };

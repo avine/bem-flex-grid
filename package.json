@@ -25,6 +25,7 @@
   "homepage": "https://github.com/avine/bem-flex-grid#readme",
   "devDependencies": {
     "node-sass": "^4.9.3",
-    "parcel-bundler": "^1.9.7"
+    "parcel-bundler": "^1.9.7",
+    "typescript": "^3.0.3"
   }
 }

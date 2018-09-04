@@ -97,6 +97,14 @@ $bfg-breakpoints: (
     > .bfg__box--#{$size + 12} { max-height: 100%; }
   }
 
+  .bfg--#{$size + 2rows} > .bfg__box { height: 50%; }
+  .bfg--#{$size + 3rows} > .bfg__box { height: (100% / 3); }
+  .bfg--#{$size + 4rows} > .bfg__box { height: 25%; }
+
+  .bfg--#{$size + 2cols} > .bfg__box { width: 50%; }
+  .bfg--#{$size + 3cols} > .bfg__box { width: (100% / 3); }
+  .bfg--#{$size + 4cols} > .bfg__box { width: 25%; }
+
   .bfg--#{$size + disabled} {
     display: block;
     height: auto;
