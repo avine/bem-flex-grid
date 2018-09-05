@@ -141,7 +141,7 @@ $bfg-breakpoints: (
   height: 100%;
 }
 
-@mixin bem-flex-grid-fill($name, $fill) {
+@mixin bfg-content-fill($name, $fill) {
   .bfg__content--#{$name} {
     padding: map-get($fill, padding);
     border-radius: map-get($fill, border-radius);
@@ -150,4 +150,4 @@ $bfg-breakpoints: (
   }
 }
 
-@include bem-flex-grid-fill(fill, $bfg-fill);
+@include bfg-content-fill(fill, $bfg-fill);

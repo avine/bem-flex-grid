@@ -70,7 +70,7 @@ const fillElement = (element) => {
   }
 };
 
-const fillGrids = () => {
+const fillGrid = () => {
   document.querySelectorAll('.bfg__box').forEach(fillElement);
   document.querySelectorAll('.bfg__content').forEach(fillElement);
 };
@@ -94,4 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ===== Export as global ===== */
 
-window['Demo'] = { showcase, fillGrids };
+window['Demo'] = { showcase, fillGrid };

@@ -14,16 +14,16 @@
 </head>
 <body>
   <div id="demo-description">
-    When not using <code>.bfg--wrap</code> all <code>.bfg__box</code> are displayed on one line.
-    In this case, the <code>.bfg--col</code> container always fit the inherited width.
+    When using <code>.bfg--wrap</code>, the <code>.bfg__box</code> boxes can be displayed on multiple lines.
+    In this case, the boxes can leave outside the <code>.bfg--row</code> container.
   </div>
 
-  <div class="bfg bfg--col">
-    <div class="bfg__box bfg__box--3"></div>
-    <div class="bfg__box bfg__box--3"></div>
+  <div class="bfg bfg--row bfg--wrap">
     <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg__box bfg__box--12"></div>
   </div>
 
-  <script>Demo.fillGrids();</script>
+  <script>Demo.fillGrid();</script>
 </body>
 </html>

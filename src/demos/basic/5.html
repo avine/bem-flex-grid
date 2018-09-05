@@ -14,19 +14,17 @@
 </head>
 <body>
   <div id="demo-description">
-    To always fit the inherited height, use a <code>.bfg--col</code> wrapper and use a separate <code>.bfg--row</code> for each row.
+    When using <code>.bfg--wrap</code>, the <code>.bfg__box</code> boxes can be displayed on multiple lines.
+    If you know the number of lines, you can still fit the inherited height using <code>.bfg--2rows</code>.
+    In this case, all the rows have the same height.
   </div>
 
-  <div class="bfg bfg--col">
-    <div class="bfg__box bfg bfg--row">
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--6"></div>
-    </div>
-    <div class="bfg__box bfg bfg--row">
-      <div class="bfg__box bfg__box--12"></div>
-    </div>
+  <div class="bfg bfg--row bfg--2rows bfg--wrap">
+    <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg__box bfg__box--12"></div>
   </div>
 
-  <script>Demo.fillGrids();</script>
+  <script>Demo.fillGrid();</script>
 </body>
 </html>
