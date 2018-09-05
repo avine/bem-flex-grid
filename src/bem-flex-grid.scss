@@ -135,6 +135,7 @@ $bfg-breakpoints: (
 
 .bfg__content {
   position: relative;
+  z-index: 1;
   overflow: auto;
   box-sizing: border-box;
   width: 100%;
@@ -151,3 +152,27 @@ $bfg-breakpoints: (
 }
 
 @include bfg-content-fill(fill, $bfg-fill);
+
+// FIXME: Should be in the previous @mixin ???
+.bfg__header {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-sizing: border-box;
+  border-radius: map-get($bfg-fill, border-radius) map-get($bfg-fill, border-radius) 0 0;
+  border: 1px solid map-get($bfg-fill, border);
+  text-indent: 0.5rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  background-color: #fafafa;
+}
+
+.bfg__header + .bfg__content {
+  padding-top: 2.5rem;
+}
+
+.bfg--gap .bfg__header {
+  margin: 0 ($bfg-gap / 2);
+}
