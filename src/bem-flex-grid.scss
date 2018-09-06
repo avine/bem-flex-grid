@@ -66,6 +66,10 @@ $bfg-breakpoints: (
   box-sizing: border-box;
 }
 
+.bfg__box--fixed {
+  flex: 0 0 auto;
+}
+
 @mixin bfg-boxes($size: '') {
   .bfg--row {
     > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
