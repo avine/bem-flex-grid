@@ -163,7 +163,7 @@ $bfg-header-height: 2rem;
 }
 
 .bfg__content {
-  padding: 0 $bfg-padding;
+  padding: $bfg-padding;
   box-sizing: border-box;
   position: relative;
   z-index: 1;

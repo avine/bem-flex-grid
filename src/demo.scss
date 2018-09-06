@@ -53,10 +53,12 @@ h1 {
 
 /* ===== Handle showcase ===== */
 
-.demo-showcase-item {
+.bfg__content.demo-showcase-item {
+  padding: 0;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   border-radius: $demo-border-radius;
   border: 1px solid map-get($demo-light-colors, border);
+  background-color: white;
 }
 
 .demo-showcase-iframe {
