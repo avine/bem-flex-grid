@@ -17,6 +17,47 @@ const showcase = () => {
   element.innerHTML = mappedHtml.join('\n') + '\n';
 };
 
+/* ===== Handle view code ===== */
+
+const viewCode = () => {
+  const grids = document.querySelectorAll('body > .bfg');
+  if (grids.length) {
+    const code = Array.prototype.map.call(grids, grid => grid.outerHTML).join('\n\n');
+    const wrapper = document.createElement('div');
+    wrapper.id = 'demo-source';
+    wrapper.innerHTML =
+      '<a href="#" id="demo-source-toggle">&gt;_</a>' +
+      `<pre id="demo-source-code"><code></code></pre>`;
+    const toggle = wrapper.querySelector('#demo-source-toggle');
+    const container = wrapper.querySelector('#demo-source-code');
+    container.firstChild.textContent = formatCode(code);
+    wrapper.addEventListener('click', (event) => {
+      const target = event.target as Element;
+      if (target.id === 'demo-source-toggle' || target.id === 'demo-source') {
+        event.preventDefault();
+        wrapper.classList.toggle('demo-source-visible');
+      }
+    });
+    document.body.appendChild(wrapper);
+  }
+};
+
+function formatCode(code: string) {
+  // Hack: add 2 spaces in front of the first line
+  code = '  ' + code;
+  // Remove useless indentation
+  let lines = code.split('\n');
+  const indent = lines.reduce((idt, currLine) => {
+    if (currLine) {
+      const currIndent = (currLine.match(/^[\s]+/) || [''])[0].length;
+      idt = idt === -1 ? currIndent : Math.min(idt, currIndent);
+    }
+    return idt;
+  }, -1);
+  if (indent > 0) lines = lines.map(line => line.substr(indent));
+  return lines.join('\n').trim().replace(/\n{2,}/g, '\n\n');
+}
+
 /* ===== Handle demo ===== */
 
 const inIframe = () => {
@@ -58,7 +99,6 @@ const getContainer = () => '<div class="demo-container" title="Switch size"></di
 
 const fillElement = (element) => {
   if (!element.childElementCount) {
-    console.log(fillType);
     switch (fillType) {
       case 'text':
         element.innerHTML = `${getText()} ${getText()}`;
@@ -94,4 +134,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ===== Export as global ===== */
 
-window['Demo'] = { showcase, fillGrid };
+window['Demo'] = { showcase, viewCode, fillGrid };

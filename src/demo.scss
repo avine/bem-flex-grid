@@ -87,6 +87,57 @@ h1 {
   }
 }
 
+/* ===== Handle source ===== */
+
+#demo-source-toggle {
+  position: fixed;
+  z-index: 12;
+  top: 0;
+  left: 50%;
+  width: 40px;
+  margin-left: -20px;
+  padding: 0px 0 6px 0;
+  line-height: 1rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0 0 $demo-border-radius $demo-border-radius;
+  border: 1px solid map-get($demo-dark-colors, forground);
+  border-top-width: 0;
+  background: map-get($demo-dark-colors, background);
+  color: map-get($demo-dark-colors, forground);
+}
+
+#demo-source-code {
+  overflow: auto;
+  max-width: 80%;
+  margin: auto;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  border-radius: $demo-border-radius;
+  background-color: #fff;
+  display: none;
+}
+
+#demo-source {
+  z-index: 12;
+  transition: background-color ease 200ms;
+
+  &.demo-source-visible {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+
+    #demo-source-code {
+      display: block !important;
+    }
+  }
+
+}
+
 /* ===== Handle container ===== */
 
 .demo-container {
