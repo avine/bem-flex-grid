@@ -8,14 +8,14 @@ const showcase = () => {
 
   const mapper = (anchor: HTMLAnchorElement) => `
   <div class="bfg__box bfg__box--6">
-    <div class="bfg__content demo-showcase-item">
-      <iframe src="${anchor.href}" class="demo-showcase-iframe"></iframe>
-      <a href="${anchor.href}" class="demo-showcase-link">&nearrow;</a>
+    <div class="bfg__content demo-showcase__item">
+      <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
+      <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">&nearrow;</a>
     </div>
   </div>`;
 
   const mappedHtml = [];
-  element.querySelectorAll('a').forEach(anchor => mappedHtml.push(mapper(anchor)));
+  element.querySelectorAll('a').forEach((anchor) => mappedHtml.push(mapper(anchor)));
   element.innerHTML = mappedHtml.join('\n') + '\n';
 };
 
@@ -24,20 +24,20 @@ const showcase = () => {
 const viewCode = () => {
   const grids = document.querySelectorAll('body > .bfg');
   if (grids.length) {
-    const source = Array.prototype.map.call(grids, grid => grid.outerHTML).join('\n\n');
+    const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
     wrapper.id = 'demo-source';
-    wrapper.innerHTML = '<a href="#" id="demo-source-toggle">&gt;_</a>' +
-      `<pre id="demo-source-code"><code></code></pre>`;
-    const code = wrapper.querySelector('#demo-source-code').firstChild as HTMLElement;
+    wrapper.innerHTML = '<a href="#" id="demo-source__toggle" title="View source code">&gt;_</a>' +
+      `<pre id="demo-source__code"><code></code></pre>`;
+    const code = wrapper.querySelector('#demo-source__code').firstChild as HTMLElement;
     if (code) {
       code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
     }
     wrapper.addEventListener('click', (event) => {
       const target = event.target as Element;
-      if (target.id === 'demo-source-toggle' || target.id === 'demo-source') {
+      if (target.id === 'demo-source__toggle' || target.id === 'demo-source') {
         event.preventDefault();
-        wrapper.classList.toggle('demo-source-visible');
+        wrapper.classList.toggle('demo-source--open');
       }
     });
     document.body.appendChild(wrapper);
@@ -56,7 +56,9 @@ function formatCode(code: string) {
     }
     return idt;
   }, -1);
-  if (indent > 0) lines = lines.map(line => line.substr(indent));
+  if (indent > 0) {
+    lines = lines.map((line) => line.substr(indent));
+  }
   return lines.join('\n').trim().replace(/\n{2,}/g, '\n\n');
 }
 
@@ -72,7 +74,7 @@ const inIframe = () => {
 
 const fillTypeIndex = {
   get: () => parseInt(window.sessionStorage.getItem('Demo.fillTypeIndex'), 10) || 0,
-  set: (index: string) => window.sessionStorage.setItem('Demo.fillTypeIndex', index)
+  set: (index: string) => window.sessionStorage.setItem('Demo.fillTypeIndex', index),
 };
 
 const fillTypes = ['container', 'text'];
@@ -88,11 +90,13 @@ const getFillType = () => {
 const fillType = getFillType();
 
 const texts = [
+  // tslint:disable:max-line-length
   'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis libero ut augue sagittis ornare. Integer nisl ligula, porttitor non bibendum eget, varius non enim. Mauris et ex id lacus mollis lacinia id eget lacus. In convallis aliquet tortor eget luctus. Morbi eu ultrices nulla. Vestibulum luctus magna quis tellus vulputate, id gravida elit efficitur. Donec pharetra ultrices arcu, vitae porttitor enim congue nec.',
   'Integer feugiat mauris non magna malesuada ornare. Suspendisse consectetur massa elementum, sodales turpis at, mollis ex. Vestibulum sed quam dignissim, consequat orci sed, pellentesque felis. Suspendisse fermentum quam pharetra elit euismod dapibus. Nam interdum, turpis non posuere tempus, diam urna luctus justo, ut suscipit urna odio at velit. Maecenas bibendum porta ante, vitae faucibus lectus consectetur non. Donec molestie quam libero, sit amet rutrum libero egestas sit amet.',
   'Proin nec neque non turpis convallis feugiat quis ut elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce malesuada, nisi blandit viverra tristique, turpis lectus malesuada tortor, non vestibulum arcu nibh non massa. Vivamus hendrerit nibh tortor, vel venenatis risus hendrerit quis. Nam facilisis, risus a fringilla vehicula, justo purus congue dolor, et tincidunt metus est ac nisl. In finibus a nulla in iaculis. Fusce vel dui nisi. Aenean efficitur risus diam, sit amet molestie augue luctus id.',
   'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ligula lorem, consequat quis turpis in, auctor luctus leo. Nullam accumsan blandit tempor. Nunc suscipit est nunc, a dignissim sem luctus in. Donec fringilla sodales mollis. Morbi non dolor ultrices, congue lorem id, suscipit elit. Etiam vestibulum, ligula vitae finibus dictum, elit arcu molestie eros, in condimentum turpis orci eu risus.',
-  'Suspendisse egestas velit sit amet cursus cursus. Ut ultricies porttitor sapien quis eleifend. Fusce lobortis lacinia sem, eget tempor magna porta id. Pellentesque a congue nisi, in euismod erat. Cras consectetur, lectus nec eleifend tempor, augue dolor laoreet ante, ut condimentum dui nunc nec sem. Cras rutrum feugiat erat, ut porttitor tellus aliquam vitae. Proin at efficitur dui, sodales volutpat leo.'
+  'Suspendisse egestas velit sit amet cursus cursus. Ut ultricies porttitor sapien quis eleifend. Fusce lobortis lacinia sem, eget tempor magna porta id. Pellentesque a congue nisi, in euismod erat. Cras consectetur, lectus nec eleifend tempor, augue dolor laoreet ante, ut condimentum dui nunc nec sem. Cras rutrum feugiat erat, ut porttitor tellus aliquam vitae. Proin at efficitur dui, sodales volutpat leo.',
+  // tslint:enable:max-line-length
 ];
 
 const getText = () => texts[Math.round(Math.random() * (texts.length - 1))];

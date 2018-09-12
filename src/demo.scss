@@ -16,6 +16,7 @@ $demo-dark-colors: (
   color: map-get($demo-dark-colors, forground);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
   transition: opacity ease 0.6s;
+  opacity: 0.95;
 
   &:hover {
     opacity: 0.8;
@@ -59,7 +60,7 @@ body {
 
 /* ===== Handle showcase ===== */
 
-.bfg__content.demo-showcase-item {
+.demo-showcase__item.bfg__content {
   padding: 0;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   border-radius: $demo-border-radius;
@@ -67,7 +68,7 @@ body {
   background-color: white;
 }
 
-.demo-showcase-iframe {
+.demo-showcase__iframe {
   display: block;
   width: 100%;
   height: 360px;
@@ -75,13 +76,12 @@ body {
   background-color: white;
 }
 
-.demo-showcase-link {
+.demo-showcase__link {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
-  opacity: 0.95;
-  padding: 0rem 0.3rem;
+  padding: 0 10px;
   border-bottom-left-radius: $demo-border-radius;
   @include demo-dark-box;
   text-decoration: none;
@@ -89,7 +89,7 @@ body {
 
 /* ===== Handle source ===== */
 
-#demo-source-toggle {
+#demo-source__toggle {
   position: fixed;
   z-index: 12;
   top: 0;
@@ -103,7 +103,7 @@ body {
   text-align: center;
 }
 
-#demo-source-code {
+#demo-source__code {
   overflow: auto;
   max-width: 70%;
   max-height: 70%;
@@ -119,7 +119,7 @@ body {
   z-index: 12;
   transition: background-color ease 200ms;
 
-  &.demo-source-visible {
+  &.demo-source--open {
     position: fixed;
     top: 0;
     right: 0;
@@ -128,7 +128,7 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
 
-    #demo-source-code {
+    #demo-source__code {
       display: block !important;
     }
   }
@@ -178,7 +178,6 @@ body {
   width: 100%;
   max-height: 100%;
   overflow: auto;
-  opacity: 0.95;
   box-sizing: border-box;
   padding: 0.5rem 1rem;
   @include demo-dark-box;
