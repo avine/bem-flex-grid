@@ -24,8 +24,12 @@
   },
   "homepage": "https://github.com/avine/bem-flex-grid#readme",
   "devDependencies": {
+    "@types/prismjs": "^1.9.0",
     "node-sass": "^4.9.3",
     "parcel-bundler": "^1.9.7",
     "typescript": "^3.0.3"
+  },
+  "dependencies": {
+    "prismjs": "^1.15.0"
   }
 }

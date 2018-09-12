@@ -17,7 +17,7 @@ $bfg-breakpoints: (
   xl: 1200px
 ) !default;
 
-$bfg-header-height: 2rem;
+$bfg-header-height: 2rem !default;
 
 @mixin bfg-media-breakpoint-up($size) {
   @media (min-width: map-get($bfg-breakpoints, $size)) {

@@ -1,3 +1,5 @@
+import { highlight, languages } from 'prismjs';
+
 /* ===== Handle showcase ===== */
 
 const showcase = () => {
@@ -22,15 +24,15 @@ const showcase = () => {
 const viewCode = () => {
   const grids = document.querySelectorAll('body > .bfg');
   if (grids.length) {
-    const code = Array.prototype.map.call(grids, grid => grid.outerHTML).join('\n\n');
+    const source = Array.prototype.map.call(grids, grid => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
     wrapper.id = 'demo-source';
-    wrapper.innerHTML =
-      '<a href="#" id="demo-source-toggle">&gt;_</a>' +
+    wrapper.innerHTML = '<a href="#" id="demo-source-toggle">&gt;_</a>' +
       `<pre id="demo-source-code"><code></code></pre>`;
-    const toggle = wrapper.querySelector('#demo-source-toggle');
-    const container = wrapper.querySelector('#demo-source-code');
-    container.firstChild.textContent = formatCode(code);
+    const code = wrapper.querySelector('#demo-source-code').firstChild as HTMLElement;
+    if (code) {
+      code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
+    }
     wrapper.addEventListener('click', (event) => {
       const target = event.target as Element;
       if (target.id === 'demo-source-toggle' || target.id === 'demo-source') {
