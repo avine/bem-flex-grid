@@ -13,7 +13,7 @@ $demo-dark-colors: (
 @mixin demo-dark-box {
   border: 1px solid map-get($demo-dark-colors, border);
   background-color: map-get($demo-dark-colors, background);
-  color: map-get($demo-dark-colors, forground);
+  color: map-get($demo-dark-colors, forground) !important;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.5);
   transition: opacity ease 0.6s;
   opacity: 0.95;
@@ -55,6 +55,18 @@ body {
     text-align: center;
     font-weight: 200;
     font-size: 2.5rem;
+  }
+
+  header {
+    margin: 2rem 0;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  a {
+    color: map-get($demo-light-colors, forground);
   }
 }
 

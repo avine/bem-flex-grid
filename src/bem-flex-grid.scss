@@ -128,7 +128,11 @@ $bfg-header-height: 2rem !default;
   }
 }
 
-@include bfg-boxes(); // any screen size including "xl"
+@include bfg-boxes(); // any screen size even greater than "xl"
+
+@include bfg-media-breakpoint-down(xl) {
+  @include bfg-boxes(xl-);
+}
 
 @include bfg-media-breakpoint-down(lg) {
   @include bfg-boxes(lg-);

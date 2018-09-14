@@ -4,6 +4,7 @@
   "description": "CSS flex grid, BEM compliant",
   "main": "index.js",
   "scripts": {
+    "md-to-html": "node md-to-html.js",
     "start": "parcel src/index.html --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,12 +26,14 @@
   "homepage": "https://github.com/avine/bem-flex-grid#readme",
   "devDependencies": {
     "@types/prismjs": "^1.9.0",
+    "markdown-it": "^8.4.2",
     "node-sass": "^4.9.3",
     "parcel-bundler": "^1.9.7",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
   "dependencies": {
+    "primer-markdown": "^3.7.9",
     "prismjs": "^1.15.0"
   }
 }
