@@ -6,16 +6,17 @@ const showcase = () => {
   const element = document.getElementById('demo-showcase');
   element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--sm-disabled';
 
-  const mapper = (anchor: HTMLAnchorElement) => `
+  const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="bfg__box bfg__box--6">
     <div class="bfg__content demo-showcase__item">
       <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
       <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">&nearrow;</a>
+      <span class="demo-showcase__count">${count}</span>
     </div>
   </div>`;
 
   const mappedHtml = [];
-  element.querySelectorAll('a').forEach((anchor) => mappedHtml.push(mapper(anchor)));
+  element.querySelectorAll('a').forEach((anchor, index) => mappedHtml.push(mapper(anchor, index + 1)));
   element.innerHTML = mappedHtml.join('\n') + '\n';
 };
 
