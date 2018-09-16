@@ -67,7 +67,7 @@ $bfg-header-height: 2rem !default;
 .bfg__box {
   flex: 1 1 100%;
   position: relative;
-  overflow: auto;
+  overflow: auto; // TODO: add modifier --overflow for visible overflow
   box-sizing: border-box;
 }
 
@@ -151,7 +151,7 @@ $bfg-header-height: 2rem !default;
   box-sizing: border-box;
   position: absolute;
   z-index: 2;
-  overflow: hidden;
+  overflow: hidden; // TODO: add modifier --overflow for visible overflow
   top: 0;
   left: 0;
   right: 0;
@@ -171,13 +171,23 @@ $bfg-header-height: 2rem !default;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  overflow: auto;
+  overflow: auto; // TODO: add modifier --overflow for visible overflow
   width: 100%;
   height: 100%;
 }
 
-.bfg__header + .bfg__content {
-  padding-top: ($bfg-header-height + $bfg-padding);
+.bfg__content--nopad {
+  padding: 0;
+}
+
+.bfg__header {
+  + .bfg__content {
+    padding-top: ($bfg-header-height + $bfg-padding);
+  }
+
+  + .bfg__content--nopad {
+    padding-top: $bfg-header-height;
+  }
 }
 
 @mixin bfg-filler($name, $fill) {
