@@ -7,7 +7,9 @@
     "md-to-html": "node md-to-html.js",
     "md-to-html:watch": "node md-to-html.js watch",
     "start": "parcel src/index.html --open",
-    "build": "node-sass --output-style compressed src/bem-flex-grid.scss > build/bem-flex-grid.css",
+    "css": "node-sass src/bem-flex-grid.scss > build/bem-flex-grid.css",
+    "css:min": "node-sass --output-style compressed src/bem-flex-grid.scss > build/bem-flex-grid.min.css",
+    "build": "npm run css && npm run css:min",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

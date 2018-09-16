@@ -2,7 +2,30 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant
 
-## Grid blocks and elements
+## Grid block and elements
+
+At core the grid system consists of one block `.bfg` and one element `.bfg__box`.
+
+```html
+<div class="bfg">
+  <div class="bfg__box"></div>
+  <div class="bfg__box"></div>
+  ...
+</div>
+```
+
+You can fill the boxes using the optional `.bfg__content`.
+
+```html
+<div class="bfg">
+  <div class="bfg__box">
+    <div class="bfg__content"></div>
+  </div>
+  ...
+</div>
+```
+
+You can add an header to the filled boxes using the optional `.bfg__header`.
 
 ```html
 <div class="bfg">
@@ -10,56 +33,73 @@ CSS flex grid, [BEM](http://getbem.com/) compliant
     <div class="bfg__header"></div>
     <div class="bfg__content"></div>
   </div>
+  ...
 </div>
 ```
 
 ## `.bfg` modifiers
 
-To define the direction the `.bfg__box` are placed in the `.bfg` container, use `.bfg--row` or `.bfg--col`.
+To define the direction the `.bfg__box` are placed in the `.bfg` container, you must use `.bfg--row` or `.bfg--col`.
 
 ```html
-<div class="bfg bfg--row"></div>
+<div class="bfg bfg--row">...</div>
+````
 
-<div class="bfg bfg--col"></div>
-```
-
-To allow the `.bfg__box` to wrap as needed onto multiple lines, use `.bfg--wrap`.
+> When using `.bfg--row`, the grid system will works only if the `.bfg` width (or its parent width) is defined.
 
 ```html
-<div class="bfg bfg--wrap"></div>
+<div class="bfg bfg--col">...</div>
 ```
 
-If using `.bfg.bfg--wrap.bfg--row` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
+> When using `.bfg--col`, the grid system will works only if the `.bfg` height (or its parent height) is defined.
 
-In this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height.
-
-If you know that there's exactly 2 rows at the end, use `.bfg--lines-2` to define the height of each `.bfg__box`.
-
-In the same way, use `.bfg--lines-3` or `.bfg--lines-4` to fit exactly 3 or 4 rows respectively.
+To allow the `.bfg__box` to wrap as needed onto multiple lines, use the optional `.bfg--wrap`.
 
 ```html
-<div class="bfg bfg--wrap bfg--row bfg--lines-2"></div>
-
-<div class="bfg bfg--wrap bfg--row bfg--lines-3"></div>
-
-<div class="bfg bfg--wrap bfg--row bfg--lines-4"></div>
+<div class="bfg bfg--wrap">...</div>
 ```
 
-The same pattern is applicable to `.bfg.bfg--wrap.bfg--col`.
+**Example:**
+
+If using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
+
+In this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height itself.
+
+If you know that there's exactly 2 lines of `.bfg__box`, you can constrain them to fit into the `.bfg` container, by using `.bfg--lines-2`.
+
+In the same way, use `.bfg--lines-3` or `.bfg--lines-4` to fit exactly 3 or 4 lines respectively.
+
+```html
+<div class="bfg bfg--row bfg--wrap bfg--lines-2">...</div>
+```
+
+```html
+<div class="bfg bfg--row bfg--wrap bfg--lines-3">...</div>
+```
+
+```html
+<div class="bfg bfg--row bfg--wrap bfg--lines-4">...</div>
+```
+
+The same pattern applies to `.bfg.bfg--wrap.bfg--col`.
 In this context, use`.bfg--lines-2`, `.bfg--lines-3` or `.bfg--lines-4`.
 
 ```html
-<div class="bfg bfg--wrap bfg--col bfg--lines-2"></div>
+<div class="bfg bfg--col bfg--wrap bfg--lines-2">...</div>
+```
 
-<div class="bfg bfg--wrap bfg--col bfg--lines-3"></div>
+```html
+<div class="bfg bfg--col bfg--wrap bfg--lines-3">...</div>
+```
 
-<div class="bfg bfg--wrap bfg--col bfg--lines-4"></div>
+```html
+<div class="bfg bfg--col bfg--wrap bfg--lines-4">...</div>
 ```
 
 To add a gap between `.bfg__box`, use `.bfg--gap`.
 
 ```html
-<div class="bfg bfg--gap"></div>
+<div class="bfg bfg--gap">...</div>
 ```
 
 ## `.bfg__box` modifiers
@@ -113,6 +153,7 @@ The grid is responsive, meaning the `.bfg__box` size can be configured to change
 - Add `.bfg__box--xs-12` to increase the size on *extra small sreens* (until 576px).
 
 ```html
+...
 <div class="bfg__box
   bfg__box--5
   bfg__box--xl-6
@@ -120,6 +161,7 @@ The grid is responsive, meaning the `.bfg__box` size can be configured to change
   bfg__box--sm-8
   bfg__box--xs-12">
 </div>
+...
 ```
 
 ## `.bfg__header` and `.bfg__content` modifiers
@@ -127,20 +169,22 @@ The grid is responsive, meaning the `.bfg__box` size can be configured to change
 TODO...
 
 ```html
+...
 <div class="bfg__header bfg__header--fill"></div>
 <div class="bfg__content bfg__content--fill"></div>
+...
 ```
 
 ## Nesting `.bfg` Advanced use case
 
-To nest grids, use `.bfg` **block** on the `.bfg__box` **element**.
+To nest grids, use `.bfg` *block* on the `.bfg__box` *element*.
 
 **Example:**
 
 See below the `<div>` which have 2 behaviors:
 
-- `.bfg__box.bfg__box--6` as it is an **element** of the global `.bfg.bfg--col` **block**.
-- `.bfg.bfg--row` as it is a **block** of the nested `.bfg__box` **elements**.
+- `.bfg__box.bfg__box--6` as it is an *element* of the global `.bfg.bfg--col` *block*.
+- `.bfg.bfg--row` as it is a *block* of the nested `.bfg__box` **elements**.
 
 ```html
 <div class="bfg bfg--col bfg--gap">
@@ -148,11 +192,11 @@ See below the `<div>` which have 2 behaviors:
 
   <!-- Nested grid starts here, on the .bfg__box element -->
   <div class="bfg__box bfg__box--6 bfg bfg--row">
-    <div class="bfg__box bfg__box--3"></div>
 
+    <div class="bfg__box bfg__box--3"></div>
     <div class="bfg__box bfg__box--6"></div>
-
     <div class="bfg__box bfg__box--3"></div>
+
   </div>
 
   <div class="bfg__box bfg__box--3"></div>
