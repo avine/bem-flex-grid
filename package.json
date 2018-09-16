@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "md-to-html": "node md-to-html.js",
+    "md-to-html:watch": "node md-to-html.js watch",
     "start": "parcel src/index.html --open",
+    "build": "node-sass --output-style compressed src/bem-flex-grid.scss > build/bem-flex-grid.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
