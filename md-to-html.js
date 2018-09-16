@@ -24,7 +24,16 @@ const mdToHtml = () => {
   <title>Bem Flex Grid</title>
 
   <link rel="shortcut icon" href="favicon.ico">
+
   <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
+
+  <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
+  <script src="../node_modules/prismjs/prism.js"></script>
+
+  <style>
+    body { max-width: 992px; margin: auto; padding: 1rem; }
+    pre[class*="language-"] { background:#f6f8fa };
+  </style>
 </head>
 <body class="markdown-body">
 
