@@ -147,10 +147,10 @@ The grid is responsive, meaning the `.bfg__box` size can be configured to change
 **Example:**
 
 - Use `.bfg__box--5` to set the box size to be 5/12 of the available size for all *screen size* (even greater than 1200px).
-- Add `.bfg__box--xl-6` to increase the size on *extra large sreens* (until 1200px).
-- Add `.bfg__box--lg-4` to reduce the size on *large sreens* (until 992px).
-- Add `.bfg__box--sm-8` to increase the size on *small sreens* (until 768px).
-- Add `.bfg__box--xs-12` to increase the size on *extra small sreens* (until 576px).
+- Add `.bfg__box--xl-6` to increase the size on *extra large screens* (until 1200px).
+- Add `.bfg__box--lg-4` to reduce the size on *large screens* (until 992px).
+- Add `.bfg__box--sm-8` to increase the size on *small screens* (until 768px).
+- Add `.bfg__box--xs-12` to increase the size on *extra small screens* (until 576px).
 
 ```html
 ...
