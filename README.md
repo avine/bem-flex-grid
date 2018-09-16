@@ -33,27 +33,27 @@ If using `.bfg.bfg--wrap.bfg--row` then the `.bfg__box` are placed in the row di
 
 In this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height.
 
-If you know that there's exactly 2 rows at the end, use `.bfg--2rows` to define the height of each `.bfg__box`.
+If you know that there's exactly 2 rows at the end, use `.bfg--lines-2` to define the height of each `.bfg__box`.
 
-In the same way, use `.bfg--3rows` or `.bfg--4rows` to fit exactly 3 or 4 rows respectively.
+In the same way, use `.bfg--lines-3` or `.bfg--lines-4` to fit exactly 3 or 4 rows respectively.
 
 ```html
-<div class="bfg bfg--wrap bfg--row bfg--2rows"></div>
+<div class="bfg bfg--wrap bfg--row bfg--lines-2"></div>
 
-<div class="bfg bfg--wrap bfg--row bfg--3rows"></div>
+<div class="bfg bfg--wrap bfg--row bfg--lines-3"></div>
 
-<div class="bfg bfg--wrap bfg--row bfg--4rows"></div>
+<div class="bfg bfg--wrap bfg--row bfg--lines-4"></div>
 ```
 
 The same pattern is applicable to `.bfg.bfg--wrap.bfg--col`.
-In this context, use`.bfg--2cols`, `.bfg--3cols` or `.bfg--4cols`.
+In this context, use`.bfg--lines-2`, `.bfg--lines-3` or `.bfg--lines-4`.
 
 ```html
-<div class="bfg bfg--wrap bfg--col bfg--2cols"></div>
+<div class="bfg bfg--wrap bfg--col bfg--lines-2"></div>
 
-<div class="bfg bfg--wrap bfg--col bfg--3cols"></div>
+<div class="bfg bfg--wrap bfg--col bfg--lines-3"></div>
 
-<div class="bfg bfg--wrap bfg--col bfg--4cols"></div>
+<div class="bfg bfg--wrap bfg--col bfg--lines-4"></div>
 ```
 
 To add a gap between `.bfg__box`, use `.bfg--gap`.
