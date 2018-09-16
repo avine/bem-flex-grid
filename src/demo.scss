@@ -79,14 +79,14 @@ body {
 /* ===== Handle showcase ===== */
 
 #demo-showcase > .bfg__box {
-  //overflow: visible;
+  overflow: visible;
 }
 
 .demo-showcase__item.bfg__content {
-  //overflow: visible;
+  overflow: visible;
   padding: 0;
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
-  border-radius: $demo-border-radius;
+  border-radius: 0;
   border: 1px solid map-get($demo-light, border);
   background-color: white;
 }
@@ -111,7 +111,6 @@ body {
 }
 
 .demo-showcase__count {
-  display: none;
   position: absolute;
   right: -0.5rem;
   bottom: -0.5rem;
@@ -210,7 +209,19 @@ body {
 
 /* ===== Handle description ===== */
 
+#demo-description-link {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  padding: 0 10px;
+  border-top-right-radius: $demo-border-radius;
+  @include demo-dark-box;
+  text-decoration: none;
+}
+
 #demo-description {
+  display: none;
   cursor: pointer;
   position: fixed;
   z-index: 9;
@@ -229,5 +240,9 @@ body {
     border-radius: $demo-border-radius;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  &.demo-description__visible {
+    display: block;
   }
 }

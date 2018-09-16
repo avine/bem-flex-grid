@@ -133,10 +133,18 @@ window.addEventListener('click', (event) => {
 
 document.addEventListener('DOMContentLoaded', () => {
   const description = document.getElementById('demo-description');
-  if (description) {
-    description.setAttribute('title', 'Double click to remove');
-    description.addEventListener('dblclick', () => description.parentNode.removeChild(description));
+  if (!description) {
+    return;
   }
+  const link = document.createElement('a');
+  link.href = '#';
+  link.id = 'demo-description-link';
+  link.textContent = '?';
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    description.classList.toggle('demo-description__visible');
+  });
+  document.body.appendChild(link);
 });
 
 /* ===== Export as global ===== */
