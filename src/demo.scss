@@ -143,16 +143,37 @@ body {
   text-align: center;
 }
 
-#demo-source__code {
+#demo-source__content {
   overflow: auto;
   max-width: 70%;
   max-height: 70%;
   margin: auto;
-  padding: 2rem;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   border-radius: $demo-border-radius;
   background-color: #fff;
   display: none;
+}
+
+#demo-source__code {
+  margin: 0;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+#demo-source__description {
+  display: none;
+  box-sizing: border-box;
+  padding: 0.5rem 1rem;
+  @include demo-dark-box;
+  border-width: 1px 0 0 0;
+  line-height: 1.5em;
+
+  code {
+    padding: 0.2em 0.4em;
+    border-radius: $demo-border-radius;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 0, 0, 0.15);
+  }
 }
 
 #demo-source {
@@ -168,8 +189,12 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
 
-    #demo-source__code {
+    #demo-source__content {
       display: block !important;
+    }
+
+    #demo-source__description {
+      display: block;
     }
   }
 }
@@ -204,45 +229,5 @@ body {
   color: #4CAF50;
   &:after {
     content: "1000px * 1000px";
-  }
-}
-
-/* ===== Handle description ===== */
-
-#demo-description-link {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 10;
-  padding: 0 10px;
-  border-top-right-radius: $demo-border-radius;
-  @include demo-dark-box;
-  text-decoration: none;
-}
-
-#demo-description {
-  display: none;
-  cursor: pointer;
-  position: fixed;
-  z-index: 9;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  max-height: 100%;
-  overflow: auto;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-  @include demo-dark-box;
-  line-height: 1.5em;
-
-  code {
-    padding: 0.2em 0.4em;
-    border-radius: $demo-border-radius;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(0, 0, 0, 0.15);
-  }
-
-  &.demo-description__visible {
-    display: block;
   }
 }

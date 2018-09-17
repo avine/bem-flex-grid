@@ -41,10 +41,14 @@ const viewCode = () => {
     const wrapper = document.createElement('div');
     wrapper.id = 'demo-source';
     wrapper.innerHTML = '<a href="#" id="demo-source__toggle" title="View source code">&gt;_</a>' +
-      `<pre id="demo-source__code"><code></code></pre>`;
+      `<div id="demo-source__content"><pre id="demo-source__code"><code></code></pre></div>`;
     const code = wrapper.querySelector('#demo-source__code').firstChild as HTMLElement;
     if (code) {
       code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
+    }
+    const description = document.getElementById('demo-source__description');
+    if (description) {
+      wrapper.querySelector('#demo-source__content').appendChild(description);
     }
     wrapper.addEventListener('click', (event) => {
       const target = event.target as Element;
@@ -139,24 +143,6 @@ window.addEventListener('click', (event) => {
   if (target.classList.contains('demo-container')) {
     target.classList.toggle('demo-container--alt');
   }
-});
-
-/* ===== Handle description ===== */
-
-document.addEventListener('DOMContentLoaded', () => {
-  const description = document.getElementById('demo-description');
-  if (!description) {
-    return;
-  }
-  const link = document.createElement('a');
-  link.href = '#';
-  link.id = 'demo-description-link';
-  link.textContent = '?';
-  link.addEventListener('click', (event) => {
-    event.preventDefault();
-    description.classList.toggle('demo-description__visible');
-  });
-  document.body.appendChild(link);
 });
 
 /* ===== Export as global ===== */
