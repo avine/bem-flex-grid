@@ -1,0 +1,74 @@
+@import "./variables.scss";
+
+html { // Add this id on the <html> tag
+  background-color: map-get($demo-light, background);
+  color: map-get($demo-light, forground);
+
+  &, body {
+    height: auto; // Restore default
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+}
+
+h1 {
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+  font-weight: 200;
+  font-size: 2.5rem;
+}
+
+header {
+  margin: 2rem 0;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: map-get($demo-light, forground);
+}
+
+/* ===== Handle showcase ===== */
+
+#demo-showcase > .bfg__box {
+  overflow: visible;
+}
+
+.demo-showcase__item.bfg__content {
+  overflow: visible;
+  padding: 0;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+  border: 1px solid map-get($demo-light, border);
+  background-color: white;
+}
+
+.demo-showcase__iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: none;
+  background-color: white;
+}
+
+.demo-showcase__link {
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border: 1px solid map-get($demo-variant, border);
+  background-color: map-get($demo-variant, background);
+  color: map-get($demo-variant, forground) !important;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-decoration: none;
+}
