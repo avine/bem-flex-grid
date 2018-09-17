@@ -1,0 +1,26 @@
+$demo-light: (
+  border: #CFD8DC,
+  background: #ECEFF1,
+  forground: #607D8B
+);
+
+$demo-dark: (
+  border: #455A64,
+  background: #607D8B,
+  forground: #ECEFF1
+);
+
+$demo-variant: (
+  border: #D32F2F,
+  background: #F44336,
+  forground: #FFEBEE
+);
+
+@mixin demo-dark-box {
+  border: 1px solid map-get($demo-dark, border);
+  background-color: map-get($demo-dark, background);
+  color: map-get($demo-dark, forground);
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+$demo-border-radius: 4px;

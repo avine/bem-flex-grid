@@ -1,39 +1,9 @@
-$demo-light: (
-  border: #CFD8DC,
-  background: #ECEFF1,
-  forground: #607D8B
-);
-
-$demo-dark: (
-  border: #455A64,
-  background: #607D8B,
-  forground: #ECEFF1
-);
-
-$demo-variant: (
-  border: #D32F2F,
-  background: #F44336,
-  forground: #FFEBEE
-);
-
-@mixin demo-dark-box {
-  border: 1px solid map-get($demo-dark, border);
-  background-color: map-get($demo-dark, background);
-  color: map-get($demo-dark, forground) !important;
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
-  transition: opacity ease 0.6s;
-  opacity: 0.95;
-
-  &:hover {
-    opacity: 0.8;
-  }
-}
-
-$demo-border-radius: 3px;
+@import "./variables.scss";
 
 html {
   font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
-  color: #666;
+  color: #555;
+  line-height: 1.5rem;
 }
 
 html, body {
@@ -44,36 +14,6 @@ body {
   margin: 0;
   padding: 1rem;
   box-sizing: border-box;
-}
-
-/* ===== Handle index ===== */
-
-#demo-index { // Add this id on the <html> tag
-  background-color: map-get($demo-light, background);
-  color: map-get($demo-light, forground);
-
-  &, body {
-    height: auto;
-  }
-
-  h1 {
-    margin: 1rem 0 2rem 0;
-    text-align: center;
-    font-weight: 200;
-    font-size: 2.5rem;
-  }
-
-  header {
-    margin: 2rem 0;
-  }
-
-  p {
-    text-align: center;
-  }
-
-  a {
-    color: map-get($demo-light, forground);
-  }
 }
 
 /* ===== Handle showcase ===== */
@@ -101,19 +41,8 @@ body {
 
 .demo-showcase__link {
   position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;
-  padding: 0 10px;
-  border-bottom-left-radius: $demo-border-radius;
-  @include demo-dark-box;
-  text-decoration: none;
-}
-
-.demo-showcase__count {
-  position: absolute;
-  right: -0.5rem;
-  bottom: -0.5rem;
+  top: -0.5rem;
+  left: -0.5rem;
   z-index: 10;
   width: 2rem;
   height: 2rem;
@@ -122,28 +51,29 @@ body {
   border-radius: 50%;
   border: 1px solid map-get($demo-variant, border);
   background-color: map-get($demo-variant, background);
-  color: map-get($demo-variant, forground);
+  color: map-get($demo-variant, forground) !important;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
+  text-decoration: none;
 }
 
 /* ===== Handle source ===== */
 
-#demo-source__toggle {
+.demo-source__toggle {
   position: fixed;
   z-index: 12;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 40px;
   padding: 0px 0 6px 0;
   line-height: 1rem;
-  border-bottom-right-radius: $demo-border-radius;
+  border-top-right-radius: $demo-border-radius;
   @include demo-dark-box;
   text-decoration: none;
   text-align: center;
 }
 
-#demo-source__content {
+.demo-source__content {
   overflow: auto;
   max-width: 70%;
   max-height: 70%;
@@ -154,13 +84,13 @@ body {
   display: none;
 }
 
-#demo-source__code {
+.demo-source__code {
   margin: 0;
   padding: 2rem;
   overflow-x: auto;
 }
 
-#demo-source__description {
+.demo-source__description {
   display: none;
   box-sizing: border-box;
   padding: 0.5rem 1rem;
@@ -176,7 +106,7 @@ body {
   }
 }
 
-#demo-source {
+.demo-source {
   z-index: 12;
   transition: background-color ease 200ms;
 
@@ -189,11 +119,11 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     display: flex;
 
-    #demo-source__content {
+    .demo-source__content {
       display: block !important;
     }
 
-    #demo-source__description {
+    .demo-source__description {
       display: block;
     }
   }

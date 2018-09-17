@@ -1,0 +1,33 @@
+@import "./variables.scss";
+
+html { // Add this id on the <html> tag
+  background-color: map-get($demo-light, background);
+  color: map-get($demo-light, forground);
+
+  &, body {
+    height: auto; // Restore default
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+}
+
+h1 {
+  margin: 1rem 0 2rem 0;
+  text-align: center;
+  font-weight: 200;
+  font-size: 2.5rem;
+}
+
+header {
+  margin: 2rem 0;
+}
+
+p {
+  text-align: center;
+}
+
+a {
+  color: map-get($demo-light, forground);
+}

@@ -6,24 +6,11 @@ const showcase = () => {
   const element = document.getElementById('demo-showcase');
   element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--sm-disabled';
 
-  // Old version...
-  /*const mapper = (anchor: HTMLAnchorElement, count: number) => `
+  const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="bfg__box bfg__box--6">
     <div class="bfg__content demo-showcase__item">
       <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
-      <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">&nearrow;</a>
-      <span class="demo-showcase__count">${count}</span>
-    </div>
-  </div>`;*/
-
-  // Refacto in progress... (remember to clean demo css...)
-  const mapper = (anchor: HTMLAnchorElement, count: number) => `
-  <div class="bfg__box bfg__box--6">
-    <div class="bfg__header bfg__header--fill">
-    ${count} <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">&nearrow;</a>
-    </div>
-    <div class="bfg__content bfg__content--nopad bfg__content--fill">
-      <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
+      <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">${count}</a>
     </div>
   </div>`;
 
@@ -39,20 +26,20 @@ const viewCode = () => {
   if (grids.length) {
     const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
-    wrapper.id = 'demo-source';
-    wrapper.innerHTML = '<a href="#" id="demo-source__toggle" title="View source code">&gt;_</a>' +
-      `<div id="demo-source__content"><pre id="demo-source__code"><code></code></pre></div>`;
-    const code = wrapper.querySelector('#demo-source__code').firstChild as HTMLElement;
+    wrapper.className = 'demo-source';
+    wrapper.innerHTML = '<a href="#" class="demo-source__toggle" title="View source code">&gt;_</a>' +
+      `<div class="demo-source__content"><pre class="demo-source__code"><code></code></pre></div>`;
+    const code = wrapper.querySelector('.demo-source__code').firstChild as HTMLElement;
     if (code) {
       code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
     }
-    const description = document.getElementById('demo-source__description');
+    const description = document.querySelector('.demo-source__description');
     if (description) {
-      wrapper.querySelector('#demo-source__content').appendChild(description);
+      wrapper.querySelector('.demo-source__content').appendChild(description);
     }
     wrapper.addEventListener('click', (event) => {
       const target = event.target as Element;
-      if (target.id === 'demo-source__toggle' || target.id === 'demo-source') {
+      if (target.classList.contains('demo-source__toggle') || target.classList.contains('demo-source')) {
         event.preventDefault();
         wrapper.classList.toggle('demo-source--open');
       }
