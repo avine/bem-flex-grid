@@ -6,14 +6,26 @@ html {
   line-height: 1.5rem;
 }
 
-html, body {
-  height: 100%;
-}
-
 body {
   margin: 0;
   padding: 1rem;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2em;
+}
+
+/* ===== Restore default height ===== */
+
+.demo-default-height { // Add to the <html> tag
+  &, body {
+    height: initial;
+  }
 }
 
 /* ===== Handle source ===== */
@@ -44,9 +56,10 @@ body {
 }
 
 .demo-source__code {
+  overflow-x: auto;
   margin: 0;
   padding: 2rem;
-  overflow-x: auto;
+  line-height: 1.2rem;
 }
 
 .demo-source__description {

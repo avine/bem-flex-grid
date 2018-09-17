@@ -1,16 +1,8 @@
 @import "./variables.scss";
 
-html { // Add this id on the <html> tag
+html {
   background-color: map-get($demo-light, background);
   color: map-get($demo-light, forground);
-
-  &, body {
-    height: auto; // Restore default
-  }
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2em;
 }
 
 h1 {
