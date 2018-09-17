@@ -26,12 +26,7 @@ a {
 
 /* ===== Handle showcase ===== */
 
-#demo-showcase > .bfg__box {
-  overflow: visible;
-}
-
-.demo-showcase__item.bfg__content {
-  overflow: visible;
+.demo-showcase__item {
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
   border-radius: 0;
   border: 1px solid map-get($demo-light, border);

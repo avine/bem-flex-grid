@@ -20,6 +20,11 @@
 .bfg--wrap {
   flex-wrap: wrap; }
 
+.bfg--fluid {
+  height: auto; }
+  .bfg--fluid .bfg__box, .bfg--fluid .bfg__content {
+    overflow: initial; }
+
 .bfg__box {
   flex: 1 1 100%;
   position: relative;

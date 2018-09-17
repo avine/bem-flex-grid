@@ -64,10 +64,18 @@ $bfg-header-height: 2rem !default;
   flex-wrap: wrap;
 }
 
+.bfg--fluid {
+  height: auto;
+
+  .bfg__box, .bfg__content {
+    overflow: initial;
+  }
+}
+
 .bfg__box {
   flex: 1 1 100%;
   position: relative;
-  overflow: auto; // TODO: add modifier --overflow for visible overflow
+  overflow: auto;
   box-sizing: border-box;
 }
 
@@ -171,7 +179,7 @@ $bfg-header-height: 2rem !default;
   box-sizing: border-box;
   position: relative;
   z-index: 1;
-  overflow: auto; // TODO: add modifier --overflow for visible overflow
+  overflow: auto;
   width: 100%;
   height: 100%;
 }
