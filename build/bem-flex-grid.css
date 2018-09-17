@@ -440,8 +440,14 @@
   width: 100%;
   height: 100%; }
 
+.bfg__content--nopad {
+  padding: 0; }
+
 .bfg__header + .bfg__content {
   padding-top: 2.5rem; }
+
+.bfg__header + .bfg__content--nopad {
+  padding-top: 2rem; }
 
 .bfg__header--fill {
   border-radius: 2px 2px 0 0;

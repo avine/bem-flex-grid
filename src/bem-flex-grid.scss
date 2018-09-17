@@ -151,7 +151,7 @@ $bfg-header-height: 2rem !default;
   box-sizing: border-box;
   position: absolute;
   z-index: 2;
-  overflow: hidden; // TODO: add modifier --overflow for visible overflow
+  overflow: hidden;
   top: 0;
   left: 0;
   right: 0;

@@ -8,7 +8,7 @@ const showcase = () => {
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="bfg__box bfg__box--6">
-    <div class="bfg__content demo-showcase__item">
+    <div class="bfg__content bfg__content--nopad demo-showcase__item">
       <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
       <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">${count}</a>
     </div>
