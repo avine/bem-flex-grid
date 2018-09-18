@@ -16,14 +16,13 @@
 </head>
 <body>
   <div class="demo-source__description">
-    When using <code>.bfg--wrap</code>, the <code>.bfg__box</code> boxes can be displayed on multiple lines.<br>
-    In this case, the boxes can leave outside the <code>.bfg--col</code> container.
+    By default, <code>.bfg__box</code> are displayed on one line and can NOT leave outside the <code>.bfg--col</code> container.
   </div>
 
-  <div class="bfg bfg--col bfg--wrap">
+  <div class="bfg bfg--col">
+    <div class="bfg__box bfg__box--2"></div>
+    <div class="bfg__box bfg__box--4"></div>
     <div class="bfg__box bfg__box--6"></div>
-    <div class="bfg__box bfg__box--6"></div>
-    <div class="bfg__box bfg__box--12"></div>
   </div>
 
   <script>Demo.viewCode(); Demo.fillGrid();</script>

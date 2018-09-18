@@ -20,11 +20,6 @@
 .bfg--wrap {
   flex-wrap: wrap; }
 
-.bfg--fluid {
-  height: auto; }
-  .bfg--fluid .bfg__box, .bfg--fluid .bfg__content {
-    overflow: initial; }
-
 .bfg__box {
   flex: 1 1 100%;
   position: relative;
@@ -453,6 +448,12 @@
 
 .bfg__header + .bfg__content--nopad {
   padding-top: 2rem; }
+
+.bfg--overflow .bfg__box,
+.bfg--overflow .bfg__content,
+.bfg__box--overflow,
+.bfg__box--overflow .bfg__content {
+  overflow: initial; }
 
 .bfg__header--fill {
   border-radius: 2px 2px 0 0;

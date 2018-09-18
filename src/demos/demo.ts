@@ -4,13 +4,13 @@ import { highlight, languages } from 'prismjs';
 
 const showcase = () => {
   const element = document.getElementById('demo-showcase');
-  element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--fluid bfg--sm-disabled';
+  element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--overflow bfg--sm-disabled';
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="bfg__box bfg__box--6">
-    <div class="bfg__content bfg__content--nopad demo-showcase__item">
+    <div class="demo-showcase__item">
       <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
-      <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate window">${count}</a>
+      <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate tab">${count}</a>
     </div>
   </div>`;
 

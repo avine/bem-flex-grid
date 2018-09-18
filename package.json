@@ -10,6 +10,7 @@
     "css": "node-sass src/bem-flex-grid.scss > build/bem-flex-grid.css",
     "css:min": "node-sass --output-style compressed src/bem-flex-grid.scss > build/bem-flex-grid.min.css",
     "build": "npm run css && npm run css:min",
+    "update-all": "npm run md-to-html && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

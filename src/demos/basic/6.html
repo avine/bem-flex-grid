@@ -16,12 +16,11 @@
 </head>
 <body>
   <div class="demo-source__description">
-    When using <code>.bfg--wrap</code>, the <code>.bfg__box</code> boxes can be displayed on multiple lines.<br>
-    If you know the number of lines, you can still fit the inherited height using <code>.bfg--lines-2</code>.
-    In this case, all the columns have the same width.
+    When using <code>.bfg--wrap</code>, <code>.bfg__box</code> can be displayed on multiple lines.<br>
+    In this case, the boxes may extend beyond the <code>.bfg--col</code> container, causing a global horizontal scrollbar to appear.
   </div>
 
-  <div class="bfg bfg--col bfg--lines-2 bfg--wrap">
+  <div class="bfg bfg--col bfg--wrap">
     <div class="bfg__box bfg__box--6"></div>
     <div class="bfg__box bfg__box--6"></div>
     <div class="bfg__box bfg__box--12"></div>
