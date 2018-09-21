@@ -137,7 +137,7 @@ window.addEventListener('click', (event) => {
 
 /* Polyfill for IE11: Use "forEach" on DOM elements */
 
-function forEach<T = Element>(elements: NodeListOf<T>, callback: (element: T, index: number) => any) {
+function forEach<T = Node>(elements: NodeListOf<Node>, callback: (element: T, index: number) => any) {
   Array.prototype.forEach.call(elements, callback);
 }
 
