@@ -15,7 +15,10 @@ const showcase = () => {
   </div>`;
 
   const mappedHtml = [];
-  element.querySelectorAll('a').forEach((anchor, index) => mappedHtml.push(mapper(anchor, index + 1)));
+  forEach<HTMLAnchorElement>(
+    element.querySelectorAll('a'),
+    (anchor, index) => mappedHtml.push(mapper(anchor, index + 1)),
+  );
   element.innerHTML = mappedHtml.join('\n') + '\n';
 };
 
@@ -121,8 +124,8 @@ const fillElement = (element) => {
 };
 
 const fillGrid = () => {
-  document.querySelectorAll('.bfg__box').forEach(fillElement);
-  document.querySelectorAll('.bfg__content').forEach(fillElement);
+  forEach(document.querySelectorAll('.bfg__box'), fillElement);
+  forEach(document.querySelectorAll('.bfg__content'), fillElement);
 };
 
 window.addEventListener('click', (event) => {
@@ -131,6 +134,12 @@ window.addEventListener('click', (event) => {
     target.classList.toggle('demo-container--alt');
   }
 });
+
+/* Polyfill for IE11: Use "forEach" on DOM elements */
+
+function forEach<T = Element>(elements: NodeListOf<T>, callback: (element: T, index: number) => any) {
+  Array.prototype.forEach.call(elements, callback);
+}
 
 /* ===== Export as global ===== */
 

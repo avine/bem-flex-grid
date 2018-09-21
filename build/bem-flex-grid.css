@@ -5,9 +5,10 @@
     height: auto; }
 
 .bfg--row {
-  flex-direction: row; }
-  .bfg--row > .bfg__box {
-    height: 100%; }
+  flex-direction: row;
+  /*> .bfg__box {
+    max-height: 100%; // Removed: caused strange behavior in IE11
+  }*/ }
 
 .bfg--col {
   flex-direction: column; }
@@ -457,7 +458,7 @@
 .bfg--overflow .bfg__content,
 .bfg__box--overflow,
 .bfg__box--overflow .bfg__content {
-  overflow: initial; }
+  overflow: visible; }
 
 .bfg__header--fill {
   border-radius: 2px 2px 0 0;
