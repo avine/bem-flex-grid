@@ -19,6 +19,12 @@
     To fix the width of a particular box in pixels, use <code>.bfg__box--fixed</code> and give the box the expected <code>width</code>.<br>
     In this case, one of the other boxes should fill the remaining space by having <code>.bfg__box</code> without any size (like <code>.bfg__box--6</code>).<br>
     To see it in action, open on a separate tab and resize the window.
+
+    <span class="demo-source__warning">
+      <strong>Note for IE11:</strong><br>
+      The <code>.bfg__box--4</code> width is NOT accurate.
+      To support this browser, only use 2 boxes in this context: one <code>.bfg__box.bfg__box--fixed</code> and one <code>.bfg__box</code>.
+    </span>
   </div>
 
   <div class="bfg bfg--row">

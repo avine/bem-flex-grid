@@ -42,25 +42,13 @@ $bfg-header-height: 2rem !default;
 
 .bfg--row {
   flex-direction: row;
-
-  /*> .bfg__box {
-    max-height: 100%; // Removed: caused strange behavior in IE11
-  }*/
 }
 
 .bfg--col {
   flex-direction: column;
 
   > .bfg__box {
-    // Note: like the rule above: `.bfg--row > .bfg__box { max-height: 100%; }`.
-    // it should have been: `.bfg--col > .bfg__box { max-width: 100%; }`.
-    //
-    // But we found a strange behavior in Chrome (tested on v71.0.3559.0).
-    // (by the way it was working fine in Firefox and even IE11).
-    //
-    // To reproduce the bug, set `max-width: 100%;` instead of `width: 100%;`
-    // and open the demo: `./src/demos/showcase/6.html`.
-    width: 100%;
+    max-width: 100%;
   }
 }
 

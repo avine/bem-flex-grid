@@ -48,7 +48,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: auto;
   max-width: 80%;
   max-height: 80%;
-  margin: auto;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
   border-radius: $demo-border-radius;
   background-color: #fff;
@@ -78,8 +77,23 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.demo-source__warning {
+  margin: 1rem -1rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  border: 1px solid map-get($demo-variant, border);
+  background-color: map-get($demo-variant, background);
+  color: map-get($demo-variant, forground);
+
+  &:last-child {
+    margin-bottom: -0.5rem;
+  }
+}
+
 .demo-source {
   z-index: 12;
+  justify-content: center;
+  align-items: center;
   transition: background-color ease 200ms;
 
   &.demo-source--open {
