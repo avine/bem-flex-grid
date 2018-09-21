@@ -5,15 +5,12 @@
     height: auto; }
 
 .bfg--row {
-  flex-direction: row;
-  /*> .bfg__box {
-    max-height: 100%; // Removed: caused strange behavior in IE11
-  }*/ }
+  flex-direction: row; }
 
 .bfg--col {
   flex-direction: column; }
   .bfg--col > .bfg__box {
-    width: 100%; }
+    max-width: 100%; }
 
 .bfg--gap {
   margin: 0 -0.5rem; }
@@ -421,20 +418,14 @@
 .bfg__header {
   padding: 0 0.5rem;
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   z-index: 2;
   overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
+  height: 2rem;
   line-height: 2rem;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis; }
-
-.bfg--gap .bfg__header {
-  left: 0.5rem;
-  right: 0.5rem; }
 
 .bfg__content {
   padding: 0.5rem;
@@ -449,10 +440,10 @@
   padding: 0; }
 
 .bfg__header + .bfg__content {
-  padding-top: 2.5rem; }
-
-.bfg__header + .bfg__content--nopad {
-  padding-top: 2rem; }
+  height: calc(100% - 2rem);
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
 
 .bfg--overflow .bfg__box,
 .bfg--overflow .bfg__content,
@@ -463,7 +454,8 @@
 .bfg__header--fill {
   border-radius: 2px 2px 0 0;
   border: 1px solid #d5d5d5;
-  background-color: #f6f6f6; }
+  background-color: #f6f6f6;
+  line-height: calc(2rem - 2px); }
 
 .bfg__content--fill {
   border-radius: 2px;

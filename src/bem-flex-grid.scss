@@ -4,6 +4,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-fill: (
   border-radius: 2px,
+  border-width: 1px,
   header-border: #d5d5d5,
   header-bg: #f6f6f6,
   content-border: #ddd,
@@ -153,21 +154,14 @@ $bfg-header-height: 2rem !default;
 .bfg__header {
   padding: 0 $bfg-padding;
   box-sizing: border-box;
-  position: absolute;
+  position: relative;
   z-index: 2;
   overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
+  height: $bfg-header-height;
   line-height: $bfg-header-height;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
-}
-
-.bfg--gap .bfg__header {
-  left: ($bfg-gap / 2);
-  right: ($bfg-gap / 2);
 }
 
 .bfg__content {
@@ -184,14 +178,11 @@ $bfg-header-height: 2rem !default;
   padding: 0;
 }
 
-.bfg__header {
-  + .bfg__content {
-    padding-top: ($bfg-header-height + $bfg-padding);
-  }
-
-  + .bfg__content--nopad {
-    padding-top: $bfg-header-height;
-  }
+.bfg__header + .bfg__content {
+  height: calc(100% - #{$bfg-header-height});
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 }
 
 .bfg--overflow .bfg__box,
@@ -204,13 +195,14 @@ $bfg-header-height: 2rem !default;
 @mixin bfg-filler($name, $fill) {
   .bfg__header--#{$name} {
     border-radius: map-get($fill, border-radius) map-get($fill, border-radius) 0 0;
-    border: 1px solid map-get($fill, header-border);
+    border: map-get($fill, border-width) solid map-get($fill, header-border);
     background-color: map-get($fill, header-bg);
+    line-height: calc(#{$bfg-header-height} - #{2 * map-get($fill, border-width)});
   }
 
   .bfg__content--#{$name} {
     border-radius: map-get($fill, border-radius);
-    border: 1px solid map-get($fill, content-border);
+    border: map-get($fill, border-width) solid map-get($fill, content-border);
     background-color: map-get($fill, content-bg);
   }
 }
