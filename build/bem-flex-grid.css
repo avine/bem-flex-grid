@@ -6,9 +6,13 @@
 
 .bfg--row {
   flex-direction: row; }
+  .bfg--row > .bfg__box {
+    height: 100%; }
 
 .bfg--col {
   flex-direction: column; }
+  .bfg--col > .bfg__box {
+    width: 100%; }
 
 .bfg--gap {
   margin: 0 -0.5rem; }

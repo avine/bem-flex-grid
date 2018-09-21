@@ -42,10 +42,18 @@ $bfg-header-height: 2rem !default;
 
 .bfg--row {
   flex-direction: row;
+
+  > .bfg__box {
+    height: 100%;
+  }
 }
 
 .bfg--col {
   flex-direction: column;
+
+  > .bfg__box {
+    width: 100%;
+  }
 }
 
 .bfg--gap {
