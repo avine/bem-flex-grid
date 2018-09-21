@@ -21,7 +21,10 @@
     "css3",
     "flexbox",
     "bem",
-    "sass"
+    "sass",
+    "dashboard",
+    "grid",
+    "layout"
   ],
   "author": "Stéphane Francel <contact@avine.io>",
   "license": "MIT",
