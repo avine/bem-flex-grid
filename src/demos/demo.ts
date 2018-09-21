@@ -106,7 +106,13 @@ const texts = [
   // tslint:enable:max-line-length
 ];
 
-const getText = () => texts[Math.round(Math.random() * (texts.length - 1))];
+let textIndex = -1;
+
+const getText = () => {
+  textIndex = (textIndex + 1) % texts.length;
+  const text = texts[textIndex];
+  return `<div class="demo-text demo-text__bg-${textIndex}">${text} ${text}</div>`;
+};
 
 const getContainer = () => '<div class="demo-container" title="Switch size"></div>';
 
@@ -114,7 +120,7 @@ const fillElement = (element) => {
   if (!element.childElementCount) {
     switch (fillType) {
       case 'text':
-        element.innerHTML = `${getText()} ${getText()}`;
+        element.innerHTML = `${getText()}`;
         break;
       case 'container':
         element.innerHTML = getContainer();
