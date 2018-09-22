@@ -9,8 +9,6 @@
 
 .bfg--col {
   flex-direction: column; }
-  .bfg--col > .bfg__box {
-    max-width: 100%; }
 
 .bfg--gap {
   margin: 0 -0.5rem; }

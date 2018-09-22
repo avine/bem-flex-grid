@@ -47,10 +47,6 @@ $bfg-header-height: 2rem !default;
 
 .bfg--col {
   flex-direction: column;
-
-  > .bfg__box {
-    max-width: 100%;
-  }
 }
 
 .bfg--gap {

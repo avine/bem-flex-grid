@@ -3,7 +3,7 @@
 html {
   font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
   color: #555;
-  line-height: 1.5rem;
+  line-height: 1.375em;
 }
 
 body {
@@ -16,32 +16,22 @@ html, body {
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2em;
-}
-
 /* ===== Restore default height ===== */
 
-.demo-default-height { // Add to the <html> tag
+.demo-page-height--disabled { // Add to the <html> tag
   &, body {
     height: initial;
   }
 }
 
+.demo-page-height__toggle {
+  @include demo-dark-button(right);
+}
+
 /* ===== Handle source ===== */
 
 .demo-source__toggle {
-  position: fixed;
-  z-index: 12;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  padding: 0px 0 6px 0;
-  line-height: 1rem;
-  border-top-right-radius: $demo-border-radius;
-  @include demo-dark-box;
-  text-decoration: none;
-  text-align: center;
+  @include demo-dark-button(left);
 }
 
 .demo-source__content {
@@ -49,7 +39,6 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 80%;
   max-height: 80%;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  border-radius: $demo-border-radius;
   background-color: #fff;
   display: none;
 }
@@ -67,11 +56,9 @@ h1, h2, h3, h4, h5, h6 {
   padding: 0.5rem 1rem;
   @include demo-dark-box;
   border-width: 1px 0 0 0;
-  line-height: 1.5em;
 
   code {
     padding: 0.2em 0.4em;
-    border-radius: $demo-border-radius;
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(0, 0, 0, 0.15);
   }
@@ -84,6 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid map-get($demo-variant, border);
   background-color: map-get($demo-variant, background);
   color: map-get($demo-variant, forground);
+  font-size: 0.875rem;
 
   &:last-child {
     margin-bottom: -0.5rem;
@@ -149,8 +137,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // .demo-text {}
-.demo-text__bg-0 { background-color: #FFEBEE; }
-.demo-text__bg-1 { background-color: #F3E5F5; }
-.demo-text__bg-2 { background-color: #FFF8E1; }
-.demo-text__bg-3 { background-color: #E1F5FE; }
-.demo-text__bg-4 { background-color: #E8F5E9; }
+.demo-text__bg-1 { background-color: #FFF8E1; }
+.demo-text__bg-2 { background-color: #E1F5FE; }
+.demo-text__bg-3 { background-color: #E8F5E9; }
+.demo-text__bg-4 { background-color: #FFEBEE; }
+.demo-text__bg-5 { background-color: #F3E5F5; }

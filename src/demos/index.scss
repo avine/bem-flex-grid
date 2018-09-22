@@ -13,7 +13,7 @@ h1 {
 }
 
 header {
-  margin: 2rem 0;
+  margin: 3rem 0;
 }
 
 p {
@@ -57,4 +57,10 @@ a {
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   text-decoration: none;
+  transition: background-color ease 300ms, color ease 300ms;
+
+  &:hover {
+    background-color: map-get($demo-variant, border);
+    color: #ddd;
+  }
 }

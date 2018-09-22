@@ -16,8 +16,8 @@
 </head>
 <body>
   <div class="demo-source__description">
-    To always fit the inherited height, use a <code>.bfg--col</code> wrapper and use a separate <code>.bfg--row</code> for each row.<br>
-    This is more complex, but this time you can set a different height of each row.
+    To always fit the main <code>.bfg</code> height, use a <code>.bfg--col</code> wrapper and a separate <code>.bfg--row</code> for each row.<br>
+    This is more complex, but this way you can set a different height of each row.
   </div>
 
   <div class="bfg bfg--col">
@@ -31,6 +31,6 @@
     </div>
   </div>
 
-  <script>Demo.viewCode(); Demo.fillGrid();</script>
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.pageHeight();</script>
 </body>
 </html>

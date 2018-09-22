@@ -17,8 +17,8 @@
 <body>
   <div class="demo-source__description">
     When using <code>.bfg--wrap</code> and <code>.bfg__box</code> are displayed on multiple lines.<br>
-    If you know the exact number of lines (2 for example), you can still fit the inherited height using <code>.bfg--lines-2</code>.
-    In this case, all the rows have the same height.
+    If you know the exact number of lines (2 in this demo), you can still fit the <code>.bfg--row</code> height using <code>.bfg--lines-2</code>.
+    In this case, all the rows will have the same height.
   </div>
 
   <div class="bfg bfg--row bfg--wrap bfg--lines-2">
@@ -27,6 +27,6 @@
     <div class="bfg__box bfg__box--12"></div>
   </div>
 
-  <script>Demo.viewCode(); Demo.fillGrid();</script>
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.pageHeight();</script>
 </body>
 </html>

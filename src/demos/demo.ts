@@ -30,7 +30,7 @@ const viewCode = () => {
     const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
     wrapper.className = 'demo-source';
-    wrapper.innerHTML = '<a href="#" class="demo-source__toggle" title="View source code">&gt;_</a>' +
+    wrapper.innerHTML = '<a href="#" class="demo-source__toggle" title="View source code">&GreaterEqual;</a>' +
       `<div class="demo-source__content"><pre class="demo-source__code"><code></code></pre></div>`;
     const code = wrapper.querySelector('.demo-source__code').firstChild as HTMLElement;
     if (code) {
@@ -111,7 +111,7 @@ let textIndex = -1;
 const getText = () => {
   textIndex = (textIndex + 1) % texts.length;
   const text = texts[textIndex];
-  return `<div class="demo-text demo-text__bg-${textIndex}">${text} ${text}</div>`;
+  return `<div class="demo-text demo-text__bg-${textIndex + 1}">${text} ${text}</div>`;
 };
 
 const getContainer = () => '<div class="demo-container" title="Switch size"></div>';
@@ -141,6 +141,19 @@ window.addEventListener('click', (event) => {
   }
 });
 
+/* ===== Toggle page height ===== */
+
+const pageHeight = () => {
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = '<a href="#" title="Toggle page height" class="demo-page-height__toggle">&updownarrow;</a>';
+  const toggle = wrapper.firstChild;
+  toggle.addEventListener('click', (event) => {
+    event.preventDefault();
+    document.querySelector('html').classList.toggle('demo-page-height--disabled');
+  });
+  document.body.appendChild(toggle);
+};
+
 /* Polyfill for IE11: Use "forEach" on DOM elements */
 
 function forEach<T = Node>(elements: NodeListOf<Node>, callback: (element: T, index: number) => any) {
@@ -149,4 +162,4 @@ function forEach<T = Node>(elements: NodeListOf<Node>, callback: (element: T, in
 
 /* ===== Export as global ===== */
 
-window['Demo'] = { showcase, viewCode, fillGrid };
+window['Demo'] = { showcase, viewCode, fillGrid, pageHeight };
