@@ -123,7 +123,7 @@ In the same way, use `.bfg__box--overflow` on the element to apply this behavior
 
 ```html
 ...
-  <div class="bfg__box bfg_box--overflow">...</div>
+  <div class="bfg__box bfg__box--overflow">...</div>
 ...
 ```
 
