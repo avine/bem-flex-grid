@@ -48,6 +48,7 @@
 &lt;/div&gt;
 </code></pre>
 <h2><code>.bfg</code> modifiers</h2>
+<h3><code>.bfg--row</code> and <code>.bfg--col</code></h3>
 <p>To define the direction the <code>.bfg__box</code> are placed in the <code>.bfg</code> container, you must use <code>.bfg--row</code> or <code>.bfg--col</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -59,39 +60,64 @@
 <blockquote>
 <p>When using <code>.bfg--col</code>, the grid system will works only if the <code>.bfg</code> height (or its parent height) is defined.</p>
 </blockquote>
+<h3><code>.bfg--wrap</code></h3>
 <p>To allow the <code>.bfg__box</code> to wrap as needed onto multiple lines, use the optional <code>.bfg--wrap</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--wrap&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p><strong>Example:</strong></p>
+<h3><code>.bfg--lines-2</code>, <code>.bfg--lines-3</code>, <code>.bfg--lines-4</code></h3>
 <p>If using <code>.bfg.bfg--row.bfg--wrap</code> then the <code>.bfg__box</code> are placed in the row direction and wrapped onto multiple lines when needed.</p>
 <p>In this case the total height of all <code>.bfg__box</code> might be bigger than the <code>.bfg</code> container height itself.</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code>, you can constrain them to fit into the <code>.bfg</code> container, by using <code>.bfg--lines-2</code>.</p>
-<p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> to fit exactly 3 or 4 lines respectively.</p>
+<p>(in the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> to fit exactly 3 or 4 lines respectively).</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>The same pattern applies to <code>.bfg.bfg--wrap.bfg--col</code>.
-In this context, use<code>.bfg--lines-2</code>, <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code>.</p>
+<p>The same pattern applies to <code>.bfg.bfg--wrap.bfg--col</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
+<h3><code>.bfg--gap</code></h3>
 <p>To add a gap between <code>.bfg__box</code>, use <code>.bfg--gap</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h2><code>.bfg__box</code> modifiers</h2>
-<p>Define the <code>.bfg__box</code> size using <code>.bfg__box--1</code>,  <code>.bfg__box--2</code>, ...,  <code>.bfg__box--12</code>.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg__box bfg__box--1&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;bfg__box bfg__box--2&quot;&gt;&lt;/div&gt;
-...
-&lt;div class=&quot;bfg__box bfg__box--11&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;bfg__box bfg__box--12&quot;&gt;&lt;/div&gt;
+<h3><code>.bfg--disabled</code></h3>
+<p>To disable the grid system use <code>.bfg--disabled</code>.</p>
+<p>As the grid is responsive, you can disable the grid system at each breakpoint.</p>
+<p>(see below for more details about responsive grid).</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--disabled&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--xl-disabled&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--lg-disabled&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--sm-disabled&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--xs-disabled&quot;&gt;...&lt;/div&gt;
 </code></pre>
+<h3><code>.bfg--overflow</code></h3>
+<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> are using <code>overflow: auto;</code>.</p>
+<p>Use <code>.bfg--overflow</code> to use <code>overflow: visible;</code> instead for all boxes.</p>
+<p>(in the same way, use <code>.bfg__box--overflow</code> to apply this behavior to a specific box).</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--overflow&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<h2><code>.bfg__box</code> modifiers</h2>
+<h3><code>.bfg__box--[size]</code></h3>
+<p>Define the <code>.bfg__box</code> size using <code>.bfg__box--1</code>,  <code>.bfg__box--2</code>, ...,  <code>.bfg__box--11</code>,  <code>.bfg__box--12</code>.</p>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg__box bfg__box--1&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--2&quot;&gt;&lt;/div&gt;
+  ...
+  &lt;div class=&quot;bfg__box bfg__box--11&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--12&quot;&gt;&lt;/div&gt;
+...
+</code></pre>
+<h3><code>.bfg__box--fixed</code></h3>
 <p>Use <code>.bfg__box--fixed</code> to indicate that a <code>.bfg__box</code> should not grow or shrink.</p>
 <p>Here's an example when using <code>.bfg--row</code>:</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;
@@ -113,6 +139,7 @@ In this context, use<code>.bfg--lines-2</code>, <code>.bfg--lines-3</code> or <c
   &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<h3>Responsive grid</h3>
 <p>The grid is responsive, meaning the <code>.bfg__box</code> size can be configured to change at each breakpoint.</p>
 <p><strong>Example:</strong></p>
 <ul>
@@ -123,20 +150,21 @@ In this context, use<code>.bfg--lines-2</code>, <code>.bfg--lines-3</code> or <c
 <li>Add <code>.bfg__box--xs-12</code> to increase the size on <em>extra small screens</em> (until 576px).</li>
 </ul>
 <pre><code class="language-html">...
-&lt;div class=&quot;bfg__box
-  bfg__box--5
-  bfg__box--xl-6
-  bfg__box--lg-4
-  bfg__box--sm-8
-  bfg__box--xs-12&quot;&gt;
-&lt;/div&gt;
+  &lt;div class=&quot;bfg__box
+    bfg__box--5
+    bfg__box--xl-6
+    bfg__box--lg-4
+    bfg__box--sm-8
+    bfg__box--xs-12&quot;&gt;
+  &lt;/div&gt;
 ...
 </code></pre>
 <h2><code>.bfg__header</code> and <code>.bfg__content</code> modifiers</h2>
-<p>TODO...</p>
+<p>Use <code>.bfg__content.bfg__content--fill</code> to fill the box content.</p>
+<p>Use optional <code>.bfg__header.bfg__header--fill</code> to add an header to the box content.</p>
 <pre><code class="language-html">...
-&lt;div class=&quot;bfg__header bfg__header--fill&quot;&gt;&lt;/div&gt;
-&lt;div class=&quot;bfg__content bfg__content--fill&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__header bfg__header--fill&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__content bfg__content--fill&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
 <h2>Nesting <code>.bfg</code> Advanced use case</h2>
