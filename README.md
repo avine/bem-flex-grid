@@ -14,7 +14,7 @@ At core the grid system consists of one block `.bfg` and one element `.bfg__box`
 </div>
 ```
 
-You can fill the boxes using the optional `.bfg__content`.
+You can fill the boxes using the optional element `.bfg__content`.
 
 ```html
 <div class="bfg">
@@ -25,7 +25,7 @@ You can fill the boxes using the optional `.bfg__content`.
 </div>
 ```
 
-You can add an header to the filled boxes using the optional `.bfg__header`.
+You can add an header to the filled boxes using the optional element `.bfg__header`.
 
 ```html
 <div class="bfg">
@@ -41,7 +41,7 @@ You can add an header to the filled boxes using the optional `.bfg__header`.
 
 ### .bfg--row and .bfg--col
 
-To define the direction the `.bfg__box` are placed in the `.bfg` container, you must use `.bfg--row` or `.bfg--col`.
+It is required to define the direction the `.bfg__box` are placed in the `.bfg` container, using `.bfg--row` or `.bfg--col`.
 
 ```html
 <div class="bfg bfg--row">...</div>
@@ -65,13 +65,13 @@ To allow the `.bfg__box` to wrap as needed onto multiple lines, use the optional
 
 ### .bfg--lines-[N]
 
-If using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
+As said above, if using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
 
 In this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height itself.
 
 If you know that there's exactly 2 lines of `.bfg__box`, you can constrain them to fit into the `.bfg` container, by using `.bfg--lines-2`.
 
-(in the same way, use `.bfg--lines-3` or `.bfg--lines-4` to fit exactly 3 or 4 lines respectively).
+In the same way, use `.bfg--lines-3` or `.bfg--lines-4` to fit exactly 3 or 4 lines respectively.
 
 ```html
 <div class="bfg bfg--row bfg--wrap bfg--lines-2">...</div>
@@ -113,7 +113,7 @@ By default, `.bfg__box` and `.bfg__content` are using `overflow: auto;`.
 
 Use `.bfg--overflow` to use `overflow: visible;` instead for all boxes.
 
-(in the same way, use `.bfg__box--overflow` to apply this behavior to a specific box).
+In the same way, use `.bfg__box--overflow` to apply this behavior to a specific box.
 
 ```html
 <div class="bfg bfg--overflow">...</div>
@@ -199,7 +199,8 @@ The grid is responsive, meaning the `.bfg__box` size can be configured to change
 
 ```html
 ...
-  <div class="bfg__box
+  <div class="
+    bfg__box
     bfg__box--5
     bfg__box--xl-6
     bfg__box--lg-4
@@ -239,7 +240,7 @@ To nest grids, use `.bfg` *block* on the `.bfg__box` *element*.
 See below the `<div>` which have 2 behaviors:
 
 - `.bfg__box.bfg__box--6` as it is an *element* of the global `.bfg.bfg--col` *block*.
-- `.bfg.bfg--row` as it is a *block* of the nested `.bfg__box` **elements**.
+- `.bfg.bfg--row` as it is a *block* of the nested `.bfg__box` *elements*.
 
 ```html
 <div class="bfg bfg--col bfg--gap">
