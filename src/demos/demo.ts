@@ -108,10 +108,14 @@ const texts = [
 
 let textIndex = -1;
 
-const getText = () => {
+const getText = (addColor = false) => {
   textIndex = (textIndex + 1) % texts.length;
   const text = texts[textIndex];
-  return `<div class="demo-text demo-text__bg-${textIndex + 1}">${text} ${text}</div>`;
+  const css = ['demo-text'];
+  if (addColor) {
+    css.push(`demo-text__bg-${textIndex + 1}`);
+  }
+  return `<div class="${css.join(' ')}">${text} ${text}</div>`;
 };
 
 const getContainer = () => '<div class="demo-container" title="Switch size"></div>';

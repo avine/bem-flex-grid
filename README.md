@@ -222,6 +222,14 @@ Use optional `.bfg__header.bfg__header--fill` to add an header to the box conten
 ...
 ```
 
+Use `.bfg__content--nopad` to remove the box content padding.
+
+```html
+...
+  <div class="bfg__content bfg__content--nopad"></div>
+...
+```
+
 ## Nested .bfg
 
 To nest grids, use `.bfg` *block* on the `.bfg__box` *element*.
