@@ -222,7 +222,7 @@ Use optional `.bfg__header.bfg__header--fill` to add an header to the box conten
 ...
 ```
 
-## Nesting .bfg Advanced use case
+## Nested .bfg
 
 To nest grids, use `.bfg` *block* on the `.bfg__box` *element*.
 
