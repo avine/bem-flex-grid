@@ -45,15 +45,15 @@ It is required to define the direction the `.bfg__box` are placed in the `.bfg` 
 
 ```html
 <div class="bfg bfg--row">...</div>
-````
+```
 
-> When using `.bfg--row`, the grid system will works only if the `.bfg` width (or its parent width) is defined.
+> When using `.bfg--row`, the grid needs the `.bfg` width (or its parent width) to be defined.
 
 ```html
 <div class="bfg bfg--col">...</div>
 ```
 
-> When using `.bfg--col`, the grid system will works only if the `.bfg` height (or its parent height) is defined.
+> When using `.bfg--col`, the grid needs the `.bfg` height (or its parent height) to be defined.
 
 ### .bfg--wrap
 
@@ -64,6 +64,8 @@ To allow the `.bfg__box` to wrap as needed onto multiple lines, use the optional
 ```
 
 ### .bfg--lines-[N]
+
+**[N]** (Number):`2`, `3` or `4`.
 
 As said above, if using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
 
@@ -111,15 +113,23 @@ To add a gap between `.bfg__box`, use `.bfg--gap`.
 
 By default, `.bfg__box` and `.bfg__content` are using `overflow: auto;`.
 
-Use `.bfg--overflow` to use `overflow: visible;` instead for all boxes.
-
-In the same way, use `.bfg__box--overflow` to apply this behavior to a specific box.
+Use `.bfg--overflow` on the block to use `overflow: visible;` instead for all boxes.
 
 ```html
 <div class="bfg bfg--overflow">...</div>
 ```
 
-### .bfg--disabled
+In the same way, use `.bfg__box--overflow` on the element to apply this behavior to a specific box.
+
+```html
+...
+  <div class="bfg__box bfg_box--overflow">...</div>
+...
+```
+
+### .bfg--[B-]disabled
+
+**[B-]** (Breakpoint): `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 To disable the grid system use `.bfg--disabled`.
 
@@ -141,7 +151,11 @@ As the grid is responsive, you can disable the grid system at each breakpoint.
 
 ## .bfg__box modifiers
 
-### .bfg__box--[size]
+### .bfg__box--[B-][S]
+
+**[B-]** (Breakpoint): `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+**[S]** (Size): `1`, `2`, ..., `11`, `12`.
 
 Define the `.bfg__box` size using `.bfg__box--1`,  `.bfg__box--2`, ...,  `.bfg__box--11`,  `.bfg__box--12`.
 
@@ -237,7 +251,7 @@ To nest grids, use `.bfg` *block* on the `.bfg__box` *element*.
 
 **Example:**
 
-See below the `<div>` which have 2 behaviors:
+See below the `<div>` which have 2 roles:
 
 - `.bfg__box.bfg__box--6` as it is an *element* of the global `.bfg.bfg--col` *block*.
 - `.bfg.bfg--row` as it is a *block* of the nested `.bfg__box` *elements*.
