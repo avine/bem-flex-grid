@@ -24,7 +24,8 @@
     "sass",
     "dashboard",
     "grid",
-    "layout"
+    "layout",
+    "responsive"
   ],
   "author": "Stéphane Francel <contact@avine.io>",
   "license": "MIT",

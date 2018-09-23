@@ -63,9 +63,11 @@ To allow the `.bfg__box` to wrap as needed onto multiple lines, use the optional
 <div class="bfg bfg--wrap">...</div>
 ```
 
-### .bfg--lines-[N]
+### .bfg--[B-]lines-[N]
 
-**[N]** (Number):`2`, `3` or `4`.
+**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+**[N]** Number:`2`, `3` or `4`.
 
 As said above, if using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
 
@@ -101,6 +103,23 @@ The same pattern applies to `.bfg.bfg--wrap.bfg--col`.
 <div class="bfg bfg--col bfg--wrap bfg--lines-4">...</div>
 ```
 
+As the grid is responsive, you can change the number of lines at each breakpoint.
+
+**Example:**
+
+- Fit the boxes on 2 lines for all *screen size* (even greater than 1200px).
+- Fit the boxes on 3 lines for *large screens* (until 992px).
+- Fit the boxes on 4 lines for *small screens* (until 768px).
+
+```html
+<div class="bfg
+  bfg--lines-2
+  bfg--lg-lines-3
+  bfg--sm-lines-4">
+  ...
+</div>
+```
+
 ### .bfg--gap
 
 To add a gap between `.bfg__box`, use `.bfg--gap`.
@@ -113,13 +132,13 @@ To add a gap between `.bfg__box`, use `.bfg--gap`.
 
 By default, `.bfg__box` and `.bfg__content` are using `overflow: auto;`.
 
-Use `.bfg--overflow` on the block to use `overflow: visible;` instead for all boxes.
+Use `.bfg--overflow` on the `.bfg` block to use `overflow: visible;` instead for all boxes.
 
 ```html
 <div class="bfg bfg--overflow">...</div>
 ```
 
-In the same way, use `.bfg__box--overflow` on the element to apply this behavior to a specific box.
+In the same way, use `.bfg__box--overflow` on the `.bfg__box` element to apply this behavior to a specific box.
 
 ```html
 ...
@@ -129,13 +148,11 @@ In the same way, use `.bfg__box--overflow` on the element to apply this behavior
 
 ### .bfg--[B-]disabled
 
-**[B-]** (Breakpoint): `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 To disable the grid system use `.bfg--disabled`.
 
 As the grid is responsive, you can disable the grid system at each breakpoint.
-
-(see below for more details about responsive grid).
 
 ```html
 <div class="bfg bfg--disabled">...</div>
@@ -153,9 +170,9 @@ As the grid is responsive, you can disable the grid system at each breakpoint.
 
 ### .bfg__box--[B-][S]
 
-**[B-]** (Breakpoint): `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-**[S]** (Size): `1`, `2`, ..., `11`, `12`.
+**[S]** Size: `1`, `2`, ..., `11`, `12`.
 
 Define the `.bfg__box` size using `.bfg__box--1`,  `.bfg__box--2`, ...,  `.bfg__box--11`,  `.bfg__box--12`.
 
@@ -166,6 +183,28 @@ Define the `.bfg__box` size using `.bfg__box--1`,  `.bfg__box--2`, ...,  `.bfg__
   ...
   <div class="bfg__box bfg__box--11"></div>
   <div class="bfg__box bfg__box--12"></div>
+...
+```
+
+As the grid is responsive, you can change the `.bfg__box` size at each breakpoint.
+
+**Example:**
+
+- Use `.bfg__box--5` to set the box size to be 5/12 of the available size for all *screen size* (even greater than 1200px).
+- Add `.bfg__box--xl-6` to increase the size on *extra large screens* (until 1200px).
+- Add `.bfg__box--lg-4` to reduce the size on *large screens* (until 992px).
+- Add `.bfg__box--sm-8` to increase the size on *small screens* (until 768px).
+- Add `.bfg__box--xs-12` to increase the size on *extra small screens* (until 576px).
+
+```html
+...
+  <div class="bfg__box
+    bfg__box--5
+    bfg__box--xl-6
+    bfg__box--lg-4
+    bfg__box--sm-8
+    bfg__box--xs-12">
+  </div>
 ...
 ```
 
@@ -197,31 +236,6 @@ Here's an example when using `.bfg--col`:
   <div class="bfg__box bfg__box--4"></div>
   <div class="bfg__box"></div>
 </div>
-```
-
-### Responsive grid
-
-The grid is responsive, meaning the `.bfg__box` size can be configured to change at each breakpoint.
-
-**Example:**
-
-- Use `.bfg__box--5` to set the box size to be 5/12 of the available size for all *screen size* (even greater than 1200px).
-- Add `.bfg__box--xl-6` to increase the size on *extra large screens* (until 1200px).
-- Add `.bfg__box--lg-4` to reduce the size on *large screens* (until 992px).
-- Add `.bfg__box--sm-8` to increase the size on *small screens* (until 768px).
-- Add `.bfg__box--xs-12` to increase the size on *extra small screens* (until 576px).
-
-```html
-...
-  <div class="
-    bfg__box
-    bfg__box--5
-    bfg__box--xl-6
-    bfg__box--lg-4
-    bfg__box--sm-8
-    bfg__box--xs-12">
-  </div>
-...
 ```
 
 ## .bfg__header and .bfg__content modifiers
@@ -272,3 +286,20 @@ See below the `<div>` which have 2 roles:
   <div class="bfg__box bfg__box--3"></div>
 </div>
 ```
+
+## Install
+
+```bash
+npm install
+
+# Open showcase in your favorite browser
+npm start
+
+# Build `bem-flex-grid.css` and `bem-flex-grid.min.css` from `bem-flex-grid.scss`
+npm run build
+
+# Build `introduction.html` from `README.md`
+npm run md-to-html
+```
+
+View on [Github](https://github.com/avine/bem-flex-grid).
