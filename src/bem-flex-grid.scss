@@ -165,13 +165,6 @@ $bfg-breakpoints: (
   @include bfg-boxes(xs-);
 }
 
-.bfg--overflow .bfg__box,
-.bfg--overflow .bfg__content,
-.bfg__box--overflow,
-.bfg__box--overflow .bfg__content {
-  overflow: visible;
-}
-
 .bfg__header {
   padding: 0 $bfg-padding;
   box-sizing: border-box;
@@ -215,6 +208,13 @@ $bfg-breakpoints: (
   + .bfg__content--nopad {
     padding-top: $bfg-header-height;
   }
+}
+
+.bfg--overflow .bfg__box,
+.bfg--overflow .bfg__content,
+.bfg__box--overflow,
+.bfg__box--overflow .bfg__content {
+  overflow: visible;
 }
 
 @mixin bfg-filler($name, $fill) {
