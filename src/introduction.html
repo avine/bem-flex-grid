@@ -166,10 +166,10 @@
     &lt;!-- width is fixed at 150px --&gt;
   &lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;
-    &lt;!-- width is 4/12 of the `.bfg` width --&gt;
+    &lt;!-- width is 4/12 of the remaining space (`.bfg` width, minus 150px) --&gt;
   &lt;/div&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;!-- width is 8/12 of the `.bfg` width, minus 150px --&gt;
+  &lt;div class=&quot;bfg__box bfg__box--8&quot;&gt;
+    &lt;!-- width is 8/12 of the remaining space (`.bfg` width, minus 150px) --&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -177,7 +177,7 @@
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--fixed&quot; style=&quot;height:150px&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--8&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <h2>.bfg__header and .bfg__content modifiers</h2>

@@ -220,10 +220,10 @@ Here's an example when using `.bfg--row`:
     <!-- width is fixed at 150px -->
   </div>
   <div class="bfg__box bfg__box--4">
-    <!-- width is 4/12 of the `.bfg` width -->
+    <!-- width is 4/12 of the remaining space (`.bfg` width, minus 150px) -->
   </div>
-  <div class="bfg__box">
-    <!-- width is 8/12 of the `.bfg` width, minus 150px -->
+  <div class="bfg__box bfg__box--8">
+    <!-- width is 8/12 of the remaining space (`.bfg` width, minus 150px) -->
   </div>
 </div>
 ```
@@ -234,7 +234,7 @@ Here's an example when using `.bfg--col`:
 <div class="bfg bfg--col">
   <div class="bfg__box bfg__box--fixed" style="height:150px"></div>
   <div class="bfg__box bfg__box--4"></div>
-  <div class="bfg__box"></div>
+  <div class="bfg__box bfg__box--8"></div>
 </div>
 ```
 
