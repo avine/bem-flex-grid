@@ -2,7 +2,10 @@ $bfg-gap: 1rem !default;
 
 $bfg-padding: 0.5rem !default;
 
+$bfg-header-height: 2rem !default;
+
 $bfg-fill: (
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 2px,
   border-width: 1px,
   header-border: #d5d5d5,
@@ -17,8 +20,6 @@ $bfg-breakpoints: (
   lg: 992px,
   xl: 1200px
 ) !default;
-
-$bfg-header-height: 2rem !default;
 
 @mixin bfg-media-breakpoint-up($size) {
   @media (min-width: map-get($bfg-breakpoints, $size)) {
@@ -164,17 +165,32 @@ $bfg-header-height: 2rem !default;
   @include bfg-boxes(xs-);
 }
 
+.bfg--overflow .bfg__box,
+.bfg--overflow .bfg__content,
+.bfg__box--overflow,
+.bfg__box--overflow .bfg__content {
+  overflow: visible;
+}
+
 .bfg__header {
   padding: 0 $bfg-padding;
   box-sizing: border-box;
-  position: relative;
+  position: absolute;
   z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
   height: $bfg-header-height;
   line-height: $bfg-header-height;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.bfg--gap .bfg__header {
+  left: ($bfg-gap / 2);
+  right: ($bfg-gap / 2);
 }
 
 .bfg__content {
@@ -191,18 +207,14 @@ $bfg-header-height: 2rem !default;
   padding: 0;
 }
 
-.bfg__header + .bfg__content {
-  height: calc(100% - #{$bfg-header-height});
-  border-top: none;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
+.bfg__header {
+  + .bfg__content {
+    padding-top: ($bfg-header-height + $bfg-padding);
+  }
 
-.bfg--overflow .bfg__box,
-.bfg--overflow .bfg__content,
-.bfg__box--overflow,
-.bfg__box--overflow .bfg__content {
-  overflow: visible;
+  + .bfg__content--nopad {
+    padding-top: $bfg-header-height;
+  }
 }
 
 @mixin bfg-filler($name, $fill) {
@@ -214,6 +226,7 @@ $bfg-header-height: 2rem !default;
   }
 
   .bfg__content--#{$name} {
+    box-shadow: map-get($fill, box-shadow);
     border-radius: map-get($fill, border-radius);
     border: map-get($fill, border-width) solid map-get($fill, content-border);
     background-color: map-get($fill, content-bg);
