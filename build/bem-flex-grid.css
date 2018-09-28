@@ -548,11 +548,7 @@
 .bfg__header {
   padding: 0 0.5rem;
   box-sizing: border-box;
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   overflow: hidden;
   height: 2rem;
   line-height: 2rem;
@@ -560,15 +556,10 @@
   white-space: nowrap;
   text-overflow: ellipsis; }
 
-.bfg--gap .bfg__header {
-  left: 0.5rem;
-  right: 0.5rem; }
-
 .bfg__content {
   padding: 0.5rem;
   box-sizing: border-box;
   position: relative;
-  z-index: 1;
   overflow: auto;
   width: 100%;
   height: 100%; }
@@ -577,10 +568,10 @@
   padding: 0; }
 
 .bfg__header + .bfg__content {
-  padding-top: 2.5rem; }
-
-.bfg__header + .bfg__content--nopad {
-  padding-top: 2rem; }
+  height: calc(100% - 2rem);
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
 
 .bfg--overflow .bfg__box,
 .bfg--overflow .bfg__content,
@@ -589,13 +580,14 @@
   overflow: visible; }
 
 .bfg__header--fill {
-  border-radius: 2px 2px 0 0;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  border-radius: 3px 3px 0 0;
   border: 1px solid #d5d5d5;
   background-color: #f6f6f6;
   line-height: calc(2rem - 2px); }
 
 .bfg__content--fill {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
-  border-radius: 2px;
+  border-radius: 3px;
   border: 1px solid #ddd;
   background-color: #fff; }
