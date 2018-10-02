@@ -13,27 +13,6 @@
   <link rel="stylesheet" href="../../bem-flex-grid.ie11.scss">
 
   <script src="../demo.ts"></script>
-
-  <style>
-    .bfg__action {
-      float: right;
-      padding: 0 0.5rem;
-      line-height: calc(2rem - 2px);
-      height: 2rem;
-      box-sizing: border-box;
-      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
-      border-top-right-radius: 3px;
-      border: 1px solid #ddd;
-      border-left: none;
-      background-color: #f6f6f6;
-    }
-
-    .bfg__action + .bfg__header {
-      box-shadow: none;
-      border-top-right-radius: 0;
-      border-right: none;
-    }
-  </style>
 </head>
 <body>
   <div class="demo-source__description">
@@ -42,31 +21,32 @@
 
   <div class="bfg bfg--col bfg--gap">
     <div class="bfg__box bfg__box--3">
-      <header class="bfg__header bfg__header--fill">Header</header>
-      <div class="bfg__content bfg__content--fill"></div>
+      <header class="bfg__header bfg__header--default">Header</header>
+      <div class="bfg__content bfg__content--default"></div>
     </div>
 
     <div class="bfg__box bfg__box--6 bfg bfg--row">
       <div class="bfg__box bfg__box--3">
-        <div class="bfg__action">Action</div>
-        <header class="bfg__header bfg__header--fill">Header Header Header Header Header Header Header Header Header </header>
-        <div class="bfg__content bfg__content--fill"></div>
+        <a href="#" class="bfg__action bfg__action--default">Action 2</a>
+        <a href="#" class="bfg__action bfg__action--default">Action 1</a>
+        <header class="bfg__header bfg__header--default">Very very very long Header</header>
+        <div class="bfg__content bfg__content--default"></div>
       </div>
 
       <div class="bfg__box bfg__box--6">
-        <header class="bfg__header bfg__header--fill">Header</header>
-        <div class="bfg__content bfg__content--fill"></div>
+        <header class="bfg__header bfg__header--default">Header</header>
+        <div class="bfg__content bfg__content--default"></div>
       </div>
 
       <div class="bfg__box bfg__box--3">
-        <header class="bfg__header bfg__header--fill">Header</header>
-        <div class="bfg__content bfg__content--fill"></div>
+        <header class="bfg__header bfg__header--default">Header</header>
+        <div class="bfg__content bfg__content--default"></div>
       </div>
     </div>
 
     <div class="bfg__box bfg__box--3">
-      <header class="bfg__header bfg__header--fill">Header</header>
-      <div class="bfg__content bfg__content--fill"></div>
+      <header class="bfg__header bfg__header--default">Header</header>
+      <div class="bfg__content bfg__content--default"></div>
     </div>
   </div>
 

@@ -47,18 +47,30 @@
   ...
 &lt;/div&gt;
 </code></pre>
+<p>You can add actions to the header using the optional element <code>.bfg__action</code>.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;
+    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
+    ...
+    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
 <h2>.bfg modifiers</h2>
 <h3>.bfg--row and .bfg--col</h3>
 <p>It is required to define the direction the <code>.bfg__box</code> are placed in the <code>.bfg</code> container, using <code>.bfg--row</code> or <code>.bfg--col</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>When using <code>.bfg--row</code>, the grid needs the <code>.bfg</code> width (or its parent width) to be defined.</p>
+<p>When using <code>.bfg--row</code>, the grid needs the <code>.bfg</code> container width (or its parent width) to be defined.</p>
 </blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>When using <code>.bfg--col</code>, the grid needs the <code>.bfg</code> height (or its parent height) to be defined.</p>
+<p>When using <code>.bfg--col</code>, the grid needs the <code>.bfg</code> container height (or its parent height) to be defined.</p>
 </blockquote>
 <h3>.bfg--wrap</h3>
 <p>To allow the <code>.bfg__box</code> to wrap as needed onto multiple lines, use the optional <code>.bfg--wrap</code>.</p>
@@ -66,9 +78,9 @@
 </code></pre>
 <h3>.bfg--[B-]lines-[N]</h3>
 <p><strong>[B-]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
-<p><strong>[N]</strong> Number:<code>2</code>, <code>3</code> or <code>4</code>.</p>
+<p><strong>[N]</strong> Number: <code>2</code>, <code>3</code> or <code>4</code>.</p>
 <p>As said above, if using <code>.bfg.bfg--row.bfg--wrap</code> then the <code>.bfg__box</code> are placed in the row direction and wrapped onto multiple lines when needed.</p>
-<p>In this case the total height of all <code>.bfg__box</code> might be bigger than the <code>.bfg</code> container height itself.</p>
+<p>But in this case the total height of all <code>.bfg__box</code> might be bigger than the <code>.bfg</code> container height itself.</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code>, you can constrain them to fit into the <code>.bfg</code> container, by using <code>.bfg--lines-2</code>.</p>
 <p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> to fit exactly 3 or 4 lines respectively.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
@@ -181,11 +193,13 @@
 &lt;/div&gt;
 </code></pre>
 <h2>.bfg__header and .bfg__content modifiers</h2>
-<p>Use <code>.bfg__content.bfg__content--fill</code> to fill the box content.</p>
-<p>Use optional <code>.bfg__header.bfg__header--fill</code> to add an header to the box content.</p>
+<p>Use <code>.bfg__content.bfg__content--default</code> to fill the box content.</p>
+<p>Use the optional <code>.bfg__header.bfg__header--default</code> to add an header to the box content.</p>
+<p>Use the optional <code>.bfg__action.bfg__action--default</code> to add an action to the header.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__header bfg__header--fill&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__content bfg__content--fill&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__action bfg__action--default&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__header bfg__header--default&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__content bfg__content--default&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
 <p>Use <code>.bfg__content--nopad</code> to remove the box content padding.</p>
@@ -223,6 +237,7 @@
 npm start
 
 # Build `bem-flex-grid.css` and `bem-flex-grid.min.css` from `bem-flex-grid.scss`
+# Build `bem-flex-grid.ie11.css` and `bem-flex-grid.ie11.min.css` from `bem-flex-grid.ie11.scss`
 npm run build
 
 # Build `introduction.html` from `README.md`

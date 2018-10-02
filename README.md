@@ -37,6 +37,21 @@ You can add an header to the filled boxes using the optional element `.bfg__head
 </div>
 ```
 
+You can add actions to the header using the optional element `.bfg__action`.
+
+```html
+<div class="bfg">
+  <div class="bfg__box">
+    <div class="bfg__action"></div>
+    <div class="bfg__action"></div>
+    ...
+    <div class="bfg__header"></div>
+    <div class="bfg__content"></div>
+  </div>
+  ...
+</div>
+```
+
 ## .bfg modifiers
 
 ### .bfg--row and .bfg--col
@@ -47,13 +62,13 @@ It is required to define the direction the `.bfg__box` are placed in the `.bfg` 
 <div class="bfg bfg--row">...</div>
 ```
 
-> When using `.bfg--row`, the grid needs the `.bfg` width (or its parent width) to be defined.
+> When using `.bfg--row`, the grid needs the `.bfg` container width (or its parent width) to be defined.
 
 ```html
 <div class="bfg bfg--col">...</div>
 ```
 
-> When using `.bfg--col`, the grid needs the `.bfg` height (or its parent height) to be defined.
+> When using `.bfg--col`, the grid needs the `.bfg` container height (or its parent height) to be defined.
 
 ### .bfg--wrap
 
@@ -67,11 +82,11 @@ To allow the `.bfg__box` to wrap as needed onto multiple lines, use the optional
 
 **[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-**[N]** Number:`2`, `3` or `4`.
+**[N]** Number: `2`, `3` or `4`.
 
 As said above, if using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
 
-In this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height itself.
+But in this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height itself.
 
 If you know that there's exactly 2 lines of `.bfg__box`, you can constrain them to fit into the `.bfg` container, by using `.bfg--lines-2`.
 
@@ -240,14 +255,17 @@ Here's an example when using `.bfg--col`:
 
 ## .bfg__header and .bfg__content modifiers
 
-Use `.bfg__content.bfg__content--fill` to fill the box content.
+Use `.bfg__content.bfg__content--default` to fill the box content.
 
-Use optional `.bfg__header.bfg__header--fill` to add an header to the box content.
+Use the optional `.bfg__header.bfg__header--default` to add an header to the box content.
+
+Use the optional `.bfg__action.bfg__action--default` to add an action to the header.
 
 ```html
 ...
-  <div class="bfg__header bfg__header--fill"></div>
-  <div class="bfg__content bfg__content--fill"></div>
+  <div class="bfg__action bfg__action--default"></div>
+  <div class="bfg__header bfg__header--default"></div>
+  <div class="bfg__content bfg__content--default"></div>
 ...
 ```
 
@@ -296,6 +314,7 @@ npm install
 npm start
 
 # Build `bem-flex-grid.css` and `bem-flex-grid.min.css` from `bem-flex-grid.scss`
+# Build `bem-flex-grid.ie11.css` and `bem-flex-grid.ie11.min.css` from `bem-flex-grid.ie11.scss`
 npm run build
 
 # Build `introduction.html` from `README.md`

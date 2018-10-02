@@ -6,7 +6,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-fill: (
+$bfg-fill-default: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -167,6 +167,7 @@ $bfg-breakpoints: (
   @include bfg-boxes(xs-);
 }
 
+.bfg__action,
 .bfg__header {
   padding: 0 $bfg-padding;
   box-sizing: border-box;
@@ -177,6 +178,18 @@ $bfg-breakpoints: (
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.bfg__action {
+  float: right;
+  max-width: 25%; // Up to 4 actions per box
+
+  + .bfg__action,
+  + .bfg__header {
+    box-shadow: none;
+    border-top-right-radius: 0;
+    border-right: none;
+  }
 }
 
 .bfg__content {
@@ -207,12 +220,21 @@ $bfg-breakpoints: (
 }
 
 @mixin bfg-filler($name, $fill) {
+  .bfg__action--#{$name},
   .bfg__header--#{$name} {
     box-shadow: map-get($fill, box-shadow);
-    border-radius: map-get($fill, border-radius) map-get($fill, border-radius) 0 0;
     border: map-get($fill, border-width) solid map-get($fill, header-border);
     background-color: map-get($fill, header-bg);
     line-height: calc(#{$bfg-header-height} - #{2 * map-get($fill, border-width)});
+  }
+
+  .bfg__action--#{$name} {
+    border-top-right-radius: map-get($fill, border-radius);
+    border-left: none;
+  }
+
+  .bfg__header--#{$name} {
+    border-radius: map-get($fill, border-radius) map-get($fill, border-radius) 0 0;
   }
 
   .bfg__content--#{$name} {
@@ -223,4 +245,4 @@ $bfg-breakpoints: (
   }
 }
 
-@include bfg-filler(fill, $bfg-fill);
+@include bfg-filler(default, $bfg-fill-default);
