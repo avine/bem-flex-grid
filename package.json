@@ -8,8 +8,10 @@
     "md-to-html:watch": "node md-to-html.js watch",
     "start": "parcel src/index.html --open",
     "css": "node-sass src/bem-flex-grid.scss > build/bem-flex-grid.css",
+    "css:ie11": "node-sass src/bem-flex-grid.ie11.scss > build/bem-flex-grid.ie11.css",
     "css:min": "node-sass --output-style compressed src/bem-flex-grid.scss > build/bem-flex-grid.min.css",
-    "build": "npm run css && npm run css:min",
+    "css:min:ie11": "node-sass --output-style compressed src/bem-flex-grid.ie11.scss > build/bem-flex-grid.ie11.min.css",
+    "build": "npm run css && npm run css:min && npm run css:ie11 && npm run css:min:ie11",
     "all": "npm run md-to-html && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
