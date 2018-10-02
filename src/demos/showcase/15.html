@@ -16,17 +16,20 @@
 </head>
 <body>
   <div class="demo-source__description">
-    Use <code>.bfg__header</code> with <code>.bfg__content</code> to add an header.
+    Use <code>.bfg__header</code> with <code>.bfg__content</code> to add an header.<br>
+    Use <code>.bfg__action</code> with <code>.bfg__header</code> to add one or more actions.
   </div>
 
   <div class="bfg bfg--col bfg--gap">
     <div class="bfg__box bfg__box--3">
+      <!-- content with header -->
       <header class="bfg__header bfg__header--default">Header</header>
       <div class="bfg__content bfg__content--default"></div>
     </div>
 
     <div class="bfg__box bfg__box--6 bfg bfg--row">
       <div class="bfg__box bfg__box--3">
+        <!-- content with header and actions -->
         <a href="#" class="bfg__action bfg__action--default">Action 2</a>
         <a href="#" class="bfg__action bfg__action--default">Action 1</a>
         <header class="bfg__header bfg__header--default">Very very very long Header</header>
@@ -34,7 +37,7 @@
       </div>
 
       <div class="bfg__box bfg__box--6">
-        <header class="bfg__header bfg__header--default">Header</header>
+        <!-- content without header -->
         <div class="bfg__content bfg__content--default"></div>
       </div>
 
