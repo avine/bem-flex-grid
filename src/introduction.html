@@ -230,6 +230,73 @@
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<h2>Sass customization</h2>
+<h3>Default variables</h3>
+<pre><code class="language-scss">$bfg-gap: 1rem !default;
+
+$bfg-padding: 0.5rem !default;
+
+$bfg-header-height: 2rem !default;
+
+$bfg-fill-default: (
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
+  border-radius: 3px,
+  border-width: 1px,
+
+  header-border: #d5d5d5,
+  header-background: #f6f6f6,
+  header-forground: false,
+
+  content-border: #ddd,
+  content-background: #fff,
+  content-forground: false
+) !default;
+
+$bfg-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+</code></pre>
+<p><strong>Example:</strong></p>
+<p>To change the boxes gap, create a new file <code>my-custo-bfg.scss</code> with the following content:</p>
+<pre><code class="language-scss">// Overwrite gap
+$bfg-gap: 2rem;
+
+@import &quot;[PATH_TO]/bem-flex-grid.scss&quot;;
+</code></pre>
+<h3>Mixin</h3>
+<p>The <code>bfg-filler</code> mixin allows you to customize the content look and feel.</p>
+<pre><code class="language-scss">@mixin bfg-filler($name, $fill) { ... }
+</code></pre>
+<p><strong>Example:</strong></p>
+<p>To add a content filler of type <code>info</code>, create a new file <code>my-custo-bfg.scss</code> with the following content:</p>
+<pre><code class="language-scss">@import &quot;[PATH_TO]/bem-flex-grid.scss&quot;;
+
+// Add new filler
+@include bfg-filler(info, (
+  border-radius: 0,
+  border-width: 3px,
+
+  header-border: #90CAF9,
+  header-background: #BBDEFB,
+  header-forground: #1E88E5,
+
+  content-border: #BBDEFB,
+  content-background: #E3F2FD,
+));
+</code></pre>
+<blockquote>
+<p>Notice that omitted map keys (<code>box-shadow</code> and <code>content-forground</code> in this example) fall back to their default value.</p>
+</blockquote>
+<p>Now, you can use the new content filler of type <code>info</code>:</p>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg__action bfg__action--info&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__header bfg__header--info&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__content bfg__content--info&quot;&gt;&lt;/div&gt;
+...
+</code></pre>
 <h2>Install</h2>
 <pre><code class="language-bash">npm install
 

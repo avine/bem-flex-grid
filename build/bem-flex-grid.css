@@ -300,7 +300,7 @@
   .bfg__action + .bfg__header {
     box-shadow: none;
     border-top-right-radius: 0;
-    border-right: none; }
+    border-right-width: 0; }
 
 .bfg__content {
   padding: 0.5rem;
@@ -334,7 +334,7 @@
 
 .bfg__action--default {
   border-top-right-radius: 3px;
-  border-left: none; }
+  border-left-width: 0; }
 
 .bfg__header--default {
   border-radius: 3px 3px 0 0; }

@@ -10,10 +10,14 @@ $bfg-fill-default: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
+
   header-border: #d5d5d5,
-  header-bg: #f6f6f6,
+  header-background: #f6f6f6,
+  header-forground: false,
+
   content-border: #ddd,
-  content-bg: #fff
+  content-background: #fff,
+  content-forground: false
 ) !default;
 
 $bfg-breakpoints: (
@@ -94,7 +98,7 @@ $bfg-breakpoints: (
   .bfg__box--#{$size + 12} { flex-basis: 100%; }
 
   .bfg--row {
-    @if ($ie11-support) {
+    @if $ie11-support {
       > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
       > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
       > .bfg__box--#{$size + 3} { max-width: 25%; }
@@ -115,7 +119,7 @@ $bfg-breakpoints: (
   }
 
   .bfg--col {
-    @if ($ie11-support) {
+    @if $ie11-support {
       > .bfg__box--#{$size + 1} { max-height: (100% / 12); }
       > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
       > .bfg__box--#{$size + 3} { max-height: 25%; }
@@ -188,7 +192,7 @@ $bfg-breakpoints: (
   + .bfg__header {
     box-shadow: none;
     border-top-right-radius: 0;
-    border-right: none;
+    border-right-width: 0;
   }
 }
 
@@ -220,17 +224,20 @@ $bfg-breakpoints: (
 }
 
 @mixin bfg-filler($name, $fill) {
+  $fill: map-merge($bfg-fill-default, $fill);
+
   .bfg__action--#{$name},
   .bfg__header--#{$name} {
     box-shadow: map-get($fill, box-shadow);
     border: map-get($fill, border-width) solid map-get($fill, header-border);
-    background-color: map-get($fill, header-bg);
+    background-color: map-get($fill, header-background);
+    @if map-get($fill, header-forground) { color: map-get($fill, header-forground); }
     line-height: calc(#{$bfg-header-height} - #{2 * map-get($fill, border-width)});
   }
 
   .bfg__action--#{$name} {
     border-top-right-radius: map-get($fill, border-radius);
-    border-left: none;
+    border-left-width: 0;
   }
 
   .bfg__header--#{$name} {
@@ -241,7 +248,8 @@ $bfg-breakpoints: (
     box-shadow: map-get($fill, box-shadow);
     border-radius: map-get($fill, border-radius);
     border: map-get($fill, border-width) solid map-get($fill, content-border);
-    background-color: map-get($fill, content-bg);
+    background-color: map-get($fill, content-background);
+    @if map-get($fill, content-forground) { color: map-get($fill, content-forground); }
   }
 }
 

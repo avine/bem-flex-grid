@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" href="../../favicon.ico">
   <link rel="stylesheet" href="../demo.scss">
-  <link rel="stylesheet" href="../../bem-flex-grid.ie11.scss">
+  <link rel="stylesheet" href="15.scss">
 
   <script src="../demo.ts"></script>
 </head>
@@ -23,15 +23,15 @@
   <div class="bfg bfg--col bfg--gap">
     <div class="bfg__box bfg__box--3">
       <!-- content with header -->
-      <header class="bfg__header bfg__header--default">Header</header>
-      <div class="bfg__content bfg__content--default"></div>
+      <header class="bfg__header bfg__header--error">Header</header>
+      <div class="bfg__content bfg__content--error"></div>
     </div>
 
     <div class="bfg__box bfg__box--6 bfg bfg--row">
       <div class="bfg__box bfg__box--3">
         <!-- content with header and actions -->
-        <a href="#" class="bfg__action bfg__action--default">Action 2</a>
-        <a href="#" class="bfg__action bfg__action--default">Action 1</a>
+        <div class="bfg__action bfg__action--default"><a href="#action-2">Action 2</a></div>
+        <div class="bfg__action bfg__action--default"><a href="#action-1">Action 1</a></div>
         <header class="bfg__header bfg__header--default">Very very very long Header</header>
         <div class="bfg__content bfg__content--default"></div>
       </div>
@@ -42,14 +42,14 @@
       </div>
 
       <div class="bfg__box bfg__box--3">
-        <header class="bfg__header bfg__header--default">Header</header>
-        <div class="bfg__content bfg__content--default"></div>
+        <header class="bfg__header bfg__header--info">Header</header>
+        <div class="bfg__content bfg__content--info"></div>
       </div>
     </div>
 
     <div class="bfg__box bfg__box--3">
-      <header class="bfg__header bfg__header--default">Header</header>
-      <div class="bfg__content bfg__content--default"></div>
+      <header class="bfg__header bfg__header--warning">Header</header>
+      <div class="bfg__content bfg__content--warning"></div>
     </div>
   </div>
 

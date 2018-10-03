@@ -305,6 +305,91 @@ See below the `<div>` which have 2 roles:
 </div>
 ```
 
+## Sass customization
+
+### Default variables
+
+```scss
+$bfg-gap: 1rem !default;
+
+$bfg-padding: 0.5rem !default;
+
+$bfg-header-height: 2rem !default;
+
+$bfg-fill-default: (
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
+  border-radius: 3px,
+  border-width: 1px,
+
+  header-border: #d5d5d5,
+  header-background: #f6f6f6,
+  header-forground: false,
+
+  content-border: #ddd,
+  content-background: #fff,
+  content-forground: false
+) !default;
+
+$bfg-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+```
+
+**Example:**
+
+To change the boxes gap, create a new file `my-custo-bfg.scss` with the following content:
+
+```scss
+// Overwrite gap
+$bfg-gap: 2rem;
+
+@import "[PATH_TO]/bem-flex-grid.scss";
+```
+
+### Mixin
+
+The `bfg-filler` mixin allows you to customize the content look and feel.
+
+```scss
+@mixin bfg-filler($name, $fill) { ... }
+```
+
+**Example:**
+
+To add a content filler of type `info`, create a new file `my-custo-bfg.scss` with the following content:
+
+```scss
+@import "[PATH_TO]/bem-flex-grid.scss";
+
+// Add new filler
+@include bfg-filler(info, (
+  border-radius: 0,
+  border-width: 3px,
+
+  header-border: #90CAF9,
+  header-background: #BBDEFB,
+  header-forground: #1E88E5,
+
+  content-border: #BBDEFB,
+  content-background: #E3F2FD,
+));
+```
+
+> Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value.
+
+Now, you can use the new content filler of type `info`:
+
+```html
+...
+  <div class="bfg__action bfg__action--info"></div>
+  <div class="bfg__header bfg__header--info"></div>
+  <div class="bfg__content bfg__content--info"></div>
+...
+```
+
 ## Install
 
 ```bash
