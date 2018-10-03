@@ -38,6 +38,8 @@ const mdToHtml = () => {
 <body class="markdown-body">
 
 ${md.render(markdown)}
+<p><br>View on <a href="https://github.com/avine/bem-flex-grid">Github</a>.</p>
+
 </body>
 </html>`;
 

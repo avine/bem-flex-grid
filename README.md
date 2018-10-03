@@ -405,5 +405,3 @@ npm run build
 # Build `introduction.html` from `README.md`
 npm run md-to-html
 ```
-
-View on [Github](https://github.com/avine/bem-flex-grid).
