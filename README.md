@@ -330,6 +330,8 @@ $bfg-fill-default: (
   content-forground: false
 ) !default;
 
+$bfg-fill-default-included: true;
+
 $bfg-breakpoints: (
   xs: 576px,
   sm: 768px,
