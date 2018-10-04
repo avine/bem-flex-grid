@@ -108,11 +108,11 @@ const texts = [
 
 let textIndex = -1;
 
-const getText = (addColor = false) => {
+const getText = (color = true) => {
   textIndex = (textIndex + 1) % texts.length;
   const text = texts[textIndex];
   const css = ['demo-text'];
-  if (addColor) {
+  if (color) {
     css.push(`demo-text__bg-${textIndex + 1}`);
   }
   return `<div class="${css.join(' ')}">${text} ${text}</div>`;
@@ -120,11 +120,17 @@ const getText = (addColor = false) => {
 
 const getContainer = () => '<div class="demo-container" title="Switch size"></div>';
 
-const fillElement = (element) => {
+interface IFillGridOptions {
+  textColor: boolean;
+}
+
+const fillGridOptions: IFillGridOptions = { textColor: true };
+
+const fillElement = (element: Element, options = { ...fillGridOptions }) => {
   if (!element.childElementCount) {
     switch (fillType) {
       case 'text':
-        element.innerHTML = `${getText()}`;
+        element.innerHTML = `${getText(options.textColor)}`;
         break;
       case 'container':
         element.innerHTML = getContainer();
@@ -133,9 +139,10 @@ const fillElement = (element) => {
   }
 };
 
-const fillGrid = () => {
-  forEach(document.querySelectorAll('.bfg__box'), fillElement);
-  forEach(document.querySelectorAll('.bfg__content'), fillElement);
+const fillGrid = (options: Partial<IFillGridOptions> = {}) => {
+  const opts: IFillGridOptions = { ...fillGridOptions, ...options };
+  forEach<Element>(document.querySelectorAll('.bfg__box'), (element) => fillElement(element, opts));
+  forEach<Element>(document.querySelectorAll('.bfg__content'), (element) => fillElement(element, opts));
 };
 
 window.addEventListener('click', (event) => {
