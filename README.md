@@ -37,7 +37,7 @@ You can add an header to the filled boxes using the optional element `.bfg__head
 </div>
 ```
 
-You can add actions to the header using the optional element `.bfg__action`.
+You can add multiple actions to the header using the optional element `.bfg__action`.
 
 ```html
 <div class="bfg">
@@ -84,9 +84,9 @@ To allow the `.bfg__box` to wrap as needed onto multiple lines, use the optional
 
 **[N]** Number: `2`, `3` or `4`.
 
-As said above, if using `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
+As said above, if you use `.bfg.bfg--row.bfg--wrap` then the `.bfg__box` are placed in the row direction and wrapped onto multiple lines when needed.
 
-But in this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height itself.
+But in this case the total height of all `.bfg__box` might be bigger than the `.bfg` container height itself!
 
 If you know that there's exactly 2 lines of `.bfg__box`, you can constrain them to fit into the `.bfg` container, by using `.bfg--lines-2`.
 
@@ -143,21 +143,29 @@ To add a gap between `.bfg__box`, use `.bfg--gap`.
 <div class="bfg bfg--gap">...</div>
 ```
 
-### .bfg--overflow
+### .bfg--box-overflow and .bfg--content-overflow
 
-By default, `.bfg__box` and `.bfg__content` are using `overflow: auto;`.
+By default, `.bfg__box` and `.bfg__content` use `overflow: auto;`.
 
-Use `.bfg--overflow` on the `.bfg` block to use `overflow: visible;` instead for all boxes.
+Use `.bfg--box-overflow` on the `.bfg` block to apply `overflow: visible;` instead on all `.bfg__box` elements.
 
 ```html
-<div class="bfg bfg--overflow">...</div>
+<div class="bfg bfg--box-overflow">...</div>
 ```
 
-In the same way, use `.bfg__box--overflow` on the `.bfg__box` element to apply this behavior to a specific box.
+Use `.bfg--content-overflow` on the `.bfg` block to apply `overflow: visible;` instead on all `.bfg__content` elements.
+
+```html
+<div class="bfg bfg--content-overflow">...</div>
+```
+
+> In the same way, use `.bfg__box--overflow` on the `.bfg__box` element and `.bfg__content--overflow` on the `.bfg__content` element to apply this behavior to a specific element.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--overflow">...</div>
+  <div class="bfg__box bfg__box--overflow">
+    <div class="bfg__content bfg__content--overflow">...</div>
+  </div>
 ...
 ```
 
@@ -253,13 +261,28 @@ Here's an example when using `.bfg--col`:
 </div>
 ```
 
-## .bfg__header and .bfg__content modifiers
+### .bfg__box--overflow
+
+By default, `.bfg__box` use `overflow: auto;`.
+Use `.bfg__box--overflow` to apply `overflow: visible;` instead.
+
+```html
+...
+  <div class="bfg__box bfg__box--overflow">...</div>
+...
+```
+
+## .bfg__action, .bfg__header and .bfg__content modifiers
+
+### .bfg__action--[N], .bfg__header--[N], .bfg__content--[N]
+
+**[N]** Name: `default` or any string.
 
 Use `.bfg__content.bfg__content--default` to fill the box content.
 
-Use the optional `.bfg__header.bfg__header--default` to add an header to the box content.
+Use `.bfg__header.bfg__header--default` to fill the box header.
 
-Use the optional `.bfg__action.bfg__action--default` to add an action to the header.
+Use `.bfg__action.bfg__action--default` to fill the box action.
 
 ```html
 ...
@@ -269,6 +292,10 @@ Use the optional `.bfg__action.bfg__action--default` to add an action to the hea
 ...
 ```
 
+> See below the Sass mixin `bfg-filler` to create new names.
+
+### .bfg__content--nopad
+
 Use `.bfg__content--nopad` to remove the box content padding.
 
 ```html
@@ -277,9 +304,20 @@ Use `.bfg__content--nopad` to remove the box content padding.
 ...
 ```
 
-## Nested .bfg
+### .bfg__content--overflow
 
-To nest grids, use `.bfg` *block* on the `.bfg__box` *element*.
+By default, `.bfg__content` use `overflow: auto;`.
+Use `.bfg__content--overflow` to apply `overflow: visible;` instead.
+
+```html
+...
+  <div class="bfg__content bfg__content--overflow">...</div>
+...
+```
+
+## Nested grid
+
+To nest grid, use `.bfg` *block* on the `.bfg__box` *element*.
 
 **Example:**
 

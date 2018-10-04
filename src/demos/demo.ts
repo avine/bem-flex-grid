@@ -4,7 +4,7 @@ import { highlight, languages } from 'prismjs';
 
 const showcase = () => {
   const element = document.getElementById('demo-showcase');
-  element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--overflow bfg--sm-disabled';
+  element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--box-overflow bfg--sm-disabled';
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="bfg__box bfg__box--6">

@@ -218,10 +218,10 @@ $bfg-breakpoints: (
   border-top-right-radius: 0;
 }
 
-.bfg--overflow .bfg__box,
-.bfg--overflow .bfg__content,
+.bfg--box-overflow .bfg__box,
+.bfg--content-overflow .bfg__content,
 .bfg__box--overflow,
-.bfg__box--overflow .bfg__content {
+.bfg__content--overflow {
   overflow: visible;
 }
 

@@ -583,10 +583,10 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-.bfg--overflow .bfg__box,
-.bfg--overflow .bfg__content,
+.bfg--box-overflow .bfg__box,
+.bfg--content-overflow .bfg__content,
 .bfg__box--overflow,
-.bfg__box--overflow .bfg__content {
+.bfg__content--overflow {
   overflow: visible; }
 
 .bfg__action--default,

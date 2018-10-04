@@ -47,7 +47,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can add actions to the header using the optional element <code>.bfg__action</code>.</p>
+<p>You can add multiple actions to the header using the optional element <code>.bfg__action</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
@@ -79,8 +79,8 @@
 <h3>.bfg--[B-]lines-[N]</h3>
 <p><strong>[B-]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p><strong>[N]</strong> Number: <code>2</code>, <code>3</code> or <code>4</code>.</p>
-<p>As said above, if using <code>.bfg.bfg--row.bfg--wrap</code> then the <code>.bfg__box</code> are placed in the row direction and wrapped onto multiple lines when needed.</p>
-<p>But in this case the total height of all <code>.bfg__box</code> might be bigger than the <code>.bfg</code> container height itself.</p>
+<p>As said above, if you use <code>.bfg.bfg--row.bfg--wrap</code> then the <code>.bfg__box</code> are placed in the row direction and wrapped onto multiple lines when needed.</p>
+<p>But in this case the total height of all <code>.bfg__box</code> might be bigger than the <code>.bfg</code> container height itself!</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code>, you can constrain them to fit into the <code>.bfg</code> container, by using <code>.bfg--lines-2</code>.</p>
 <p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> to fit exactly 3 or 4 lines respectively.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
@@ -114,14 +114,21 @@
 <p>To add a gap between <code>.bfg__box</code>, use <code>.bfg--gap</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--overflow</h3>
-<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> are using <code>overflow: auto;</code>.</p>
-<p>Use <code>.bfg--overflow</code> on the <code>.bfg</code> block to use <code>overflow: visible;</code> instead for all boxes.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--overflow&quot;&gt;...&lt;/div&gt;
+<h3>.bfg--box-overflow and .bfg--content-overflow</h3>
+<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> use <code>overflow: auto;</code>.</p>
+<p>Use <code>.bfg--box-overflow</code> on the <code>.bfg</code> block to apply <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>In the same way, use <code>.bfg__box--overflow</code> on the <code>.bfg__box</code> element to apply this behavior to a specific box.</p>
+<p>Use <code>.bfg--content-overflow</code> on the <code>.bfg</code> block to apply <code>overflow: visible;</code> instead on all <code>.bfg__content</code> elements.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--content-overflow&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>In the same way, use <code>.bfg__box--overflow</code> on the <code>.bfg__box</code> element and <code>.bfg__content--overflow</code> on the <code>.bfg__content</code> element to apply this behavior to a specific element.</p>
+</blockquote>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;
+    &lt;div class=&quot;bfg__content bfg__content--overflow&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
 ...
 </code></pre>
 <h3>.bfg--[B-]disabled</h3>
@@ -192,23 +199,43 @@
   &lt;div class=&quot;bfg__box bfg__box--8&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h2>.bfg__header and .bfg__content modifiers</h2>
+<h3>.bfg__box--overflow</h3>
+<p>By default, <code>.bfg__box</code> use <code>overflow: auto;</code>.
+Use <code>.bfg__box--overflow</code> to apply <code>overflow: visible;</code> instead.</p>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;...&lt;/div&gt;
+...
+</code></pre>
+<h2>.bfg__action, .bfg__header and .bfg__content modifiers</h2>
+<h3>.bfg__action--[N], .bfg__header--[N], .bfg__content--[N]</h3>
+<p><strong>[N]</strong> Name: <code>default</code> or any string.</p>
 <p>Use <code>.bfg__content.bfg__content--default</code> to fill the box content.</p>
-<p>Use the optional <code>.bfg__header.bfg__header--default</code> to add an header to the box content.</p>
-<p>Use the optional <code>.bfg__action.bfg__action--default</code> to add an action to the header.</p>
+<p>Use <code>.bfg__header.bfg__header--default</code> to fill the box header.</p>
+<p>Use <code>.bfg__action.bfg__action--default</code> to fill the box action.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__action bfg__action--default&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__header bfg__header--default&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__content bfg__content--default&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
+<blockquote>
+<p>See below the Sass mixin <code>bfg-filler</code> to create new names.</p>
+</blockquote>
+<h3>.bfg__content--nopad</h3>
 <p>Use <code>.bfg__content--nopad</code> to remove the box content padding.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__content bfg__content--nopad&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
-<h2>Nested .bfg</h2>
-<p>To nest grids, use <code>.bfg</code> <em>block</em> on the <code>.bfg__box</code> <em>element</em>.</p>
+<h3>.bfg__content--overflow</h3>
+<p>By default, <code>.bfg__content</code> use <code>overflow: auto;</code>.
+Use <code>.bfg__content--overflow</code> to apply <code>overflow: visible;</code> instead.</p>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg__content bfg__content--overflow&quot;&gt;...&lt;/div&gt;
+...
+</code></pre>
+<h2>Nested grid</h2>
+<p>To nest grid, use <code>.bfg</code> <em>block</em> on the <code>.bfg__box</code> <em>element</em>.</p>
 <p><strong>Example:</strong></p>
 <p>See below the <code>&lt;div&gt;</code> which have 2 roles:</p>
 <ul>

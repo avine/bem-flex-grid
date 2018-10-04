@@ -36,6 +36,7 @@
   },
   "homepage": "https://github.com/avine/bem-flex-grid#readme",
   "devDependencies": {
+    "@types/markdown-it": "0.0.5",
     "@types/prismjs": "^1.9.0",
     "markdown-it": "^8.4.2",
     "node-sass": "^4.9.3",
