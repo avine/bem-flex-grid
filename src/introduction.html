@@ -30,7 +30,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can fill the boxes using the optional <em>content</em> element <code>.bfg__content</code>.</p>
+<p>You can fill the boxes using the optional <code>.bfg__content</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
@@ -38,7 +38,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can add an header to the content using the optional <em>header</em> element <code>.bfg__header</code>.</p>
+<p>You can add an header to the content using the optional <code>.bfg__header</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
@@ -47,7 +47,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can add multiple actions to the header using the optional <em>action</em> element <code>.bfg__action</code>.</p>
+<p>You can add multiple actions to the header using the optional <code>.bfg__action</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
@@ -61,16 +61,16 @@
 </code></pre>
 <h2>.bfg modifiers</h2>
 <h3>.bfg--row and .bfg--col</h3>
-<p>It is required to define the direction the <code>.bfg__box</code> elements are placed in the <code>.bfg</code> block, using modifiers <code>.bfg--row</code> or <code>.bfg--col</code>.</p>
+<p>It is required to define the direction the <code>.bfg__box</code> elements are placed in the <code>.bfg</code> block, using <code>.bfg--row</code> or <code>.bfg--col</code> modifiers.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>When using <em>row</em> modifier <code>.bfg--row</code>, the grid needs the <code>.bfg</code> block width (or its parent width) to be defined.</p>
+<p>When using <code>.bfg--row</code> modifier, the grid needs the <code>.bfg</code> block width (or its parent width) to be defined.</p>
 </blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>When using <em>column</em> modifier <code>.bfg--col</code>, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined.</p>
+<p>When using <code>.bfg--col</code> modifier, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined.</p>
 </blockquote>
 <h3>.bfg--wrap</h3>
 <p>To allow <code>.bfg__box</code> elements to wrap as needed onto multiple lines, use the optional <code>.bfg--wrap</code> modifier.</p>
@@ -79,7 +79,7 @@
 <h3>.bfg--[B-]lines-[N]</h3>
 <p><strong>[B-]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p><strong>[N]</strong> Number: <code>2</code>, <code>3</code> or <code>4</code>.</p>
-<p>As said above, if you use classes <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
+<p>As said above, if you use the selector <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
 <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
 <p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit exactly 3 or 4 lines respectively.</p>
@@ -89,7 +89,7 @@
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>The same pattern applies to the classes <code>.bfg.bfg--wrap.bfg--col</code>.</p>
+<p>The same pattern applies to the selector <code>.bfg.bfg--wrap.bfg--col</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
@@ -115,7 +115,7 @@
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <h3>.bfg--box-overflow and .bfg--content-overflow</h3>
-<p>By default, <code>.bfg__box</code> elements and <code>.bfg__content</code> elements use the rule <code>overflow: auto;</code>.</p>
+<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the rule <code>overflow: auto;</code>.</p>
 <p>Use <code>.bfg--box-overflow</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -209,9 +209,9 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
 <h2>.bfg__action, .bfg__header and .bfg__content modifiers</h2>
 <h3>.bfg__action--[N], .bfg__header--[N], .bfg__content--[N]</h3>
 <p><strong>[N]</strong> Name: <code>default</code> or any string.</p>
-<p>Use classes <code>.bfg__content.bfg__content--default</code> to fill the box content.</p>
-<p>Use classes <code>.bfg__header.bfg__header--default</code> to fill the box header.</p>
-<p>Use classes <code>.bfg__action.bfg__action--default</code> to fill the box action.</p>
+<p>Use selector <code>.bfg__content.bfg__content--default</code> to fill the box content using the default look and feel.</p>
+<p>Use selector <code>.bfg__header.bfg__header--default</code> to fill the box header.</p>
+<p>Use selector <code>.bfg__action.bfg__action--default</code> to fill the box action.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__action bfg__action--default&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__header bfg__header--default&quot;&gt;&lt;/div&gt;
@@ -235,7 +235,7 @@ Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overfl
 ...
 </code></pre>
 <h2>Nested grid</h2>
-<p>To nest grids, use classes <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
+<p>To nest grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
 <p><strong>Example:</strong></p>
 <p>See below the <code>&lt;div&gt;</code> that has both roles:</p>
 <ul>

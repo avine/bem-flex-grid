@@ -14,7 +14,7 @@ At core the grid system consists of one block `.bfg` and one element `.bfg__box`
 </div>
 ```
 
-You can fill the boxes using the optional *content* element `.bfg__content`.
+You can fill the boxes using the optional `.bfg__content` element.
 
 ```html
 <div class="bfg">
@@ -25,7 +25,7 @@ You can fill the boxes using the optional *content* element `.bfg__content`.
 </div>
 ```
 
-You can add an header to the content using the optional *header* element `.bfg__header`.
+You can add an header to the content using the optional `.bfg__header` element.
 
 ```html
 <div class="bfg">
@@ -37,7 +37,7 @@ You can add an header to the content using the optional *header* element `.bfg__
 </div>
 ```
 
-You can add multiple actions to the header using the optional *action* element `.bfg__action`.
+You can add multiple actions to the header using the optional `.bfg__action` element.
 
 ```html
 <div class="bfg">
@@ -56,19 +56,19 @@ You can add multiple actions to the header using the optional *action* element `
 
 ### .bfg--row and .bfg--col
 
-It is required to define the direction the `.bfg__box` elements are placed in the `.bfg` block, using modifiers `.bfg--row` or `.bfg--col`.
+It is required to define the direction the `.bfg__box` elements are placed in the `.bfg` block, using `.bfg--row` or `.bfg--col` modifiers.
 
 ```html
 <div class="bfg bfg--row">...</div>
 ```
 
-> When using *row* modifier `.bfg--row`, the grid needs the `.bfg` block width (or its parent width) to be defined.
+> When using `.bfg--row` modifier, the grid needs the `.bfg` block width (or its parent width) to be defined.
 
 ```html
 <div class="bfg bfg--col">...</div>
 ```
 
-> When using *column* modifier `.bfg--col`, the grid needs the `.bfg` block height (or its parent height) to be defined.
+> When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined.
 
 ### .bfg--wrap
 
@@ -84,7 +84,7 @@ To allow `.bfg__box` elements to wrap as needed onto multiple lines, use the opt
 
 **[N]** Number: `2`, `3` or `4`.
 
-As said above, if you use classes `.bfg.bfg--row.bfg--wrap` then `.bfg__box` elements are placed in the row direction and wrapped onto multiple lines when needed.
+As said above, if you use the selector `.bfg.bfg--row.bfg--wrap` then `.bfg__box` elements are placed in the row direction and wrapped onto multiple lines when needed.
 
 But in this case the total height of all `.bfg__box` elements might be bigger than the `.bfg` block height itself!
 
@@ -104,7 +104,7 @@ In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit exactly
 <div class="bfg bfg--row bfg--wrap bfg--lines-4">...</div>
 ```
 
-The same pattern applies to the classes `.bfg.bfg--wrap.bfg--col`.
+The same pattern applies to the selector `.bfg.bfg--wrap.bfg--col`.
 
 ```html
 <div class="bfg bfg--col bfg--wrap bfg--lines-2">...</div>
@@ -145,7 +145,7 @@ To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 
 ### .bfg--box-overflow and .bfg--content-overflow
 
-By default, `.bfg__box` elements and `.bfg__content` elements use the rule `overflow: auto;`.
+By default, `.bfg__box` and `.bfg__content` elements use the rule `overflow: auto;`.
 
 Use `.bfg--box-overflow` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__box` elements.
 
@@ -278,11 +278,11 @@ Use `.bfg__box--overflow` modifier to apply the rule `overflow: visible;` instea
 
 **[N]** Name: `default` or any string.
 
-Use classes `.bfg__content.bfg__content--default` to fill the box content.
+Use selector `.bfg__content.bfg__content--default` to fill the box content using the default look and feel.
 
-Use classes `.bfg__header.bfg__header--default` to fill the box header.
+Use selector `.bfg__header.bfg__header--default` to fill the box header.
 
-Use classes `.bfg__action.bfg__action--default` to fill the box action.
+Use selector `.bfg__action.bfg__action--default` to fill the box action.
 
 ```html
 ...
@@ -317,7 +317,7 @@ Use `.bfg__content--overflow` modifier to apply the rule `overflow: visible;` in
 
 ## Nested grid
 
-To nest grids, use classes `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
+To nest grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
 
 **Example:**
 
