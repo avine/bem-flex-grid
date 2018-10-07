@@ -146,6 +146,14 @@ To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 <div class="bfg bfg--gap">...</div>
 ```
 
+### .bfg--justify-[J], .bfg--align-[A]
+
+**[J]** Justify: `start`, `center`, `end`, `between`, `around`.
+
+**[A]** Align: `start`, `center`, `end`.
+
+TODO... Give an explanation...
+
 ### .bfg--box-overflow and .bfg--content-overflow
 
 By default, `.bfg__box` and `.bfg__content` elements use the rule `overflow: auto;`.
