@@ -118,10 +118,34 @@ Ideally the grid parent node should have a padding equal to the gap.</p>
 </blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--justify-[J], .bfg--align-[A]</h3>
-<p><strong>[J]</strong> Justify: <code>start</code>, <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
-<p><strong>[A]</strong> Align: <code>start</code>, <code>center</code>, <code>end</code>.</p>
-<p>TODO... Give an explanation...</p>
+<h3>.bfg--main-[P]</h3>
+<p><strong>[P]</strong> Position: <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
+<p>Justify content along the &quot;main&quot; axis using <code>.bfg--main-*</code> modifiers.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;...&lt;/div&gt;&lt;!-- default grid behavior is like: `.bfg--main-start` --&gt;
+
+&lt;div class=&quot;bfg bfg--main-center&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--main-end&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--main-between&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--main-around&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<blockquote>
+<p>This is relevant only when the total size of the boxes along a line is less than <code>12</code>.
+Then you can choose the distribution mode of the remaining space.</p>
+</blockquote>
+<h3>.bfg--cross-[P]</h3>
+<p><strong>[P]</strong> Position: <code>start</code>, <code>center</code>, <code>end</code>.</p>
+<p>Align items along the &quot;cross&quot; axis using <code>.bfg--cross-*</code> modifiers.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;...&lt;/div&gt;&lt;!-- default grid behavior is like: `.bfg--cross-stretch` --&gt;
+
+&lt;div class=&quot;bfg bfg--cross-start&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--cross-center&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--cross-end&quot;&gt;...&lt;/div&gt;
+</code></pre>
 <h3>.bfg--box-overflow and .bfg--content-overflow</h3>
 <p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the rule <code>overflow: auto;</code>.</p>
 <p>Use <code>.bfg--box-overflow</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>

@@ -1,5 +1,7 @@
 .bfg {
   display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
   height: 100%; }
   .bfg .bfg {
     height: auto; }
@@ -20,28 +22,25 @@
 .bfg--wrap {
   flex-wrap: wrap; }
 
-.bfg--justify-start {
-  justify-content: flex-start; }
-
-.bfg--justify-center {
+.bfg--main-center {
   justify-content: center; }
 
-.bfg--justify-end {
+.bfg--main-end {
   justify-content: flex-end; }
 
-.bfg--justify-between {
+.bfg--main-between {
   justify-content: space-between; }
 
-.bfg--justify-around {
+.bfg--main-around {
   justify-content: space-around; }
 
-.bfg--align-start {
+.bfg--cross-start {
   align-items: flex-start; }
 
-.bfg--align-center {
+.bfg--cross-center {
   align-items: center; }
 
-.bfg--align-end {
+.bfg--cross-end {
   align-items: flex-end; }
 
 .bfg__box {

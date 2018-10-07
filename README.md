@@ -146,13 +146,42 @@ To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 <div class="bfg bfg--gap">...</div>
 ```
 
-### .bfg--justify-[J], .bfg--align-[A]
+### .bfg--main-[P]
 
-**[J]** Justify: `start`, `center`, `end`, `between`, `around`.
+**[P]** Position: `center`, `end`, `between`, `around`.
 
-**[A]** Align: `start`, `center`, `end`.
+Justify content along the "main" axis using `.bfg--main-*` modifiers.
 
-TODO... Give an explanation...
+```html
+<div class="bfg">...</div><!-- default grid behavior is like: `.bfg--main-start` -->
+
+<div class="bfg bfg--main-center">...</div>
+
+<div class="bfg bfg--main-end">...</div>
+
+<div class="bfg bfg--main-between">...</div>
+
+<div class="bfg bfg--main-around">...</div>
+```
+
+> This is relevant only when the total size of the boxes along a line is less than `12`.
+> Then you can choose the distribution mode of the remaining space.
+
+### .bfg--cross-[P]
+
+**[P]** Position: `start`, `center`, `end`.
+
+Align items along the "cross" axis using `.bfg--cross-*` modifiers.
+
+```html
+<div class="bfg">...</div><!-- default grid behavior is like: `.bfg--cross-stretch` -->
+
+<div class="bfg bfg--cross-start">...</div>
+
+<div class="bfg bfg--cross-center">...</div>
+
+<div class="bfg bfg--cross-end">...</div>
+```
 
 ### .bfg--box-overflow and .bfg--content-overflow
 
