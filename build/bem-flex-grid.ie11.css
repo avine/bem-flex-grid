@@ -26,6 +26,12 @@
   overflow: auto;
   box-sizing: border-box; }
 
+.bfg--row > .bfg__box {
+  max-width: 100%; }
+
+.bfg--col > .bfg__box {
+  max-height: 100%; }
+
 .bfg__box--fixed {
   flex: 0 0 auto; }
 
