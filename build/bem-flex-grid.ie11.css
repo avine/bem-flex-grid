@@ -20,6 +20,30 @@
 .bfg--wrap {
   flex-wrap: wrap; }
 
+.bfg--justify-start {
+  justify-content: flex-start; }
+
+.bfg--justify-center {
+  justify-content: center; }
+
+.bfg--justify-end {
+  justify-content: flex-end; }
+
+.bfg--justify-between {
+  justify-content: space-between; }
+
+.bfg--justify-around {
+  justify-content: space-around; }
+
+.bfg--align-start {
+  align-items: flex-start; }
+
+.bfg--align-center {
+  align-items: center; }
+
+.bfg--align-end {
+  align-items: flex-end; }
+
 .bfg__box {
   flex: 0 1 100%;
   position: relative;

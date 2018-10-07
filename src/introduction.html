@@ -112,6 +112,10 @@
 </code></pre>
 <h3>.bfg--gap</h3>
 <p>To add a gap between <code>.bfg__box</code> elements, use <code>.bfg--gap</code> modifier.</p>
+<blockquote>
+<p>In this case, the <code>.bfg</code> block have left and right negative margins equal to half the value of the gap.
+Ideally the grid parent node should have a padding equal to the gap.</p>
+</blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <h3>.bfg--box-overflow and .bfg--content-overflow</h3>
