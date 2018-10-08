@@ -1,8 +1,10 @@
 @import "./variables.scss";
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+
 html {
   color: #555;
-  font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Verdana, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   line-height: 1.375em;
 }
 

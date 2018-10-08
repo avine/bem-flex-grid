@@ -9,7 +9,7 @@ h1 {
   margin: 1rem 0 2rem 0;
   text-align: center;
   font-weight: 200;
-  font-size: 2.5rem;
+  font-size: 3.5rem;
 }
 
 header, footer {
@@ -22,6 +22,81 @@ p {
 
 a {
   color: map-get($demo-light, forground);
+}
+
+/* ===== Showcase logo ===== */
+
+$demo-logo-size: 6rem;
+$demo-logo-border: ($demo-logo-size / 12);
+$demo-logo-shadow: ($demo-logo-border / 2);
+
+.demo-logo {
+  width: $demo-logo-size;
+  height: $demo-logo-size;
+  position: relative;
+}
+
+.demo-logo__square {
+  width: ($demo-logo-size / 2);
+  height: ($demo-logo-size / 2);
+  position: absolute;
+  box-sizing: border-box;
+  border: $demo-logo-border solid transparent;
+  transform-origin: 50% 50%;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  animation-name: squareIt;
+}
+
+.demo-logo__square--tl {
+  top: 0;
+  left: 0;
+  border-color: #F44336;
+}
+
+.demo-logo__square--tr {
+  border-color: #2196F3;
+  top: 0;
+  right: 0;
+}
+
+.demo-logo__square--bl {
+  border-color: #C62828;
+  bottom: 0;
+  left: 0;
+}
+
+.demo-logo__square--br {
+  border-color: #1565C0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes squareIt {
+  0% {
+    box-shadow:
+      $demo-logo-shadow $demo-logo-shadow 1px rgba(0, 0, 0, 0.2),
+      $demo-logo-shadow $demo-logo-shadow 1px rgba(0, 0, 0, 0.2) inset;
+  }
+  70% {
+    border-radius: 0;
+    transform: rotate(0deg);
+    box-shadow:
+      $demo-logo-shadow $demo-logo-shadow 1px rgba(0, 0, 0, 0.2),
+      $demo-logo-shadow $demo-logo-shadow 1px rgba(0, 0, 0, 0.2) inset;
+  }
+  85% {
+    border-radius: 33%;
+    transform: rotate(45deg) scale(1.35);
+  }
+  100% {
+    border-radius: 0;
+    transform: rotate(90deg);
+    box-shadow:
+      $demo-logo-shadow (-$demo-logo-shadow) 1px rgba(0, 0, 0, 0.2),
+      $demo-logo-shadow (-$demo-logo-shadow) 1px rgba(0, 0, 0, 0.2) inset;
+  }
 }
 
 /* ===== Handle showcase ===== */

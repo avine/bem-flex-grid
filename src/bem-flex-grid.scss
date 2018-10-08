@@ -53,7 +53,7 @@ $bfg-breakpoints: (
 }
 
 .bfg--row {
-  flex-direction: row; // TODO: make this the default behavior and remove the selector...
+  flex-direction: row; // TODO: this selector will be removed when we'll remove ie11 support...
 }
 
 .bfg--col {
