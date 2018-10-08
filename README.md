@@ -458,7 +458,7 @@ The `bfg-theme` mixin allows you to customize the content look and feel.
 
 **Example:**
 
-To add a new theme of type `info`, create a new file `my-custo-bfg.scss` with the following content:
+To add a new theme with name `info`, create a new file `my-custo-bfg.scss` with the following content:
 
 ```scss
 @import "[PATH_TO]/bem-flex-grid.scss";
@@ -479,7 +479,7 @@ To add a new theme of type `info`, create a new file `my-custo-bfg.scss` with th
 
 > Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value.
 
-Now, you can use the new theme of type `info`:
+Now, you can use the new theme named `info`:
 
 ```html
 ...

@@ -348,7 +348,7 @@ $bfg-gap: 2rem;
 <pre><code class="language-scss">@mixin bfg-theme($name, $settings) { ... }
 </code></pre>
 <p><strong>Example:</strong></p>
-<p>To add a new theme of type <code>info</code>, create a new file <code>my-custo-bfg.scss</code> with the following content:</p>
+<p>To add a new theme with name <code>info</code>, create a new file <code>my-custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/bem-flex-grid.scss&quot;;
 
 // Add new theme
@@ -367,7 +367,7 @@ $bfg-gap: 2rem;
 <blockquote>
 <p>Notice that omitted map keys (<code>box-shadow</code> and <code>content-forground</code> in this example) fall back to their default value.</p>
 </blockquote>
-<p>Now, you can use the new theme of type <code>info</code>:</p>
+<p>Now, you can use the new theme named <code>info</code>:</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__action bfg__action--info&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__header bfg__header--info&quot;&gt;&lt;/div&gt;
