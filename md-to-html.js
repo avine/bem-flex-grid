@@ -10,7 +10,7 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 
 const sourcePath = Path.join(__dirname, './README.md');
-const targetPath = Path.join(__dirname, './src/introduction.html');
+const targetPath = Path.join(__dirname, './src/api.html');
 
 const mdToHtml = () => {
   const markdown = Fs.readFileSync(sourcePath, { encoding: 'utf-8' });
