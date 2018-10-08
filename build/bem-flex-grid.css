@@ -3,7 +3,7 @@
   justify-content: flex-start;
   align-items: stretch;
   height: 100%; }
-  .bfg .bfg {
+  .bfg.bfg__box {
     height: auto; }
 
 .bfg--row {

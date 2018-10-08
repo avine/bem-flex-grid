@@ -47,7 +47,7 @@ $bfg-breakpoints: (
   align-items: stretch;
   height: 100%; // Try to fit the parent node height when available
 
-  .bfg {
+  &.bfg__box {
     height: auto;
   }
 }
