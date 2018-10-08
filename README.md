@@ -316,19 +316,19 @@ Use `.bfg__box--overflow` modifier to apply the rule `overflow: visible;` instea
 
 ### .bfg__action--[N], .bfg__header--[N], .bfg__content--[N]
 
-**[N]** Name: `default` or any string.
+**[N]** Name: `light` or any string.
 
-Use selector `.bfg__content.bfg__content--default` to fill the box content using the `default` look and feel.
+Use selector `.bfg__content.bfg__content--light` to fill the box content using the `light` look and feel.
 
-Use selector `.bfg__header.bfg__header--default` to fill the box header.
+Use selector `.bfg__header.bfg__header--light` to fill the box header.
 
-Use selector `.bfg__action.bfg__action--default` to fill the box action.
+Use selector `.bfg__action.bfg__action--light` to fill the box action.
 
 ```html
 ...
-  <div class="bfg__action bfg__action--default"></div>
-  <div class="bfg__header bfg__header--default"></div>
-  <div class="bfg__content bfg__content--default"></div>
+  <div class="bfg__action bfg__action--light"></div>
+  <div class="bfg__header bfg__header--light"></div>
+  <div class="bfg__content bfg__content--light"></div>
 ...
 ```
 
@@ -370,7 +370,7 @@ See below the `<div>` that has both roles:
 <div class="bfg bfg--col bfg--gap">
   <div class="bfg__box bfg__box--3"></div>
 
-  <!-- Nested grid starts here, on the .bfg__box element -->
+  <!-- Nested grid starts here, on the `.bfg__box` element -->
   <div class="bfg__box bfg__box--6 bfg bfg--row">
 
     <div class="bfg__box bfg__box--3"></div>
@@ -379,6 +379,25 @@ See below the `<div>` that has both roles:
 
   </div>
 
+  <div class="bfg__box bfg__box--3"></div>
+</div>
+```
+
+Another alternative consists to simply nest a new `.bfg` *block* inside a `.bfg__box` *element*.
+
+```html
+<div class="bfg bfg--col bfg--gap">
+  <div class="bfg__box bfg__box--3"></div>
+  <div class="bfg__box bfg__box--6">
+
+    <!-- Nested grid starts here, inside the `.bfg__box` element -->
+    <div class="bfg bfg--row">
+      <div class="bfg__box bfg__box--3"></div>
+      <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg__box bfg__box--3"></div>
+    </div>
+
+  </div>
   <div class="bfg__box bfg__box--3"></div>
 </div>
 ```
@@ -394,7 +413,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-default: (
+$bfg-theme-light: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -408,7 +427,7 @@ $bfg-theme-default: (
   content-forground: false
 ) !default;
 
-$bfg-theme-default-included: true;
+$bfg-theme-light-included: true;
 
 $bfg-breakpoints: (
   xs: 576px,

@@ -240,14 +240,14 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
 </code></pre>
 <h2>.bfg__action, .bfg__header and .bfg__content modifiers</h2>
 <h3>.bfg__action--[N], .bfg__header--[N], .bfg__content--[N]</h3>
-<p><strong>[N]</strong> Name: <code>default</code> or any string.</p>
-<p>Use selector <code>.bfg__content.bfg__content--default</code> to fill the box content using the <code>default</code> look and feel.</p>
-<p>Use selector <code>.bfg__header.bfg__header--default</code> to fill the box header.</p>
-<p>Use selector <code>.bfg__action.bfg__action--default</code> to fill the box action.</p>
+<p><strong>[N]</strong> Name: <code>light</code> or any string.</p>
+<p>Use selector <code>.bfg__content.bfg__content--light</code> to fill the box content using the <code>light</code> look and feel.</p>
+<p>Use selector <code>.bfg__header.bfg__header--light</code> to fill the box header.</p>
+<p>Use selector <code>.bfg__action.bfg__action--light</code> to fill the box action.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__action bfg__action--default&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__header bfg__header--default&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__content bfg__content--default&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__action bfg__action--light&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__header bfg__header--light&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__content bfg__content--light&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
 <blockquote>
@@ -277,7 +277,7 @@ Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overfl
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 
-  &lt;!-- Nested grid starts here, on the .bfg__box element --&gt;
+  &lt;!-- Nested grid starts here, on the `.bfg__box` element --&gt;
   &lt;div class=&quot;bfg__box bfg__box--6 bfg bfg--row&quot;&gt;
 
     &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
@@ -289,6 +289,22 @@ Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overfl
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<p>Another alternative consists to simply nest a new <code>.bfg</code> <em>block</em> inside a <code>.bfg__box</code> <em>element</em>.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
+  &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--6&quot;&gt;
+
+    &lt;!-- Nested grid starts here, inside the `.bfg__box` element --&gt;
+    &lt;div class=&quot;bfg bfg--row&quot;&gt;
+      &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;bfg__box bfg__box--6&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 <h2>Sass customization</h2>
 <h3>Default variables</h3>
 <pre><code class="language-scss">$bfg-gap: 1rem !default;
@@ -297,7 +313,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-default: (
+$bfg-theme-light: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -311,7 +327,7 @@ $bfg-theme-default: (
   content-forground: false
 ) !default;
 
-$bfg-theme-default-included: true;
+$bfg-theme-light-included: true;
 
 $bfg-breakpoints: (
   xs: 576px,
