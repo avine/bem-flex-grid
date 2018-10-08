@@ -241,7 +241,7 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
 <h2>.bfg__action, .bfg__header and .bfg__content modifiers</h2>
 <h3>.bfg__action--[N], .bfg__header--[N], .bfg__content--[N]</h3>
 <p><strong>[N]</strong> Name: <code>default</code> or any string.</p>
-<p>Use selector <code>.bfg__content.bfg__content--default</code> to fill the box content using the default look and feel.</p>
+<p>Use selector <code>.bfg__content.bfg__content--default</code> to fill the box content using the <code>default</code> look and feel.</p>
 <p>Use selector <code>.bfg__header.bfg__header--default</code> to fill the box header.</p>
 <p>Use selector <code>.bfg__action.bfg__action--default</code> to fill the box action.</p>
 <pre><code class="language-html">...
@@ -251,7 +251,7 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
 ...
 </code></pre>
 <blockquote>
-<p>See below the Sass mixin <code>bfg-filler</code> to create new names.</p>
+<p>See below the Sass mixin <code>bfg-theme</code> to create your own themes.</p>
 </blockquote>
 <h3>.bfg__content--nopad</h3>
 <p>Use <code>.bfg__content--nopad</code> modifier to remove the box content padding.</p>
@@ -297,7 +297,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-fill-default: (
+$bfg-theme-default: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -311,7 +311,7 @@ $bfg-fill-default: (
   content-forground: false
 ) !default;
 
-$bfg-fill-default-included: true;
+$bfg-theme-default-included: true;
 
 $bfg-breakpoints: (
   xs: 576px,
@@ -328,15 +328,15 @@ $bfg-gap: 2rem;
 @import &quot;[PATH_TO]/bem-flex-grid.scss&quot;;
 </code></pre>
 <h3>Mixin</h3>
-<p>The <code>bfg-filler</code> mixin allows you to customize the content look and feel.</p>
-<pre><code class="language-scss">@mixin bfg-filler($name, $fill) { ... }
+<p>The <code>bfg-theme</code> mixin allows you to customize the content look and feel.</p>
+<pre><code class="language-scss">@mixin bfg-theme($name, $settings) { ... }
 </code></pre>
 <p><strong>Example:</strong></p>
-<p>To add a content filler of type <code>info</code>, create a new file <code>my-custo-bfg.scss</code> with the following content:</p>
+<p>To add a new theme of type <code>info</code>, create a new file <code>my-custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/bem-flex-grid.scss&quot;;
 
-// Add new filler
-@include bfg-filler(info, (
+// Add new theme
+@include bfg-theme(info, (
   border-radius: 0,
   border-width: 3px,
 
@@ -351,7 +351,7 @@ $bfg-gap: 2rem;
 <blockquote>
 <p>Notice that omitted map keys (<code>box-shadow</code> and <code>content-forground</code> in this example) fall back to their default value.</p>
 </blockquote>
-<p>Now, you can use the new content filler of type <code>info</code>:</p>
+<p>Now, you can use the new theme of type <code>info</code>:</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__action bfg__action--info&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__header bfg__header--info&quot;&gt;&lt;/div&gt;

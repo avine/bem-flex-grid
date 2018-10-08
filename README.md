@@ -318,7 +318,7 @@ Use `.bfg__box--overflow` modifier to apply the rule `overflow: visible;` instea
 
 **[N]** Name: `default` or any string.
 
-Use selector `.bfg__content.bfg__content--default` to fill the box content using the default look and feel.
+Use selector `.bfg__content.bfg__content--default` to fill the box content using the `default` look and feel.
 
 Use selector `.bfg__header.bfg__header--default` to fill the box header.
 
@@ -332,7 +332,7 @@ Use selector `.bfg__action.bfg__action--default` to fill the box action.
 ...
 ```
 
-> See below the Sass mixin `bfg-filler` to create new names.
+> See below the Sass mixin `bfg-theme` to create your own themes.
 
 ### .bfg__content--nopad
 
@@ -394,7 +394,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-fill-default: (
+$bfg-theme-default: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -408,7 +408,7 @@ $bfg-fill-default: (
   content-forground: false
 ) !default;
 
-$bfg-fill-default-included: true;
+$bfg-theme-default-included: true;
 
 $bfg-breakpoints: (
   xs: 576px,
@@ -431,21 +431,21 @@ $bfg-gap: 2rem;
 
 ### Mixin
 
-The `bfg-filler` mixin allows you to customize the content look and feel.
+The `bfg-theme` mixin allows you to customize the content look and feel.
 
 ```scss
-@mixin bfg-filler($name, $fill) { ... }
+@mixin bfg-theme($name, $settings) { ... }
 ```
 
 **Example:**
 
-To add a content filler of type `info`, create a new file `my-custo-bfg.scss` with the following content:
+To add a new theme of type `info`, create a new file `my-custo-bfg.scss` with the following content:
 
 ```scss
 @import "[PATH_TO]/bem-flex-grid.scss";
 
-// Add new filler
-@include bfg-filler(info, (
+// Add new theme
+@include bfg-theme(info, (
   border-radius: 0,
   border-width: 3px,
 
@@ -460,7 +460,7 @@ To add a content filler of type `info`, create a new file `my-custo-bfg.scss` wi
 
 > Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value.
 
-Now, you can use the new content filler of type `info`:
+Now, you can use the new theme of type `info`:
 
 ```html
 ...

@@ -4,7 +4,7 @@
 
 // ===== Add customized fillers =====
 
-@include bfg-filler(info, (
+@include bfg-theme(info, (
   //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075), // Omit to use default value
   border-radius: 0,
   border-width: 3px,
@@ -18,7 +18,7 @@
   //content-forground: false // Omit to use default value
 ));
 
-@include bfg-filler(warning, (
+@include bfg-theme(warning, (
   //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 8px,
   //border-width: 1px,
@@ -32,7 +32,7 @@
   //content-forground: false
 ));
 
-@include bfg-filler(error, (
+@include bfg-theme(error, (
   //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   //border-radius: 3px,
   border-width: 2px,
