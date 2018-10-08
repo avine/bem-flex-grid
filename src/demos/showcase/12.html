@@ -16,16 +16,25 @@
 </head>
 <body>
   <div class="demo-source__description">
-    When the total size of the boxes is less than <code>12</code>, you can distribute the remaining space using:
-    <code>.bfg--main-center</code>, <code>.bfg--main-end</code>,
-    <code>.bfg--main-between</code> or <code>.bfg--main-around</code>.
+    This demo shows real nested grid in the same row direction.
   </div>
 
-  <div class="bfg bfg--col bfg--main-between">
-    <div class="bfg__box bfg__box--2"></div>
-    <div class="bfg__box bfg__box--fixed"><i>Fixed box</i></div>
-    <div class="bfg__box bfg__box--fixed"><i>Fixed box</i></div>
-    <div class="bfg__box bfg__box--4"></div>
+  <div class="bfg bfg--row">
+    <div class="bfg__box bfg__box--3">
+
+      <div class="bfg bfg--col">
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--6"></div>
+      </div>
+
+    </div>
+    <div class="bfg__box bfg__box--9">
+
+      <div class="bfg bfg--col">
+        <div class="bfg__box bfg__box--12"></div>
+      </div>
+
+    </div>
   </div>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.pageHeight();</script>

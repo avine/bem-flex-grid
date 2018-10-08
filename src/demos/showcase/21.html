@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="demo-page-bg--gray">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,33 +10,49 @@
 
   <link rel="shortcut icon" href="../../favicon.ico">
   <link rel="stylesheet" href="../demo.scss">
-  <link rel="stylesheet" href="../../bem-flex-grid.ie11.scss">
+  <link rel="stylesheet" href="21.scss">
 
   <script src="../demo.ts"></script>
 </head>
 <body>
   <div class="demo-source__description">
-    This demo shows real nested grid in the same row direction.
+    Use <code>.bfg__header</code> with <code>.bfg__content</code> to add an header.<br>
+    Use <code>.bfg__action</code> with <code>.bfg__header</code> to add one or more actions.
   </div>
 
-  <div class="bfg bfg--row">
+  <div class="bfg bfg--col bfg--gap">
     <div class="bfg__box bfg__box--3">
-
-      <div class="bfg bfg--col">
-        <div class="bfg__box bfg__box--6"></div>
-        <div class="bfg__box bfg__box--6"></div>
-      </div>
-
+      <!-- content with header -->
+      <header class="bfg__header bfg__header--error">Header</header>
+      <div class="bfg__content bfg__content--error"></div>
     </div>
-    <div class="bfg__box bfg__box--9">
 
-      <div class="bfg bfg--col">
-        <div class="bfg__box bfg__box--12"></div>
+    <div class="bfg__box bfg__box--6 bfg bfg--row">
+      <div class="bfg__box bfg__box--3">
+        <!-- content with header and actions -->
+        <div class="bfg__action bfg__action--default"><a href="#action-2">Action 2</a></div>
+        <div class="bfg__action bfg__action--default"><a href="#action-1">Action 1</a></div>
+        <header class="bfg__header bfg__header--default">Very very very long Header</header>
+        <div class="bfg__content bfg__content--default"></div>
       </div>
 
+      <div class="bfg__box bfg__box--6">
+        <!-- content without header -->
+        <div class="bfg__content bfg__content--default"></div>
+      </div>
+
+      <div class="bfg__box bfg__box--3">
+        <header class="bfg__header bfg__header--info">Header</header>
+        <div class="bfg__content bfg__content--info"></div>
+      </div>
+    </div>
+
+    <div class="bfg__box bfg__box--3">
+      <header class="bfg__header bfg__header--warning">Header</header>
+      <div class="bfg__content bfg__content--warning"></div>
     </div>
   </div>
 
-  <script>Demo.viewCode(); Demo.fillGrid(); Demo.pageHeight();</script>
+  <script>Demo.viewCode(); Demo.fillGrid({ textColor: false }); Demo.pageHeight();</script>
 </body>
 </html>
