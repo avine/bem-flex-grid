@@ -152,15 +152,15 @@ window.addEventListener('click', (event) => {
   }
 });
 
-/* ===== Toggle page height ===== */
+/* ===== Full screen switcher ===== */
 
-const pageHeight = () => {
+const fullScreenSwitcher = () => {
   const wrapper = document.createElement('div');
-  wrapper.innerHTML = '<a href="#" title="Toggle page height" class="demo-page-height__toggle">&updownarrow;</a>';
+  wrapper.innerHTML = '<a href="#" title="Toggle page height" class="demo-full-screen__toggle">&updownarrow;</a>';
   const toggle = wrapper.firstChild;
   toggle.addEventListener('click', (event) => {
     event.preventDefault();
-    document.querySelector('html').classList.toggle('demo-page-height--disabled');
+    document.querySelector('html').classList.toggle('demo-full-screen--disabled');
   });
   document.body.appendChild(toggle);
 };
@@ -173,4 +173,4 @@ function forEach<T = Node>(elements: NodeListOf<Node>, callback: (element: T, in
 
 /* ===== Export as global ===== */
 
-window['Demo'] = { showcase, viewCode, fillGrid, pageHeight };
+window['Demo'] = { showcase, viewCode, fillGrid, fullScreenSwitcher };

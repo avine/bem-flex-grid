@@ -26,13 +26,13 @@ html, body {
 
 /* ===== Restore default height ===== */
 
-.demo-page-height--disabled { // Add to the <html> tag
+.demo-full-screen--disabled { // Add to the <html> tag
   &, body {
     height: auto;
   }
 }
 
-.demo-page-height__toggle {
+.demo-full-screen__toggle {
   @include demo-dark-button(right);
 }
 
