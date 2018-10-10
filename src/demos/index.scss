@@ -1,7 +1,7 @@
 @import "./variables.scss";
 
-/*html {
-  background-color: map-get($demo-light, background);
+html {
+  //background-color: map-get($demo-light, background);
   color: map-get($demo-light, forground);
 }
 
@@ -22,7 +22,7 @@ p {
 
 a {
   color: map-get($demo-light, forground);
-}*/
+}
 
 /* ===== Showcase logo ===== */
 
@@ -103,7 +103,7 @@ $demo-logo-shadow: ($demo-logo-border / 2);
 
 .demo-showcase__item {
   position: relative;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.075);
   border: 1px solid map-get($demo-light, border);
   background-color: white;
 }

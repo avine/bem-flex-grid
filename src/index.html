@@ -14,21 +14,44 @@
   <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
 
   <script src="demos/demo.ts"></script>
+
+  <style>
+    .demo-header {
+      margin: -1rem -1rem 3rem -1rem;
+      padding: 6rem 0;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .demo-header-title {
+      margin-right: 2rem;
+      line-height: 6rem;
+      font-size: 4rem;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
-  <a href="index2.html" class="demo-logo" style="display:block; margin:1rem auto 4rem auto;">
-    <div class="demo-logo__square demo-logo__square--tl"></div>
-    <div class="demo-logo__square demo-logo__square--tr"></div>
-    <div class="demo-logo__square demo-logo__square--bl"></div>
-    <div class="demo-logo__square demo-logo__square--br"></div>
-  </a>
+  <div class="demo-header">
+    <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
+      <div class="bfg__box bfg__box--fixed demo-header-title">
+        Bem Flex Grid
+      </div>
 
-  <h1>Bem Flex Grid</h1>
+      <div class="bfg__box bfg__box--fixed">
+        <div class="demo-logo">
+          <div class="demo-logo__square demo-logo__square--tl"></div>
+          <div class="demo-logo__square demo-logo__square--tr"></div>
+          <div class="demo-logo__square demo-logo__square--bl"></div>
+          <div class="demo-logo__square demo-logo__square--br"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <header>
+  <!--<header>
     <p>In this page, you'll find a lot of real examples of how to use the grid.</p>
     <p>To deep dive, check out the <a href="api.html">api</a>.</p>
-  </header>
+  </header>-->
 
   <div id="demo-showcase">
     <a href="demos/showcase/1.html"></a>
