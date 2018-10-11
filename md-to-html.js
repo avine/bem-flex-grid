@@ -30,12 +30,48 @@ const mdToHtml = () => {
   <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
   <script src="../node_modules/prismjs/prism.js"></script>
 
+  <link rel="stylesheet" href="demos/demo.scss">
+  <link rel="stylesheet" href="demos/index.scss">
+  <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
+
   <style>
     body { max-width: 992px; margin: auto; padding: 1rem; }
     pre[class*="language-"] { background:#f6f8fa };
   </style>
 </head>
-<body class="markdown-body">
+<body class="markdown-body_DISABLED">
+
+<style>
+  .demo-header {
+    margin: -1rem -1rem 3rem -1rem;
+    padding: 6rem 0;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .demo-header-title {
+    margin-right: 2rem;
+    line-height: 6rem;
+    font-size: 4rem;
+    color: #666;
+  }
+  h1 { display:none; }
+</style>
+<div class="demo-header">
+  <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
+    <div class="bfg__box bfg__box--fixed demo-header-title">
+      Bem Flex Grid
+    </div>
+
+    <div class="bfg__box bfg__box--fixed">
+      <div class="demo-logo">
+        <div class="demo-logo__square demo-logo__square--tl"></div>
+        <div class="demo-logo__square demo-logo__square--tr"></div>
+        <div class="demo-logo__square demo-logo__square--bl"></div>
+        <div class="demo-logo__square demo-logo__square--br"></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 ${md.render(markdown)}
 <p><br>View on <a href="https://github.com/avine/bem-flex-grid">Github</a>.</p>
