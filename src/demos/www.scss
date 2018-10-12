@@ -8,9 +8,9 @@ html, body {
   height: auto;
 }
 
-/*a {
-  color: map-get($demo-light, forground);
-}*/
+a {
+  color: #2196F3; // map-get($demo-light, forground);
+}
 
 $www-navbar: (
   border: #1565C0,
@@ -25,7 +25,7 @@ $www-header: (
   forground: #9E9E9E
 );
 
-$www-max-width: 1280px;
+$www-max-width: 1024px;
 
 /* ===== Navbar ===== */
 

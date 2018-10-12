@@ -25,10 +25,12 @@ const mdToHtml = () => {
 
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
+    <link rel="stylesheet" href="demos/documentation.scss">
 
     <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
     <script src="../node_modules/prismjs/prism.js"></script>
+    <script src="../node_modules/prismjs/components/prism-scss.min.js"></script>
+    <script src="../node_modules/prismjs/components/prism-bash.min.js"></script>
 
     <link rel="stylesheet" href="demos/demo.scss">
     <link rel="stylesheet" href="demos/www.scss">
@@ -38,7 +40,7 @@ const mdToHtml = () => {
       pre[class*="language-"] { background:#f6f8fa };
     </style>
   </head>
-  <body class="markdown-body_DISABLED">
+  <body class="markdown-body">
     <div class="www-navbar www-navbar--back">
       <div class="www-container">
         <a href="/" class="www-navbar__link">Bem Flex Grid</a>
@@ -53,9 +55,9 @@ const mdToHtml = () => {
 
     <header class="www-header">
       <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
-        <h1 class="bfg__box bfg__box--fixed www-header__title">
+        <div class="bfg__box bfg__box--fixed www-header__title">
           <a href="/">Bem Flex Grid</a>
-        </h1>
+        </div>
 
         <div class="bfg__box bfg__box--fixed www-logo">
           <div class="www-logo__square www-logo__square--1"></div>
