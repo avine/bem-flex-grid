@@ -65,11 +65,23 @@ $bfg-breakpoints: (
 
   .bfg__box {
     padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
+
+    &.bfg {
+      padding: 0;
+    }
   }
 
-  .bfg {
-    padding: 0;
+  ///////////////
+  // IN PROGRESS
+  .bfg:not(.bfg__box) {
+    margin: 0 (-$bfg-gap / 2);
+
+    &.bfg--row > .bfg__box {
+      padding-bottom: 0;
+    }
   }
+  // IN PROGRESS
+  ///////////////
 }
 
 .bfg--wrap {

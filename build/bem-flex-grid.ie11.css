@@ -16,8 +16,12 @@
   margin: 0 -0.5rem; }
   .bfg--gap .bfg__box {
     padding: 0 0.5rem 1rem 0.5rem; }
-  .bfg--gap .bfg {
-    padding: 0; }
+    .bfg--gap .bfg__box.bfg {
+      padding: 0; }
+  .bfg--gap .bfg:not(.bfg__box) {
+    margin: 0 -0.5rem; }
+    .bfg--gap .bfg:not(.bfg__box).bfg--row > .bfg__box {
+      padding-bottom: 0; }
 
 .bfg--wrap {
   flex-wrap: wrap; }
