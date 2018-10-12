@@ -10,7 +10,7 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 
 const sourcePath = Path.join(__dirname, './README.md');
-const targetPath = Path.join(__dirname, './src/api.html');
+const targetPath = Path.join(__dirname, './src/documentation.html');
 
 const mdToHtml = () => {
   const markdown = Fs.readFileSync(sourcePath, { encoding: 'utf-8' });
@@ -41,12 +41,12 @@ const mdToHtml = () => {
   <body class="markdown-body_DISABLED">
     <div class="www-navbar www-navbar--back">
       <div class="www-container">
-        Bem Flex Grid
+        <a href="/" class="www-navbar__link">Bem Flex Grid</a>
       </div>
     </div>
     <header class="www-navbar www-navbar--front">
       <div class="www-container">
-        <a href="api.html" class="www-navbar__link">API</a>
+        <a href="documentation.html" class="www-navbar__link">Documentation</a>
         <a href="https://github.com/avine/bem-flex-grid/" class="www-navbar__link">Github</a>
       </div>
     </header>
@@ -54,7 +54,7 @@ const mdToHtml = () => {
     <header class="www-header">
       <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
         <h1 class="bfg__box bfg__box--fixed www-header__title">
-          Bem Flex Grid
+          <a href="/">Bem Flex Grid</a>
         </h1>
 
         <div class="bfg__box bfg__box--fixed www-logo">

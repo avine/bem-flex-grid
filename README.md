@@ -501,6 +501,6 @@ npm start
 # Build `bem-flex-grid.ie11.css` and `bem-flex-grid.ie11.min.css` from `bem-flex-grid.ie11.scss`
 npm run build
 
-# Build `api.html` from `README.md`
+# Build `documentation.html` from `README.md`
 npm run md-to-html
 ```

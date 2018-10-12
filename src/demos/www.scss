@@ -54,16 +54,20 @@ $www-max-width: 1280px;
   width: 50%;
   right: 0;
   text-align: right;
+
+  .www-navbar__link {
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) inset;
+  }
 }
 
 .www-navbar__link {
   padding: 0.25rem 0.75rem;
-  border-radius: 3px;
-  background-color: rgba(0, 0, 0, 0.35);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) inset;
   color: white; // Must be white!
   text-decoration: none;
 }
+
 
 /* ===== Header ===== */
 
@@ -83,6 +87,11 @@ $www-max-width: 1280px;
   font-size: 4rem;
   font-weight: 200;
   color: map-get($www-header, forground);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 }
 
 /* ===== Container ===== */
