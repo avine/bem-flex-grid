@@ -1,9 +1,9 @@
-@import "./variables.scss";
-
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
 
+@import "./variables.scss";
+
 html {
-  color: #555;
+  color: #424242;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.375em;
 }
@@ -24,7 +24,7 @@ html, body {
   background-color: #f5f5f5;
 }
 
-/* ===== Restore default height ===== */
+/* ===== Disable full screen mode ===== */
 
 .demo-full-screen--disabled { // Add to the <html> tag
   &, body {

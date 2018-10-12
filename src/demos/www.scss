@@ -1,0 +1,194 @@
+@import "./variables.scss";
+
+body {
+  padding: 0;
+}
+
+html, body {
+  height: auto;
+}
+
+/*a {
+  color: map-get($demo-light, forground);
+}*/
+
+$www-navbar: (
+  border: #1565C0,
+  background: #2196F3,
+  forground: #FFF // #E3F2FD
+);
+
+$www-header: (
+  padding: 6rem,
+  border: #E0E0E0,
+  background: #F5F5F5,
+  forground: #9E9E9E
+);
+
+$www-max-width: 1280px;
+
+/* ===== Navbar ===== */
+
+.www-navbar {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  line-height: 3rem;
+  border-bottom: 1px solid transparent;
+  color: map-get($www-navbar, forground);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.www-navbar--back {
+  z-index: 1;
+  border-color: map-get($www-navbar, border);
+  background: map-get($www-navbar, background);
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+.www-navbar--front {
+  z-index: 3;
+  width: 50%;
+  right: 0;
+  text-align: right;
+}
+
+.www-navbar__link {
+  padding: 0.25rem 0.75rem;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) inset;
+  color: white; // Must be white!
+  text-decoration: none;
+}
+
+/* ===== Header ===== */
+
+.www-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 3rem;
+  background-color: map-get($www-header, background);
+  border-bottom: 1px solid map-get($www-header, border);
+}
+
+.www-header__title {
+  $padding: map-get($www-header, padding);
+
+  margin: $padding ($padding / 2) $padding 0;
+  line-height: $padding;
+  font-size: 4rem;
+  font-weight: 200;
+  color: map-get($www-header, forground);
+}
+
+/* ===== Container ===== */
+
+.www-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: $www-max-width;
+  padding: 0 1rem;
+}
+
+/* ===== Logo ===== */
+
+$www-logo-size: 6rem;
+$www-logo-border: ($www-logo-size / 12);
+$www-logo-shadow: ($www-logo-border / 2);
+
+.www-logo {
+  position: relative;
+  width: $www-logo-size;
+  height: $www-logo-size;
+}
+
+.www-logo__square {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: $www-logo-border solid transparent;
+  transform-origin: 50% 50%;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  animation-name: wwwLogoAnim;
+}
+
+.www-logo__square--1 { border-color: #F44336; left: 0; top: 0; }
+.www-logo__square--2 { border-color: #C62828; left: 0; bottom: 0; }
+.www-logo__square--3 { border-color: #2196F3; right: 0; top: 0; }
+.www-logo__square--4 { border-color: #1565C0; right: 0; bottom: 0; }
+
+@keyframes wwwLogoAnim {
+  0% {
+    box-shadow:
+      $www-logo-shadow $www-logo-shadow 1px rgba(0, 0, 0, 0.2),
+      $www-logo-shadow $www-logo-shadow 1px rgba(0, 0, 0, 0.2) inset;
+  }
+  70% {
+    border-radius: 0;
+    transform: rotate(0deg);
+    box-shadow:
+      $www-logo-shadow $www-logo-shadow 1px rgba(0, 0, 0, 0.2),
+      $www-logo-shadow $www-logo-shadow 1px rgba(0, 0, 0, 0.2) inset;
+  }
+  85% {
+    border-radius: 33%;
+    transform: rotate(45deg) scale(1.35);
+  }
+  100% {
+    border-radius: 0;
+    transform: rotate(90deg);
+    box-shadow:
+      $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2),
+      $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2) inset;
+  }
+}
+
+/* ===== Showcase ===== */
+
+.www-showcase__item {
+  position: relative;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.075);
+  border: 1px solid map-get($demo-light, border);
+  background-color: white;
+}
+
+.www-showcase__iframe {
+  display: block;
+  width: 100%;
+  height: 75vh;
+  border: none;
+  background-color: white;
+}
+
+.www-showcase__link {
+  display: none;
+
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  z-index: 10;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  border: 1px solid map-get($demo-variant, border);
+  background-color: map-get($demo-variant, background);
+  color: map-get($demo-variant, forground) !important;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-decoration: none;
+  transition: background-color ease 300ms, color ease 300ms;
+
+  &:hover {
+    background-color: map-get($demo-variant, border);
+    color: #ddd;
+  }
+}

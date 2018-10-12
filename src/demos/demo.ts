@@ -1,16 +1,16 @@
 import { highlight, languages } from 'prismjs';
 
-/* ===== Handle showcase ===== */
+/* ===== Handle showcase (www) ===== */
 
 const showcase = () => {
-  const element = document.getElementById('demo-showcase');
+  const element = document.getElementById('www-showcase');
   element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--box-overflow bfg--sm-disabled';
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="bfg__box bfg__box--6">
-    <div class="demo-showcase__item">
-      <iframe src="${anchor.href}" class="demo-showcase__iframe"></iframe>
-      <a href="${anchor.href}" class="demo-showcase__link" title="Open in a separate tab">${count}</a>
+    <div class="www-showcase__item">
+      <iframe src="${anchor.href}" class="www-showcase__iframe"></iframe>
+      <a href="${anchor.href}" class="www-showcase__link" title="Open in a separate tab">${count}</a>
     </div>
   </div>`;
 
@@ -69,7 +69,7 @@ function formatCode(code: string) {
   return lines.join('\n').trim().replace(/\n{2,}/g, '\n\n');
 }
 
-/* ===== Handle demo ===== */
+/* ===== Handle demo content ===== */
 
 const inIframe = () => {
   try {
@@ -152,7 +152,7 @@ window.addEventListener('click', (event) => {
   }
 });
 
-/* ===== Full screen switcher ===== */
+/* ===== Handle full screen switcher ===== */
 
 const fullScreenSwitcher = () => {
   const wrapper = document.createElement('div');
