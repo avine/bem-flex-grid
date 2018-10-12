@@ -14,74 +14,75 @@
   <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
 
   <script src="demos/demo.ts"></script>
-
-  <style>
-    .demo-header {
-      margin: -1rem -1rem 3rem -1rem;
-      padding: 6rem 0;
-      background-color: #f5f5f5;
-      border-bottom: 1px solid #e5e5e5;
-    }
-    .demo-header-title {
-      margin-right: 2rem;
-      line-height: 6rem;
-      font-size: 4rem;
-      color: #666;
-    }
-  </style>
 </head>
 <body>
-  <div class="demo-header">
-    <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
-      <div class="bfg__box bfg__box--fixed demo-header-title">
-        Bem Flex Grid
-      </div>
-
-      <div class="bfg__box bfg__box--fixed">
-        <div class="demo-logo">
-          <div class="demo-logo__square demo-logo__square--tl"></div>
-          <div class="demo-logo__square demo-logo__square--tr"></div>
-          <div class="demo-logo__square demo-logo__square--bl"></div>
-          <div class="demo-logo__square demo-logo__square--br"></div>
-        </div>
-      </div>
+  <div class="demo-top demo-top--background">
+    <div class="demo-wrapper">
+      Bem Flex Grid
     </div>
   </div>
+  <header class="demo-top demo-top--forground">
+    <div class="demo-wrapper">
+      <a href="api.html" class="demo-top__link">API</a>
+      <a href="https://github.com/avine/bem-flex-grid/" class="demo-top__link">Github</a>
+    </div>
+  </header>
+
+  <header class="demo-header">
+    <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
+      <h1 class="bfg__box bfg__box--fixed demo-header__title">
+        Bem Flex Grid
+      </h1>
+
+      <div class="bfg__box bfg__box--fixed demo-logo">
+        <div class="demo-logo__square demo-logo__square--tl"></div>
+        <div class="demo-logo__square demo-logo__square--tr"></div>
+        <div class="demo-logo__square demo-logo__square--bl"></div>
+        <div class="demo-logo__square demo-logo__square--br"></div>
+      </div>
+    </div>
+  </header>
 
   <header style="display:none;">
     <p>In this page, you'll find a lot of real examples of how to use the grid.</p>
     <p>To deep dive, check out the <a href="api.html">api</a>.</p>
   </header>
 
-  <div id="demo-showcase">
-    <a href="demos/showcase/0.html"></a>
-    <a href="demos/showcase/00.html"></a>
-    <a href="demos/showcase/1.html"></a>
-    <a href="demos/showcase/2.html"></a>
-    <a href="demos/showcase/3.html"></a>
-    <a href="demos/showcase/4.html"></a>
-    <a href="demos/showcase/5.html"></a>
-    <a href="demos/showcase/6.html"></a>
-    <a href="demos/showcase/7.html"></a>
-    <a href="demos/showcase/8.html"></a>
-    <a href="demos/showcase/9.html"></a>
-    <a href="demos/showcase/10.html"></a>
-    <a href="demos/showcase/11.html"></a>
-    <a href="demos/showcase/12.html"></a>
-    <a href="demos/showcase/13.html"></a>
-    <a href="demos/showcase/14.html"></a>
-    <a href="demos/showcase/15.html"></a>
-    <a href="demos/showcase/16.html"></a>
-    <a href="demos/showcase/17.html"></a>
-    <a href="demos/showcase/18.html"></a>
-    <a href="demos/showcase/19.html"></a>
-    <a href="demos/showcase/20.html"></a>
-    <a href="demos/showcase/21.html"></a>
-  </div>
+  <div class="demo-wrapper">
 
-  <footer>
-    <p>View on <a href="https://github.com/avine/bem-flex-grid/">GitHub</a>.</p>
-  </footer>
+    <div id="demo-showcase">
+      <a href="demos/showcase/0.html"></a>
+      <a href="demos/showcase/00.html"></a>
+      <a href="demos/showcase/1.html"></a>
+      <a href="demos/showcase/2.html"></a>
+      <a href="demos/showcase/3.html"></a>
+      <a href="demos/showcase/4.html"></a>
+      <a href="demos/showcase/5.html"></a>
+      <a href="demos/showcase/6.html"></a>
+      <a href="demos/showcase/7.html"></a>
+      <a href="demos/showcase/8.html"></a>
+      <a href="demos/showcase/9.html"></a>
+      <a href="demos/showcase/10.html"></a>
+      <a href="demos/showcase/11.html"></a>
+      <a href="demos/showcase/12.html"></a>
+      <a href="demos/showcase/13.html"></a>
+      <a href="demos/showcase/14.html"></a>
+      <a href="demos/showcase/15.html"></a>
+      <a href="demos/showcase/16.html"></a>
+      <a href="demos/showcase/17.html"></a>
+      <a href="demos/showcase/18.html"></a>
+      <a href="demos/showcase/19.html"></a>
+      <a href="demos/showcase/20.html"></a>
+      <a href="demos/showcase/21.html"></a>
+    </div>
+
+    <footer>
+      <p>View on <a href="https://github.com/avine/bem-flex-grid/">GitHub</a>.</p>
+    </footer>
+
+    <a style="display:none" href="index2.html"></a>
+
+  </div>
 
   <script>Demo.showcase();</script>
 </body>
