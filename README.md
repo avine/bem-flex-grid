@@ -327,6 +327,20 @@ Use `.bfg__box--overflow` modifier to apply the rule `overflow: visible;` instea
 ...
 ```
 
+### .bfg__box--nopad
+
+When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the padding of a specific box.
+
+```html
+<div class="bfg bfg--row bfg--gap">
+  <div class="bfg__box bfg__box--4"></div>
+  <div class="bfg__box bfg__box--4 bfg__box--nopad">
+    <!-- no padding -->
+  </div>
+  <div class="bfg__box bfg__box--4"></div>
+</div>
+```
+
 ## .bfg__action, .bfg__header and .bfg__content modifiers
 
 ### .bfg__action--[N], .bfg__header--[N], .bfg__content--[N]
@@ -370,9 +384,11 @@ Use `.bfg__content--overflow` modifier to apply the rule `overflow: visible;` in
 ...
 ```
 
-## Nested grid
+## Chained and nested grids
 
-To nest grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
+### Chained grid
+
+To chain grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
 
 **Example:**
 
@@ -385,7 +401,7 @@ See below the `<div>` that has both roles:
 <div class="bfg bfg--col bfg--gap">
   <div class="bfg__box bfg__box--3"></div>
 
-  <!-- Nested grid starts here, on the `.bfg__box` element -->
+  <!-- Chained grid starts here, on the `.bfg__box` element -->
   <div class="bfg__box bfg__box--6 bfg bfg--row">
 
     <div class="bfg__box bfg__box--3"></div>
@@ -398,12 +414,16 @@ See below the `<div>` that has both roles:
 </div>
 ```
 
-Another alternative consists to simply nest a new `.bfg` *block* inside a `.bfg__box` *element*.
+### Nested grid
+
+Another alternative consists to nest a new `.bfg` *block* inside a `.bfg__box` *element*.
+
+> If you use `.bfg--gap` modifier, you need to add `.bfg__box--nopad` modifier on the parent `.bfg__box` of the nested grid.
 
 ```html
 <div class="bfg bfg--col bfg--gap">
   <div class="bfg__box bfg__box--3"></div>
-  <div class="bfg__box bfg__box--6">
+  <div class="bfg__box bfg__box--6 bfg__box--nopad">
 
     <!-- Nested grid starts here, inside the `.bfg__box` element -->
     <div class="bfg bfg--row">

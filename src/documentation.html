@@ -280,6 +280,16 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
   &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
+<h3>.bfg__box--nopad</h3>
+<p>When using <code>.bfg--gap</code> modifier, add <code>.bfg__box--nopad</code> modifier to remove the padding of a specific box.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--gap&quot;&gt;
+  &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--4 bfg__box--nopad&quot;&gt;
+    &lt;!-- no padding --&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 <h2>.bfg__action, .bfg__header and .bfg__content modifiers</h2>
 <h3>.bfg__action--[N], .bfg__header--[N], .bfg__content--[N]</h3>
 <p><strong>[N]</strong> Name: <code>light</code> or any string.</p>
@@ -308,8 +318,9 @@ Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overfl
   &lt;div class=&quot;bfg__content bfg__content--overflow&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
-<h2>Nested grid</h2>
-<p>To nest grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
+<h2>Chained and nested grids</h2>
+<h3>Chained grid</h3>
+<p>To chain grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
 <p><strong>Example:</strong></p>
 <p>See below the <code>&lt;div&gt;</code> that has both roles:</p>
 <ul>
@@ -319,7 +330,7 @@ Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overfl
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 
-  &lt;!-- Nested grid starts here, on the `.bfg__box` element --&gt;
+  &lt;!-- Chained grid starts here, on the `.bfg__box` element --&gt;
   &lt;div class=&quot;bfg__box bfg__box--6 bfg bfg--row&quot;&gt;
 
     &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
@@ -331,10 +342,14 @@ Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overfl
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Another alternative consists to simply nest a new <code>.bfg</code> <em>block</em> inside a <code>.bfg__box</code> <em>element</em>.</p>
+<h3>Nested grid</h3>
+<p>Another alternative consists to nest a new <code>.bfg</code> <em>block</em> inside a <code>.bfg__box</code> <em>element</em>.</p>
+<blockquote>
+<p>If you use <code>.bfg--gap</code> modifier, you need to add <code>.bfg__box--nopad</code> modifier on the parent <code>.bfg__box</code> of the nested grid.</p>
+</blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box bfg__box--6&quot;&gt;
+  &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--nopad&quot;&gt;
 
     &lt;!-- Nested grid starts here, inside the `.bfg__box` element --&gt;
     &lt;div class=&quot;bfg bfg--row&quot;&gt;
