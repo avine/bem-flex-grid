@@ -147,8 +147,8 @@
 <p>To add a gap between <code>.bfg__box</code> elements, use <code>.bfg--gap</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>In this case, the grid is self contained and it's parent element don't need any margin or padding.</p>
-<p>If you prefer to define a main margin (or padding) at the parent element of the grid then use <code>.bfg--gap-out</code> modifier.</p>
+<p>In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the <code>.bfg</code> block.</p>
+<p>But if you prefer to define a main margin (or padding) to the parent node of the <code>.bfg</code> block then use <code>.bfg--gap-out</code> modifier.</p>
 <pre><code class="language-html">&lt;div style=&quot;margin: 1rem&quot;&gt;
   &lt;div class=&quot;bfg bfg--gap-out&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
@@ -157,6 +157,9 @@
   &lt;div class=&quot;bfg bfg--gap-out&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<blockquote>
+<p>The default value of the gap is <code>1rem</code> (see below the Sass variable <code>$bfg-gap</code>).</p>
+</blockquote>
 <h3>.bfg--main-[P]</h3>
 <p><strong>[P]</strong> Position: <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
 <p>Justify content along the &quot;main&quot; axis using <code>.bfg--main-*</code> modifiers.</p>

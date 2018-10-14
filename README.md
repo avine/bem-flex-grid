@@ -143,9 +143,9 @@ To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 <div class="bfg bfg--gap">...</div>
 ```
 
-In this case, the grid is self contained and it's parent element don't need any margin or padding.
+In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the `.bfg` block.
 
-If you prefer to define a main margin (or padding) at the parent element of the grid then use `.bfg--gap-out` modifier.
+But if you prefer to define a main margin (or padding) to the parent node of the `.bfg` block then use `.bfg--gap-out` modifier.
 
 ```html
 <div style="margin: 1rem">
@@ -158,6 +158,8 @@ If you prefer to define a main margin (or padding) at the parent element of the 
   <div class="bfg bfg--gap-out">...</div>
 </div>
 ```
+
+> The default value of the gap is `1rem` (see below the Sass variable `$bfg-gap`).
 
 ### .bfg--main-[P]
 
