@@ -104,7 +104,7 @@ In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit exactly
 <div class="bfg bfg--row bfg--wrap bfg--lines-4">...</div>
 ```
 
-The same pattern applies to the selector `.bfg.bfg--wrap.bfg--col`.
+The same pattern applies to the selector `.bfg.bfg--col.bfg--wrap`.
 
 ```html
 <div class="bfg bfg--col bfg--wrap bfg--lines-2">...</div>
@@ -286,15 +286,15 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 ...
 ```
 
-### .bfg__box--fixed
+### .bfg__box--fit
 
-Use `.bfg__box--fixed` modifier to indicate that a `.bfg__box` element should not grow or shrink.
+Use `.bfg__box--fit` modifier to indicate that a `.bfg__box` element should not grow or shrink.
 
 Here's an example when using `.bfg--row` modifier:
 
 ```html
 <div class="bfg bfg--row">
-  <div class="bfg__box bfg__box--fixed" style="width:150px">
+  <div class="bfg__box bfg__box--fit" style="width:150px">
     <!-- width is fixed at 150px -->
   </div>
   <div class="bfg__box bfg__box--4">
@@ -310,7 +310,7 @@ Here's an example when using `.bfg--col` modifier:
 
 ```html
 <div class="bfg bfg--col">
-  <div class="bfg__box bfg__box--fixed" style="height:150px"></div>
+  <div class="bfg__box bfg__box--fit" style="height:150px"></div>
   <div class="bfg__box bfg__box--4"></div>
   <div class="bfg__box bfg__box--8"></div>
 </div>

@@ -89,7 +89,7 @@
 .bfg--col > .bfg__box {
   max-height: 100%; }
 
-.bfg__box--fixed {
+.bfg__box--fit {
   flex: 0 0 auto; }
 
 .bfg__box--1 {

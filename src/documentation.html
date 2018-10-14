@@ -38,11 +38,11 @@
 
     <header class="www-header">
       <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
-        <div class="bfg__box bfg__box--fixed www-header__title">
+        <div class="bfg__box bfg__box--fit www-header__title">
           <a href="/">Bem Flex Grid</a>
         </div>
 
-        <div class="bfg__box bfg__box--fixed www-logo">
+        <div class="bfg__box bfg__box--fit www-logo">
           <div class="www-logo__square www-logo__square--1"></div>
           <div class="www-logo__square www-logo__square--2"></div>
           <div class="www-logo__square www-logo__square--3"></div>
@@ -122,7 +122,7 @@
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>The same pattern applies to the selector <code>.bfg.bfg--wrap.bfg--col</code>.</p>
+<p>The same pattern applies to the selector <code>.bfg.bfg--col.bfg--wrap</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
@@ -251,11 +251,11 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__box--fixed</h3>
-<p>Use <code>.bfg__box--fixed</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
+<h3>.bfg__box--fit</h3>
+<p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
 <p>Here's an example when using <code>.bfg--row</code> modifier:</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;
-  &lt;div class=&quot;bfg__box bfg__box--fixed&quot; style=&quot;width:150px&quot;&gt;
+  &lt;div class=&quot;bfg__box bfg__box--fit&quot; style=&quot;width:150px&quot;&gt;
     &lt;!-- width is fixed at 150px --&gt;
   &lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;
@@ -268,7 +268,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <p>Here's an example when using <code>.bfg--col</code> modifier:</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;
-  &lt;div class=&quot;bfg__box bfg__box--fixed&quot; style=&quot;height:150px&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--fit&quot; style=&quot;height:150px&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--8&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;

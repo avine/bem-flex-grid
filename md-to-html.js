@@ -55,11 +55,11 @@ const mdToHtml = () => {
 
     <header class="www-header">
       <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
-        <div class="bfg__box bfg__box--fixed www-header__title">
+        <div class="bfg__box bfg__box--fit www-header__title">
           <a href="/">Bem Flex Grid</a>
         </div>
 
-        <div class="bfg__box bfg__box--fixed www-logo">
+        <div class="bfg__box bfg__box--fit www-logo">
           <div class="www-logo__square www-logo__square--1"></div>
           <div class="www-logo__square www-logo__square--2"></div>
           <div class="www-logo__square www-logo__square--3"></div>
