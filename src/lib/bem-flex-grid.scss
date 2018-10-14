@@ -45,6 +45,7 @@ $bfg-breakpoints: (
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
+  box-sizing: border-box;
   height: 100%; // Try to fit the parent node height when available
 
   &.bfg__box {
@@ -61,28 +62,49 @@ $bfg-breakpoints: (
 }
 
 .bfg--gap {
+  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
+}
+
+.bfg--gap-out {
   margin: 0 (-$bfg-gap / 2);
+  height: calc(100% + #{$bfg-gap});
+}
+
+.bfg--gap,
+.bfg--gap-out {
+  .bfg__box {
+    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
+  }
+
+  .bfg__box.bfg,
+  .bfg__box--nopad {
+    padding: 0;
+  }
+}
+
+/*
+// Alternative definition of `bfg--gap` and `bfg--gap-out`, using both:
+// `<div class="bfg--gap bfg--gap-out"></div>`
+
+.bfg--gap {
+  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
 
   .bfg__box {
     padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
-
-    &.bfg {
-      padding: 0;
-    }
   }
 
-  ///////////////
-  // IN PROGRESS
-  .bfg:not(.bfg__box) {
-    margin: 0 (-$bfg-gap / 2);
-
-    &.bfg--row > .bfg__box {
-      padding-bottom: 0;
-    }
+  .bfg__box.bfg,
+  .bfg__box--nopad {
+    padding: 0;
   }
-  // IN PROGRESS
-  ///////////////
 }
+
+.bfg--gap-out {
+  margin: 0 (-$bfg-gap / 2);
+  padding: 0;
+  height: calc(100% + #{$bfg-gap});
+}
+*/
 
 .bfg--wrap {
   flex-wrap: wrap;

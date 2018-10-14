@@ -135,15 +135,28 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 </div>
 ```
 
-### .bfg--gap
+### .bfg--gap, .bfg--gap-out
 
 To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 
-> In this case, the `.bfg` block have left and right negative margins equal to half the value of the gap.
-> Ideally the grid parent node should have a padding equal to the gap.
-
 ```html
 <div class="bfg bfg--gap">...</div>
+```
+
+In this case, the grid is self contained and it's parent element don't need any margin or padding.
+
+If you prefer to define a main margin (or padding) at the parent element of the grid then use `.bfg--gap-out` modifier.
+
+```html
+<div style="margin: 1rem">
+  <div class="bfg bfg--gap-out">...</div>
+</div>
+```
+
+```html
+<div style="padding: 1rem">
+  <div class="bfg bfg--gap-out">...</div>
+</div>
 ```
 
 ### .bfg--main-[P]

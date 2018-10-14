@@ -5,12 +5,12 @@
 html {
   color: #424242;
   font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
   line-height: 1.375em;
 }
 
 body {
   margin: 0;
-  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -20,6 +20,8 @@ html, body {
 
 code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 0.85rem;
+  line-height: 0.85rem;
 }
 
 /* ===== Change html background color ===== */

@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: stretch;
+  box-sizing: border-box;
   height: 100%; }
   .bfg.bfg__box {
     height: auto; }
@@ -13,16 +14,45 @@
   flex-direction: column; }
 
 .bfg--gap {
-  margin: 0 -0.5rem; }
-  .bfg--gap .bfg__box {
-    padding: 0 0.5rem 1rem 0.5rem; }
-    .bfg--gap .bfg__box.bfg {
-      padding: 0; }
-  .bfg--gap .bfg:not(.bfg__box) {
-    margin: 0 -0.5rem; }
-    .bfg--gap .bfg:not(.bfg__box).bfg--row > .bfg__box {
-      padding-bottom: 0; }
+  padding: 1rem 0.5rem 0 0.5rem; }
 
+.bfg--gap-out {
+  margin: 0 -0.5rem;
+  height: calc(100% + 1rem); }
+
+.bfg--gap .bfg__box,
+.bfg--gap-out .bfg__box {
+  padding: 0 0.5rem 1rem 0.5rem; }
+
+.bfg--gap .bfg__box.bfg,
+.bfg--gap .bfg__box--nopad,
+.bfg--gap-out .bfg__box.bfg,
+.bfg--gap-out .bfg__box--nopad {
+  padding: 0; }
+
+/*
+// Alternative definition of `bfg--gap` and `bfg--gap-out`, using both:
+// `<div class="bfg--gap bfg--gap-out"></div>`
+
+.bfg--gap {
+  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
+
+  .bfg__box {
+    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
+  }
+
+  .bfg__box.bfg,
+  .bfg__box--nopad {
+    padding: 0;
+  }
+}
+
+.bfg--gap-out {
+  margin: 0 (-$bfg-gap / 2);
+  padding: 0;
+  height: calc(100% + 1rem);
+}
+*/
 .bfg--wrap {
   flex-wrap: wrap; }
 

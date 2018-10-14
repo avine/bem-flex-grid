@@ -143,13 +143,19 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<h3>.bfg--gap</h3>
+<h3>.bfg--gap, .bfg--gap-out</h3>
 <p>To add a gap between <code>.bfg__box</code> elements, use <code>.bfg--gap</code> modifier.</p>
-<blockquote>
-<p>In this case, the <code>.bfg</code> block have left and right negative margins equal to half the value of the gap.
-Ideally the grid parent node should have a padding equal to the gap.</p>
-</blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<p>In this case, the grid is self contained and it's parent element don't need any margin or padding.</p>
+<p>If you prefer to define a main margin (or padding) at the parent element of the grid then use <code>.bfg--gap-out</code> modifier.</p>
+<pre><code class="language-html">&lt;div style=&quot;margin: 1rem&quot;&gt;
+  &lt;div class=&quot;bfg bfg--gap-out&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-html">&lt;div style=&quot;padding: 1rem&quot;&gt;
+  &lt;div class=&quot;bfg bfg--gap-out&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
 </code></pre>
 <h3>.bfg--main-[P]</h3>
 <p><strong>[P]</strong> Position: <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
@@ -422,7 +428,6 @@ npm run md-to-html
 </code></pre>
 
 
-      <p><br>View on <a href="https://github.com/avine/bem-flex-grid">Github</a>.</p>
     </main>
 </body>
 </html>
