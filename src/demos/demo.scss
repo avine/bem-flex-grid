@@ -65,7 +65,7 @@ code {
   line-height: 1.2rem;
 }
 
-.demo-source__description {
+/*.demo-source__description {
   display: none;
   box-sizing: border-box;
   padding: 0.5rem 1rem;
@@ -77,7 +77,7 @@ code {
     border: 1px solid rgba(255, 255, 255, 0.2);
     background-color: rgba(0, 0, 0, 0.15);
   }
-}
+}*/
 
 .demo-source__warning {
   margin: 1rem -1rem;
@@ -157,3 +157,25 @@ code {
 .demo-text__bg-3 { background-color: #E8F5E9; }
 .demo-text__bg-4 { background-color: #FFEBEE; }
 .demo-text__bg-5 { background-color: #F3E5F5; }
+
+.demo-source__description {
+  position: fixed;
+  top: 0;
+  right: 50%;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  overflow: auto;
+  background: white;
+}
+
+.area {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  padding: 1rem;
+  overflow: auto;
+}

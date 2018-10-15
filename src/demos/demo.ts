@@ -4,6 +4,23 @@ import { highlight, languages } from 'prismjs';
 
 const showcase = () => {
   const element = document.getElementById('www-showcase');
+
+  const mapper = (anchor: HTMLAnchorElement, count: number) => `
+  <div class="www-avine__item">
+    <iframe src="${anchor.href}" class="www-showcase__iframe"></iframe>
+    <a href="${anchor.href}" class="www-showcase__link" title="Open in a separate tab">${count}</a>
+  </div>`;
+
+  const mappedHtml = [];
+  forEach<HTMLAnchorElement>(
+    element.querySelectorAll('a'),
+    (anchor, index) => mappedHtml.push(mapper(anchor, index + 1)),
+  );
+  element.innerHTML = mappedHtml.join('\n') + '\n';
+};
+
+/*const showcase = () => {
+  const element = document.getElementById('www-showcase');
   element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--box-overflow bfg--sm-disabled';
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
@@ -20,11 +37,35 @@ const showcase = () => {
     (anchor, index) => mappedHtml.push(mapper(anchor, index + 1)),
   );
   element.innerHTML = mappedHtml.join('\n') + '\n';
-};
+};*/
 
 /* ===== Handle view code ===== */
 
 const viewCode = () => {
+  const grids = document.querySelectorAll('body > .bfg');
+  if (grids.length) {
+    const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = '<pre class="demo-source__code"><code></code></pre>';
+    const code = wrapper.querySelector('code');
+    code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
+    const description = document.querySelector('.demo-source__description');
+    if (description) {
+      description.appendChild(wrapper);
+    }
+  }
+
+  /*document.body.setAttribute('style',
+    `position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    padding: 1rem;
+      overflow: auto;`);*/
+};
+
+/*const viewCode = () => {
   const grids = document.querySelectorAll('body > .bfg');
   if (grids.length) {
     const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
@@ -49,7 +90,7 @@ const viewCode = () => {
     });
     document.body.appendChild(wrapper);
   }
-};
+};*/
 
 function formatCode(code: string) {
   // Hack: add 2 spaces in front of the first line
@@ -155,14 +196,14 @@ window.addEventListener('click', (event) => {
 /* ===== Handle full screen switcher ===== */
 
 const fullScreenSwitcher = () => {
-  const wrapper = document.createElement('div');
+  /*const wrapper = document.createElement('div');
   wrapper.innerHTML = '<a href="#" title="Toggle page height" class="demo-full-screen__toggle">&updownarrow;</a>';
   const toggle = wrapper.firstChild;
   toggle.addEventListener('click', (event) => {
     event.preventDefault();
     document.querySelector('html').classList.toggle('demo-full-screen--disabled');
   });
-  document.body.appendChild(toggle);
+  document.body.appendChild(toggle);*/
 };
 
 /* Polyfill for IE11: Use "forEach" on DOM elements */
