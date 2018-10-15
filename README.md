@@ -179,7 +179,7 @@ Justify content along the "main" axis using `.bfg--main-*` modifiers.
 <div class="bfg bfg--main-around">...</div>
 ```
 
-> This is relevant only when the total size of the boxes along a line is less than `12`.
+> This is relevant only when the total size of the boxes along the line is less than `12` (see below the size modifiers for `.bfg__box` element).
 > Then you can choose the distribution mode of the remaining space.
 
 ### .bfg--cross-[P]
@@ -263,6 +263,8 @@ Define the `.bfg__box` element size using `.bfg__box--1`,  `.bfg__box--2`, ..., 
   <div class="bfg__box bfg__box--12"></div>
 ...
 ```
+
+> If the total size of the boxes along the line is less than `12` then the remaining space is distributed depending of `.bfg--main-[P]` modifiers.
 
 As the grid is responsive, you can change the `.bfg__box` element size at each breakpoint.
 
@@ -523,6 +525,52 @@ Now, you can use the new theme named `info`:
   <div class="bfg__content bfg__content--info"></div>
 ...
 ```
+
+## Summary
+
+| `.bfg` block |
+| - |
+| `.bfg--row` |
+| `.bfg--col` |
+| `.bfg--gap` |
+| `.bfg--gap-out` |
+| `.bfg--wrap` |
+| `.bfg--main-center` |
+| `.bfg--main-end` |
+| `.bfg--main-between` |
+| `.bfg--main-around` |
+| `.bfg--cross-start` |
+| `.bfg--cross-center` |
+| `.bfg--cross-end` |
+| `.bfg--lines-2`, `.bfg--lines-xl-2`, `.bfg--lines-lg-2`, `.bfg--lines-sm-2`, `.bfg--lines-xs-2` |
+| `.bfg--lines-3`, `.bfg--lines-xl-3`, `.bfg--lines-lg-3`, `.bfg--lines-sm-3`, `.bfg--lines-xs-3` |
+| `.bfg--lines-4`, `.bfg--lines-xl-4`, `.bfg--lines-lg-4`, `.bfg--lines-sm-4`, `.bfg--lines-xs-4` |
+| `.bfg--disabled`, `.bfg--xl-disabled, .bfg--lg-disabled, .bfg--sm-disabled, .bfg--xs-disabled` |
+| `.bfg--box-overflow` |
+| `.bfg--content-overflow` |
+
+| `.bfg__box` element |
+| - |
+| `.bfg__box--1`, `.bfg__box--xl-1`, `.bfg__box--lg-1`, `.bfg__box--sm-1`, `.bfg__box--xs-1` |
+| `.bfg__box--2`, `.bfg__box--xl-2`, `.bfg__box--lg-2`, `.bfg__box--sm-2`, `.bfg__box--xs-2` |
+| `.bfg__box--3`, `.bfg__box--xl-3`, `.bfg__box--lg-3`, `.bfg__box--sm-3`, `.bfg__box--xs-3` |
+| ... |
+| `.bfg__box--11`, `.bfg__box--xl-11`, `.bfg__box--lg-11`, `.bfg__box--sm-11`, `.bfg__box--xs-11` |
+| `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12` |
+| `.bfg__box--fit` |
+| `.bfg__box--nopad` |
+| `.bfg__box--overflow` |
+
+| `.bfg__content` element |
+| - |
+| `.bfg__content--nopad` |
+| `.bfg__content--overflow` |
+
+| `light` theme modifiers |
+| - |
+| `.bfg__action--light` |
+| `.bfg__header--light` |
+| `.bfg__content--light` |
 
 ## Install
 

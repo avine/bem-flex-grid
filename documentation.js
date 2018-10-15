@@ -37,8 +37,10 @@ const mdToHtml = () => {
     <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
 
     <style>
-      pre[class*="language-"] { background:#f6f8fa };
+      pre[class*="language-"] { background:#f6f8fa }
       .markdown-body h3 { color: #C62828; }
+      table { border-collapse: collapse; }
+      th { text-align: left; }
     </style>
   </head>
   <body>

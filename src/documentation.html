@@ -20,8 +20,10 @@
     <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
 
     <style>
-      pre[class*="language-"] { background:#f6f8fa };
+      pre[class*="language-"] { background:#f6f8fa }
       .markdown-body h3 { color: #C62828; }
+      table { border-collapse: collapse; }
+      th { text-align: left; }
     </style>
   </head>
   <body>
@@ -176,7 +178,7 @@
 &lt;div class=&quot;bfg bfg--main-around&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>This is relevant only when the total size of the boxes along a line is less than <code>12</code>.
+<p>This is relevant only when the total size of the boxes along the line is less than <code>12</code> (see below the size modifiers for <code>.bfg__box</code> element).
 Then you can choose the distribution mode of the remaining space.</p>
 </blockquote>
 <h3>.bfg--cross-[P]</h3>
@@ -234,6 +236,9 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--12&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
+<blockquote>
+<p>If the total size of the boxes along the line is less than <code>12</code> then the remaining space is distributed depending of <code>.bfg--main-[P]</code> modifiers.</p>
+</blockquote>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element size at each breakpoint.</p>
 <p><strong>Example:</strong></p>
 <ul>
@@ -433,6 +438,139 @@ $bfg-gap: 2rem;
   &lt;div class=&quot;bfg__content bfg__content--info&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
+<h2>Summary</h2>
+<table>
+<thead>
+<tr>
+<th><code>.bfg</code> block</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.bfg--row</code></td>
+</tr>
+<tr>
+<td><code>.bfg--col</code></td>
+</tr>
+<tr>
+<td><code>.bfg--gap</code></td>
+</tr>
+<tr>
+<td><code>.bfg--gap-out</code></td>
+</tr>
+<tr>
+<td><code>.bfg--wrap</code></td>
+</tr>
+<tr>
+<td><code>.bfg--main-center</code></td>
+</tr>
+<tr>
+<td><code>.bfg--main-end</code></td>
+</tr>
+<tr>
+<td><code>.bfg--main-between</code></td>
+</tr>
+<tr>
+<td><code>.bfg--main-around</code></td>
+</tr>
+<tr>
+<td><code>.bfg--cross-start</code></td>
+</tr>
+<tr>
+<td><code>.bfg--cross-center</code></td>
+</tr>
+<tr>
+<td><code>.bfg--cross-end</code></td>
+</tr>
+<tr>
+<td><code>.bfg--lines-2</code>, <code>.bfg--lines-xl-2</code>, <code>.bfg--lines-lg-2</code>, <code>.bfg--lines-sm-2</code>, <code>.bfg--lines-xs-2</code></td>
+</tr>
+<tr>
+<td><code>.bfg--lines-3</code>, <code>.bfg--lines-xl-3</code>, <code>.bfg--lines-lg-3</code>, <code>.bfg--lines-sm-3</code>, <code>.bfg--lines-xs-3</code></td>
+</tr>
+<tr>
+<td><code>.bfg--lines-4</code>, <code>.bfg--lines-xl-4</code>, <code>.bfg--lines-lg-4</code>, <code>.bfg--lines-sm-4</code>, <code>.bfg--lines-xs-4</code></td>
+</tr>
+<tr>
+<td><code>.bfg--disabled</code>, <code>.bfg--xl-disabled, .bfg--lg-disabled, .bfg--sm-disabled, .bfg--xs-disabled</code></td>
+</tr>
+<tr>
+<td><code>.bfg--box-overflow</code></td>
+</tr>
+<tr>
+<td><code>.bfg--content-overflow</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><code>.bfg__box</code> element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.bfg__box--1</code>, <code>.bfg__box--xl-1</code>, <code>.bfg__box--lg-1</code>, <code>.bfg__box--sm-1</code>, <code>.bfg__box--xs-1</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--2</code>, <code>.bfg__box--xl-2</code>, <code>.bfg__box--lg-2</code>, <code>.bfg__box--sm-2</code>, <code>.bfg__box--xs-2</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--3</code>, <code>.bfg__box--xl-3</code>, <code>.bfg__box--lg-3</code>, <code>.bfg__box--sm-3</code>, <code>.bfg__box--xs-3</code></td>
+</tr>
+<tr>
+<td>...</td>
+</tr>
+<tr>
+<td><code>.bfg__box--11</code>, <code>.bfg__box--xl-11</code>, <code>.bfg__box--lg-11</code>, <code>.bfg__box--sm-11</code>, <code>.bfg__box--xs-11</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--12</code>, <code>.bfg__box--xl-12</code>, <code>.bfg__box--lg-12</code>, <code>.bfg__box--sm-12</code>, <code>.bfg__box--xs-12</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--fit</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--nopad</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--overflow</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><code>.bfg__content</code> element</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.bfg__content--nopad</code></td>
+</tr>
+<tr>
+<td><code>.bfg__content--overflow</code></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><code>light</code> theme modifiers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.bfg__action--light</code></td>
+</tr>
+<tr>
+<td><code>.bfg__header--light</code></td>
+</tr>
+<tr>
+<td><code>.bfg__content--light</code></td>
+</tr>
+</tbody>
+</table>
 <h2>Install</h2>
 <pre><code class="language-bash">npm install
 
