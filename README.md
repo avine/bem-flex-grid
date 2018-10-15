@@ -537,5 +537,5 @@ npm start
 npm run build
 
 # Build `documentation.html` from `README.md`
-npm run md-to-html
+npm run doc
 ```

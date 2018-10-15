@@ -2,7 +2,8 @@
 
 @import "./variables.scss";
 
-html {
+html,
+.markdown-body { // Overwrite default "primer-markdown"
   color: #424242;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;

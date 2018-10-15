@@ -16,7 +16,7 @@ const mdToHtml = () => {
   const markdown = Fs.readFileSync(sourcePath, { encoding: 'utf-8' });
 
   const html = `<!DOCTYPE html>
-  <html lang="en">
+  <html lang="en" class="markdown-body">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,7 +25,7 @@ const mdToHtml = () => {
 
     <link rel="shortcut icon" href="favicon.ico">
 
-    <link rel="stylesheet" href="demos/documentation.scss">
+    <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
 
     <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
     <script src="../node_modules/prismjs/prism.js"></script>
@@ -38,9 +38,10 @@ const mdToHtml = () => {
 
     <style>
       pre[class*="language-"] { background:#f6f8fa };
+      .markdown-body h3 { color: #C62828; }
     </style>
   </head>
-  <body class="markdown-body">
+  <body>
     <div class="www-navbar www-navbar--back">
       <div class="www-container">
         <a href="/" class="www-navbar__link">Bem Flex Grid</a>
