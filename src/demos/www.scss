@@ -12,6 +12,10 @@ a {
   color: #2196F3; // map-get($demo-light, forground);
 }
 
+main {
+  display: block; // For IE11
+}
+
 $www-navbar: (
   border: #1565C0,
   background: #2196F3,
@@ -25,7 +29,7 @@ $www-header: (
   forground: #9E9E9E
 );
 
-$www-max-width: 1024px;
+$www-max-width: 992px;
 
 /* ===== Navbar ===== */
 
@@ -79,15 +83,15 @@ $www-max-width: 1024px;
   position: relative;
   z-index: 2;
   margin-bottom: 3rem;
+  padding: map-get($www-header, padding) 0 (map-get($www-header, padding) / 2) 0;
   background-color: map-get($www-header, background);
   border-bottom: 1px solid map-get($www-header, border);
 }
 
 .www-header__title {
-  $padding: map-get($www-header, padding);
-
-  margin: $padding ($padding / 2) $padding 0;
-  line-height: $padding;
+  margin: 0;
+  margin-right: (map-get($www-header, padding) / 2);
+  line-height: map-get($www-header, padding);
   font-size: 4rem;
   font-weight: 200;
   color: map-get($www-header, forground);
@@ -96,6 +100,18 @@ $www-max-width: 1024px;
     color: inherit;
     text-decoration: none;
   }
+}
+
+h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
+  margin: 0;
+  margin-top: (map-get($www-header, padding) / 2);
+  padding: 0; // Remove "primer-markdown" style
+  border: none; // Remove "primer-markdown" style
+  text-align: center;
+  line-height: inherit; // Remove "primer-markdown" style
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: map-get($www-header, forground);
 }
 
 /* ===== Container ===== */
