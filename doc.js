@@ -32,8 +32,8 @@ const mdToHtml = () => {
     <script src="../node_modules/prismjs/components/prism-scss.min.js"></script>
     <script src="../node_modules/prismjs/components/prism-bash.min.js"></script>
 
-    <link rel="stylesheet" href="demos/demo.scss">
-    <link rel="stylesheet" href="demos/www.scss">
+    <link rel="stylesheet" href="content/demo.scss">
+    <link rel="stylesheet" href="content/www.scss">
     <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
 
     <style>
@@ -51,9 +51,9 @@ const mdToHtml = () => {
     </div>
     <header class="www-navbar www-navbar--front">
       <div class="www-container">
-        <a href="./" class="www-navbar__link">Doc</a>
-        <a href="demos.html" class="www-navbar__link">Demos</a>
-        <a href="https://github.com/avine/bem-flex-grid/" class="www-navbar__link">Github</a>
+        <a href="./" class="www-navbar__link">doc</a>
+        <a href="demo.html" class="www-navbar__link">demo</a>
+        <a href="https://github.com/avine/bem-flex-grid/" class="www-navbar__link">github</a>
       </div>
     </header>
 
