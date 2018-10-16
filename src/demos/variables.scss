@@ -21,7 +21,7 @@ $www-logo-border: ($www-logo-size / 12);
 $www-logo-shadow: ($www-logo-border / 2);
 
 $www-showcase-margin: 3rem;
-$www-showcase-border: 2px solid map-get($www-header, border);
+$www-showcase-border: 1px solid map-get($www-header, border);
 
 $www-border-radius: 3px;
 

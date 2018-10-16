@@ -167,11 +167,11 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   }
   85% {
     border-radius: 33%;
-    transform: rotate(-45deg) scale(1.35);
+    transform: rotate(45deg) scale(1.35);
   }
   100% {
     border-radius: 0;
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
     box-shadow:
       $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2),
       $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2) inset;
@@ -201,7 +201,8 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   display: block;
   width: 100%;
   height: 70vh;
-  border-radius: ($www-border-radius - 2px); // TODO: mettre "2px" en variable (en scindant $www-showcase-border)
+  max-height: 480px;
+  border-radius: ($www-border-radius - 1px); // TODO: mettre "2px" en variable (en scindant $www-showcase-border)
   border: none;
 }
 
