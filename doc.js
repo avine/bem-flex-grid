@@ -32,8 +32,8 @@ const mdToHtml = () => {
     <script src="../node_modules/prismjs/components/prism-scss.min.js"></script>
     <script src="../node_modules/prismjs/components/prism-bash.min.js"></script>
 
-    <link rel="stylesheet" href="content/demo.scss">
-    <link rel="stylesheet" href="content/www.scss">
+    <link rel="stylesheet" href="css/demo.scss">
+    <link rel="stylesheet" href="css/www.scss">
     <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
 
     <style>
