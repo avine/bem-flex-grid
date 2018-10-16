@@ -577,13 +577,13 @@ Now, you can use the new theme named `info`:
 ```bash
 npm install
 
-# Open showcase in your favorite browser
-npm start
-
 # Build `bem-flex-grid.css` and `bem-flex-grid.min.css` from `bem-flex-grid.scss`
 # Build `bem-flex-grid.ie11.css` and `bem-flex-grid.ie11.min.css` from `bem-flex-grid.ie11.scss`
 npm run build
 
-# Build `documentation.html` from `README.md`
+# Build `index.html` from `README.md`
 npm run doc
+
+# Open showcase in your favorite browser
+npm start
 ```

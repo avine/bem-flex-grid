@@ -4,8 +4,8 @@
   "description": "CSS flex grid, BEM compliant",
   "main": "index.js",
   "scripts": {
-    "doc": "node documentation.js",
-    "doc:watch": "node documentation.js watch",
+    "doc": "node doc.js",
+    "doc:watch": "node doc.js watch",
     "start": "parcel src/index.html --open",
     "css": "node-sass src/lib/bem-flex-grid.scss > build/bem-flex-grid.css",
     "css:ie11": "node-sass src/lib/bem-flex-grid.ie11.scss > build/bem-flex-grid.ie11.css",

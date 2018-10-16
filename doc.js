@@ -10,7 +10,7 @@ const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
 
 const sourcePath = Path.join(__dirname, './README.md');
-const targetPath = Path.join(__dirname, './src/documentation.html');
+const targetPath = Path.join(__dirname, './src/index.html');
 
 const mdToHtml = () => {
   const markdown = Fs.readFileSync(sourcePath, { encoding: 'utf-8' });
@@ -21,7 +21,7 @@ const mdToHtml = () => {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Documentation - Bem Flex Grid</title>
+    <title>Bem Flex Grid</title>
 
     <link rel="shortcut icon" href="favicon.ico">
 
@@ -46,12 +46,13 @@ const mdToHtml = () => {
   <body>
     <div class="www-navbar www-navbar--back">
       <div class="www-container">
-        <a href="/" class="www-navbar__link">Bem Flex Grid</a>
+        <a href="./" class="www-navbar__link">Bem Flex Grid</a>
       </div>
     </div>
     <header class="www-navbar www-navbar--front">
       <div class="www-container">
-        <a href="documentation.html" class="www-navbar__link">Documentation</a>
+        <a href="./" class="www-navbar__link">Doc</a>
+        <a href="demos.html" class="www-navbar__link">Demos</a>
         <a href="https://github.com/avine/bem-flex-grid/" class="www-navbar__link">Github</a>
       </div>
     </header>
@@ -59,7 +60,7 @@ const mdToHtml = () => {
     <header class="www-header">
       <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
         <div class="bfg__box bfg__box--fit www-header__title">
-          <a href="/">Bem Flex Grid</a>
+          <a href="./">Bem Flex Grid</a>
         </div>
 
         <div class="bfg__box bfg__box--fit www-logo">
