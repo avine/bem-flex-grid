@@ -78,7 +78,7 @@ main {
 .www-header {
   position: relative;
   z-index: 12;
-  margin-bottom: (map-get($www-navbar, height) + $www-showcase-margin);
+  margin-bottom: (map-get($www-navbar, height) + map-get($www-showcase, margin));
   padding: map-get($www-header, padding) 0 (map-get($www-header, padding) / 2) 0;
   background-color: map-get($www-header, background);
   border-bottom: 1px solid map-get($www-header, border);
@@ -193,8 +193,8 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 .www-showcase__item {
   position: relative;
   border-radius: $www-border-radius;
-  border: $www-showcase-border;
-  margin-bottom: $www-showcase-margin;
+  border: map-get($www-showcase, border-width) solid map-get($www-showcase, border-color);
+  margin-bottom: map-get($www-showcase, margin);
 }
 
 .www-showcase__iframe {
@@ -202,7 +202,7 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   width: 100%;
   height: 70vh;
   max-height: 480px;
-  border-radius: ($www-border-radius - 1px); // TODO: mettre "2px" en variable (en scindant $www-showcase-border)
+  border-radius: ($www-border-radius - map-get($www-showcase, border-width));
   border: none;
 }
 
