@@ -42,14 +42,14 @@ const showcase = () => {
 /* ===== Handle view code ===== */
 
 const viewCode = () => {
-  const grids = document.querySelectorAll('.final__demo');
+  const grids = document.querySelectorAll('.demo-layout__output');
   if (grids.length) {
     const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
-    wrapper.innerHTML = '<pre class="final__code"><code></code></pre>';
+    wrapper.innerHTML = '<pre class="demo-layout__code"><code></code></pre>';
     const code = wrapper.querySelector('code');
     code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
-    const info = document.querySelector('.final__info');
+    const info = document.querySelector('.demo-layout__desc');
     if (info) {
       info.appendChild(wrapper.firstChild);
     }
@@ -158,6 +158,8 @@ window.addEventListener('click', (event) => {
 });
 
 /* ===== Handle full screen switcher ===== */
+
+// TODO: need to be applied to the new demo container...
 
 const fullScreenSwitcher = () => {
   /*const wrapper = document.createElement('div');
