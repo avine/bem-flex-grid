@@ -1,5 +1,5 @@
-
 $www-navbar: (
+  height: 3rem,
   border: #1565C0,
   background: #2196F3,
   forground: #FFF // #E3F2FD
@@ -20,21 +20,17 @@ $www-logo-size: 6rem;
 $www-logo-border: ($www-logo-size / 12);
 $www-logo-shadow: ($www-logo-border / 2);
 
-$www-showcase-margin: 5rem;
-$www-showcase-border: 2px solid #ddd;
+$www-showcase-margin: 3rem;
+$www-showcase-border: 2px solid map-get($www-header, border);
+
+$www-border-radius: 3px;
 
 //////////////////////////////////////
 
-$demo-light: (
-  border: #CFD8DC, // #B0BEC5,
-  background: #ECEFF1,
-  forground: #607D8B
-);
-
 $demo-dark: (
-  border: #455A64,
-  background: #607D8B,
-  forground: #ECEFF1
+  border: #0D47A1,
+  background: #1565C0,
+  forground: #E3F2FD
 );
 
 $demo-variant: (

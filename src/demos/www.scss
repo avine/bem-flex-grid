@@ -34,8 +34,8 @@ main {
   position: fixed;
   top: 0;
   width: 100%;
-  height: 3rem;
-  line-height: 3rem;
+  height: map-get($www-navbar, height);
+  line-height: map-get($www-navbar, height);
   border-bottom: 1px solid transparent;
   color: map-get($www-navbar, forground);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
@@ -62,7 +62,7 @@ main {
 
   .www-navbar__link {
     padding: 0.25rem 0.75rem;
-    border-radius: 3px;
+    border-radius: $www-border-radius;
     background-color: rgba(0, 0, 0, 0.35);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) inset;
   }
@@ -78,7 +78,7 @@ main {
 .www-header {
   position: relative;
   z-index: 12;
-  margin-bottom: $www-showcase-margin;
+  margin-bottom: (map-get($www-navbar, height) + $www-showcase-margin);
   padding: map-get($www-header, padding) 0 (map-get($www-header, padding) / 2) 0;
   background-color: map-get($www-header, background);
   border-bottom: 1px solid map-get($www-header, border);
@@ -192,6 +192,7 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 
 .www-showcase__item {
   position: relative;
+  border-radius: $www-border-radius;
   border: $www-showcase-border;
   margin-bottom: $www-showcase-margin;
 }
@@ -200,31 +201,30 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   display: block;
   width: 100%;
   height: 70vh;
+  border-radius: ($www-border-radius - 2px); // TODO: mettre "2px" en variable (en scindant $www-showcase-border)
   border: none;
 }
 
 .www-showcase__link {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: -0.8rem;
+  left: -0.8rem;
   z-index: 9;
   width: 2rem;
   height: 2rem;
   line-height: 2rem;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  border-radius: 50%;
-  border: 1px solid map-get($demo-variant, border);
-  background-color: map-get($demo-variant, background);
-  color: map-get($demo-variant, forground) !important;
+  border-radius: $www-border-radius;
+  border: 1px solid map-get($demo-dark, border);
+  background-color: map-get($demo-dark, background);
+  color: map-get($demo-dark, forground) !important;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   text-decoration: none;
-  opacity: 0.5;
-  transition: background-color ease 300ms, color ease 300ms, opacity ease 300ms;
+  opacity: 0.75;
+  transition: opacity ease 300ms;
 
   &:hover {
-    background-color: map-get($demo-variant, border);
-    color: #ddd;
     opacity: 1;
   }
 }

@@ -19,48 +19,23 @@ const showcase = () => {
   element.innerHTML = mappedHtml.join('\n') + '\n';
 };
 
-/*const showcase = () => {
-  const element = document.getElementById('www-showcase');
-  element.className = 'bfg bfg--row bfg--gap bfg--wrap bfg--box-overflow bfg--sm-disabled';
-
-  const mapper = (anchor: HTMLAnchorElement, count: number) => `
-  <div class="bfg__box bfg__box--6">
-    <div class="www-showcase__item">
-      <iframe src="${anchor.href}" class="www-showcase__iframe"></iframe>
-      <a href="${anchor.href}" class="www-showcase__link" title="Open in a separate tab">${count}</a>
-    </div>
-  </div>`;
-
-  const mappedHtml = [];
-  forEach<HTMLAnchorElement>(
-    element.querySelectorAll('a'),
-    (anchor, index) => mappedHtml.push(mapper(anchor, index + 1)),
-  );
-  element.innerHTML = mappedHtml.join('\n') + '\n';
-};*/
-
 /* ===== Handle view code ===== */
 
 const viewCode = () => {
-  const grids = document.querySelectorAll('.demo-layout__output');
-  if (grids.length) {
-    const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
-    const wrapper = document.createElement('div');
-    wrapper.innerHTML = '<pre class="demo-layout__code"><code></code></pre>';
-    const code = wrapper.querySelector('code');
-    code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
-    const info = document.querySelector('.demo-layout__desc');
-    if (info) {
-      info.appendChild(wrapper.firstChild);
-    }
+  const source = document.querySelector('.demo-layout__output').innerHTML;
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = '<pre class="demo-layout__code"><code></code></pre>';
+  const code = wrapper.querySelector('code');
+  code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
+  const info = document.querySelector('.demo-layout__desc');
+  if (info) {
+    info.appendChild(wrapper.firstChild);
   }
 };
 
 function formatCode(code: string) {
-  // Hack: add 2 spaces in front of the first line
-  code = '  ' + code;
   // Remove useless indentation
-  let lines = code.split('\n');
+  let lines = code.split('\n').filter((line) => !!line.trim().length);
   const indent = lines.reduce((idt, currLine) => {
     if (currLine) {
       const currIndent = (currLine.match(/^[\s]+/) || [''])[0].length;
