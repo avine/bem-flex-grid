@@ -14,12 +14,12 @@ html,
 
 body {
   margin: 0;
-  //box-sizing: border-box;
+  box-sizing: border-box; // FIXME: DEPRECATED ?
 }
 
-/*html, body {
-  height: 100%;
-}*/
+html, body {
+  height: 100%; // FIXME: DEPRECATED ?
+}
 
 code {
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
@@ -47,78 +47,6 @@ code {
 
 /* ===== Handle source ===== */
 
-.demo-source__toggle {
-  @include demo-dark-button(left);
-}
-
-.demo-source__content {
-  overflow: auto;
-  max-width: 80%;
-  max-height: 80%;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
-  background-color: #fff;
-  display: none;
-}
-
-.demo-source__code {
-  overflow-x: auto;
-  margin: 0;
-  //padding: 2rem;
-  line-height: 1.2rem;
-}
-
-/*.demo-source__description {
-  display: none;
-  box-sizing: border-box;
-  padding: 0.5rem 1rem;
-  @include demo-dark-box;
-  border-width: 1px 0 0 0;
-
-  code {
-    padding: 0.2em 0.4em;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: rgba(0, 0, 0, 0.15);
-  }
-}*/
-
-.demo-source__warning {
-  margin: 1rem -1rem;
-  padding: 0.5rem 1rem;
-  display: block;
-  border: 1px solid map-get($demo-variant, border);
-  background-color: map-get($demo-variant, background);
-  color: map-get($demo-variant, forground);
-  font-size: 0.875rem;
-
-  &:last-child {
-    margin-bottom: -0.5rem;
-  }
-}
-
-.demo-source {
-  z-index: 12;
-  justify-content: center;
-  align-items: center;
-  transition: background-color ease 200ms;
-
-  &.demo-source--open {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-
-    .demo-source__content {
-      display: block !important;
-    }
-
-    .demo-source__description {
-      display: block;
-    }
-  }
-}
 
 /* ===== Handle container and text ===== */
 
@@ -160,18 +88,6 @@ code {
 .demo-text__bg-4 { background-color: #FFEBEE; }
 .demo-text__bg-5 { background-color: #F3E5F5; }
 
-.demo-source__description {
-  position: fixed;
-  top: 0;
-  right: 50%;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  overflow: auto;
-  background: white;
-}
-
-
 //////
 
 .final__info {
@@ -190,6 +106,7 @@ code {
 .final__desc {
   padding: 1rem;
   flex-shrink: 0;
+  background: white;
 }
 
 .final__code {
@@ -199,9 +116,13 @@ code {
   min-height: 200px;
   max-height: 100%;
   box-sizing: border-box;
-  border-top: 2px solid #ddd;
-  background: #f5f5f5;
+  border-top: $www-showcase-border;
+  background: #f6f8fa;
   padding: 1rem;
+
+  overflow-x: auto;
+  margin: 0;
+  line-height: 1.2rem;
 }
 
 .final__code pre {
@@ -216,5 +137,10 @@ code {
   width: 50%;
   overflow: auto;
   box-sizing: border-box;
-  border-left: 2px solid #ddd;
+  border-left: $www-showcase-border;
+}
+
+.final__warning {
+  color: map-get($demo-variant, background);
+  font-size: 0.875rem;
 }

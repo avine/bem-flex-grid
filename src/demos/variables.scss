@@ -1,3 +1,4 @@
+
 $www-navbar: (
   border: #1565C0,
   background: #2196F3,
@@ -11,9 +12,18 @@ $www-header: (
   forground: #9E9E9E
 );
 
+$www-link: #2196F3;
+
 $www-max-width: 992px;
 
-$www-showcase-margin: 6rem;
+$www-logo-size: 6rem;
+$www-logo-border: ($www-logo-size / 12);
+$www-logo-shadow: ($www-logo-border / 2);
+
+$www-showcase-margin: 5rem;
+$www-showcase-border: 2px solid #ddd;
+
+//////////////////////////////////////
 
 $demo-light: (
   border: #CFD8DC, // #B0BEC5,

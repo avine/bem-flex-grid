@@ -46,43 +46,15 @@ const viewCode = () => {
   if (grids.length) {
     const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
-    wrapper.className = 'final__code';
-    wrapper.innerHTML = '<pre class="demo-source__code"><code></code></pre>';
+    wrapper.innerHTML = '<pre class="final__code"><code></code></pre>';
     const code = wrapper.querySelector('code');
     code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
     const info = document.querySelector('.final__info');
     if (info) {
-      info.appendChild(wrapper);
+      info.appendChild(wrapper.firstChild);
     }
   }
 };
-
-/*const viewCode = () => {
-  const grids = document.querySelectorAll('body > .bfg');
-  if (grids.length) {
-    const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
-    const wrapper = document.createElement('div');
-    wrapper.className = 'demo-source';
-    wrapper.innerHTML = '<a href="#" class="demo-source__toggle" title="View source code">&GreaterEqual;</a>' +
-      `<div class="demo-source__content"><pre class="demo-source__code"><code></code></pre></div>`;
-    const code = wrapper.querySelector('.demo-source__code').firstChild as HTMLElement;
-    if (code) {
-      code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
-    }
-    const description = document.querySelector('.demo-source__description');
-    if (description) {
-      wrapper.querySelector('.demo-source__content').appendChild(description);
-    }
-    wrapper.addEventListener('click', (event) => {
-      const target = event.target as Element;
-      if (target.classList.contains('demo-source__toggle') || target.classList.contains('demo-source')) {
-        event.preventDefault();
-        wrapper.classList.toggle('demo-source--open');
-      }
-    });
-    document.body.appendChild(wrapper);
-  }
-};*/
 
 function formatCode(code: string) {
   // Hack: add 2 spaces in front of the first line
