@@ -1,3 +1,20 @@
+$www-navbar: (
+  border: #1565C0,
+  background: #2196F3,
+  forground: #FFF // #E3F2FD
+);
+
+$www-header: (
+  padding: 6rem,
+  border: #E0E0E0,
+  background: #F5F5F5,
+  forground: #9E9E9E
+);
+
+$www-max-width: 992px;
+
+$www-showcase-margin: 6rem;
+
 $demo-light: (
   border: #CFD8DC, // #B0BEC5,
   background: #ECEFF1,

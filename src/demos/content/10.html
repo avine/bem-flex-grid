@@ -15,20 +15,27 @@
   <script src="../demo.ts"></script>
 </head>
 <body>
-  <div class="demo-source__description">
-    To always fit the main <code>.bfg</code> width, use a <code>.bfg--row</code> wrapper and a separate <code>.bfg--col</code> for each column.<br>
-    This is more complex, but this way you can set a different width of each column.
+  <div class="final__info">
+    <div class="final__desc">
+
+      <p>To always fit the main <code>.bfg</code> width, use a <code>.bfg--row</code> wrapper and a separate <code>.bfg--col</code> for each column.<br>
+        This is more complex, but this way you can set a different width of each column.</p>
+
+    </div>
   </div>
+  <div class="final__demo">
 
-  <div class="bfg bfg--row">
-    <div class="bfg__box bfg__box--3 bfg bfg--col">
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--6"></div>
+    <div class="bfg bfg--row">
+      <div class="bfg__box bfg__box--3 bfg bfg--col">
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--6"></div>
+      </div>
+
+      <div class="bfg__box bfg__box--9 bfg bfg--col">
+        <div class="bfg__box bfg__box--12"></div>
+      </div>
     </div>
 
-    <div class="bfg__box bfg__box--9 bfg bfg--col">
-      <div class="bfg__box bfg__box--12"></div>
-    </div>
   </div>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.fullScreenSwitcher();</script>

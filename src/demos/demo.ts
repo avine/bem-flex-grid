@@ -6,7 +6,7 @@ const showcase = () => {
   const element = document.getElementById('www-showcase');
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
-  <div class="www-avine__item">
+  <div class="www-showcase__item">
     <iframe src="${anchor.href}" class="www-showcase__iframe"></iframe>
     <a href="${anchor.href}" class="www-showcase__link" title="Open in a separate tab">${count}</a>
   </div>`;
@@ -42,27 +42,19 @@ const showcase = () => {
 /* ===== Handle view code ===== */
 
 const viewCode = () => {
-  const grids = document.querySelectorAll('body > .bfg');
+  const grids = document.querySelectorAll('.final__demo');
   if (grids.length) {
     const source = Array.prototype.map.call(grids, (grid) => grid.outerHTML).join('\n\n');
     const wrapper = document.createElement('div');
+    wrapper.className = 'final__code';
     wrapper.innerHTML = '<pre class="demo-source__code"><code></code></pre>';
     const code = wrapper.querySelector('code');
     code.innerHTML = highlight(formatCode(source), languages.html, languages.html);
-    const description = document.querySelector('.demo-source__description');
-    if (description) {
-      description.appendChild(wrapper);
+    const info = document.querySelector('.final__info');
+    if (info) {
+      info.appendChild(wrapper);
     }
   }
-
-  /*document.body.setAttribute('style',
-    `position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 50%;
-    padding: 1rem;
-      overflow: auto;`);*/
 };
 
 /*const viewCode = () => {
