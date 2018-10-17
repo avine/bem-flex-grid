@@ -30,29 +30,6 @@
 .bfg--gap-out .bfg__box--nopad {
   padding: 0; }
 
-/*
-// Alternative definition of `bfg--gap` and `bfg--gap-out`, using both:
-// `<div class="bfg--gap bfg--gap-out"></div>`
-
-.bfg--gap {
-  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
-
-  .bfg__box {
-    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
-  }
-
-  .bfg__box.bfg,
-  .bfg__box--nopad {
-    padding: 0;
-  }
-}
-
-.bfg--gap-out {
-  margin: 0 (-$bfg-gap / 2);
-  padding: 0;
-  height: calc(100% + 1rem);
-}
-*/
 .bfg--wrap {
   flex-wrap: wrap; }
 
@@ -91,6 +68,12 @@
 
 .bfg__box--fit {
   flex: 0 0 auto; }
+
+.bfg__box--first {
+  order: -1; }
+
+.bfg__box--last {
+  order: 1; }
 
 .bfg__box--1 {
   flex-basis: 8.33333%; }
@@ -229,6 +212,10 @@
     height: auto; }
 
 @media (max-width: 1199.98px) {
+  .bfg__box--xl-first {
+    order: -1; }
+  .bfg__box--xl-last {
+    order: 1; }
   .bfg__box--xl-1 {
     flex-basis: 8.33333%; }
   .bfg__box--xl-2 {
@@ -324,6 +311,10 @@
       height: auto; } }
 
 @media (max-width: 991.98px) {
+  .bfg__box--lg-first {
+    order: -1; }
+  .bfg__box--lg-last {
+    order: 1; }
   .bfg__box--lg-1 {
     flex-basis: 8.33333%; }
   .bfg__box--lg-2 {
@@ -419,6 +410,10 @@
       height: auto; } }
 
 @media (max-width: 767.98px) {
+  .bfg__box--sm-first {
+    order: -1; }
+  .bfg__box--sm-last {
+    order: 1; }
   .bfg__box--sm-1 {
     flex-basis: 8.33333%; }
   .bfg__box--sm-2 {
@@ -514,6 +509,10 @@
       height: auto; } }
 
 @media (max-width: 575.98px) {
+  .bfg__box--xs-first {
+    order: -1; }
+  .bfg__box--xs-last {
+    order: 1; }
   .bfg__box--xs-1 {
     flex-basis: 8.33333%; }
   .bfg__box--xs-2 {

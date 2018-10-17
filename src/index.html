@@ -259,6 +259,15 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 ...
 </code></pre>
+<h3>.bfg__box--[B-]first, .bfg__box--[B-]last</h3>
+<p><strong>[B-]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
+<p>Use <code>.bfg__box--first</code> or <code>.bfg__box--last</code> modifiers to change the box order.</p>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--last&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--first&quot;&gt;&lt;/div&gt;
+...
+</code></pre>
+<p>As the grid is responsive, you can change the box order at each breakpoint.</p>
 <h3>.bfg__box--fit</h3>
 <p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
 <p>Here's an example when using <code>.bfg--row</code> modifier:</p>
@@ -527,6 +536,12 @@ $bfg-gap: 2rem;
 </tr>
 <tr>
 <td><code>.bfg__box--12</code>, <code>.bfg__box--xl-12</code>, <code>.bfg__box--lg-12</code>, <code>.bfg__box--sm-12</code>, <code>.bfg__box--xs-12</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--first</code>, <code>.bfg__box--xl-first</code>, <code>.bfg__box--lg-first</code>, <code>.bfg__box--sm-first</code>, <code>.bfg__box--xs-first</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--last</code>, <code>.bfg__box--xl-last</code>, <code>.bfg__box--lg-last</code>, <code>.bfg__box--sm-last</code>, <code>.bfg__box--xs-last</code></td>
 </tr>
 <tr>
 <td><code>.bfg__box--fit</code></td>

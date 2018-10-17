@@ -82,30 +82,6 @@ $bfg-breakpoints: (
   }
 }
 
-/*
-// Alternative definition of `bfg--gap` and `bfg--gap-out`, using both:
-// `<div class="bfg--gap bfg--gap-out"></div>`
-
-.bfg--gap {
-  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
-
-  .bfg__box {
-    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
-  }
-
-  .bfg__box.bfg,
-  .bfg__box--nopad {
-    padding: 0;
-  }
-}
-
-.bfg--gap-out {
-  margin: 0 (-$bfg-gap / 2);
-  padding: 0;
-  height: calc(100% + #{$bfg-gap});
-}
-*/
-
 .bfg--wrap {
   flex-wrap: wrap;
 }
@@ -138,6 +114,9 @@ $bfg-breakpoints: (
 }
 
 @mixin bfg-boxes($size: '') {
+  .bfg__box--#{$size + first} { order: -1; }
+  .bfg__box--#{$size + last} { order: 1; }
+
   .bfg__box--#{$size + 1} { flex-basis: (100% / 12); }
   .bfg__box--#{$size + 2} { flex-basis: (100% / 6); }
   .bfg__box--#{$size + 3} { flex-basis: 25%; }

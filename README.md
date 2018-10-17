@@ -288,6 +288,21 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 ...
 ```
 
+### .bfg__box--[B-]first, .bfg__box--[B-]last
+
+**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+Use `.bfg__box--first` or `.bfg__box--last` modifiers to change the box order.
+
+```html
+...
+  <div class="bfg__box bfg__box--6 bfg__box--last"></div>
+  <div class="bfg__box bfg__box--6 bfg__box--first"></div>
+...
+```
+
+As the grid is responsive, you can change the box order at each breakpoint.
+
 ### .bfg__box--fit
 
 Use `.bfg__box--fit` modifier to indicate that a `.bfg__box` element should not grow or shrink.
@@ -557,6 +572,8 @@ Now, you can use the new theme named `info`:
 | ...                   |
 | `.bfg__box--11`, `.bfg__box--xl-11`, `.bfg__box--lg-11`, `.bfg__box--sm-11`, `.bfg__box--xs-11` |
 | `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12` |
+| `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first` |
+| `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last` |
 | `.bfg__box--fit`      |
 | `.bfg__box--nopad`    |
 | `.bfg__box--overflow` |
