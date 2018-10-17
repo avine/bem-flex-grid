@@ -78,6 +78,10 @@ const mdToHtml = () => {
 ${md.render(markdown)}
 
     </main>
+
+    <footer class="www-footer">
+      Powered with <b>&hearts;</b> by Avine.
+    </footer>
 </body>
 </html>`;
 
