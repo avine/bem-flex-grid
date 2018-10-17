@@ -1,8 +1,20 @@
+/* ===== demo ===== */
+
+$demo-link: #2196F3;
+
+$demo-warn: #D32F2F;
+
+$demo-action: (
+  border: #0D47A1,
+  background: #1565C0,
+  forground: #E3F2FD
+);
+
+/* ===== www ===== */
+
 $www-max-width: 992px;
 
 $www-border-radius: 3px;
-
-$www-link: #2196F3;
 
 $www-navbar: (
   height: 3rem,
@@ -30,47 +42,3 @@ $www-showcase: (
 
 // Just a shortcut :)
 $www-showcase-border: map-get($www-showcase, border-width) solid map-get($www-showcase, border-color);
-
-//////////////////////////////////////
-
-$demo-dark: (
-  border: #0D47A1,
-  background: #1565C0,
-  forground: #E3F2FD
-);
-
-$demo-variant: (
-  border: #D32F2F,
-  background: #F44336,
-  forground: #FFEBEE
-);
-
-@mixin demo-dark-box {
-  border: 1px solid map-get($demo-dark, border);
-  background-color: map-get($demo-dark, background);
-  color: map-get($demo-dark, forground);
-  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
-}
-
-@mixin demo-dark-button($position) {
-  position: fixed;
-  z-index: 12;
-  bottom: 0;
-  padding: 0.15rem 0.45rem;
-  @include demo-dark-box;
-  text-decoration: none;
-  font-family: -webkit-pictograph;
-  transition: background-color ease 300ms, color ease 300ms;
-
-  @if ($position == left) {
-    left: 0;
-  } @else {
-    right: 0;
-  }
-
-  &:hover {
-    background-color: map-get($demo-dark, border);
-    color: #ddd;
-  }
-}
-

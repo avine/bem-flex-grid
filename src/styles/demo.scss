@@ -14,11 +14,6 @@ html,
 
 body {
   margin: 0;
-  box-sizing: border-box; // FIXME: DEPRECATED ?
-}
-
-html, body {
-  height: 100%; // FIXME: DEPRECATED ?
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -31,22 +26,12 @@ code {
   line-height: 0.85rem;
 }
 
-/* ===== Change html background color ===== */
-
-.demo-page-bg--gray {
-  background-color: #f5f5f5;
+a {
+  color: $demo-link;
 }
 
-/* ===== Disable full screen mode ===== */
-
-.demo-full-screen--disabled { // Add to the <html> tag
-  &, body {
-    height: auto; // FIXME: DEPRECATED ?
-  }
-}
-
-.demo-full-screen__toggle {
-  @include demo-dark-button(right); // FIXME: DEPRECATED ?
+main {
+  display: block; // For IE11
 }
 
 /* ===== Handle layout ===== */
@@ -67,7 +52,6 @@ code {
   padding: 1rem;
   flex-grow: 1;
   flex-shrink: 0;
-  background: white;
 
   code {
     padding: 0.2em 0.4em; // From "primer-markdown"
@@ -103,8 +87,10 @@ pre.demo-layout__output {
   width: 50%;
   overflow: auto;
   box-sizing: border-box;
-  border-left: $www-showcase-border;
   padding: $www-border-radius;
+  border-left: $www-showcase-border;
+  background-color: #fff;
+  transition: width ease-in-out 300ms;
 
   // Remove default browser `<pre>` styles
   font-family: inherit;
@@ -112,9 +98,59 @@ pre.demo-layout__output {
   margin: 0;
 }
 
+pre.demo-layout__output--full {
+  width: 100%;
+}
+
+pre.demo-layout__output--gray {
+  background-color: #f5f5f5;
+}
+
+.demo-layout__source {
+  height: 100%;
+}
+
+.demo-layout__source--auto {
+  height: auto;
+}
+
 .demo-layout__warn {
-  color: map-get($demo-variant, background);
+  color: $demo-warn;
   font-size: 0.875rem;
+}
+
+/* ===== Actions ===== */
+
+.demo-action {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border-radius: $www-border-radius;
+  border: 1px solid map-get($demo-action, border);
+  background-color: map-get($demo-action, background);
+  color: map-get($demo-action, forground) !important;
+  text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-decoration: none;
+  opacity: 0.75;
+  transition: opacity ease 300ms;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.demo-action--full-width {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 3rem;
+}
+
+.demo-action--auto-height {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
 }
 
 /* ===== Handle dummy container and text ===== */

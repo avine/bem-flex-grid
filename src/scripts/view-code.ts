@@ -1,7 +1,7 @@
 import { highlight, languages } from 'prismjs';
 
 export const viewCode = () => {
-  const source = document.querySelector('.demo-layout__output');
+  const source = document.querySelector('.demo-layout__source');
   if (!source) {
     return;
   }
