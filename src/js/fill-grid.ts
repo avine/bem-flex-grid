@@ -10,7 +10,7 @@ const inIframe = () => {
 
 const fillTypeIndex = {
   get: () => parseInt(window.sessionStorage.getItem('Demo.fillTypeIndex'), 10) || 0,
-  set: (index: string) => window.sessionStorage.setItem('Demo.fillTypeIndex', index),
+  set: (index: number) => window.sessionStorage.setItem('Demo.fillTypeIndex', index + ''),
 };
 
 const fillTypes = ['container', 'text'];
@@ -18,7 +18,7 @@ const fillTypes = ['container', 'text'];
 const getFillType = () => {
   const index = fillTypeIndex.get();
   if (!inIframe()) {
-    fillTypeIndex.set(((index + 1) % fillTypes.length).toString());
+    fillTypeIndex.set(((index + 1) % fillTypes.length));
   }
   return fillTypes[index];
 };

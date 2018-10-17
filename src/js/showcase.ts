@@ -1,7 +1,7 @@
 import { forEach } from './util';
 
 export const showcase = () => {
-  const element = document.getElementById('www-showcase');
+  const element = document.querySelector('.www-showcase');
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="www-showcase__item">
