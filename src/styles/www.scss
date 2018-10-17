@@ -40,6 +40,7 @@
 
   .www-container {
     margin: 0;
+    min-width: 0;
     max-width: ($www-max-width / 2);
   }
 
