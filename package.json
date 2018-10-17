@@ -4,15 +4,17 @@
   "description": "CSS flex grid, BEM compliant",
   "main": "index.js",
   "scripts": {
+    "clean": "rimraf src/index.html build .cache dist && mkdirp build",
     "doc": "node doc.js",
     "doc:watch": "node doc.js watch",
+    "prestart": "npm run doc",
     "start": "parcel src/index.html --open",
     "css": "node-sass src/lib/bem-flex-grid.scss > build/bem-flex-grid.css",
     "css:ie11": "node-sass src/lib/bem-flex-grid.ie11.scss > build/bem-flex-grid.ie11.css",
     "css:min": "node-sass --output-style compressed src/lib/bem-flex-grid.scss > build/bem-flex-grid.min.css",
     "css:min:ie11": "node-sass --output-style compressed src/lib/bem-flex-grid.ie11.scss > build/bem-flex-grid.ie11.min.css",
     "build": "npm run css && npm run css:min && npm run css:ie11 && npm run css:min:ie11",
-    "all": "npm run doc && npm run build",
+    "all": "npm run clean && npm run doc && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -39,8 +41,10 @@
     "@types/markdown-it": "0.0.5",
     "@types/prismjs": "^1.9.0",
     "markdown-it": "^8.4.2",
+    "mkdirp": "^0.5.1",
     "node-sass": "^4.9.3",
     "parcel-bundler": "^1.9.7",
+    "rimraf": "^2.6.2",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
   },
