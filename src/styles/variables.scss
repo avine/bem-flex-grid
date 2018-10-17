@@ -28,6 +28,9 @@ $www-showcase: (
   border-color: map-get($www-header, border),
 );
 
+// Just a shortcut :)
+$www-showcase-border: map-get($www-showcase, border-width) solid map-get($www-showcase, border-color);
+
 //////////////////////////////////////
 
 $demo-dark: (

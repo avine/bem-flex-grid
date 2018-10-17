@@ -125,9 +125,8 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   box-sizing: border-box;
   border: $www-logo-border solid transparent;
   transform-origin: 50% 50%;
-  animation-duration: 5s;
+  animation-duration: 4s;
   animation-iteration-count: infinite;
-  //animation-direction: alternate;
   animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
   animation-name: wwwLogoAnim;
 }
@@ -137,20 +136,10 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 .www-logo__square--3 { border-color: #2196F3; right: 0; top: 0; animation-name: wwwLogoAnim, wwwLogoAnim3; }
 .www-logo__square--4 { border-color: #1565C0; right: 0; bottom: 0; animation-name: wwwLogoAnim, wwwLogoAnim4; }
 
-/*@keyframes wwwLogoAnim1 { 70% { top: 0; } 85% { top: 50%; } 100% { top: 0; } }
-@keyframes wwwLogoAnim2 { 70% { left: 0; } 85% { left: 50%; } 100% { left: 0; } }
-@keyframes wwwLogoAnim3 { 70% { right: 0; } 85% { right: 50%; } 100% { right: 0; } }
-@keyframes wwwLogoAnim4 { 70% { bottom: 0; } 85% { bottom: 50%; } 100% { bottom: 0; } }*/
-
 @keyframes wwwLogoAnim1 { 70% { left: 0; } 85% { left: 50%; } 100% { left: 0; } }
 @keyframes wwwLogoAnim2 { 70% { bottom: 0; } 85% { bottom: 50%; } 100% { bottom: 0; } }
 @keyframes wwwLogoAnim3 { 70% { top: 0; } 85% { top: 50%; } 100% { top: 0; } }
 @keyframes wwwLogoAnim4 { 70% { right: 0; } 85% { right: 50%; } 100% { right: 0; } }
-
-/*@keyframes wwwLogoAnim1 { 70% { left: 0; top: 0; } 85% { left: 50%; top: 50%; } 100% { left: 0; top: 0; } }
-@keyframes wwwLogoAnim2 { 70% { bottom: 0; left: 0; } 85% { bottom: 50%; left: 50%; } 100% { bottom: 0; left: 0; } }
-@keyframes wwwLogoAnim3 { 70% { top: 0; right: 0; } 85% { top: 50%; right: 50%; } 100% { top: 0; right: 0; } }
-@keyframes wwwLogoAnim4 { 70% { right: 0;bottom: 0; } 85% { right: 50%; bottom: 50% } 100% { right: 0; bottom: 0; } }*/
 
 @keyframes wwwLogoAnim {
   0% {
@@ -176,16 +165,6 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
       $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2),
       $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2) inset;
   }
-  /*85% {
-    transform: rotate(-90deg) scale(0.5);
-  }
-  100% {
-    border-radius: 0;
-    transform: rotate(0deg);
-    box-shadow:
-      $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2),
-      $www-logo-shadow (-$www-logo-shadow) 1px rgba(0, 0, 0, 0.2) inset;
-  }*/
 }
 
 /* ===== Showcase ===== */
@@ -193,7 +172,7 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 .www-showcase__item {
   position: relative;
   border-radius: $www-border-radius;
-  border: map-get($www-showcase, border-width) solid map-get($www-showcase, border-color);
+  border: $www-showcase-border;
   margin-bottom: map-get($www-showcase, margin);
 }
 
