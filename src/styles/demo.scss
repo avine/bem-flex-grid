@@ -85,12 +85,13 @@ pre.demo-layout__output {
   right: 0;
   bottom: 0;
   width: 50%;
-  overflow: auto;
+  box-shadow: none;
   box-sizing: border-box;
+  overflow: auto;
   padding: $www-border-radius;
   border-left: $www-showcase-border;
   background-color: #fff;
-  transition: width ease-in-out 300ms;
+  transition: width ease-in-out 300ms, box-shadow ease-in-out 200ms;
 
   // Remove default browser `<pre>` styles
   font-family: inherit;
@@ -100,6 +101,7 @@ pre.demo-layout__output {
 
 pre.demo-layout__output--full {
   width: 100%;
+  box-shadow: -100px 0 100px rgba(0, 0, 0, 0.2);
 }
 
 pre.demo-layout__output--gray {
