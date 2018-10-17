@@ -94,7 +94,10 @@ code {
   line-height: 1.2rem;
 }
 
-.demo-layout__output {
+// It is required to use a `<pre>` tag otherwise parcel
+// production build will remove indentation after minification!
+// Whatever, parcel build uses `--no-minify` otherwise the html comments are removed... :-(
+pre.demo-layout__output {
   position: fixed;
   top: 0;
   right: 0;
@@ -104,6 +107,11 @@ code {
   box-sizing: border-box;
   border-left: map-get($www-showcase, border-width) solid map-get($www-showcase, border-color);
   padding: $www-border-radius;
+
+  // Remove default browser `<pre>` styles
+  font-family: inherit;
+  white-space: normal;
+  margin: 0;
 }
 
 .demo-layout__warn {

@@ -10,7 +10,7 @@
     "prestart": "npm run doc",
     "start": "parcel serve src/index.html --open",
     "prewww": "npm run doc",
-    "www": "parcel build src/index.html --out-dir www",
+    "www": "parcel build src/index.html --out-dir www --no-minify",
     "serve": "http-server ./www",
     "css": "node-sass src/lib/bem-flex-grid.scss > build/bem-flex-grid.css",
     "css:ie11": "node-sass src/lib/bem-flex-grid.ie11.scss > build/bem-flex-grid.ie11.css",
