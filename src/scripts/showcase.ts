@@ -22,9 +22,9 @@ export const showcase = () => {
   });
   const loadIframes = () => {
     const delta = 100;
-    const Ytop = document.documentElement.scrollTop - delta;
-    const Ybottom = document.documentElement.scrollTop + window.innerHeight + delta;
-
+    const pageYOffset = window.pageYOffset || document.documentElement.scrollTop;
+    const Ytop = pageYOffset - delta;
+    const Ybottom = pageYOffset + window.innerHeight + delta;
     buffer = buffer.filter((item) => {
       const itemTop = item.elem.offsetTop;
       const itemBottom = item.elem.offsetTop + item.elem.offsetHeight;
