@@ -18,16 +18,18 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <p>By default, <code>.bfg__box</code> are displayed on one line and can NOT leave outside the <code>.bfg--col</code> container.</p>
+      <p>When using <code>.bfg--wrap</code>, <code>.bfg__box</code> are displayed on multiple lines.<br>
+        If you know the exact number of lines (2 in this demo), you can still fit the <code>.bfg--row</code> height using <code>.bfg--lines-2</code>.
+        In this case, all the rows will have the same height.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output"><div class="demo-layout__source">
 
-    <div class="bfg bfg--col">
-      <div class="bfg__box bfg__box--2"></div>
-      <div class="bfg__box bfg__box--4"></div>
+    <div class="bfg bfg--row bfg--wrap bfg--lines-2">
       <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg__box bfg__box--12"></div>
     </div>
 
   </div></pre>

@@ -18,18 +18,19 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <p>When using <code>.bfg--wrap</code>, <code>.bfg__box</code> are displayed on multiple lines.<br>
-        If you know the exact number of lines (2 in this demo), you can still fit the <code>.bfg--row</code> height using <code>.bfg--lines-2</code>.
-        In this case, all the rows will have the same height.</p>
+      <p>When the total size of the boxes is less than <code>12</code>, you can distribute the remaining space using:
+        <code>.bfg--main-center</code>, <code>.bfg--main-end</code>,
+        <code>.bfg--main-between</code> or <code>.bfg--main-around</code>.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output"><div class="demo-layout__source">
 
-    <div class="bfg bfg--row bfg--wrap bfg--lines-2">
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--12"></div>
+    <div class="bfg bfg--row bfg--main-between">
+      <div class="bfg__box bfg__box--2"></div>
+      <div class="bfg__box bfg__box--fit"><i>Fixed box</i></div>
+      <div class="bfg__box bfg__box--fit"><i>Fixed box</i></div>
+      <div class="bfg__box bfg__box--4"></div>
     </div>
 
   </div></pre>

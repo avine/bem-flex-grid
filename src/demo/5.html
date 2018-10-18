@@ -18,17 +18,22 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <p>When using <code>.bfg--wrap</code>, <code>.bfg__box</code> can be displayed on multiple lines.<br>
-        In this case, the boxes may extend beyond the <code>.bfg--row</code> container, causing a global vertical scrollbar to appear.</p>
+      <p>To always fit the main <code>.bfg</code> height, use a <code>.bfg--col</code> wrapper and a separate <code>.bfg--row</code> for each row.<br>
+        This is more complex, but this way you can set a different height of each row.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output"><div class="demo-layout__source">
 
-    <div class="bfg bfg--row bfg--wrap">
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--12"></div>
+    <div class="bfg bfg--col">
+      <div class="bfg__box bfg__box--3 bfg bfg--row">
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--6"></div>
+      </div>
+
+      <div class="bfg__box bfg__box--9 bfg bfg--row">
+        <div class="bfg__box bfg__box--12"></div>
+      </div>
     </div>
 
   </div></pre>

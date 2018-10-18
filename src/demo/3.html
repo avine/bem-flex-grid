@@ -18,16 +18,22 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <p>By default, <code>.bfg__box</code> are displayed on one line and can NOT leave outside the <code>.bfg--row</code> container.</p>
+      <p>When using <code>.bfg--wrap</code>, <code>.bfg__box</code> can be displayed on multiple lines.<br>
+        In this case, the boxes may extend beyond the <code>.bfg--col</code> container, causing a global horizontal scrollbar to appear.</p>
+
+      <p class="demo-layout__warn">
+        <strong>Note for Chrome:</strong><br>
+        You have to explicitly set the <code>width</code> of the <code>.bfg__box</code>, otherwise content like text will increase indefinitely in width.
+      </p>
 
     </div>
   </div>
   <pre class="demo-layout__output"><div class="demo-layout__source">
 
-    <div class="bfg bfg--row">
-      <div class="bfg__box bfg__box--2"></div>
-      <div class="bfg__box bfg__box--4"></div>
+    <div class="bfg bfg--col bfg--wrap">
       <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg__box bfg__box--12"></div>
     </div>
 
   </div></pre>

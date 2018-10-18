@@ -18,22 +18,17 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <p>To always fit the main <code>.bfg</code> width, use a <code>.bfg--row</code> wrapper and a separate <code>.bfg--col</code> for each column.<br>
-        This is more complex, but this way you can set a different width of each column.</p>
+      <p>To fix the height of a particular box in pixels, use <code>.bfg__box--fit</code> and give the box the expected <code>height</code>.<br>
+        To see it in action, open on a separate tab and resize the window.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output"><div class="demo-layout__source">
 
-    <div class="bfg bfg--row">
-      <div class="bfg__box bfg__box--3 bfg bfg--col">
-        <div class="bfg__box bfg__box--6"></div>
-        <div class="bfg__box bfg__box--6"></div>
-      </div>
-
-      <div class="bfg__box bfg__box--9 bfg bfg--col">
-        <div class="bfg__box bfg__box--12"></div>
-      </div>
+    <div class="bfg bfg--col">
+      <div class="bfg__box bfg__box--fit" style="height:150px"></div>
+      <div class="bfg__box bfg__box--4"></div>
+      <div class="bfg__box bfg__box--8"></div>
     </div>
 
   </div></pre>

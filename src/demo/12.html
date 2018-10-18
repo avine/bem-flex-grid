@@ -18,25 +18,48 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <p>This demo shows real nested grid in the same row direction.</p>
+      <p>This demo shows mixing of nested and interlaced grids when using <code>.bfg--gap</code>.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output"><div class="demo-layout__source">
 
-    <div class="bfg bfg--row">
-      <div class="bfg__box bfg__box--3">
+    <div class="bfg bfg--col bfg--gap">
+      <div class="bfg__box bfg__box--6 bfg bfg--row"><!-- interlaced -->
 
-        <div class="bfg bfg--col">
+        <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- interlaced -->
+
           <div class="bfg__box bfg__box--6"></div>
           <div class="bfg__box bfg__box--6"></div>
+
+        </div>
+        <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+          <div class="bfg bfg--col"><!-- nested -->
+
+            <div class="bfg__box bfg__box--6"></div>
+            <div class="bfg__box bfg__box--6"></div>
+
+          </div>
         </div>
 
       </div>
-      <div class="bfg__box bfg__box--9">
+      <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
 
-        <div class="bfg bfg--col">
-          <div class="bfg__box bfg__box--12"></div>
+        <div class="bfg bfg--row"><!-- nested -->
+          <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- interlaced -->
+
+            <div class="bfg__box bfg__box--6"></div>
+            <div class="bfg__box bfg__box--6"></div>
+
+          </div>
+          <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+            <div class="bfg bfg--col"><!-- nested -->
+
+              <div class="bfg__box bfg__box--6"></div>
+              <div class="bfg__box bfg__box--6"></div>
+
+            </div>
+          </div>
         </div>
 
       </div>
