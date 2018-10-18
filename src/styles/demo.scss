@@ -143,6 +143,11 @@ pre.demo-layout__output--gray {
   }
 }
 
+.demo-action--active {
+  border-color: map-get($demo-action, background);
+  background-color: map-get($demo-action, active);
+}
+
 .demo-action--full-width {
   position: absolute;
   right: 0.5rem;
