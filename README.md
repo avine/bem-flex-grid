@@ -301,7 +301,7 @@ Use `.bfg__box--first` or `.bfg__box--last` modifiers to change the box order.
 ...
 ```
 
-As the grid is responsive, you can change the box order at each breakpoint.
+As the grid is responsive, you can change the `.bfg__box` element order at each breakpoint.
 
 ### .bfg__box--fit
 

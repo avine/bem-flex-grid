@@ -91,7 +91,7 @@ pre.demo-layout__output {
   padding: $www-border-radius;
   border-left: $www-showcase-border;
   background-color: #fff;
-  transition: width ease-in-out 300ms, box-shadow ease-in-out 200ms;
+  transition: width ease-in-out 300ms, box-shadow ease-in-out 300ms;
 
   // Remove default browser `<pre>` styles
   font-family: inherit;
@@ -101,7 +101,7 @@ pre.demo-layout__output {
 
 pre.demo-layout__output--full {
   width: 100%;
-  box-shadow: -100px 0 100px rgba(0, 0, 0, 0.2);
+  box-shadow: -100px 0 100px rgba(0, 0, 0, 0.15);
 }
 
 pre.demo-layout__output--gray {
@@ -152,6 +152,12 @@ pre.demo-layout__output--gray {
 .demo-action--auto-height {
   position: absolute;
   right: 0.5rem;
+  bottom: 0.5rem;
+}
+
+.demo-action--direction {
+  position: absolute;
+  right: 3rem;
   bottom: 0.5rem;
 }
 
