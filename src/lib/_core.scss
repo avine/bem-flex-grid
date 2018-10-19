@@ -1,0 +1,162 @@
+.bfg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  box-sizing: border-box;
+  height: 100%; // Try to fit the parent node height when available
+
+  &.bfg__box {
+    height: auto;
+  }
+}
+
+.bfg--row {
+  flex-direction: row; // TODO: this selector will be removed when we'll remove ie11 support...
+}
+
+.bfg--col {
+  flex-direction: column;
+}
+
+.bfg--gap {
+  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
+}
+
+.bfg--gap-out {
+  margin: 0 (-$bfg-gap / 2);
+  height: calc(100% + #{$bfg-gap});
+}
+
+.bfg--gap,
+.bfg--gap-out {
+  .bfg__box {
+    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
+  }
+
+  .bfg__box.bfg,
+  .bfg__box--nopad {
+    padding: 0;
+  }
+}
+
+.bfg--wrap {
+  flex-wrap: wrap;
+}
+
+// Justify content along the "main" axis
+.bfg--main-center   { justify-content: center;        }
+.bfg--main-end      { justify-content: flex-end;      }
+.bfg--main-between  { justify-content: space-between; }
+.bfg--main-around   { justify-content: space-around;  }
+
+// Align items along the "cross" axis
+.bfg--cross-start   { align-items: flex-start; }
+.bfg--cross-center  { align-items: center;     }
+.bfg--cross-end     { align-items: flex-end;   }
+
+.bfg__box {
+  flex: 0 1 100%;
+  position: relative;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+@if $ie11-support {
+  .bfg--row > .bfg__box { max-width: 100%; }
+  .bfg--col > .bfg__box { max-height: 100%; }
+}
+
+.bfg__box--fit {
+  flex: 0 0 auto;
+}
+
+@mixin bfg-boxes($size: '') {
+  .bfg__box--#{$size + first} { order: -1; }
+  .bfg__box--#{$size + last} { order: 1; }
+
+  .bfg__box--#{$size + 1} { flex-basis: (100% / 12); }
+  .bfg__box--#{$size + 2} { flex-basis: (100% / 6); }
+  .bfg__box--#{$size + 3} { flex-basis: 25%; }
+  .bfg__box--#{$size + 4} { flex-basis: (100% / 3); }
+  .bfg__box--#{$size + 5} { flex-basis: (500% / 12); }
+  .bfg__box--#{$size + 6} { flex-basis: 50%; }
+  .bfg__box--#{$size + 7} { flex-basis: (700% / 12); }
+  .bfg__box--#{$size + 8} { flex-basis: (200% / 3); }
+  .bfg__box--#{$size + 9} { flex-basis: 75%; }
+  .bfg__box--#{$size + 10} { flex-basis: (1000% / 12); }
+  .bfg__box--#{$size + 11} { flex-basis: (1100% / 12); }
+  .bfg__box--#{$size + 12} { flex-basis: 100%; }
+
+  .bfg--row {
+    @if $ie11-support {
+      > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
+      > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
+      > .bfg__box--#{$size + 3} { max-width: 25%; }
+      > .bfg__box--#{$size + 4} { max-width: (100% / 3); }
+      > .bfg__box--#{$size + 5} { max-width: (500% / 12); }
+      > .bfg__box--#{$size + 6} { max-width: 50%; }
+      > .bfg__box--#{$size + 7} { max-width: (700% / 12); }
+      > .bfg__box--#{$size + 8} { max-width: (200% / 3); }
+      > .bfg__box--#{$size + 9} { max-width: 75%; }
+      > .bfg__box--#{$size + 10} { max-width: (1000% / 12); }
+      > .bfg__box--#{$size + 11} { max-width: (1100% / 12); }
+      > .bfg__box--#{$size + 12} { max-width: 100%; }
+    }
+
+    &.bfg--#{$size + lines-2} > .bfg__box { height: 50%; }
+    &.bfg--#{$size + lines-3} > .bfg__box { height: (100% / 3); }
+    &.bfg--#{$size + lines-4} > .bfg__box { height: 25%; }
+  }
+
+  .bfg--col {
+    @if $ie11-support {
+      > .bfg__box--#{$size + 1} { max-height: (100% / 12); }
+      > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
+      > .bfg__box--#{$size + 3} { max-height: 25%; }
+      > .bfg__box--#{$size + 4} { max-height: (100% / 3); }
+      > .bfg__box--#{$size + 5} { max-height: (500% / 12); }
+      > .bfg__box--#{$size + 6} { max-height: 50%; }
+      > .bfg__box--#{$size + 7} { max-height: (700% / 12); }
+      > .bfg__box--#{$size + 8} { max-height: (200% / 3); }
+      > .bfg__box--#{$size + 9} { max-height: 75%; }
+      > .bfg__box--#{$size + 10} { max-height: (1000% / 12); }
+      > .bfg__box--#{$size + 11} { max-height: (1100% / 12); }
+      > .bfg__box--#{$size + 12} { max-height: 100%; }
+    }
+
+    &.bfg--#{$size + lines-2} > .bfg__box { width: 50%; }
+    &.bfg--#{$size + lines-3} > .bfg__box { width: (100% / 3); }
+    &.bfg--#{$size + lines-4} > .bfg__box { width: 25%; }
+  }
+
+  .bfg--#{$size + disabled} {
+    display: block;
+    height: auto;
+
+    .bfg__box {
+      display: block;
+      max-width: none;
+      max-height: none;
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+@include bfg-boxes(); // any screen size even greater than "xl"
+
+@include bfg-media-breakpoint-down(xl) {
+  @include bfg-boxes(xl-);
+}
+
+@include bfg-media-breakpoint-down(lg) {
+  @include bfg-boxes(lg-);
+}
+
+@include bfg-media-breakpoint-down(sm) {
+  @include bfg-boxes(sm-);
+}
+
+@include bfg-media-breakpoint-down(xs) {
+  @include bfg-boxes(xs-);
+}

@@ -1,0 +1,55 @@
+.bfg__action,
+.bfg__header {
+  padding: 0 $bfg-padding;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  height: $bfg-header-height;
+  line-height: $bfg-header-height;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bfg__action {
+  float: right;
+  max-width: 25%; // Up to 4 actions per box
+
+  + .bfg__action,
+  + .bfg__header {
+    box-shadow: none;
+    border-top-right-radius: 0;
+    border-right-width: 0;
+  }
+}
+
+.bfg__content {
+  padding: $bfg-padding;
+  box-sizing: border-box;
+  position: relative;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.bfg__content--nopad {
+  padding: 0;
+}
+
+.bfg__header + .bfg__content {
+  height: calc(100% - #{$bfg-header-height});
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.bfg--box-overflow .bfg__box,
+.bfg--content-overflow .bfg__content,
+.bfg__box--overflow,
+.bfg__content--overflow {
+  overflow: visible;
+}
+
+@if $bfg-theme-light-included {
+  @include bfg-theme(light, $bfg-theme-light);
+}
