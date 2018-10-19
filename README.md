@@ -1,6 +1,6 @@
 # bem-flex-grid
 
-CSS flex grid, [BEM](http://getbem.com/) compliant
+CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 ## Grid block and elements
 

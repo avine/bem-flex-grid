@@ -1,14 +1,14 @@
 {
   "name": "bem-flex-grid",
   "version": "0.0.1",
-  "description": "CSS flex grid, BEM compliant",
+  "description": "CSS flex grid, BEM compliant.",
   "main": "index.js",
   "scripts": {
     "clean": "rimraf src/index.html build .cache dist www && mkdirp build",
     "doc": "node doc.js",
     "doc:watch": "node doc.js watch",
     "prestart": "npm run doc",
-    "start": "parcel serve src/index.html --open",
+    "start": "parcel serve src/index.html",
     "prewww": "npm run doc",
     "www": "parcel build src/index.html --out-dir www --no-minify",
     "serve": "http-server ./www",

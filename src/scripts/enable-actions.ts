@@ -34,10 +34,10 @@ const fullWidthSwitcher = () => {
 };
 
 const autoHeightSwitcher = () => {
-  const target = document.querySelector('.demo-layout__source');
+  const target = document.querySelector('.demo-layout__playground');
   handleAction(
     getAnchor('Toggle auto height', 'auto-height', '&updownarrow;'),
-    () => target.classList.toggle('demo-layout__source--auto'),
+    () => target.classList.toggle('demo-layout__playground--auto'),
   );
 };
 
@@ -64,10 +64,14 @@ const directionSwitcher = () => {
   );
 };
 
-export type IDisableType = 'fullWidth' | 'autoHeight' | 'direction';
+export type IActionType = 'all' | 'fullWidth' | 'autoHeight' | 'direction';
 
-export const enableActions = (...disable: IDisableType[]) => {
-  if (disable.indexOf('fullWidth') === -1) { fullWidthSwitcher(); }
-  if (disable.indexOf('autoHeight') === -1) { autoHeightSwitcher(); }
-  if (disable.indexOf('direction') === -1) { directionSwitcher(); }
+export const actionEnabled = (actions: IActionType[], action) => {
+  return actions.indexOf('all') !== -1 || actions.indexOf(action) !== -1;
+};
+
+export const enableActions = (actions: IActionType[] = ['all']) => {
+  if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
+  if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
+  if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
 };
