@@ -18,28 +18,29 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Multiple lines without scroll using "chained" grids</h1>
-
-      <p>To always fit the global <code>.bfg</code> size, use (for example) an outer <code>.bfg--col</code> and a separate inner <code>.bfg--row</code> for each row.</p>
-
-      <p>This is more complex, but this way you can set a different height of each row.</p>
+      <h1>Chained grid</h1>
+      <p>To chain grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> element as a <code>.bfg</code> block too.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output"><div class="demo-layout__playground">
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
 
-    <div class="bfg bfg--col">
-      <div class="bfg__box bfg__box--3 bfg bfg--row">
-        <div class="bfg__box bfg__box--6"></div>
-        <div class="bfg__box bfg__box--6"></div>
+      <div class="bfg bfg--col">
+
+        <!-- Chained grid starts here, on the `.bfg__box` element -->
+        <div class="bfg__box bfg__box--3 bfg bfg--row">
+          <div class="bfg__box bfg__box--6"></div>
+          <div class="bfg__box bfg__box--6"></div>
+        </div>
+
+        <div class="bfg__box bfg__box--9 bfg bfg--row">
+          <div class="bfg__box bfg__box--12"></div>
+        </div>
       </div>
 
-      <div class="bfg__box bfg__box--9 bfg bfg--row">
-        <div class="bfg__box bfg__box--12"></div>
-      </div>
     </div>
-
-  </div></pre>
+  </pre>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>

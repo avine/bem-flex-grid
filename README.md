@@ -92,6 +92,8 @@ If you know that there's exactly 2 lines of `.bfg__box` elements, you can constr
 
 In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit exactly 3 or 4 lines respectively.
 
+> In this case, all the rows will have the same height.
+
 ```html
 <div class="bfg bfg--row bfg--wrap bfg--lines-2">...</div>
 ```

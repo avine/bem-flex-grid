@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism.css">
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/demo.scss">
+  <link rel="stylesheet" href="14.scss">
+
+  <script src="../script.ts"></script>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>Header, content and actions</h1>
+      <p>
+        Use <code>.bfg__header</code> with <code>.bfg__content</code> to add an header.<br>
+        Use <code>.bfg__action</code> with <code>.bfg__header</code> to add one or more actions.
+      </p>
+
+    </div>
+  </div>
+  <pre class="demo-layout__output demo-layout__output--gray">
+    <div class="demo-layout__playground">
+
+      <div class="bfg bfg--col bfg--gap">
+        <div class="bfg__box bfg__box--3">
+          <!-- content with header -->
+          <header class="bfg__header bfg__header--error">Header</header>
+          <div class="bfg__content bfg__content--error"></div>
+        </div>
+
+        <div class="bfg__box bfg__box--6 bfg bfg--row">
+          <div class="bfg__box bfg__box--3">
+            <!-- content with header and actions -->
+            <div class="bfg__action bfg__action--light"><a href="#action-2">Action 2</a></div>
+            <div class="bfg__action bfg__action--light"><a href="#action-1">Action 1</a></div>
+            <header class="bfg__header bfg__header--light">Very very very long Header</header>
+            <div class="bfg__content bfg__content--light"></div>
+          </div>
+
+          <div class="bfg__box bfg__box--6">
+            <!-- content without header -->
+            <div class="bfg__content bfg__content--light"></div>
+          </div>
+
+          <div class="bfg__box bfg__box--3">
+            <header class="bfg__header bfg__header--info">Header</header>
+            <div class="bfg__content bfg__content--info"></div>
+          </div>
+        </div>
+
+        <div class="bfg__box bfg__box--3">
+          <header class="bfg__header bfg__header--warning">Header</header>
+          <div class="bfg__content bfg__content--warning"></div>
+        </div>
+      </div>
+
+    </div>
+  </pre>
+
+  <script>Demo.viewCode(); Demo.fillGrid({ textColor: false }); Demo.enableActions();</script>
+</body>
+</html>

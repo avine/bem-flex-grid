@@ -18,35 +18,36 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Multiple lines without scroll using "nested" grids</h1>
-
-      <p>Chained grids is preferable but eventually not always possible.</p>
-
-      <p>Alternatively, you can use nested grids to achieve the same result as demo 5.</p>
+      <h1>Nested grids</h1>
+      <p>You can nest a new <code>.bfg</code> block inside a <code>.bfg__box</code> element.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output"><div class="demo-layout__playground">
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
 
-    <div class="bfg bfg--col">
-      <div class="bfg__box bfg__box--3">
+      <div class="bfg bfg--col">
+        <div class="bfg__box bfg__box--3">
 
-        <div class="bfg bfg--row">
-          <div class="bfg__box bfg__box--6"></div>
-          <div class="bfg__box bfg__box--6"></div>
+          <!-- Nested grid starts here, inside the `.bfg__box` element -->
+          <div class="bfg bfg--row">
+            <div class="bfg__box bfg__box--6"></div>
+            <div class="bfg__box bfg__box--6"></div>
+          </div>
+
         </div>
+        <div class="bfg__box bfg__box--9">
 
-      </div>
-      <div class="bfg__box bfg__box--9">
+          <!-- Nested grid starts here, inside the `.bfg__box` element -->
+          <div class="bfg bfg--row">
+            <div class="bfg__box bfg__box--12"></div>
+          </div>
 
-        <div class="bfg bfg--row">
-          <div class="bfg__box bfg__box--12"></div>
         </div>
-
       </div>
+
     </div>
-
-  </div></pre>
+  </pre>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>

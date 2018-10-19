@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="stylesheet" href="../styles/demo.scss">
-  <link rel="stylesheet" href="13.scss">
+  <link rel="stylesheet" href="../lib/bem-flex-grid.ie11.scss">
 
   <script src="../script.ts"></script>
 </head>
@@ -18,50 +18,59 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Header, content and actions</h1>
-
-      <p>Use <code>.bfg__header</code> with <code>.bfg__content</code> to add an header.<br>
-        Use <code>.bfg__action</code> with <code>.bfg__header</code> to add one or more actions.</p>
+      <h1>Mixing chained and nested grids</h1>
+      <p>Works too!</p>
+      <p>Notice that if you use <code>.bfg--gap</code> modifier, you need to add <code>.bfg__box--nopad</code> modifier on the parent <code>.bfg__box</code> element of the nested grid.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output demo-layout__output--gray"><div class="demo-layout__playground">
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
 
-    <div class="bfg bfg--col bfg--gap">
-      <div class="bfg__box bfg__box--3">
-        <!-- content with header -->
-        <header class="bfg__header bfg__header--error">Header</header>
-        <div class="bfg__content bfg__content--error"></div>
+      <div class="bfg bfg--col bfg--gap">
+        <div class="bfg__box bfg__box--6 bfg bfg--row"><!-- chained -->
+
+          <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- chained -->
+
+            <div class="bfg__box bfg__box--6"></div>
+            <div class="bfg__box bfg__box--6"></div>
+
+          </div>
+          <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+            <div class="bfg bfg--col"><!-- nested -->
+
+              <div class="bfg__box bfg__box--6"></div>
+              <div class="bfg__box bfg__box--6"></div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+
+          <div class="bfg bfg--row"><!-- nested -->
+            <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- chained -->
+
+              <div class="bfg__box bfg__box--6"></div>
+              <div class="bfg__box bfg__box--6"></div>
+
+            </div>
+            <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+              <div class="bfg bfg--col"><!-- nested -->
+
+                <div class="bfg__box bfg__box--6"></div>
+                <div class="bfg__box bfg__box--6"></div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <div class="bfg__box bfg__box--6 bfg bfg--row">
-        <div class="bfg__box bfg__box--3">
-          <!-- content with header and actions -->
-          <div class="bfg__action bfg__action--light"><a href="#action-2">Action 2</a></div>
-          <div class="bfg__action bfg__action--light"><a href="#action-1">Action 1</a></div>
-          <header class="bfg__header bfg__header--light">Very very very long Header</header>
-          <div class="bfg__content bfg__content--light"></div>
-        </div>
-
-        <div class="bfg__box bfg__box--6">
-          <!-- content without header -->
-          <div class="bfg__content bfg__content--light"></div>
-        </div>
-
-        <div class="bfg__box bfg__box--3">
-          <header class="bfg__header bfg__header--info">Header</header>
-          <div class="bfg__content bfg__content--info"></div>
-        </div>
-      </div>
-
-      <div class="bfg__box bfg__box--3">
-        <header class="bfg__header bfg__header--warning">Header</header>
-        <div class="bfg__content bfg__content--warning"></div>
-      </div>
     </div>
+  </pre>
 
-  </div></pre>
-
-  <script>Demo.viewCode(); Demo.fillGrid({ textColor: false }); Demo.enableActions();</script>
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>
 </html>

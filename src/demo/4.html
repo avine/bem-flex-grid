@@ -18,24 +18,25 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Multiple lines without scroll using "wrap"</h1>
-
-      <p>As said above, when using <code>.bfg--wrap</code> modifier, <code>.bfg__box</code> are displayed on multiple lines.<br>
-        If you know the exact number of lines (2 in this demo), you can still fit the <code>.bfg</code> size using <code>.bfg--lines-2</code>.</p>
-
+      <h1>Fixed lines number</h1>
+      <p>If you use the selector <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
+      <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
+      <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
       <p>In this case, all the rows will have the same height.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output"><div class="demo-layout__playground">
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
 
-    <div class="bfg bfg--row bfg--wrap bfg--lines-2">
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--12"></div>
+      <div class="bfg bfg--row bfg--wrap bfg--lines-2">
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--12"></div>
+      </div>
+
     </div>
-
-  </div></pre>
+  </pre>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>

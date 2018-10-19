@@ -18,23 +18,25 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Box fitting</h1>
-
-      <p>To fix the height of a particular box in pixels, use <code>.bfg__box--fit</code> modifier and give the box the expected <code>height</code>.</p>
-
+      <h1>Fixed box size in pixels</h1>
+      <p>To fix the width of a particular box in pixels, use <code>.bfg__box--fit</code> modifier and give the box the expected <code>width</code>.</p>
       <p>To see it in action, resize the window.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output"><div class="demo-layout__playground">
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
 
-    <div class="bfg bfg--col">
-      <div class="bfg__box bfg__box--fit" style="height:150px"></div>
-      <div class="bfg__box bfg__box--4"></div>
-      <div class="bfg__box bfg__box--8"></div>
+      <div class="bfg bfg--row">
+        <div class="bfg__box bfg__box--fit" style="width:100px">
+          <i>100px width</i>
+        </div>
+        <div class="bfg__box bfg__box--4"></div>
+        <div class="bfg__box bfg__box--8"></div>
+      </div>
+
     </div>
-
-  </div></pre>
+  </pre>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions(['fullWidth', 'autoHeight']);</script>
 </body>

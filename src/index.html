@@ -59,7 +59,7 @@
     <main class="www-container">
 
 <h1>bem-flex-grid</h1>
-<p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant</p>
+<p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
 <h2>Grid block and elements</h2>
 <p>At core the grid system consists of one block <code>.bfg</code> and one element <code>.bfg__box</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
@@ -121,6 +121,9 @@
 <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
 <p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit exactly 3 or 4 lines respectively.</p>
+<blockquote>
+<p>In this case, all the rows will have the same height.</p>
+</blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;

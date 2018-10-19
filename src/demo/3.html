@@ -19,26 +19,25 @@
     <div class="demo-layout__readme">
 
       <h1>Multiple lines</h1>
-
-      <p>When using <code>.bfg--wrap</code> modifier, <code>.bfg__box</code> elements can be displayed on multiple lines.<br>
-        In this case, the boxes may leave outside the <code>.bfg</code> block, and scrollbar may appear at the parent node of the grid.</p>
-
+      <p>To allow <code>.bfg__box</code> elements to wrap as needed onto multiple lines, use the optional <code>.bfg--wrap</code> modifier.</p>
       <p class="demo-layout__warn">
         <strong>Note for Chrome:</strong><br>
-        When using <code>.bfg--col</code> modifier, you have to explicitly set the <code>width</code> of the <code>.bfg__box</code> elements, otherwise content like text will increase indefinitely in width.
+        When using <code>.bfg--col</code> modifier, you have to explicitly set the <code>width</code> of the <code>.bfg__box</code> elements, otherwise content width may increase indefinitely in width.
       </p>
 
     </div>
   </div>
-  <pre class="demo-layout__output"><div class="demo-layout__playground">
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
 
-    <div class="bfg bfg--row bfg--wrap">
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--12"></div>
+      <div class="bfg bfg--row bfg--wrap">
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--6"></div>
+        <div class="bfg__box bfg__box--12"></div>
+      </div>
+
     </div>
-
-  </div></pre>
+  </pre>
 
   <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>
