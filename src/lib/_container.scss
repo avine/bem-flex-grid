@@ -36,18 +36,16 @@
   padding: 0;
 }
 
+.bfg--content-overflow .bfg__content,
+.bfg__content--overflow {
+  overflow: visible;
+}
+
 .bfg__header + .bfg__content {
   height: calc(100% - #{$bfg-header-height});
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
-}
-
-.bfg--box-overflow .bfg__box,
-.bfg--content-overflow .bfg__content,
-.bfg__box--overflow,
-.bfg__content--overflow {
-  overflow: visible;
 }
 
 @if $bfg-theme-light-included {

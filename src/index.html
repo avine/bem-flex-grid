@@ -213,10 +213,32 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg--[B-]disabled</h3>
+<h3>.bfg--[B-]reverse</h3>
 <p><strong>[B-]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
-<p>To disable the grid system use <code>.bfg--disabled</code> modifier.</p>
+<p>Use <code>.bfg--reverse</code> modifier to reverse the boxes order.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--reverse&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<p>As the grid is responsive, you can reverse the <code>.bfg__box</code> elements order at each breakpoint.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--reverse&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--xl-reverse&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--lg-reverse&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--sm-reverse&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--xs-reverse&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<h3>.bfg--[B-]disabled, .bfg--[B-]disabled-all</h3>
+<p><strong>[B-]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
+<p>To disable the grid system for the current <code>.bfg</code> block only use <code>.bfg--disabled</code> modifier.</p>
+<p>To disable the grid system for the current <code>.bfg</code> block and its chained or nested <code>.bfg</code> blocks use <code>.bfg--disabled-all</code> modifier.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--disabled&quot;&gt;...&lt;/div&gt;
+
+&lt;div class=&quot;bfg bfg--disabled-all&quot;&gt;...&lt;/div&gt;
+</code></pre>
 <p>As the grid is responsive, you can disable the grid system at each breakpoint.</p>
+<p>Here's an example of disabling the grid system for the current <code>.bfg</code> block only.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--disabled&quot;&gt;...&lt;/div&gt;
 
 &lt;div class=&quot;bfg bfg--xl-disabled&quot;&gt;...&lt;/div&gt;
@@ -505,7 +527,13 @@ $bfg-gap: 2rem;
 <td><code>.bfg--lines-4</code>, <code>.bfg--lines-xl-4</code>, <code>.bfg--lines-lg-4</code>, <code>.bfg--lines-sm-4</code>, <code>.bfg--lines-xs-4</code></td>
 </tr>
 <tr>
-<td><code>.bfg--disabled</code>, <code>.bfg--xl-disabled, .bfg--lg-disabled, .bfg--sm-disabled, .bfg--xs-disabled</code></td>
+<td><code>.bfg--reverse</code>, <code>.bfg--xl-reverse</code>, <code>.bfg--lg-reverse</code>, <code>.bfg--sm-reverse</code>, <code>.bfg--xs-reverse</code></td>
+</tr>
+<tr>
+<td><code>.bfg--disabled</code>, <code>.bfg--xl-disabled</code>, <code>.bfg--lg-disabled</code>, <code>.bfg--sm-disabled</code>, <code>.bfg--xs-disabled</code></td>
+</tr>
+<tr>
+<td><code>.bfg--disabled-all</code>, <code>.bfg--xl-disabled-all</code>, <code>.bfg--lg-disabled-all</code>, <code>.bfg--sm-disabled-all</code>, <code>.bfg--xs-disabled-all</code></td>
 </tr>
 <tr>
 <td><code>.bfg--box-overflow</code></td>

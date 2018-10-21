@@ -61,6 +61,11 @@
   box-sizing: border-box;
 }
 
+.bfg--box-overflow .bfg__box,
+.bfg__box--overflow {
+  overflow: visible;
+}
+
 @if $ie11-support {
   .bfg--row > .bfg__box { max-width: 100%; }
   .bfg--col > .bfg__box { max-height: 100%; }
@@ -71,6 +76,9 @@
 }
 
 @mixin bfg-boxes($size: '') {
+  .bfg--row.bfg--#{$size + reverse} { flex-direction: row-reverse; }
+  .bfg--col.bfg--#{$size + reverse} { flex-direction: column-reverse; }
+
   .bfg__box--#{$size + first} { order: -1; }
   .bfg__box--#{$size + last} { order: 1; }
 
@@ -129,17 +137,21 @@
     &.bfg--#{$size + lines-4} > .bfg__box { width: 25%; }
   }
 
-  .bfg--#{$size + disabled} {
+  .bfg--#{$size + disabled},
+  .bfg--#{$size + disabled-all},
+  .bfg--#{$size + disabled-all} .bfg {
     display: block;
     height: auto;
+  }
 
-    .bfg__box {
-      display: block;
+  .bfg--#{$size + disabled} > .bfg__box,
+  .bfg--#{$size + disabled-all} .bfg__box {
+    @if $ie11-support {
       max-width: none;
       max-height: none;
-      width: auto;
-      height: auto;
     }
+    width: auto;
+    height: auto;
   }
 }
 

@@ -226,13 +226,47 @@ Use `.bfg--content-overflow` modifier on `.bfg` block to apply the rule `overflo
 ...
 ```
 
-### .bfg--[B-]disabled
+### .bfg--[B-]reverse
 
 **[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-To disable the grid system use `.bfg--disabled` modifier.
+Use `.bfg--reverse` modifier to reverse the boxes order.
+
+```html
+<div class="bfg bfg--reverse">...</div>
+```
+
+As the grid is responsive, you can reverse the `.bfg__box` elements order at each breakpoint.
+
+```html
+<div class="bfg bfg--reverse">...</div>
+
+<div class="bfg bfg--xl-reverse">...</div>
+
+<div class="bfg bfg--lg-reverse">...</div>
+
+<div class="bfg bfg--sm-reverse">...</div>
+
+<div class="bfg bfg--xs-reverse">...</div>
+```
+
+### .bfg--[B-]disabled, .bfg--[B-]disabled-all
+
+**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+To disable the grid system for the current `.bfg` block only use `.bfg--disabled` modifier.
+
+To disable the grid system for the current `.bfg` block and its chained or nested `.bfg` blocks use `.bfg--disabled-all` modifier.
+
+```html
+<div class="bfg bfg--disabled">...</div>
+
+<div class="bfg bfg--disabled-all">...</div>
+```
 
 As the grid is responsive, you can disable the grid system at each breakpoint.
+
+Here's an example of disabling the grid system for the current `.bfg` block only.
 
 ```html
 <div class="bfg bfg--disabled">...</div>
@@ -562,7 +596,9 @@ Now, you can use the new theme named `info`:
 | `.bfg--lines-2`, `.bfg--lines-xl-2`, `.bfg--lines-lg-2`, `.bfg--lines-sm-2`, `.bfg--lines-xs-2` |
 | `.bfg--lines-3`, `.bfg--lines-xl-3`, `.bfg--lines-lg-3`, `.bfg--lines-sm-3`, `.bfg--lines-xs-3` |
 | `.bfg--lines-4`, `.bfg--lines-xl-4`, `.bfg--lines-lg-4`, `.bfg--lines-sm-4`, `.bfg--lines-xs-4` |
-| `.bfg--disabled`, `.bfg--xl-disabled, .bfg--lg-disabled, .bfg--sm-disabled, .bfg--xs-disabled`  |
+| `.bfg--reverse`, `.bfg--xl-reverse`, `.bfg--lg-reverse`, `.bfg--sm-reverse`, `.bfg--xs-reverse` |
+| `.bfg--disabled`, `.bfg--xl-disabled`, `.bfg--lg-disabled`, `.bfg--sm-disabled`, `.bfg--xs-disabled`                      |
+| `.bfg--disabled-all`, `.bfg--xl-disabled-all`, `.bfg--lg-disabled-all`, `.bfg--sm-disabled-all`, `.bfg--xs-disabled-all`  |
 | `.bfg--box-overflow`     |
 | `.bfg--content-overflow` |
 
