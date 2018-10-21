@@ -66,6 +66,7 @@
   padding: map-get($www-header, padding) 0 (map-get($www-header, padding) / 2) 0;
   background-color: map-get($www-header, background);
   border-bottom: 1px solid map-get($www-header, border);
+  text-align: center;
 }
 
 .www-header__title {
@@ -87,7 +88,6 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   margin-top: (map-get($www-header, padding) / 2);
   padding: 0; // Remove "primer-markdown" style
   border: none; // Remove "primer-markdown" style
-  text-align: center;
   line-height: inherit; // Remove "primer-markdown" style
   font-weight: normal;
   font-size: 1.25rem;
@@ -100,6 +100,7 @@ h2.www-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   position: relative;
   width: $www-logo-size;
   height: $www-logo-size;
+  margin: 0 auto;
 }
 
 .www-logo__square {

@@ -78,9 +78,9 @@ To allow `.bfg__box` elements to wrap as needed onto multiple lines, use the opt
 <div class="bfg bfg--wrap">...</div>
 ```
 
-### .bfg--[B-]lines-[N]
+### .bfg--[B]lines-[N]
 
-**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 **[N]** Number: `2`, `3` or `4`.
 
@@ -226,9 +226,9 @@ Use `.bfg--content-overflow` modifier on `.bfg` block to apply the rule `overflo
 ...
 ```
 
-### .bfg--[B-]reverse
+### .bfg--[B]reverse
 
-**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 Use `.bfg--reverse` modifier to reverse the boxes order.
 
@@ -250,9 +250,9 @@ As the grid is responsive, you can reverse the `.bfg__box` elements order at eac
 <div class="bfg bfg--xs-reverse">...</div>
 ```
 
-### .bfg--[B-]disabled, .bfg--[B-]disabled-all
+### .bfg--[B]disabled, .bfg--[B]disabled-all
 
-**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 To disable the grid system for the current `.bfg` block only use `.bfg--disabled` modifier.
 
@@ -282,9 +282,9 @@ Here's an example of disabling the grid system for the current `.bfg` block only
 
 ## .bfg__box modifiers
 
-### .bfg__box--[B-][S]
+### .bfg__box--[B][S]
 
-**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 **[S]** Size: `1`, `2`, ..., `11`, `12`.
 
@@ -324,9 +324,9 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 ...
 ```
 
-### .bfg__box--[B-]first, .bfg__box--[B-]last
+### .bfg__box--[B]first, .bfg__box--[B]last
 
-**[B-]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 Use `.bfg__box--first` or `.bfg__box--last` modifiers to change the box order.
 
