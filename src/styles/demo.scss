@@ -103,7 +103,7 @@ pre.demo-layout__output {
   padding: $www-border-radius;
   border-left: $www-showcase-border;
   background-color: #fff;
-  transition: width ease-in-out 300ms, box-shadow ease-in-out 300ms;
+  transition: width ease-in-out $demo-duration, box-shadow ease-in-out $demo-duration;
 
   // Remove default browser `<pre>` styles
   font-family: inherit;
@@ -148,7 +148,7 @@ pre.demo-layout__output--gray {
   text-align: center;
   text-decoration: none;
   opacity: 0.75;
-  transition: opacity ease 300ms;
+  transition: opacity ease $demo-duration;
 
   &:hover {
     opacity: 1;
@@ -240,7 +240,7 @@ pre.demo-layout__output--gray {
     width: 100%;
     border-top: $www-showcase-border;
     border-left: none;
-    transition: top ease-in-out 300ms, box-shadow ease-in-out 300ms;
+    transition: top ease-in-out $demo-duration, box-shadow ease-in-out $demo-duration;
   }
 
   pre.demo-layout__output--full {

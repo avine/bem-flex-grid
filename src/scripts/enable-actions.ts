@@ -23,13 +23,32 @@ const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boolean) =
   document.body.appendChild(anchor);
 };
 
+const triggerResize = (delay = 0) => setTimeout(() => {
+  try {
+    window.dispatchEvent(new Event('resize'));
+  } catch (e) {
+    // For IE11 support
+    const event = document.createEvent('Event');
+    event.initEvent('resize', true, true);
+    window.dispatchEvent(event);
+  }
+}, delay);
+
+// Quick fix to `triggerResize` after the end of the transition.
+// Should be the same value as: `$demo-duration` in `src/styles/variables.scss`.
+const FULL_WIDTH_SWITCHER_DURATION = 300;
+
 /* ===== Actions ===== */
 
 const fullWidthSwitcher = () => {
   const target = document.querySelector('.demo-layout__output');
   handleAction(
     getAnchor('Toggle full width', 'full-width', '&leftrightarrow;'),
-    () => target.classList.toggle('demo-layout__output--full'),
+    () => {
+      target.classList.toggle('demo-layout__output--full');
+      // Finally redraw Charts if any.
+      triggerResize(FULL_WIDTH_SWITCHER_DURATION);
+    },
   );
 };
 
@@ -37,7 +56,11 @@ const autoHeightSwitcher = () => {
   const target = document.querySelector('.demo-layout__playground');
   handleAction(
     getAnchor('Toggle auto height', 'auto-height', '&updownarrow;'),
-    () => target.classList.toggle('demo-layout__playground--auto'),
+    () => {
+      target.classList.toggle('demo-layout__playground--auto');
+      // Finally redraw Charts if any.
+      triggerResize();
+    },
   );
 };
 
@@ -60,6 +83,8 @@ const directionSwitcher = () => {
         .replace(/bfg--row/g, 'bfg-TMP-col')
         .replace(/bfg--col/g, 'bfg--row')
         .replace(/bfg-TMP-col/g, 'bfg--col');
+      // Finally redraw Charts if any.
+      triggerResize();
     },
   );
 };
