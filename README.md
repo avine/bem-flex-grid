@@ -533,7 +533,7 @@ To change the boxes gap, create a new file `my-custo-bfg.scss` with the followin
 // Overwrite gap
 $bfg-gap: 2rem;
 
-@import "[PATH_TO]/bem-flex-grid.scss";
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
 ```
 
 ### Mixin
@@ -549,7 +549,7 @@ The `bfg-theme` mixin allows you to customize the content look and feel.
 To add a new theme with name `info`, create a new file `my-custo-bfg.scss` with the following content:
 
 ```scss
-@import "[PATH_TO]/bem-flex-grid.scss";
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
 
 // Add new theme
 @include bfg-theme(info, (
