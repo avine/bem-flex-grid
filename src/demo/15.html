@@ -66,15 +66,13 @@
     </div>
   </pre>
 
-  <style>
-    .demo-chart { width: 100%; height: 100%; }
-  </style>
+  <script>Demo.viewCode(); Demo.enableActions(['fullWidth', 'direction']);</script>
+
   <script>
     const ctx = document.querySelectorAll('.demo-chart');
     for (let i = 0; i < ctx.length; i++) {
       Demo.chart(ctx[i]);
     }
   </script>
-  <script>Demo.viewCode(); Demo.enableActions(['fullWidth', 'direction']);</script>
 </body>
 </html>
