@@ -58,16 +58,18 @@ const mdToHtml = () => {
     </header>
 
     <header class="www-header">
-      <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow">
-        <div class="bfg__box bfg__box--fit www-header__title">
-          <a href="./">Bem Flex Grid</a>
+      <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow bfg--sm-disabled">
+        <div class="bfg__box bfg__box--fit bfg__box--last">
+          <div class="www-logo">
+            <div class="www-logo__square www-logo__square--1"></div>
+            <div class="www-logo__square www-logo__square--2"></div>
+            <div class="www-logo__square www-logo__square--3"></div>
+            <div class="www-logo__square www-logo__square--4"></div>
+          </div>
         </div>
 
-        <div class="bfg__box bfg__box--fit www-logo">
-          <div class="www-logo__square www-logo__square--1"></div>
-          <div class="www-logo__square www-logo__square--2"></div>
-          <div class="www-logo__square www-logo__square--3"></div>
-          <div class="www-logo__square www-logo__square--4"></div>
+        <div class="bfg__box bfg__box--fit www-header__title"><!-- note: "h1" replaced by "div" -->
+          <a href="./">Bem Flex Grid</a>
         </div>
       </div>
       <h2 class="www-header__subtitle">CSS flex grid, BEM compliant.</h2>

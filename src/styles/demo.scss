@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Cutive+Mono');
 
+@import "../lib/variables";
+@import "../lib/mixins";
+
 @import "./variables.scss";
 
 /* ===== Base ===== */
@@ -45,7 +48,7 @@ main {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 50%;
+  width: 60%;
   overflow: auto;
   box-sizing: border-box;
   display: flex;
@@ -92,7 +95,7 @@ pre.demo-layout__output {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 50%;
+  width: 40%;
   box-shadow: none;
   box-sizing: border-box;
   overflow: auto;
@@ -213,3 +216,27 @@ pre.demo-layout__output--gray {
 .demo-text__bg-3 { background-color: #E8F5E9; }
 .demo-text__bg-4 { background-color: #FFEBEE; }
 .demo-text__bg-5 { background-color: #F3E5F5; }
+
+/* ===== Responsive ===== */
+
+@include bfg-media-breakpoint-down(sm) {
+  .demo-layout__desc {
+    bottom: 40%;
+    width: 100%;
+  }
+
+  pre.demo-layout__output {
+    top: 60%;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    border-top: $www-showcase-border;
+    border-left: none;
+    transition: top ease-in-out 300ms, box-shadow ease-in-out 300ms;
+  }
+
+  pre.demo-layout__output--full {
+    top: 0%;
+    box-shadow: 0 -100px 100px rgba(0, 0, 0, 0.15);
+  }
+}
