@@ -334,21 +334,21 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h2>.bfg__action, .bfg__header and .bfg__content modifiers</h2>
-<h3>.bfg__action--[N], .bfg__header--[N], .bfg__content--[N]</h3>
+<h3>.bfg__box--theme-[N]</h3>
 <p><strong>[N]</strong> Name: <code>light</code> or any string.</p>
-<p>Use selector <code>.bfg__content.bfg__content--light</code> to fill the box content using the <code>light</code> look and feel.</p>
-<p>Use selector <code>.bfg__header.bfg__header--light</code> to fill the box header.</p>
-<p>Use selector <code>.bfg__action.bfg__action--light</code> to fill the box action.</p>
+<p>Use <code>.bfg__box--theme-light</code> to add look and feel to the box content, header and actions.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__action bfg__action--light&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__header bfg__header--light&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__content bfg__content--light&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--theme-light&quot;&gt;
+    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
 ...
 </code></pre>
 <blockquote>
 <p>See below the Sass mixin <code>bfg-theme</code> to create your own themes.</p>
 </blockquote>
+<h2>.bfg__content modifier</h2>
 <h3>.bfg__content--nopad</h3>
 <p>Use <code>.bfg__content--nopad</code> modifier to remove the box content padding.</p>
 <pre><code class="language-html">...
@@ -470,9 +470,11 @@ $bfg-gap: 2rem;
 </blockquote>
 <p>Now, you can use the new theme named <code>info</code>:</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__action bfg__action--info&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__header bfg__header--info&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__content bfg__content--info&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--theme-info&quot;&gt;
+    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
 ...
 </code></pre>
 <h2>Selectors summary</h2>
@@ -585,6 +587,9 @@ $bfg-gap: 2rem;
 <tr>
 <td><code>.bfg__box--overflow</code></td>
 </tr>
+<tr>
+<td><code>.bfg__box--theme-light</code></td>
+</tr>
 </tbody>
 </table>
 <table>
@@ -599,24 +604,6 @@ $bfg-gap: 2rem;
 </tr>
 <tr>
 <td><code>.bfg__content--overflow</code></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th><code>light</code> theme modifiers</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>.bfg__action--light</code></td>
-</tr>
-<tr>
-<td><code>.bfg__header--light</code></td>
-</tr>
-<tr>
-<td><code>.bfg__content--light</code></td>
 </tr>
 </tbody>
 </table>

@@ -30,49 +30,41 @@
     <div class="demo-layout__playground">
 
       <div class="bfg bfg--col bfg--gap">
-        <div class="bfg__box bfg__box--3">
+        <div class="bfg__box bfg__box--3 bfg__box--theme-error">
           <!-- content with header -->
-          <header class="bfg__header bfg__header--error">Header</header>
-          <div class="bfg__content bfg__content--error"></div>
+          <header class="bfg__header">Header</header>
+          <div class="bfg__content"></div>
         </div>
 
         <div class="bfg__box bfg__box--6 bfg bfg--row">
-          <div class="bfg__box bfg__box--3">
+          <div class="bfg__box bfg__box--3 bfg__box--theme-light">
             <!-- content with header and actions -->
-            <div class="bfg__action bfg__action--light"><a href="#action-2">Action 2</a></div>
-            <div class="bfg__action bfg__action--light"><a href="#action-1">Action 1</a></div>
-            <header class="bfg__header bfg__header--light">Very very very long Header</header>
-            <div class="bfg__content bfg__content--light"></div>
+            <div class="bfg__action"><a href="#action-2">Action 2</a></div>
+            <div class="bfg__action"><a href="#action-1">Action 1</a></div>
+            <header class="bfg__header">Very very very long Header</header>
+            <div class="bfg__content"></div>
           </div>
 
-          <div class="bfg__box bfg__box--6">
+          <div class="bfg__box bfg__box--6 bfg__box--theme-light">
             <!-- content without header -->
-            <div class="bfg__content bfg__content--light">
-              <canvas></canvas>
-            </div>
+            <div class="bfg__content"></div>
           </div>
 
-          <div class="bfg__box bfg__box--3">
-            <header class="bfg__header bfg__header--info">Header</header>
-            <div class="bfg__content bfg__content--info"></div>
+          <div class="bfg__box bfg__box--3 bfg__box--theme-info">
+            <header class="bfg__header">Header</header>
+            <div class="bfg__content"></div>
           </div>
         </div>
 
-        <div class="bfg__box bfg__box--3">
-          <header class="bfg__header bfg__header--warning">Header</header>
-          <div class="bfg__content bfg__content--warning"></div>
+        <div class="bfg__box bfg__box--3 bfg__box--theme-warning">
+          <header class="bfg__header">Header</header>
+          <div class="bfg__content"></div>
         </div>
       </div>
 
     </div>
   </pre>
 
-  <script>
-    const canvas = document.querySelectorAll('canvas');
-    for (let i = 0; i < canvas.length; i++) {
-      Demo.chart(canvas[i]);
-    }
-  </script>
   <script>Demo.viewCode(); Demo.fillGrid({ textColor: false }); Demo.enableActions();</script>
 </body>
 </html>

@@ -13,29 +13,31 @@
 @mixin bfg-theme($name, $settings) {
   $s: map-merge($bfg-theme-light, $settings);
 
-  .bfg__action--#{$name},
-  .bfg__header--#{$name} {
-    box-shadow: map-get($s, box-shadow);
-    border: map-get($s, border-width) solid map-get($s, header-border);
-    background-color: map-get($s, header-background);
-    @if map-get($s, header-forground) { color: map-get($s, header-forground); }
-    line-height: calc(#{$bfg-header-height} - #{2 * map-get($s, border-width)});
-  }
+  .bfg__box--theme-#{$name} {
+    .bfg__action,
+    .bfg__header {
+      box-shadow: map-get($s, box-shadow);
+      border: map-get($s, border-width) solid map-get($s, header-border);
+      background-color: map-get($s, header-background);
+      @if map-get($s, header-forground) { color: map-get($s, header-forground); }
+      line-height: calc(#{$bfg-header-height} - #{2 * map-get($s, border-width)});
+    }
 
-  .bfg__action--#{$name} {
-    border-top-right-radius: map-get($s, border-radius);
-    border-left-width: 0;
-  }
+    .bfg__action {
+      border-top-right-radius: map-get($s, border-radius);
+      border-left-width: 0;
+    }
 
-  .bfg__header--#{$name} {
-    border-radius: map-get($s, border-radius) map-get($s, border-radius) 0 0;
-  }
+    .bfg__header {
+      border-radius: map-get($s, border-radius) map-get($s, border-radius) 0 0;
+    }
 
-  .bfg__content--#{$name} {
-    box-shadow: map-get($s, box-shadow);
-    border-radius: map-get($s, border-radius);
-    border: map-get($s, border-width) solid map-get($s, content-border);
-    background-color: map-get($s, content-background);
-    @if map-get($s, content-forground) { color: map-get($s, content-forground); }
+    .bfg__content {
+      box-shadow: map-get($s, box-shadow);
+      border-radius: map-get($s, border-radius);
+      border: map-get($s, border-width) solid map-get($s, content-border);
+      background-color: map-get($s, content-background);
+      @if map-get($s, content-forground) { color: map-get($s, content-forground); }
+    }
   }
 }

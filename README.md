@@ -394,27 +394,25 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 </div>
 ```
 
-## .bfg__action, .bfg__header and .bfg__content modifiers
-
-### .bfg__action--[N], .bfg__header--[N], .bfg__content--[N]
+### .bfg__box--theme-[N]
 
 **[N]** Name: `light` or any string.
 
-Use selector `.bfg__content.bfg__content--light` to fill the box content using the `light` look and feel.
-
-Use selector `.bfg__header.bfg__header--light` to fill the box header.
-
-Use selector `.bfg__action.bfg__action--light` to fill the box action.
+Use `.bfg__box--theme-light` to add look and feel to the box content, header and actions.
 
 ```html
 ...
-  <div class="bfg__action bfg__action--light"></div>
-  <div class="bfg__header bfg__header--light"></div>
-  <div class="bfg__content bfg__content--light"></div>
+  <div class="bfg__box bfg__box--theme-light">
+    <div class="bfg__action"></div>
+    <div class="bfg__header"></div>
+    <div class="bfg__content"></div>
+  </div>
 ...
 ```
 
 > See below the Sass mixin `bfg-theme` to create your own themes.
+
+## .bfg__content modifier
 
 ### .bfg__content--nopad
 
@@ -571,9 +569,11 @@ Now, you can use the new theme named `info`:
 
 ```html
 ...
-  <div class="bfg__action bfg__action--info"></div>
-  <div class="bfg__header bfg__header--info"></div>
-  <div class="bfg__content bfg__content--info"></div>
+  <div class="bfg__box bfg__box--theme-info">
+    <div class="bfg__action"></div>
+    <div class="bfg__header"></div>
+    <div class="bfg__content"></div>
+  </div>
 ...
 ```
 
@@ -612,20 +612,15 @@ Now, you can use the new theme named `info`:
 | `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12` |
 | `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first` |
 | `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last` |
-| `.bfg__box--fit`      |
-| `.bfg__box--nopad`    |
-| `.bfg__box--overflow` |
+| `.bfg__box--fit`          |
+| `.bfg__box--nopad`        |
+| `.bfg__box--overflow`     |
+| `.bfg__box--theme-light`  |
 
 | `.bfg__content` element   |
 | ------------------------- |
 | `.bfg__content--nopad`    |
 | `.bfg__content--overflow` |
-
-| `light` theme modifiers |
-| ----------------------- |
-| `.bfg__action--light`   |
-| `.bfg__header--light`   |
-| `.bfg__content--light`  |
 
 ## Install
 
