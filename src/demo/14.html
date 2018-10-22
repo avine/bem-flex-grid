@@ -47,7 +47,9 @@
 
           <div class="bfg__box bfg__box--6">
             <!-- content without header -->
-            <div class="bfg__content bfg__content--light"></div>
+            <div class="bfg__content bfg__content--light">
+              <canvas></canvas>
+            </div>
           </div>
 
           <div class="bfg__box bfg__box--3">
@@ -65,6 +67,12 @@
     </div>
   </pre>
 
+  <script>
+    const canvas = document.querySelectorAll('canvas');
+    for (let i = 0; i < canvas.length; i++) {
+      Demo.chart(canvas[i]);
+    }
+  </script>
   <script>Demo.viewCode(); Demo.fillGrid({ textColor: false }); Demo.enableActions();</script>
 </body>
 </html>

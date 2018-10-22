@@ -218,6 +218,13 @@ pre.demo-layout__output--gray {
 .demo-text__bg-4 { background-color: #FFEBEE; }
 .demo-text__bg-5 { background-color: #F3E5F5; }
 
+/* ===== Chart ===== */
+
+.demo-chart {
+  width: 100%;
+  height: 100%;
+}
+
 /* ===== Responsive ===== */
 
 @include bfg-media-breakpoint-down(sm) {
