@@ -2,11 +2,14 @@ import { forEach } from './util';
 
 /* ===== Helpers ===== */
 
-const getAnchor = (popOver: string, bemModifier: string, text: string, textActive = text) => {
+const container = document.createElement('div');
+container.className = 'demo-toolbox';
+
+const getAnchor = (popOver: string, bemModifier: string, text = '', textActive = text) => {
   const anchor = document.createElement('a');
   anchor.href = '#';
   anchor.title = popOver;
-  anchor.className = `demo-action demo-action--${bemModifier}`;
+  anchor.className = `demo-toolbox__action demo-toolbox__action--${bemModifier}`;
   anchor.dataset.text = anchor.innerHTML = text;
   anchor.dataset.textActive = textActive;
   return anchor;
@@ -15,12 +18,12 @@ const getAnchor = (popOver: string, bemModifier: string, text: string, textActiv
 const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boolean) => void) => {
   anchor.addEventListener('click', (event) => {
     event.preventDefault();
-    anchor.classList.toggle('demo-action--active');
-    const isActive = anchor.classList.contains('demo-action--active');
+    anchor.classList.toggle('demo-toolbox__action--active');
+    const isActive = anchor.classList.contains('demo-toolbox__action--active');
     anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text;
     callback(isActive);
   });
-  document.body.appendChild(anchor);
+  container.appendChild(anchor);
 };
 
 const triggerResize = (delay = 0) => setTimeout(() => {
@@ -43,7 +46,7 @@ const FULL_WIDTH_SWITCHER_DURATION = 300;
 const fullWidthSwitcher = () => {
   const target = document.querySelector('.demo-layout__output');
   handleAction(
-    getAnchor('Toggle full width', 'full-width', '&leftrightarrow;'),
+    getAnchor('Toggle full screen', 'full-screen'),
     () => {
       target.classList.toggle('demo-layout__output--full');
       // Finally redraw Charts if any.
@@ -55,7 +58,7 @@ const fullWidthSwitcher = () => {
 const autoHeightSwitcher = () => {
   const target = document.querySelector('.demo-layout__playground');
   handleAction(
-    getAnchor('Toggle auto height', 'auto-height', '&updownarrow;'),
+    getAnchor('Toggle auto height', 'auto-height'),
     () => {
       target.classList.toggle('demo-layout__playground--auto');
       // Finally redraw Charts if any.
@@ -68,7 +71,7 @@ const directionSwitcher = () => {
   const grids = document.querySelectorAll('.bfg--row, .bfg--col');
   const code = document.querySelector('.demo-layout__code > code');
   handleAction(
-    getAnchor('Switch direction', 'direction', '&RightVector;', '&RightDownVector;'),
+    getAnchor('Switch direction', 'direction'),
     () => {
       // Update output
       forEach<Element>(grids, (grid) => {
@@ -99,4 +102,6 @@ export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
   if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
   if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
+
+  document.body.appendChild(container);
 };

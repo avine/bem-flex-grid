@@ -133,9 +133,17 @@ pre.demo-layout__output--gray {
   font-size: 0.875rem;
 }
 
-/* ===== Actions ===== */
+/* ===== Toolbox actions ===== */
 
-.demo-action {
+.demo-toolbox {
+  position: fixed;
+  right: 0.5rem;
+  bottom: 0.5rem;
+}
+
+.demo-toolbox__action {
+  display: block;
+  margin-top: 0.5rem;
   width: 2rem;
   height: 2rem;
   line-height: 2rem;
@@ -143,6 +151,9 @@ pre.demo-layout__output--gray {
   border-radius: $www-border-radius;
   border: 1px solid map-get($demo-action, border);
   background-color: map-get($demo-action, background);
+  background-size: 1.25rem 1.25rem;
+  background-repeat: no-repeat;
+  background-position: center center;
   color: map-get($demo-action, forground) !important;
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -155,28 +166,14 @@ pre.demo-layout__output--gray {
   }
 }
 
-.demo-action--active {
+.demo-toolbox__action--active {
   border-color: map-get($demo-action, background);
   background-color: map-get($demo-action, active);
 }
 
-.demo-action--full-width {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 3rem;
-}
-
-.demo-action--auto-height {
-  position: absolute;
-  right: 0.5rem;
-  bottom: 0.5rem;
-}
-
-.demo-action--direction {
-  position: absolute;
-  right: 3rem;
-  bottom: 0.5rem;
-}
+.demo-toolbox__action--full-screen  { background-image: url(../images/desktop.svg);     }
+.demo-toolbox__action--auto-height  { background-image: url(../images/scroll.svg);      }
+.demo-toolbox__action--direction    { background-image: url(../images/directions.svg);  }
 
 /* ===== Handle dummy container and text ===== */
 

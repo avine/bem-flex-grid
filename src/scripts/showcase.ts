@@ -6,7 +6,7 @@ export const showcase = () => {
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
   <div class="www-showcase__item">
     <iframe data-src="${anchor.href}" class="www-showcase__iframe"></iframe>
-    <a href="${anchor.href}" class="demo-action demo-action--open-link" title="Open">${count}</a>
+    <a href="${anchor.href}" class="demo-toolbox__action demo-toolbox__action--open-link" title="Open">${count}</a>
   </div>`;
 
   const mappedHtml = [];
