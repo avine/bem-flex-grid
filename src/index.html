@@ -8,12 +8,12 @@
 
   <link rel="shortcut icon" href="favicon.ico">
 
-  <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
-
   <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
   <script src="../node_modules/prismjs/prism.js"></script>
   <script src="../node_modules/prismjs/components/prism-scss.min.js"></script>
   <script src="../node_modules/prismjs/components/prism-bash.min.js"></script>
+
+  <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
 
   <link rel="stylesheet" href="styles/demo.scss">
   <link rel="stylesheet" href="styles/www.scss">
@@ -62,15 +62,16 @@
 
 <h1>bem-flex-grid</h1>
 <p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
+<p><em>A responsive grid that perfectly fits the window size in both width and height and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.</em></p>
 <h2>Grid block and elements</h2>
-<p>At core the grid system consists of one block <code>.bfg</code> and one element <code>.bfg__box</code>.</p>
+<p>At core the grid system consists of one block <code>.bfg</code> and several elements <code>.bfg__box</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can fill the boxes using the optional <code>.bfg__content</code> element.</p>
+<p>Fill the boxes using the optional <code>.bfg__content</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
@@ -78,7 +79,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can add an header to the content using the optional <code>.bfg__header</code> element.</p>
+<p>Add an header to the content using the optional <code>.bfg__header</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
@@ -87,7 +88,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>You can add multiple actions to the header using the optional <code>.bfg__action</code> element.</p>
+<p>Add multiple actions to the header using the optional <code>.bfg__action</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
@@ -100,7 +101,7 @@
 &lt;/div&gt;
 </code></pre>
 <h2>.bfg modifiers</h2>
-<h3>.bfg--row and .bfg--col</h3>
+<h3>.bfg--row, .bfg--col</h3>
 <p>It is required to define the direction the <code>.bfg__box</code> elements are placed in the <code>.bfg</code> block, using <code>.bfg--row</code> or <code>.bfg--col</code> modifiers.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -153,18 +154,18 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<h3>.bfg--gap, .bfg--gap-out</h3>
+<h3>.bfg--gap, .bfg--gap-in</h3>
 <p>To add a gap between <code>.bfg__box</code> elements, use <code>.bfg--gap</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <p>In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the <code>.bfg</code> block.</p>
-<p>But if you prefer to define a main margin (or padding) to the parent node of the <code>.bfg</code> block then use <code>.bfg--gap-out</code> modifier.</p>
+<p>But if you prefer to define a main margin (or padding) to the parent node of the <code>.bfg</code> block then use <code>.bfg--gap-in</code> modifier.</p>
 <pre><code class="language-html">&lt;div style=&quot;margin: 1rem&quot;&gt;
-  &lt;div class=&quot;bfg bfg--gap-out&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div style=&quot;padding: 1rem&quot;&gt;
-  &lt;div class=&quot;bfg bfg--gap-out&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <blockquote>
@@ -198,7 +199,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 
 &lt;div class=&quot;bfg bfg--cross-end&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--box-overflow and .bfg--content-overflow</h3>
+<h3>.bfg--box-overflow, .bfg--content-overflow</h3>
 <p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the rule <code>overflow: auto;</code>.</p>
 <p>Use <code>.bfg--box-overflow</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow&quot;&gt;...&lt;/div&gt;
@@ -495,7 +496,7 @@ $bfg-gap: 2rem;
 <td><code>.bfg--gap</code></td>
 </tr>
 <tr>
-<td><code>.bfg--gap-out</code></td>
+<td><code>.bfg--gap-in</code></td>
 </tr>
 <tr>
 <td><code>.bfg--wrap</code></td>

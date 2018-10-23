@@ -2,9 +2,11 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
+*A responsive grid that perfectly fits the window size in both width and height and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
+
 ## Grid block and elements
 
-At core the grid system consists of one block `.bfg` and one element `.bfg__box`.
+At core the grid system consists of one block `.bfg` and several elements `.bfg__box`.
 
 ```html
 <div class="bfg">
@@ -14,7 +16,7 @@ At core the grid system consists of one block `.bfg` and one element `.bfg__box`
 </div>
 ```
 
-You can fill the boxes using the optional `.bfg__content` element.
+Fill the boxes using the optional `.bfg__content` element.
 
 ```html
 <div class="bfg">
@@ -25,7 +27,7 @@ You can fill the boxes using the optional `.bfg__content` element.
 </div>
 ```
 
-You can add an header to the content using the optional `.bfg__header` element.
+Add an header to the content using the optional `.bfg__header` element.
 
 ```html
 <div class="bfg">
@@ -37,7 +39,7 @@ You can add an header to the content using the optional `.bfg__header` element.
 </div>
 ```
 
-You can add multiple actions to the header using the optional `.bfg__action` element.
+Add multiple actions to the header using the optional `.bfg__action` element.
 
 ```html
 <div class="bfg">
@@ -54,7 +56,7 @@ You can add multiple actions to the header using the optional `.bfg__action` ele
 
 ## .bfg modifiers
 
-### .bfg--row and .bfg--col
+### .bfg--row, .bfg--col
 
 It is required to define the direction the `.bfg__box` elements are placed in the `.bfg` block, using `.bfg--row` or `.bfg--col` modifiers.
 
@@ -137,7 +139,7 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 </div>
 ```
 
-### .bfg--gap, .bfg--gap-out
+### .bfg--gap, .bfg--gap-in
 
 To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 
@@ -147,17 +149,17 @@ To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
 
 In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the `.bfg` block.
 
-But if you prefer to define a main margin (or padding) to the parent node of the `.bfg` block then use `.bfg--gap-out` modifier.
+But if you prefer to define a main margin (or padding) to the parent node of the `.bfg` block then use `.bfg--gap-in` modifier.
 
 ```html
 <div style="margin: 1rem">
-  <div class="bfg bfg--gap-out">...</div>
+  <div class="bfg bfg--gap-in">...</div>
 </div>
 ```
 
 ```html
 <div style="padding: 1rem">
-  <div class="bfg bfg--gap-out">...</div>
+  <div class="bfg bfg--gap-in">...</div>
 </div>
 ```
 
@@ -200,7 +202,7 @@ Align items along the "cross" axis using `.bfg--cross-*` modifiers.
 <div class="bfg bfg--cross-end">...</div>
 ```
 
-### .bfg--box-overflow and .bfg--content-overflow
+### .bfg--box-overflow, .bfg--content-overflow
 
 By default, `.bfg__box` and `.bfg__content` elements use the rule `overflow: auto;`.
 
@@ -584,7 +586,7 @@ Now, you can use the new theme named `info`:
 | `.bfg--row`              |
 | `.bfg--col`              |
 | `.bfg--gap`              |
-| `.bfg--gap-out`          |
+| `.bfg--gap-in`          |
 | `.bfg--wrap`             |
 | `.bfg--main-center`      |
 | `.bfg--main-end`         |

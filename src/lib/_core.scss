@@ -22,13 +22,13 @@
   padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
 }
 
-.bfg--gap-out {
+.bfg--gap-in {
   margin: 0 (-$bfg-gap / 2);
   height: calc(100% + #{$bfg-gap});
 }
 
 .bfg--gap,
-.bfg--gap-out {
+.bfg--gap-in {
   .bfg__box {
     padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
   }

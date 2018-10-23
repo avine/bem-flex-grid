@@ -16,18 +16,18 @@
 .bfg--gap {
   padding: 1rem 0.5rem 0 0.5rem; }
 
-.bfg--gap-out {
+.bfg--gap-in {
   margin: 0 -0.5rem;
   height: calc(100% + 1rem); }
 
 .bfg--gap .bfg__box,
-.bfg--gap-out .bfg__box {
+.bfg--gap-in .bfg__box {
   padding: 0 0.5rem 1rem 0.5rem; }
 
 .bfg--gap .bfg__box.bfg,
 .bfg--gap .bfg__box--nopad,
-.bfg--gap-out .bfg__box.bfg,
-.bfg--gap-out .bfg__box--nopad {
+.bfg--gap-in .bfg__box.bfg,
+.bfg--gap-in .bfg__box--nopad {
   padding: 0; }
 
 .bfg--wrap {

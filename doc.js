@@ -25,12 +25,12 @@ const mdToHtml = () => {
 
   <link rel="shortcut icon" href="favicon.ico">
 
-  <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
-
   <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
   <script src="../node_modules/prismjs/prism.js"></script>
   <script src="../node_modules/prismjs/components/prism-scss.min.js"></script>
   <script src="../node_modules/prismjs/components/prism-bash.min.js"></script>
+
+  <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
 
   <link rel="stylesheet" href="styles/demo.scss">
   <link rel="stylesheet" href="styles/www.scss">
