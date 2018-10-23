@@ -2,7 +2,7 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid that perfectly fits the window size in both width and height and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
+*A responsive grid system that perfectly fits the window size in both width and height and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
 
 ## Grid block and elements
 
@@ -74,7 +74,7 @@ It is required to define the direction the `.bfg__box` elements are placed in th
 
 ### .bfg--wrap
 
-To allow `.bfg__box` elements to wrap as needed onto multiple lines, use the optional `.bfg--wrap` modifier.
+Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the optional `.bfg--wrap` modifier.
 
 ```html
 <div class="bfg bfg--wrap">...</div>
@@ -141,7 +141,7 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 
 ### .bfg--gap, .bfg--gap-in
 
-To add a gap between `.bfg__box` elements, use `.bfg--gap` modifier.
+Add a gap between `.bfg__box` elements, using `.bfg--gap` modifier.
 
 ```html
 <div class="bfg bfg--gap">...</div>
@@ -232,7 +232,7 @@ Use `.bfg--content-overflow` modifier on `.bfg` block to apply the rule `overflo
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-Use `.bfg--reverse` modifier to reverse the boxes order.
+Reverse the boxes order using `.bfg--reverse` modifier.
 
 ```html
 <div class="bfg bfg--reverse">...</div>
@@ -330,7 +330,7 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-Use `.bfg__box--first` or `.bfg__box--last` modifiers to change the box order.
+Change the box order using `.bfg__box--first` or `.bfg__box--last` modifiers.
 
 ```html
 ...
@@ -400,7 +400,7 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 
 **[N]** Name: `light` or any string.
 
-Use `.bfg__box--theme-light` to add look and feel to the box content, header and actions.
+Add "light" look and feel to the box's content, header and actions using `.bfg__box--theme-light` modifier.
 
 ```html
 ...
@@ -418,7 +418,7 @@ Use `.bfg__box--theme-light` to add look and feel to the box content, header and
 
 ### .bfg__content--nopad
 
-Use `.bfg__content--nopad` modifier to remove the box content padding.
+Remove the box content padding using `.bfg__content--nopad` modifier.
 
 ```html
 ...
@@ -447,8 +447,8 @@ To chain grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as
 
 See below the `<div>` that has both roles:
 
-- `.bfg__box.bfg__box--6` as it is an *element* of the parent `.bfg.bfg--col` *block*.
-- `.bfg.bfg--row` as it is a *block* of the children `.bfg__box` *elements*.
+- `.bfg__box.bfg__box--6` as it is an *element* of its parent `.bfg.bfg--col` *block*.
+- `.bfg.bfg--row` as it is a *block* of its children `.bfg__box` *elements*.
 
 ```html
 <div class="bfg bfg--col bfg--gap">
@@ -469,13 +469,16 @@ See below the `<div>` that has both roles:
 
 ### Nested grid
 
-Another alternative consists to nest a new `.bfg` *block* inside a `.bfg__box` *element*.
+An alternative to chained grids consists to simply nest a new `.bfg` *block* inside a `.bfg__box` *element*.
 
-> If you use `.bfg--gap` modifier, you need to add `.bfg__box--nopad` modifier on the parent `.bfg__box` of the nested grid.
+> With this markup, if you use `.bfg--gap` modifier, you'll need to add `.bfg__box--nopad` modifier on the parent `.bfg__box` of the nested grid.
 
 ```html
 <div class="bfg bfg--col bfg--gap">
   <div class="bfg__box bfg__box--3"></div>
+
+  <!-- `.bfg__box--nopad` modifier added to the parent of the
+    nested grid, because of the `.bfg--gap` modifier above -->
   <div class="bfg__box bfg__box--6 bfg__box--nopad">
 
     <!-- Nested grid starts here, inside the `.bfg__box` element -->
@@ -486,6 +489,7 @@ Another alternative consists to nest a new `.bfg` *block* inside a `.bfg__box` *
     </div>
 
   </div>
+
   <div class="bfg__box bfg__box--3"></div>
 </div>
 ```
@@ -495,6 +499,15 @@ Another alternative consists to nest a new `.bfg` *block* inside a `.bfg__box` *
 ### Default variables
 
 ```scss
+$ie11-support: false !default;
+
+$bfg-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
 $bfg-gap: 1rem !default;
 
 $bfg-padding: 0.5rem !default;
@@ -516,18 +529,11 @@ $bfg-theme-light: (
 ) !default;
 
 $bfg-theme-light-included: true;
-
-$bfg-breakpoints: (
-  xs: 576px,
-  sm: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
 ```
 
 **Example:**
 
-To change the boxes gap, create a new file `my-custo-bfg.scss` with the following content:
+To change the boxes gap, create a file `custo-bfg.scss` with the following content:
 
 ```scss
 // Overwrite gap
@@ -538,7 +544,7 @@ $bfg-gap: 2rem;
 
 ### Mixin
 
-The `bfg-theme` mixin allows you to customize the content look and feel.
+The `bfg-theme` mixin allows you to customize the look and feel of the box's content, header and actions.
 
 ```scss
 @mixin bfg-theme($name, $settings) { ... }
@@ -546,7 +552,7 @@ The `bfg-theme` mixin allows you to customize the content look and feel.
 
 **Example:**
 
-To add a new theme with name `info`, create a new file `my-custo-bfg.scss` with the following content:
+To add a theme named `info`, create a file `custo-bfg.scss` with the following content:
 
 ```scss
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
@@ -565,9 +571,9 @@ To add a new theme with name `info`, create a new file `my-custo-bfg.scss` with 
 ));
 ```
 
-> Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value.
+> Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value (picked from the "light" theme).
 
-Now, you can use the new theme named `info`:
+Now, you can use your new theme named `info`:
 
 ```html
 ...
@@ -586,7 +592,7 @@ Now, you can use the new theme named `info`:
 | `.bfg--row`              |
 | `.bfg--col`              |
 | `.bfg--gap`              |
-| `.bfg--gap-in`          |
+| `.bfg--gap-in`           |
 | `.bfg--wrap`             |
 | `.bfg--main-center`      |
 | `.bfg--main-end`         |
