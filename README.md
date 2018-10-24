@@ -2,11 +2,11 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid system that perfectly fits the window size in both width and height and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
+*A responsive grid system that perfectly fits the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
 
 ## Grid block and elements
 
-At core the grid system consists of one block `.bfg` and several elements `.bfg__box`.
+At core the grid system consists of one `.bfg` block and one or more `.bfg__box` elements.
 
 ```html
 <div class="bfg">
