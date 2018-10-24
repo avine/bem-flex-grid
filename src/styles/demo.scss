@@ -90,7 +90,8 @@ main {
 
 // It is required to use a `<pre>` tag otherwise parcel
 // production build will remove indentation after minification!
-// Whatever, parcel build uses `--no-minify` otherwise the html comments are removed... :-(
+// Whatever, we need parcel build to use `--no-minify` option
+// otherwise the html comments are removed... :-(
 pre.demo-layout__output {
   position: fixed;
   top: 0;
