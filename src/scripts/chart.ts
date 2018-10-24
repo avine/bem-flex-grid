@@ -4,11 +4,11 @@ import Highcharts from 'highcharts';
 
 const option1 = {
   title: {
-    text: 'Solar Employment Growth by Sector, 2010-2016',
+    text: '', // 'Solar Employment Growth by Sector, 2010-2016',
   },
-  subtitle: {
-    text: 'Source: thesolarfoundation.com',
-  },
+  // subtitle: {
+  //   text: 'Source: thesolarfoundation.com',
+  // },
   yAxis: {
     title: {
       text: 'Number of Employees',
@@ -154,7 +154,7 @@ const option4 = {
     type: 'column',
   },
   title: {
-    text: 'Stacked column chart',
+    text: '', // 'Stacked column chart',
   },
   xAxis: {
     categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas'],
@@ -168,7 +168,7 @@ const option4 = {
       enabled: true,
       style: {
         fontWeight: 'bold',
-        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray',
+        // color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray',
       },
     },
   },
@@ -178,7 +178,7 @@ const option4 = {
     verticalAlign: 'top',
     y: 25,
     floating: true,
-    backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+    // backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
     borderColor: '#CCC',
     borderWidth: 1,
     shadow: false,

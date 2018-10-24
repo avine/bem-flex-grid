@@ -100,7 +100,7 @@ pre.demo-layout__output {
   box-shadow: none;
   box-sizing: border-box;
   overflow: auto;
-  padding: $www-border-radius;
+  //padding: $www-border-radius;
   border-left: $www-showcase-border;
   background-color: #fff;
   transition: width ease-in-out $demo-duration, box-shadow ease-in-out $demo-duration;
@@ -135,20 +135,48 @@ pre.demo-layout__output--gray {
 
 /* ===== Toolbox actions ===== */
 
+$demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+
 .demo-toolbox {
   position: fixed;
   right: 0.5rem;
   bottom: 0.5rem;
+  box-shadow: $demo-toolbox-shadow;
+  border-radius: $www-border-radius;
+  opacity: 0.8;
+  transition: opacity ease $demo-duration;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .demo-toolbox__action {
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1) inset;
+    border-radius: 0;
+
+    &:first-child {
+      border-radius: $www-border-radius $www-border-radius 0 0;
+    }
+
+    &:last-child {
+      border-radius: 0 0 $www-border-radius $www-border-radius;
+    }
+
+    &:hover {
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1) inset;
+    }
+
+    + .demo-toolbox__action {
+      margin-top: -1px;
+    }
+  }
 }
 
 .demo-toolbox__action {
   display: block;
-  margin-top: 0.5rem;
   width: 2rem;
   height: 2rem;
   line-height: 2rem;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  border-radius: $www-border-radius;
   border: 1px solid map-get($demo-action, border);
   background-color: map-get($demo-action, background);
   background-size: 1.25rem 1.25rem;
@@ -158,8 +186,13 @@ pre.demo-layout__output--gray {
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   text-decoration: none;
-  opacity: 0.75;
+  opacity: 0.8;
   transition: opacity ease $demo-duration;
+
+  // The 2 following rules are designed to use `.demo-toolbox__action`
+  // as a standalone button, outside a `.demo-toolbox` container.
+  box-shadow: $demo-toolbox-shadow;
+  border-radius: $www-border-radius;
 
   &:hover {
     opacity: 1;
