@@ -4,7 +4,7 @@
   "description": "CSS flex grid, BEM compliant.",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf src/index.html dist .cache output www && mkdirp dist",
+    "clean": "rimraf src/index.html dist .cache output www deploy && mkdirp dist",
     "doc": "node doc.js",
     "doc:watch": "node doc.js watch",
     "prestart": "rimraf output && npm run doc",
@@ -20,6 +20,7 @@
     "css:min:ie11": "node-sass --output-style compressed src/lib/bem-flex-grid.ie11.scss > dist/bem-flex-grid.ie11.min.css",
     "build": "npm run css && npm run css:min && npm run css:ie11 && npm run css:min:ie11",
     "all": "npm run clean && npm run doc && npm run build",
+    "deploy": "npm run build && node deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -46,6 +47,7 @@
     "@types/highcharts": "^5.0.31",
     "@types/markdown-it": "0.0.6",
     "@types/prismjs": "^1.9.0",
+    "fs-extra": "^7.0.0",
     "highcharts": "^6.2.0",
     "http-server": "^0.11.1",
     "markdown-it": "^8.4.2",

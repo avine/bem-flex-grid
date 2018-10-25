@@ -1,4 +1,5 @@
-node_modules/
 .cache/
+deploy/
+node_modules/
 output/
 www/
