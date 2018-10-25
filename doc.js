@@ -58,7 +58,7 @@ const mdToHtml = () => {
   </header>
 
   <header class="www-header">
-    <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow bfg--sm-disabled">
+    <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow-visible bfg--sm-disabled">
       <div class="bfg__box bfg__box--fit bfg__box--last">
         <div class="www-logo">
           <div class="www-logo__square www-logo__square--1"></div>

@@ -61,9 +61,14 @@
   box-sizing: border-box;
 }
 
-.bfg--box-overflow .bfg__box,
-.bfg__box--overflow {
+.bfg--box-overflow-visible .bfg__box,
+.bfg__box--overflow-visible {
   overflow: visible;
+}
+
+.bfg--box-overflow-hidden .bfg__box,
+.bfg__box--overflow-hidden {
+  overflow: hidden;
 }
 
 @if $ie11-support {
