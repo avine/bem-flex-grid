@@ -9,91 +9,23 @@ const MarkdownIt = require('markdown-it');
 
 const md = new MarkdownIt();
 
+const templatePath = Path.join(__dirname, './doc-template.html');
 const sourcePath = Path.join(__dirname, './README.md');
 const targetPath = Path.join(__dirname, './src/index.html');
 
-const mdToHtml = () => {
+const template = Fs.readFileSync(templatePath, { encoding: 'utf-8' });
+
+const updateFile = () => {
   const markdown = Fs.readFileSync(sourcePath, { encoding: 'utf-8' });
-
-  const html = `<!DOCTYPE html>
-<html lang="en" class="markdown-body">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Bem Flex Grid</title>
-
-  <link rel="shortcut icon" href="favicon.ico">
-
-  <link rel="stylesheet" href="../node_modules/prismjs/themes/prism.css">
-  <script src="../node_modules/prismjs/prism.js"></script>
-  <script src="../node_modules/prismjs/components/prism-scss.min.js"></script>
-  <script src="../node_modules/prismjs/components/prism-bash.min.js"></script>
-
-  <link rel="stylesheet" href="../node_modules/primer-markdown/build/build.css">
-
-  <link rel="stylesheet" href="styles/demo.scss">
-  <link rel="stylesheet" href="styles/www.scss">
-  <link rel="stylesheet" href="lib/bem-flex-grid.ie11.scss">
-
-  <style>
-    pre[class*="language-"] { background:#f6f8fa }
-    .markdown-body h3 { color: #C62828; }
-    table { border-collapse: collapse; }
-    th { text-align: left; }
-  </style>
-</head>
-<body>
-  <div class="www-navbar www-navbar--back">
-    <div class="www-container">
-      <a href="./" class="www-navbar__link">Bem Flex Grid</a>
-    </div>
-  </div>
-  <header class="www-navbar www-navbar--front">
-    <div class="www-container">
-      <a href="./" class="www-navbar__link">doc</a>
-      <a href="demo.html" class="www-navbar__link">demo</a>
-      <a href="https://github.com/avine/bem-flex-grid/" class="www-navbar__link">github</a>
-    </div>
-  </header>
-
-  <header class="www-header">
-    <div class="bfg bfg--row bfg--main-center bfg--cross-center bfg--box-overflow-visible bfg--sm-disabled">
-      <div class="bfg__box bfg__box--fit bfg__box--last">
-        <div class="www-logo">
-          <div class="www-logo__square www-logo__square--1"></div>
-          <div class="www-logo__square www-logo__square--2"></div>
-          <div class="www-logo__square www-logo__square--3"></div>
-          <div class="www-logo__square www-logo__square--4"></div>
-        </div>
-      </div>
-
-      <div class="bfg__box bfg__box--fit www-header__title"><!-- note: "h1" replaced by "div" -->
-        <a href="./">Bem Flex Grid</a>
-      </div>
-    </div>
-    <h2 class="www-header__subtitle">CSS flex grid, BEM compliant.</h2>
-  </header>
-
-  <main class="www-container">
-
-${md.render(markdown)}
-
-  </main>
-
-  <footer class="www-footer">
-    Made with <b>&hearts;</b> by Avine.
-  </footer>
-</body>
-</html>`;
+  const html = template.replace('{{markdown}}', md.render(markdown));
 
   Fs.writeFileSync(targetPath, html, { encoding: 'utf-8' });
   console.log('Updating:', targetPath);
 };
 
-mdToHtml();
+updateFile();
 
 if (process.argv[2] === 'watch') {
-  Fs.watchFile(sourcePath, mdToHtml);
+  Fs.watchFile(sourcePath, updateFile);
   console.log('watching:', sourcePath);
 }
