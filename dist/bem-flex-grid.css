@@ -405,17 +405,17 @@
 .bfg__header + .bfg__content {
   height: calc(100% - 2rem); }
 
-.bfg__box .bfg__action,
-.bfg__box .bfg__header {
+.bfg .bfg__box .bfg__action,
+.bfg .bfg__box .bfg__header {
   line-height: 2rem; }
 
-.bfg__box .bfg__action + .bfg__action,
-.bfg__box .bfg__action + .bfg__header {
+.bfg .bfg__box .bfg__action + .bfg__action,
+.bfg .bfg__box .bfg__action + .bfg__header {
   box-shadow: none;
   border-top-right-radius: 0;
   border-right-width: 0; }
 
-.bfg__box .bfg__header + .bfg__content {
+.bfg .bfg__box .bfg__header + .bfg__content {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
