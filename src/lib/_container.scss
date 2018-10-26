@@ -1,51 +1,31 @@
-.bfg__box {
-  .bfg__action,
-  .bfg__header {
-    padding: 0 $bfg-padding;
-    box-sizing: border-box;
-    position: relative;
-    overflow: hidden;
-    height: $bfg-header-height;
-    line-height: $bfg-header-height; // mixin!
-    font-size: 1rem;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-  }
+.bfg__action,
+.bfg__header {
+  padding: 0 $bfg-padding;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  height: $bfg-header-height;
+  font-size: 1rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 
-  .bfg__action {
-    float: right;
-    max-width: 25%; // Up to 4 actions per box
-
-    + .bfg__action,
-    + .bfg__header {
-      box-shadow: none; // mixin!
-      border-top-right-radius: 0; // mixin!
-      border-right-width: 0; // mixin!
-    }
-  }
-
-  .bfg__content {
-    padding: $bfg-padding;
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-
-  .bfg__content--nopad {
-    padding: 0;
-  }
-
-  .bfg__header + .bfg__content {
-    height: calc(100% - #{$bfg-header-height});
-    border-top: none; // mixin!
-    border-top-left-radius: 0; // mixin!
-    border-top-right-radius: 0; // mixin!
-  }
+.bfg__action {
+  float: right;
+  max-width: 25%; // Up to 4 actions per box
 }
 
 .bfg__content {
+  padding: $bfg-padding;
+  box-sizing: border-box;
+  position: relative;
   overflow: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.bfg__content--nopad {
+  padding: 0;
 }
 
 .bfg--content-overflow-visible .bfg__content,
@@ -56,6 +36,33 @@
 .bfg--content-overflow-hidden .bfg__content,
 .bfg__content--overflow-hidden {
   overflow: hidden;
+}
+
+.bfg__header + .bfg__content {
+  height: calc(100% - #{$bfg-header-height});
+}
+
+// Rules that related in `bfg-theme` mixin and have to be wrapped in some high level selector
+.bfg__box {
+  .bfg__action,
+  .bfg__header {
+    line-height: $bfg-header-height;
+  }
+
+  .bfg__action {
+    + .bfg__action,
+    + .bfg__header {
+      box-shadow: none;
+      border-top-right-radius: 0;
+      border-right-width: 0;
+    }
+  }
+
+  .bfg__header + .bfg__content {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 @if $bfg-theme-light-included {
