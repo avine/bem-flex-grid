@@ -11,7 +11,7 @@
 }
 
 @mixin bfg-theme($name, $settings) {
-  $s: map-merge($bfg-theme-light, $settings);
+  $s: map-merge($bfg-theme-primary, $settings);
 
   .bfg__box--theme-#{$name} {
     .bfg__action,

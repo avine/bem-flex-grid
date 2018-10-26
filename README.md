@@ -412,13 +412,13 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 
 ### .bfg__box--theme-[N]
 
-**[N]** Name: `light` or any string.
+**[N]** Name: `primary` or any string.
 
-Add "light" look and feel to the box's content, header and actions using `.bfg__box--theme-light` modifier.
+Add "primary" look and feel to the box's content, header and actions using `.bfg__box--theme-primary` modifier.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--theme-light">
+  <div class="bfg__box bfg__box--theme-primary">
     <div class="bfg__action"></div>
     <div class="bfg__header"></div>
     <div class="bfg__content"></div>
@@ -534,7 +534,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-light: (
+$bfg-theme-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -548,7 +548,7 @@ $bfg-theme-light: (
   content-forground: false
 ) !default;
 
-$bfg-theme-light-included: true;
+$bfg-theme-primary-included: true;
 ```
 
 **Example:**
@@ -591,7 +591,7 @@ To add a theme named `info`, create a file `custo-bfg.scss` with the following c
 ));
 ```
 
-> Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value (picked from the "light" theme).
+> Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
 
 Now, you can use your new theme named `info`:
 
@@ -646,7 +646,7 @@ Now, you can use your new theme named `info`:
 | `.bfg__box--nopad`                |
 | `.bfg__box--overflow-visible`     |
 | `.bfg__box--overflow-hidden`      |
-| `.bfg__box--theme-light`          |
+| `.bfg__box--theme-primary`        |
 
 | `.bfg__content` element           |
 | --------------------------------- |

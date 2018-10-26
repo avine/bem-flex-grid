@@ -13,7 +13,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-light: (
+$bfg-theme-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -27,4 +27,4 @@ $bfg-theme-light: (
   content-forground: false
 ) !default;
 
-$bfg-theme-light-included: true;
+$bfg-theme-primary-included: true;

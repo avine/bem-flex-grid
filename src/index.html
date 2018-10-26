@@ -344,10 +344,10 @@ Then you can choose the distribution mode of the remaining space.</p>
 &lt;/div&gt;
 </code></pre>
 <h3>.bfg__box--theme-[N]</h3>
-<p><strong>[N]</strong> Name: <code>light</code> or any string.</p>
-<p>Add &quot;light&quot; look and feel to the box's content, header and actions using <code>.bfg__box--theme-light</code> modifier.</p>
+<p><strong>[N]</strong> Name: <code>primary</code> or any string.</p>
+<p>Add &quot;primary&quot; look and feel to the box's content, header and actions using <code>.bfg__box--theme-primary</code> modifier.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--theme-light&quot;&gt;
+  &lt;div class=&quot;bfg__box bfg__box--theme-primary&quot;&gt;
     &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
@@ -439,7 +439,7 @@ $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-light: (
+$bfg-theme-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -453,7 +453,7 @@ $bfg-theme-light: (
   content-forground: false
 ) !default;
 
-$bfg-theme-light-included: true;
+$bfg-theme-primary-included: true;
 </code></pre>
 <p><strong>Example:</strong></p>
 <p>To change the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
@@ -484,7 +484,7 @@ $bfg-gap: 2rem;
 ));
 </code></pre>
 <blockquote>
-<p>Notice that omitted map keys (<code>box-shadow</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the &quot;light&quot; theme).</p>
+<p>Notice that omitted map keys (<code>box-shadow</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the &quot;primary&quot; theme).</p>
 </blockquote>
 <p>Now, you can use your new theme named <code>info</code>:</p>
 <pre><code class="language-html">...
@@ -615,7 +615,7 @@ $bfg-gap: 2rem;
 <td><code>.bfg__box--overflow-hidden</code></td>
 </tr>
 <tr>
-<td><code>.bfg__box--theme-light</code></td>
+<td><code>.bfg__box--theme-primary</code></td>
 </tr>
 </tbody>
 </table>

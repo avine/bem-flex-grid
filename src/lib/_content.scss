@@ -65,6 +65,6 @@
   }
 }
 
-@if $bfg-theme-light-included {
-  @include bfg-theme(light, $bfg-theme-light);
+@if $bfg-theme-primary-included {
+  @include bfg-theme(primary, $bfg-theme-primary);
 }
