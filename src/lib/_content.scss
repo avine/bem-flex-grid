@@ -42,8 +42,8 @@
   height: calc(100% - #{$bfg-header-height});
 }
 
-// Rules that related in `bfg-theme` mixin and have to be wrapped in some high level selector
-.bfg__box {
+// Rules that are related in `bfg-theme` mixin and have to be wrapped in some high level selector
+.bfg .bfg__box {
   .bfg__action,
   .bfg__header {
     line-height: $bfg-header-height;
