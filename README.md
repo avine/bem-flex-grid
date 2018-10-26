@@ -410,15 +410,15 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 </div>
 ```
 
-### .bfg__box--theme-[N]
+### .bfg__box--[T]
 
-**[N]** Name: `primary` or any string.
+**[T]** Theme: `primary` or any string.
 
-Add "primary" look and feel to the box's content, header and actions using `.bfg__box--theme-primary` modifier.
+Add "primary" look and feel to the box's content, header and actions using `.bfg__box--primary` modifier.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--theme-primary">
+  <div class="bfg__box bfg__box--primary">
     <div class="bfg__action"></div>
     <div class="bfg__header"></div>
     <div class="bfg__content"></div>
@@ -597,7 +597,7 @@ Now, you can use your new theme named `info`:
 
 ```html
 ...
-  <div class="bfg__box bfg__box--theme-info">
+  <div class="bfg__box bfg__box--info">
     <div class="bfg__action"></div>
     <div class="bfg__header"></div>
     <div class="bfg__content"></div>
@@ -646,7 +646,7 @@ Now, you can use your new theme named `info`:
 | `.bfg__box--nopad`                |
 | `.bfg__box--overflow-visible`     |
 | `.bfg__box--overflow-hidden`      |
-| `.bfg__box--theme-primary`        |
+| `.bfg__box--primary`              |
 
 | `.bfg__content` element           |
 | --------------------------------- |

@@ -420,21 +420,21 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-.bfg__box--theme-primary .bfg__action,
-.bfg__box--theme-primary .bfg__header {
+.bfg__box--primary .bfg__action,
+.bfg__box--primary .bfg__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 1px solid #d5d5d5;
   background-color: #f6f6f6;
   line-height: calc(2rem - 2px); }
 
-.bfg__box--theme-primary .bfg__action {
+.bfg__box--primary .bfg__action {
   border-top-right-radius: 3px;
   border-left-width: 0; }
 
-.bfg__box--theme-primary .bfg__header {
+.bfg__box--primary .bfg__header {
   border-radius: 3px 3px 0 0; }
 
-.bfg__box--theme-primary .bfg__content {
+.bfg__box--primary .bfg__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 3px;
   border: 1px solid #ddd;
