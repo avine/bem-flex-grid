@@ -199,16 +199,21 @@ Then you can choose the distribution mode of the remaining space.</p>
 
 &lt;div class=&quot;bfg bfg--cross-end&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--box-overflow, .bfg--content-overflow</h3>
+<h3>.bfg--box-overflow-[T], .bfg--content-overflow-[T]</h3>
+<p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the rule <code>overflow: auto;</code>.</p>
-<p>Use <code>.bfg--box-overflow</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow&quot;&gt;...&lt;/div&gt;
+<p>Use <code>.bfg--box-overflow-visible</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>
+<p>Use <code>.bfg--box-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: hidden;</code> instead on all <code>.bfg__box</code> elements.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow-visible&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;bfg bfg--box-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>Use <code>.bfg--content-overflow</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__content</code> elements.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--content-overflow&quot;&gt;...&lt;/div&gt;
+<p>Use <code>.bfg--content-overflow-visible</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__content</code> elements.</p>
+<p>Use <code>.bfg--content-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: hidden;</code> instead on all <code>.bfg__content</code> elements.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--content-overflow-visible&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;bfg bfg--content-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>In the same way, use <code>.bfg__box--overflow</code> modifier on <code>.bfg__box</code> element and <code>.bfg__content--overflow</code> modifier on <code>.bfg__content</code> element to apply this behavior to a specific element.</p>
+<p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifier on <code>.bfg__box</code> element and <code>.bfg__content--overflow-[T]</code> modifier on <code>.bfg__content</code> element to apply this behavior to a specific element.</p>
 </blockquote>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;
@@ -318,11 +323,14 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--8&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h3>.bfg__box--overflow</h3>
-<p>By default, <code>.bfg__box</code> element use the rule <code>overflow: auto;</code>.
-Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: visible;</code> instead.</p>
+<h3>.bfg__box--overflow-[T]</h3>
+<p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
+<p>By default, <code>.bfg__box</code> element use the rule <code>overflow: auto;</code>.</p>
+<p>Use <code>.bfg__box--overflow-visible</code> modifier to apply the rule <code>overflow: visible;</code> instead.</p>
+<p>Use <code>.bfg__box--overflow-hidden</code> modifier to apply the rule <code>overflow: hidden;</code> instead.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--overflow-visible&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--overflow-hidden&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
 <h3>.bfg__box--nopad</h3>
@@ -356,11 +364,14 @@ Use <code>.bfg__box--overflow</code> modifier to apply the rule <code>overflow: 
   &lt;div class=&quot;bfg__content bfg__content--nopad&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__content--overflow</h3>
-<p>By default, <code>.bfg__content</code> element use the rule <code>overflow: auto;</code>.
-Use <code>.bfg__content--overflow</code> modifier to apply the rule <code>overflow: visible;</code> instead.</p>
+<h3>.bfg__content--overflow-[T]</h3>
+<p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
+<p>By default, <code>.bfg__content</code> element use the rule <code>overflow: auto;</code>.</p>
+<p>Use <code>.bfg__content--overflow-visible</code> modifier to apply the rule <code>overflow: visible;</code> instead.</p>
+<p>Use <code>.bfg__content--overflow-hidden</code> modifier to apply the rule <code>overflow: hidden;</code> instead.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__content bfg__content--overflow&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg__content bfg__content--overflow-visible&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg__content bfg__content--overflow-hidden&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
 <h2>Chained and nested grids</h2>
@@ -547,10 +558,16 @@ $bfg-gap: 2rem;
 <td><code>.bfg--disabled-all</code>, <code>.bfg--xl-disabled-all</code>, <code>.bfg--lg-disabled-all</code>, <code>.bfg--sm-disabled-all</code>, <code>.bfg--xs-disabled-all</code></td>
 </tr>
 <tr>
-<td><code>.bfg--box-overflow</code></td>
+<td><code>.bfg--box-overflow-visible</code></td>
 </tr>
 <tr>
-<td><code>.bfg--content-overflow</code></td>
+<td><code>.bfg--box-overflow-hidden</code></td>
+</tr>
+<tr>
+<td><code>.bfg--content-overflow-visible</code></td>
+</tr>
+<tr>
+<td><code>.bfg--content-overflow-hidden</code></td>
 </tr>
 </tbody>
 </table>
@@ -592,7 +609,10 @@ $bfg-gap: 2rem;
 <td><code>.bfg__box--nopad</code></td>
 </tr>
 <tr>
-<td><code>.bfg__box--overflow</code></td>
+<td><code>.bfg__box--overflow-visible</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--overflow-hidden</code></td>
 </tr>
 <tr>
 <td><code>.bfg__box--theme-light</code></td>
@@ -610,7 +630,10 @@ $bfg-gap: 2rem;
 <td><code>.bfg__content--nopad</code></td>
 </tr>
 <tr>
-<td><code>.bfg__content--overflow</code></td>
+<td><code>.bfg__content--overflow-visible</code></td>
+</tr>
+<tr>
+<td><code>.bfg__content--overflow-hidden</code></td>
 </tr>
 </tbody>
 </table>

@@ -202,23 +202,31 @@ Align items along the "cross" axis using `.bfg--cross-*` modifiers.
 <div class="bfg bfg--cross-end">...</div>
 ```
 
-### .bfg--box-overflow, .bfg--content-overflow
+### .bfg--box-overflow-[T], .bfg--content-overflow-[T]
+
+**[T]** Type: `visible`, `hidden`.
 
 By default, `.bfg__box` and `.bfg__content` elements use the rule `overflow: auto;`.
 
-Use `.bfg--box-overflow` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__box` elements.
+Use `.bfg--box-overflow-visible` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__box` elements.
+
+Use `.bfg--box-overflow-hidden` modifier on `.bfg` block to apply the rule `overflow: hidden;` instead on all `.bfg__box` elements.
 
 ```html
-<div class="bfg bfg--box-overflow">...</div>
+<div class="bfg bfg--box-overflow-visible">...</div>
+<div class="bfg bfg--box-overflow-hidden">...</div>
 ```
 
-Use `.bfg--content-overflow` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__content` elements.
+Use `.bfg--content-overflow-visible` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__content` elements.
+
+Use `.bfg--content-overflow-hidden` modifier on `.bfg` block to apply the rule `overflow: hidden;` instead on all `.bfg__content` elements.
 
 ```html
-<div class="bfg bfg--content-overflow">...</div>
+<div class="bfg bfg--content-overflow-visible">...</div>
+<div class="bfg bfg--content-overflow-hidden">...</div>
 ```
 
-> In the same way, use `.bfg__box--overflow` modifier on `.bfg__box` element and `.bfg__content--overflow` modifier on `.bfg__content` element to apply this behavior to a specific element.
+> In the same way, use `.bfg__box--overflow-[T]` modifier on `.bfg__box` element and `.bfg__content--overflow-[T]` modifier on `.bfg__content` element to apply this behavior to a specific element.
 
 ```html
 ...
@@ -371,14 +379,20 @@ Here's an example when using `.bfg--col` modifier:
 </div>
 ```
 
-### .bfg__box--overflow
+### .bfg__box--overflow-[T]
+
+**[T]** Type: `visible`, `hidden`.
 
 By default, `.bfg__box` element use the rule `overflow: auto;`.
-Use `.bfg__box--overflow` modifier to apply the rule `overflow: visible;` instead.
+
+Use `.bfg__box--overflow-visible` modifier to apply the rule `overflow: visible;` instead.
+
+Use `.bfg__box--overflow-hidden` modifier to apply the rule `overflow: hidden;` instead.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--overflow">...</div>
+  <div class="bfg__box bfg__box--overflow-visible">...</div>
+  <div class="bfg__box bfg__box--overflow-hidden">...</div>
 ...
 ```
 
@@ -426,14 +440,20 @@ Remove the box content padding using `.bfg__content--nopad` modifier.
 ...
 ```
 
-### .bfg__content--overflow
+### .bfg__content--overflow-[T]
+
+**[T]** Type: `visible`, `hidden`.
 
 By default, `.bfg__content` element use the rule `overflow: auto;`.
-Use `.bfg__content--overflow` modifier to apply the rule `overflow: visible;` instead.
+
+Use `.bfg__content--overflow-visible` modifier to apply the rule `overflow: visible;` instead.
+
+Use `.bfg__content--overflow-hidden` modifier to apply the rule `overflow: hidden;` instead.
 
 ```html
 ...
-  <div class="bfg__content bfg__content--overflow">...</div>
+  <div class="bfg__content bfg__content--overflow-visible">...</div>
+  <div class="bfg__content bfg__content--overflow-hidden">...</div>
 ...
 ```
 
@@ -607,8 +627,10 @@ Now, you can use your new theme named `info`:
 | `.bfg--reverse`, `.bfg--xl-reverse`, `.bfg--lg-reverse`, `.bfg--sm-reverse`, `.bfg--xs-reverse` |
 | `.bfg--disabled`, `.bfg--xl-disabled`, `.bfg--lg-disabled`, `.bfg--sm-disabled`, `.bfg--xs-disabled`                      |
 | `.bfg--disabled-all`, `.bfg--xl-disabled-all`, `.bfg--lg-disabled-all`, `.bfg--sm-disabled-all`, `.bfg--xs-disabled-all`  |
-| `.bfg--box-overflow`     |
-| `.bfg--content-overflow` |
+| `.bfg--box-overflow-visible`     |
+| `.bfg--box-overflow-hidden`      |
+| `.bfg--content-overflow-visible` |
+| `.bfg--content-overflow-hidden`  |
 
 | `.bfg__box` element   |
 | --------------------- |
@@ -618,17 +640,19 @@ Now, you can use your new theme named `info`:
 | ...                   |
 | `.bfg__box--11`, `.bfg__box--xl-11`, `.bfg__box--lg-11`, `.bfg__box--sm-11`, `.bfg__box--xs-11` |
 | `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12` |
-| `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first` |
-| `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last` |
-| `.bfg__box--fit`          |
-| `.bfg__box--nopad`        |
-| `.bfg__box--overflow`     |
-| `.bfg__box--theme-light`  |
+| `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first`  |
+| `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last`       |
+| `.bfg__box--fit`                  |
+| `.bfg__box--nopad`                |
+| `.bfg__box--overflow-visible`     |
+| `.bfg__box--overflow-hidden`      |
+| `.bfg__box--theme-light`          |
 
-| `.bfg__content` element   |
-| ------------------------- |
-| `.bfg__content--nopad`    |
-| `.bfg__content--overflow` |
+| `.bfg__content` element           |
+| --------------------------------- |
+| `.bfg__content--nopad`            |
+| `.bfg__content--overflow-visible` |
+| `.bfg__content--overflow-hidden`  |
 
 ## Install
 
