@@ -62,7 +62,7 @@
 
 <h1>bem-flex-grid</h1>
 <p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
-<p><em>A responsive grid system that perfectly fits the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.</em></p>
+<p><em>A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.</em></p>
 <h2>Grid block and elements</h2>
 <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
@@ -101,6 +101,11 @@
 &lt;/div&gt;
 </code></pre>
 <h2>.bfg modifiers</h2>
+<h3>.bfg--height-auto</h3>
+<p>By default, the main <code>.bfg</code> block will try to fit to the height of its parent node, by using the <code>height: 100%</code> rule.</p>
+<p>Use <code>.bfg--height-auto</code> modifier to apply <code>height: auto</code> rule instead.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--height-auto&quot;&gt;...&lt;/div&gt;
+</code></pre>
 <h3>.bfg--row, .bfg--col</h3>
 <p>It is required to define the direction the <code>.bfg__box</code> elements are placed in the <code>.bfg</code> block, using <code>.bfg--row</code> or <code>.bfg--col</code> modifiers.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
@@ -123,7 +128,7 @@
 <p>As said above, if you use the selector <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
 <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
-<p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit exactly 3 or 4 lines respectively.</p>
+<p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit into exactly 3 or 4 lines respectively.</p>
 <blockquote>
 <p>In this case, all the rows will have the same height.</p>
 </blockquote>
@@ -201,26 +206,20 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h3>.bfg--box-overflow-[T], .bfg--content-overflow-[T]</h3>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
-<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the rule <code>overflow: auto;</code>.</p>
-<p>Use <code>.bfg--box-overflow-visible</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__box</code> elements.</p>
-<p>Use <code>.bfg--box-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: hidden;</code> instead on all <code>.bfg__box</code> elements.</p>
+<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the <code>overflow: auto;</code> rule.</p>
+<p>Use <code>.bfg--box-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg__box</code> elements.</p>
+<p>Use <code>.bfg--box-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow-visible&quot;&gt;...&lt;/div&gt;
 &lt;div class=&quot;bfg bfg--box-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>Use <code>.bfg--content-overflow-visible</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: visible;</code> instead on all <code>.bfg__content</code> elements.</p>
-<p>Use <code>.bfg--content-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the rule <code>overflow: hidden;</code> instead on all <code>.bfg__content</code> elements.</p>
+<p>Use <code>.bfg--content-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg__content</code> elements.</p>
+<p>Use <code>.bfg--content-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg__content</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--content-overflow-visible&quot;&gt;...&lt;/div&gt;
 &lt;div class=&quot;bfg bfg--content-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifier on <code>.bfg__box</code> element and <code>.bfg__content--overflow-[T]</code> modifier on <code>.bfg__content</code> element to apply this behavior to a specific element.</p>
+<p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifiers on <code>.bfg__box</code> element and <code>.bfg__content--overflow-[T]</code> modifiers on <code>.bfg__content</code> element to apply this behavior to a specific element (see below for more details).</p>
 </blockquote>
-<pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--overflow&quot;&gt;
-    &lt;div class=&quot;bfg__content bfg__content--overflow&quot;&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-...
-</code></pre>
 <h3>.bfg--[B]reverse</h3>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>Reverse the boxes order using <code>.bfg--reverse</code> modifier.</p>
@@ -292,15 +291,31 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__box--[B]first, .bfg__box--[B]last</h3>
+<h3>.bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place</h3>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>Change the box order using <code>.bfg__box--first</code> or <code>.bfg__box--last</code> modifiers.</p>
+<p>Restore the box order using <code>.bfg__box--in-place</code> modifier.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--last&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--first&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--last&quot;&gt;&lt;!-- Will move to last position --&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--in-place&quot;&gt;&lt;!-- Will stay in place --&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--first&quot;&gt;&lt;!-- Will move to first position --&gt;&lt;/div&gt;
 ...
 </code></pre>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element order at each breakpoint.</p>
+<p><strong>Example:</strong></p>
+<ul>
+<li>Use <code>.bfg__box--first</code> to place the box in first position for all <em>screen size</em> (even greater than 1200px).</li>
+<li>Add <code>.bfg__box--lg-last</code> to place the box in last position on <em>large screens</em> (until 992px).</li>
+<li>Add <code>.bfg__box--sm-in-place</code> to restore the original box position on <em>small screens</em> (until 768px).</li>
+</ul>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg__box
+    bfg__box--first
+    bfg__box--lg-last
+    bfg__box--sm-in-place&quot;&gt;
+  &lt;/div&gt;
+...
+</code></pre>
 <h3>.bfg__box--fit</h3>
 <p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
 <p>Here's an example when using <code>.bfg--row</code> modifier:</p>
@@ -325,9 +340,9 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h3>.bfg__box--overflow-[T]</h3>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
-<p>By default, <code>.bfg__box</code> element use the rule <code>overflow: auto;</code>.</p>
-<p>Use <code>.bfg__box--overflow-visible</code> modifier to apply the rule <code>overflow: visible;</code> instead.</p>
-<p>Use <code>.bfg__box--overflow-hidden</code> modifier to apply the rule <code>overflow: hidden;</code> instead.</p>
+<p>By default, <code>.bfg__box</code> element use the <code>overflow: auto;</code> rule.</p>
+<p>Use <code>.bfg__box--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
+<p>Use <code>.bfg__box--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__box bfg__box--overflow-visible&quot;&gt;...&lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--overflow-hidden&quot;&gt;...&lt;/div&gt;
@@ -366,9 +381,9 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h3>.bfg__content--overflow-[T]</h3>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
-<p>By default, <code>.bfg__content</code> element use the rule <code>overflow: auto;</code>.</p>
-<p>Use <code>.bfg__content--overflow-visible</code> modifier to apply the rule <code>overflow: visible;</code> instead.</p>
-<p>Use <code>.bfg__content--overflow-hidden</code> modifier to apply the rule <code>overflow: hidden;</code> instead.</p>
+<p>By default, <code>.bfg__content</code> element use the <code>overflow: auto;</code> rule.</p>
+<p>Use <code>.bfg__content--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
+<p>Use <code>.bfg__content--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__content bfg__content--overflow-visible&quot;&gt;...&lt;/div&gt;
   &lt;div class=&quot;bfg__content bfg__content--overflow-hidden&quot;&gt;...&lt;/div&gt;
@@ -453,7 +468,7 @@ $bfg-theme-primary: (
   content-forground: false
 ) !default;
 
-$bfg-theme-primary-included: true;
+$bfg-theme-primary-included: true !default;
 </code></pre>
 <p><strong>Example:</strong></p>
 <p>To change the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
@@ -503,6 +518,9 @@ $bfg-gap: 2rem;
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>.bfg--height-auto</code></td>
+</tr>
 <tr>
 <td><code>.bfg--row</code></td>
 </tr>
@@ -601,6 +619,9 @@ $bfg-gap: 2rem;
 </tr>
 <tr>
 <td><code>.bfg__box--last</code>, <code>.bfg__box--xl-last</code>, <code>.bfg__box--lg-last</code>, <code>.bfg__box--sm-last</code>, <code>.bfg__box--xs-last</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--in-place</code>, <code>.bfg__box--xl-in-place</code>, <code>.bfg__box--lg-in-place</code>, <code>.bfg__box--sm-in-place</code>, <code>.bfg__box--xs-in-place</code></td>
 </tr>
 <tr>
 <td><code>.bfg__box--fit</code></td>

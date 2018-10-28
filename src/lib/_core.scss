@@ -4,10 +4,11 @@
   align-items: stretch;
   box-sizing: border-box;
   height: 100%; // Try to fit the parent node height when available
+}
 
-  &.bfg__box {
-    height: auto;
-  }
+.bfg.bfg__box,
+.bfg--height-auto {
+  height: auto;
 }
 
 .bfg--row {
@@ -19,18 +20,18 @@
 }
 
 .bfg--gap {
-  padding: $bfg-gap ($bfg-gap / 2) 0 ($bfg-gap / 2);
+  padding: ($bfg-gap / 2);
 }
 
 .bfg--gap-in {
-  margin: 0 (-$bfg-gap / 2);
+  margin: -($bfg-gap / 2);
   height: calc(100% + #{$bfg-gap});
 }
 
 .bfg--gap,
 .bfg--gap-in {
   .bfg__box {
-    padding: 0 ($bfg-gap / 2) $bfg-gap ($bfg-gap / 2);
+    padding: ($bfg-gap / 2);
   }
 
   .bfg__box.bfg,
@@ -85,6 +86,7 @@
   .bfg--col.bfg--#{$size + reverse} { flex-direction: column-reverse; }
 
   .bfg__box--#{$size + first} { order: -1; }
+  .bfg__box--#{$size + in-place} { order: 0; }
   .bfg__box--#{$size + last} { order: 1; }
 
   .bfg__box--#{$size + 1} { flex-basis: (100% / 12); }

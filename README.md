@@ -2,7 +2,7 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid system that perfectly fits the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
+*A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
 
 ## Grid block and elements
 
@@ -56,6 +56,16 @@ Add multiple actions to the header using the optional `.bfg__action` element.
 
 ## .bfg modifiers
 
+### .bfg--height-auto
+
+By default, the main `.bfg` block will try to fit to the height of its parent node, by using the `height: 100%` rule.
+
+Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
+
+```html
+<div class="bfg bfg--height-auto">...</div>
+```
+
 ### .bfg--row, .bfg--col
 
 It is required to define the direction the `.bfg__box` elements are placed in the `.bfg` block, using `.bfg--row` or `.bfg--col` modifiers.
@@ -92,7 +102,7 @@ But in this case the total height of all `.bfg__box` elements might be bigger th
 
 If you know that there's exactly 2 lines of `.bfg__box` elements, you can constrain them to fit into the `.bfg` block, by using `.bfg--lines-2` modifier.
 
-In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit exactly 3 or 4 lines respectively.
+In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit into exactly 3 or 4 lines respectively.
 
 > In this case, all the rows will have the same height.
 
@@ -206,35 +216,27 @@ Align items along the "cross" axis using `.bfg--cross-*` modifiers.
 
 **[T]** Type: `visible`, `hidden`.
 
-By default, `.bfg__box` and `.bfg__content` elements use the rule `overflow: auto;`.
+By default, `.bfg__box` and `.bfg__content` elements use the `overflow: auto;` rule.
 
-Use `.bfg--box-overflow-visible` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__box` elements.
+Use `.bfg--box-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg__box` elements.
 
-Use `.bfg--box-overflow-hidden` modifier on `.bfg` block to apply the rule `overflow: hidden;` instead on all `.bfg__box` elements.
+Use `.bfg--box-overflow-hidden` modifier on `.bfg` block to apply the `overflow: hidden;` rule instead on all `.bfg__box` elements.
 
 ```html
 <div class="bfg bfg--box-overflow-visible">...</div>
 <div class="bfg bfg--box-overflow-hidden">...</div>
 ```
 
-Use `.bfg--content-overflow-visible` modifier on `.bfg` block to apply the rule `overflow: visible;` instead on all `.bfg__content` elements.
+Use `.bfg--content-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg__content` elements.
 
-Use `.bfg--content-overflow-hidden` modifier on `.bfg` block to apply the rule `overflow: hidden;` instead on all `.bfg__content` elements.
+Use `.bfg--content-overflow-hidden` modifier on `.bfg` block to apply the `overflow: hidden;` rule instead on all `.bfg__content` elements.
 
 ```html
 <div class="bfg bfg--content-overflow-visible">...</div>
 <div class="bfg bfg--content-overflow-hidden">...</div>
 ```
 
-> In the same way, use `.bfg__box--overflow-[T]` modifier on `.bfg__box` element and `.bfg__content--overflow-[T]` modifier on `.bfg__content` element to apply this behavior to a specific element.
-
-```html
-...
-  <div class="bfg__box bfg__box--overflow">
-    <div class="bfg__content bfg__content--overflow">...</div>
-  </div>
-...
-```
+> In the same way, use `.bfg__box--overflow-[T]` modifiers on `.bfg__box` element and `.bfg__content--overflow-[T]` modifiers on `.bfg__content` element to apply this behavior to a specific element (see below for more details).
 
 ### .bfg--[B]reverse
 
@@ -334,20 +336,39 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 ...
 ```
 
-### .bfg__box--[B]first, .bfg__box--[B]last
+### .bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 Change the box order using `.bfg__box--first` or `.bfg__box--last` modifiers.
 
+Restore the box order using `.bfg__box--in-place` modifier.
+
 ```html
 ...
-  <div class="bfg__box bfg__box--6 bfg__box--last"></div>
-  <div class="bfg__box bfg__box--6 bfg__box--first"></div>
+  <div class="bfg__box bfg__box--last"><!-- Will move to last position --></div>
+  <div class="bfg__box bfg__box--in-place"><!-- Will stay in place --></div>
+  <div class="bfg__box bfg__box--first"><!-- Will move to first position --></div>
 ...
 ```
 
 As the grid is responsive, you can change the `.bfg__box` element order at each breakpoint.
+
+**Example:**
+
+- Use `.bfg__box--first` to place the box in first position for all *screen size* (even greater than 1200px).
+- Add `.bfg__box--lg-last` to place the box in last position on *large screens* (until 992px).
+- Add `.bfg__box--sm-in-place` to restore the original box position on *small screens* (until 768px).
+
+```html
+...
+  <div class="bfg__box
+    bfg__box--first
+    bfg__box--lg-last
+    bfg__box--sm-in-place">
+  </div>
+...
+```
 
 ### .bfg__box--fit
 
@@ -383,11 +404,11 @@ Here's an example when using `.bfg--col` modifier:
 
 **[T]** Type: `visible`, `hidden`.
 
-By default, `.bfg__box` element use the rule `overflow: auto;`.
+By default, `.bfg__box` element use the `overflow: auto;` rule.
 
-Use `.bfg__box--overflow-visible` modifier to apply the rule `overflow: visible;` instead.
+Use `.bfg__box--overflow-visible` modifier to apply the `overflow: visible;` rule instead.
 
-Use `.bfg__box--overflow-hidden` modifier to apply the rule `overflow: hidden;` instead.
+Use `.bfg__box--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 ...
@@ -444,11 +465,11 @@ Remove the box content padding using `.bfg__content--nopad` modifier.
 
 **[T]** Type: `visible`, `hidden`.
 
-By default, `.bfg__content` element use the rule `overflow: auto;`.
+By default, `.bfg__content` element use the `overflow: auto;` rule.
 
-Use `.bfg__content--overflow-visible` modifier to apply the rule `overflow: visible;` instead.
+Use `.bfg__content--overflow-visible` modifier to apply the `overflow: visible;` rule instead.
 
-Use `.bfg__content--overflow-hidden` modifier to apply the rule `overflow: hidden;` instead.
+Use `.bfg__content--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 ...
@@ -548,7 +569,7 @@ $bfg-theme-primary: (
   content-forground: false
 ) !default;
 
-$bfg-theme-primary-included: true;
+$bfg-theme-primary-included: true !default;
 ```
 
 **Example:**
@@ -609,6 +630,7 @@ Now, you can use your new theme named `info`:
 
 | `.bfg` block             |
 | ------------------------ |
+| `.bfg--height-auto`      |
 | `.bfg--row`              |
 | `.bfg--col`              |
 | `.bfg--gap`              |
@@ -640,8 +662,9 @@ Now, you can use your new theme named `info`:
 | ...                   |
 | `.bfg__box--11`, `.bfg__box--xl-11`, `.bfg__box--lg-11`, `.bfg__box--sm-11`, `.bfg__box--xs-11` |
 | `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12` |
-| `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first`  |
-| `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last`       |
+| `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first`                |
+| `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last`                     |
+| `.bfg__box--in-place`, `.bfg__box--xl-in-place`, `.bfg__box--lg-in-place`, `.bfg__box--sm-in-place`, `.bfg__box--xs-in-place` |
 | `.bfg__box--fit`                  |
 | `.bfg__box--nopad`                |
 | `.bfg__box--overflow-visible`     |
