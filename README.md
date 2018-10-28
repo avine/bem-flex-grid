@@ -390,6 +390,8 @@ Here's an example when using `.bfg--row` modifier:
 </div>
 ```
 
+> Defining the box `width` is optional. If not defined the box width will simply fit its content.
+
 Here's an example when using `.bfg--col` modifier:
 
 ```html
@@ -399,6 +401,8 @@ Here's an example when using `.bfg--col` modifier:
   <div class="bfg__box bfg__box--8"></div>
 </div>
 ```
+
+> Defining the box `height` is optional. If not defined the box height will simply fit its content.
 
 ### .bfg__box--overflow-[T]
 
@@ -635,7 +639,6 @@ Now, you can use your new theme named `info`:
 | `.bfg--col`              |
 | `.bfg--gap`              |
 | `.bfg--gap-in`           |
-| `.bfg--wrap`             |
 | `.bfg--main-center`      |
 | `.bfg--main-end`         |
 | `.bfg--main-between`     |
@@ -643,16 +646,17 @@ Now, you can use your new theme named `info`:
 | `.bfg--cross-start`      |
 | `.bfg--cross-center`     |
 | `.bfg--cross-end`        |
+| `.bfg--wrap`             |
 | `.bfg--lines-2`, `.bfg--lines-xl-2`, `.bfg--lines-lg-2`, `.bfg--lines-sm-2`, `.bfg--lines-xs-2` |
 | `.bfg--lines-3`, `.bfg--lines-xl-3`, `.bfg--lines-lg-3`, `.bfg--lines-sm-3`, `.bfg--lines-xs-3` |
 | `.bfg--lines-4`, `.bfg--lines-xl-4`, `.bfg--lines-lg-4`, `.bfg--lines-sm-4`, `.bfg--lines-xs-4` |
 | `.bfg--reverse`, `.bfg--xl-reverse`, `.bfg--lg-reverse`, `.bfg--sm-reverse`, `.bfg--xs-reverse` |
-| `.bfg--disabled`, `.bfg--xl-disabled`, `.bfg--lg-disabled`, `.bfg--sm-disabled`, `.bfg--xs-disabled`                      |
-| `.bfg--disabled-all`, `.bfg--xl-disabled-all`, `.bfg--lg-disabled-all`, `.bfg--sm-disabled-all`, `.bfg--xs-disabled-all`  |
 | `.bfg--box-overflow-visible`     |
 | `.bfg--box-overflow-hidden`      |
 | `.bfg--content-overflow-visible` |
 | `.bfg--content-overflow-hidden`  |
+| `.bfg--disabled`, `.bfg--xl-disabled`, `.bfg--lg-disabled`, `.bfg--sm-disabled`, `.bfg--xs-disabled`                      |
+| `.bfg--disabled-all`, `.bfg--xl-disabled-all`, `.bfg--lg-disabled-all`, `.bfg--sm-disabled-all`, `.bfg--xs-disabled-all`  |
 
 | `.bfg__box` element   |
 | --------------------- |
@@ -666,9 +670,9 @@ Now, you can use your new theme named `info`:
 | `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last`                     |
 | `.bfg__box--in-place`, `.bfg__box--xl-in-place`, `.bfg__box--lg-in-place`, `.bfg__box--sm-in-place`, `.bfg__box--xs-in-place` |
 | `.bfg__box--fit`                  |
-| `.bfg__box--nopad`                |
 | `.bfg__box--overflow-visible`     |
 | `.bfg__box--overflow-hidden`      |
+| `.bfg__box--nopad`                |
 | `.bfg__box--primary`              |
 
 | `.bfg__content` element           |

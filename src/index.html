@@ -331,6 +331,9 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<blockquote>
+<p>Defining the box <code>width</code> is optional. If not defined the box width will simply fit its content.</p>
+</blockquote>
 <p>Here's an example when using <code>.bfg--col</code> modifier:</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--fit&quot; style=&quot;height:150px&quot;&gt;&lt;/div&gt;
@@ -338,6 +341,9 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--8&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<blockquote>
+<p>Defining the box <code>height</code> is optional. If not defined the box height will simply fit its content.</p>
+</blockquote>
 <h3>.bfg__box--overflow-[T]</h3>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__box</code> element use the <code>overflow: auto;</code> rule.</p>
@@ -534,9 +540,6 @@ $bfg-gap: 2rem;
 <td><code>.bfg--gap-in</code></td>
 </tr>
 <tr>
-<td><code>.bfg--wrap</code></td>
-</tr>
-<tr>
 <td><code>.bfg--main-center</code></td>
 </tr>
 <tr>
@@ -558,6 +561,9 @@ $bfg-gap: 2rem;
 <td><code>.bfg--cross-end</code></td>
 </tr>
 <tr>
+<td><code>.bfg--wrap</code></td>
+</tr>
+<tr>
 <td><code>.bfg--lines-2</code>, <code>.bfg--lines-xl-2</code>, <code>.bfg--lines-lg-2</code>, <code>.bfg--lines-sm-2</code>, <code>.bfg--lines-xs-2</code></td>
 </tr>
 <tr>
@@ -570,12 +576,6 @@ $bfg-gap: 2rem;
 <td><code>.bfg--reverse</code>, <code>.bfg--xl-reverse</code>, <code>.bfg--lg-reverse</code>, <code>.bfg--sm-reverse</code>, <code>.bfg--xs-reverse</code></td>
 </tr>
 <tr>
-<td><code>.bfg--disabled</code>, <code>.bfg--xl-disabled</code>, <code>.bfg--lg-disabled</code>, <code>.bfg--sm-disabled</code>, <code>.bfg--xs-disabled</code></td>
-</tr>
-<tr>
-<td><code>.bfg--disabled-all</code>, <code>.bfg--xl-disabled-all</code>, <code>.bfg--lg-disabled-all</code>, <code>.bfg--sm-disabled-all</code>, <code>.bfg--xs-disabled-all</code></td>
-</tr>
-<tr>
 <td><code>.bfg--box-overflow-visible</code></td>
 </tr>
 <tr>
@@ -586,6 +586,12 @@ $bfg-gap: 2rem;
 </tr>
 <tr>
 <td><code>.bfg--content-overflow-hidden</code></td>
+</tr>
+<tr>
+<td><code>.bfg--disabled</code>, <code>.bfg--xl-disabled</code>, <code>.bfg--lg-disabled</code>, <code>.bfg--sm-disabled</code>, <code>.bfg--xs-disabled</code></td>
+</tr>
+<tr>
+<td><code>.bfg--disabled-all</code>, <code>.bfg--xl-disabled-all</code>, <code>.bfg--lg-disabled-all</code>, <code>.bfg--sm-disabled-all</code>, <code>.bfg--xs-disabled-all</code></td>
 </tr>
 </tbody>
 </table>
@@ -627,13 +633,13 @@ $bfg-gap: 2rem;
 <td><code>.bfg__box--fit</code></td>
 </tr>
 <tr>
-<td><code>.bfg__box--nopad</code></td>
-</tr>
-<tr>
 <td><code>.bfg__box--overflow-visible</code></td>
 </tr>
 <tr>
 <td><code>.bfg__box--overflow-hidden</code></td>
+</tr>
+<tr>
+<td><code>.bfg__box--nopad</code></td>
 </tr>
 <tr>
 <td><code>.bfg__box--primary</code></td>
