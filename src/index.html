@@ -63,6 +63,58 @@
 <h1>bem-flex-grid</h1>
 <p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
 <p><em>A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.</em></p>
+<h2>Quick start</h2>
+<h3>Link tag</h3>
+<p><em>Evergreen browser:</em></p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css&quot;&gt;
+</code></pre>
+<p><em>IE11 compatibility:</em></p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.ie11.css&quot;&gt;
+</code></pre>
+<p><em>HTML starter markup:</em></p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+  &lt;title&gt;Bem Flex Grid&lt;/title&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css&quot;&gt;
+  &lt;style&gt;html, body { height: 100%; margin: 0; }&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class=&quot;bfg bfg--row&quot;&gt;
+    &lt;div class=&quot;bfg__box&quot;&gt;Hello&lt;/div&gt;
+    &lt;div class=&quot;bfg__box&quot;&gt;World!&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2>Installation</h2>
+<h3>NPM</h3>
+<p><em>Install from NPM:</em></p>
+<pre><code class="language-bash">npm i bem-flex-grid
+</code></pre>
+<p><em>Link tag:</em></p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid.css&quot;&gt;
+</code></pre>
+<p><em>Sass import:</em></p>
+<pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
+</code></pre>
+<h3>Package content</h3>
+<pre><code class="language-bash">├─ dist
+│  ├─ bem-flex-grid.css
+│  ├─ bem-flex-grid.ie11.css
+│  ├─ bem-flex-grid.min.css
+│  └─ bem-flex-grid.ie11.min.css
+└─ src
+   └─ lib
+      ├─ _variables.scss
+      ├─ _mixins.scss
+      ├─ _content.scss
+      ├─ _core.scss
+      ├─ bem-flex-grid.scss
+      └─ bem-flex-grid.ie11.scss
+</code></pre>
 <h2>Grid block and elements</h2>
 <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
@@ -664,18 +716,21 @@ $bfg-gap: 2rem;
 </tr>
 </tbody>
 </table>
-<h2>Install</h2>
-<pre><code class="language-bash">npm install
+<h2>Contribute</h2>
+<pre><code class="language-bash"># Clone repository
+git clone https://github.com/avine/bem-flex-grid.git
 
-# Build `bem-flex-grid.css` and `bem-flex-grid.min.css` from `bem-flex-grid.scss`
-# Build `bem-flex-grid.ie11.css` and `bem-flex-grid.ie11.min.css` from `bem-flex-grid.ie11.scss`
-npm run build
-
-# Build `index.html` from `README.md`
-npm run doc
+# Install dependencies
+npm i
 
 # Open showcase in your favorite browser
 npm start
+
+# Compile SASS to CSS
+npm run build
+
+# Build HTML documentation (`./src/index.html`) from `README.md`
+npm run doc
 </code></pre>
 
 

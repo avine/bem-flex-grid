@@ -4,6 +4,83 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 *A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
 
+## Quick start
+
+### Link tag
+
+*Evergreen browser:*
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
+```
+
+*IE11 compatibility:*
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.ie11.css">
+```
+
+*HTML starter markup:*
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bem Flex Grid</title>
+  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
+  <style>html, body { height: 100%; margin: 0; }</style>
+</head>
+<body>
+  <div class="bfg bfg--row">
+    <div class="bfg__box">Hello</div>
+    <div class="bfg__box">World!</div>
+  </div>
+</body>
+</html>
+```
+
+## Installation
+
+### NPM
+
+*Install from NPM:*
+
+```bash
+npm i bem-flex-grid
+```
+
+*Link tag:*
+
+```html
+<link rel="stylesheet" href="[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid.css">
+```
+
+*Sass import:*
+
+```scss
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
+```
+
+### Package content
+
+```bash
+├─ dist
+│  ├─ bem-flex-grid.css
+│  ├─ bem-flex-grid.ie11.css
+│  ├─ bem-flex-grid.min.css
+│  └─ bem-flex-grid.ie11.min.css
+└─ src
+   └─ lib
+      ├─ _variables.scss
+      ├─ _mixins.scss
+      ├─ _content.scss
+      ├─ _core.scss
+      ├─ bem-flex-grid.scss
+      └─ bem-flex-grid.ie11.scss
+```
+
 ## Grid block and elements
 
 At core the grid system consists of one `.bfg` block and one or more `.bfg__box` elements.
@@ -681,18 +758,21 @@ Now, you can use your new theme named `info`:
 | `.bfg__content--overflow-visible` |
 | `.bfg__content--overflow-hidden`  |
 
-## Install
+## Contribute
 
 ```bash
-npm install
+# Clone repository
+git clone https://github.com/avine/bem-flex-grid.git
 
-# Build `bem-flex-grid.css` and `bem-flex-grid.min.css` from `bem-flex-grid.scss`
-# Build `bem-flex-grid.ie11.css` and `bem-flex-grid.ie11.min.css` from `bem-flex-grid.ie11.scss`
-npm run build
-
-# Build `index.html` from `README.md`
-npm run doc
+# Install dependencies
+npm i
 
 # Open showcase in your favorite browser
 npm start
+
+# Compile SASS to CSS
+npm run build
+
+# Build HTML documentation (`./src/index.html`) from `README.md`
+npm run doc
 ```
