@@ -6,6 +6,17 @@ const Fs = require('fs-extra');
 const Path = require('path');
 const readline = require('readline');
 
+// ===== Dry mode =====
+
+let DRY_MODE = false;
+if (process.argv[2] === '-d' || process.argv[2] === '--dry') {
+  DRY_MODE = true;
+}
+
+if (DRY_MODE) {
+  console.log('\n*** DRY_MODE activated. The package will NOT be published. ***');
+}
+
 // ===== Empty target directory =====
 
 const targetDir = Path.join(__dirname, './deploy');
@@ -62,12 +73,18 @@ rl.question('Confirm? (yes) ', (answer) => {
   console.log('');
   if (!answer || answer === 'yes') {
     const spawn = require('child_process').spawn;
-    const child = spawn('echo', ['READY TO PUBLISH']); // spawn('npm', ['publish', targetDir])
+    const child = DRY_MODE
+      ? spawn('echo', ['Ready to publish to NPM...'])
+      : spawn('npm', ['publish', targetDir]);
 
     child.stdout.on('data', data => process.stdout.write(data));
     child.stderr.on('data', data => process.stdout.write(data));
 
-    child.on('exit', () => process.stdout.write('\n\tPackage successfully published!\n\n'));
+    child.on('exit', (code) => {
+      if (!DRY_MODE && code === 0) {
+        process.stdout.write('\n\tPackage successfully published!\n\n');
+      }
+    });
   } else {
     console.log('\n\tPackage NOT published.\n\n');
   }
