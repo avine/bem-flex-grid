@@ -4,23 +4,27 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 *A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
 
+[![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
+
 ## Quick start
+
+Get instant access to the package by inserting the link tag from `https://unpkg.com` into your web pages.
 
 ### Link tag
 
-*Evergreen browser:*
+*For Evergreen browser:*
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
 ```
 
-*IE11 compatibility:*
+*For IE11 compatibility:*
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.ie11.css">
 ```
 
-*HTML starter markup:*
+### HTML starter markup
 
 ```html
 <!DOCTYPE html>
@@ -30,18 +34,22 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bem Flex Grid</title>
   <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
-  <style>html, body { height: 100%; margin: 0; }</style>
+  <style>
+    html, body { height:100%; }
+    body { padding:1rem; box-sizing:border-box; }
+  </style>
 </head>
 <body>
   <div class="bfg bfg--row">
-    <div class="bfg__box">Hello</div>
-    <div class="bfg__box">World!</div>
+    <div class="bfg__box bfg__box--12">Hello bfg!</div>
   </div>
 </body>
 </html>
 ```
 
 ## Installation
+
+Install the package from NPM (or Yarn) and insert the link tag into your web pages or import the package into your Sass files.
 
 ### NPM
 
