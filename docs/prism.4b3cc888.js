@@ -982,4 +982,4 @@ Prism.languages.js = Prism.languages.javascript;
 
 })();
 },{}]},{},["6hKA"], null)
-//# sourceMappingURL=/prism.4b3cc888.map
+//# sourceMappingURL=/bem-flex-grid/prism.4b3cc888.map

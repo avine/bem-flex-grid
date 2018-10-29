@@ -10,7 +10,7 @@
     "prestart": "rimraf output && npm run index",
     "start": "parcel serve src/index.html --out-dir output",
     "predocs": "rimraf docs && npm run index",
-    "docs": "parcel build src/index.html --out-dir docs --no-minify",
+    "docs": "parcel build src/index.html --out-dir docs --public-url /bem-flex-grid/ --no-minify",
     "predocs:public": "rimraf docs && npm run index",
     "docs:public": "parcel build src/index.html --out-dir docs/bem-flex-grid --no-minify --public-url /bem-flex-grid/",
     "docs:serve": "http-server ./docs",
