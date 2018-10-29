@@ -1,6 +1,5 @@
-/**
- * Run this script using npm script: `npm run md-to-html` each time you change the file `README.md`.
- * To run this script in watch mode, use: `npm run md-to-html watch`.
+/*
+ * Generate `./src/index.html` from `./README.md`.
  */
 
 const Fs = require('fs');

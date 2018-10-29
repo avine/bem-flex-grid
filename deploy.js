@@ -1,4 +1,4 @@
-/**
+/*
  * Prepare the `./deploy` directory for NPM publish.
  */
 
