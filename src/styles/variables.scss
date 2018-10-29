@@ -13,35 +13,35 @@ $demo-action: (
 
 $demo-duration: 300ms;
 
-/* ===== www ===== */
+/* ===== docs ===== */
 
-$www-max-width: 992px;
+$docs-max-width: 992px;
 
-$www-border-radius: 3px;
+$docs-border-radius: 3px;
 
-$www-navbar: (
+$docs-navbar: (
   height: 3rem,
   border: #1565C0,
   background: #2196F3,
   forground: #FFF // #E3F2FD
 );
 
-$www-header: (
+$docs-header: (
   padding: 6rem,
   border: #E0E0E0,
   background: #F5F5F5,
   forground: #9E9E9E
 );
 
-$www-logo-size: 6rem;
-$www-logo-border: ($www-logo-size / 12);
-$www-logo-shadow: ($www-logo-border / 2);
+$docs-logo-size: 6rem;
+$docs-logo-border: ($docs-logo-size / 12);
+$docs-logo-shadow: ($docs-logo-border / 2);
 
-$www-showcase: (
+$docs-showcase: (
   margin: 3rem,
   border-width: 1px,
-  border-color: map-get($www-header, border),
+  border-color: map-get($docs-header, border),
 );
 
 // Just a shortcut :)
-$www-showcase-border: map-get($www-showcase, border-width) solid map-get($www-showcase, border-color);
+$docs-showcase-border: map-get($docs-showcase, border-width) solid map-get($docs-showcase, border-color);

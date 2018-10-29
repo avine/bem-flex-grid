@@ -1,0 +1,208 @@
+@import "../lib/variables";
+@import "../lib/mixins";
+
+@import "./variables.scss";
+
+/* ===== Container ===== */
+
+.docs-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: $docs-max-width;
+  padding: 0 1rem;
+}
+
+/* ===== Navbar ===== */
+
+.docs-navbar {
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: map-get($docs-navbar, height);
+  line-height: map-get($docs-navbar, height);
+  border-bottom: 1px solid transparent;
+  color: map-get($docs-navbar, forground);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+
+.docs-navbar--back {
+  z-index: 10;
+  border-color: map-get($docs-navbar, border);
+  background: map-get($docs-navbar, background);
+  text-align: left;
+  font-size: 1.25rem;
+}
+
+.docs-navbar--front {
+  z-index: 13;
+  width: 50%;
+  right: 0;
+  text-align: right;
+
+  .docs-container {
+    margin: 0;
+    min-width: 0;
+    max-width: ($docs-max-width / 2);
+  }
+
+  .docs-navbar__link {
+    padding: 0.25rem 0.75rem;
+    border-radius: $docs-border-radius;
+    background-color: rgba(0, 0, 0, 0.35);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) inset;
+  }
+}
+
+.docs-navbar__link {
+  color: white; // Must be white!
+  text-decoration: none;
+}
+
+/* ===== Header ===== */
+
+.docs-header {
+  position: relative;
+  z-index: 12;
+  margin-bottom: (map-get($docs-navbar, height) + map-get($docs-showcase, margin));
+  padding: (map-get($docs-navbar, height) + map-get($docs-header, padding)) 0 (map-get($docs-header, padding) / 2) 0;
+  background-color: map-get($docs-header, background);
+  border-bottom: 1px solid map-get($docs-header, border);
+  text-align: center;
+}
+
+.docs-header__title {
+  margin: 0;
+  margin-right: (map-get($docs-header, padding) / 2);
+  line-height: map-get($docs-header, padding);
+  font-size: 4rem;
+  font-weight: 200;
+  color: map-get($docs-header, forground);
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+h2.docs-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
+  margin: 0;
+  margin-top: map-get($docs-header, padding);
+  padding: 0; // Remove "primer-markdown" style
+  border: none; // Remove "primer-markdown" style
+  line-height: inherit; // Remove "primer-markdown" style
+  font-weight: normal;
+  font-size: 1.25rem;
+  color: map-get($docs-header, forground);
+}
+
+/* ===== Logo ===== */
+
+.docs-logo {
+  position: relative;
+  width: $docs-logo-size;
+  height: $docs-logo-size;
+  margin: 0 auto;
+}
+
+.docs-logo__square {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  border: $docs-logo-border solid transparent;
+  transform-origin: 50% 50%;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  animation-name: docsLogoAnim;
+}
+
+.docs-logo__square--1 { border-color: #F44336; left: 0; top: 0; animation-name: docsLogoAnim, docsLogoAnim1; }
+.docs-logo__square--2 { border-color: #C62828; left: 0; bottom: 0; animation-name: docsLogoAnim, docsLogoAnim2; }
+.docs-logo__square--3 { border-color: #2196F3; right: 0; top: 0; animation-name: docsLogoAnim, docsLogoAnim3; }
+.docs-logo__square--4 { border-color: #1565C0; right: 0; bottom: 0; animation-name: docsLogoAnim, docsLogoAnim4; }
+
+@keyframes docsLogoAnim1 { 70% { left: 0; } 85% { left: 50%; } 100% { left: 0; } }
+@keyframes docsLogoAnim2 { 70% { bottom: 0; } 85% { bottom: 50%; } 100% { bottom: 0; } }
+@keyframes docsLogoAnim3 { 70% { top: 0; } 85% { top: 50%; } 100% { top: 0; } }
+@keyframes docsLogoAnim4 { 70% { right: 0; } 85% { right: 50%; } 100% { right: 0; } }
+
+@keyframes docsLogoAnim {
+  0% {
+    box-shadow:
+      $docs-logo-shadow $docs-logo-shadow 1px rgba(0, 0, 0, 0.2),
+      $docs-logo-shadow $docs-logo-shadow 1px rgba(0, 0, 0, 0.2) inset;
+  }
+  70% {
+    border-radius: 0;
+    transform: rotate(0deg);
+    box-shadow:
+      $docs-logo-shadow $docs-logo-shadow 1px rgba(0, 0, 0, 0.2),
+      $docs-logo-shadow $docs-logo-shadow 1px rgba(0, 0, 0, 0.2) inset;
+  }
+  85% {
+    border-radius: 33%;
+    transform: rotate(45deg) scale(1.35);
+  }
+  100% {
+    border-radius: 0;
+    transform: rotate(90deg);
+    box-shadow:
+      $docs-logo-shadow (-$docs-logo-shadow) 1px rgba(0, 0, 0, 0.2),
+      $docs-logo-shadow (-$docs-logo-shadow) 1px rgba(0, 0, 0, 0.2) inset;
+  }
+}
+
+/* ===== Showcase ===== */
+
+.docs-showcase__item {
+  position: relative;
+  border-radius: $docs-border-radius;
+  border: $docs-showcase-border;
+  margin-bottom: map-get($docs-showcase, margin);
+}
+
+.docs-showcase__iframe {
+  display: block;
+  width: 100%;
+  height: 85vh;
+  max-height: 550px;
+  border-radius: ($docs-border-radius - map-get($docs-showcase, border-width));
+  border: none;
+}
+
+// Use the action from "demo" universe
+.demo-toolbox__action--open-link {
+  position: absolute;
+  top: -0.8rem;
+  left: -0.8rem;
+  z-index: 9;
+}
+
+/* ===== Footer ===== */
+
+.docs-footer {
+  margin-top: map-get($docs-header, padding);
+  margin-bottom: (map-get($docs-header, padding) / 2);
+  color: map-get($docs-header, forground);
+  text-align: center;
+
+  b {
+    color: map-get($docs-navbar, background);
+  }
+}
+
+/* ===== Responsive ===== */
+
+@include bfg-media-breakpoint-down(sm) {
+  .docs-navbar--front {
+    width: 65%;
+  }
+
+  .docs-header__title {
+    margin-top: 1.5rem;
+    margin-right: 0;
+    font-size: 3rem;
+  }
+}

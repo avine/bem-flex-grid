@@ -1,11 +1,11 @@
 import { forEach } from './util';
 
 export const showcase = () => {
-  const element = document.querySelector('.www-showcase');
+  const element = document.querySelector('.docs-showcase');
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => `
-  <div class="www-showcase__item">
-    <iframe data-src="${anchor.href}" class="www-showcase__iframe"></iframe>
+  <div class="docs-showcase__item">
+    <iframe data-src="${anchor.href}" class="docs-showcase__iframe"></iframe>
     <a href="${anchor.href}" class="demo-toolbox__action demo-toolbox__action--open-link" title="Open">${count}</a>
   </div>`;
 
@@ -17,7 +17,7 @@ export const showcase = () => {
   element.innerHTML = mappedHtml.join('\n') + '\n';
 
   let buffer: Array<{ elem: HTMLElement; iframe: HTMLIFrameElement; }> = [];
-  forEach<HTMLElement>(element.querySelectorAll('.www-showcase__item'), (elem) => {
+  forEach<HTMLElement>(element.querySelectorAll('.docs-showcase__item'), (elem) => {
     buffer.push({ elem, iframe: elem.querySelector('iframe') });
   });
   const loadIframes = () => {
