@@ -9,7 +9,7 @@ const MarkdownIt = require('markdown-it');
 
 const md = new MarkdownIt();
 
-const templatePath = Path.join(__dirname, './doc-template.html');
+const templatePath = Path.join(__dirname, './index-template.html');
 const sourcePath = Path.join(__dirname, './README.md');
 const targetPath = Path.join(__dirname, './src/index.html');
 
