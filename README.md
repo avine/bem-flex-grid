@@ -47,13 +47,11 @@ Get instant access to the package by inserting the link tag from `https://unpkg.
 </html>
 ```
 
-## Installation
+## Installation and usage
 
 Install the package from NPM (or Yarn) and insert the link tag into your web pages or import the package into your Sass files.
 
-### NPM
-
-*Install from NPM:*
+*NPM:*
 
 ```bash
 npm i bem-flex-grid
@@ -71,7 +69,7 @@ npm i bem-flex-grid
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
 ```
 
-### Package content
+*Package content:*
 
 ```bash
 ├─ dist
@@ -89,7 +87,9 @@ npm i bem-flex-grid
       └─ bem-flex-grid.ie11.scss
 ```
 
-## Grid block and elements
+## API
+
+### Grid block and elements
 
 At core the grid system consists of one `.bfg` block and one or more `.bfg__box` elements.
 
@@ -139,9 +139,9 @@ Add multiple actions to the header using the optional `.bfg__action` element.
 </div>
 ```
 
-## .bfg modifiers
+### .bfg modifiers
 
-### .bfg--height-auto
+#### .bfg--height-auto
 
 By default, the main `.bfg` block will try to fit to the height of its parent node, by using the `height: 100%` rule.
 
@@ -151,7 +151,7 @@ Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
 <div class="bfg bfg--height-auto">...</div>
 ```
 
-### .bfg--row, .bfg--col
+#### .bfg--row, .bfg--col
 
 It is required to define the direction the `.bfg__box` elements are placed in the `.bfg` block, using `.bfg--row` or `.bfg--col` modifiers.
 
@@ -167,7 +167,7 @@ It is required to define the direction the `.bfg__box` elements are placed in th
 
 > When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined.
 
-### .bfg--wrap
+#### .bfg--wrap
 
 Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the optional `.bfg--wrap` modifier.
 
@@ -175,7 +175,7 @@ Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the opti
 <div class="bfg bfg--wrap">...</div>
 ```
 
-### .bfg--[B]lines-[N]
+#### .bfg--[B]lines-[N]
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -234,7 +234,7 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 </div>
 ```
 
-### .bfg--gap, .bfg--gap-in
+#### .bfg--gap, .bfg--gap-in
 
 Add a gap between `.bfg__box` elements, using `.bfg--gap` modifier.
 
@@ -260,7 +260,7 @@ But if you prefer to define a main margin (or padding) to the parent node of the
 
 > The default value of the gap is `1rem` (see below the Sass variable `$bfg-gap`).
 
-### .bfg--main-[P]
+#### .bfg--main-[P]
 
 **[P]** Position: `center`, `end`, `between`, `around`.
 
@@ -281,7 +281,7 @@ Justify content along the "main" axis using `.bfg--main-*` modifiers.
 > This is relevant only when the total size of the boxes along the line is less than `12` (see below the size modifiers for `.bfg__box` element).
 > Then you can choose the distribution mode of the remaining space.
 
-### .bfg--cross-[P]
+#### .bfg--cross-[P]
 
 **[P]** Position: `start`, `center`, `end`.
 
@@ -297,7 +297,7 @@ Align items along the "cross" axis using `.bfg--cross-*` modifiers.
 <div class="bfg bfg--cross-end">...</div>
 ```
 
-### .bfg--box-overflow-[T], .bfg--content-overflow-[T]
+#### .bfg--box-overflow-[T], .bfg--content-overflow-[T]
 
 **[T]** Type: `visible`, `hidden`.
 
@@ -323,7 +323,7 @@ Use `.bfg--content-overflow-hidden` modifier on `.bfg` block to apply the `overf
 
 > In the same way, use `.bfg__box--overflow-[T]` modifiers on `.bfg__box` element and `.bfg__content--overflow-[T]` modifiers on `.bfg__content` element to apply this behavior to a specific element (see below for more details).
 
-### .bfg--[B]reverse
+#### .bfg--[B]reverse
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -347,7 +347,7 @@ As the grid is responsive, you can reverse the `.bfg__box` elements order at eac
 <div class="bfg bfg--xs-reverse">...</div>
 ```
 
-### .bfg--[B]disabled, .bfg--[B]disabled-all
+#### .bfg--[B]disabled, .bfg--[B]disabled-all
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -377,9 +377,9 @@ Here's an example of disabling the grid system for the current `.bfg` block only
 <div class="bfg bfg--xs-disabled">...</div>
 ```
 
-## .bfg__box modifiers
+### .bfg__box modifiers
 
-### .bfg__box--[B][S]
+#### .bfg__box--[B][S]
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -421,7 +421,7 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 ...
 ```
 
-### .bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place
+#### .bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -455,7 +455,7 @@ As the grid is responsive, you can change the `.bfg__box` element order at each 
 ...
 ```
 
-### .bfg__box--fit
+#### .bfg__box--fit
 
 Use `.bfg__box--fit` modifier to indicate that a `.bfg__box` element should not grow or shrink.
 
@@ -489,7 +489,7 @@ Here's an example when using `.bfg--col` modifier:
 
 > Defining the box `height` is optional. If not defined the box height will simply fit its content.
 
-### .bfg__box--overflow-[T]
+#### .bfg__box--overflow-[T]
 
 **[T]** Type: `visible`, `hidden`.
 
@@ -506,7 +506,7 @@ Use `.bfg__box--overflow-hidden` modifier to apply the `overflow: hidden;` rule 
 ...
 ```
 
-### .bfg__box--nopad
+#### .bfg__box--nopad
 
 When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the padding of a specific box.
 
@@ -520,7 +520,7 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 </div>
 ```
 
-### .bfg__box--[T]
+#### .bfg__box--[T]
 
 **[T]** Theme: `primary` or any string.
 
@@ -538,9 +538,9 @@ Add "primary" look and feel to the box's content, header and actions using `.bfg
 
 > See below the Sass mixin `bfg-theme` to create your own themes.
 
-## .bfg__content modifier
+### .bfg__content modifier
 
-### .bfg__content--nopad
+#### .bfg__content--nopad
 
 Remove the box content padding using `.bfg__content--nopad` modifier.
 
@@ -550,7 +550,7 @@ Remove the box content padding using `.bfg__content--nopad` modifier.
 ...
 ```
 
-### .bfg__content--overflow-[T]
+#### .bfg__content--overflow-[T]
 
 **[T]** Type: `visible`, `hidden`.
 
@@ -567,9 +567,9 @@ Use `.bfg__content--overflow-hidden` modifier to apply the `overflow: hidden;` r
 ...
 ```
 
-## Chained and nested grids
+### Chained and nested grids
 
-### Chained grid
+#### Chained grid
 
 To chain grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
 
@@ -597,7 +597,7 @@ See below the `<div>` that has both roles:
 </div>
 ```
 
-### Nested grid
+#### Nested grid
 
 An alternative to chained grids consists to simply nest a new `.bfg` *block* inside a `.bfg__box` *element*.
 
@@ -624,9 +624,9 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 </div>
 ```
 
-## Sass customization
+### Sass customization
 
-### Default variables
+#### Default variables
 
 ```scss
 $ie11-support: false !default;
@@ -672,7 +672,7 @@ $bfg-gap: 2rem;
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
 ```
 
-### Mixin
+#### Mixin
 
 The `bfg-theme` mixin allows you to customize the look and feel of the box's content, header and actions.
 
@@ -715,7 +715,7 @@ Now, you can use your new theme named `info`:
 ...
 ```
 
-## Selectors summary
+### Selectors summary
 
 | `.bfg` block             |
 | ------------------------ |
@@ -766,7 +766,7 @@ Now, you can use your new theme named `info`:
 | `.bfg__content--overflow-visible` |
 | `.bfg__content--overflow-hidden`  |
 
-## Contribute
+### Contribute
 
 ```bash
 # Clone repository
@@ -782,5 +782,5 @@ npm start
 npm run build
 
 # Build HTML documentation (`./src/index.html`) from `README.md`
-npm run doc
+npm run index
 ```

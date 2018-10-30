@@ -93,10 +93,9 @@
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h2>Installation</h2>
+<h2>Installation and usage</h2>
 <p>Install the package from NPM (or Yarn) and insert the link tag into your web pages or import the package into your Sass files.</p>
-<h3>NPM</h3>
-<p><em>Install from NPM:</em></p>
+<p><em>NPM:</em></p>
 <pre><code class="language-bash">npm i bem-flex-grid
 </code></pre>
 <p><em>Link tag:</em></p>
@@ -105,7 +104,7 @@
 <p><em>Sass import:</em></p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
 </code></pre>
-<h3>Package content</h3>
+<p><em>Package content:</em></p>
 <pre><code class="language-bash">├─ dist
 │  ├─ bem-flex-grid.css
 │  ├─ bem-flex-grid.ie11.css
@@ -120,7 +119,8 @@
       ├─ bem-flex-grid.scss
       └─ bem-flex-grid.ie11.scss
 </code></pre>
-<h2>Grid block and elements</h2>
+<h2>API</h2>
+<h3>Grid block and elements</h3>
 <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
@@ -157,13 +157,13 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<h2>.bfg modifiers</h2>
-<h3>.bfg--height-auto</h3>
+<h3>.bfg modifiers</h3>
+<h4>.bfg--height-auto</h4>
 <p>By default, the main <code>.bfg</code> block will try to fit to the height of its parent node, by using the <code>height: 100%</code> rule.</p>
 <p>Use <code>.bfg--height-auto</code> modifier to apply <code>height: auto</code> rule instead.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--height-auto&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--row, .bfg--col</h3>
+<h4>.bfg--row, .bfg--col</h4>
 <p>It is required to define the direction the <code>.bfg__box</code> elements are placed in the <code>.bfg</code> block, using <code>.bfg--row</code> or <code>.bfg--col</code> modifiers.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -175,11 +175,11 @@
 <blockquote>
 <p>When using <code>.bfg--col</code> modifier, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined.</p>
 </blockquote>
-<h3>.bfg--wrap</h3>
+<h4>.bfg--wrap</h4>
 <p>Allow <code>.bfg__box</code> elements to wrap as needed onto multiple lines, using the optional <code>.bfg--wrap</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--wrap&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--[B]lines-[N]</h3>
+<h4>.bfg--[B]lines-[N]</h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p><strong>[N]</strong> Number: <code>2</code>, <code>3</code> or <code>4</code>.</p>
 <p>As said above, if you use the selector <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
@@ -216,7 +216,7 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<h3>.bfg--gap, .bfg--gap-in</h3>
+<h4>.bfg--gap, .bfg--gap-in</h4>
 <p>Add a gap between <code>.bfg__box</code> elements, using <code>.bfg--gap</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -233,7 +233,7 @@
 <blockquote>
 <p>The default value of the gap is <code>1rem</code> (see below the Sass variable <code>$bfg-gap</code>).</p>
 </blockquote>
-<h3>.bfg--main-[P]</h3>
+<h4>.bfg--main-[P]</h4>
 <p><strong>[P]</strong> Position: <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
 <p>Justify content along the &quot;main&quot; axis using <code>.bfg--main-*</code> modifiers.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;...&lt;/div&gt;&lt;!-- default grid behavior is like: `.bfg--main-start` --&gt;
@@ -250,7 +250,7 @@
 <p>This is relevant only when the total size of the boxes along the line is less than <code>12</code> (see below the size modifiers for <code>.bfg__box</code> element).
 Then you can choose the distribution mode of the remaining space.</p>
 </blockquote>
-<h3>.bfg--cross-[P]</h3>
+<h4>.bfg--cross-[P]</h4>
 <p><strong>[P]</strong> Position: <code>start</code>, <code>center</code>, <code>end</code>.</p>
 <p>Align items along the &quot;cross&quot; axis using <code>.bfg--cross-*</code> modifiers.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;...&lt;/div&gt;&lt;!-- default grid behavior is like: `.bfg--cross-stretch` --&gt;
@@ -261,7 +261,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 
 &lt;div class=&quot;bfg bfg--cross-end&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--box-overflow-[T], .bfg--content-overflow-[T]</h3>
+<h4>.bfg--box-overflow-[T], .bfg--content-overflow-[T]</h4>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg--box-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg__box</code> elements.</p>
@@ -277,7 +277,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <blockquote>
 <p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifiers on <code>.bfg__box</code> element and <code>.bfg__content--overflow-[T]</code> modifiers on <code>.bfg__content</code> element to apply this behavior to a specific element (see below for more details).</p>
 </blockquote>
-<h3>.bfg--[B]reverse</h3>
+<h4>.bfg--[B]reverse</h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>Reverse the boxes order using <code>.bfg--reverse</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--reverse&quot;&gt;...&lt;/div&gt;
@@ -293,7 +293,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 
 &lt;div class=&quot;bfg bfg--xs-reverse&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h3>.bfg--[B]disabled, .bfg--[B]disabled-all</h3>
+<h4>.bfg--[B]disabled, .bfg--[B]disabled-all</h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>To disable the grid system for the current <code>.bfg</code> block only use <code>.bfg--disabled</code> modifier.</p>
 <p>To disable the grid system for the current <code>.bfg</code> block and its chained or nested <code>.bfg</code> blocks use <code>.bfg--disabled-all</code> modifier.</p>
@@ -313,8 +313,8 @@ Then you can choose the distribution mode of the remaining space.</p>
 
 &lt;div class=&quot;bfg bfg--xs-disabled&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h2>.bfg__box modifiers</h2>
-<h3>.bfg__box--[B][S]</h3>
+<h3>.bfg__box modifiers</h3>
+<h4>.bfg__box--[B][S]</h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p><strong>[S]</strong> Size: <code>1</code>, <code>2</code>, ..., <code>11</code>, <code>12</code>.</p>
 <p>Define the <code>.bfg__box</code> element size using <code>.bfg__box--1</code>,  <code>.bfg__box--2</code>, ...,  <code>.bfg__box--11</code>,  <code>.bfg__box--12</code> modifiers.</p>
@@ -348,7 +348,7 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place</h3>
+<h4>.bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place</h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>Change the box order using <code>.bfg__box--first</code> or <code>.bfg__box--last</code> modifiers.</p>
 <p>Restore the box order using <code>.bfg__box--in-place</code> modifier.</p>
@@ -373,7 +373,7 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__box--fit</h3>
+<h4>.bfg__box--fit</h4>
 <p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
 <p>Here's an example when using <code>.bfg--row</code> modifier:</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;
@@ -401,7 +401,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <blockquote>
 <p>Defining the box <code>height</code> is optional. If not defined the box height will simply fit its content.</p>
 </blockquote>
-<h3>.bfg__box--overflow-[T]</h3>
+<h4>.bfg__box--overflow-[T]</h4>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__box</code> element use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg__box--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
@@ -411,7 +411,7 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--overflow-hidden&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__box--nopad</h3>
+<h4>.bfg__box--nopad</h4>
 <p>When using <code>.bfg--gap</code> modifier, add <code>.bfg__box--nopad</code> modifier to remove the padding of a specific box.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
@@ -421,7 +421,7 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h3>.bfg__box--[T]</h3>
+<h4>.bfg__box--[T]</h4>
 <p><strong>[T]</strong> Theme: <code>primary</code> or any string.</p>
 <p>Add &quot;primary&quot; look and feel to the box's content, header and actions using <code>.bfg__box--primary</code> modifier.</p>
 <pre><code class="language-html">...
@@ -435,14 +435,14 @@ Then you can choose the distribution mode of the remaining space.</p>
 <blockquote>
 <p>See below the Sass mixin <code>bfg-theme</code> to create your own themes.</p>
 </blockquote>
-<h2>.bfg__content modifier</h2>
-<h3>.bfg__content--nopad</h3>
+<h3>.bfg__content modifier</h3>
+<h4>.bfg__content--nopad</h4>
 <p>Remove the box content padding using <code>.bfg__content--nopad</code> modifier.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__content bfg__content--nopad&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
-<h3>.bfg__content--overflow-[T]</h3>
+<h4>.bfg__content--overflow-[T]</h4>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__content</code> element use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg__content--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
@@ -452,8 +452,8 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__content bfg__content--overflow-hidden&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
-<h2>Chained and nested grids</h2>
-<h3>Chained grid</h3>
+<h3>Chained and nested grids</h3>
+<h4>Chained grid</h4>
 <p>To chain grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
 <p><strong>Example:</strong></p>
 <p>See below the <code>&lt;div&gt;</code> that has both roles:</p>
@@ -476,7 +476,7 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h3>Nested grid</h3>
+<h4>Nested grid</h4>
 <p>An alternative to chained grids consists to simply nest a new <code>.bfg</code> <em>block</em> inside a <code>.bfg__box</code> <em>element</em>.</p>
 <blockquote>
 <p>With this markup, if you use <code>.bfg--gap</code> modifier, you'll need to add <code>.bfg__box--nopad</code> modifier on the parent <code>.bfg__box</code> of the nested grid.</p>
@@ -500,8 +500,8 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h2>Sass customization</h2>
-<h3>Default variables</h3>
+<h3>Sass customization</h3>
+<h4>Default variables</h4>
 <pre><code class="language-scss">$ie11-support: false !default;
 
 $bfg-breakpoints: (
@@ -540,7 +540,7 @@ $bfg-gap: 2rem;
 
 @import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
 </code></pre>
-<h3>Mixin</h3>
+<h4>Mixin</h4>
 <p>The <code>bfg-theme</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
 <pre><code class="language-scss">@mixin bfg-theme($name, $settings) { ... }
 </code></pre>
@@ -573,7 +573,7 @@ $bfg-gap: 2rem;
   &lt;/div&gt;
 ...
 </code></pre>
-<h2>Selectors summary</h2>
+<h3>Selectors summary</h3>
 <table>
 <thead>
 <tr>
@@ -721,7 +721,7 @@ $bfg-gap: 2rem;
 </tr>
 </tbody>
 </table>
-<h2>Contribute</h2>
+<h3>Contribute</h3>
 <pre><code class="language-bash"># Clone repository
 git clone https://github.com/avine/bem-flex-grid.git
 
@@ -735,7 +735,7 @@ npm start
 npm run build
 
 # Build HTML documentation (`./src/index.html`) from `README.md`
-npm run doc
+npm run index
 </code></pre>
 
 
