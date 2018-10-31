@@ -2,13 +2,13 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.*
+*A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.*
 
 [![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
 
 ## Quick start
 
-Get instant access to the package by inserting the link tag from `https://unpkg.com` into your web pages.
+Get instant access by inserting the link tag into your web pages from CDN.
 
 ### Link tag
 
@@ -26,6 +26,8 @@ Get instant access to the package by inserting the link tag from `https://unpkg.
 
 ### HTML starter markup
 
+Here's a simple grid in the vertical direction (column) that fits to the window.
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -36,12 +38,14 @@ Get instant access to the package by inserting the link tag from `https://unpkg.
   <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
   <style>
     html, body { height:100%; }
-    body { padding:1rem; box-sizing:border-box; }
+    body { margin:0; padding:1rem; box-sizing:border-box; }
   </style>
 </head>
 <body>
-  <div class="bfg bfg--row">
-    <div class="bfg__box bfg__box--12">Hello bfg!</div>
+  <div class="bfg bfg--col">
+    <div class="bfg__box bfg__box--4">bem</div>
+    <div class="bfg__box bfg__box--4">flex</div>
+    <div class="bfg__box bfg__box--4">grid</div>
   </div>
 </body>
 </html>
@@ -49,7 +53,7 @@ Get instant access to the package by inserting the link tag from `https://unpkg.
 
 ## Installation and usage
 
-Install the package from NPM (or Yarn) and insert the link tag into your web pages or import the package into your Sass files.
+Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import.
 
 *NPM:*
 

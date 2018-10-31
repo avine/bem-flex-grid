@@ -1,6 +1,6 @@
 {
   "name": "bem-flex-grid",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CSS flex grid, BEM compliant.",
   "main": "index.js",
   "scripts": {

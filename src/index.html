@@ -62,10 +62,10 @@
 
 <h1>bem-flex-grid</h1>
 <p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
-<p><em>A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design interfaces such as a car dashboard or a bloomberg page, as well as a scrollable page of widgets.</em></p>
+<p><em>A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.</em></p>
 <p><a href="https://travis-ci.org/avine/bem-flex-grid"><img src="https://travis-ci.org/avine/bem-flex-grid.svg?branch=master" alt="Build Status"></a></p>
 <h2>Quick start</h2>
-<p>Get instant access to the package by inserting the link tag from <code>https://unpkg.com</code> into your web pages.</p>
+<p>Get instant access by inserting the link tag into your web pages from CDN.</p>
 <h3>Link tag</h3>
 <p><em>For Evergreen browser:</em></p>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css&quot;&gt;
@@ -74,6 +74,7 @@
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.ie11.css&quot;&gt;
 </code></pre>
 <h3>HTML starter markup</h3>
+<p>Here's a simple grid in the vertical direction (column) that fits to the window.</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -83,18 +84,20 @@
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css&quot;&gt;
   &lt;style&gt;
     html, body { height:100%; }
-    body { padding:1rem; box-sizing:border-box; }
+    body { margin:0; padding:1rem; box-sizing:border-box; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div class=&quot;bfg bfg--row&quot;&gt;
-    &lt;div class=&quot;bfg__box bfg__box--12&quot;&gt;Hello bfg!&lt;/div&gt;
+  &lt;div class=&quot;bfg bfg--col&quot;&gt;
+    &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;bem&lt;/div&gt;
+    &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;flex&lt;/div&gt;
+    &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;grid&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
 <h2>Installation and usage</h2>
-<p>Install the package from NPM (or Yarn) and insert the link tag into your web pages or import the package into your Sass files.</p>
+<p>Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import.</p>
 <p><em>NPM:</em></p>
 <pre><code class="language-bash">npm i bem-flex-grid
 </code></pre>
