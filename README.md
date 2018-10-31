@@ -51,6 +51,8 @@ Here's a simple grid in the vertical direction (column) that fits to the window.
 </html>
 ```
 
+> To learn more about the features, check out the [demos](https://avine.github.io/bem-flex-grid/demo.html).
+
 ## Installation and usage
 
 Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import.
