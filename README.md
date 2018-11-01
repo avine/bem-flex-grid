@@ -225,7 +225,7 @@ The same pattern applies to the selector `.bfg.bfg--col.bfg--wrap`.
 
 As the grid is responsive, you can change the number of lines at each breakpoint.
 
-**Example:**
+*Example:*
 
 - Fit boxes on 2 lines for all *screen size* (even greater than 1200px).
 - Fit boxes on 3 lines for *large screens* (until 992px).
@@ -407,7 +407,7 @@ Define the `.bfg__box` element size using `.bfg__box--1`,  `.bfg__box--2`, ..., 
 
 As the grid is responsive, you can change the `.bfg__box` element size at each breakpoint.
 
-**Example:**
+*Example:*
 
 - Use `.bfg__box--5` to set the box size to be 5/12 of the available size for all *screen size* (even greater than 1200px).
 - Add `.bfg__box--xl-6` to increase the size on *extra large screens* (until 1200px).
@@ -479,7 +479,7 @@ Restore the box order using `.bfg__box--in-place` modifier.
 
 As the grid is responsive, you can change the `.bfg__box` element order at each breakpoint.
 
-**Example:**
+*Example:*
 
 - Use `.bfg__box--first` to place the box in first position for all *screen size* (even greater than 1200px).
 - Add `.bfg__box--lg-last` to place the box in last position on *large screens* (until 992px).
@@ -579,7 +579,7 @@ Remove the box content padding using `.bfg__content--nopad` modifier.
 
 To chain grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
 
-**Example:**
+*Example:*
 
 See below the `<div>` that has both roles:
 
@@ -667,7 +667,7 @@ $bfg-theme-primary: (
 $bfg-theme-primary-included: true !default;
 ```
 
-**Example:**
+*Example:*
 
 To change the boxes gap, create a file `custo-bfg.scss` with the following content:
 
@@ -686,7 +686,7 @@ The `bfg-theme` mixin allows you to customize the look and feel of the box's con
 @mixin bfg-theme($name, $settings) { ... }
 ```
 
-**Example:**
+*Example:*
 
 To add a theme named `info`, create a file `custo-bfg.scss` with the following content:
 

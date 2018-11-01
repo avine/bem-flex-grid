@@ -15,14 +15,9 @@
 
   <link rel="stylesheet" href="/bem-flex-grid/build.983fc8fd.css">
 
-  <link rel="stylesheet" href="/bem-flex-grid/demo.5ec4e3a6.css">
-  <link rel="stylesheet" href="/bem-flex-grid/docs.a0a022ab.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.ecddc85d.css">
+  <link rel="stylesheet" href="/bem-flex-grid/docs.49ca2d14.css">
   <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.e6825c59.css">
-
-  <style>pre[class*="language-"] { background:#f6f8fa }
-    .markdown-body h3 { color: #C62828; }
-    table { border-collapse: collapse; }
-    th { text-align: left; }</style>
 </head>
 <body>
   <div class="docs-navbar docs-navbar--back">
@@ -207,7 +202,7 @@
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <p>As the grid is responsive, you can change the number of lines at each breakpoint.</p>
-<p><strong>Example:</strong></p>
+<p><em>Example:</em></p>
 <ul>
 <li>Fit boxes on 2 lines for all <em>screen size</em> (even greater than 1200px).</li>
 <li>Fit boxes on 3 lines for <em>large screens</em> (until 992px).</li>
@@ -334,7 +329,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <p>If the total size of the boxes along the line is less than <code>12</code> then the remaining space is distributed depending of <code>.bfg--main-[P]</code> modifiers.</p>
 </blockquote>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element size at each breakpoint.</p>
-<p><strong>Example:</strong></p>
+<p><em>Example:</em></p>
 <ul>
 <li>Use <code>.bfg__box--5</code> to set the box size to be 5/12 of the available size for all <em>screen size</em> (even greater than 1200px).</li>
 <li>Add <code>.bfg__box--xl-6</code> to increase the size on <em>extra large screens</em> (until 1200px).</li>
@@ -391,7 +386,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 ...
 </code></pre>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element order at each breakpoint.</p>
-<p><strong>Example:</strong></p>
+<p><em>Example:</em></p>
 <ul>
 <li>Use <code>.bfg__box--first</code> to place the box in first position for all <em>screen size</em> (even greater than 1200px).</li>
 <li>Add <code>.bfg__box--lg-last</code> to place the box in last position on <em>large screens</em> (until 992px).</li>
@@ -459,7 +454,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <h3>Chained and nested grids</h3>
 <h4>Chained grid</h4>
 <p>To chain grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
-<p><strong>Example:</strong></p>
+<p><em>Example:</em></p>
 <p>See below the <code>&lt;div&gt;</code> that has both roles:</p>
 <ul>
 <li><code>.bfg__box.bfg__box--6</code> as it is an <em>element</em> of its parent <code>.bfg.bfg--col</code> <em>block</em>.</li>
@@ -537,7 +532,7 @@ $bfg-theme-primary: (
 
 $bfg-theme-primary-included: true !default;
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><em>Example:</em></p>
 <p>To change the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">// Overwrite gap
 $bfg-gap: 2rem;
@@ -548,7 +543,7 @@ $bfg-gap: 2rem;
 <p>The <code>bfg-theme</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
 <pre><code class="language-scss">@mixin bfg-theme($name, $settings) { ... }
 </code></pre>
-<p><strong>Example:</strong></p>
+<p><em>Example:</em></p>
 <p>To add a theme named <code>info</code>, create a file <code>custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
 

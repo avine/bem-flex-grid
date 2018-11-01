@@ -77,6 +77,7 @@
   line-height: map-get($docs-header, padding);
   font-size: 4rem;
   font-weight: 200;
+  font-family: map-get($demo-fonts, title), sans-serif;
   color: map-get($docs-header, forground);
 
   a {
@@ -91,6 +92,7 @@ h2.docs-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   padding: 0; // Remove "primer-markdown" style
   border: none; // Remove "primer-markdown" style
   line-height: inherit; // Remove "primer-markdown" style
+  font-family: map-get($demo-fonts, title), sans-serif;
   font-weight: normal;
   font-size: 1.25rem;
   color: map-get($docs-header, forground);

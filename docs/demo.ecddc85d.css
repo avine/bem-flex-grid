@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300|Cutive+Mono");
 /* ===== demo ===== */
 /* ===== docs ===== */
+@import url("https://fonts.googleapis.com/css?family=Expletus+Sans:500|Krub|IBM+Plex+Mono");
 /* ===== Base ===== */
 html,
 .markdown-body {
   color: #424242;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Krub", sans-serif;
   font-size: 16px;
-  line-height: 1.375em; }
+  line-height: 1.5em; }
 
 body {
   margin: 0; }
@@ -18,8 +18,14 @@ h1, h2, h3, h4, h5, h6, p {
 h1, h2, h3 {
   line-height: 1.2em; }
 
+h1, h2, h4 {
+  font-family: "Expletus Sans", serif; }
+
+h4 {
+  color: #C62828; }
+
 code {
-  font-family: 'Cutive Mono', monospace !important;
+  font-family: "IBM Plex Mono", monospace !important;
   font-size: 0.85rem;
   line-height: 0.85rem;
   white-space: pre; }
@@ -169,7 +175,7 @@ pre.demo-layout__output--gray {
   background-color: #E8F5E9;
   color: #66BB6A;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 12px;
   line-height: 3em;
   text-indent: 1em;

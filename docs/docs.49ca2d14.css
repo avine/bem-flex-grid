@@ -61,6 +61,7 @@
   line-height: 6rem;
   font-size: 4rem;
   font-weight: 200;
+  font-family: "Expletus Sans", sans-serif;
   color: #9E9E9E; }
   .docs-header__title a {
     color: inherit;
@@ -72,6 +73,7 @@ h2.docs-header__subtitle {
   padding: 0;
   border: none;
   line-height: inherit;
+  font-family: "Expletus Sans", sans-serif;
   font-weight: normal;
   font-size: 1.25rem;
   color: #9E9E9E; }

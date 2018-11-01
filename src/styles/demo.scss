@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300|Cutive+Mono');
-
 @import "../lib/variables";
 @import "../lib/mixins";
 
 @import "./variables.scss";
+
+@import url($demo-font-url);
 
 /* ===== Base ===== */
 
 html,
 .markdown-body { // Overwrite default "primer-markdown"
   color: #424242;
-  font-family: 'Open Sans', sans-serif;
+  font-family: map-get($demo-fonts, text), sans-serif;
   font-size: 16px;
-  line-height: 1.375em;
+  line-height: 1.5em;
 }
 
 body {
@@ -27,8 +27,16 @@ h1, h2, h3 {
   line-height: 1.2em;
 }
 
+h1, h2, h4 {
+  font-family: map-get($demo-fonts, title), serif;
+}
+
+h4 {
+  color: #C62828;
+}
+
 code {
-  font-family: 'Cutive Mono', monospace !important; // Overwrite "prismjs"
+  font-family: map-get($demo-fonts, code), monospace !important; // Overwrite "prismjs"
   font-size: 0.85rem;
   line-height: 0.85rem;
   white-space: pre;
@@ -221,7 +229,7 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   background-color: #E8F5E9;
   color: #66BB6A;
   text-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3);
-  font-family: 'Consolas', 'Courier New', Courier, monospace;
+  font-family: map-get($demo-fonts, code), monospace;
   font-size: 12px;
   line-height: 3em;
   text-indent: 1em;
