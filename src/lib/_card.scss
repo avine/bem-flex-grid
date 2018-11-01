@@ -1,5 +1,5 @@
-.bfg__action,
-.bfg__header {
+.bfg-card__action,
+.bfg-card__header {
   padding: 0 $bfg-padding;
   box-sizing: border-box;
   position: relative;
@@ -10,12 +10,12 @@
   text-overflow: ellipsis;
 }
 
-.bfg__action {
+.bfg-card__action {
   float: right;
   max-width: 25%; // Up to 4 actions per box
 }
 
-.bfg__content {
+.bfg-card__content {
   padding: $bfg-padding;
   box-sizing: border-box;
   position: relative;
@@ -24,41 +24,41 @@
   height: 100%;
 }
 
-.bfg__content--nopad {
+.bfg-card__content--nopad {
   padding: 0;
 }
 
-.bfg--content-overflow-visible .bfg__content,
-.bfg__content--overflow-visible {
+.bfg--card-content-overflow-visible .bfg-card__content,
+.bfg-card__content--overflow-visible {
   overflow: visible;
 }
 
-.bfg--content-overflow-hidden .bfg__content,
-.bfg__content--overflow-hidden {
+.bfg--card-content-overflow-hidden .bfg-card__content,
+.bfg-card__content--overflow-hidden {
   overflow: hidden;
 }
 
-.bfg__header + .bfg__content {
+.bfg-card__header + .bfg-card__content {
   height: calc(100% - #{$bfg-header-height});
 }
 
 // Rules that are related in `bfg-theme` mixin and have to be wrapped in some high level selector
 .bfg .bfg__box {
-  .bfg__action,
-  .bfg__header {
+  .bfg-card__action,
+  .bfg-card__header {
     line-height: $bfg-header-height;
   }
 
-  .bfg__action {
-    + .bfg__action,
-    + .bfg__header {
+  .bfg-card__action {
+    + .bfg-card__action,
+    + .bfg-card__header {
       box-shadow: none;
       border-top-right-radius: 0;
       border-right-width: 0;
     }
   }
 
-  .bfg__header + .bfg__content {
+  .bfg-card__header + .bfg-card__content {
     border-top: none;
     border-top-left-radius: 0;
     border-top-right-radius: 0;

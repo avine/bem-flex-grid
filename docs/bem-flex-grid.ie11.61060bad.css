@@ -661,8 +661,8 @@
     width: auto;
     height: auto; } }
 
-.bfg__action,
-.bfg__header {
+.bfg-card__action,
+.bfg-card__header {
   padding: 0 0.5rem;
   box-sizing: border-box;
   position: relative;
@@ -672,11 +672,11 @@
   white-space: nowrap;
   text-overflow: ellipsis; }
 
-.bfg__action {
+.bfg-card__action {
   float: right;
   max-width: 25%; }
 
-.bfg__content {
+.bfg-card__content {
   padding: 0.5rem;
   box-sizing: border-box;
   position: relative;
@@ -684,50 +684,50 @@
   width: 100%;
   height: 100%; }
 
-.bfg__content--nopad {
+.bfg-card__content--nopad {
   padding: 0; }
 
-.bfg--content-overflow-visible .bfg__content,
-.bfg__content--overflow-visible {
+.bfg--card-content-overflow-visible .bfg-card__content,
+.bfg-card__content--overflow-visible {
   overflow: visible; }
 
-.bfg--content-overflow-hidden .bfg__content,
-.bfg__content--overflow-hidden {
+.bfg--card-content-overflow-hidden .bfg-card__content,
+.bfg-card__content--overflow-hidden {
   overflow: hidden; }
 
-.bfg__header + .bfg__content {
+.bfg-card__header + .bfg-card__content {
   height: calc(100% - 2rem); }
 
-.bfg .bfg__box .bfg__action,
-.bfg .bfg__box .bfg__header {
+.bfg .bfg__box .bfg-card__action,
+.bfg .bfg__box .bfg-card__header {
   line-height: 2rem; }
 
-.bfg .bfg__box .bfg__action + .bfg__action,
-.bfg .bfg__box .bfg__action + .bfg__header {
+.bfg .bfg__box .bfg-card__action + .bfg-card__action,
+.bfg .bfg__box .bfg-card__action + .bfg-card__header {
   box-shadow: none;
   border-top-right-radius: 0;
   border-right-width: 0; }
 
-.bfg .bfg__box .bfg__header + .bfg__content {
+.bfg .bfg__box .bfg-card__header + .bfg-card__content {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-.bfg__box--primary .bfg__action,
-.bfg__box--primary .bfg__header {
+.bfg-card--primary .bfg-card__action,
+.bfg-card--primary .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 1px solid #d5d5d5;
   background-color: #f6f6f6;
   line-height: calc(2rem - 2px); }
 
-.bfg__box--primary .bfg__action {
+.bfg-card--primary .bfg-card__action {
   border-top-right-radius: 3px;
   border-left-width: 0; }
 
-.bfg__box--primary .bfg__header {
+.bfg-card--primary .bfg-card__header {
   border-radius: 3px 3px 0 0; }
 
-.bfg__box--primary .bfg__content {
+.bfg-card--primary .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 3px;
   border: 1px solid #ddd;

@@ -95,7 +95,7 @@ npm i bem-flex-grid
 
 ## API
 
-### Grid block and elements
+### Grid blocks and elements
 
 At core the grid system consists of one `.bfg` block and one or more `.bfg__box` elements.
 
@@ -107,39 +107,49 @@ At core the grid system consists of one `.bfg` block and one or more `.bfg__box`
 </div>
 ```
 
-Fill the boxes using the optional `.bfg__content` element.
+There is no restriction on what content you put in the boxes,
+but you can use the `.bfg-card` block to structure your grid with cards.
+
+A card requires a `.bfg-card__content` element.
+Then you can add an header to the content using the optional `.bfg-card__header` element.
+Then you can add one or more actions to the header using the optional `.bfg-card__action` element.
+
+By default, the card's elements do not have any look and feel.
+For example, add the `.bfg-card--primary` modifier to style your card with the "primary" theme.
+
+```html
+<div class="bfg-card bfg-card--primary">
+  <div class="bfg-card__action"></div>
+  <div class="bfg-card__action"></div>
+  ...
+  <div class="bfg-card__header"></div>
+  <div class="bfg-card__content"></div>
+</div>
+```
+
+You can mix the `.bfg-card` block at the `.bfg__box` element level to use a different look and feel for each box.
 
 ```html
 <div class="bfg">
-  <div class="bfg__box">
-    <div class="bfg__content"></div>
+  <div class="bfg__box bfg-card bfg-card--primary">
+    <div class="bfg-card__content"></div>
+  </div>
+  <div class="bfg__box bfg-card bfg-card--secondary">
+    <div class="bfg-card__content"></div>
   </div>
   ...
 </div>
 ```
 
-Add an header to the content using the optional `.bfg__header` element.
+Or you can mix the `.bfg-card` block at the `.bfg` block level to use the same look and feel for all boxes.
 
 ```html
-<div class="bfg">
+<div class="bfg bfg-card bfg-card--primary">
   <div class="bfg__box">
-    <div class="bfg__header"></div>
-    <div class="bfg__content"></div>
+    <div class="bfg-card__content"></div>
   </div>
-  ...
-</div>
-```
-
-Add multiple actions to the header using the optional `.bfg__action` element.
-
-```html
-<div class="bfg">
   <div class="bfg__box">
-    <div class="bfg__action"></div>
-    <div class="bfg__action"></div>
-    ...
-    <div class="bfg__header"></div>
-    <div class="bfg__content"></div>
+    <div class="bfg-card__content"></div>
   </div>
   ...
 </div>
@@ -327,11 +337,11 @@ As the grid is responsive, you can reverse the `.bfg__box` elements order at eac
 <div class="bfg bfg--xs-reverse">...</div>
 ```
 
-#### Overflow: `.bfg--box-overflow-[T]`, `.bfg--content-overflow-[T]`
+#### Overflow: `.bfg--box-overflow-[T]`, `.bfg--card-content-overflow-[T]`
 
 **[T]** Type: `visible`, `hidden`.
 
-By default, `.bfg__box` and `.bfg__content` elements use the `overflow: auto;` rule.
+By default, `.bfg__box` and `.bfg-card__content` elements use the `overflow: auto;` rule.
 
 Use `.bfg--box-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg__box` elements.
 
@@ -342,16 +352,16 @@ Use `.bfg--box-overflow-hidden` modifier on `.bfg` block to apply the `overflow:
 <div class="bfg bfg--box-overflow-hidden">...</div>
 ```
 
-Use `.bfg--content-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg__content` elements.
+Use `.bfg--card-content-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg-card__content` elements.
 
-Use `.bfg--content-overflow-hidden` modifier on `.bfg` block to apply the `overflow: hidden;` rule instead on all `.bfg__content` elements.
+Use `.bfg--card-content-overflow-hidden` modifier on `.bfg` block to apply the `overflow: hidden;` rule instead on all `.bfg-card__content` elements.
 
 ```html
-<div class="bfg bfg--content-overflow-visible">...</div>
-<div class="bfg bfg--content-overflow-hidden">...</div>
+<div class="bfg bfg--card-content-overflow-visible">...</div>
+<div class="bfg bfg--card-content-overflow-hidden">...</div>
 ```
 
-> In the same way, use `.bfg__box--overflow-[T]` modifiers on `.bfg__box` element and `.bfg__content--overflow-[T]` modifiers on `.bfg__content` element to apply this behavior to a specific element (see below for more details).
+> In the same way, use `.bfg__box--overflow-[T]` modifiers on `.bfg__box` element and `.bfg-card__content--overflow-[T]` modifiers on `.bfg-card__content` element to apply this behavior to a specific element (see below for more details).
 
 #### Disabled: `.bfg--[B]disabled`, `.bfg--[B]disabled-all`
 
@@ -530,46 +540,46 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 
 **[T]** Theme: `primary` or any string.
 
-Add "primary" look and feel to the box's content, header and actions using `.bfg__box--primary` modifier.
+Add "primary" look and feel to the box's content, header and actions using `.bfg-card--primary` modifier.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--primary">
-    <div class="bfg__action"></div>
-    <div class="bfg__header"></div>
-    <div class="bfg__content"></div>
+  <div class="bfg__box bfg-card--primary">
+    <div class="bfg-card__action"></div>
+    <div class="bfg-card__header"></div>
+    <div class="bfg-card__content"></div>
   </div>
 ...
 ```
 
 > See below the Sass mixin `bfg-theme` to create your own themes.
 
-### `.bfg__content` modifiers
+### `.bfg-card__content` modifiers
 
-#### Overflow: `.bfg__content--overflow-[T]`
+#### Overflow: `.bfg-card__content--overflow-[T]`
 
 **[T]** Type: `visible`, `hidden`.
 
-By default, `.bfg__content` element use the `overflow: auto;` rule.
+By default, `.bfg-card__content` element use the `overflow: auto;` rule.
 
-Use `.bfg__content--overflow-visible` modifier to apply the `overflow: visible;` rule instead.
+Use `.bfg-card__content--overflow-visible` modifier to apply the `overflow: visible;` rule instead.
 
-Use `.bfg__content--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
+Use `.bfg-card__content--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 ...
-  <div class="bfg__content bfg__content--overflow-visible">...</div>
-  <div class="bfg__content bfg__content--overflow-hidden">...</div>
+  <div class="bfg-card__content bfg-card__content--overflow-visible">...</div>
+  <div class="bfg-card__content bfg-card__content--overflow-hidden">...</div>
 ...
 ```
 
-#### Padding: `.bfg__content--nopad`
+#### Padding: `.bfg-card__content--nopad`
 
-Remove the box content padding using `.bfg__content--nopad` modifier.
+Remove the box content padding using `.bfg-card__content--nopad` modifier.
 
 ```html
 ...
-  <div class="bfg__content bfg__content--nopad"></div>
+  <div class="bfg-card__content bfg-card__content--nopad"></div>
 ...
 ```
 
@@ -713,10 +723,10 @@ Now, you can use your new theme named `info`:
 
 ```html
 ...
-  <div class="bfg__box bfg__box--info">
-    <div class="bfg__action"></div>
-    <div class="bfg__header"></div>
-    <div class="bfg__content"></div>
+  <div class="bfg__box bfg-card--info">
+    <div class="bfg-card__action"></div>
+    <div class="bfg-card__header"></div>
+    <div class="bfg-card__content"></div>
   </div>
 ...
 ```
@@ -773,8 +783,8 @@ Now, you can use your new theme named `info`:
 
 *Content overflow:*
 
-- `.bfg--content-overflow-visible`
-- `.bfg--content-overflow-hidden`
+- `.bfg--card-content-overflow-visible`
+- `.bfg--card-content-overflow-hidden`
 
 *Disabled:*
 
@@ -813,19 +823,19 @@ Now, you can use your new theme named `info`:
 
 *Theme:*
 
-- `.bfg__box--primary`
+- `.bfg-card--primary`
 - ...
 
-#### `.bfg__content` element
+#### `.bfg-card__content` element
 
 *Overflow:*
 
-- `.bfg__content--overflow-visible`
-- `.bfg__content--overflow-hidden`
+- `.bfg-card__content--overflow-visible`
+- `.bfg-card__content--overflow-hidden`
 
 *Padding:*
 
-- `.bfg__content--nopad`
+- `.bfg-card__content--nopad`
 
 ### Contribute
 

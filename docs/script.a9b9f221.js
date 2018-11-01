@@ -977,7 +977,7 @@ exports.fillGrid = function (options) {
   util_1.forEach(document.querySelectorAll('.bfg__box'), function (element) {
     return fillElement(element, opts);
   });
-  util_1.forEach(document.querySelectorAll('.bfg__content'), function (element) {
+  util_1.forEach(document.querySelectorAll('.bfg-card__content'), function (element) {
     return fillElement(element, opts);
   });
 };
@@ -1993,4 +1993,4 @@ window['Demo'] = {
   viewCode: view_code_1.viewCode
 };
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.021af466.map
+//# sourceMappingURL=/bem-flex-grid/script.a9b9f221.map

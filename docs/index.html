@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="/bem-flex-grid/demo.ecddc85d.css">
   <link rel="stylesheet" href="/bem-flex-grid/docs.8027ab33.css">
-  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.e6825c59.css">
+  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.61060bad.css">
 </head>
 <body>
   <div class="docs-navbar docs-navbar--back">
@@ -119,7 +119,7 @@
       └─ bem-flex-grid.ie11.scss
 </code></pre>
 <h2>API</h2>
-<h3>Grid block and elements</h3>
+<h3>Grid blocks and elements</h3>
 <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
@@ -127,31 +127,39 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>Fill the boxes using the optional <code>.bfg__content</code> element.</p>
+<p>There is no restriction on what content you put in the boxes,
+but you can use the <code>.bfg-card</code> block to structure your grid with cards.</p>
+<p>A card requires a <code>.bfg-card__content</code> element.
+Then you can add an header to the content using the optional <code>.bfg-card__header</code> element.
+Then you can add one or more actions to the header using the optional <code>.bfg-card__action</code> element.</p>
+<p>By default, the card's elements do not have any look and feel.
+For example, add the <code>.bfg-card--primary</code> modifier to style your card with the &quot;primary&quot; theme.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg-card bfg-card--primary&quot;&gt;
+  &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
+  ...
+  &lt;div class=&quot;bfg-card__header&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>You can mix the <code>.bfg-card</code> block at the <code>.bfg__box</code> element level to use a different look and feel for each box.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg-card bfg-card--primary&quot;&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg-card bfg-card--secondary&quot;&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
   ...
 &lt;/div&gt;
 </code></pre>
-<p>Add an header to the content using the optional <code>.bfg__header</code> element.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
+<p>Or you can mix the <code>.bfg-card</code> block at the <code>.bfg</code> block level to use the same look and feel for all boxes.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg-card bfg-card--primary&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
-  ...
-&lt;/div&gt;
-</code></pre>
-<p>Add multiple actions to the header using the optional <code>.bfg__action</code> element.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
-    ...
-    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
   ...
 &lt;/div&gt;
@@ -276,21 +284,21 @@ Then you can choose the distribution mode of the remaining space.</p>
 
 &lt;div class=&quot;bfg bfg--xs-reverse&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h4>Overflow: <code>.bfg--box-overflow-[T]</code>, <code>.bfg--content-overflow-[T]</code></h4>
+<h4>Overflow: <code>.bfg--box-overflow-[T]</code>, <code>.bfg--card-content-overflow-[T]</code></h4>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
-<p>By default, <code>.bfg__box</code> and <code>.bfg__content</code> elements use the <code>overflow: auto;</code> rule.</p>
+<p>By default, <code>.bfg__box</code> and <code>.bfg-card__content</code> elements use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg--box-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg__box</code> elements.</p>
 <p>Use <code>.bfg--box-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow-visible&quot;&gt;...&lt;/div&gt;
 &lt;div class=&quot;bfg bfg--box-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<p>Use <code>.bfg--content-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg__content</code> elements.</p>
-<p>Use <code>.bfg--content-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg__content</code> elements.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--content-overflow-visible&quot;&gt;...&lt;/div&gt;
-&lt;div class=&quot;bfg bfg--content-overflow-hidden&quot;&gt;...&lt;/div&gt;
+<p>Use <code>.bfg--card-content-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg-card__content</code> elements.</p>
+<p>Use <code>.bfg--card-content-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg-card__content</code> elements.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--card-content-overflow-visible&quot;&gt;...&lt;/div&gt;
+&lt;div class=&quot;bfg bfg--card-content-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifiers on <code>.bfg__box</code> element and <code>.bfg__content--overflow-[T]</code> modifiers on <code>.bfg__content</code> element to apply this behavior to a specific element (see below for more details).</p>
+<p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifiers on <code>.bfg__box</code> element and <code>.bfg-card__content--overflow-[T]</code> modifiers on <code>.bfg-card__content</code> element to apply this behavior to a specific element (see below for more details).</p>
 </blockquote>
 <h4>Disabled: <code>.bfg--[B]disabled</code>, <code>.bfg--[B]disabled-all</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -422,33 +430,33 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h4>Theme: <code>.bfg__box--[T]</code></h4>
 <p><strong>[T]</strong> Theme: <code>primary</code> or any string.</p>
-<p>Add &quot;primary&quot; look and feel to the box's content, header and actions using <code>.bfg__box--primary</code> modifier.</p>
+<p>Add &quot;primary&quot; look and feel to the box's content, header and actions using <code>.bfg-card--primary</code> modifier.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--primary&quot;&gt;
-    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg-card--primary&quot;&gt;
+    &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 ...
 </code></pre>
 <blockquote>
 <p>See below the Sass mixin <code>bfg-theme</code> to create your own themes.</p>
 </blockquote>
-<h3><code>.bfg__content</code> modifiers</h3>
-<h4>Overflow: <code>.bfg__content--overflow-[T]</code></h4>
+<h3><code>.bfg-card__content</code> modifiers</h3>
+<h4>Overflow: <code>.bfg-card__content--overflow-[T]</code></h4>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
-<p>By default, <code>.bfg__content</code> element use the <code>overflow: auto;</code> rule.</p>
-<p>Use <code>.bfg__content--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
-<p>Use <code>.bfg__content--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
+<p>By default, <code>.bfg-card__content</code> element use the <code>overflow: auto;</code> rule.</p>
+<p>Use <code>.bfg-card__content--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
+<p>Use <code>.bfg-card__content--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__content bfg__content--overflow-visible&quot;&gt;...&lt;/div&gt;
-  &lt;div class=&quot;bfg__content bfg__content--overflow-hidden&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__content bfg-card__content--overflow-visible&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__content bfg-card__content--overflow-hidden&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
-<h4>Padding: <code>.bfg__content--nopad</code></h4>
-<p>Remove the box content padding using <code>.bfg__content--nopad</code> modifier.</p>
+<h4>Padding: <code>.bfg-card__content--nopad</code></h4>
+<p>Remove the box content padding using <code>.bfg-card__content--nopad</code> modifier.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__content bfg__content--nopad&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__content bfg-card__content--nopad&quot;&gt;&lt;/div&gt;
 ...
 </code></pre>
 <h3>Chained and nested grids</h3>
@@ -565,10 +573,10 @@ $bfg-gap: 2rem;
 </blockquote>
 <p>Now, you can use your new theme named <code>info</code>:</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--info&quot;&gt;
-    &lt;div class=&quot;bfg__action&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__header&quot;&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__content&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg-card--info&quot;&gt;
+    &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
   &lt;/div&gt;
 ...
 </code></pre>
@@ -622,8 +630,8 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Content overflow:</em></p>
 <ul>
-<li><code>.bfg--content-overflow-visible</code></li>
-<li><code>.bfg--content-overflow-hidden</code></li>
+<li><code>.bfg--card-content-overflow-visible</code></li>
+<li><code>.bfg--card-content-overflow-hidden</code></li>
 </ul>
 <p><em>Disabled:</em></p>
 <ul>
@@ -661,18 +669,18 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Theme:</em></p>
 <ul>
-<li><code>.bfg__box--primary</code></li>
+<li><code>.bfg-card--primary</code></li>
 <li>...</li>
 </ul>
-<h4><code>.bfg__content</code> element</h4>
+<h4><code>.bfg-card__content</code> element</h4>
 <p><em>Overflow:</em></p>
 <ul>
-<li><code>.bfg__content--overflow-visible</code></li>
-<li><code>.bfg__content--overflow-hidden</code></li>
+<li><code>.bfg-card__content--overflow-visible</code></li>
+<li><code>.bfg-card__content--overflow-hidden</code></li>
 </ul>
 <p><em>Padding:</em></p>
 <ul>
-<li><code>.bfg__content--nopad</code></li>
+<li><code>.bfg-card__content--nopad</code></li>
 </ul>
 <h3>Contribute</h3>
 <pre><code class="language-bash"># Clone repository

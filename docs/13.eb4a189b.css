@@ -661,8 +661,8 @@
     width: auto;
     height: auto; } }
 
-.bfg__action,
-.bfg__header {
+.bfg-card__action,
+.bfg-card__header {
   padding: 0 0.5rem;
   box-sizing: border-box;
   position: relative;
@@ -672,11 +672,11 @@
   white-space: nowrap;
   text-overflow: ellipsis; }
 
-.bfg__action {
+.bfg-card__action {
   float: right;
   max-width: 25%; }
 
-.bfg__content {
+.bfg-card__content {
   padding: 0.5rem;
   box-sizing: border-box;
   position: relative;
@@ -684,112 +684,112 @@
   width: 100%;
   height: 100%; }
 
-.bfg__content--nopad {
+.bfg-card__content--nopad {
   padding: 0; }
 
-.bfg--content-overflow-visible .bfg__content,
-.bfg__content--overflow-visible {
+.bfg--card-content-overflow-visible .bfg-card__content,
+.bfg-card__content--overflow-visible {
   overflow: visible; }
 
-.bfg--content-overflow-hidden .bfg__content,
-.bfg__content--overflow-hidden {
+.bfg--card-content-overflow-hidden .bfg-card__content,
+.bfg-card__content--overflow-hidden {
   overflow: hidden; }
 
-.bfg__header + .bfg__content {
+.bfg-card__header + .bfg-card__content {
   height: calc(100% - 2rem); }
 
-.bfg .bfg__box .bfg__action,
-.bfg .bfg__box .bfg__header {
+.bfg .bfg__box .bfg-card__action,
+.bfg .bfg__box .bfg-card__header {
   line-height: 2rem; }
 
-.bfg .bfg__box .bfg__action + .bfg__action,
-.bfg .bfg__box .bfg__action + .bfg__header {
+.bfg .bfg__box .bfg-card__action + .bfg-card__action,
+.bfg .bfg__box .bfg-card__action + .bfg-card__header {
   box-shadow: none;
   border-top-right-radius: 0;
   border-right-width: 0; }
 
-.bfg .bfg__box .bfg__header + .bfg__content {
+.bfg .bfg__box .bfg-card__header + .bfg-card__content {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }
 
-.bfg__box--primary .bfg__action,
-.bfg__box--primary .bfg__header {
+.bfg-card--primary .bfg-card__action,
+.bfg-card--primary .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 1px solid #d5d5d5;
   background-color: #f6f6f6;
   line-height: calc(2rem - 2px); }
 
-.bfg__box--primary .bfg__action {
+.bfg-card--primary .bfg-card__action {
   border-top-right-radius: 3px;
   border-left-width: 0; }
 
-.bfg__box--primary .bfg__header {
+.bfg-card--primary .bfg-card__header {
   border-radius: 3px 3px 0 0; }
 
-.bfg__box--primary .bfg__content {
+.bfg-card--primary .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 3px;
   border: 1px solid #ddd;
   background-color: #fff; }
 
-.bfg__box--info .bfg__action,
-.bfg__box--info .bfg__header {
+.bfg-card--info .bfg-card__action,
+.bfg-card--info .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 3px solid #90CAF9;
   background-color: #BBDEFB;
   color: #1E88E5;
   line-height: calc(2rem - 6px); }
 
-.bfg__box--info .bfg__action {
+.bfg-card--info .bfg-card__action {
   border-top-right-radius: 0;
   border-left-width: 0; }
 
-.bfg__box--info .bfg__header {
+.bfg-card--info .bfg-card__header {
   border-radius: 0 0 0 0; }
 
-.bfg__box--info .bfg__content {
+.bfg-card--info .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 0;
   border: 3px solid #BBDEFB;
   background-color: #E3F2FD; }
 
-.bfg__box--warning .bfg__action,
-.bfg__box--warning .bfg__header {
+.bfg-card--warning .bfg-card__action,
+.bfg-card--warning .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 1px solid #FFCC80;
   background-color: #FFE0B2;
   line-height: calc(2rem - 2px); }
 
-.bfg__box--warning .bfg__action {
+.bfg-card--warning .bfg-card__action {
   border-top-right-radius: 8px;
   border-left-width: 0; }
 
-.bfg__box--warning .bfg__header {
+.bfg-card--warning .bfg-card__header {
   border-radius: 8px 8px 0 0; }
 
-.bfg__box--warning .bfg__content {
+.bfg-card--warning .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 8px;
   border: 1px solid #FFE0B2;
   background-color: #FFF3E0; }
 
-.bfg__box--error .bfg__action,
-.bfg__box--error .bfg__header {
+.bfg-card--error .bfg-card__action,
+.bfg-card--error .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 2px solid #B71C1C;
   background-color: #C62828;
   color: #FFCDD2;
   line-height: calc(2rem - 4px); }
 
-.bfg__box--error .bfg__action {
+.bfg-card--error .bfg-card__action {
   border-top-right-radius: 3px;
   border-left-width: 0; }
 
-.bfg__box--error .bfg__header {
+.bfg-card--error .bfg-card__header {
   border-radius: 3px 3px 0 0; }
 
-.bfg__box--error .bfg__content {
+.bfg-card--error .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 3px;
   border: 2px solid #E53935;
