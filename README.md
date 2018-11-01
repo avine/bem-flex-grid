@@ -145,19 +145,9 @@ Add multiple actions to the header using the optional `.bfg__action` element.
 </div>
 ```
 
-### .bfg modifiers
+### `.bfg` modifiers
 
-#### .bfg--height-auto
-
-By default, the main `.bfg` block will try to fit to the height of its parent node, by using the `height: 100%` rule.
-
-Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
-
-```html
-<div class="bfg bfg--height-auto">...</div>
-```
-
-#### .bfg--row, .bfg--col
+#### Direction: `.bfg--row`, `.bfg--col`
 
 It is required to define the direction the `.bfg__box` elements are placed in the `.bfg` block, using `.bfg--row` or `.bfg--col` modifiers.
 
@@ -173,7 +163,17 @@ It is required to define the direction the `.bfg__box` elements are placed in th
 
 > When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined.
 
-#### .bfg--wrap
+#### Auto height: `.bfg--height-auto`
+
+By default, the main `.bfg` block will try to fit to the height of its parent node, by using the `height: 100%` rule.
+
+Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
+
+```html
+<div class="bfg bfg--height-auto">...</div>
+```
+
+#### Wrap onto multiple lines: `.bfg--wrap`
 
 Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the optional `.bfg--wrap` modifier.
 
@@ -181,7 +181,7 @@ Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the opti
 <div class="bfg bfg--wrap">...</div>
 ```
 
-#### .bfg--[B]lines-[N]
+#### Number of lines: `.bfg--[B]lines-[N]`
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -240,7 +240,7 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 </div>
 ```
 
-#### .bfg--gap, .bfg--gap-in
+#### Gap: `.bfg--gap`, `.bfg--gap-in`
 
 Add a gap between `.bfg__box` elements, using `.bfg--gap` modifier.
 
@@ -266,7 +266,7 @@ But if you prefer to define a main margin (or padding) to the parent node of the
 
 > The default value of the gap is `1rem` (see below the Sass variable `$bfg-gap`).
 
-#### .bfg--main-[P]
+#### Main axis alignment: `.bfg--main-[P]`
 
 **[P]** Position: `center`, `end`, `between`, `around`.
 
@@ -287,7 +287,7 @@ Justify content along the "main" axis using `.bfg--main-*` modifiers.
 > This is relevant only when the total size of the boxes along the line is less than `12` (see below the size modifiers for `.bfg__box` element).
 > Then you can choose the distribution mode of the remaining space.
 
-#### .bfg--cross-[P]
+#### Cross axis alignment: `.bfg--cross-[P]`
 
 **[P]** Position: `start`, `center`, `end`.
 
@@ -303,7 +303,31 @@ Align items along the "cross" axis using `.bfg--cross-*` modifiers.
 <div class="bfg bfg--cross-end">...</div>
 ```
 
-#### .bfg--box-overflow-[T], .bfg--content-overflow-[T]
+#### Order: `.bfg--[B]reverse`
+
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+Reverse the boxes order using `.bfg--reverse` modifier.
+
+```html
+<div class="bfg bfg--reverse">...</div>
+```
+
+As the grid is responsive, you can reverse the `.bfg__box` elements order at each breakpoint.
+
+```html
+<div class="bfg bfg--reverse">...</div>
+
+<div class="bfg bfg--xl-reverse">...</div>
+
+<div class="bfg bfg--lg-reverse">...</div>
+
+<div class="bfg bfg--sm-reverse">...</div>
+
+<div class="bfg bfg--xs-reverse">...</div>
+```
+
+#### Overflow: `.bfg--box-overflow-[T]`, `.bfg--content-overflow-[T]`
 
 **[T]** Type: `visible`, `hidden`.
 
@@ -329,31 +353,7 @@ Use `.bfg--content-overflow-hidden` modifier on `.bfg` block to apply the `overf
 
 > In the same way, use `.bfg__box--overflow-[T]` modifiers on `.bfg__box` element and `.bfg__content--overflow-[T]` modifiers on `.bfg__content` element to apply this behavior to a specific element (see below for more details).
 
-#### .bfg--[B]reverse
-
-**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
-
-Reverse the boxes order using `.bfg--reverse` modifier.
-
-```html
-<div class="bfg bfg--reverse">...</div>
-```
-
-As the grid is responsive, you can reverse the `.bfg__box` elements order at each breakpoint.
-
-```html
-<div class="bfg bfg--reverse">...</div>
-
-<div class="bfg bfg--xl-reverse">...</div>
-
-<div class="bfg bfg--lg-reverse">...</div>
-
-<div class="bfg bfg--sm-reverse">...</div>
-
-<div class="bfg bfg--xs-reverse">...</div>
-```
-
-#### .bfg--[B]disabled, .bfg--[B]disabled-all
+#### Disabled: `.bfg--[B]disabled`, `.bfg--[B]disabled-all`
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -383,9 +383,9 @@ Here's an example of disabling the grid system for the current `.bfg` block only
 <div class="bfg bfg--xs-disabled">...</div>
 ```
 
-### .bfg__box modifiers
+### `.bfg__box` modifiers
 
-#### .bfg__box--[B][S]
+#### Size: `.bfg__box--[B][S]`
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -427,41 +427,7 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
 ...
 ```
 
-#### .bfg__box--[B]first, .bfg__box--[B]last, .bfg__box--[B]in-place
-
-**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
-
-Change the box order using `.bfg__box--first` or `.bfg__box--last` modifiers.
-
-Restore the box order using `.bfg__box--in-place` modifier.
-
-```html
-...
-  <div class="bfg__box bfg__box--last"><!-- Will move to last position --></div>
-  <div class="bfg__box bfg__box--in-place"><!-- Will stay in place --></div>
-  <div class="bfg__box bfg__box--first"><!-- Will move to first position --></div>
-...
-```
-
-As the grid is responsive, you can change the `.bfg__box` element order at each breakpoint.
-
-**Example:**
-
-- Use `.bfg__box--first` to place the box in first position for all *screen size* (even greater than 1200px).
-- Add `.bfg__box--lg-last` to place the box in last position on *large screens* (until 992px).
-- Add `.bfg__box--sm-in-place` to restore the original box position on *small screens* (until 768px).
-
-```html
-...
-  <div class="bfg__box
-    bfg__box--first
-    bfg__box--lg-last
-    bfg__box--sm-in-place">
-  </div>
-...
-```
-
-#### .bfg__box--fit
+#### Fit: `.bfg__box--fit`
 
 Use `.bfg__box--fit` modifier to indicate that a `.bfg__box` element should not grow or shrink.
 
@@ -495,7 +461,41 @@ Here's an example when using `.bfg--col` modifier:
 
 > Defining the box `height` is optional. If not defined the box height will simply fit its content.
 
-#### .bfg__box--overflow-[T]
+#### Order: `.bfg__box--[B]first`, `.bfg__box--[B]last`, `.bfg__box--[B]in-place`
+
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+Change the box order using `.bfg__box--first` or `.bfg__box--last` modifiers.
+
+Restore the box order using `.bfg__box--in-place` modifier.
+
+```html
+...
+  <div class="bfg__box bfg__box--last"><!-- Will move to last position --></div>
+  <div class="bfg__box bfg__box--in-place"><!-- Will stay in place --></div>
+  <div class="bfg__box bfg__box--first"><!-- Will move to first position --></div>
+...
+```
+
+As the grid is responsive, you can change the `.bfg__box` element order at each breakpoint.
+
+**Example:**
+
+- Use `.bfg__box--first` to place the box in first position for all *screen size* (even greater than 1200px).
+- Add `.bfg__box--lg-last` to place the box in last position on *large screens* (until 992px).
+- Add `.bfg__box--sm-in-place` to restore the original box position on *small screens* (until 768px).
+
+```html
+...
+  <div class="bfg__box
+    bfg__box--first
+    bfg__box--lg-last
+    bfg__box--sm-in-place">
+  </div>
+...
+```
+
+#### Overflow: `.bfg__box--overflow-[T]`
 
 **[T]** Type: `visible`, `hidden`.
 
@@ -512,7 +512,7 @@ Use `.bfg__box--overflow-hidden` modifier to apply the `overflow: hidden;` rule 
 ...
 ```
 
-#### .bfg__box--nopad
+#### Padding: `.bfg__box--nopad`
 
 When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the padding of a specific box.
 
@@ -526,7 +526,7 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 </div>
 ```
 
-#### .bfg__box--[T]
+#### Theme: `.bfg__box--[T]`
 
 **[T]** Theme: `primary` or any string.
 
@@ -544,19 +544,9 @@ Add "primary" look and feel to the box's content, header and actions using `.bfg
 
 > See below the Sass mixin `bfg-theme` to create your own themes.
 
-### .bfg__content modifier
+### `.bfg__content` modifiers
 
-#### .bfg__content--nopad
-
-Remove the box content padding using `.bfg__content--nopad` modifier.
-
-```html
-...
-  <div class="bfg__content bfg__content--nopad"></div>
-...
-```
-
-#### .bfg__content--overflow-[T]
+#### Overflow: `.bfg__content--overflow-[T]`
 
 **[T]** Type: `visible`, `hidden`.
 
@@ -570,6 +560,16 @@ Use `.bfg__content--overflow-hidden` modifier to apply the `overflow: hidden;` r
 ...
   <div class="bfg__content bfg__content--overflow-visible">...</div>
   <div class="bfg__content bfg__content--overflow-hidden">...</div>
+...
+```
+
+#### Padding: `.bfg__content--nopad`
+
+Remove the box content padding using `.bfg__content--nopad` modifier.
+
+```html
+...
+  <div class="bfg__content bfg__content--nopad"></div>
 ...
 ```
 
@@ -632,7 +632,7 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 
 ### Sass customization
 
-#### Default variables
+#### Variables
 
 ```scss
 $ie11-support: false !default;
@@ -723,54 +723,109 @@ Now, you can use your new theme named `info`:
 
 ### Selectors summary
 
-| `.bfg` block             |
-| ------------------------ |
-| `.bfg--height-auto`      |
-| `.bfg--row`              |
-| `.bfg--col`              |
-| `.bfg--gap`              |
-| `.bfg--gap-in`           |
-| `.bfg--main-center`      |
-| `.bfg--main-end`         |
-| `.bfg--main-between`     |
-| `.bfg--main-around`      |
-| `.bfg--cross-start`      |
-| `.bfg--cross-center`     |
-| `.bfg--cross-end`        |
-| `.bfg--wrap`             |
-| `.bfg--lines-2`, `.bfg--lines-xl-2`, `.bfg--lines-lg-2`, `.bfg--lines-sm-2`, `.bfg--lines-xs-2` |
-| `.bfg--lines-3`, `.bfg--lines-xl-3`, `.bfg--lines-lg-3`, `.bfg--lines-sm-3`, `.bfg--lines-xs-3` |
-| `.bfg--lines-4`, `.bfg--lines-xl-4`, `.bfg--lines-lg-4`, `.bfg--lines-sm-4`, `.bfg--lines-xs-4` |
-| `.bfg--reverse`, `.bfg--xl-reverse`, `.bfg--lg-reverse`, `.bfg--sm-reverse`, `.bfg--xs-reverse` |
-| `.bfg--box-overflow-visible`     |
-| `.bfg--box-overflow-hidden`      |
-| `.bfg--content-overflow-visible` |
-| `.bfg--content-overflow-hidden`  |
-| `.bfg--disabled`, `.bfg--xl-disabled`, `.bfg--lg-disabled`, `.bfg--sm-disabled`, `.bfg--xs-disabled`                      |
-| `.bfg--disabled-all`, `.bfg--xl-disabled-all`, `.bfg--lg-disabled-all`, `.bfg--sm-disabled-all`, `.bfg--xs-disabled-all`  |
+#### `.bfg` block
 
-| `.bfg__box` element   |
-| --------------------- |
-| `.bfg__box--1`, `.bfg__box--xl-1`, `.bfg__box--lg-1`, `.bfg__box--sm-1`, `.bfg__box--xs-1` |
-| `.bfg__box--2`, `.bfg__box--xl-2`, `.bfg__box--lg-2`, `.bfg__box--sm-2`, `.bfg__box--xs-2` |
-| `.bfg__box--3`, `.bfg__box--xl-3`, `.bfg__box--lg-3`, `.bfg__box--sm-3`, `.bfg__box--xs-3` |
-| ...                   |
-| `.bfg__box--11`, `.bfg__box--xl-11`, `.bfg__box--lg-11`, `.bfg__box--sm-11`, `.bfg__box--xs-11` |
-| `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12` |
-| `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first`                |
-| `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last`                     |
-| `.bfg__box--in-place`, `.bfg__box--xl-in-place`, `.bfg__box--lg-in-place`, `.bfg__box--sm-in-place`, `.bfg__box--xs-in-place` |
-| `.bfg__box--fit`                  |
-| `.bfg__box--overflow-visible`     |
-| `.bfg__box--overflow-hidden`      |
-| `.bfg__box--nopad`                |
-| `.bfg__box--primary`              |
+*Direction:*
 
-| `.bfg__content` element           |
-| --------------------------------- |
-| `.bfg__content--nopad`            |
-| `.bfg__content--overflow-visible` |
-| `.bfg__content--overflow-hidden`  |
+- `.bfg--row`
+- `.bfg--col`
+
+*Auto height:*
+
+- `.bfg--height-auto`
+
+*Wrap onto multiple lines:*
+
+- `.bfg--wrap`
+
+*Number of lines:*
+
+- `.bfg--lines-2`, `.bfg--lines-xl-2`, `.bfg--lines-lg-2`, `.bfg--lines-sm-2`, `.bfg--lines-xs-2`
+- `.bfg--lines-3`, `.bfg--lines-xl-3`, `.bfg--lines-lg-3`, `.bfg--lines-sm-3`, `.bfg--lines-xs-3`
+- `.bfg--lines-4`, `.bfg--lines-xl-4`, `.bfg--lines-lg-4`, `.bfg--lines-sm-4`, `.bfg--lines-xs-4`
+
+*Gap:*
+
+- `.bfg--gap`
+- `.bfg--gap-in`
+
+*Main axis alignment:*
+
+- `.bfg--main-center`
+- `.bfg--main-end`
+- `.bfg--main-between`
+- `.bfg--main-around`
+
+*Cross axis alignment:*
+
+- `.bfg--cross-start`
+- `.bfg--cross-center`
+- `.bfg--cross-end`
+
+*Order:*
+
+- `.bfg--reverse`, `.bfg--xl-reverse`, `.bfg--lg-reverse`, `.bfg--sm-reverse`, `.bfg--xs-reverse`
+
+*Box overflow:*
+
+- `.bfg--box-overflow-visible`
+- `.bfg--box-overflow-hidden`
+
+*Content overflow:*
+
+- `.bfg--content-overflow-visible`
+- `.bfg--content-overflow-hidden`
+
+*Disabled:*
+
+- `.bfg--disabled`, `.bfg--xl-disabled`, `.bfg--lg-disabled`, `.bfg--sm-disabled`, `.bfg--xs-disabled`
+- `.bfg--disabled-all`, `.bfg--xl-disabled-all`, `.bfg--lg-disabled-all`, `.bfg--sm-disabled-all`, `.bfg--xs-disabled-all`
+
+#### `.bfg__box` element
+
+*Size:*
+
+- `.bfg__box--1`, `.bfg__box--xl-1`, `.bfg__box--lg-1`, `.bfg__box--sm-1`, `.bfg__box--xs-1`
+- `.bfg__box--2`, `.bfg__box--xl-2`, `.bfg__box--lg-2`, `.bfg__box--sm-2`, `.bfg__box--xs-2`
+- `.bfg__box--3`, `.bfg__box--xl-3`, `.bfg__box--lg-3`, `.bfg__box--sm-3`, `.bfg__box--xs-3`
+- ...
+- `.bfg__box--11`, `.bfg__box--xl-11`, `.bfg__box--lg-11`, `.bfg__box--sm-11`, `.bfg__box--xs-11`
+- `.bfg__box--12`, `.bfg__box--xl-12`, `.bfg__box--lg-12`, `.bfg__box--sm-12`, `.bfg__box--xs-12`
+
+*Fit:*
+
+- `.bfg__box--fit`
+
+*Order:*
+
+- `.bfg__box--first`, `.bfg__box--xl-first`, `.bfg__box--lg-first`, `.bfg__box--sm-first`, `.bfg__box--xs-first`
+- `.bfg__box--last`, `.bfg__box--xl-last`, `.bfg__box--lg-last`, `.bfg__box--sm-last`, `.bfg__box--xs-last`
+- `.bfg__box--in-place`, `.bfg__box--xl-in-place`, `.bfg__box--lg-in-place`, `.bfg__box--sm-in-place`, `.bfg__box--xs-in-place`
+
+*Overflow:*
+
+- `.bfg__box--overflow-visible`
+- `.bfg__box--overflow-hidden`
+
+*Padding:*
+
+- `.bfg__box--nopad`
+
+*Theme:*
+
+- `.bfg__box--primary`
+- ...
+
+#### `.bfg__content` element
+
+*Overflow:*
+
+- `.bfg__content--overflow-visible`
+- `.bfg__content--overflow-hidden`
+
+*Padding:*
+
+- `.bfg__content--nopad`
 
 ### Contribute
 
