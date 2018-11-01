@@ -185,8 +185,8 @@ h2.docs-header__subtitle {
 
 .demo-toolbox__action--open-link {
   position: absolute;
-  top: -0.8rem;
-  left: -0.8rem;
+  top: -1rem;
+  left: -1rem;
   z-index: 9; }
 
 /* ===== Footer ===== */
