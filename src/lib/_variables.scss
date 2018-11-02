@@ -9,11 +9,13 @@ $bfg-breakpoints: (
 
 $bfg-gap: 1rem !default;
 
+$bfg-margin: 1.5rem !default;
+
 $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-primary: (
+$bfg-card-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -27,4 +29,4 @@ $bfg-theme-primary: (
   content-forground: false
 ) !default;
 
-$bfg-theme-primary-included: true !default;
+$bfg-card-primary-included: true !default;

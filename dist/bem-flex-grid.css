@@ -381,6 +381,12 @@
     width: auto;
     height: auto; } }
 
+.bfg-card {
+  margin: 1.5rem 0; }
+
+.bfg.bfg-card, .bfg .bfg-card {
+  margin: 0; }
+
 .bfg-card__action,
 .bfg-card__header {
   padding: 0 0.5rem;

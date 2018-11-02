@@ -1,17 +1,17 @@
 // ===== Import grid system =====
 
-$bfg-theme-primary-included: false;
+$bfg-card-primary-included: false;
 
 @import "../lib/bem-flex-grid.ie11";
 
 // ===== Add customized themes =====
 
 .demo-layout__output--light {
-  @include bfg-theme(primary, ());
+  @include bfg-card(primary, ());
 }
 
 .demo-layout__output--dark {
-  @include bfg-theme(primary, (
+  @include bfg-card(primary, (
     header-border: #333,
     header-background: #222,
 

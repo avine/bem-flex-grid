@@ -552,7 +552,7 @@ Add "primary" look and feel to the box's content, header and actions using `.bfg
 ...
 ```
 
-> See below the Sass mixin `bfg-theme` to create your own themes.
+> See below the Sass mixin `bfg-card` to create your own card themes.
 
 ### `.bfg-card__content` modifiers
 
@@ -656,11 +656,13 @@ $bfg-breakpoints: (
 
 $bfg-gap: 1rem !default;
 
+$bfg-margin: 1.5rem !default;
+
 $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-primary: (
+$bfg-card-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -674,7 +676,7 @@ $bfg-theme-primary: (
   content-forground: false
 ) !default;
 
-$bfg-theme-primary-included: true !default;
+$bfg-card-primary-included: true !default;
 ```
 
 *Example:*
@@ -690,10 +692,10 @@ $bfg-gap: 2rem;
 
 #### Mixin
 
-The `bfg-theme` mixin allows you to customize the look and feel of the box's content, header and actions.
+The `bfg-card` mixin allows you to customize the look and feel of the box's content, header and actions.
 
 ```scss
-@mixin bfg-theme($name, $settings) { ... }
+@mixin bfg-card($name, $settings) { ... }
 ```
 
 *Example:*
@@ -704,7 +706,7 @@ To add a theme named `info`, create a file `custo-bfg.scss` with the following c
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
 
 // Add new theme
-@include bfg-theme(info, (
+@include bfg-card(info, (
   border-radius: 0,
   border-width: 3px,
 

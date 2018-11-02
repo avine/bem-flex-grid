@@ -15,9 +15,9 @@
 
   <link rel="stylesheet" href="/bem-flex-grid/build.983fc8fd.css">
 
-  <link rel="stylesheet" href="/bem-flex-grid/demo.6cbc8f8b.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.78aef71b.css">
   <link rel="stylesheet" href="/bem-flex-grid/docs.8027ab33.css">
-  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.e6fd4474.css">
+  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.0334484e.css">
 </head>
 <body>
   <div class="docs-navbar docs-navbar--back">
@@ -440,7 +440,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 ...
 </code></pre>
 <blockquote>
-<p>See below the Sass mixin <code>bfg-theme</code> to create your own themes.</p>
+<p>See below the Sass mixin <code>bfg-card</code> to create your own card themes.</p>
 </blockquote>
 <h3><code>.bfg-card__content</code> modifiers</h3>
 <h4>Overflow: <code>.bfg-card__content--overflow-[T]</code></h4>
@@ -520,11 +520,13 @@ $bfg-breakpoints: (
 
 $bfg-gap: 1rem !default;
 
+$bfg-margin: 1.5rem !default;
+
 $bfg-padding: 0.5rem !default;
 
 $bfg-header-height: 2rem !default;
 
-$bfg-theme-primary: (
+$bfg-card-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
   border-radius: 3px,
   border-width: 1px,
@@ -538,7 +540,7 @@ $bfg-theme-primary: (
   content-forground: false
 ) !default;
 
-$bfg-theme-primary-included: true !default;
+$bfg-card-primary-included: true !default;
 </code></pre>
 <p><em>Example:</em></p>
 <p>To change the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
@@ -548,15 +550,15 @@ $bfg-gap: 2rem;
 @import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
 </code></pre>
 <h4>Mixin</h4>
-<p>The <code>bfg-theme</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
-<pre><code class="language-scss">@mixin bfg-theme($name, $settings) { ... }
+<p>The <code>bfg-card</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
+<pre><code class="language-scss">@mixin bfg-card($name, $settings) { ... }
 </code></pre>
 <p><em>Example:</em></p>
 <p>To add a theme named <code>info</code>, create a file <code>custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
 
 // Add new theme
-@include bfg-theme(info, (
+@include bfg-card(info, (
   border-radius: 0,
   border-width: 3px,
 
