@@ -1993,4 +1993,4 @@ window['Demo'] = {
   viewCode: view_code_1.viewCode
 };
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.a9b9f221.map
+//# sourceMappingURL=/bem-flex-grid/script.c4c25916.map

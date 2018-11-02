@@ -10,9 +10,12 @@
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
   <link rel="stylesheet" href="/bem-flex-grid/demo.6cbc8f8b.css">
-  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.e6fd4474.css">
+  <link rel="stylesheet" href="/bem-flex-grid/15.64bd89bd.css">
 
   <script src="/bem-flex-grid/script.c4c25916.js"></script>
+
+  <style>pre.demo-layout__output--light { background:#f5f5f5; }
+    pre.demo-layout__output--dark { background:#111; color:#eee; }</style>
 </head>
 <body>
   <div class="demo-layout__desc">
@@ -25,18 +28,33 @@
     </div>
   </div>
 
-  <pre class="demo-layout__output">
+  <pre class="demo-layout__output demo-layout__output--dark">
     <div class="demo-layout__playground">
+      <div style="padding: 1rem;">
 
-      <div class="bfg bfg--row">
-        <div class="bfg__box"></div>
+        <div class="bfg-card bfg-card--primary">
+          <a href="#" class="bfg-card__action">Action 2</a>
+          <a href="#" class="bfg-card__action">Action 1</a>
+
+          <div class="bfg-card__header">Header</div>
+
+          <div class="bfg-card__content">Content</div>
+        </div>
+
+        <p><a href="#" onclick="switchTheme(event)">Switch theme</a></p>
       </div>
-
     </div>
   </pre>
 
+
+  <script>function switchTheme(event) {
+  event.preventDefault();
+  var target = document.querySelector('.demo-layout__output').classList;
+  target.toggle('demo-layout__output--dark');
+  target.toggle('demo-layout__output--light');
+}</script>
+
   <script>Demo.viewCode();
-Demo.fillGrid();
-Demo.enableActions();</script>
+Demo.enableActions('fullWidth');</script>
 </body>
 </html>

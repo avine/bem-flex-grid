@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism.css">
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/demo.scss">
+  <link rel="stylesheet" href="15.scss">
+
+  <script src="../script.ts"></script>
+
+  <style>
+    pre.demo-layout__output--light { background:#f5f5f5; }
+    pre.demo-layout__output--dark { background:#111; color:#eee; }
+  </style>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>Basics</h1>
+      <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
+      <p>It is required to define the direction the <code>.bfg__box</code> elements are placed in the <code>.bfg</code> block, using <code>.bfg--row</code> or <code>.bfg--col</code> modifiers.</p>
+
+    </div>
+  </div>
+
+  <pre class="demo-layout__output demo-layout__output--dark">
+    <div class="demo-layout__playground">
+      <div style="padding: 1rem;">
+
+        <div class="bfg-card bfg-card--primary">
+          <a href="#" class="bfg-card__action">Action 2</a>
+          <a href="#" class="bfg-card__action">Action 1</a>
+
+          <div class="bfg-card__header">Header</div>
+
+          <div class="bfg-card__content">Content</div>
+        </div>
+
+        <p><a href="#" onclick="switchTheme(event)">Switch theme</a></p>
+      </div>
+    </div>
+  </pre>
+
+
+  <script>
+    function switchTheme(event) {
+      event.preventDefault();
+      const target = document.querySelector('.demo-layout__output').classList;
+      target.toggle('demo-layout__output--dark');
+      target.toggle('demo-layout__output--light');
+    }
+  </script>
+
+  <script>Demo.viewCode(); Demo.enableActions('fullWidth');</script>
+</body>
+</html>

@@ -62,6 +62,10 @@
   box-sizing: border-box;
 }
 
+.bfg__box--fit {
+  flex: 0 0 auto;
+}
+
 .bfg--box-overflow-visible .bfg__box,
 .bfg__box--overflow-visible {
   overflow: visible;
@@ -75,10 +79,6 @@
 @if $ie11-support {
   .bfg--row > .bfg__box { max-width: 100%; }
   .bfg--col > .bfg__box { max-height: 100%; }
-}
-
-.bfg__box--fit {
-  flex: 0 0 auto;
 }
 
 @mixin bfg-boxes($size: '') {
