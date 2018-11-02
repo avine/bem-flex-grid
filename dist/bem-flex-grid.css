@@ -418,17 +418,17 @@
 .bfg-card__header + .bfg-card__content {
   height: calc(100% - 2rem); }
 
-.bfg .bfg__box .bfg-card__action,
-.bfg .bfg__box .bfg-card__header {
+.bfg-card .bfg-card__action,
+.bfg-card .bfg-card__header {
   line-height: 2rem; }
 
-.bfg .bfg__box .bfg-card__action + .bfg-card__action,
-.bfg .bfg__box .bfg-card__action + .bfg-card__header {
+.bfg-card .bfg-card__action + .bfg-card__action,
+.bfg-card .bfg-card__action + .bfg-card__header {
   box-shadow: none;
   border-top-right-radius: 0;
   border-right-width: 0; }
 
-.bfg .bfg__box .bfg-card__header + .bfg-card__content {
+.bfg-card .bfg-card__header + .bfg-card__content {
   border-top: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0; }

@@ -87,8 +87,8 @@ npm i bem-flex-grid
    └─ lib
       ├─ _variables.scss
       ├─ _mixins.scss
-      ├─ _content.scss
       ├─ _core.scss
+      ├─ _card.scss
       ├─ bem-flex-grid.scss
       └─ bem-flex-grid.ie11.scss
 ```
