@@ -30,7 +30,7 @@
     </div>
   </div>
 
-  <pre class="demo-layout__output demo-layout__output--dark">
+  <pre class="demo-layout__output demo-layout__output--light">
     <div class="demo-layout__playground">
       <div style="padding: 1rem;">
 
@@ -48,18 +48,22 @@
           <div class="bfg-card__content">Content</div>
         </div>
 
-        <p><a href="#" onclick="switchTheme(event)">Switch theme</a></p>
       </div>
     </div>
   </pre>
 
+  <a href="#"
+    id="switch-theme"
+    class="demo-toolbox__action"
+    data-text="Light"
+    data-text-active="Dark">Light</a>
+
   <script>
-    function switchTheme(event) {
-      event.preventDefault();
+    Demo.handleAction(document.querySelector('#switch-theme'), (isActive) => {
       const target = document.querySelector('.demo-layout__output').classList;
       target.toggle('demo-layout__output--dark');
       target.toggle('demo-layout__output--light');
-    }
+    });
   </script>
 
   <script>Demo.viewCode(); Demo.enableActions('fullWidth');</script>

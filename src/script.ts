@@ -1,5 +1,5 @@
 import { chart } from './scripts/chart';
-import { enableActions } from './scripts/enable-actions';
+import { enableActions, handleAction } from './scripts/enable-actions';
 import { fillGrid } from './scripts/fill-grid';
 import { showcase } from './scripts/showcase';
 import { viewCode } from './scripts/view-code';
@@ -10,6 +10,7 @@ window['Demo'] = {
   chart,
   enableActions,
   fillGrid,
+  handleAction,
   showcase,
   viewCode,
 };

@@ -15,12 +15,12 @@ const getAnchor = (popOver: string, bemModifier: string, text = '', textActive =
   return anchor;
 };
 
-const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boolean) => void) => {
+export const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boolean) => void) => {
   anchor.addEventListener('click', (event) => {
     event.preventDefault();
     anchor.classList.toggle('demo-toolbox__action--active');
     const isActive = anchor.classList.contains('demo-toolbox__action--active');
-    anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text;
+    anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text; // FIXME...
     callback(isActive);
   });
   container.appendChild(anchor);
