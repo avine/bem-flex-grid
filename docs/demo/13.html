@@ -10,9 +10,9 @@
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
   <link rel="stylesheet" href="/bem-flex-grid/demo.78aef71b.css">
-  <link rel="stylesheet" href="/bem-flex-grid/13.49330d5f.css">
+  <link rel="stylesheet" href="/bem-flex-grid/13.af43885a.css">
 
-  <script src="/bem-flex-grid/script.c4c25916.js"></script>
+  <script src="/bem-flex-grid/script.7b106b69.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
@@ -28,10 +28,14 @@
     <div class="demo-layout__playground">
 
       <div class="bfg bfg--col bfg--gap bfg-card bfg-card--primary">
-        <div class="bfg__box bfg__box--3 bfg-card--error">
-          <!-- content with header -->
-          <header class="bfg-card__header">Header</header>
-          <div class="bfg-card__content"></div>
+        <div class="bfg__box bfg__box--3">
+
+          <!-- nested card with content and header -->
+          <div class="bfg-card bfg-card--error">
+            <header class="bfg-card__header">Header</header>
+            <div class="bfg-card__content"></div>
+          </div>
+
         </div>
 
         <div class="bfg__box bfg__box--6 bfg bfg--row">

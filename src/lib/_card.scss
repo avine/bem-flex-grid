@@ -8,6 +8,10 @@
   }
 }
 
+.bfg__box > .bfg-card {
+  height: 100%;
+}
+
 .bfg-card__action,
 .bfg-card__header {
   padding: 0 $bfg-padding;
@@ -30,7 +34,6 @@
   box-sizing: border-box;
   position: relative;
   overflow: auto;
-  width: 100%;
   height: 100%;
 }
 

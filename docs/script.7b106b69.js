@@ -772,12 +772,13 @@ var getAnchor = function getAnchor(popOver, bemModifier, text, textActive) {
   return anchor;
 };
 
-var handleAction = function handleAction(anchor, callback) {
+exports.handleAction = function (anchor, callback) {
   anchor.addEventListener('click', function (event) {
     event.preventDefault();
     anchor.classList.toggle('demo-toolbox__action--active');
     var isActive = anchor.classList.contains('demo-toolbox__action--active');
-    anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text;
+    anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text; // FIXME...
+
     callback(isActive);
   });
   container.appendChild(anchor);
@@ -807,7 +808,7 @@ var FULL_WIDTH_SWITCHER_DURATION = 300;
 
 var fullWidthSwitcher = function fullWidthSwitcher() {
   var target = document.querySelector('.demo-layout__output');
-  handleAction(getAnchor('Toggle full screen', 'full-screen'), function () {
+  exports.handleAction(getAnchor('Toggle full screen', 'full-screen'), function () {
     target.classList.toggle('demo-layout__output--full'); // Finally redraw Charts if any.
 
     triggerResize(FULL_WIDTH_SWITCHER_DURATION);
@@ -816,7 +817,7 @@ var fullWidthSwitcher = function fullWidthSwitcher() {
 
 var autoHeightSwitcher = function autoHeightSwitcher() {
   var target = document.querySelector('.demo-layout__playground');
-  handleAction(getAnchor('Toggle auto height', 'auto-height'), function () {
+  exports.handleAction(getAnchor('Toggle auto height', 'auto-height'), function () {
     target.classList.toggle('demo-layout__playground--auto'); // Finally redraw Charts if any.
 
     triggerResize();
@@ -826,7 +827,7 @@ var autoHeightSwitcher = function autoHeightSwitcher() {
 var directionSwitcher = function directionSwitcher() {
   var grids = document.querySelectorAll('.bfg--row, .bfg--col');
   var code = document.querySelector('.demo-layout__code > code');
-  handleAction(getAnchor('Switch direction', 'direction'), function () {
+  exports.handleAction(getAnchor('Switch direction', 'direction'), function () {
     // Update output
     util_1.forEach(grids, function (grid) {
       var action = grid.classList.contains('bfg--row') ? {
@@ -1989,8 +1990,9 @@ window['Demo'] = {
   chart: chart_1.chart,
   enableActions: enable_actions_1.enableActions,
   fillGrid: fill_grid_1.fillGrid,
+  handleAction: enable_actions_1.handleAction,
   showcase: showcase_1.showcase,
   viewCode: view_code_1.viewCode
 };
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.c4c25916.map
+//# sourceMappingURL=/bem-flex-grid/script.7b106b69.map

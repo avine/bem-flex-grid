@@ -662,10 +662,13 @@
     height: auto; } }
 
 .bfg-card {
-  margin: 1.5rem 0; }
+  margin: 1rem 0; }
 
 .bfg.bfg-card, .bfg .bfg-card {
   margin: 0; }
+
+.bfg__box > .bfg-card {
+  height: 100%; }
 
 .bfg-card__action,
 .bfg-card__header {
@@ -687,7 +690,6 @@
   box-sizing: border-box;
   position: relative;
   overflow: auto;
-  width: 100%;
   height: 100%; }
 
 .bfg-card__content--nopad {
