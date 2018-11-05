@@ -92,7 +92,15 @@ const directionSwitcher = () => {
   );
 };
 
-export type IActionType = 'all' | 'fullWidth' | 'autoHeight' | 'direction';
+const gridGapSwitcher = () => {
+  const target = document.querySelector('.demo-layout__playground > .bfg');
+  handleAction(
+    getAnchor('Toggle grid gap', 'full-screen'), // TODO: change icon...
+    () => target.classList.toggle('bfg--gap'),
+  );
+};
+
+export type IActionType = 'all' | 'fullWidth' | 'autoHeight' | 'direction' | 'gridGap';
 
 export const actionEnabled = (actions: IActionType[], action) => {
   return actions.indexOf('all') !== -1 || actions.indexOf(action) !== -1;
@@ -102,6 +110,7 @@ export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
   if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
   if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
+  if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); }
 
   document.body.appendChild(container);
 };
