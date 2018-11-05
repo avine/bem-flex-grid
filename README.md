@@ -667,6 +667,7 @@ $bfg-card-primary: (
   border-radius: 3px,
   border-width: 1px,
 
+  header-borderless: false,
   header-border: #d5d5d5,
   header-background: #f6f6f6,
   header-forground: false,

@@ -18,6 +18,7 @@
     .bfg-card__header {
       box-shadow: map-get($s, box-shadow);
       border: map-get($s, border-width) solid map-get($s, header-border);
+      @if map-get($s, header-borderless) { border-bottom-width: 0; }
       background-color: map-get($s, header-background);
       @if map-get($s, header-forground) { color: map-get($s, header-forground); }
       line-height: calc(#{$bfg-header-height} - #{2 * map-get($s, border-width)});
