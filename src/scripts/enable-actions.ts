@@ -95,7 +95,7 @@ const directionSwitcher = () => {
 const gridGapSwitcher = () => {
   const target = document.querySelector('.demo-layout__playground > .bfg');
   handleAction(
-    getAnchor('Toggle grid gap', 'full-screen'), // TODO: change icon...
+    getAnchor('Toggle grid gap', 'grid-gap'),
     () => target.classList.toggle('bfg--gap'),
   );
 };
