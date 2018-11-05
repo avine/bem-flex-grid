@@ -8,7 +8,7 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 ## Quick start
 
-Get instant access by inserting the link tag into your web pages from CDN.
+Get instant access by inserting the link tag into your web pages from the CDN.
 
 ### Link tag
 
@@ -107,18 +107,14 @@ At core the grid system consists of one `.bfg` block and one or more `.bfg__box`
 </div>
 ```
 
-There is no restriction on what content you put in the boxes,
-but you can use the `.bfg-card` block to structure your grid with cards.
+There is no restriction on the `.bfg__box` element's content, but you can use the `.bfg-card` block to fill it with a card
+(in this case, only one card is allowed per box).
 
 A card requires a `.bfg-card__content` element.
-Then you can add an header to the content using the optional `.bfg-card__header` element.
-Then you can add one or more actions to the header using the optional `.bfg-card__action` element.
-
-By default, the card's elements do not have any look and feel.
-For example, add the `.bfg-card--primary` modifier to style your card with the "primary" theme.
+Then you can add an header to the content using the optional `.bfg-card__header` element and one or more actions to the header using the optional `.bfg-card__action` element.
 
 ```html
-<div class="bfg-card bfg-card--primary">
+<div class="bfg-card">
   <div class="bfg-card__action"></div>
   <div class="bfg-card__action"></div>
   ...
@@ -127,33 +123,29 @@ For example, add the `.bfg-card--primary` modifier to style your card with the "
 </div>
 ```
 
-You can mix the `.bfg-card` block at the `.bfg__box` element level to use a different look and feel for each box.
+You can insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nested technique).
 
 ```html
 <div class="bfg">
-  <div class="bfg__box bfg-card bfg-card--primary">
-    <div class="bfg-card__content"></div>
+  <div class="bfg__box">
+    <div class="bfg-card">
+      <div class="bfg-card__content"></div>
+    </div>
   </div>
-  <div class="bfg__box bfg-card bfg-card--secondary">
-    <div class="bfg-card__content"></div>
-  </div>
-  ...
 </div>
 ```
 
-Or you can mix the `.bfg-card` block at the `.bfg` block level to use the same look and feel for all boxes.
+But you can also use the selector `.bfg__box.bfg-card` to treat a `.bfg__box` *element* as a `.bfg-card` *block* too (chained technique).
 
 ```html
-<div class="bfg bfg-card bfg-card--primary">
-  <div class="bfg__box">
+<div class="bfg">
+  <div class="bfg__box bfg-card">
     <div class="bfg-card__content"></div>
   </div>
-  <div class="bfg__box">
-    <div class="bfg-card__content"></div>
-  </div>
-  ...
 </div>
 ```
+
+> The `.bfg-card` block can also be used as a standalone component, outside of the `.bfg` block.
 
 ### `.bfg` modifiers
 
@@ -403,6 +395,8 @@ Here's an example of disabling the grid system for the current `.bfg` block only
 
 Define the `.bfg__box` element size using `.bfg__box--1`,  `.bfg__box--2`, ...,  `.bfg__box--11`,  `.bfg__box--12` modifiers.
 
+The total size available for each line is 12.
+
 ```html
 ...
   <div class="bfg__box bfg__box--1"></div>
@@ -536,7 +530,9 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 </div>
 ```
 
-#### Theme: `.bfg__box--[T]`
+### `.bfg-card` modifiers
+
+#### Theme: `.bfg-card--[T]`
 
 **[T]** Theme: `primary` or any string.
 
@@ -544,7 +540,7 @@ Add "primary" look and feel to the box's content, header and actions using `.bfg
 
 ```html
 ...
-  <div class="bfg__box bfg-card--primary">
+  <div class="bfg-card bfg-card--primary">
     <div class="bfg-card__action"></div>
     <div class="bfg-card__header"></div>
     <div class="bfg-card__content"></div>
@@ -720,13 +716,13 @@ To add a theme named `info`, create a file `custo-bfg.scss` with the following c
 ));
 ```
 
-> Notice that omitted map keys (`box-shadow` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
+> Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
 
 Now, you can use your new theme named `info`:
 
 ```html
 ...
-  <div class="bfg__box bfg-card--info">
+  <div class="bfg-card bfg-card--info">
     <div class="bfg-card__action"></div>
     <div class="bfg-card__header"></div>
     <div class="bfg-card__content"></div>
@@ -823,6 +819,8 @@ Now, you can use your new theme named `info`:
 *Padding:*
 
 - `.bfg__box--nopad`
+
+#### `.bfg-card` block
 
 *Theme:*
 

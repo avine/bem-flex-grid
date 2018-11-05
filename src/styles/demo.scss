@@ -13,6 +13,10 @@ html,
   font-family: map-get($demo-fonts, text), sans-serif;
   font-size: 16px;
   line-height: 1.5em;
+
+  code {
+    padding: 0.15em 0.3em; // Reduce the "primer-markdown" padding originally `0.2em 04em`.
+  }
 }
 
 body {
@@ -74,7 +78,7 @@ main {
   }
 
   code {
-    padding: 0.2em 0.4em; // From "primer-markdown"
+    padding: 0.15em 0.3em;
     border-radius: 3px; // From "primer-markdown"
     background-color: rgba(27,31,35,0.05); // From "primer-markdown"
   }
