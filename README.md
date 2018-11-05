@@ -8,7 +8,7 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 ## Quick start
 
-Get instant access by inserting the link tag into your web pages from the CDN.
+Get instant access by inserting the link tag into your web pages from *unpkg* CDN.
 
 ### Link tag
 
@@ -55,7 +55,7 @@ Here's a simple grid in the vertical direction (column) that fits to the window.
 
 ## Installation and usage
 
-Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import.
+Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import for more customization.
 
 *NPM:*
 
@@ -101,8 +101,8 @@ At core the grid system consists of one `.bfg` block and one or more `.bfg__box`
 
 ```html
 <div class="bfg">
-  <div class="bfg__box"></div>
-  <div class="bfg__box"></div>
+  <div class="bfg__box">...</div>
+  <div class="bfg__box">...</div>
   ...
 </div>
 ```
@@ -115,15 +115,15 @@ Then you can add an header to the content using the optional `.bfg-card__header`
 
 ```html
 <div class="bfg-card">
-  <div class="bfg-card__action"></div>
-  <div class="bfg-card__action"></div>
+  <div class="bfg-card__action">...</div>
+  <div class="bfg-card__action">...</div>
   ...
-  <div class="bfg-card__header"></div>
-  <div class="bfg-card__content"></div>
+  <div class="bfg-card__header">...</div>
+  <div class="bfg-card__content">...</div>
 </div>
 ```
 
-You can insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nested technique).
+Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting technique)...
 
 ```html
 <div class="bfg">
@@ -135,7 +135,7 @@ You can insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (
 </div>
 ```
 
-But you can also use the selector `.bfg__box.bfg-card` to treat a `.bfg__box` *element* as a `.bfg-card` *block* too (chained technique).
+...or use the selector `.bfg__box.bfg-card` to treat a `.bfg__box` *element* as a `.bfg-card` *block* too (chaining technique).
 
 ```html
 <div class="bfg">
@@ -337,7 +337,7 @@ By default, `.bfg__box` and `.bfg-card__content` elements use the `overflow: aut
 
 Use `.bfg--box-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg__box` elements.
 
-Use `.bfg--box-overflow-hidden` modifier on `.bfg` block to apply the `overflow: hidden;` rule instead on all `.bfg__box` elements.
+In the same way, use `.bfg--box-overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 <div class="bfg bfg--box-overflow-visible">...</div>
@@ -346,7 +346,7 @@ Use `.bfg--box-overflow-hidden` modifier on `.bfg` block to apply the `overflow:
 
 Use `.bfg--card-content-overflow-visible` modifier on `.bfg` block to apply the `overflow: visible;` rule instead on all `.bfg-card__content` elements.
 
-Use `.bfg--card-content-overflow-hidden` modifier on `.bfg` block to apply the `overflow: hidden;` rule instead on all `.bfg-card__content` elements.
+In the same way, use `.bfg--card-content-overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 <div class="bfg bfg--card-content-overflow-visible">...</div>

@@ -58,7 +58,7 @@
 <p><em>A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.</em></p>
 <p><a href="https://travis-ci.org/avine/bem-flex-grid"><img src="https://travis-ci.org/avine/bem-flex-grid.svg?branch=master" alt="Build Status"></a></p>
 <h2>Quick start</h2>
-<p>Get instant access by inserting the link tag into your web pages from the CDN.</p>
+<p>Get instant access by inserting the link tag into your web pages from <em>unpkg</em> CDN.</p>
 <h3>Link tag</h3>
 <p><em>For Evergreen browser:</em></p>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css&quot;&gt;
@@ -93,7 +93,7 @@
 <p>To learn more about the features, check out the <a href="https://avine.github.io/bem-flex-grid/demo.html">demos</a>.</p>
 </blockquote>
 <h2>Installation and usage</h2>
-<p>Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import.</p>
+<p>Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import for more customization.</p>
 <p><em>NPM:</em></p>
 <pre><code class="language-bash">npm i bem-flex-grid
 </code></pre>
@@ -122,8 +122,8 @@
 <h3>Grid blocks and elements</h3>
 <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;...&lt;/div&gt;
   ...
 &lt;/div&gt;
 </code></pre>
@@ -132,14 +132,14 @@
 <p>A card requires a <code>.bfg-card__content</code> element.
 Then you can add an header to the content using the optional <code>.bfg-card__header</code> element and one or more actions to the header using the optional <code>.bfg-card__action</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg-card&quot;&gt;
-  &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
   ...
-  &lt;div class=&quot;bfg-card__header&quot;&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__header&quot;&gt;...&lt;/div&gt;
+  &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>You can insert the <code>.bfg-card</code> <em>block</em> as a child of the <code>.bfg__box</code> <em>element</em> (nested technique).</p>
+<p>Insert the <code>.bfg-card</code> <em>block</em> as a child of the <code>.bfg__box</code> <em>element</em> (nesting technique)...</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg-card&quot;&gt;
@@ -148,7 +148,7 @@ Then you can add an header to the content using the optional <code>.bfg-card__he
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>But you can also use the selector <code>.bfg__box.bfg-card</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg-card</code> <em>block</em> too (chained technique).</p>
+<p>...or use the selector <code>.bfg__box.bfg-card</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg-card</code> <em>block</em> too (chaining technique).</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box bfg-card&quot;&gt;
     &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;/div&gt;
@@ -282,12 +282,12 @@ Then you can choose the distribution mode of the remaining space.</p>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__box</code> and <code>.bfg-card__content</code> elements use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg--box-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg__box</code> elements.</p>
-<p>Use <code>.bfg--box-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg__box</code> elements.</p>
+<p>In the same way, use <code>.bfg--box-overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--box-overflow-visible&quot;&gt;...&lt;/div&gt;
 &lt;div class=&quot;bfg bfg--box-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <p>Use <code>.bfg--card-content-overflow-visible</code> modifier on <code>.bfg</code> block to apply the <code>overflow: visible;</code> rule instead on all <code>.bfg-card__content</code> elements.</p>
-<p>Use <code>.bfg--card-content-overflow-hidden</code> modifier on <code>.bfg</code> block to apply the <code>overflow: hidden;</code> rule instead on all <code>.bfg-card__content</code> elements.</p>
+<p>In the same way, use <code>.bfg--card-content-overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--card-content-overflow-visible&quot;&gt;...&lt;/div&gt;
 &lt;div class=&quot;bfg bfg--card-content-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
