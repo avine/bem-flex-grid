@@ -18,40 +18,27 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Box size in percent</h1>
-      <p>Define the <code>.bfg__box</code> element size using <code>.bfg__box--1</code>, <code>.bfg__box--2</code>, ..., <code>.bfg__box--11</code>, <code>.bfg__box--12</code> modifiers.</p>
-      <p>In this demo we also add <code>.bfg-card--primary</code> modifier to fill the <code>.bfg-card__content</code> element.</p>
+      <h1>Box fit</h1>
+      <p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
+      <p>To see it in action, resize the window.</p>
+      <p>Additionally, you can fix the size in pixels by giving the box the expected <code>width</code> for grid in row direction and <code>height</code> for grid in column direction.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output demo-layout__output--gray">
+  <pre class="demo-layout__output">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--row bfg--gap bfg--wrap">
-        <div class="bfg__box bfg__box--12 bfg-card--primary"><div class="bfg-card__content"></div></div>
-
-        <div class="bfg__box bfg__box--11 bfg-card--primary"><div class="bfg-card__content"></div></div>
-        <div class="bfg__box bfg__box--1 bfg-card--primary"><div class="bfg-card__content"></div></div>
-
-        <div class="bfg__box bfg__box--10 bfg-card--primary"><div class="bfg-card__content"></div></div>
-        <div class="bfg__box bfg__box--2 bfg-card--primary"><div class="bfg-card__content"></div></div>
-
-        <div class="bfg__box bfg__box--9 bfg-card--primary"><div class="bfg-card__content"></div></div>
-        <div class="bfg__box bfg__box--3 bfg-card--primary"><div class="bfg-card__content"></div></div>
-
-        <div class="bfg__box bfg__box--8 bfg-card--primary"><div class="bfg-card__content"></div></div>
-        <div class="bfg__box bfg__box--4 bfg-card--primary"><div class="bfg-card__content"></div></div>
-
-        <div class="bfg__box bfg__box--7 bfg-card--primary"><div class="bfg-card__content"></div></div>
-        <div class="bfg__box bfg__box--5 bfg-card--primary"><div class="bfg-card__content"></div></div>
-
-        <div class="bfg__box bfg__box--6 bfg-card--primary"><div class="bfg-card__content"></div></div>
-        <div class="bfg__box bfg__box--6 bfg-card--primary"><div class="bfg-card__content"></div></div>
+      <div class="bfg bfg--row">
+        <div class="bfg__box bfg__box--fit">
+          <b>Box fit!</b>
+        </div>
+        <div class="bfg__box bfg__box--4"></div>
+        <div class="bfg__box bfg__box--8"></div>
       </div>
 
     </div>
   </pre>
 
-  <script>Demo.viewCode(); Demo.enableActions();</script>
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>
 </html>

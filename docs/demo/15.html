@@ -56,7 +56,11 @@
     </div>
   </pre>
 
-  <a href="#" id="switch-theme" class="demo-toolbox__action" data-text="Light" data-text-active="Dark">Light</a>
+  <a href="#"
+    id="switch-theme"
+    class="demo-toolbox__action demo-toolbox__action--full-screen"
+    data-text="Light"
+    data-text-active="Dark">Light</a>
 
   <script>Demo.handleAction(document.querySelector('#switch-theme'), function (isActive) {
   var target = document.querySelector('.demo-layout__output').classList;

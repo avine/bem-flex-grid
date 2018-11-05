@@ -1,4 +1,5 @@
 import { forEach } from './util';
+import { handleSourceCode } from './view-code';
 
 /* ===== Helpers ===== */
 
@@ -81,22 +82,35 @@ const directionSwitcher = () => {
         grid.classList.remove(action.remove);
         grid.classList.add(action.add);
       });
-      // Update source code
+
+      // Update source code (right from the generated "PrismJs" markup)
       code.innerHTML = code.innerHTML
         .replace(/bfg--row/g, 'bfg-TMP-col')
         .replace(/bfg--col/g, 'bfg--row')
         .replace(/bfg-TMP-col/g, 'bfg--col');
-      // Finally redraw Charts if any.
+
+        // Finally redraw Charts if any.
       triggerResize();
     },
   );
 };
 
 const gridGapSwitcher = () => {
-  const target = document.querySelector('.demo-layout__playground > .bfg');
+  const target = document.querySelector('.demo-layout__playground > .bfg'); // Find the first (main) grid
+  const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
   handleAction(
     getAnchor('Toggle grid gap', 'grid-gap'),
-    () => target.classList.toggle('bfg--gap'),
+    () => {
+      // Update output
+      target.classList.toggle('bfg--gap');
+
+      // Update source code (from original source code)
+      const handler = handleSourceCode(code);
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = handler.sourceCode;
+      wrapper.querySelector('.bfg').classList.toggle('bfg--gap'); // Find the first (main) grid
+      handler.update(wrapper.innerHTML);
+    },
   );
 };
 

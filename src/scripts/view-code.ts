@@ -10,7 +10,8 @@ export const viewCode = () => {
   wrapper.innerHTML = '<pre class="demo-layout__code"><code></code></pre>';
 
   const code = wrapper.querySelector('code');
-  code.innerHTML = highlight(formatCode(source.innerHTML), languages.html, languages.html);
+  code.dataset.sourceCode = formatCode(source.innerHTML); // Store the initial source code for further modifification...
+  code.innerHTML = highlight(code.dataset.sourceCode, languages.html, languages.html);
 
   let desc = document.querySelector('.demo-layout__desc');
   if (!desc) {
@@ -21,8 +22,20 @@ export const viewCode = () => {
   desc.appendChild(wrapper.firstChild);
 };
 
+export const handleSourceCode = (code: HTMLElement) => {
+  return {
+    sourceCode: code.dataset.sourceCode,
+    update: (sourceCode: string) => updateCode(code, sourceCode),
+  };
+};
+
+export const updateCode = (code: HTMLElement, sourceCode: string) => {
+  code.dataset.sourceCode = formatCode(sourceCode);
+  code.innerHTML = highlight(code.dataset.sourceCode, languages.html, languages.html);
+};
+
 // Remove extra indentation
-function formatCode(code: string) {
+export function formatCode(code: string) {
   let lines = code.split('\n');
   const indent = lines.reduce((idt, currLine) => {
     if (currLine.trim()) {
