@@ -9,38 +9,57 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.e4a99f1a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.78aef71b.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.b53f1453.css">
   <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.90b14b52.css">
 
-  <script src="/bem-flex-grid/script.7b106b69.js"></script>
+  <script src="/bem-flex-grid/script.b19ae313.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Box fit</h1>
-      <p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
-      <p>To see it in action, resize the window.</p>
-      <p>Additionally, you can fix the size in pixels by giving the box the expected <code>width</code> for grid in row direction and <code>height</code> for grid in column direction.</p>
+      <h1>Box size in percent</h1>
+      <p>Define the <code>.bfg__box</code> element size using <code>.bfg__box--1</code>, <code>.bfg__box--2</code>, ..., <code>.bfg__box--11</code>, <code>.bfg__box--12</code> modifiers.</p>
+      <p>The total size available for each line is 12.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output">
+  <pre class="demo-layout__output demo-layout__output--gray">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--row">
-        <div class="bfg__box bfg__box--fit">
-          <b>Box fit!</b>
-        </div>
-        <div class="bfg__box bfg__box--4"></div>
-        <div class="bfg__box bfg__box--8"></div>
+      <div class="bfg bfg--row bfg--gap bfg--wrap">
+        <div class="bfg__box bfg__box--12"><b></b></div>
+
+        <div class="bfg__box bfg__box--11"><b></b></div>
+        <div class="bfg__box bfg__box--1"><b></b></div>
+
+        <div class="bfg__box bfg__box--10"><b></b></div>
+        <div class="bfg__box bfg__box--2"><b></b></div>
+
+        <div class="bfg__box bfg__box--9"><b></b></div>
+        <div class="bfg__box bfg__box--3"><b></b></div>
+
+        <div class="bfg__box bfg__box--8"><b></b></div>
+        <div class="bfg__box bfg__box--4"><b></b></div>
+
+        <div class="bfg__box bfg__box--7"><b></b></div>
+        <div class="bfg__box bfg__box--5"><b></b></div>
+
+        <div class="bfg__box bfg__box--6"><b></b></div>
+        <div class="bfg__box bfg__box--6"><b></b></div>
       </div>
 
+      <style>.bfg__box b {
+          display: block;
+          box-sizing: border-box;
+          border: 1px solid rgba(255, 255, 255, 0.75);
+          background: dodgerblue;
+          height: 100%;
+        }</style>
     </div>
   </pre>
 
   <script>Demo.viewCode();
-Demo.fillGrid();
-Demo.enableActions();</script>
+Demo.enableActions(['fullWidth', 'direction', 'gridGap']);</script>
 </body>
 </html>

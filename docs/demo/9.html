@@ -9,36 +9,63 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.e4a99f1a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.78aef71b.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.b53f1453.css">
   <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.90b14b52.css">
 
-  <script src="/bem-flex-grid/script.7b106b69.js"></script>
+  <script src="/bem-flex-grid/script.b19ae313.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Remaining space distribution</h1>
-      <p>
-        When the total size of the boxes is less than <code>12</code>, you can distribute the remaining space using:
-        <code>.bfg--main-center</code>, <code>.bfg--main-end</code>,
-        <code>.bfg--main-between</code> or <code>.bfg--main-around</code>.
-      </p>
+      <h1>Mixing chained and nested grids</h1>
+      <p>Works too!</p>
+      <p>Notice that if you use <code>.bfg--gap</code> modifier, you'll need to add <code>.bfg__box--nopad</code> modifier on the parent <code>.bfg__box</code> element of any nested grid.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--row bfg--main-between">
-        <div class="bfg__box bfg__box--2"></div>
-        <div class="bfg__box bfg__box--fit" style="background:#FFEBEE;">
-          <i>Fixed box</i>
+      <div class="bfg bfg--col bfg--gap">
+        <div class="bfg__box bfg__box--6 bfg bfg--row"><!-- chained -->
+
+          <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- chained -->
+
+            <div class="bfg__box bfg__box--6"></div>
+            <div class="bfg__box bfg__box--6"></div>
+
+          </div>
+          <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+            <div class="bfg bfg--col"><!-- nested -->
+
+              <div class="bfg__box bfg__box--6"></div>
+              <div class="bfg__box bfg__box--6"></div>
+
+            </div>
+          </div>
+
         </div>
-        <div class="bfg__box bfg__box--fit" style="background:#FFEBEE;">
-          <i>Fixed box</i>
+        <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+
+          <div class="bfg bfg--row"><!-- nested -->
+            <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- chained -->
+
+              <div class="bfg__box bfg__box--6"></div>
+              <div class="bfg__box bfg__box--6"></div>
+
+            </div>
+            <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+              <div class="bfg bfg--col"><!-- nested -->
+
+                <div class="bfg__box bfg__box--6"></div>
+                <div class="bfg__box bfg__box--6"></div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="bfg__box bfg__box--4"></div>
       </div>
 
     </div>

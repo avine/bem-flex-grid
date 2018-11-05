@@ -8,6 +8,9 @@ html,
   font-family: "Krub", sans-serif;
   font-size: 16px;
   line-height: 1.5em; }
+  html code,
+  .markdown-body code {
+    padding: 0.15em 0.3em; }
 
 body {
   margin: 0; }
@@ -55,7 +58,7 @@ main {
   .demo-layout__readme h1 {
     margin-top: 0; }
   .demo-layout__readme code {
-    padding: 0.2em 0.4em;
+    padding: 0.15em 0.3em;
     border-radius: 3px;
     background-color: rgba(27, 31, 35, 0.05); }
 
@@ -105,7 +108,7 @@ pre.demo-layout__output--gray {
   height: auto; }
 
 .demo-layout__warn {
-  color: #B71C1C;
+  color: #C62828;
   font-size: 0.875rem; }
 
 /* ===== Toolbox actions ===== */
@@ -166,6 +169,12 @@ pre.demo-layout__output--gray {
 
 .demo-toolbox__action--direction {
   background-image: url(directions.60bc070b.svg); }
+
+.demo-toolbox__action--grid-gap {
+  background-image: url(th-large.792ba4b7.svg); }
+
+.demo-toolbox__action--theme {
+  background-image: url(palette.35d687da.svg); }
 
 /* ===== Handle dummy container and text ===== */
 .demo-container {
