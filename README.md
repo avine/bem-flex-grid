@@ -2,7 +2,7 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.*
+*A responsive grid system based on the flex display property that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.*
 
 [![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
 
@@ -107,11 +107,19 @@ At core the grid system consists of one `.bfg` block and one or more `.bfg__box`
 </div>
 ```
 
-There is no restriction on the `.bfg__box` element's content, but you can use the `.bfg-card` block to fill it with a card
-(in this case, only one card is allowed per box).
+The box's content can be anything, but the `.bfg-card` block can be used to fill the box with a card.
 
-A card requires a `.bfg-card__content` element.
-Then you can add an header to the content using the optional `.bfg-card__header` element and one or more actions to the header using the optional `.bfg-card__action` element.
+> Only one card is allowed per box.
+
+The card's content must be placed inside a `.bfg-card__content` element.
+
+```html
+<div class="bfg-card">
+  <div class="bfg-card__content">...</div>
+</div>
+```
+
+Then you can add an header to the card using the optional `.bfg-card__header` element and one or more actions to the header using the optional `.bfg-card__action` element.
 
 ```html
 <div class="bfg-card">
@@ -197,8 +205,6 @@ If you know that there's exactly 2 lines of `.bfg__box` elements, you can constr
 
 In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit into exactly 3 or 4 lines respectively.
 
-> In this case, all the rows will have the same height.
-
 ```html
 <div class="bfg bfg--row bfg--wrap bfg--lines-2">...</div>
 ```
@@ -210,6 +216,8 @@ In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit into ex
 ```html
 <div class="bfg bfg--row bfg--wrap bfg--lines-4">...</div>
 ```
+
+> Notice that all the rows will have the same height.
 
 The same pattern applies to the selector `.bfg.bfg--col.bfg--wrap`.
 
@@ -224,6 +232,8 @@ The same pattern applies to the selector `.bfg.bfg--col.bfg--wrap`.
 ```html
 <div class="bfg bfg--col bfg--wrap bfg--lines-4">...</div>
 ```
+
+> Notice that all the columns will have the same width.
 
 As the grid is responsive, you can change the number of lines at each breakpoint.
 
@@ -359,9 +369,9 @@ In the same way, use `.bfg--card-content-overflow-hidden` modifier to apply the 
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-To disable the grid system for the current `.bfg` block only use `.bfg--disabled` modifier.
+To disable the grid system for the current `.bfg` block only, use `.bfg--disabled` modifier.
 
-To disable the grid system for the current `.bfg` block and its chained or nested `.bfg` blocks use `.bfg--disabled-all` modifier.
+To disable the grid system for the current `.bfg` block and its chained or nested `.bfg` blocks, use `.bfg--disabled-all` modifier.
 
 ```html
 <div class="bfg bfg--disabled">...</div>
@@ -451,7 +461,7 @@ Here's an example when using `.bfg--row` modifier:
 </div>
 ```
 
-> Defining the box `width` is optional. If not defined the box width will simply fit its content.
+> Defining the box `width` is optional. If not defined the box width will simply fit to its content.
 
 Here's an example when using `.bfg--col` modifier:
 
@@ -463,7 +473,7 @@ Here's an example when using `.bfg--col` modifier:
 </div>
 ```
 
-> Defining the box `height` is optional. If not defined the box height will simply fit its content.
+> Defining the box `height` is optional. If not defined the box height will simply fit to its content.
 
 #### Order: `.bfg__box--[B]first`, `.bfg__box--[B]last`, `.bfg__box--[B]in-place`
 
@@ -507,7 +517,7 @@ By default, `.bfg__box` element use the `overflow: auto;` rule.
 
 Use `.bfg__box--overflow-visible` modifier to apply the `overflow: visible;` rule instead.
 
-Use `.bfg__box--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
+Or use `.bfg__box--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 ...
@@ -530,13 +540,13 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 </div>
 ```
 
-### `.bfg-card` modifiers
+### `.bfg-card` modifier
 
 #### Theme: `.bfg-card--[T]`
 
 **[T]** Theme: `primary` or any string.
 
-Add "primary" look and feel to the box's content, header and actions using `.bfg-card--primary` modifier.
+Add "primary" look and feel to the card's content, header and actions using `.bfg-card--primary` modifier.
 
 ```html
 ...
@@ -560,7 +570,7 @@ By default, `.bfg-card__content` element use the `overflow: auto;` rule.
 
 Use `.bfg-card__content--overflow-visible` modifier to apply the `overflow: visible;` rule instead.
 
-Use `.bfg-card__content--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
+Or use `.bfg-card__content--overflow-hidden` modifier to apply the `overflow: hidden;` rule instead.
 
 ```html
 ...
@@ -571,7 +581,7 @@ Use `.bfg-card__content--overflow-hidden` modifier to apply the `overflow: hidde
 
 #### Padding: `.bfg-card__content--nopad`
 
-Remove the box content padding using `.bfg-card__content--nopad` modifier.
+Remove the card content padding using `.bfg-card__content--nopad` modifier.
 
 ```html
 ...
@@ -718,7 +728,7 @@ To add a theme named `info`, create a file `custo-bfg.scss` with the following c
 
 > Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
 
-Now, you can use your new theme named `info`:
+Now, you can use your freshly created theme named `info`:
 
 ```html
 ...
