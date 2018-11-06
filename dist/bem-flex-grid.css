@@ -445,7 +445,7 @@
 .bfg-card--primary .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 1px solid #d5d5d5;
-  background-color: #f6f6f6;
+  background: #f6f6f6;
   line-height: calc(2rem - 2px); }
 
 .bfg-card--primary .bfg-card__action {
@@ -459,4 +459,4 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border-radius: 3px;
   border: 1px solid #ddd;
-  background-color: #fff; }
+  background: #fff; }

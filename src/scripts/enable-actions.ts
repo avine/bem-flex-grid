@@ -21,7 +21,7 @@ export const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boo
     event.preventDefault();
     anchor.classList.toggle('demo-toolbox__action--active');
     const isActive = anchor.classList.contains('demo-toolbox__action--active');
-    anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text; // FIXME...
+    anchor.innerHTML = isActive ? (anchor.dataset.textActive || '') : (anchor.dataset.text || '');
     callback(isActive);
   });
   container.appendChild(anchor);

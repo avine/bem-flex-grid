@@ -1722,8 +1722,7 @@ exports.handleAction = function (anchor, callback) {
     event.preventDefault();
     anchor.classList.toggle('demo-toolbox__action--active');
     var isActive = anchor.classList.contains('demo-toolbox__action--active');
-    anchor.innerHTML = isActive ? anchor.dataset.textActive : anchor.dataset.text; // FIXME...
-
+    anchor.innerHTML = isActive ? anchor.dataset.textActive || '' : anchor.dataset.text || '';
     callback(isActive);
   });
   container.appendChild(anchor);
@@ -2035,4 +2034,4 @@ window['Demo'] = {
   viewCode: view_code_1.viewCode
 };
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.b19ae313.map
+//# sourceMappingURL=/bem-flex-grid/script.6c6fe645.map

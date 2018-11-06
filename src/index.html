@@ -55,7 +55,7 @@
 
 <h1>bem-flex-grid</h1>
 <p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
-<p><em>A responsive grid system that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.</em></p>
+<p><em>A responsive grid system based on the flex display property that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.</em></p>
 <p><a href="https://travis-ci.org/avine/bem-flex-grid"><img src="https://travis-ci.org/avine/bem-flex-grid.svg?branch=master" alt="Build Status"></a></p>
 <h2>Quick start</h2>
 <p>Get instant access by inserting the link tag into your web pages from <em>unpkg</em> CDN.</p>
@@ -127,10 +127,16 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<p>There is no restriction on the <code>.bfg__box</code> element's content, but you can use the <code>.bfg-card</code> block to fill it with a card
-(in this case, only one card is allowed per box).</p>
-<p>A card requires a <code>.bfg-card__content</code> element.
-Then you can add an header to the content using the optional <code>.bfg-card__header</code> element and one or more actions to the header using the optional <code>.bfg-card__action</code> element.</p>
+<p>The box's content can be anything, but the <code>.bfg-card</code> block can be used to fill the box with a card.</p>
+<blockquote>
+<p>Only one card is allowed per box.</p>
+</blockquote>
+<p>The card's content must be placed inside a <code>.bfg-card__content</code> element.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg-card&quot;&gt;
+  &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Then you can add an header to the card using the optional <code>.bfg-card__header</code> element and one or more actions to the header using the optional <code>.bfg-card__action</code> element.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg-card&quot;&gt;
   &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
   &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
@@ -187,15 +193,15 @@ Then you can add an header to the content using the optional <code>.bfg-card__he
 <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
 <p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit into exactly 3 or 4 lines respectively.</p>
-<blockquote>
-<p>In this case, all the rows will have the same height.</p>
-</blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
+<blockquote>
+<p>Notice that all the rows will have the same height.</p>
+</blockquote>
 <p>The same pattern applies to the selector <code>.bfg.bfg--col.bfg--wrap</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -203,6 +209,9 @@ Then you can add an header to the content using the optional <code>.bfg-card__he
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
 </code></pre>
+<blockquote>
+<p>Notice that all the columns will have the same width.</p>
+</blockquote>
 <p>As the grid is responsive, you can change the number of lines at each breakpoint.</p>
 <p><em>Example:</em></p>
 <ul>
@@ -296,8 +305,8 @@ Then you can choose the distribution mode of the remaining space.</p>
 </blockquote>
 <h4>Disabled: <code>.bfg--[B]disabled</code>, <code>.bfg--[B]disabled-all</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
-<p>To disable the grid system for the current <code>.bfg</code> block only use <code>.bfg--disabled</code> modifier.</p>
-<p>To disable the grid system for the current <code>.bfg</code> block and its chained or nested <code>.bfg</code> blocks use <code>.bfg--disabled-all</code> modifier.</p>
+<p>To disable the grid system for the current <code>.bfg</code> block only, use <code>.bfg--disabled</code> modifier.</p>
+<p>To disable the grid system for the current <code>.bfg</code> block and its chained or nested <code>.bfg</code> blocks, use <code>.bfg--disabled-all</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--disabled&quot;&gt;...&lt;/div&gt;
 
 &lt;div class=&quot;bfg bfg--disabled-all&quot;&gt;...&lt;/div&gt;
@@ -366,7 +375,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 &lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>Defining the box <code>width</code> is optional. If not defined the box width will simply fit its content.</p>
+<p>Defining the box <code>width</code> is optional. If not defined the box width will simply fit to its content.</p>
 </blockquote>
 <p>Here's an example when using <code>.bfg--col</code> modifier:</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;
@@ -376,7 +385,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 &lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>Defining the box <code>height</code> is optional. If not defined the box height will simply fit its content.</p>
+<p>Defining the box <code>height</code> is optional. If not defined the box height will simply fit to its content.</p>
 </blockquote>
 <h4>Order: <code>.bfg__box--[B]first</code>, <code>.bfg__box--[B]last</code>, <code>.bfg__box--[B]in-place</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -407,7 +416,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg__box</code> element use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg__box--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
-<p>Use <code>.bfg__box--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
+<p>Or use <code>.bfg__box--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__box bfg__box--overflow-visible&quot;&gt;...&lt;/div&gt;
   &lt;div class=&quot;bfg__box bfg__box--overflow-hidden&quot;&gt;...&lt;/div&gt;
@@ -423,10 +432,10 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h3><code>.bfg-card</code> modifiers</h3>
+<h3><code>.bfg-card</code> modifier</h3>
 <h4>Theme: <code>.bfg-card--[T]</code></h4>
 <p><strong>[T]</strong> Theme: <code>primary</code> or any string.</p>
-<p>Add &quot;primary&quot; look and feel to the box's content, header and actions using <code>.bfg-card--primary</code> modifier.</p>
+<p>Add &quot;primary&quot; look and feel to the card's content, header and actions using <code>.bfg-card--primary</code> modifier.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card bfg-card--primary&quot;&gt;
     &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
@@ -443,14 +452,14 @@ Then you can choose the distribution mode of the remaining space.</p>
 <p><strong>[T]</strong> Type: <code>visible</code>, <code>hidden</code>.</p>
 <p>By default, <code>.bfg-card__content</code> element use the <code>overflow: auto;</code> rule.</p>
 <p>Use <code>.bfg-card__content--overflow-visible</code> modifier to apply the <code>overflow: visible;</code> rule instead.</p>
-<p>Use <code>.bfg-card__content--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
+<p>Or use <code>.bfg-card__content--overflow-hidden</code> modifier to apply the <code>overflow: hidden;</code> rule instead.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card__content bfg-card__content--overflow-visible&quot;&gt;...&lt;/div&gt;
   &lt;div class=&quot;bfg-card__content bfg-card__content--overflow-hidden&quot;&gt;...&lt;/div&gt;
 ...
 </code></pre>
 <h4>Padding: <code>.bfg-card__content--nopad</code></h4>
-<p>Remove the box content padding using <code>.bfg-card__content--nopad</code> modifier.</p>
+<p>Remove the card content padding using <code>.bfg-card__content--nopad</code> modifier.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card__content bfg-card__content--nopad&quot;&gt;&lt;/div&gt;
 ...
@@ -570,7 +579,7 @@ $bfg-gap: 2rem;
 <blockquote>
 <p>Notice that omitted map keys (<code>box-shadow</code>, <code>header-borderless</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the &quot;primary&quot; theme).</p>
 </blockquote>
-<p>Now, you can use your new theme named <code>info</code>:</p>
+<p>Now, you can use your freshly created theme named <code>info</code>:</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card bfg-card--info&quot;&gt;
     &lt;div class=&quot;bfg-card__action&quot;&gt;&lt;/div&gt;
