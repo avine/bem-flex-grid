@@ -19,7 +19,7 @@
       box-shadow: map-get($s, box-shadow);
       border: map-get($s, border-width) solid map-get($s, header-border);
       @if map-get($s, header-borderless) { border-bottom-width: 0; }
-      background-color: map-get($s, header-background);
+      background: map-get($s, header-background);
       @if map-get($s, header-forground) { color: map-get($s, header-forground); }
       line-height: calc(#{$bfg-header-height} - #{2 * map-get($s, border-width)});
     }
@@ -37,7 +37,7 @@
       box-shadow: map-get($s, box-shadow);
       border-radius: map-get($s, border-radius);
       border: map-get($s, border-width) solid map-get($s, content-border);
-      background-color: map-get($s, content-background);
+      background: map-get($s, content-background);
       @if map-get($s, content-forground) { color: map-get($s, content-forground); }
     }
   }
