@@ -137,7 +137,7 @@ Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting 
 <div class="bfg">
   <div class="bfg__box">
     <div class="bfg-card">
-      <div class="bfg-card__content"></div>
+      <div class="bfg-card__content">...</div>
     </div>
   </div>
 </div>
@@ -148,7 +148,33 @@ Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting 
 ```html
 <div class="bfg">
   <div class="bfg__box bfg-card">
-    <div class="bfg-card__content"></div>
+    <div class="bfg-card__content">...</div>
+  </div>
+</div>
+```
+
+Finally, using the selector `.bfg.bfg-card` simply tells that the `.bfg` *block* contains cards elements (content, header and action) that are not direct children of the `.bfg-card` *block*.
+
+This allows you to define a default look and feel for all cards and lets you customize some of them, using the different `.bfg-card--*` modifiers (you'll see below how to define the card's look and feel).
+
+```html
+<div class="bfg bfg-card bfg-card--primary">
+  <div class="bfg__box">
+    <div class="bfg-card__content"><!-- Use global "primary" theme --></div>
+  </div>
+
+  <div class="bfg__box">
+    <div class="bfg-card__content"><!-- Use global "primary" theme --></div>
+  </div>
+
+  <div class="bfg__box bfg-card bfg-card--secondary">
+    <div class="bfg-card__content"><!-- Use local "secondary" theme --></div>
+  </div>
+
+  <div class="bfg__box">
+    <div class="bfg-card bfg-card--secondary">
+      <div class="bfg-card__content"><!-- Use local "secondary" theme --></div>
+    </div>
   </div>
 </div>
 ```
@@ -252,7 +278,7 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 </div>
 ```
 
-#### Gap: `.bfg--gap`, `.bfg--gap-in`
+#### Gap: `.bfg--gap`, `.bfg--gap-in`, `.bfg--nogap`
 
 Add a gap between `.bfg__box` elements, using `.bfg--gap` modifier.
 
@@ -277,6 +303,25 @@ But if you prefer to define a main margin (or padding) to the parent node of the
 ```
 
 > The default value of the gap is `1rem` (see below the Sass variable `$bfg-gap`).
+
+Use `.bfg--nogap` modifier to remove the gap on an inner grids.
+Here's an example with *chained* grid.
+
+```html
+<div class="bfg bfg--gap">
+  <div class="bfg__box"><!-- with gap --></div>
+  <div class="bfg__box"><!-- with gap --></div>
+
+  <div class="bfg__box bfg bfg--nogap">
+
+    <div class="bfg__box"><!-- without gap --></div>
+    <div class="bfg__box"><!-- without gap --></div>
+
+  </div>
+</div>
+```
+
+> See below *chained* and *nested* grids to learn how inner grids works.
 
 #### Main axis alignment: `.bfg--main-[P]`
 
@@ -409,11 +454,11 @@ The total size available for each line is 12.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--1"></div>
-  <div class="bfg__box bfg__box--2"></div>
+  <div class="bfg__box bfg__box--1">...</div>
+  <div class="bfg__box bfg__box--2">...</div>
   ...
-  <div class="bfg__box bfg__box--11"></div>
-  <div class="bfg__box bfg__box--12"></div>
+  <div class="bfg__box bfg__box--11">...</div>
+  <div class="bfg__box bfg__box--12">...</div>
 ...
 ```
 
@@ -467,9 +512,9 @@ Here's an example when using `.bfg--col` modifier:
 
 ```html
 <div class="bfg bfg--col">
-  <div class="bfg__box bfg__box--fit" style="height:150px"></div>
-  <div class="bfg__box bfg__box--4"></div>
-  <div class="bfg__box bfg__box--8"></div>
+  <div class="bfg__box bfg__box--fit" style="height:150px">...</div>
+  <div class="bfg__box bfg__box--4">...</div>
+  <div class="bfg__box bfg__box--8">...</div>
 </div>
 ```
 
@@ -532,11 +577,11 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 
 ```html
 <div class="bfg bfg--row bfg--gap">
-  <div class="bfg__box bfg__box--4"></div>
+  <div class="bfg__box bfg__box--4">...</div>
   <div class="bfg__box bfg__box--4 bfg__box--nopad">
     <!-- no padding -->
   </div>
-  <div class="bfg__box bfg__box--4"></div>
+  <div class="bfg__box bfg__box--4">...</div>
 </div>
 ```
 
@@ -551,9 +596,9 @@ Add "primary" look and feel to the card's content, header and actions using `.bf
 ```html
 ...
   <div class="bfg-card bfg-card--primary">
-    <div class="bfg-card__action"></div>
-    <div class="bfg-card__header"></div>
-    <div class="bfg-card__content"></div>
+    <div class="bfg-card__action">...</div>
+    <div class="bfg-card__header">...</div>
+    <div class="bfg-card__content">...</div>
   </div>
 ...
 ```
@@ -585,7 +630,7 @@ Remove the card content padding using `.bfg-card__content--nopad` modifier.
 
 ```html
 ...
-  <div class="bfg-card__content bfg-card__content--nopad"></div>
+  <div class="bfg-card__content bfg-card__content--nopad">...</div>
 ...
 ```
 
@@ -604,18 +649,18 @@ See below the `<div>` that has both roles:
 
 ```html
 <div class="bfg bfg--col bfg--gap">
-  <div class="bfg__box bfg__box--3"></div>
+  <div class="bfg__box bfg__box--3">...</div>
 
   <!-- Chained grid starts here, on the `.bfg__box` element -->
   <div class="bfg__box bfg__box--6 bfg bfg--row">
 
-    <div class="bfg__box bfg__box--3"></div>
-    <div class="bfg__box bfg__box--6"></div>
-    <div class="bfg__box bfg__box--3"></div>
+    <div class="bfg__box bfg__box--3">...</div>
+    <div class="bfg__box bfg__box--6">...</div>
+    <div class="bfg__box bfg__box--3">...</div>
 
   </div>
 
-  <div class="bfg__box bfg__box--3"></div>
+  <div class="bfg__box bfg__box--3">...</div>
 </div>
 ```
 
@@ -627,7 +672,7 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 
 ```html
 <div class="bfg bfg--col bfg--gap">
-  <div class="bfg__box bfg__box--3"></div>
+  <div class="bfg__box bfg__box--3">...</div>
 
   <!-- `.bfg__box--nopad` modifier added to the parent of the
     nested grid, because of the `.bfg--gap` modifier above -->
@@ -635,14 +680,14 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 
     <!-- Nested grid starts here, inside the `.bfg__box` element -->
     <div class="bfg bfg--row">
-      <div class="bfg__box bfg__box--3"></div>
-      <div class="bfg__box bfg__box--6"></div>
-      <div class="bfg__box bfg__box--3"></div>
+      <div class="bfg__box bfg__box--3">...</div>
+      <div class="bfg__box bfg__box--6">...</div>
+      <div class="bfg__box bfg__box--3">...</div>
     </div>
 
   </div>
 
-  <div class="bfg__box bfg__box--3"></div>
+  <div class="bfg__box bfg__box--3">...</div>
 </div>
 ```
 
@@ -733,9 +778,9 @@ Now, you can use your freshly created theme named `info`:
 ```html
 ...
   <div class="bfg-card bfg-card--info">
-    <div class="bfg-card__action"></div>
-    <div class="bfg-card__header"></div>
-    <div class="bfg-card__content"></div>
+    <div class="bfg-card__action">...</div>
+    <div class="bfg-card__header">...</div>
+    <div class="bfg-card__content">...</div>
   </div>
 ...
 ```
@@ -767,6 +812,7 @@ Now, you can use your freshly created theme named `info`:
 
 - `.bfg--gap`
 - `.bfg--gap-in`
+- `.bfg--nogap`
 
 *Main axis alignment:*
 

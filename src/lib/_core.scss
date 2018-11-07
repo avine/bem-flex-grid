@@ -40,6 +40,10 @@
   }
 }
 
+.bfg--nogap .bfg__box {
+  padding: 0;
+}
+
 .bfg--wrap {
   flex-wrap: wrap;
 }
