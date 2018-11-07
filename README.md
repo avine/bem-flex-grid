@@ -55,7 +55,7 @@ Here's a simple grid in the vertical direction (column) that fits to the window.
 
 ## Installation and usage
 
-Install the package from NPM (or Yarn) and insert the link tag into your web pages or use Sass import for more customization.
+Install the package from [NPM](https://www.npmjs.com/package/bem-flex-grid) (or Yarn) and insert the link tag into your web pages or use Sass import for more customization.
 
 *NPM:*
 
