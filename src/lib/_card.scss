@@ -19,6 +19,7 @@
   position: relative;
   overflow: hidden;
   height: $bfg-header-height;
+  line-height: $bfg-header-height;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -57,11 +58,6 @@
 
 // Rules that are related in `bfg-card` mixin and have to be wrapped in some high level selector
 .bfg-card[class*="bfg-card--"] {
-  .bfg-card__action,
-  .bfg-card__header {
-    line-height: $bfg-header-height;
-  }
-
   .bfg-card__action {
     + .bfg-card__action,
     + .bfg-card__header {

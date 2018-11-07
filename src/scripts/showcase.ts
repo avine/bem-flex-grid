@@ -36,9 +36,14 @@ export const showcase = () => {
       return !inViewport;
     });
     if (!buffer.length) {
-      window.removeEventListener('scroll', loadIframes);
+      window.removeEventListener('scroll', debounce);
     }
   };
-  window.addEventListener('scroll', loadIframes);
+  let timeout;
+  const debounce = () => {
+    clearTimeout(timeout);
+    timeout = setTimeout(loadIframes, 100);
+  };
+  window.addEventListener('scroll', debounce);
   loadIframes();
 };
