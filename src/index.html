@@ -163,22 +163,25 @@
 </code></pre>
 <p>Finally, using the selector <code>.bfg.bfg-card</code> simply tells that the <code>.bfg</code> <em>block</em> contains cards elements (content, header and action) that are not direct children of the <code>.bfg-card</code> <em>block</em>.</p>
 <p>This allows you to define a default look and feel for all cards and lets you customize some of them, using the different <code>.bfg-card--*</code> modifiers (you'll see below how to define the card's look and feel).</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg-card bfg-card--primary&quot;&gt;
+<pre><code class="language-html">&lt;!-- global card definition --&gt;
+&lt;div class=&quot;bfg bfg-card bfg-card--primary&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- Use global &quot;primary&quot; theme --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use global &quot;primary&quot; theme --&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- Use global &quot;primary&quot; theme --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use global &quot;primary&quot; theme --&gt;&lt;/div&gt;
   &lt;/div&gt;
 
+  &lt;!-- chained card definition (at box level) --&gt;
   &lt;div class=&quot;bfg__box bfg-card bfg-card--secondary&quot;&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- Use local &quot;secondary&quot; theme --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use local &quot;secondary&quot; theme --&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;bfg__box&quot;&gt;
+    &lt;!-- nested card definition (inner box) --&gt;
     &lt;div class=&quot;bfg-card bfg-card--secondary&quot;&gt;
-      &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- Use local &quot;secondary&quot; theme --&gt;&lt;/div&gt;
+      &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use local &quot;secondary&quot; theme --&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -431,9 +434,9 @@ Then you can choose the distribution mode of the remaining space.</p>
 <p>Change the box order using <code>.bfg__box--first</code> or <code>.bfg__box--last</code> modifiers.</p>
 <p>Restore the box order using <code>.bfg__box--in-place</code> modifier.</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg__box bfg__box--last&quot;&gt;&lt;!-- Will move to last position --&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box bfg__box--in-place&quot;&gt;&lt;!-- Will stay in place --&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box bfg__box--first&quot;&gt;&lt;!-- Will move to first position --&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--last&quot;&gt;&lt;!-- will move to last position --&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--in-place&quot;&gt;&lt;!-- will stay in place --&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--first&quot;&gt;&lt;!-- will move to first position --&gt;&lt;/div&gt;
 ...
 </code></pre>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element order at each breakpoint.</p>
@@ -515,7 +518,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;...&lt;/div&gt;
 
-  &lt;!-- Chained grid starts here, on the `.bfg__box` element --&gt;
+  &lt;!-- chained grid starts here, on the `.bfg__box` element --&gt;
   &lt;div class=&quot;bfg__box bfg__box--6 bfg bfg--row&quot;&gt;
 
     &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;...&lt;/div&gt;
@@ -539,7 +542,7 @@ Then you can choose the distribution mode of the remaining space.</p>
     nested grid, because of the `.bfg--gap` modifier above --&gt;
   &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--nopad&quot;&gt;
 
-    &lt;!-- Nested grid starts here, inside the `.bfg__box` element --&gt;
+    &lt;!-- nested grid starts here, inside the `.bfg__box` element --&gt;
     &lt;div class=&quot;bfg bfg--row&quot;&gt;
       &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;...&lt;/div&gt;
       &lt;div class=&quot;bfg__box bfg__box--6&quot;&gt;...&lt;/div&gt;

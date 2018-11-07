@@ -158,22 +158,25 @@ Finally, using the selector `.bfg.bfg-card` simply tells that the `.bfg` *block*
 This allows you to define a default look and feel for all cards and lets you customize some of them, using the different `.bfg-card--*` modifiers (you'll see below how to define the card's look and feel).
 
 ```html
+<!-- global card definition -->
 <div class="bfg bfg-card bfg-card--primary">
   <div class="bfg__box">
-    <div class="bfg-card__content"><!-- Use global "primary" theme --></div>
+    <div class="bfg-card__content"><!-- use global "primary" theme --></div>
   </div>
 
   <div class="bfg__box">
-    <div class="bfg-card__content"><!-- Use global "primary" theme --></div>
+    <div class="bfg-card__content"><!-- use global "primary" theme --></div>
   </div>
 
+  <!-- chained card definition (at box level) -->
   <div class="bfg__box bfg-card bfg-card--secondary">
-    <div class="bfg-card__content"><!-- Use local "secondary" theme --></div>
+    <div class="bfg-card__content"><!-- use local "secondary" theme --></div>
   </div>
 
   <div class="bfg__box">
+    <!-- nested card definition (inner box) -->
     <div class="bfg-card bfg-card--secondary">
-      <div class="bfg-card__content"><!-- Use local "secondary" theme --></div>
+      <div class="bfg-card__content"><!-- use local "secondary" theme --></div>
     </div>
   </div>
 </div>
@@ -530,9 +533,9 @@ Restore the box order using `.bfg__box--in-place` modifier.
 
 ```html
 ...
-  <div class="bfg__box bfg__box--last"><!-- Will move to last position --></div>
-  <div class="bfg__box bfg__box--in-place"><!-- Will stay in place --></div>
-  <div class="bfg__box bfg__box--first"><!-- Will move to first position --></div>
+  <div class="bfg__box bfg__box--last"><!-- will move to last position --></div>
+  <div class="bfg__box bfg__box--in-place"><!-- will stay in place --></div>
+  <div class="bfg__box bfg__box--first"><!-- will move to first position --></div>
 ...
 ```
 
@@ -651,7 +654,7 @@ See below the `<div>` that has both roles:
 <div class="bfg bfg--col bfg--gap">
   <div class="bfg__box bfg__box--3">...</div>
 
-  <!-- Chained grid starts here, on the `.bfg__box` element -->
+  <!-- chained grid starts here, on the `.bfg__box` element -->
   <div class="bfg__box bfg__box--6 bfg bfg--row">
 
     <div class="bfg__box bfg__box--3">...</div>
@@ -678,7 +681,7 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
     nested grid, because of the `.bfg--gap` modifier above -->
   <div class="bfg__box bfg__box--6 bfg__box--nopad">
 
-    <!-- Nested grid starts here, inside the `.bfg__box` element -->
+    <!-- nested grid starts here, inside the `.bfg__box` element -->
     <div class="bfg bfg--row">
       <div class="bfg__box bfg__box--3">...</div>
       <div class="bfg__box bfg__box--6">...</div>
