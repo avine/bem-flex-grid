@@ -2001,11 +2001,18 @@ exports.showcase = function () {
     });
 
     if (!buffer.length) {
-      window.removeEventListener('scroll', loadIframes);
+      window.removeEventListener('scroll', debounce);
     }
   };
 
-  window.addEventListener('scroll', loadIframes);
+  var timeout;
+
+  var debounce = function debounce() {
+    clearTimeout(timeout);
+    timeout = setTimeout(loadIframes, 100);
+  };
+
+  window.addEventListener('scroll', debounce);
   loadIframes();
 };
 },{"./util":"z9H4"}],"g4tf":[function(require,module,exports) {
@@ -2034,4 +2041,4 @@ window['Demo'] = {
   viewCode: view_code_1.viewCode
 };
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.6c6fe645.map
+//# sourceMappingURL=/bem-flex-grid/script.56411b0e.map

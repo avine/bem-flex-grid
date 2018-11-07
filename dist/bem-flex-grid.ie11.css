@@ -32,6 +32,9 @@
 .bfg--gap-in .bfg__box--nopad {
   padding: 0; }
 
+.bfg--nogap .bfg__box {
+  padding: 0; }
+
 .bfg--wrap {
   flex-wrap: wrap; }
 
@@ -677,6 +680,7 @@
   position: relative;
   overflow: hidden;
   height: 2rem;
+  line-height: 2rem;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis; }
@@ -705,10 +709,6 @@
 
 .bfg-card__header + .bfg-card__content {
   height: calc(100% - 2rem); }
-
-.bfg-card[class*="bfg-card--"] .bfg-card__action,
-.bfg-card[class*="bfg-card--"] .bfg-card__header {
-  line-height: 2rem; }
 
 .bfg-card[class*="bfg-card--"] .bfg-card__action + .bfg-card__action,
 .bfg-card[class*="bfg-card--"] .bfg-card__action + .bfg-card__header {
