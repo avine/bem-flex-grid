@@ -174,7 +174,7 @@ This allows you to define a default look and feel for all cards and lets you cus
   </div>
 
   <div class="bfg__box">
-    <!-- nested card definition (inner box) -->
+    <!-- nested card definition (as box child) -->
     <div class="bfg-card bfg-card--secondary">
       <div class="bfg-card__content"><!-- use local "secondary" theme --></div>
     </div>
