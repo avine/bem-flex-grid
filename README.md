@@ -307,7 +307,7 @@ But if you prefer to define a main margin (or padding) to the parent node of the
 
 > The default value of the gap is `1rem` (see below the Sass variable `$bfg-gap`).
 
-Use `.bfg--nogap` modifier to remove the gap on an inner grids.
+Use `.bfg--nogap` modifier to remove the gap on an inner grid.
 Here's an example with *chained* grid.
 
 ```html
