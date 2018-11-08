@@ -171,9 +171,10 @@ h2.docs-header__subtitle {
 /* ===== Showcase ===== */
 .docs-showcase__item {
   position: relative;
+  margin-bottom: 3rem;
   border-radius: 3px;
   border: 1px solid #E0E0E0;
-  margin-bottom: 3rem; }
+  box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.075) inset; }
 
 .docs-showcase__iframe {
   display: block;
