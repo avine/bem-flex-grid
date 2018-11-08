@@ -240,9 +240,9 @@
 <p>As the grid is responsive, you can change the number of lines at each breakpoint.</p>
 <p><em>Example:</em></p>
 <ul>
-<li>Fit boxes on 2 lines for all <em>screen size</em> (even greater than 1200px).</li>
-<li>Fit boxes on 3 lines for <em>large screens</em> (until 992px).</li>
-<li>Fit boxes on 4 lines for <em>small screens</em> (until 768px).</li>
+<li>Fit boxes on 2 lines on all <em>screen sizes</em> (even greater than 1200px).</li>
+<li>Fit boxes on 3 lines on <em>large screen</em> (until 992px).</li>
+<li>Fit boxes on 4 lines on <em>small screen</em> (until 768px).</li>
 </ul>
 <pre><code class="language-html">&lt;div class=&quot;bfg
   bfg--lines-2
@@ -256,7 +256,7 @@
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <p>In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the <code>.bfg</code> block.</p>
-<p>But if you prefer to define a main margin (or padding) to the parent node of the <code>.bfg</code> block then use <code>.bfg--gap-in</code> modifier.</p>
+<p>But if you prefer to define a main margin (or padding) at the parent node of the <code>.bfg</code> block then use <code>.bfg--gap-in</code> modifier.</p>
 <pre><code class="language-html">&lt;div style=&quot;margin: 1rem&quot;&gt;
   &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
@@ -288,9 +288,8 @@ Here's an example with <em>chained</em> grid.</p>
 <h4>Main axis alignment: <code>.bfg--main-[P]</code></h4>
 <p><strong>[P]</strong> Position: <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
 <p>Justify content along the &quot;main&quot; axis using <code>.bfg--main-*</code> modifiers.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;...&lt;/div&gt;&lt;!-- default grid behavior is like: `.bfg--main-start` --&gt;
-
-&lt;div class=&quot;bfg bfg--main-center&quot;&gt;...&lt;/div&gt;
+<p>By default, <code>.bfg__box</code> elements are packed toward the start line.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--main-center&quot;&gt;...&lt;/div&gt;
 
 &lt;div class=&quot;bfg bfg--main-end&quot;&gt;...&lt;/div&gt;
 
@@ -305,9 +304,8 @@ Then you can choose the distribution mode of the remaining space.</p>
 <h4>Cross axis alignment: <code>.bfg--cross-[P]</code></h4>
 <p><strong>[P]</strong> Position: <code>start</code>, <code>center</code>, <code>end</code>.</p>
 <p>Align items along the &quot;cross&quot; axis using <code>.bfg--cross-*</code> modifiers.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;...&lt;/div&gt;&lt;!-- default grid behavior is like: `.bfg--cross-stretch` --&gt;
-
-&lt;div class=&quot;bfg bfg--cross-start&quot;&gt;...&lt;/div&gt;
+<p>By default, <code>.bfg__box</code> elements stretch to fill the <code>.bfg</code> block.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--cross-start&quot;&gt;...&lt;/div&gt;
 
 &lt;div class=&quot;bfg bfg--cross-center&quot;&gt;...&lt;/div&gt;
 
@@ -343,7 +341,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 &lt;div class=&quot;bfg bfg--card-content-overflow-hidden&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>In the same way, use <code>.bfg__box--overflow-[T]</code> modifiers on <code>.bfg__box</code> element and <code>.bfg-card__content--overflow-[T]</code> modifiers on <code>.bfg-card__content</code> element to apply this behavior to a specific element (see below for more details).</p>
+<p>See below <code>.bfg__box--overflow-[T]</code> and <code>.bfg-card__content--overflow-[T]</code> modifiers to apply this behavior to a specific element.</p>
 </blockquote>
 <h4>Disabled: <code>.bfg--[B]disabled</code>, <code>.bfg--[B]disabled-all</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -380,16 +378,16 @@ Then you can choose the distribution mode of the remaining space.</p>
 ...
 </code></pre>
 <blockquote>
-<p>If the total size of the boxes along the line is less than <code>12</code> then the remaining space is distributed depending of <code>.bfg--main-[P]</code> modifiers.</p>
+<p>If the total size of the boxes along the line is less than <code>12</code>, the remaining space is distributed based on the <code>.bfg--main-[P]</code> modifiers.</p>
 </blockquote>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element size at each breakpoint.</p>
 <p><em>Example:</em></p>
 <ul>
 <li>Use <code>.bfg__box--5</code> to set the box size to be 5/12 of the available size for all <em>screen size</em> (even greater than 1200px).</li>
-<li>Add <code>.bfg__box--xl-6</code> to increase the size on <em>extra large screens</em> (until 1200px).</li>
-<li>Add <code>.bfg__box--lg-4</code> to reduce the size on <em>large screens</em> (until 992px).</li>
-<li>Add <code>.bfg__box--sm-8</code> to increase the size on <em>small screens</em> (until 768px).</li>
-<li>Add <code>.bfg__box--xs-12</code> to increase the size on <em>extra small screens</em> (until 576px).</li>
+<li>Add <code>.bfg__box--xl-6</code> to increase the size on <em>extra large screen</em> (until 1200px).</li>
+<li>Add <code>.bfg__box--lg-4</code> to reduce the size on <em>large screen</em> (until 992px).</li>
+<li>Add <code>.bfg__box--sm-8</code> to increase the size on <em>small screen</em> (until 768px).</li>
+<li>Add <code>.bfg__box--xs-12</code> to increase the size on <em>extra small screen</em> (until 576px).</li>
 </ul>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__box
@@ -398,6 +396,7 @@ Then you can choose the distribution mode of the remaining space.</p>
     bfg__box--lg-4
     bfg__box--sm-8
     bfg__box--xs-12&quot;&gt;
+    ...
   &lt;/div&gt;
 ...
 </code></pre>
@@ -442,15 +441,16 @@ Then you can choose the distribution mode of the remaining space.</p>
 <p>As the grid is responsive, you can change the <code>.bfg__box</code> element order at each breakpoint.</p>
 <p><em>Example:</em></p>
 <ul>
-<li>Use <code>.bfg__box--first</code> to place the box in first position for all <em>screen size</em> (even greater than 1200px).</li>
-<li>Add <code>.bfg__box--lg-last</code> to place the box in last position on <em>large screens</em> (until 992px).</li>
-<li>Add <code>.bfg__box--sm-in-place</code> to restore the original box position on <em>small screens</em> (until 768px).</li>
+<li>Use <code>.bfg__box--first</code> to place the box in first position on all <em>screen sizes</em> (even greater than 1200px).</li>
+<li>Add <code>.bfg__box--lg-last</code> to place the box in last position on <em>large screen</em> (until 992px).</li>
+<li>Add <code>.bfg__box--sm-in-place</code> to restore the original box position on <em>small screen</em> (until 768px).</li>
 </ul>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg__box
     bfg__box--first
     bfg__box--lg-last
     bfg__box--sm-in-place&quot;&gt;
+    ...
   &lt;/div&gt;
 ...
 </code></pre>
@@ -533,13 +533,13 @@ Then you can choose the distribution mode of the remaining space.</p>
 <h4>Nested grid</h4>
 <p>An alternative to chained grids consists to simply nest a new <code>.bfg</code> <em>block</em> inside a <code>.bfg__box</code> <em>element</em>.</p>
 <blockquote>
-<p>With this markup, if you use <code>.bfg--gap</code> modifier, you'll need to add <code>.bfg__box--nopad</code> modifier on the parent <code>.bfg__box</code> of the nested grid.</p>
+<p>With this markup, if you use <code>.bfg--gap</code> modifier, you'll need to add <code>.bfg__box--nopad</code> modifier on the parent node of the nested grid.</p>
 </blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;...&lt;/div&gt;
 
-  &lt;!-- `.bfg__box--nopad` modifier added to the parent of the
-    nested grid, because of the `.bfg--gap` modifier above --&gt;
+  &lt;!-- `.bfg__box--nopad` modifier added to the parent node of
+    the nested grid, because of the `.bfg--gap` modifier above --&gt;
   &lt;div class=&quot;bfg__box bfg__box--6 bfg__box--nopad&quot;&gt;
 
     &lt;!-- nested grid starts here, inside the `.bfg__box` element --&gt;
@@ -591,7 +591,7 @@ $bfg-card-primary: (
 $bfg-card-primary-included: true !default;
 </code></pre>
 <p><em>Example:</em></p>
-<p>To change the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
+<p>To customize the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">// Overwrite gap
 $bfg-gap: 2rem;
 
@@ -621,7 +621,7 @@ $bfg-gap: 2rem;
 <blockquote>
 <p>Notice that omitted map keys (<code>box-shadow</code>, <code>header-borderless</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the &quot;primary&quot; theme).</p>
 </blockquote>
-<p>Now, you can use your freshly created theme named <code>info</code>:</p>
+<p>Now, let's use the <code>info</code> theme:</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card bfg-card--info&quot;&gt;
     &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
@@ -679,7 +679,7 @@ $bfg-gap: 2rem;
 <li><code>.bfg--box-overflow-visible</code></li>
 <li><code>.bfg--box-overflow-hidden</code></li>
 </ul>
-<p><em>Content overflow:</em></p>
+<p><em>Card overflow:</em></p>
 <ul>
 <li><code>.bfg--card-content-overflow-visible</code></li>
 <li><code>.bfg--card-content-overflow-hidden</code></li>

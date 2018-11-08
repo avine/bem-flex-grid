@@ -268,9 +268,9 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 
 *Example:*
 
-- Fit boxes on 2 lines for all *screen size* (even greater than 1200px).
-- Fit boxes on 3 lines for *large screens* (until 992px).
-- Fit boxes on 4 lines for *small screens* (until 768px).
+- Fit boxes on 2 lines on all *screen sizes* (even greater than 1200px).
+- Fit boxes on 3 lines on *large screen* (until 992px).
+- Fit boxes on 4 lines on *small screen* (until 768px).
 
 ```html
 <div class="bfg
@@ -291,7 +291,7 @@ Add a gap between `.bfg__box` elements, using `.bfg--gap` modifier.
 
 In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the `.bfg` block.
 
-But if you prefer to define a main margin (or padding) to the parent node of the `.bfg` block then use `.bfg--gap-in` modifier.
+But if you prefer to define a main margin (or padding) at the parent node of the `.bfg` block then use `.bfg--gap-in` modifier.
 
 ```html
 <div style="margin: 1rem">
@@ -332,9 +332,9 @@ Here's an example with *chained* grid.
 
 Justify content along the "main" axis using `.bfg--main-*` modifiers.
 
-```html
-<div class="bfg">...</div><!-- default grid behavior is like: `.bfg--main-start` -->
+By default, `.bfg__box` elements are packed toward the start line.
 
+```html
 <div class="bfg bfg--main-center">...</div>
 
 <div class="bfg bfg--main-end">...</div>
@@ -353,9 +353,9 @@ Justify content along the "main" axis using `.bfg--main-*` modifiers.
 
 Align items along the "cross" axis using `.bfg--cross-*` modifiers.
 
-```html
-<div class="bfg">...</div><!-- default grid behavior is like: `.bfg--cross-stretch` -->
+By default, `.bfg__box` elements stretch to fill the `.bfg` block.
 
+```html
 <div class="bfg bfg--cross-start">...</div>
 
 <div class="bfg bfg--cross-center">...</div>
@@ -411,7 +411,7 @@ In the same way, use `.bfg--card-content-overflow-hidden` modifier to apply the 
 <div class="bfg bfg--card-content-overflow-hidden">...</div>
 ```
 
-> In the same way, use `.bfg__box--overflow-[T]` modifiers on `.bfg__box` element and `.bfg-card__content--overflow-[T]` modifiers on `.bfg-card__content` element to apply this behavior to a specific element (see below for more details).
+> See below `.bfg__box--overflow-[T]` and `.bfg-card__content--overflow-[T]` modifiers to apply this behavior to a specific element.
 
 #### Disabled: `.bfg--[B]disabled`, `.bfg--[B]disabled-all`
 
@@ -465,17 +465,17 @@ The total size available for each line is 12.
 ...
 ```
 
-> If the total size of the boxes along the line is less than `12` then the remaining space is distributed depending of `.bfg--main-[P]` modifiers.
+> If the total size of the boxes along the line is less than `12`, the remaining space is distributed based on the `.bfg--main-[P]` modifiers.
 
 As the grid is responsive, you can change the `.bfg__box` element size at each breakpoint.
 
 *Example:*
 
 - Use `.bfg__box--5` to set the box size to be 5/12 of the available size for all *screen size* (even greater than 1200px).
-- Add `.bfg__box--xl-6` to increase the size on *extra large screens* (until 1200px).
-- Add `.bfg__box--lg-4` to reduce the size on *large screens* (until 992px).
-- Add `.bfg__box--sm-8` to increase the size on *small screens* (until 768px).
-- Add `.bfg__box--xs-12` to increase the size on *extra small screens* (until 576px).
+- Add `.bfg__box--xl-6` to increase the size on *extra large screen* (until 1200px).
+- Add `.bfg__box--lg-4` to reduce the size on *large screen* (until 992px).
+- Add `.bfg__box--sm-8` to increase the size on *small screen* (until 768px).
+- Add `.bfg__box--xs-12` to increase the size on *extra small screen* (until 576px).
 
 ```html
 ...
@@ -485,6 +485,7 @@ As the grid is responsive, you can change the `.bfg__box` element size at each b
     bfg__box--lg-4
     bfg__box--sm-8
     bfg__box--xs-12">
+    ...
   </div>
 ...
 ```
@@ -543,9 +544,9 @@ As the grid is responsive, you can change the `.bfg__box` element order at each 
 
 *Example:*
 
-- Use `.bfg__box--first` to place the box in first position for all *screen size* (even greater than 1200px).
-- Add `.bfg__box--lg-last` to place the box in last position on *large screens* (until 992px).
-- Add `.bfg__box--sm-in-place` to restore the original box position on *small screens* (until 768px).
+- Use `.bfg__box--first` to place the box in first position on all *screen sizes* (even greater than 1200px).
+- Add `.bfg__box--lg-last` to place the box in last position on *large screen* (until 992px).
+- Add `.bfg__box--sm-in-place` to restore the original box position on *small screen* (until 768px).
 
 ```html
 ...
@@ -553,6 +554,7 @@ As the grid is responsive, you can change the `.bfg__box` element order at each 
     bfg__box--first
     bfg__box--lg-last
     bfg__box--sm-in-place">
+    ...
   </div>
 ...
 ```
@@ -671,14 +673,14 @@ See below the `<div>` that has both roles:
 
 An alternative to chained grids consists to simply nest a new `.bfg` *block* inside a `.bfg__box` *element*.
 
-> With this markup, if you use `.bfg--gap` modifier, you'll need to add `.bfg__box--nopad` modifier on the parent `.bfg__box` of the nested grid.
+> With this markup, if you use `.bfg--gap` modifier, you'll need to add `.bfg__box--nopad` modifier on the parent node of the nested grid.
 
 ```html
 <div class="bfg bfg--col bfg--gap">
   <div class="bfg__box bfg__box--3">...</div>
 
-  <!-- `.bfg__box--nopad` modifier added to the parent of the
-    nested grid, because of the `.bfg--gap` modifier above -->
+  <!-- `.bfg__box--nopad` modifier added to the parent node of
+    the nested grid, because of the `.bfg--gap` modifier above -->
   <div class="bfg__box bfg__box--6 bfg__box--nopad">
 
     <!-- nested grid starts here, inside the `.bfg__box` element -->
@@ -736,7 +738,7 @@ $bfg-card-primary-included: true !default;
 
 *Example:*
 
-To change the boxes gap, create a file `custo-bfg.scss` with the following content:
+To customize the boxes gap, create a file `custo-bfg.scss` with the following content:
 
 ```scss
 // Overwrite gap
@@ -776,7 +778,7 @@ To add a theme named `info`, create a file `custo-bfg.scss` with the following c
 
 > Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
 
-Now, you can use your freshly created theme named `info`:
+Now, let's use the `info` theme:
 
 ```html
 ...
@@ -839,7 +841,7 @@ Now, you can use your freshly created theme named `info`:
 - `.bfg--box-overflow-visible`
 - `.bfg--box-overflow-hidden`
 
-*Content overflow:*
+*Card overflow:*
 
 - `.bfg--card-content-overflow-visible`
 - `.bfg--card-content-overflow-hidden`
