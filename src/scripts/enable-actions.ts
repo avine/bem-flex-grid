@@ -126,5 +126,5 @@ export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
   if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); }
 
-  document.body.appendChild(container);
+  document.querySelector('.demo-layout__output').appendChild(container);
 };

@@ -116,8 +116,8 @@ pre.demo-layout__output--gray {
 /* ===== Toolbox actions ===== */
 .demo-toolbox {
   position: fixed;
-  right: 0.5rem;
-  bottom: 0.5rem;
+  right: 1rem;
+  bottom: 1rem;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   opacity: 0.8;
@@ -248,6 +248,13 @@ pre.demo-layout__output--gray {
   .demo-layout__desc {
     position: static;
     display: inline; }
+  pre.demo-layout__output {
+    box-shadow: none; }
+  .demo-toolbox .demo-toolbox__action--full-screen {
+    display: none; }
+    .demo-toolbox .demo-toolbox__action--full-screen + .demo-toolbox__action {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px; }
   body .demo-layout__tabs-content {
     border: none;
     border-top: 1px solid #E0E0E0;

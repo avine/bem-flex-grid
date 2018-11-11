@@ -1833,7 +1833,7 @@ exports.enableActions = function (actions) {
     gridGapSwitcher();
   }
 
-  document.body.appendChild(container);
+  document.querySelector('.demo-layout__output').appendChild(container);
 };
 },{"./util":"z9H4","./view-code":"39yF"}],"YaHz":[function(require,module,exports) {
 "use strict";
@@ -2093,4 +2093,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.4f2ea7c0.map
+//# sourceMappingURL=/bem-flex-grid/script.e47f51b0.map

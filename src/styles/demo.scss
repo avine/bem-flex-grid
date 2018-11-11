@@ -155,8 +155,8 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 
 .demo-toolbox {
   position: fixed;
-  right: 0.5rem;
-  bottom: 0.5rem;
+  right: 1rem;
+  bottom: 1rem;
   box-shadow: $demo-toolbox-shadow;
   border-radius: $docs-border-radius;
   opacity: 0.8;
@@ -166,6 +166,7 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     opacity: 1;
   }
 
+  // Target action inside the `.demo-toolbox` only
   .demo-toolbox__action {
     box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.1) inset;
     border-radius: 0;
@@ -190,6 +191,7 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
+// Target action inside or outside the `.demo-toolbox`
 .demo-toolbox__action {
   display: block;
   width: 2rem;
@@ -304,6 +306,20 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   .demo-layout__desc {
     position: static;
     display: inline;
+  }
+
+  // Reset css
+  pre.demo-layout__output {
+    box-shadow: none;
+  }
+  // Remove full-screen action
+  .demo-toolbox .demo-toolbox__action--full-screen {
+    display: none;
+
+    & + .demo-toolbox__action {
+    border-top-left-radius: $docs-border-radius;
+    border-top-right-radius: $docs-border-radius;
+    }
   }
 
   body {
