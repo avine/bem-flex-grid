@@ -1728,7 +1728,7 @@ exports.handleAction = function (anchor, callback) {
   container.appendChild(anchor);
 };
 
-var triggerResize = function triggerResize(delay) {
+exports.triggerResize = function (delay) {
   if (delay === void 0) {
     delay = 0;
   }
@@ -1755,7 +1755,7 @@ var fullWidthSwitcher = function fullWidthSwitcher() {
   exports.handleAction(getAnchor('Toggle full screen', 'full-screen'), function () {
     target.classList.toggle('demo-layout__output--full'); // Finally redraw Charts if any.
 
-    triggerResize(FULL_WIDTH_SWITCHER_DURATION);
+    exports.triggerResize(FULL_WIDTH_SWITCHER_DURATION);
   });
 };
 
@@ -1764,7 +1764,7 @@ var autoHeightSwitcher = function autoHeightSwitcher() {
   exports.handleAction(getAnchor('Toggle auto height', 'auto-height'), function () {
     target.classList.toggle('demo-layout__playground--auto'); // Finally redraw Charts if any.
 
-    triggerResize();
+    exports.triggerResize();
   });
 };
 
@@ -1787,7 +1787,7 @@ var directionSwitcher = function directionSwitcher() {
 
     code.innerHTML = code.innerHTML.replace(/bfg--row/g, 'bfg-TMP-col').replace(/bfg--col/g, 'bfg--row').replace(/bfg-TMP-col/g, 'bfg--col'); // Finally redraw Charts if any.
 
-    triggerResize();
+    exports.triggerResize();
   });
 };
 
@@ -2015,7 +2015,52 @@ exports.showcase = function () {
   window.addEventListener('scroll', debounce);
   loadIframes();
 };
-},{"./util":"z9H4"}],"g4tf":[function(require,module,exports) {
+},{"./util":"z9H4"}],"8aet":[function(require,module,exports) {
+"use strict";
+
+exports.__esModule = true;
+
+var enable_actions_1 = require("./enable-actions");
+
+var util_1 = require("./util");
+
+exports.handleTabs = function () {
+  var wrapper = document.createElement('div');
+  wrapper.innerHTML = "<div class=\"demo-layout__tabs-nav\">\n    <a href=\"#\" class=\"demo-layout__tabs-nav-item\" data-tab=\"demo-layout__readme\">Description</a>\n    <a href=\"#\" class=\"demo-layout__tabs-nav-item\" data-tab=\"demo-layout__code\">Code</a>\n    <a href=\"#\" class=\"demo-layout__tabs-nav-item\" data-tab=\"demo-layout__output\">Output</a>\n  </div>"; // ===== Tabs Nav =====
+
+  var navItems = wrapper.querySelectorAll('.demo-layout__tabs-nav-item');
+
+  var openNavItem = function openNavItem(navItem) {
+    util_1.forEach(navItems, function (element) {
+      element.classList[element === navItem ? 'add' : 'remove']('demo-layout__tabs-nav-item--open');
+    });
+  }; // ===== Tabs content =====
+
+
+  var contents = document.querySelectorAll('.demo-layout__readme, .demo-layout__code, .demo-layout__output');
+  util_1.forEach(contents, function (content) {
+    return content.classList.add('demo-layout__tabs-content');
+  });
+
+  var openContent = function openContent(tab) {
+    util_1.forEach(contents, function (element) {
+      element.classList[element.classList.contains(tab) ? 'add' : 'remove']('demo-layout__tabs-content--open');
+    }); // Hack to redraw Charts if any.
+
+    enable_actions_1.triggerResize();
+  }; // ===== Event handler =====
+
+
+  wrapper.querySelector('.demo-layout__tabs-nav').addEventListener('click', function (event) {
+    event.preventDefault();
+    var navItem = event.target;
+    openNavItem(navItem);
+    openContent(navItem.dataset.tab);
+  });
+  navItems.item(0).click();
+  document.body.appendChild(wrapper.firstChild);
+};
+},{"./enable-actions":"mza5","./util":"z9H4"}],"g4tf":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true;
@@ -2027,6 +2072,8 @@ var enable_actions_1 = require("./scripts/enable-actions");
 var fill_grid_1 = require("./scripts/fill-grid");
 
 var showcase_1 = require("./scripts/showcase");
+
+var tabs_1 = require("./scripts/tabs");
 
 var view_code_1 = require("./scripts/view-code");
 /* ===== Export as global ===== */
@@ -2040,5 +2087,10 @@ window['Demo'] = {
   showcase: showcase_1.showcase,
   viewCode: view_code_1.viewCode
 };
-},{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.4b9af1ce.map
+/* ===== Enable tabs navigation for small screen ===== */
+
+if (!window.location.pathname.match(/\/demo\.html/)) {
+  document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
+}
+},{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
+//# sourceMappingURL=/bem-flex-grid/script.4f2ea7c0.map
