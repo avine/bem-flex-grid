@@ -154,14 +154,14 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>...or use the selector <code>.bfg__box.bfg-card</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg-card</code> <em>block</em> too (chaining technique).</p>
+<p>...or use the markup <code>.bfg__box.bfg-card</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg-card</code> <em>block</em> too (chaining technique).</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box bfg-card&quot;&gt;
     &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Finally, using the selector <code>.bfg.bfg-card</code> simply tells that the <code>.bfg</code> <em>block</em> contains cards elements (content, header and action) that are not direct children of the <code>.bfg-card</code> <em>block</em>.</p>
+<p>Finally, using the markup <code>.bfg.bfg-card</code> simply tells that the <code>.bfg</code> <em>block</em> contains cards elements (content, header and action) that are not direct children of the <code>.bfg-card</code> <em>block</em>.</p>
 <p>This allows you to define a default look and feel for all cards and lets you customize some of them, using the different <code>.bfg-card--*</code> modifiers (you'll see below how to define the card's look and feel).</p>
 <pre><code class="language-html">&lt;!-- global card definition --&gt;
 &lt;div class=&quot;bfg bfg-card bfg-card--primary&quot;&gt;
@@ -214,7 +214,7 @@
 <h4>Number of lines: <code>.bfg--[B]lines-[N]</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p><strong>[N]</strong> Number: <code>2</code>, <code>3</code> or <code>4</code>.</p>
-<p>As said above, if you use the selector <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
+<p>As said above, if you use the markup <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
 <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
 <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
 <p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit into exactly 3 or 4 lines respectively.</p>
@@ -227,7 +227,7 @@
 <blockquote>
 <p>Notice that all the rows will have the same height.</p>
 </blockquote>
-<p>The same pattern applies to the selector <code>.bfg.bfg--col.bfg--wrap</code>.</p>
+<p>The same pattern applies to the markup <code>.bfg.bfg--col.bfg--wrap</code>.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
@@ -508,7 +508,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h3>Chained and nested grids</h3>
 <h4>Chained grid</h4>
-<p>To chain grids, use selector <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
+<p>To chain grids, use markup <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> <em>element</em> as a <code>.bfg</code> <em>block</em> too.</p>
 <p><em>Example:</em></p>
 <p>See below the <code>&lt;div&gt;</code> that has both roles:</p>
 <ul>

@@ -290,6 +290,7 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
+  transition: background-color ease-in-out $demo-duration, color ease-in-out $demo-duration;
 
   & + .demo-layout__tabs-nav-item {
     border-left: $docs-showcase-border;

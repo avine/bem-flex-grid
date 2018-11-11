@@ -143,7 +143,7 @@ Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting 
 </div>
 ```
 
-...or use the selector `.bfg__box.bfg-card` to treat a `.bfg__box` *element* as a `.bfg-card` *block* too (chaining technique).
+...or use the markup `.bfg__box.bfg-card` to treat a `.bfg__box` *element* as a `.bfg-card` *block* too (chaining technique).
 
 ```html
 <div class="bfg">
@@ -153,7 +153,7 @@ Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting 
 </div>
 ```
 
-Finally, using the selector `.bfg.bfg-card` simply tells that the `.bfg` *block* contains cards elements (content, header and action) that are not direct children of the `.bfg-card` *block*.
+Finally, using the markup `.bfg.bfg-card` simply tells that the `.bfg` *block* contains cards elements (content, header and action) that are not direct children of the `.bfg-card` *block*.
 
 This allows you to define a default look and feel for all cards and lets you customize some of them, using the different `.bfg-card--*` modifiers (you'll see below how to define the card's look and feel).
 
@@ -226,7 +226,7 @@ Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the opti
 
 **[N]** Number: `2`, `3` or `4`.
 
-As said above, if you use the selector `.bfg.bfg--row.bfg--wrap` then `.bfg__box` elements are placed in the row direction and wrapped onto multiple lines when needed.
+As said above, if you use the markup `.bfg.bfg--row.bfg--wrap` then `.bfg__box` elements are placed in the row direction and wrapped onto multiple lines when needed.
 
 But in this case the total height of all `.bfg__box` elements might be bigger than the `.bfg` block height itself!
 
@@ -248,7 +248,7 @@ In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit into ex
 
 > Notice that all the rows will have the same height.
 
-The same pattern applies to the selector `.bfg.bfg--col.bfg--wrap`.
+The same pattern applies to the markup `.bfg.bfg--col.bfg--wrap`.
 
 ```html
 <div class="bfg bfg--col bfg--wrap bfg--lines-2">...</div>
@@ -643,7 +643,7 @@ Remove the card content padding using `.bfg-card__content--nopad` modifier.
 
 #### Chained grid
 
-To chain grids, use selector `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
+To chain grids, use markup `.bfg__box.bfg` to treat a `.bfg__box` *element* as a `.bfg` *block* too.
 
 *Example:*
 
