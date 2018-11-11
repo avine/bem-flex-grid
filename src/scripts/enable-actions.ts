@@ -27,7 +27,7 @@ export const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boo
   container.appendChild(anchor);
 };
 
-const triggerResize = (delay = 0) => setTimeout(() => {
+export const triggerResize = (delay = 0) => setTimeout(() => {
   try {
     window.dispatchEvent(new Event('resize'));
   } catch (e) {

@@ -2,6 +2,7 @@ import { chart } from './scripts/chart';
 import { enableActions, handleAction } from './scripts/enable-actions';
 import { fillGrid } from './scripts/fill-grid';
 import { showcase } from './scripts/showcase';
+import { handleTabs } from './scripts/tabs';
 import { viewCode } from './scripts/view-code';
 
 /* ===== Export as global ===== */
@@ -14,3 +15,9 @@ window['Demo'] = {
   showcase,
   viewCode,
 };
+
+/* ===== Enable tabs navigation for small screen ===== */
+
+if (!window.location.pathname.match(/\/demo\.html/)) {
+  document.addEventListener('DOMContentLoaded', handleTabs);
+}
