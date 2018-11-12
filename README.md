@@ -924,18 +924,18 @@ Now, let's use the `info` theme:
 ### Contribute
 
 ```bash
-# Clone repository
 git clone https://github.com/avine/bem-flex-grid.git
 
-# Install dependencies
+cd bem-flex-grid
+
 npm i
 
 # Open showcase in your favorite browser
 npm start
 
-# Compile SASS to CSS
+# Compile SASS (`src/lib/`) to CSS (`dist/`)
 npm run build
 
-# Build HTML documentation (`./src/index.html`) from `README.md`
+# Build HTML documentation (`src/index.html`) from `README.md`
 npm run index
 ```
