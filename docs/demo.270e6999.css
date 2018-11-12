@@ -237,7 +237,7 @@ pre.demo-layout__output--gray {
   flex-grow: 1;
   text-align: center;
   text-decoration: none;
-  transition: background-color ease-in-out 300ms, color ease-in-out 300ms; }
+  transition: background-color ease-in-out 150ms, color ease-in-out 150ms; }
   .demo-layout__tabs-nav-item + .demo-layout__tabs-nav-item {
     border-left: 1px solid #E0E0E0; }
 

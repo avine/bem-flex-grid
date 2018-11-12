@@ -15,9 +15,9 @@
 
   <link rel="stylesheet" href="/bem-flex-grid/build.983fc8fd.css">
 
-  <link rel="stylesheet" href="/bem-flex-grid/demo.78b92234.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.270e6999.css">
   <link rel="stylesheet" href="/bem-flex-grid/docs.07489037.css">
-  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.2829f4dc.css">
+  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.f5216ad0.css">
 </head>
 <body>
   <div class="docs-navbar docs-navbar--back">
@@ -207,9 +207,25 @@
 <p>Use <code>.bfg--height-auto</code> modifier to apply <code>height: auto</code> rule instead.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--height-auto&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<h4>Wrap onto multiple lines: <code>.bfg--wrap</code></h4>
-<p>Allow <code>.bfg__box</code> elements to wrap as needed onto multiple lines, using the optional <code>.bfg--wrap</code> modifier.</p>
+<h4>Wrap onto multiple lines: <code>.bfg--[B]wrap</code>,  <code>.bfg--[B]nowrap</code></h4>
+<p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
+<p>By default, <code>.bfg__box</code> elements are displayed onto one line and can not leave outside the <code>.bfg</code> block.</p>
+<p>To allow <code>.bfg__box</code> elements to wrap as needed onto multiple lines, use the <code>.bfg--wrap</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--wrap&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<p>As the grid is responsive, you can change this behavior at each breakpoint.</p>
+<p><em>Example:</em></p>
+<ul>
+<li>Wrap onto multiple lines on all <em>screen sizes</em> (even greater than 1200px).</li>
+<li>Do not wrap on <em>large screen</em> (until 992px).</li>
+<li>Wrap again on <em>small screen</em> (until 768px).</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;bfg
+  bfg--wrap
+  bfg--lg-nowrap
+  bfg--sm-wrap&quot;&gt;
+  ...
+&lt;/div&gt;
 </code></pre>
 <h4>Number of lines: <code>.bfg--[B]lines-[N]</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -244,7 +260,7 @@
 <li>Fit boxes on 3 lines on <em>large screen</em> (until 992px).</li>
 <li>Fit boxes on 4 lines on <em>small screen</em> (until 768px).</li>
 </ul>
-<pre><code class="language-html">&lt;div class=&quot;bfg
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--wrap
   bfg--lines-2
   bfg--lg-lines-3
   bfg--sm-lines-4&quot;&gt;
@@ -643,13 +659,14 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Wrap onto multiple lines:</em></p>
 <ul>
-<li><code>.bfg--wrap</code></li>
+<li><code>.bfg--wrap</code>, <code>.bfg--xl-wrap</code>, <code>.bfg--lg-wrap</code>, <code>.bfg--sm-wrap</code>, <code>.bfg--xs-wrap</code></li>
+<li><code>.bfg--nowrap</code>, <code>.bfg--xl-nowrap</code>, <code>.bfg--lg-nowrap</code>, <code>.bfg--sm-nowrap</code>, <code>.bfg--xs-nowrap</code></li>
 </ul>
 <p><em>Number of lines:</em></p>
 <ul>
-<li><code>.bfg--lines-2</code>, <code>.bfg--lines-xl-2</code>, <code>.bfg--lines-lg-2</code>, <code>.bfg--lines-sm-2</code>, <code>.bfg--lines-xs-2</code></li>
-<li><code>.bfg--lines-3</code>, <code>.bfg--lines-xl-3</code>, <code>.bfg--lines-lg-3</code>, <code>.bfg--lines-sm-3</code>, <code>.bfg--lines-xs-3</code></li>
-<li><code>.bfg--lines-4</code>, <code>.bfg--lines-xl-4</code>, <code>.bfg--lines-lg-4</code>, <code>.bfg--lines-sm-4</code>, <code>.bfg--lines-xs-4</code></li>
+<li><code>.bfg--lines-2</code>, <code>.bfg--xl-lines-2</code>, <code>.bfg--lg-lines-2</code>, <code>.bfg--sm-lines-2</code>, <code>.bfg--xs-lines-2</code></li>
+<li><code>.bfg--lines-3</code>, <code>.bfg--xl-lines-3</code>, <code>.bfg--lg-lines-3</code>, <code>.bfg--sm-lines-3</code>, <code>.bfg--xs-lines-3</code></li>
+<li><code>.bfg--lines-4</code>, <code>.bfg--xl-lines-4</code>, <code>.bfg--lg-lines-4</code>, <code>.bfg--sm-lines-4</code>, <code>.bfg--xs-lines-4</code></li>
 </ul>
 <p><em>Gap:</em></p>
 <ul>
