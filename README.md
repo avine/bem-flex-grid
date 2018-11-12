@@ -212,12 +212,33 @@ Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
 <div class="bfg bfg--height-auto">...</div>
 ```
 
-#### Wrap onto multiple lines: `.bfg--wrap`
+#### Wrap onto multiple lines: `.bfg--[B]wrap`,  `.bfg--[B]nowrap`
 
-Allow `.bfg__box` elements to wrap as needed onto multiple lines, using the optional `.bfg--wrap` modifier.
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
+
+By default, `.bfg__box` elements are displayed onto one line and can not leave outside the `.bfg` block.
+
+To allow `.bfg__box` elements to wrap as needed onto multiple lines, use the `.bfg--wrap` modifier.
 
 ```html
 <div class="bfg bfg--wrap">...</div>
+```
+
+As the grid is responsive, you can change this behavior at each breakpoint.
+
+*Example:*
+
+- Wrap onto multiple lines on all *screen sizes* (even greater than 1200px).
+- Do not wrap on *large screen* (until 992px).
+- Wrap again on *small screen* (until 768px).
+
+```html
+<div class="bfg
+  bfg--wrap
+  bfg--lg-nowrap
+  bfg--sm-wrap">
+  ...
+</div>
 ```
 
 #### Number of lines: `.bfg--[B]lines-[N]`
@@ -273,7 +294,7 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 - Fit boxes on 4 lines on *small screen* (until 768px).
 
 ```html
-<div class="bfg
+<div class="bfg bfg--wrap
   bfg--lines-2
   bfg--lg-lines-3
   bfg--sm-lines-4">
@@ -805,13 +826,14 @@ Now, let's use the `info` theme:
 
 *Wrap onto multiple lines:*
 
-- `.bfg--wrap`
+- `.bfg--wrap`, `.bfg--xl-wrap`, `.bfg--lg-wrap`, `.bfg--sm-wrap`, `.bfg--xs-wrap`
+- `.bfg--nowrap`, `.bfg--xl-nowrap`, `.bfg--lg-nowrap`, `.bfg--sm-nowrap`, `.bfg--xs-nowrap`
 
 *Number of lines:*
 
-- `.bfg--lines-2`, `.bfg--lines-xl-2`, `.bfg--lines-lg-2`, `.bfg--lines-sm-2`, `.bfg--lines-xs-2`
-- `.bfg--lines-3`, `.bfg--lines-xl-3`, `.bfg--lines-lg-3`, `.bfg--lines-sm-3`, `.bfg--lines-xs-3`
-- `.bfg--lines-4`, `.bfg--lines-xl-4`, `.bfg--lines-lg-4`, `.bfg--lines-sm-4`, `.bfg--lines-xs-4`
+- `.bfg--lines-2`, `.bfg--xl-lines-2`, `.bfg--lg-lines-2`, `.bfg--sm-lines-2`, `.bfg--xs-lines-2`
+- `.bfg--lines-3`, `.bfg--xl-lines-3`, `.bfg--lg-lines-3`, `.bfg--sm-lines-3`, `.bfg--xs-lines-3`
+- `.bfg--lines-4`, `.bfg--xl-lines-4`, `.bfg--lg-lines-4`, `.bfg--sm-lines-4`, `.bfg--xs-lines-4`
 
 *Gap:*
 
