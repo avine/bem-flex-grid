@@ -179,7 +179,7 @@ h2.docs-header__subtitle {
 .docs-showcase__iframe {
   display: block;
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   max-height: 550px;
   border-radius: 2px;
   border: none; }

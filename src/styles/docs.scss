@@ -169,7 +169,7 @@ h2.docs-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 .docs-showcase__iframe {
   display: block;
   width: 100%;
-  height: 85vh;
+  height: 80vh;
   max-height: 550px;
   border-radius: ($docs-border-radius - map-get($docs-showcase, border-width));
   border: none;
