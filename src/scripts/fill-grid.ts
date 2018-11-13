@@ -50,14 +50,16 @@ const getText = (color = true) => {
 const getContainer = () => '<div class="demo-container" title="Switch size"></div>';
 
 interface IFillGridOptions {
+  type: 'text' | 'container';
   textColor: boolean;
 }
 
-const fillGridOptions: IFillGridOptions = { textColor: true };
+const fillGridOptions: IFillGridOptions = { type: null, textColor: true };
 
 const fillElement = (element: Element, options = { ...fillGridOptions }) => {
   if (!element.childElementCount) {
-    switch (fillType) {
+    const type = options.type || fillType;
+    switch (type) {
       case 'text':
         element.innerHTML = `${getText(options.textColor)}`;
         break;

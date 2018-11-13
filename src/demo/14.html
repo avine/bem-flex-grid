@@ -13,51 +13,73 @@
   <link rel="stylesheet" href="14.scss">
 
   <script src="../script.ts"></script>
+
+  <style>
+    .demo-layout__playground {
+      box-sizing: border-box;
+      padding: 1rem;
+    }
+    .demo-layout__playground--light {
+      background:#f5f5f5;
+    }
+    .demo-layout__playground--dark {
+      background:#252525;
+      color:#dedede;
+    }
+  </style>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Grid card</h1>
-      <p>The <code>.bfg-card</code> block can be added at different levels of the grid.</p>
-      <p>Using the markup <code>.bfg.bfg-card</code> tells that the <code>.bfg</code> block contains cards elements (content, header and action) that are not direct children of the <code>.bfg-card</code> block.</p>
-      <p>This allows you to define a default look and feel for all cards and lets you customize some of them, using the different <code>.bfg-card--*</code> modifiers.</p>
+      <h1>Standalone card</h1>
+      <p>The card's content must be placed inside a <code>.bfg-card__content</code> element.</p>
+      <p>Then you can add an header to the card using the optional <code>.bfg-card__header</code> element and one or more actions to the header using the optional <code>.bfg-card__action</code> element.</p>
+      <p>By default, the card's elements do not have any look and feel. Use the <code>.bfg-card--*</code> modifiers to adapt the appearance of each block to your needs.</p>
 
     </div>
   </div>
-  <pre class="demo-layout__output demo-layout__output--gray">
-    <div class="demo-layout__playground">
 
-      <!-- global card definition -->
-      <div class="bfg bfg--col bfg--gap bfg-card bfg-card--primary">
-        <div class="bfg__box">
-          <div class="bfg-card__header">Header</div>
-          <div class="bfg-card__content"><!-- use global "primary" theme --></div>
-        </div>
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground demo-layout__playground--light">
 
-        <div class="bfg__box">
-          <div class="bfg-card__header">Header</div>
-          <div class="bfg-card__content"><!-- use global "primary" theme --></div>
-        </div>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 
-        <!-- chained card definition (at box level) -->
-        <div class="bfg__box bfg-card bfg-card--info">
-          <div class="bfg-card__header">Header</div>
-          <div class="bfg-card__content"><!-- use local "info" theme --></div>
-        </div>
-
-        <div class="bfg__box">
-          <!-- nested card definition (as box child) -->
-          <div class="bfg-card bfg-card--info">
-            <div class="bfg-card__header">Header</div>
-            <div class="bfg-card__content"><!-- use local "info" theme --></div>
-          </div>
-        </div>
+      <div class="bfg-card bfg-card--primary">
+        <div class="bfg-card__content">Content</div>
       </div>
+
+      <div class="bfg-card bfg-card--primary">
+        <div class="bfg-card__header">Header</div>
+        <div class="bfg-card__content">Content</div>
+      </div>
+
+      <div class="bfg-card bfg-card--primary">
+        <a href="#" class="bfg-card__action">Action 2</a>
+        <a href="#" class="bfg-card__action">Action 1</a>
+        <div class="bfg-card__header">Header</div>
+        <div class="bfg-card__content">Content</div>
+      </div>
+
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
 
     </div>
   </pre>
 
-  <script>Demo.viewCode(); Demo.fillGrid({ textColor: false }); Demo.enableActions();</script>
+  <a href="#" class="demo-toolbox__action demo-toolbox__action--theme"></a>
+
+  <script>
+    Demo.viewCode();
+    Demo.enableActions(['fullWidth']);
+
+    // Add another action to switch theme...
+    const target = document.querySelector('.demo-layout__playground').classList;
+    Demo.handleAction(document.querySelector('.demo-toolbox__action--theme'), () => {
+      target.toggle('demo-layout__playground--dark');
+      target.toggle('demo-layout__playground--light');
+    });
+  </script>
 </body>
 </html>

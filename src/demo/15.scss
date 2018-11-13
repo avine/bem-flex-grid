@@ -1,0 +1,20 @@
+// ===== Import grid system =====
+
+@import "../lib/bem-flex-grid.ie11";
+
+// ===== Add customized theme =====
+
+@include bfg-card(info, (
+  //box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075), // Omit to use default value
+  border-radius: 6px,
+  border-width: 2px,
+
+  header-borderless: true,
+  header-border: #BBDEFB,
+  header-background: #E3F2FD,
+  header-forground: #1976D2,
+
+  content-border: #BBDEFB,
+  content-background: #E3F2FD,
+  //content-forground: false // Omit to use default value
+));

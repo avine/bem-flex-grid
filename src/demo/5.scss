@@ -6,9 +6,7 @@ $bfg-card-primary-included: false;
 
 // ===== Add customized themes =====
 
-.demo-layout__playground--light {
-  @include bfg-card(primary, ());
-}
+@include bfg-card(primary, ());
 
 .demo-layout__playground--dark {
   @include bfg-card(primary, (

@@ -18,9 +18,9 @@
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Nested grid</h1>
-      <p>To nest grids, include a <code>.bfg</code> block inside a <code>.bfg__box</code> element.</p>
-      <p>In this demo, we use a main column grid and nested row grids. With this technique, each row can have a different height.</p>
+      <h1>Chained grid</h1>
+      <p>To chain grids, use markup <code>.bfg__box.bfg</code> to treat a <code>.bfg__box</code> element as a <code>.bfg</code> block too.</p>
+      <p>In this demo, we use a main column grid and chained row grids. With this technique, each row can have a different height.</p>
 
     </div>
   </div>
@@ -28,28 +28,23 @@
     <div class="demo-layout__playground">
 
       <div class="bfg bfg--col">
-        <div class="bfg__box bfg__box--3">
 
-          <!-- Nested grid starts here, inside the `.bfg__box` element -->
-          <div class="bfg bfg--row">
-            <div class="bfg__box bfg__box--6"></div>
-            <div class="bfg__box bfg__box--6"></div>
-          </div>
-
+        <!-- Chained grid starts here, on the `.bfg__box` element -->
+        <div class="bfg__box bfg__box--3 bfg bfg--row">
+          <div class="bfg__box bfg__box--6"></div>
+          <div class="bfg__box bfg__box--6"></div>
         </div>
-        <div class="bfg__box bfg__box--9">
 
-          <!-- Nested grid -->
-          <div class="bfg bfg--row">
-            <div class="bfg__box bfg__box--12"></div>
-          </div>
-
+        <!-- Chained grid -->
+        <div class="bfg__box bfg__box--9 bfg bfg--row">
+          <div class="bfg__box bfg__box--12"></div>
         </div>
+
       </div>
 
     </div>
   </pre>
 
-  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions(['fullWidth', 'autoHeight', 'direction']);</script>
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
 </body>
 </html>
