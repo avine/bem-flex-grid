@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism.css">
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/demo.scss">
+  <link rel="stylesheet" href="17.scss">
+
+  <script src="../script.ts"></script>
+
+  <style>
+    .demo-layout__playground--light {
+      background:#f5f5f5;
+    }
+    .demo-layout__playground--dark {
+      background:#252525;
+      color:#dedede;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>Card themes</h1>
+
+    </div>
+  </div>
+
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground demo-layout__playground--light">
+
+      <div class="bfg bfg--col bfg--gap bfg-card bfg-card--primary">
+        <div class="bfg__box bfg__box--12 bfg bfg--row">
+          <div class="bfg__box bfg__box--12">
+            <div class="bfg-card__header">Header</div>
+            <div class="bfg-card__content"></div>
+          </div>
+
+          <div class="bfg__box bfg__box--12">
+            <div class="bfg-card__header">Header</div>
+            <div class="bfg-card__content"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="position: absolute; bottom: 1rem; left: 1rem; background: white;">
+      <a href="#" onclick="switchTheme('light'); return false;">Light</a>
+      <a href="#" onclick="switchTheme('dark'); return false;">Dark</a>
+    </div>
+  </pre>
+
+  <script>
+    Demo.viewCode();
+    Demo.fillGrid({ type: 'text', textColor: false });
+    Demo.enableActions(['fullWidth']);
+
+    const target = document.querySelector('.demo-layout__playground').classList;
+    const switchTheme = (name) => {
+      ['light', 'dark'].forEach(n => target.remove(`demo-layout__playground--${n}`));
+      target.add(`demo-layout__playground--${name}`);
+    };
+  </script>
+
+</body>
+</html>
