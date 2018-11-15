@@ -9,72 +9,43 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.e4a99f1a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.270e6999.css">
-  <link rel="stylesheet" href="/bem-flex-grid/13.03e664a8.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.73290aa6.css">
+  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.f5216ad0.css">
 
-  <script src="/bem-flex-grid/script.e47f51b0.js"></script>
-
-  <style>.demo-layout__playground {
-      box-sizing: border-box;
-      padding: 1rem;
-    }
-    .demo-layout__playground--light {
-      background:#f5f5f5;
-    }
-    .demo-layout__playground--dark {
-      background:#252525;
-      color:#dedede;
-    }</style>
+  <script src="/bem-flex-grid/script.6f3f992d.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Standalone card</h1>
-      <p>The card's content must be placed inside a <code>.bfg-card__content</code> element.</p>
-      <p>Then you can add an header to the card using the optional <code>.bfg-card__header</code> element and one or more actions to the header using the optional <code>.bfg-card__action</code> element.</p>
-      <p>By default, the card's elements do not have any look and feel. Use the <code>.bfg-card--*</code> modifiers to adapt the appearance of each block to your needs.</p>
+      <h1>Remaining space distribution</h1>
+      <p>
+        When the total size of the boxes is less than <code>12</code>, you can distribute the remaining space using:
+        <code>.bfg--main-center</code>, <code>.bfg--main-end</code>,
+        <code>.bfg--main-between</code> or <code>.bfg--main-around</code>.
+      </p>
 
     </div>
   </div>
-
   <pre class="demo-layout__output">
-    <div class="demo-layout__playground demo-layout__playground--light">
+    <div class="demo-layout__playground">
 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-      do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-      <div class="bfg-card bfg-card--primary">
-        <div class="bfg-card__content">Content</div>
+      <div class="bfg bfg--row bfg--main-between">
+        <div class="bfg__box bfg__box--2"></div>
+        <div class="bfg__box bfg__box--fit" style="background:#FFEBEE;">
+          <i>Fixed box</i>
+        </div>
+        <div class="bfg__box bfg__box--fit" style="background:#FFEBEE;">
+          <i>Fixed box</i>
+        </div>
+        <div class="bfg__box bfg__box--4"></div>
       </div>
-
-      <div class="bfg-card bfg-card--primary">
-        <div class="bfg-card__header">Header</div>
-        <div class="bfg-card__content">Content</div>
-      </div>
-
-      <div class="bfg-card bfg-card--primary">
-        <a href="#" class="bfg-card__action">Action 2</a>
-        <a href="#" class="bfg-card__action">Action 1</a>
-        <div class="bfg-card__header">Header</div>
-        <div class="bfg-card__content">Content</div>
-      </div>
-
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco
-      laboris nisi ut aliquip ex ea commodo consequat.
 
     </div>
   </pre>
 
-  <a href="#" class="demo-toolbox__action demo-toolbox__action--theme"></a>
-
   <script>Demo.viewCode();
-Demo.enableActions(['fullWidth']); // Add another action to switch theme...
-
-var target = document.querySelector('.demo-layout__playground').classList;
-Demo.handleAction(document.querySelector('.demo-toolbox__action--theme'), function () {
-  target.toggle('demo-layout__playground--dark');
-  target.toggle('demo-layout__playground--light');
-});</script>
+Demo.fillGrid();
+Demo.enableActions(['fullWidth', 'autoHeight', 'direction']);</script>
 </body>
 </html>

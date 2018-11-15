@@ -35,8 +35,15 @@ h1, h2, h4 {
   font-family: map-get($demo-fonts, title), serif;
 }
 
-h4 {
+h4,
+.markdown-body h4 {
   color: #C62828;
+  line-height: 1.5em;
+  font-size: 1.1rem;
+
+  code {
+    font-size: 0.85em;
+  }
 }
 
 code {

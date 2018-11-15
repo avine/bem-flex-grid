@@ -9,32 +9,42 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.e4a99f1a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.270e6999.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.73290aa6.css">
   <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.f5216ad0.css">
 
-  <script src="/bem-flex-grid/script.e47f51b0.js"></script>
+  <script src="/bem-flex-grid/script.6f3f992d.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Chained grid in the same direction</h1>
-      <p>Works too!</p>
+      <h1>Nested grid</h1>
+      <p>To nest grids, include a <code>.bfg</code> block inside a <code>.bfg__box</code> element.</p>
+      <p>In this demo, we use a main column grid and nested row grids. With this technique, each row can have a different height.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--row">
-        <div class="bfg__box bfg__box--4"></div>
-        <div class="bfg__box bfg__box--4 bfg bfg--row">
+      <div class="bfg bfg--col">
+        <div class="bfg__box bfg__box--3">
 
-          <div class="bfg__box bfg__box--6"></div>
-          <div class="bfg__box bfg__box--6"></div>
+          <!-- Nested grid starts here, inside the `.bfg__box` element -->
+          <div class="bfg bfg--row">
+            <div class="bfg__box bfg__box--6"></div>
+            <div class="bfg__box bfg__box--6"></div>
+          </div>
 
         </div>
-        <div class="bfg__box bfg__box--4"></div>
+        <div class="bfg__box bfg__box--9">
+
+          <!-- Nested grid -->
+          <div class="bfg bfg--row">
+            <div class="bfg__box bfg__box--12"></div>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -42,6 +52,6 @@
 
   <script>Demo.viewCode();
 Demo.fillGrid();
-Demo.enableActions();</script>
+Demo.enableActions(['fullWidth', 'autoHeight', 'direction']);</script>
 </body>
 </html>

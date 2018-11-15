@@ -24,8 +24,14 @@ h1, h2, h3 {
 h1, h2, h4 {
   font-family: "Expletus Sans", serif; }
 
-h4 {
-  color: #C62828; }
+h4,
+.markdown-body h4 {
+  color: #C62828;
+  line-height: 1.5em;
+  font-size: 1.1rem; }
+  h4 code,
+  .markdown-body h4 code {
+    font-size: 0.85em; }
 
 code {
   font-family: "IBM Plex Mono", monospace !important;

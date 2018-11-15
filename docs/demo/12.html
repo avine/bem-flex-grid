@@ -9,36 +9,31 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.e4a99f1a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.270e6999.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.73290aa6.css">
   <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.f5216ad0.css">
 
-  <script src="/bem-flex-grid/script.e47f51b0.js"></script>
+  <script src="/bem-flex-grid/script.6f3f992d.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Remaining space distribution</h1>
-      <p>
-        When the total size of the boxes is less than <code>12</code>, you can distribute the remaining space using:
-        <code>.bfg--main-center</code>, <code>.bfg--main-end</code>,
-        <code>.bfg--main-between</code> or <code>.bfg--main-around</code>.
-      </p>
+      <h1>Box fit</h1>
+      <p>Use <code>.bfg__box--fit</code> modifier to indicate that a <code>.bfg__box</code> element should not grow or shrink.</p>
+      <p>To see it in action, resize the window.</p>
+      <p>Additionally, you can fix the size in pixels by giving the box the expected <code>width</code> for grid in row direction and <code>height</code> for grid in column direction.</p>
 
     </div>
   </div>
   <pre class="demo-layout__output">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--row bfg--main-between">
-        <div class="bfg__box bfg__box--2"></div>
-        <div class="bfg__box bfg__box--fit" style="background:#FFEBEE;">
-          <i>Fixed box</i>
-        </div>
-        <div class="bfg__box bfg__box--fit" style="background:#FFEBEE;">
-          <i>Fixed box</i>
+      <div class="bfg bfg--row">
+        <div class="bfg__box bfg__box--fit">
+          <b>Box fit!</b>
         </div>
         <div class="bfg__box bfg__box--4"></div>
+        <div class="bfg__box bfg__box--8"></div>
       </div>
 
     </div>
@@ -46,6 +41,6 @@
 
   <script>Demo.viewCode();
 Demo.fillGrid();
-Demo.enableActions(['fullWidth', 'autoHeight', 'direction']);</script>
+Demo.enableActions();</script>
 </body>
 </html>

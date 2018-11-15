@@ -9,53 +9,48 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.e4a99f1a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.270e6999.css">
-  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid.ie11.f5216ad0.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.73290aa6.css">
+  <link rel="stylesheet" href="/bem-flex-grid/15.38b2c674.css">
 
-  <script src="/bem-flex-grid/script.e47f51b0.js"></script>
+  <script src="/bem-flex-grid/script.6f3f992d.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
     <div class="demo-layout__readme">
 
-      <h1>Dashboard</h1>
-      <p>Bem flex grid perfectly fits to the window size in both width and height and lets you design fixed dashboard.</p>
+      <h1>Grid card</h1>
+      <p>The <code>.bfg-card</code> block can be added at different levels of the grid.</p>
+      <p>Using the markup <code>.bfg.bfg-card</code> tells that the <code>.bfg</code> block contains cards elements (content, header and action) that are not direct children of the <code>.bfg-card</code> block.</p>
+      <p>This allows you to define a default look and feel for all cards and lets you customize some of them, using the different <code>.bfg-card--*</code> modifiers.</p>
+
     </div>
   </div>
   <pre class="demo-layout__output demo-layout__output--gray">
     <div class="demo-layout__playground">
 
+      <!-- global card definition -->
       <div class="bfg bfg--col bfg--gap bfg-card bfg-card--primary">
-        <div class="bfg__box bfg__box--6">
-          <!-- content with header -->
-          <header class="bfg-card__header">Header</header>
-          <div class="bfg-card__content">
-            <div class="demo-chart"></div>
-          </div>
+        <div class="bfg__box">
+          <div class="bfg-card__header">Header</div>
+          <div class="bfg-card__content"><!-- use global "primary" theme --></div>
         </div>
 
-        <div class="bfg__box bfg__box--6 bfg bfg--row">
-          <div class="bfg__box bfg__box--3">
-            <!-- content with header and actions -->
-            <div class="bfg-card__action"><a href="#action-2">Action 2</a></div>
-            <div class="bfg-card__action"><a href="#action-1">Action 1</a></div>
-            <header class="bfg-card__header">Very very very long Header</header>
-            <div class="bfg-card__content">
-              <div class="demo-chart"></div>
-            </div>
-          </div>
+        <div class="bfg__box">
+          <div class="bfg-card__header">Header</div>
+          <div class="bfg-card__content"><!-- use global "primary" theme --></div>
+        </div>
 
-          <div class="bfg__box bfg__box--6">
-            <div class="bfg-card__content">
-              <div class="demo-chart"></div>
-            </div>
-          </div>
+        <!-- chained card definition (at box level) -->
+        <div class="bfg__box bfg-card bfg-card--info">
+          <div class="bfg-card__header">Header</div>
+          <div class="bfg-card__content"><!-- use local "info" theme --></div>
+        </div>
 
-          <div class="bfg__box bfg__box--3">
-            <header class="bfg-card__header">Header</header>
-            <div class="bfg-card__content">
-              <div class="demo-chart"></div>
-            </div>
+        <div class="bfg__box">
+          <!-- nested card definition (as box child) -->
+          <div class="bfg-card bfg-card--info">
+            <div class="bfg-card__header">Header</div>
+            <div class="bfg-card__content"><!-- use local "info" theme --></div>
           </div>
         </div>
       </div>
@@ -64,12 +59,9 @@
   </pre>
 
   <script>Demo.viewCode();
-Demo.enableActions(['fullWidth', 'direction', 'gridGap']);</script>
-
-  <script>var ctx = document.querySelectorAll('.demo-chart');
-
-for (var i = 0; i < ctx.length; i++) {
-  Demo.chart(ctx[i]);
-}</script>
+Demo.fillGrid({
+  textColor: false
+});
+Demo.enableActions();</script>
 </body>
 </html>

@@ -1912,6 +1912,7 @@ var getContainer = function getContainer() {
 };
 
 var fillGridOptions = {
+  type: null,
   textColor: true
 };
 
@@ -1921,7 +1922,9 @@ var fillElement = function fillElement(element, options) {
   }
 
   if (!element.childElementCount) {
-    switch (fillType) {
+    var type = options.type || fillType;
+
+    switch (type) {
       case 'text':
         element.innerHTML = "" + getText(options.textColor);
         break;
@@ -2093,4 +2096,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.e47f51b0.map
+//# sourceMappingURL=/bem-flex-grid/script.6f3f992d.map
