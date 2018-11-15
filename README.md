@@ -722,7 +722,7 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 #### Variables
 
 ```scss
-$ie11-support: false !default;
+$bfg-ie11-support: false !default;
 
 $bfg-breakpoints: (
   xs: 576px,
@@ -733,11 +733,11 @@ $bfg-breakpoints: (
 
 $bfg-gap: 1rem !default;
 
-$bfg-margin: 1.5rem !default;
+$bfg-card-margin: 1.5rem !default;
 
-$bfg-padding: 0.5rem !default;
+$bfg-card-padding: 0.5rem !default;
 
-$bfg-header-height: 2rem !default;
+$bfg-card-header-height: 2rem !default;
 
 $bfg-card-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),

@@ -76,7 +76,7 @@
   overflow: hidden;
 }
 
-@if $ie11-support {
+@if $bfg-ie11-support {
   .bfg--row > .bfg__box { max-width: 100%; }
   .bfg--col > .bfg__box { max-height: 100%; }
 }
@@ -106,7 +106,7 @@
   .bfg__box--#{$size + 12} { flex-basis: 100%; }
 
   .bfg--row {
-    @if $ie11-support {
+    @if $bfg-ie11-support {
       > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
       > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
       > .bfg__box--#{$size + 3} { max-width: 25%; }
@@ -127,7 +127,7 @@
   }
 
   .bfg--col {
-    @if $ie11-support {
+    @if $bfg-ie11-support {
       > .bfg__box--#{$size + 1} { max-height: (100% / 12); }
       > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
       > .bfg__box--#{$size + 3} { max-height: 25%; }
@@ -156,7 +156,7 @@
 
   .bfg--#{$size + disabled} > .bfg__box,
   .bfg--#{$size + disabled-all} .bfg__box {
-    @if $ie11-support {
+    @if $bfg-ie11-support {
       max-width: none;
       max-height: none;
     }

@@ -1,5 +1,5 @@
 .bfg-card {
-  margin: $bfg-margin 0;
+  margin: $bfg-card-margin 0;
 }
 
 .bfg {
@@ -14,12 +14,12 @@
 
 .bfg-card__action,
 .bfg-card__header {
-  padding: 0 $bfg-padding;
+  padding: 0 $bfg-card-padding;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  height: $bfg-header-height;
-  line-height: $bfg-header-height;
+  height: $bfg-card-header-height;
+  line-height: $bfg-card-header-height;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -31,7 +31,7 @@
 }
 
 .bfg-card__content {
-  padding: $bfg-padding;
+  padding: $bfg-card-padding;
   box-sizing: border-box;
   position: relative;
   overflow: auto;
@@ -53,7 +53,7 @@
 }
 
 .bfg-card__header + .bfg-card__content {
-  height: calc(100% - #{$bfg-header-height});
+  height: calc(100% - #{$bfg-card-header-height});
 }
 
 // Rules that are related in `bfg-card` mixin and have to be wrapped in some high level selector
