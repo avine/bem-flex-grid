@@ -58,12 +58,12 @@ Fs.writeFileSync(
   file => Fs.copySync(Path.join(__dirname, file), Path.join(targetDir, file)),
 );
 
+// ===== Publish on NPM =====
+
 console.log(`
 Ready to publish on NPM${DRY_MODE ? ' (dry mode):' : ':'}
 ${targetDir}
 `);
-
-// ===== Publish to NPM =====
 
 if (!DRY_MODE) {
   const rl = readline.createInterface({
@@ -82,7 +82,7 @@ if (!DRY_MODE) {
 
       child.on('exit', (code) => {
         if (code === 0) {
-          process.stdout.write('\n\t* Package successfully published *\n\n');
+          process.stdout.write('\n\t* Package published successfully *\n\n');
         }
       });
     } else {
