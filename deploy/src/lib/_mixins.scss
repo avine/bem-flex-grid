@@ -1,0 +1,44 @@
+@mixin bfg-media-breakpoint-up($size) {
+  @media (min-width: map-get($bfg-breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin bfg-media-breakpoint-down($size) {
+  @media (max-width: map-get($bfg-breakpoints, $size) - 0.02) {
+    @content;
+  }
+}
+
+@mixin bfg-card($name, $settings) {
+  $s: map-merge($bfg-card-primary, $settings);
+
+  .bfg-card--#{$name} {
+    .bfg-card__action,
+    .bfg-card__header {
+      box-shadow: map-get($s, box-shadow);
+      border: map-get($s, border-width) solid map-get($s, header-border);
+      @if map-get($s, header-borderless) { border-bottom-width: 0; }
+      background: map-get($s, header-background);
+      @if map-get($s, header-forground) { color: map-get($s, header-forground); }
+      line-height: calc(#{$bfg-card-header-height} - #{2 * map-get($s, border-width)});
+    }
+
+    .bfg-card__action {
+      border-top-right-radius: map-get($s, border-radius);
+      border-left-width: 0;
+    }
+
+    .bfg-card__header {
+      border-radius: map-get($s, border-radius) map-get($s, border-radius) 0 0;
+    }
+
+    .bfg-card__content {
+      box-shadow: map-get($s, box-shadow);
+      border-radius: map-get($s, border-radius);
+      border: map-get($s, border-width) solid map-get($s, content-border);
+      background: map-get($s, content-background);
+      @if map-get($s, content-forground) { color: map-get($s, content-forground); }
+    }
+  }
+}

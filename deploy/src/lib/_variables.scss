@@ -1,0 +1,33 @@
+$bfg-ie11-support: false !default;
+
+$bfg-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$bfg-gap: 1rem !default;
+
+$bfg-card-margin: 1rem !default;
+
+$bfg-card-padding: 0.5rem !default;
+
+$bfg-card-header-height: 2rem !default;
+
+$bfg-card-primary: (
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
+  border-radius: 3px,
+  border-width: 1px,
+
+  header-borderless: false,
+  header-border: #d5d5d5,
+  header-background: #f6f6f6,
+  header-forground: false,
+
+  content-border: #ddd,
+  content-background: #fff,
+  content-forground: false
+) !default;
+
+$bfg-card-primary-included: true !default;
