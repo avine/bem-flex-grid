@@ -170,19 +170,19 @@ pre.demo-layout__output--gray {
   background-color: #2196F3; }
 
 .demo-toolbox__action--full-screen {
-  background-image: url(desktop.f9af5d23.svg); }
+  background-image: url(/bem-flex-grid/desktop.bdd55cf9.svg); }
 
 .demo-toolbox__action--auto-height {
-  background-image: url(scroll.cf8815a9.svg); }
+  background-image: url(/bem-flex-grid/scroll.b65b86e7.svg); }
 
 .demo-toolbox__action--direction {
-  background-image: url(directions.60bc070b.svg); }
+  background-image: url(/bem-flex-grid/directions.fc65af8e.svg); }
 
 .demo-toolbox__action--grid-gap {
-  background-image: url(th-large.792ba4b7.svg); }
+  background-image: url(/bem-flex-grid/th-large.58795f98.svg); }
 
 .demo-toolbox__action--theme {
-  background-image: url(palette.35d687da.svg); }
+  background-image: url(/bem-flex-grid/palette.21ef7445.svg); }
 
 /* ===== Handle dummy container and text ===== */
 .demo-container {
@@ -274,3 +274,6 @@ pre.demo-layout__output--gray {
     z-index: 1; }
   body .demo-layout__tabs-content--open {
     z-index: 2; } }
+
+
+/*# sourceMappingURL=/bem-flex-grid/demo.cee73936.css.map */

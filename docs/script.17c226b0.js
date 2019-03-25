@@ -5,8 +5,6 @@
 //
 // anything defined in a previous bundle is accessed via the
 // orig method which is the require for previous bundles
-
-// eslint-disable-next-line no-global-assign
 parcelRequire = (function (modules, cache, entry, globalName) {
   // Save the require from previous bundle to this closure if any
   var previousRequire = typeof parcelRequire === 'function' && parcelRequire;
@@ -77,8 +75,16 @@ parcelRequire = (function (modules, cache, entry, globalName) {
     }, {}];
   };
 
+  var error;
   for (var i = 0; i < entry.length; i++) {
-    newRequire(entry[i]);
+    try {
+      newRequire(entry[i]);
+    } catch (e) {
+      // Save first error but execute all entries
+      if (!error) {
+        error = e;
+      }
+    }
   }
 
   if (entry.length) {
@@ -103,6 +109,13 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   // Override the current require with this new one
+  parcelRequire = newRequire;
+
+  if (error) {
+    // throw error from earlier, _after updating parcelRequire_
+    throw error;
+  }
+
   return newRequire;
 })({"H60v":[function(require,module,exports) {
 var define;
@@ -2096,4 +2109,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.6f3f992d.map
+//# sourceMappingURL=/bem-flex-grid/script.17c226b0.js.map
