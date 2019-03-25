@@ -12,10 +12,10 @@
     "predocs": "rimraf docs && npm run index",
     "docs": "parcel build src/index.html --out-dir docs --public-url /bem-flex-grid/ --no-minify",
     "css": "node-sass src/lib/bem-flex-grid.scss > dist/bem-flex-grid.css",
-    "css:ie11": "node-sass src/lib/bem-flex-grid.ie11.scss > dist/bem-flex-grid.ie11.css",
+    "css:attr": "node-sass src/lib/bem-flex-grid-attr.scss > dist/bem-flex-grid-attr.css",
     "css:min": "node-sass --output-style compressed src/lib/bem-flex-grid.scss > dist/bem-flex-grid.min.css",
-    "css:min:ie11": "node-sass --output-style compressed src/lib/bem-flex-grid.ie11.scss > dist/bem-flex-grid.ie11.min.css",
-    "build": "npm run css && npm run css:min && npm run css:ie11 && npm run css:min:ie11",
+    "css:min:attr": "node-sass --output-style compressed src/lib/bem-flex-grid-attr.scss > dist/bem-flex-grid-attr.min.css",
+    "build": "npm run css && npm run css:min && npm run css:attr && npm run css:min:attr",
     "deploy": "npm run build && node deploy.js",
     "all": "npm run clean && npm run docs && npm run build && node deploy.js --dry",
     "test": "echo \"Error: no test specified\" && exit 1"

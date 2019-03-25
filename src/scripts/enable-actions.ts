@@ -68,6 +68,7 @@ const autoHeightSwitcher = () => {
   );
 };
 
+// TODO: handle the "attr" implementation
 const directionSwitcher = () => {
   const grids = document.querySelectorAll('.bfg--row, .bfg--col');
   const code = document.querySelector('.demo-layout__code > code');
@@ -95,6 +96,7 @@ const directionSwitcher = () => {
   );
 };
 
+// TODO: handle the "attr" implementation
 const gridGapSwitcher = () => {
   const target = document.querySelector('.demo-layout__playground > .bfg'); // Find the first (main) grid
   const code = document.querySelector('.demo-layout__code > code') as HTMLElement;

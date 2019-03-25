@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism.css">
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/demo.scss">
+  <link rel="stylesheet" href="5.scss">
+
+  <script src="../script.ts"></script>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>Responsive</h1>
+      <p>In this demo, the <code>.bfg__box</code> are displayed onto:</p>
+      <ul>
+        <li>one line on all screen sizes (even greater than 1200px)</li>
+        <li>two lines on extra large screen (until 1200px)</li>
+        <li>three lines on large screen (until 992px)</li>
+      </ul>
+      <p>Change the window size to see the responsiveness in action.</p>
+
+    </div>
+  </div>
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
+
+      <div bfg="row wrap xl-lines-2 lg-lines-3">
+        <div bfg__box="4 xl-6 lg-12"></div>
+        <div bfg__box="4 xl-6 lg-12"></div>
+        <div bfg__box="4 xl-12 lg-12"></div>
+      </div>
+
+    </div>
+  </pre>
+
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions(['fullWidth', 'gridGap']);</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism.css">
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/demo.scss">
+  <link rel="stylesheet" href="../lib/bem-flex-grid-attr.scss">
+
+  <script src="../script.ts"></script>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>Remaining space distribution</h1>
+      <p>
+        When the total size of the boxes is less than <code>12</code>, you can distribute the remaining space using:
+        <code>.bfg--main-center</code>, <code>.bfg--main-end</code>,
+        <code>.bfg--main-between</code> or <code>.bfg--main-around</code>.
+      </p>
+
+    </div>
+  </div>
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
+
+      <div bfg="row main-between">
+        <div bfg__box="2"></div>
+        <div bfg__box="fit" style="background:#FFEBEE;">
+          <i>Fixed box</i>
+        </div>
+        <div bfg__box="fit" style="background:#FFEBEE;">
+          <i>Fixed box</i>
+        </div>
+        <div bfg__box="4"></div>
+      </div>
+
+    </div>
+  </pre>
+
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions(['fullWidth', 'autoHeight', 'direction']);</script>
+</body>
+</html>

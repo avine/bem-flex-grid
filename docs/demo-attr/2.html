@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="/bem-flex-grid/prism.211c56e0.css">
+
+  <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.bab17a8f.css">
+  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid-attr.1c012b9d.css">
+
+  <script src="/bem-flex-grid/script.8455d670.js"></script>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>One line</h1>
+      <p>By default, <code>.bfg__box</code> elements are displayed onto one line and can not leave outside the <code>.bfg</code> block.</p>
+      <p>To define the <code>.bfg__box</code> element size, use <code>.bfg__box--1</code>, <code>.bfg__box--2</code>, ..., <code>.bfg__box--11</code>, <code>.bfg__box--12</code> modifiers.</p>
+      <p>The total size available for each line is 12.</p>
+
+    </div>
+  </div>
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
+
+      <div bfg="row">
+        <div bfg__box="2"></div>
+        <div bfg__box="4"></div>
+        <div bfg__box="6"></div>
+      </div>
+
+    </div>
+  </pre>
+
+  <script>Demo.viewCode();
+Demo.fillGrid();
+Demo.enableActions();</script>
+</body>
+</html>
