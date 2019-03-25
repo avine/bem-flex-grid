@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="stylesheet" href="../styles/demo.scss">
-  <link rel="stylesheet" href="../lib/bem-flex-grid.scss">
+  <link rel="stylesheet" href="../lib/bem-flex-grid-attr.scss">
 
   <script src="../script.ts"></script>
 </head>
@@ -27,39 +27,39 @@
   <pre class="demo-layout__output">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--col bfg--gap">
-        <div class="bfg__box bfg__box--6 bfg bfg--row"><!-- chained -->
+      <div bfg="col gap">
+        <div bfg__box="6" bfg="row"><!-- chained -->
 
-          <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- chained -->
+          <div bfg__box="6" bfg="col"><!-- chained -->
 
-            <div class="bfg__box bfg__box--6"></div>
-            <div class="bfg__box bfg__box--6"></div>
+            <div bfg__box="6"></div>
+            <div bfg__box="6"></div>
 
           </div>
-          <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
-            <div class="bfg bfg--col"><!-- nested -->
+          <div bfg__box="6 nopad"><!-- nopad -->
+            <div bfg="col"><!-- nested -->
 
-              <div class="bfg__box bfg__box--6"></div>
-              <div class="bfg__box bfg__box--6"></div>
+              <div bfg__box="6"></div>
+              <div bfg__box="6"></div>
 
             </div>
           </div>
 
         </div>
-        <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
+        <div bfg__box="6 nopad"><!-- nopad -->
 
-          <div class="bfg bfg--row"><!-- nested -->
-            <div class="bfg__box bfg__box--6 bfg bfg--col"><!-- chained -->
+          <div bfg="row"><!-- nested -->
+            <div bfg__box="6" bfg="col"><!-- chained -->
 
-              <div class="bfg__box bfg__box--6"></div>
-              <div class="bfg__box bfg__box--6"></div>
+              <div bfg__box="6"></div>
+              <div bfg__box="6"></div>
 
             </div>
-            <div class="bfg__box bfg__box--6 bfg__box--nopad"><!-- nopad -->
-              <div class="bfg bfg--col"><!-- nested -->
+            <div bfg__box="6 nopad"><!-- nopad -->
+              <div bfg="col"><!-- nested -->
 
-                <div class="bfg__box bfg__box--6"></div>
-                <div class="bfg__box bfg__box--6"></div>
+                <div bfg__box="6"></div>
+                <div bfg__box="6"></div>
 
               </div>
             </div>

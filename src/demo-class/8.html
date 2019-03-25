@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Bem Flex Grid</title>
+
+  <link rel="stylesheet" href="../../node_modules/prismjs/themes/prism.css">
+
+  <link rel="shortcut icon" href="../favicon.ico">
+  <link rel="stylesheet" href="../styles/demo.scss">
+  <link rel="stylesheet" href="../lib/bem-flex-grid-class.scss">
+
+  <script src="../script.ts"></script>
+</head>
+<body>
+  <div class="demo-layout__desc">
+    <div class="demo-layout__readme">
+
+      <h1>Chained grid in the same direction</h1>
+      <p>Works too!</p>
+
+    </div>
+  </div>
+  <pre class="demo-layout__output">
+    <div class="demo-layout__playground">
+
+      <div class="bfg bfg--row">
+        <div class="bfg__box bfg__box--4"></div>
+        <div class="bfg__box bfg__box--4 bfg bfg--row">
+
+          <div class="bfg__box bfg__box--6"></div>
+          <div class="bfg__box bfg__box--6"></div>
+
+        </div>
+        <div class="bfg__box bfg__box--4"></div>
+      </div>
+
+    </div>
+  </pre>
+
+  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions();</script>
+</body>
+</html>

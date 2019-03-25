@@ -9,10 +9,10 @@
   <link rel="stylesheet" href="/bem-flex-grid/prism.211c56e0.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.bab17a8f.css">
-  <link rel="stylesheet" href="/bem-flex-grid/15.943e75f9.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo.38c54a6f.css">
+  <link rel="stylesheet" href="/bem-flex-grid/15.f8679484.css">
 
-  <script src="/bem-flex-grid/script.8455d670.js"></script>
+  <script src="/bem-flex-grid/script.5eba3750.js"></script>
 </head>
 <body>
   <div class="demo-layout__desc">
@@ -29,28 +29,28 @@
     <div class="demo-layout__playground">
 
       <!-- global card definition -->
-      <div class="bfg bfg--col bfg--gap bfg-card bfg-card--primary">
-        <div class="bfg__box">
-          <div class="bfg-card__header">Header</div>
-          <div class="bfg-card__content"><!-- use global "primary" theme --></div>
+      <div bfg="col gap" bfg-card="primary">
+        <div bfg__box="">
+          <div bfg-card__header="">Header</div>
+          <div bfg-card__content=""><!-- use global "primary" theme --></div>
         </div>
 
-        <div class="bfg__box">
-          <div class="bfg-card__header">Header</div>
-          <div class="bfg-card__content"><!-- use global "primary" theme --></div>
+        <div bfg__box="">
+          <div bfg-card__header="">Header</div>
+          <div bfg-card__content=""><!-- use global "primary" theme --></div>
         </div>
 
         <!-- chained card definition (at box level) -->
-        <div class="bfg__box bfg-card bfg-card--info">
-          <div class="bfg-card__header">Header</div>
-          <div class="bfg-card__content"><!-- use local "info" theme --></div>
+        <div bfg__box="" bfg-card="info">
+          <div bfg-card__header="">Header</div>
+          <div bfg-card__content=""><!-- use local "info" theme --></div>
         </div>
 
-        <div class="bfg__box">
+        <div bfg__box="">
           <!-- nested card definition (as box child) -->
-          <div class="bfg-card bfg-card--info">
-            <div class="bfg-card__header">Header</div>
-            <div class="bfg-card__content"><!-- use local "info" theme --></div>
+          <div bfg-card="info">
+            <div bfg-card__header="">Header</div>
+            <div bfg-card__content=""><!-- use local "info" theme --></div>
           </div>
         </div>
       </div>

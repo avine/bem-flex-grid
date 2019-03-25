@@ -13,9 +13,9 @@
 @mixin bfg-card($name, $settings) {
   $s: map-merge($bfg-card-primary, $settings);
 
-  .bfg-card--#{$name} {
-    .bfg-card__action,
-    .bfg-card__header {
+  [bfg-card~="#{$name}"] {
+    [bfg-card__action],
+    [bfg-card__header] {
       box-shadow: map-get($s, box-shadow);
       border: map-get($s, border-width) solid map-get($s, header-border);
       @if map-get($s, header-borderless) { border-bottom-width: 0; }
@@ -24,16 +24,16 @@
       line-height: calc(#{$bfg-card-header-height} - #{2 * map-get($s, border-width)});
     }
 
-    .bfg-card__action {
+    [bfg-card__action] {
       border-top-right-radius: map-get($s, border-radius);
       border-left-width: 0;
     }
 
-    .bfg-card__header {
+    [bfg-card__header] {
       border-radius: map-get($s, border-radius) map-get($s, border-radius) 0 0;
     }
 
-    .bfg-card__content {
+    [bfg-card__content] {
       box-shadow: map-get($s, box-shadow);
       border-radius: map-get($s, border-radius);
       border: map-get($s, border-width) solid map-get($s, content-border);

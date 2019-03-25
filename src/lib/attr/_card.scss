@@ -1,19 +1,19 @@
-.bfg-card {
+[bfg-card] {
   margin: $bfg-card-margin 0;
 }
 
-.bfg {
-  &.bfg-card, .bfg-card {
+[bfg] {
+  &[bfg-card], [bfg-card] {
     margin: 0;
   }
 }
 
-.bfg__box > .bfg-card {
+[bfg__box] > [bfg-card] {
   height: 100%;
 }
 
-.bfg-card__action,
-.bfg-card__header {
+[bfg-card__action],
+[bfg-card__header] {
   padding: 0 $bfg-card-padding;
   box-sizing: border-box;
   position: relative;
@@ -25,12 +25,12 @@
   text-overflow: ellipsis;
 }
 
-.bfg-card__action {
+[bfg-card__action] {
   float: right;
   max-width: 25%; // Up to 4 actions per box
 }
 
-.bfg-card__content {
+[bfg-card__content] {
   padding: $bfg-card-padding;
   box-sizing: border-box;
   position: relative;
@@ -38,39 +38,40 @@
   height: 100%;
 }
 
-.bfg-card__content--nopad {
+[bfg-card__content~="nopad"] {
   padding: 0;
 }
 
-.bfg--card-content-overflow-visible .bfg-card__content,
-.bfg-card__content--overflow-visible {
+[bfg~="card-content-overflow-visible"] [bfg-card__content],
+[bfg-card__content~="overflow-visible"] {
   overflow: visible;
 }
 
-.bfg--card-content-overflow-hidden .bfg-card__content,
-.bfg-card__content--overflow-hidden {
+[bfg~="card-content-overflow-hidden"] [bfg-card__content],
+[bfg-card__content~="overflow-hidden"] {
   overflow: hidden;
 }
 
-.bfg-card__header + .bfg-card__content {
+[bfg-card__header] + [bfg-card__content] {
   height: calc(100% - #{$bfg-card-header-height});
 }
 
 // Rules that are related in `bfg-card` mixin and have to be wrapped in some high level selector
-.bfg-card[class*="bfg-card--"] {
-  .bfg-card__action {
-    + .bfg-card__action,
-    + .bfg-card__header {
-      box-shadow: none;
-      border-top-right-radius: 0;
-      border-right-width: 0;
+// But actually, we need to add "!important" rule in order to make work (for the "attr" implementation)
+[bfg-card] {
+  [bfg-card__action] {
+    + [bfg-card__action],
+    + [bfg-card__header] {
+      box-shadow: none !important;
+      border-top-right-radius: 0 !important;
+      border-right-width: 0 !important;
     }
   }
 
-  .bfg-card__header + .bfg-card__content {
-    border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+  [bfg-card__header] + [bfg-card__content] {
+    border-top: none !important;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
   }
 }
 

@@ -10,7 +10,7 @@
 
   <link rel="shortcut icon" href="../favicon.ico">
   <link rel="stylesheet" href="../styles/demo.scss">
-  <link rel="stylesheet" href="../lib/bem-flex-grid.scss">
+  <link rel="stylesheet" href="../lib/bem-flex-grid-attr.scss">
 
   <script src="../script.ts"></script>
 </head>
@@ -26,35 +26,35 @@
   <pre class="demo-layout__output demo-layout__output--gray">
     <div class="demo-layout__playground">
 
-      <div class="bfg bfg--col bfg--gap bfg-card bfg-card--primary">
-        <div class="bfg__box bfg__box--6">
+      <div bfg="col gap" bfg-card="primary">
+        <div bfg__box="6">
           <!-- content with header -->
-          <header class="bfg-card__header">Header</header>
-          <div class="bfg-card__content">
+          <header bfg-card__header>Header</header>
+          <div bfg-card__content>
             <div class="demo-chart"></div>
           </div>
         </div>
 
-        <div class="bfg__box bfg__box--6 bfg bfg--row">
-          <div class="bfg__box bfg__box--3">
+        <div bfg__box="6" bfg="row">
+          <div bfg__box="3">
             <!-- content with header and actions -->
-            <div class="bfg-card__action"><a href="#action-2">Action 2</a></div>
-            <div class="bfg-card__action"><a href="#action-1">Action 1</a></div>
-            <header class="bfg-card__header">Very very very long Header</header>
-            <div class="bfg-card__content">
+            <div bfg-card__action><a href="#action-2">Action 2</a></div>
+            <div bfg-card__action><a href="#action-1">Action 1</a></div>
+            <header bfg-card__header>Very very very long Header</header>
+            <div bfg-card__content>
               <div class="demo-chart"></div>
             </div>
           </div>
 
-          <div class="bfg__box bfg__box--6">
-            <div class="bfg-card__content">
+          <div bfg__box="6">
+            <div bfg-card__content>
               <div class="demo-chart"></div>
             </div>
           </div>
 
-          <div class="bfg__box bfg__box--3">
-            <header class="bfg-card__header">Header</header>
-            <div class="bfg-card__content">
+          <div bfg__box="3">
+            <header bfg-card__header>Header</header>
+            <div bfg-card__content>
               <div class="demo-chart"></div>
             </div>
           </div>
