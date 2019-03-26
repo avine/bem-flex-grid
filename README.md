@@ -2,31 +2,56 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid system based on the flex display property that perfectly fits to the window size in both width and height if needed and lets you design fixed dashboard as well as scrollable page of widgets.*
+*A responsive grid system based on the flex display property that perfectly fits to the window size in both width and height if needed and lets you design native app layout as well as scrollable web page.*
 
 [![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
+
+## Design
+
+The library comes with 2 implementations.
+
+### Using CSS "class"
+
+This implementation sticks to the BEM convention (with *Block*, *Element* and *Modifier*), but has a more verbose syntax.
+
+*Here's an example:*
+
+```html
+<div class="user user--logged user--admin">
+  <div class="user__email user__email--validated">
+    john@doe.com
+  </div>
+</div>
+```
+
+### Using custom CSS "attributes"
+
+This implementation has a more concise syntax but derives from the BEM convention, by following this rules:
+
+- any BEM *Block* or *Element* is directly used as an HTML tag attribute.
+- any BEM *Modifier* is used to construct the attribute's value.
+
+*The example above becomes:*
+
+```html
+<div user="logged admin">
+  <div user__email="validated">
+    john@doe.com
+  </div>
+</div>
+```
 
 ## Quick start
 
 Get instant access by inserting the link tag into your web pages from *unpkg* CDN.
 
-### Link tag
-
-*For Evergreen browser:*
+### For "class" implementation
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
 ```
 
-*For IE11 compatibility:*
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.ie11.css">
-```
-
-### HTML starter markup
-
-Here's a simple grid in the vertical direction (column) that fits to the window.
+Here's a simple grid in the vertical direction (column) that fits to the window for this implementation.
 
 ```html
 <!DOCTYPE html>
@@ -34,8 +59,8 @@ Here's a simple grid in the vertical direction (column) that fits to the window.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bem Flex Grid</title>
-  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid.css">
+  <title>Bem Flex Grid - Class</title>
+  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
   <style>
     html, body { height:100%; }
     body { margin:0; padding:1rem; box-sizing:border-box; }
@@ -46,6 +71,37 @@ Here's a simple grid in the vertical direction (column) that fits to the window.
     <div class="bfg__box bfg__box--4">bem</div>
     <div class="bfg__box bfg__box--4">flex</div>
     <div class="bfg__box bfg__box--4">grid</div>
+  </div>
+</body>
+</html>
+```
+
+### For "attr" implementation
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
+```
+
+Here's the same grid as above for this implementation.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bem Flex Grid - Attr</title>
+  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
+  <style>
+    html, body { height:100%; }
+    body { margin:0; padding:1rem; box-sizing:border-box; }
+  </style>
+</head>
+<body>
+  <div bfg="col">
+    <div bfg__box="4">bem</div>
+    <div bfg__box="4">flex</div>
+    <div bfg__box="4">grid</div>
   </div>
 </body>
 </html>
@@ -66,31 +122,37 @@ npm i bem-flex-grid
 *Link tag:*
 
 ```html
-<link rel="stylesheet" href="[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid.css">
+<link rel="stylesheet" href="[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid-class.css">
 ```
 
 *Sass import:*
 
 ```scss
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 ```
 
 *Package content:*
 
-```bash
+```text
+bem-flex-grid
 ├─ dist
-│  ├─ bem-flex-grid.css
-│  ├─ bem-flex-grid.ie11.css
-│  ├─ bem-flex-grid.min.css
-│  └─ bem-flex-grid.ie11.min.css
+│  ├─ bem-flex-grid-attr.css
+│  ├─ bem-flex-grid-attr.min.css
+│  ├─ bem-flex-grid-class.css
+│  └─ bem-flex-grid-class.min.css
 └─ src
    └─ lib
+      ├─ attr
+      │  ├─ _card.scss
+      │  ├─ _core.scss
+      │  └─ _mixins.scss
+      ├─ class
+      │  ├─ _card.scss
+      │  ├─ _core.scss
+      │  └─ _mixins.scss
       ├─ _variables.scss
-      ├─ _mixins.scss
-      ├─ _core.scss
-      ├─ _card.scss
-      ├─ bem-flex-grid.scss
-      └─ bem-flex-grid.ie11.scss
+      ├─ bem-flex-grid-attr.scss
+      └─ bem-flex-grid-class.scss
 ```
 
 ## API
