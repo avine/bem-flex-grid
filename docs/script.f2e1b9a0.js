@@ -773,6 +773,15 @@ function forEach(elements, callback) {
 }
 
 exports.forEach = forEach;
+
+function toggleAttributeValue(el, key, value) {
+  var attr = (el.getAttribute(key) || '').trim().replace(/\s+/g, ' ').split(' ');
+  var index = attr.indexOf(value);
+  index === -1 ? attr.push(value) : attr.splice(index, 1);
+  el.setAttribute(key, attr.join(' ').trim());
+}
+
+exports.toggleAttributeValue = toggleAttributeValue;
 },{}],"6hKA":[function(require,module,exports) {
 var global = arguments[3];
 
@@ -1783,117 +1792,78 @@ var FULL_WIDTH_SWITCHER_DURATION = 300;
 /* ===== Actions ===== */
 
 var fullWidthSwitcher = function fullWidthSwitcher() {
-  var target = document.querySelector('.demo-layout__output');
+  var output = document.querySelector('.demo-layout__output');
   exports.handleAction(getAnchor('Toggle full screen', 'full-screen'), function () {
-    target.classList.toggle('demo-layout__output--full'); // Finally redraw Charts if any.
+    output.classList.toggle('demo-layout__output--full'); // Finally redraw Charts if any.
 
     exports.triggerResize(FULL_WIDTH_SWITCHER_DURATION);
   });
 };
 
 var autoHeightSwitcher = function autoHeightSwitcher() {
-  var target = document.querySelector('.demo-layout__playground');
+  var playground = document.querySelector('.demo-layout__playground');
   exports.handleAction(getAnchor('Toggle auto height', 'auto-height'), function () {
-    target.classList.toggle('demo-layout__playground--auto'); // Finally redraw Charts if any.
+    playground.classList.toggle('demo-layout__playground--auto'); // Finally redraw Charts if any.
 
     exports.triggerResize();
+  });
+};
+
+var toggleBfgDirection = function toggleBfgDirection(target) {
+  var bfgs = target.querySelectorAll('.bfg--row, .bfg--col');
+  util_1.forEach(bfgs, function (bfg) {
+    bfg.classList.toggle('bfg--row');
+    bfg.classList.toggle('bfg--col');
+  });
+  bfgs = target.querySelectorAll('[bfg~="row"], [bfg~="col"]');
+  util_1.forEach(bfgs, function (bfg) {
+    util_1.toggleAttributeValue(bfg, 'bfg', 'row');
+    util_1.toggleAttributeValue(bfg, 'bfg', 'col');
   });
 };
 
 var directionSwitcher = function directionSwitcher() {
-  var grids = document.querySelectorAll('.bfg--row, .bfg--col');
+  var playground = document.querySelector('.demo-layout__playground');
   var code = document.querySelector('.demo-layout__code > code');
-
-  if (!grids.length) {
-    return;
-  }
-
   exports.handleAction(getAnchor('Switch direction', 'direction'), function () {
     // Update output
-    util_1.forEach(grids, function (grid) {
-      var action = grid.classList.contains('bfg--row') ? {
-        remove: 'bfg--row',
-        add: 'bfg--col'
-      } : {
-        remove: 'bfg--col',
-        add: 'bfg--row'
-      };
-      grid.classList.remove(action.remove);
-      grid.classList.add(action.add);
-    }); // Update source code (right from the generated "PrismJs" markup)
+    toggleBfgDirection(playground); // Update source code (from original source code)
 
-    code.innerHTML = code.innerHTML.replace(/bfg--row/g, 'bfg-TMP-col').replace(/bfg--col/g, 'bfg--row').replace(/bfg-TMP-col/g, 'bfg--col'); // Finally redraw Charts if any.
+    var handler = view_code_1.handleSourceCode(code);
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = handler.sourceCode;
+    toggleBfgDirection(wrapper);
+    handler.update(wrapper.innerHTML); // Finally redraw Charts if any.
 
     exports.triggerResize();
   });
 };
 
-var directionSwitcherAttr = function directionSwitcherAttr() {
-  var grids = document.querySelectorAll('[bfg~="row"], [bfg~="col"]');
-  var code = document.querySelector('.demo-layout__code > code');
+var toggleBfgGap = function toggleBfgGap(target) {
+  var bfg = target.querySelector('.bfg'); // Find the first (main) grid
 
-  if (!grids.length) {
-    return;
+  if (bfg) {
+    bfg.classList.toggle('bfg--gap');
   }
 
-  exports.handleAction(getAnchor('Switch direction', 'direction'), function () {
-    // Update output
-    util_1.forEach(grids, function (grid) {
-      var attr = grid.getAttribute('bfg');
-      attr = attr.match(/row/) ? attr.replace('row', 'col') : attr.replace('col', 'row');
-      grid.setAttribute('bfg', attr);
-    }); // Update source code (right from the generated "PrismJs" markup)
+  bfg = target.querySelector('[bfg]'); // Find the first (main) grid
 
-    code.innerHTML = code.innerHTML.replace(/row/g, 'TMP').replace(/col/g, 'row').replace(/TMP/g, 'col'); // Finally redraw Charts if any.
-
-    exports.triggerResize();
-  });
+  if (bfg) {
+    util_1.toggleAttributeValue(bfg, 'bfg', 'gap');
+  }
 };
 
 var gridGapSwitcher = function gridGapSwitcher() {
-  var target = document.querySelector('.demo-layout__playground > .bfg'); // Find the first (main) grid
-
+  var playground = document.querySelector('.demo-layout__playground');
   var code = document.querySelector('.demo-layout__code > code');
-
-  if (!target) {
-    return;
-  }
-
   exports.handleAction(getAnchor('Toggle grid gap', 'grid-gap'), function () {
     // Update output
-    target.classList.toggle('bfg--gap'); // Update source code (from original source code)
+    toggleBfgGap(playground); // Update source code (from original source code)
 
     var handler = view_code_1.handleSourceCode(code);
     var wrapper = document.createElement('div');
     wrapper.innerHTML = handler.sourceCode;
-    wrapper.querySelector('.bfg').classList.toggle('bfg--gap'); // Find the first (main) grid
-
-    handler.update(wrapper.innerHTML);
-  });
-};
-
-var gridGapSwitcherAttr = function gridGapSwitcherAttr() {
-  var target = document.querySelector('.demo-layout__playground > [bfg]'); // Find the first (main) grid
-
-  var code = document.querySelector('.demo-layout__code > code');
-
-  if (!target) {
-    return;
-  }
-
-  exports.handleAction(getAnchor('Toggle grid gap', 'grid-gap'), function () {
-    // Update output
-    var attr = target.getAttribute('bfg');
-    attr = attr.match(/gap/) ? attr.replace('gap', '') : attr + ' gap';
-    target.setAttribute('bfg', attr.trim().replace(/s+/g, ' ')); // Update source code (from original source code)
-
-    var handler = view_code_1.handleSourceCode(code);
-    var wrapper = document.createElement('div');
-    wrapper.innerHTML = handler.sourceCode;
-    var bfg = wrapper.querySelector('[bfg]');
-    var attr2 = bfg.getAttribute('bfg');
-    attr2 = attr2.match(/gap/) ? attr2.replace('gap', '') : attr2 + ' gap';
-    bfg.setAttribute('bfg', attr2.trim().replace(/s+/g, ' '));
+    toggleBfgGap(wrapper);
     handler.update(wrapper.innerHTML);
   });
 };
@@ -1917,12 +1887,10 @@ exports.enableActions = function (actions) {
 
   if (exports.actionEnabled(actions, 'direction')) {
     directionSwitcher();
-    directionSwitcherAttr();
   }
 
   if (exports.actionEnabled(actions, 'gridGap')) {
     gridGapSwitcher();
-    gridGapSwitcherAttr();
   }
 
   document.querySelector('.demo-layout__output').appendChild(container);
@@ -2191,4 +2159,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.724428ec.js.map
+//# sourceMappingURL=/bem-flex-grid/script.f2e1b9a0.js.map

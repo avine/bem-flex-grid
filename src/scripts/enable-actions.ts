@@ -1,4 +1,4 @@
-import { forEach } from './util';
+import { forEach, toggleAttributeValue } from './util';
 import { handleSourceCode } from './view-code';
 
 /* ===== Helpers ===== */
@@ -45,11 +45,11 @@ const FULL_WIDTH_SWITCHER_DURATION = 300;
 /* ===== Actions ===== */
 
 const fullWidthSwitcher = () => {
-  const target = document.querySelector('.demo-layout__output');
+  const output = document.querySelector('.demo-layout__output');
   handleAction(
     getAnchor('Toggle full screen', 'full-screen'),
     () => {
-      target.classList.toggle('demo-layout__output--full');
+      output.classList.toggle('demo-layout__output--full');
       // Finally redraw Charts if any.
       triggerResize(FULL_WIDTH_SWITCHER_DURATION);
     },
@@ -57,40 +57,47 @@ const fullWidthSwitcher = () => {
 };
 
 const autoHeightSwitcher = () => {
-  const target = document.querySelector('.demo-layout__playground');
+  const playground = document.querySelector('.demo-layout__playground');
   handleAction(
     getAnchor('Toggle auto height', 'auto-height'),
     () => {
-      target.classList.toggle('demo-layout__playground--auto');
+      playground.classList.toggle('demo-layout__playground--auto');
       // Finally redraw Charts if any.
       triggerResize();
     },
   );
+};
+
+const toggleBfgDirection = (target: Element) => {
+  let bfgs = target.querySelectorAll('.bfg--row, .bfg--col');
+  forEach<Element>(bfgs, (bfg) => {
+    bfg.classList.toggle('bfg--row');
+    bfg.classList.toggle('bfg--col');
+  });
+
+  bfgs = target.querySelectorAll('[bfg~="row"], [bfg~="col"]');
+  forEach<Element>(bfgs, (bfg) => {
+    toggleAttributeValue(bfg, 'bfg', 'row');
+    toggleAttributeValue(bfg, 'bfg', 'col');
+  });
 };
 
 const directionSwitcher = () => {
-  const grids = document.querySelectorAll('.bfg--row, .bfg--col');
-  const code = document.querySelector('.demo-layout__code > code');
-  if (!grids.length) {
-    return;
-  }
+  const playground = document.querySelector('.demo-layout__playground');
+  const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
+
   handleAction(
     getAnchor('Switch direction', 'direction'),
     () => {
       // Update output
-      forEach<Element>(grids, (grid) => {
-        const action = grid.classList.contains('bfg--row')
-          ? { remove: 'bfg--row', add: 'bfg--col' }
-          : { remove: 'bfg--col', add: 'bfg--row' };
-        grid.classList.remove(action.remove);
-        grid.classList.add(action.add);
-      });
+      toggleBfgDirection(playground);
 
-      // Update source code (right from the generated "PrismJs" markup)
-      code.innerHTML = code.innerHTML
-        .replace(/bfg--row/g, 'bfg-TMP-col')
-        .replace(/bfg--col/g, 'bfg--row')
-        .replace(/bfg-TMP-col/g, 'bfg--col');
+      // Update source code (from original source code)
+      const handler = handleSourceCode(code);
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = handler.sourceCode;
+      toggleBfgDirection(wrapper);
+      handler.update(wrapper.innerHTML);
 
       // Finally redraw Charts if any.
       triggerResize();
@@ -98,80 +105,33 @@ const directionSwitcher = () => {
   );
 };
 
-const directionSwitcherAttr = () => {
-  const grids = document.querySelectorAll('[bfg~="row"], [bfg~="col"]');
-  const code = document.querySelector('.demo-layout__code > code');
-  if (!grids.length) {
-    return;
+const toggleBfgGap = (target: Element) => {
+  let bfg = target.querySelector('.bfg'); // Find the first (main) grid
+  if (bfg) {
+    bfg.classList.toggle('bfg--gap');
   }
-  handleAction(
-    getAnchor('Switch direction', 'direction'),
-    () => {
-      // Update output
-      forEach<Element>(grids, (grid) => {
-        let attr = grid.getAttribute('bfg');
-        attr = attr.match(/row/) ? attr.replace('row', 'col') : attr.replace('col', 'row');
-        grid.setAttribute('bfg', attr);
-      });
 
-      // Update source code (right from the generated "PrismJs" markup)
-      code.innerHTML = code.innerHTML
-        .replace(/row/g, 'TMP')
-        .replace(/col/g, 'row')
-        .replace(/TMP/g, 'col');
-
-      // Finally redraw Charts if any.
-      triggerResize();
-    },
-  );
+  bfg = target.querySelector('[bfg]'); // Find the first (main) grid
+  if (bfg) {
+    toggleAttributeValue(bfg, 'bfg', 'gap');
+  }
 };
 
 const gridGapSwitcher = () => {
-  const target = document.querySelector('.demo-layout__playground > .bfg'); // Find the first (main) grid
+  const playground = document.querySelector('.demo-layout__playground');
   const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
-  if (!target) {
-    return;
-  }
+
   handleAction(
     getAnchor('Toggle grid gap', 'grid-gap'),
     () => {
       // Update output
-      target.classList.toggle('bfg--gap');
+      toggleBfgGap(playground);
 
       // Update source code (from original source code)
       const handler = handleSourceCode(code);
       const wrapper = document.createElement('div');
       wrapper.innerHTML = handler.sourceCode;
-      wrapper.querySelector('.bfg').classList.toggle('bfg--gap'); // Find the first (main) grid
-      handler.update(wrapper.innerHTML);
-    },
-  );
-};
-
-const gridGapSwitcherAttr = () => {
-  const target = document.querySelector('.demo-layout__playground > [bfg]'); // Find the first (main) grid
-  const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
-  if (!target) {
-    return;
-  }
-  handleAction(
-    getAnchor('Toggle grid gap', 'grid-gap'),
-    () => {
-      // Update output
-      let attr = target.getAttribute('bfg');
-      attr = attr.match(/gap/) ? attr.replace('gap', '') : attr + ' gap';
-      target.setAttribute('bfg', attr.trim().replace(/s+/g, ' '));
-
-      // Update source code (from original source code)
-      const handler = handleSourceCode(code);
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = handler.sourceCode;
-      const bfg = wrapper.querySelector('[bfg]');
-
-      let attr2 = bfg.getAttribute('bfg');
-      attr2 = attr2.match(/gap/) ? attr2.replace('gap', '') : attr2 + ' gap';
-      bfg.setAttribute('bfg', attr2.trim().replace(/s+/g, ' '));
-
+      toggleBfgGap(wrapper);
       handler.update(wrapper.innerHTML);
     },
   );
@@ -186,8 +146,8 @@ export const actionEnabled = (actions: IActionType[], action) => {
 export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
   if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
-  if (actionEnabled(actions, 'direction')) { directionSwitcher(); directionSwitcherAttr(); }
-  if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); gridGapSwitcherAttr(); }
+  if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
+  if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); }
 
   document.querySelector('.demo-layout__output').appendChild(container);
 };
