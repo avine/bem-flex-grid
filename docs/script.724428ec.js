@@ -2033,20 +2033,12 @@ exports.fillGrid = function (options) {
     options = {};
   }
 
-  var opts = __assign({}, fillGridOptions, options); // For "class" implementation
+  var opts = __assign({}, fillGridOptions, options);
 
-
-  util_1.forEach(document.querySelectorAll('.bfg__box'), function (element) {
+  util_1.forEach(document.querySelectorAll('.bfg__box, [bfg__box]'), function (element) {
     return fillElement(element, opts);
   });
-  util_1.forEach(document.querySelectorAll('.bfg-card__content'), function (element) {
-    return fillElement(element, opts);
-  }); // For "attr" implementation
-
-  util_1.forEach(document.querySelectorAll('[bfg__box]'), function (element) {
-    return fillElement(element, opts);
-  });
-  util_1.forEach(document.querySelectorAll('[bfg-card__content]'), function (element) {
+  util_1.forEach(document.querySelectorAll('.bfg-card__content, [bfg-card__content]'), function (element) {
     return fillElement(element, opts);
   });
 };
@@ -2199,4 +2191,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.43d5b839.js.map
+//# sourceMappingURL=/bem-flex-grid/script.724428ec.js.map

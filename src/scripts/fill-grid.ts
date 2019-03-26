@@ -73,13 +73,14 @@ const fillElement = (element: Element, options = { ...fillGridOptions }) => {
 export const fillGrid = (options: Partial<IFillGridOptions> = {}) => {
   const opts: IFillGridOptions = { ...fillGridOptions, ...options };
 
-  // For "class" implementation
-  forEach<Element>(document.querySelectorAll('.bfg__box'), (element) => fillElement(element, opts));
-  forEach<Element>(document.querySelectorAll('.bfg-card__content'), (element) => fillElement(element, opts));
-
-  // For "attr" implementation
-  forEach<Element>(document.querySelectorAll('[bfg__box]'), (element) => fillElement(element, opts));
-  forEach<Element>(document.querySelectorAll('[bfg-card__content]'), (element) => fillElement(element, opts));
+  forEach<Element>(
+    document.querySelectorAll('.bfg__box, [bfg__box]'),
+    (element) => fillElement(element, opts),
+  );
+  forEach<Element>(
+    document.querySelectorAll('.bfg-card__content, [bfg-card__content]'),
+    (element) => fillElement(element, opts),
+  );
 };
 
 window.addEventListener('click', (event) => {
