@@ -68,10 +68,12 @@ const autoHeightSwitcher = () => {
   );
 };
 
-// TODO: handle the "attr" implementation
 const directionSwitcher = () => {
   const grids = document.querySelectorAll('.bfg--row, .bfg--col');
   const code = document.querySelector('.demo-layout__code > code');
+  if (!grids.length) {
+    return;
+  }
   handleAction(
     getAnchor('Switch direction', 'direction'),
     () => {
@@ -90,16 +92,46 @@ const directionSwitcher = () => {
         .replace(/bfg--col/g, 'bfg--row')
         .replace(/bfg-TMP-col/g, 'bfg--col');
 
-        // Finally redraw Charts if any.
+      // Finally redraw Charts if any.
       triggerResize();
     },
   );
 };
 
-// TODO: handle the "attr" implementation
+const directionSwitcherAttr = () => {
+  const grids = document.querySelectorAll('[bfg~="row"], [bfg~="col"]');
+  const code = document.querySelector('.demo-layout__code > code');
+  if (!grids.length) {
+    return;
+  }
+  handleAction(
+    getAnchor('Switch direction', 'direction'),
+    () => {
+      // Update output
+      forEach<Element>(grids, (grid) => {
+        let attr = grid.getAttribute('bfg');
+        attr = attr.match(/row/) ? attr.replace('row', 'col') : attr.replace('col', 'row');
+        grid.setAttribute('bfg', attr);
+      });
+
+      // Update source code (right from the generated "PrismJs" markup)
+      code.innerHTML = code.innerHTML
+        .replace(/row/g, 'TMP')
+        .replace(/col/g, 'row')
+        .replace(/TMP/g, 'col');
+
+      // Finally redraw Charts if any.
+      triggerResize();
+    },
+  );
+};
+
 const gridGapSwitcher = () => {
   const target = document.querySelector('.demo-layout__playground > .bfg'); // Find the first (main) grid
   const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
+  if (!target) {
+    return;
+  }
   handleAction(
     getAnchor('Toggle grid gap', 'grid-gap'),
     () => {
@@ -116,6 +148,35 @@ const gridGapSwitcher = () => {
   );
 };
 
+const gridGapSwitcherAttr = () => {
+  const target = document.querySelector('.demo-layout__playground > [bfg]'); // Find the first (main) grid
+  const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
+  if (!target) {
+    return;
+  }
+  handleAction(
+    getAnchor('Toggle grid gap', 'grid-gap'),
+    () => {
+      // Update output
+      let attr = target.getAttribute('bfg');
+      attr = attr.match(/gap/) ? attr.replace('gap', '') : attr + ' gap';
+      target.setAttribute('bfg', attr.trim().replace(/s+/g, ' '));
+
+      // Update source code (from original source code)
+      const handler = handleSourceCode(code);
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = handler.sourceCode;
+      const bfg = wrapper.querySelector('[bfg]');
+
+      let attr2 = bfg.getAttribute('bfg');
+      attr2 = attr2.match(/gap/) ? attr2.replace('gap', '') : attr2 + ' gap';
+      bfg.setAttribute('bfg', attr2.trim().replace(/s+/g, ' '));
+
+      handler.update(wrapper.innerHTML);
+    },
+  );
+};
+
 export type IActionType = 'all' | 'fullWidth' | 'autoHeight' | 'direction' | 'gridGap';
 
 export const actionEnabled = (actions: IActionType[], action) => {
@@ -124,9 +185,9 @@ export const actionEnabled = (actions: IActionType[], action) => {
 
 export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
-  if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
+  if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); directionSwitcherAttr(); }
   if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
-  if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); }
+  if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); gridGapSwitcherAttr(); }
 
   document.querySelector('.demo-layout__output').appendChild(container);
 };

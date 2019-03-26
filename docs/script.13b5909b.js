@@ -1798,12 +1798,16 @@ var autoHeightSwitcher = function autoHeightSwitcher() {
 
     exports.triggerResize();
   });
-}; // TODO: handle the "attr" implementation
-
+};
 
 var directionSwitcher = function directionSwitcher() {
   var grids = document.querySelectorAll('.bfg--row, .bfg--col');
   var code = document.querySelector('.demo-layout__code > code');
+
+  if (!grids.length) {
+    return;
+  }
+
   exports.handleAction(getAnchor('Switch direction', 'direction'), function () {
     // Update output
     util_1.forEach(grids, function (grid) {
@@ -1822,13 +1826,39 @@ var directionSwitcher = function directionSwitcher() {
 
     exports.triggerResize();
   });
-}; // TODO: handle the "attr" implementation
+};
 
+var directionSwitcherAttr = function directionSwitcherAttr() {
+  var grids = document.querySelectorAll('[bfg~="row"], [bfg~="col"]');
+  var code = document.querySelector('.demo-layout__code > code');
+
+  if (!grids.length) {
+    return;
+  }
+
+  exports.handleAction(getAnchor('Switch direction', 'direction'), function () {
+    // Update output
+    util_1.forEach(grids, function (grid) {
+      var attr = grid.getAttribute('bfg');
+      attr = attr.match(/row/) ? attr.replace('row', 'col') : attr.replace('col', 'row');
+      grid.setAttribute('bfg', attr);
+    }); // Update source code (right from the generated "PrismJs" markup)
+
+    code.innerHTML = code.innerHTML.replace(/row/g, 'TMP').replace(/col/g, 'row').replace(/TMP/g, 'col'); // Finally redraw Charts if any.
+
+    exports.triggerResize();
+  });
+};
 
 var gridGapSwitcher = function gridGapSwitcher() {
   var target = document.querySelector('.demo-layout__playground > .bfg'); // Find the first (main) grid
 
   var code = document.querySelector('.demo-layout__code > code');
+
+  if (!target) {
+    return;
+  }
+
   exports.handleAction(getAnchor('Toggle grid gap', 'grid-gap'), function () {
     // Update output
     target.classList.toggle('bfg--gap'); // Update source code (from original source code)
@@ -1838,6 +1868,32 @@ var gridGapSwitcher = function gridGapSwitcher() {
     wrapper.innerHTML = handler.sourceCode;
     wrapper.querySelector('.bfg').classList.toggle('bfg--gap'); // Find the first (main) grid
 
+    handler.update(wrapper.innerHTML);
+  });
+};
+
+var gridGapSwitcherAttr = function gridGapSwitcherAttr() {
+  var target = document.querySelector('.demo-layout__playground > [bfg]'); // Find the first (main) grid
+
+  var code = document.querySelector('.demo-layout__code > code');
+
+  if (!target) {
+    return;
+  }
+
+  exports.handleAction(getAnchor('Toggle grid gap', 'grid-gap'), function () {
+    // Update output
+    var attr = target.getAttribute('bfg');
+    attr = attr.match(/gap/) ? attr.replace('gap', '') : attr + ' gap';
+    target.setAttribute('bfg', attr.trim().replace(/s+/g, ' ')); // Update source code (from original source code)
+
+    var handler = view_code_1.handleSourceCode(code);
+    var wrapper = document.createElement('div');
+    wrapper.innerHTML = handler.sourceCode;
+    var bfg = wrapper.querySelector('[bfg]');
+    var attr2 = bfg.getAttribute('bfg');
+    attr2 = attr2.match(/gap/) ? attr2.replace('gap', '') : attr2 + ' gap';
+    bfg.setAttribute('bfg', attr2.trim().replace(/s+/g, ' '));
     handler.update(wrapper.innerHTML);
   });
 };
@@ -1857,6 +1913,7 @@ exports.enableActions = function (actions) {
 
   if (exports.actionEnabled(actions, 'autoHeight')) {
     autoHeightSwitcher();
+    directionSwitcherAttr();
   }
 
   if (exports.actionEnabled(actions, 'direction')) {
@@ -1865,6 +1922,7 @@ exports.enableActions = function (actions) {
 
   if (exports.actionEnabled(actions, 'gridGap')) {
     gridGapSwitcher();
+    gridGapSwitcherAttr();
   }
 
   document.querySelector('.demo-layout__output').appendChild(container);
@@ -2141,4 +2199,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.66840ed7.js.map
+//# sourceMappingURL=/bem-flex-grid/script.13b5909b.js.map
