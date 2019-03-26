@@ -185,8 +185,8 @@ export const actionEnabled = (actions: IActionType[], action) => {
 
 export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
-  if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); directionSwitcherAttr(); }
-  if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
+  if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
+  if (actionEnabled(actions, 'direction')) { directionSwitcher(); directionSwitcherAttr(); }
   if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); gridGapSwitcherAttr(); }
 
   document.querySelector('.demo-layout__output').appendChild(container);

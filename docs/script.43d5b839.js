@@ -1913,11 +1913,11 @@ exports.enableActions = function (actions) {
 
   if (exports.actionEnabled(actions, 'autoHeight')) {
     autoHeightSwitcher();
-    directionSwitcherAttr();
   }
 
   if (exports.actionEnabled(actions, 'direction')) {
     directionSwitcher();
+    directionSwitcherAttr();
   }
 
   if (exports.actionEnabled(actions, 'gridGap')) {
@@ -2199,4 +2199,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.13b5909b.js.map
+//# sourceMappingURL=/bem-flex-grid/script.43d5b839.js.map
