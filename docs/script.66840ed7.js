@@ -2011,7 +2011,10 @@ exports.showcase = function () {
   var element = document.querySelector('.docs-showcase');
 
   var mapper = function mapper(anchor, count) {
-    return "\n  <div class=\"docs-showcase__item\">\n    <iframe data-src=\"" + anchor.href + "\" class=\"docs-showcase__iframe\"></iframe>\n    <a href=\"" + anchor.href + "\" class=\"demo-toolbox__action demo-toolbox__action--open-link\" title=\"Open\">" + count + "</a>\n  </div>";
+    var filename = anchor.href.match(/\/([^\/]+)\.html$/)[1];
+    var id = "demo-" + filename;
+    var css = 'demo-toolbox__action demo-toolbox__action--open-link';
+    return "\n  <div class=\"docs-showcase__item\">\n    <iframe data-src=\"" + anchor.href + "\" class=\"docs-showcase__iframe\"></iframe>\n    <a href=\"" + anchor.href + "\" id=\"" + id + "\" class=\"" + css + "\" title=\"Open\">" + count + "</a>\n  </div>";
   };
 
   var mappedHtml = [];
@@ -2138,4 +2141,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.5eba3750.js.map
+//# sourceMappingURL=/bem-flex-grid/script.66840ed7.js.map

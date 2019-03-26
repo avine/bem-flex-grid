@@ -3,11 +3,16 @@ import { forEach } from './util';
 export const showcase = () => {
   const element = document.querySelector('.docs-showcase');
 
-  const mapper = (anchor: HTMLAnchorElement, count: number) => `
+  const mapper = (anchor: HTMLAnchorElement, count: number) => {
+    const filename = anchor.href.match(/\/([^\/]+)\.html$/)[1];
+    const id = `demo-${filename}`;
+    const css = 'demo-toolbox__action demo-toolbox__action--open-link';
+    return `
   <div class="docs-showcase__item">
     <iframe data-src="${anchor.href}" class="docs-showcase__iframe"></iframe>
-    <a href="${anchor.href}" class="demo-toolbox__action demo-toolbox__action--open-link" title="Open">${count}</a>
+    <a href="${anchor.href}" id="${id}" class="${css}" title="Open">${count}</a>
   </div>`;
+  };
 
   const mappedHtml = [];
   forEach<HTMLAnchorElement>(
