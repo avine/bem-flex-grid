@@ -1,6 +1,6 @@
 /* ===== demo ===== */
 /* ===== docs ===== */
-@import url("https://fonts.googleapis.com/css?family=Expletus+Sans:500|Krub|IBM+Plex+Mono");
+@import url("https://fonts.googleapis.com/css?family=Expletus+Sans:500|Krub:400,600|IBM+Plex+Mono");
 /* ===== Base ===== */
 html,
 .markdown-body {
@@ -170,19 +170,19 @@ pre.demo-layout__output--gray {
   background-color: #2196F3; }
 
 .demo-toolbox__action--full-screen {
-  background-image: url(/bem-flex-grid/desktop.bdd55cf9.svg); }
+  background-image: url(/bem-flex-grid/desktop.f9af5d23.svg); }
 
 .demo-toolbox__action--auto-height {
-  background-image: url(/bem-flex-grid/scroll.b65b86e7.svg); }
+  background-image: url(/bem-flex-grid/scroll.cf8815a9.svg); }
 
 .demo-toolbox__action--direction {
-  background-image: url(/bem-flex-grid/directions.fc65af8e.svg); }
+  background-image: url(/bem-flex-grid/directions.60bc070b.svg); }
 
 .demo-toolbox__action--grid-gap {
-  background-image: url(/bem-flex-grid/th-large.58795f98.svg); }
+  background-image: url(/bem-flex-grid/th-large.792ba4b7.svg); }
 
 .demo-toolbox__action--theme {
-  background-image: url(/bem-flex-grid/palette.21ef7445.svg); }
+  background-image: url(/bem-flex-grid/palette.35d687da.svg); }
 
 /* ===== Handle dummy container and text ===== */
 .demo-container {
@@ -276,4 +276,4 @@ pre.demo-layout__output--gray {
     z-index: 2; } }
 
 
-/*# sourceMappingURL=/bem-flex-grid/demo.bab17a8f.css.map */
+/*# sourceMappingURL=/bem-flex-grid/demo.2f08d500.css.map */

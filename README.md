@@ -2,19 +2,19 @@
 
 CSS flex grid, [BEM](http://getbem.com/) compliant.
 
-*A responsive grid system based on the flex display property that perfectly fits to the window size in both width and height if needed and lets you design native app layout as well as scrollable web page.*
+*A responsive grid system based on the flex display property that perfectly fits to the viewport in both width and height if needed and lets you design native app layout as well as scrollable web page.*
 
 [![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
 
-## Design
+## Syntaxes overview
 
-The library comes with 2 implementations.
+The library comes with 2 syntaxes: __class__ and __attributes__ (or __attr__). Let's take a look at each of them.
 
-### Using CSS "class"
+### Class syntax
 
-This implementation sticks to the BEM convention (with *Block*, *Element* and *Modifier*), but has a more verbose syntax.
+The first implementation sticks to the BEM convention (with *Block*, *Element* and *Modifier*), but has a more verbose syntax.
 
-*Here's an example:*
+*Here's a typical BEM sample:*
 
 ```html
 <div class="user user--logged user--admin">
@@ -24,14 +24,16 @@ This implementation sticks to the BEM convention (with *Block*, *Element* and *M
 </div>
 ```
 
-### Using custom CSS "attributes"
+### Attr syntax
 
-This implementation has a more concise syntax but derives from the BEM convention, by following this rules:
+The second implementation derives from the BEM convention, but has a more concise syntax.
 
-- any BEM *Block* or *Element* is directly used as an HTML tag attribute.
-- any BEM *Modifier* is used to construct the attribute's value.
+Here are the conversion rules:
 
-*The example above becomes:*
+- any BEM *Block* or *Element* is directly used as an HTML tag *attribute*.
+- any BEM *Modifier* is used to construct the attribute's *value*.
+
+*The example above get converted as follows:*
 
 ```html
 <div user="logged admin">
@@ -41,17 +43,17 @@ This implementation has a more concise syntax but derives from the BEM conventio
 </div>
 ```
 
-## Quick start
+## Getting started
 
 Get instant access by inserting the link tag into your web pages from *unpkg* CDN.
 
-### For "class" implementation
+### With class syntax
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
 ```
 
-Here's a simple grid in the vertical direction (column) that fits to the window for this implementation.
+Here's a simple grid in the vertical direction (column) that fits to the viewport using the class syntax:
 
 ```html
 <!DOCTYPE html>
@@ -76,13 +78,13 @@ Here's a simple grid in the vertical direction (column) that fits to the window 
 </html>
 ```
 
-### For "attr" implementation
+### With attr syntax
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
 ```
 
-Here's the same grid as above for this implementation.
+Here's the same grid as above using the attr syntax:
 
 ```html
 <!DOCTYPE html>
@@ -107,17 +109,19 @@ Here's the same grid as above for this implementation.
 </html>
 ```
 
-> To learn more about the features, check out the [demos](https://avine.github.io/bem-flex-grid/demo.html).
+> To learn more about the features, check out the [demos](https://avine.github.io/bem-flex-grid/demo.html) available for both syntaxes.
 
 ## Installation and usage
 
-Install the package from [NPM](https://www.npmjs.com/package/bem-flex-grid) (or Yarn) and insert the link tag into your web pages or use Sass import for more customization.
+Install the package from [NPM](https://www.npmjs.com/package/bem-flex-grid) (or Yarn) and insert the link tag into your web pages or use Sass import for advanced customization.
 
-*NPM:*
+### NPM
 
 ```bash
 npm i bem-flex-grid
 ```
+
+### Usage with class syntax
 
 *Link tag:*
 
@@ -131,7 +135,21 @@ npm i bem-flex-grid
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 ```
 
-*Package content:*
+### Usage with attr syntax
+
+*Link tag:*
+
+```html
+<link rel="stylesheet" href="[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid-attr.css">
+```
+
+*Sass import:*
+
+```scss
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-attr.scss";
+```
+
+### Package content
 
 ```text
 bem-flex-grid
@@ -156,6 +174,8 @@ bem-flex-grid
 ```
 
 ## API
+
+This documentation is based on the class syntax.
 
 ### Grid blocks and elements
 

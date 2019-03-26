@@ -2159,4 +2159,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.f2e1b9a0.js.map
+//# sourceMappingURL=/bem-flex-grid/script.7dd8fe06.js.map

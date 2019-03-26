@@ -25,7 +25,7 @@ $title-url: str-replace(map-get($demo-fonts, title), ' ', '+');
 $text-url: str-replace(map-get($demo-fonts, text), ' ', '+');
 $code-url: str-replace(map-get($demo-fonts, code), ' ', '+');
 
-$demo-font-url: "https://fonts.googleapis.com/css?family=#{$title-url}:500|#{$text-url}|#{$code-url}";
+$demo-font-url: "https://fonts.googleapis.com/css?family=#{$title-url}:500|#{$text-url}:400,600|#{$code-url}";
 
 /* ===== docs ===== */
 
