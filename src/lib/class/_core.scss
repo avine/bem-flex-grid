@@ -76,6 +76,11 @@
   overflow: hidden;
 }
 
+@if $bfg-ie11-support {
+  .bfg--row > .bfg__box { max-width: 100%; }
+  .bfg--col > .bfg__box { max-height: 100%; }
+}
+
 @mixin bfg-boxes($size: '') {
   .bfg--#{$size + wrap} { flex-wrap: wrap; }
   .bfg--#{$size + nowrap} { flex-wrap: nowrap; }
@@ -101,12 +106,42 @@
   .bfg__box--#{$size + 12} { flex-basis: 100%; }
 
   .bfg--row {
+    @if $bfg-ie11-support {
+      > .bfg__box--#{$size + 1} { max-width: (100% / 12); }
+      > .bfg__box--#{$size + 2} { max-width: (100% / 6); }
+      > .bfg__box--#{$size + 3} { max-width: 25%; }
+      > .bfg__box--#{$size + 4} { max-width: (100% / 3); }
+      > .bfg__box--#{$size + 5} { max-width: (500% / 12); }
+      > .bfg__box--#{$size + 6} { max-width: 50%; }
+      > .bfg__box--#{$size + 7} { max-width: (700% / 12); }
+      > .bfg__box--#{$size + 8} { max-width: (200% / 3); }
+      > .bfg__box--#{$size + 9} { max-width: 75%; }
+      > .bfg__box--#{$size + 10} { max-width: (1000% / 12); }
+      > .bfg__box--#{$size + 11} { max-width: (1100% / 12); }
+      > .bfg__box--#{$size + 12} { max-width: 100%; }
+    }
+
     &.bfg--#{$size + lines-2} > .bfg__box { height: 50%; }
     &.bfg--#{$size + lines-3} > .bfg__box { height: (100% / 3); }
     &.bfg--#{$size + lines-4} > .bfg__box { height: 25%; }
   }
 
   .bfg--col {
+    @if $bfg-ie11-support {
+      > .bfg__box--#{$size + 1} { max-height: (100% / 12); }
+      > .bfg__box--#{$size + 2} { max-height: (100% / 6); }
+      > .bfg__box--#{$size + 3} { max-height: 25%; }
+      > .bfg__box--#{$size + 4} { max-height: (100% / 3); }
+      > .bfg__box--#{$size + 5} { max-height: (500% / 12); }
+      > .bfg__box--#{$size + 6} { max-height: 50%; }
+      > .bfg__box--#{$size + 7} { max-height: (700% / 12); }
+      > .bfg__box--#{$size + 8} { max-height: (200% / 3); }
+      > .bfg__box--#{$size + 9} { max-height: 75%; }
+      > .bfg__box--#{$size + 10} { max-height: (1000% / 12); }
+      > .bfg__box--#{$size + 11} { max-height: (1100% / 12); }
+      > .bfg__box--#{$size + 12} { max-height: 100%; }
+    }
+
     &.bfg--#{$size + lines-2} > .bfg__box { width: 50%; }
     &.bfg--#{$size + lines-3} > .bfg__box { width: (100% / 3); }
     &.bfg--#{$size + lines-4} > .bfg__box { width: 25%; }
@@ -121,6 +156,11 @@
 
   .bfg--#{$size + disabled} > .bfg__box,
   .bfg--#{$size + disabled-all} .bfg__box {
+    @if $bfg-ie11-support {
+      max-width: none;
+      max-height: none;
+    }
+
     width: auto;
     height: auto;
   }
