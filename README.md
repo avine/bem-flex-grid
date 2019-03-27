@@ -8,7 +8,7 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 ## Syntaxes overview
 
-The library comes with 2 syntaxes: __class__ and __attributes__ (or __attr__). Let's take a look at each of them.
+The library comes with 2 syntaxes: __class__ and __attributes__ (or __attr__ for short). Let's take a look at each of them.
 
 ### Class syntax
 
@@ -23,6 +23,8 @@ The first implementation sticks to the BEM convention (with *Block*, *Element* a
   </div>
 </div>
 ```
+
+Let's see how this get converted to the attr syntax.
 
 ### Attr syntax
 
@@ -53,7 +55,7 @@ Get instant access by inserting the link tag into your web pages from *unpkg* CD
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
 ```
 
-Here's a simple grid in the vertical direction (column) that fits to the viewport using the class syntax:
+Here's a simple grid in the vertical direction (column) that fits to the viewport and uses the class syntax:
 
 ```html
 <!DOCTYPE html>
@@ -84,7 +86,7 @@ Here's a simple grid in the vertical direction (column) that fits to the viewpor
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
 ```
 
-Here's the same grid as above using the attr syntax:
+Here's the same grid as above but this time with the attr syntax:
 
 ```html
 <!DOCTYPE html>
@@ -172,6 +174,12 @@ bem-flex-grid
       ├─ bem-flex-grid-attr.scss
       └─ bem-flex-grid-class.scss
 ```
+
+### Browser support
+
+Bem-flex-grid 2 supports the latest, stable releases of all major browsers, including Microsoft Edge on Windows.
+
+For Internet Explorer 11 compatibility, use [Bem-flex-grid 1](https://www.npmjs.com/package/bem-flex-grid/v/1.2.3).
 
 ## API
 

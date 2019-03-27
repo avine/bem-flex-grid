@@ -58,7 +58,7 @@
 <p><em>A responsive grid system based on the flex display property that perfectly fits to the viewport in both width and height if needed and lets you design native app layout as well as scrollable web page.</em></p>
 <p><a href="https://travis-ci.org/avine/bem-flex-grid"><img src="https://travis-ci.org/avine/bem-flex-grid.svg?branch=master" alt="Build Status"></a></p>
 <h2>Syntaxes overview</h2>
-<p>The library comes with 2 syntaxes: <strong>class</strong> and <strong>attributes</strong> (or <strong>attr</strong>). Let's take a look at each of them.</p>
+<p>The library comes with 2 syntaxes: <strong>class</strong> and <strong>attributes</strong> (or <strong>attr</strong> for short). Let's take a look at each of them.</p>
 <h3>Class syntax</h3>
 <p>The first implementation sticks to the BEM convention (with <em>Block</em>, <em>Element</em> and <em>Modifier</em>), but has a more verbose syntax.</p>
 <p><em>Here's a typical BEM sample:</em></p>
@@ -68,6 +68,7 @@
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<p>Let's see how this get converted to the attr syntax.</p>
 <h3>Attr syntax</h3>
 <p>The second implementation derives from the BEM convention, but has a more concise syntax.</p>
 <p>Here are the conversion rules:</p>
@@ -87,7 +88,7 @@
 <h3>With class syntax</h3>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css&quot;&gt;
 </code></pre>
-<p>Here's a simple grid in the vertical direction (column) that fits to the viewport using the class syntax:</p>
+<p>Here's a simple grid in the vertical direction (column) that fits to the viewport and uses the class syntax:</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -112,7 +113,7 @@
 <h3>With attr syntax</h3>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css&quot;&gt;
 </code></pre>
-<p>Here's the same grid as above using the attr syntax:</p>
+<p>Here's the same grid as above but this time with the attr syntax:</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -177,6 +178,9 @@
       ├─ bem-flex-grid-attr.scss
       └─ bem-flex-grid-class.scss
 </code></pre>
+<h3>Browser support</h3>
+<p>Bem-flex-grid 2 supports the latest, stable releases of all major browsers, including Microsoft Edge on Windows.</p>
+<p>For Internet Explorer 11 compatibility, use <a href="https://www.npmjs.com/package/bem-flex-grid/v/1.2.3">Bem-flex-grid 1</a>.</p>
 <h2>API</h2>
 <p>This documentation is based on the class syntax.</p>
 <h3>Grid blocks and elements</h3>
