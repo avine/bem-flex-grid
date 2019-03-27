@@ -158,8 +158,12 @@ bem-flex-grid
 ├─ dist
 │  ├─ bem-flex-grid-attr.css
 │  ├─ bem-flex-grid-attr.min.css
+│  ├─ bem-flex-grid-attr.ie11.css
+│  ├─ bem-flex-grid-attr.ie11.min.css
 │  ├─ bem-flex-grid-class.css
-│  └─ bem-flex-grid-class.min.css
+│  ├─ bem-flex-grid-class.min.css
+│  ├─ bem-flex-grid-class.ie11.css
+│  └─ bem-flex-grid-class.ie11.min.css
 └─ src
    └─ lib
       ├─ attr
@@ -172,14 +176,14 @@ bem-flex-grid
       │  └─ _mixins.scss
       ├─ _variables.scss
       ├─ bem-flex-grid-attr.scss
-      └─ bem-flex-grid-class.scss
+      ├─ bem-flex-grid-attr.ie11.scss
+      ├─ bem-flex-grid-class.scss
+      └─ bem-flex-grid-class.ie11.scss
 ```
 
 ### Browser support
 
-Bem-flex-grid 2 supports the latest, stable releases of all major browsers, including Microsoft Edge on Windows.
-
-For Internet Explorer 11 compatibility, use [Bem-flex-grid 1](https://www.npmjs.com/package/bem-flex-grid/v/1.2.3).
+Bem-flex-grid supports the latest, stable releases of all major browsers, including Microsoft Internet Explorer 11 and Edge on Windows.
 
 ## API
 
@@ -243,7 +247,7 @@ Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting 
 </div>
 ```
 
-Finally, using the markup `.bfg.bfg-card` simply tells that the `.bfg` *block* contains cards elements (content, header and action) that are not direct children of the `.bfg-card` *block*.
+Finally, using the markup `.bfg.bfg-card` simply tells that the `.bfg` *block* contains cards elements (content, header and actions) that are not direct children of the `.bfg-card` *block*.
 
 This allows you to define a default look and feel for all cards and lets you customize some of them, using the different `.bfg-card--*` modifiers (you'll see below how to define the card's look and feel).
 
@@ -1029,3 +1033,7 @@ npm run build
 # Build HTML documentation (`src/index.html`) from `README.md`
 npm run index
 ```
+
+### License
+
+[MIT](https://github.com/avine/bem-flex-grid/blob/master/LICENSE)

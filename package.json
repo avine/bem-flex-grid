@@ -1,6 +1,6 @@
 {
   "name": "bem-flex-grid",
-  "version": "1.2.3",
+  "version": "2.0.0-beta",
   "description": "CSS flex grid, BEM compliant.",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,15 @@
     "docs": "parcel build src/index.html --out-dir docs --public-url /bem-flex-grid/ --no-minify",
     "css:class": "node-sass src/lib/bem-flex-grid-class.scss > dist/bem-flex-grid-class.css",
     "css:attr": "node-sass src/lib/bem-flex-grid-attr.scss > dist/bem-flex-grid-attr.css",
+    "css:class:ie11": "node-sass src/lib/bem-flex-grid-class.ie11.scss > dist/bem-flex-grid-class.ie11.css",
+    "css:attr:ie11": "node-sass src/lib/bem-flex-grid-attr.ie11.scss > dist/bem-flex-grid-attr.ie11.css",
     "css:class:min": "node-sass --output-style compressed src/lib/bem-flex-grid-class.scss > dist/bem-flex-grid-class.min.css",
     "css:attr:min": "node-sass --output-style compressed src/lib/bem-flex-grid-attr.scss > dist/bem-flex-grid-attr.min.css",
-    "build": "npm run css:class && npm run css:attr && npm run css:class:min && npm run css:attr:min",
+    "css:class:ie11:min": "node-sass --output-style compressed src/lib/bem-flex-grid-class.ie11.scss > dist/bem-flex-grid-class.ie11.min.css",
+    "css:attr:ie11:min": "node-sass --output-style compressed src/lib/bem-flex-grid-attr.ie11.scss > dist/bem-flex-grid-attr.ie11.min.css",
+    "build:class": "npm run css:class && npm run css:class:ie11 && npm run css:class:min && npm run css:class:ie11:min",
+    "build:attr": "npm run css:attr && npm run css:attr:ie11 && npm run css:attr:min && npm run css:attr:ie11:min",
+    "build": "npm run build:class && npm run build:attr",
     "deploy": "npm run build && node deploy.js",
     "all": "npm run clean && npm run docs && npm run build && node deploy.js --dry",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,11 +31,10 @@
     "url": "git+https://github.com/avine/bem-flex-grid.git"
   },
   "keywords": [
-    "css3",
+    "css",
     "flexbox",
     "bem",
     "sass",
-    "dashboard",
     "grid",
     "layout",
     "responsive"
