@@ -1,0 +1,29 @@
+/*
+ * Generate `./src/index.html` from `./README.md`.
+ */
+import { readFileSync, watchFile, writeFileSync } from 'fs';
+import * as MarkdownIt from 'markdown-it';
+import { join } from 'path';
+
+const md = new MarkdownIt();
+
+const templatePath = join(__dirname, './index-template.html');
+const sourcePath = join(__dirname, './README.md');
+const targetPath = join(__dirname, './src/index.html');
+
+const template = readFileSync(templatePath, { encoding: 'utf-8' });
+
+const updateFile = () => {
+  const markdown = readFileSync(sourcePath, { encoding: 'utf-8' });
+  const html = template.replace('{{markdown}}', md.render(markdown));
+
+  writeFileSync(targetPath, html, { encoding: 'utf-8' });
+  console.log('Updating:', targetPath); // tslint:disable-line:no-console
+};
+
+updateFile();
+
+if (process.argv[2] === 'watch') {
+  watchFile(sourcePath, updateFile);
+  console.log('watching:', sourcePath); // tslint:disable-line:no-console
+}

@@ -1,10 +1,9 @@
 /*
  * Prepare the `./deploy` directory for NPM publish.
  */
-
-const Fs = require('fs-extra');
-const Path = require('path');
-const readline = require('readline');
+import { copySync, emptyDirSync, readFileSync, writeFileSync } from 'fs-extra';
+import { join } from 'path';
+import { createInterface } from 'readline';
 
 // ===== Dry mode config =====
 
@@ -15,13 +14,13 @@ if (process.argv[2] === '-d' || process.argv[2] === '--dry') {
 
 // ===== Empty target directory =====
 
-const targetDir = Path.join(__dirname, './deploy');
-Fs.emptyDirSync(targetDir);
+const targetDir = join(__dirname, './deploy');
+emptyDirSync(targetDir);
 
 // ===== Build `package.json` for target directory =====
 
-const packageSource = JSON.parse(Fs.readFileSync(
-  Path.join(__dirname, './package.json'),
+const packageSource = JSON.parse(readFileSync(
+  join(__dirname, './package.json'),
   { encoding: 'utf-8' },
 ));
 
@@ -38,11 +37,11 @@ const packageTarget = {};
   'bugs',
   'homepage',
 ].forEach(
-  prop => packageTarget[prop] = packageSource[prop],
+  (prop) => packageTarget[prop] = packageSource[prop],
 );
 
-Fs.writeFileSync(
-  Path.join(targetDir, './package.json'),
+writeFileSync(
+  join(targetDir, './package.json'),
   JSON.stringify(packageTarget, undefined, 2),
   { encoding: 'utf-8' },
 );
@@ -55,30 +54,31 @@ Fs.writeFileSync(
   './dist',
   './src/lib',
 ].forEach(
-  file => Fs.copySync(Path.join(__dirname, file), Path.join(targetDir, file)),
+  (file) => copySync(join(__dirname, file), join(targetDir, file)),
 );
 
 // ===== Publish on NPM =====
 
+// tslint:disable-next-line:no-console
 console.log(`
 Ready to publish on NPM${DRY_MODE ? ' (dry mode):' : ':'}
 ${targetDir}
 `);
 
 if (!DRY_MODE) {
-  const rl = readline.createInterface({
+  const rl = createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
   rl.question('Confirm? (yes) ', (answer) => {
-    console.log('');
+    console.log(''); // tslint:disable-line:no-console
     if (!answer || answer === 'yes') {
       const spawn = require('child_process').spawn;
       const child = spawn('npm', ['publish', targetDir]);
 
-      child.stdout.on('data', data => process.stdout.write(data));
-      child.stderr.on('data', data => process.stdout.write(data));
+      child.stdout.on('data', (data) => process.stdout.write(data));
+      child.stderr.on('data', (data) => process.stdout.write(data));
 
       child.on('exit', (code) => {
         if (code === 0) {
@@ -86,7 +86,7 @@ if (!DRY_MODE) {
         }
       });
     } else {
-      console.log('\n\t! Package NOT published !\n\n');
+      console.log('\n\t! Package NOT published !\n\n'); // tslint:disable-line:no-console
     }
     rl.close();
   });

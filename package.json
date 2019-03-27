@@ -5,15 +5,15 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf src/index.html dist .cache output docs deploy && mkdirp dist",
-    "index": "node index",
-    "index:watch": "node index watch",
+    "index": "ts-node index",
+    "index:watch": "ts-node index watch",
     "prestart": "rimraf output && npm run index",
     "start": "parcel serve src/index.html --out-dir output",
     "predocs": "rimraf docs && npm run index",
     "docs": "parcel build src/index.html --out-dir docs --public-url /bem-flex-grid/ --no-minify",
     "build": "ts-node build",
-    "deploy": "npm run build && node deploy.js",
-    "all": "npm run clean && npm run docs && npm run build && node deploy.js --dry",
+    "deploy": "npm run build && ts-node deploy",
+    "all": "npm run clean && npm run docs && npm run build && ts-node deploy --dry",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -36,6 +36,7 @@
   },
   "homepage": "https://avine.github.io/bem-flex-grid",
   "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
     "@types/highcharts": "^5.0.39",
     "@types/markdown-it": "0.0.7",
     "@types/node-sass": "^4.11.0",
