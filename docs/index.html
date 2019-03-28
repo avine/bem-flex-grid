@@ -61,14 +61,13 @@
 <p>The library comes with 2 syntaxes: <strong>class</strong> and <strong>attributes</strong> (or <strong>attr</strong> for short). Let's take a look at each of them.</p>
 <h3>Class syntax</h3>
 <p>The first implementation sticks to the BEM convention (with <em>Block</em>, <em>Element</em> and <em>Modifier</em>), but has a more verbose syntax.</p>
-<p><em>Here's a typical BEM sample:</em></p>
+<p><em>Let's take a typical BEM sample and see how this get converted to the attr syntax:</em></p>
 <pre><code class="language-html">&lt;div class=&quot;user user--logged user--admin&quot;&gt;
   &lt;div class=&quot;user__email user__email--validated&quot;&gt;
     john@doe.com
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Let's see how this get converted to the attr syntax.</p>
 <h3>Attr syntax</h3>
 <p>The second implementation derives from the BEM convention, but has a more concise syntax.</p>
 <p>Here are the conversion rules:</p>
@@ -184,6 +183,9 @@
       ├─ bem-flex-grid-class.scss
       └─ bem-flex-grid-class.ie11.scss
 </code></pre>
+<blockquote>
+<p>The <code>dist</code> folder also contains the <strong>sourcemap</strong> for each css file.</p>
+</blockquote>
 <h3>Browser support</h3>
 <p>Bem-flex-grid supports the latest, stable releases of all major browsers, including Microsoft Internet Explorer 11 and Edge on Windows.</p>
 <h2>API</h2>
@@ -820,7 +822,101 @@ $bfg-gap: 2rem;
 <ul>
 <li><code>.bfg-card__content--nopad</code></li>
 </ul>
-<h3>Contribute</h3>
+<h3>Selectors summary (for attr syntax)</h3>
+<p>To conlude this detailed presentation of the API, let's see how the selectors get converted to the attr syntax.</p>
+<h4><code>bfg</code> block attribute</h4>
+<p><em>Direction:</em></p>
+<ul>
+<li><code>bfg=&quot;row | col&quot;</code></li>
+</ul>
+<p><em>Auto height:</em></p>
+<ul>
+<li><code>bfg=&quot;height-auto&quot;</code></li>
+</ul>
+<p><em>Wrap onto multiple lines:</em></p>
+<ul>
+<li><code>bfg=&quot;wrap | xl-wrap | lg-wrap | sm-wrap | xs-wrap&quot;</code></li>
+<li><code>bfg=&quot;nowrap | xl-nowrap | lg-nowrap | sm-nowrap | xs-nowrap&quot;</code></li>
+</ul>
+<p><em>Number of lines:</em></p>
+<ul>
+<li><code>bfg=&quot;lines-2 | xl-lines-2 | lg-lines-2 | sm-lines-2 | xs-lines-2&quot;</code></li>
+<li><code>bfg=&quot;lines-3 | xl-lines-3 | lg-lines-3 | sm-lines-3 | xs-lines-3&quot;</code></li>
+<li><code>bfg=&quot;lines-4 | xl-lines-4 | lg-lines-4 | sm-lines-4 | xs-lines-4&quot;</code></li>
+</ul>
+<p><em>Gap:</em></p>
+<ul>
+<li><code>bfg=&quot;gap | gap-in | nogap&quot;</code></li>
+</ul>
+<p><em>Main axis alignment:</em></p>
+<ul>
+<li><code>bfg=&quot;main-center | main-between | main-around&quot;</code></li>
+</ul>
+<p><em>Cross axis alignment:</em></p>
+<ul>
+<li><code>bfg=&quot;cross-start | cross-center | cross-end&quot;</code></li>
+</ul>
+<p><em>Order:</em></p>
+<ul>
+<li><code>bfg=&quot;reverse | xl-reverse | lg-reverse | sm-reverse | xs-reverse&quot;</code></li>
+</ul>
+<p><em>Box overflow:</em></p>
+<ul>
+<li><code>bfg=&quot;box-overflow-visible | box-overflow-hidden&quot;</code></li>
+</ul>
+<p><em>Card overflow:</em></p>
+<ul>
+<li><code>bfg=&quot;card-content-overflow-visible | card-content-overflow-hidden&quot;</code></li>
+</ul>
+<p><em>Disabled:</em></p>
+<ul>
+<li><code>bfg=&quot;disabled | xl-disabled | lg-disabled | sm-disabled | xs-disabled&quot;</code></li>
+<li><code>bfg=&quot;disabled-all | xl-disabled-all | lg-disabled-all | sm-disabled-all | xs-disabled-all&quot;</code></li>
+</ul>
+<h4><code>bfg__box</code> element attribute</h4>
+<p><em>Size:</em></p>
+<ul>
+<li><code>bfg__box=&quot;1 | xl-1 | lg-1 | sm-1 | xs-1&quot;</code></li>
+<li><code>bfg__box=&quot;2 | xl-2 | lg-2 | sm-2 | xs-2&quot;</code></li>
+<li><code>bfg__box=&quot;3 | xl-3 | lg-3 | sm-3 | xs-3&quot;</code></li>
+<li>...</li>
+<li><code>bfg__box=&quot;11 | xl-11 | lg-11 | sm-11 | xs-11&quot;</code></li>
+<li><code>bfg__box=&quot;12 | xl-12 | lg-12 | sm-12 | xs-12&quot;</code></li>
+</ul>
+<p><em>Fit:</em></p>
+<ul>
+<li><code>bfg__box=&quot;fit&quot;</code></li>
+</ul>
+<p><em>Order:</em></p>
+<ul>
+<li><code>bfg__box=&quot;first | xl-first | lg-first | sm-first | xs-first&quot;</code></li>
+<li><code>bfg__box=&quot;last | xl-last | lg-last | sm-last | xs-last&quot;</code></li>
+<li><code>bfg__box=&quot;in-place | xl-in-place | lg-in-place | sm-in-place | xs-in-place&quot;</code></li>
+</ul>
+<p><em>Overflow:</em></p>
+<ul>
+<li><code>bfg__box=&quot;overflow-visible | overflow-hidden&quot;</code></li>
+</ul>
+<p><em>Padding:</em></p>
+<ul>
+<li><code>bfg__box=&quot;nopad&quot;</code></li>
+</ul>
+<h4><code>bfg-card</code> block attribute</h4>
+<p><em>Theme:</em></p>
+<ul>
+<li><code>bfg-card=&quot;primary&quot;</code></li>
+<li>...</li>
+</ul>
+<h4><code>bfg-card__content</code> element attribute</h4>
+<p><em>Overflow:</em></p>
+<ul>
+<li><code>bfg-card__content=&quot;overflow-visible | overflow-hidden&quot;</code></li>
+</ul>
+<p><em>Padding:</em></p>
+<ul>
+<li><code>bfg-card__content=&quot;nopad&quot;</code></li>
+</ul>
+<h2>Contribute</h2>
 <pre><code class="language-bash">git clone https://github.com/avine/bem-flex-grid.git
 
 cd bem-flex-grid
@@ -836,7 +932,7 @@ npm run build
 # Build HTML documentation (`src/index.html`) from `README.md`
 npm run readme
 </code></pre>
-<h3>License</h3>
+<h2>License</h2>
 <p><a href="https://github.com/avine/bem-flex-grid/blob/master/LICENSE">MIT</a></p>
 
 

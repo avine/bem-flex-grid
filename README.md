@@ -14,7 +14,7 @@ The library comes with 2 syntaxes: __class__ and __attributes__ (or __attr__ for
 
 The first implementation sticks to the BEM convention (with *Block*, *Element* and *Modifier*), but has a more verbose syntax.
 
-*Here's a typical BEM sample:*
+*Let's take a typical BEM sample and see how this get converted to the attr syntax:*
 
 ```html
 <div class="user user--logged user--admin">
@@ -23,8 +23,6 @@ The first implementation sticks to the BEM convention (with *Block*, *Element* a
   </div>
 </div>
 ```
-
-Let's see how this get converted to the attr syntax.
 
 ### Attr syntax
 
@@ -180,6 +178,8 @@ bem-flex-grid
       ├─ bem-flex-grid-class.scss
       └─ bem-flex-grid-class.ie11.scss
 ```
+
+> The `dist` folder also contains the __sourcemap__ for each css file.
 
 ### Browser support
 
@@ -1015,7 +1015,107 @@ Now, let's use the `info` theme:
 
 - `.bfg-card__content--nopad`
 
-### Contribute
+### Selectors summary (for attr syntax)
+
+To conlude this detailed presentation of the API, let's see how the selectors get converted to the attr syntax.
+
+#### `bfg` block attribute
+
+*Direction:*
+
+- `bfg="row | col"`
+
+*Auto height:*
+
+- `bfg="height-auto"`
+
+*Wrap onto multiple lines:*
+
+- `bfg="wrap | xl-wrap | lg-wrap | sm-wrap | xs-wrap"`
+- `bfg="nowrap | xl-nowrap | lg-nowrap | sm-nowrap | xs-nowrap"`
+
+*Number of lines:*
+
+- `bfg="lines-2 | xl-lines-2 | lg-lines-2 | sm-lines-2 | xs-lines-2"`
+- `bfg="lines-3 | xl-lines-3 | lg-lines-3 | sm-lines-3 | xs-lines-3"`
+- `bfg="lines-4 | xl-lines-4 | lg-lines-4 | sm-lines-4 | xs-lines-4"`
+
+*Gap:*
+
+- `bfg="gap | gap-in | nogap"`
+
+*Main axis alignment:*
+
+- `bfg="main-center | main-between | main-around"`
+
+*Cross axis alignment:*
+
+- `bfg="cross-start | cross-center | cross-end"`
+
+*Order:*
+
+- `bfg="reverse | xl-reverse | lg-reverse | sm-reverse | xs-reverse"`
+
+*Box overflow:*
+
+- `bfg="box-overflow-visible | box-overflow-hidden"`
+
+*Card overflow:*
+
+- `bfg="card-content-overflow-visible | card-content-overflow-hidden"`
+
+*Disabled:*
+
+- `bfg="disabled | xl-disabled | lg-disabled | sm-disabled | xs-disabled"`
+- `bfg="disabled-all | xl-disabled-all | lg-disabled-all | sm-disabled-all | xs-disabled-all"`
+
+#### `bfg__box` element attribute
+
+*Size:*
+
+- `bfg__box="1 | xl-1 | lg-1 | sm-1 | xs-1"`
+- `bfg__box="2 | xl-2 | lg-2 | sm-2 | xs-2"`
+- `bfg__box="3 | xl-3 | lg-3 | sm-3 | xs-3"`
+- ...
+- `bfg__box="11 | xl-11 | lg-11 | sm-11 | xs-11"`
+- `bfg__box="12 | xl-12 | lg-12 | sm-12 | xs-12"`
+
+*Fit:*
+
+- `bfg__box="fit"`
+
+*Order:*
+
+- `bfg__box="first | xl-first | lg-first | sm-first | xs-first"`
+- `bfg__box="last | xl-last | lg-last | sm-last | xs-last"`
+- `bfg__box="in-place | xl-in-place | lg-in-place | sm-in-place | xs-in-place"`
+
+*Overflow:*
+
+- `bfg__box="overflow-visible | overflow-hidden"`
+
+*Padding:*
+
+- `bfg__box="nopad"`
+
+#### `bfg-card` block attribute
+
+*Theme:*
+
+- `bfg-card="primary"`
+- ...
+
+#### `bfg-card__content` element attribute
+
+*Overflow:*
+
+- `bfg-card__content="overflow-visible | overflow-hidden"`
+
+*Padding:*
+
+- `bfg-card__content="nopad"`
+
+## Contribute
 
 ```bash
 git clone https://github.com/avine/bem-flex-grid.git
@@ -1034,6 +1134,6 @@ npm run build
 npm run readme
 ```
 
-### License
+## License
 
 [MIT](https://github.com/avine/bem-flex-grid/blob/master/LICENSE)

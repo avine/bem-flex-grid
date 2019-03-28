@@ -25,5 +25,5 @@ updateFile();
 
 if (process.argv[2] === 'watch') {
   watchFile(sourcePath, updateFile);
-  console.log('watching:', sourcePath); // tslint:disable-line:no-console
+  console.log('Watching:', sourcePath); // tslint:disable-line:no-console
 }
