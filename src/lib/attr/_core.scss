@@ -86,8 +86,8 @@
   [bfg~="#{$size + wrap}"] { flex-wrap: wrap; }
   [bfg~="#{$size + nowrap}"] { flex-wrap: nowrap; }
 
-  [bfg~="row #{$size + reverse}"] { flex-direction: row-reverse; }
-  [bfg~="col #{$size + reverse}"] { flex-direction: column-reverse; }
+  [bfg~="row"][bfg~="#{$size + reverse}"] { flex-direction: row-reverse; }
+  [bfg~="col"][bfg~="#{$size + reverse}"] { flex-direction: column-reverse; }
 
   [bfg__box~="#{$size + first}"] { order: -1; }
   [bfg__box~="#{$size + in-place}"] { order: 0; }
