@@ -21,7 +21,7 @@ emptyDirSync(targetDir);
 
 const packageSource = JSON.parse(readFileSync(
   join(__dirname, './package.json'),
-  { encoding: 'utf-8' },
+  { encoding: 'utf8' },
 ));
 
 const packageTarget = {};
@@ -43,7 +43,7 @@ const packageTarget = {};
 writeFileSync(
   join(targetDir, './package.json'),
   JSON.stringify(packageTarget, undefined, 2),
-  { encoding: 'utf-8' },
+  { encoding: 'utf8' },
 );
 
 // ===== Copy files and directories to target directory =====

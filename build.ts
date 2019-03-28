@@ -1,28 +1,28 @@
 import { writeFileSync } from 'fs';
 import * as sass from 'node-sass';
 
-const DIR = {
-  DIST: 'dist',
-  SRC: 'src/lib',
+const targetDir = {
+  dist: 'dist',
+  src: 'src/lib',
 };
 
-const PATHS = [
+const filenames = [
   'bem-flex-grid-attr',
   'bem-flex-grid-attr.ie11',
   'bem-flex-grid-class',
   'bem-flex-grid-class.ie11',
 ];
 
-const build = (path: string, compressed = false) => {
+const build = (filename: string, compressed = false) => {
   const suffix = compressed ? '.min' : '';
 
   const outFile = {
-    css: `${DIR.DIST}/${path}${suffix}.css`,
-    map: `${DIR.DIST}/${path}${suffix}.map`,
+    css: `${targetDir.dist}/${filename}${suffix}.css`,
+    map: `${targetDir.dist}/${filename}${suffix}.map`,
   };
 
   sass.render({
-    file: `${DIR.SRC}/${path}.scss`,
+    file: `${targetDir.src}/${filename}.scss`,
     outFile: outFile.css,
     outputStyle: compressed ? 'compressed' : 'nested',
     sourceMap: true,
@@ -35,8 +35,8 @@ const build = (path: string, compressed = false) => {
         writeFileSync(outFile.css, result.css, { encoding: 'utf8' });
         writeFileSync(outFile.map, result.map, { encoding: 'utf8' });
         console.log(outFile.css);
-      } catch (e) {
-        console.error(e.message);
+      } catch (err) {
+        console.error(err.message);
       }
     } else {
       console.error(error.message);
@@ -45,7 +45,9 @@ const build = (path: string, compressed = false) => {
   });
 };
 
-PATHS.forEach((path) => {
-  build(path);
-  build(path, true);
+console.log('Build (css and source map):'); // tslint:disable-line:no-console
+
+filenames.forEach((filename) => {
+  build(filename);
+  build(filename, true);
 });

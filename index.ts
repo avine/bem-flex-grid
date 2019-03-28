@@ -11,14 +11,14 @@ const templatePath = join(__dirname, './index-template.html');
 const sourcePath = join(__dirname, './README.md');
 const targetPath = join(__dirname, './src/index.html');
 
-const template = readFileSync(templatePath, { encoding: 'utf-8' });
+const template = readFileSync(templatePath, { encoding: 'utf8' });
 
 const updateFile = () => {
-  const markdown = readFileSync(sourcePath, { encoding: 'utf-8' });
+  const markdown = readFileSync(sourcePath, { encoding: 'utf8' });
   const html = template.replace('{{markdown}}', md.render(markdown));
 
-  writeFileSync(targetPath, html, { encoding: 'utf-8' });
-  console.log('Updating:', targetPath); // tslint:disable-line:no-console
+  writeFileSync(targetPath, html, { encoding: 'utf8' });
+  console.log('Updated:', targetPath); // tslint:disable-line:no-console
 };
 
 updateFile();
