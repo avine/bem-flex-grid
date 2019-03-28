@@ -7,7 +7,7 @@ import { join } from 'path';
 
 const md = new MarkdownIt();
 
-const templatePath = join(__dirname, './index-template.html');
+const templatePath = join(__dirname, './readme-template.html');
 const sourcePath = join(__dirname, './README.md');
 const targetPath = join(__dirname, './src/index.html');
 

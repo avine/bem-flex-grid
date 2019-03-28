@@ -1031,7 +1031,7 @@ npm start
 npm run build
 
 # Build HTML documentation (`src/index.html`) from `README.md`
-npm run index
+npm run readme
 ```
 
 ### License
