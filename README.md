@@ -296,7 +296,9 @@ It is required to define the direction the `.bfg__box` elements are placed in th
 
 > When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined.
 
-#### Auto height: `.bfg--height-auto`
+#### Auto height: `.bfg--[B]height-auto`
+
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 By default, the main `.bfg` block will try to fit to the height of its parent node, by using the `height: 100%` rule.
 
@@ -304,6 +306,17 @@ Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
 
 ```html
 <div class="bfg bfg--height-auto">...</div>
+```
+
+As the grid is responsive, you can change this behavior at each breakpoint.
+
+*Example:*
+
+- Fit to the parent height on all *screen sizes* (even greater than 1200px).
+- Use auto height on *large screen* (until 992px).
+
+```html
+<div class="bfg bfg--lg-height-auto">...</div>
 ```
 
 #### Wrap onto multiple lines: `.bfg--[B]wrap`,  `.bfg--[B]nowrap`
@@ -916,7 +929,7 @@ Now, let's use the `info` theme:
 
 *Auto height:*
 
-- `.bfg--height-auto`
+- `.bfg--height-auto`, `.bfg--xl-height-auto`, `.bfg--lg-height-auto`, `.bfg--sm-height-auto`, `.bfg--xs-height-auto`
 
 *Wrap onto multiple lines:*
 
@@ -1027,7 +1040,7 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 
 *Auto height:*
 
-- `bfg="height-auto"`
+- `bfg="height-auto | xl-height-auto | lg-height-auto | sm-height-auto | xs-height-auto"`
 
 *Wrap onto multiple lines:*
 

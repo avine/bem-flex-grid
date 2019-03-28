@@ -6,8 +6,7 @@
   height: 100%; // Try to fit the parent node height when available
 }
 
-[bfg][bfg__box],
-[bfg~="height-auto"] {
+[bfg][bfg__box] {
   height: auto;
 }
 
@@ -82,6 +81,8 @@
 }
 
 @mixin bfg-boxes($size: '') {
+  [bfg~="#{$size + height-auto}"] { height: auto; }
+
   [bfg~="#{$size + wrap}"] { flex-wrap: wrap; }
   [bfg~="#{$size + nowrap}"] { flex-wrap: nowrap; }
 

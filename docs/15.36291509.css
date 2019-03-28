@@ -6,8 +6,7 @@
   box-sizing: border-box;
   height: 100%; }
 
-[bfg][bfg__box],
-[bfg~="height-auto"] {
+[bfg][bfg__box] {
   height: auto; }
 
 [bfg~="row"] {
@@ -73,6 +72,9 @@
 [bfg~="box-overflow-hidden"] [bfg__box],
 [bfg__box~="overflow-hidden"] {
   overflow: hidden; }
+
+[bfg~="height-auto"] {
+  height: auto; }
 
 [bfg~="wrap"] {
   flex-wrap: wrap; }
@@ -161,6 +163,8 @@
   height: auto; }
 
 @media (max-width: 1199.98px) {
+  [bfg~="xl-height-auto"] {
+    height: auto; }
   [bfg~="xl-wrap"] {
     flex-wrap: wrap; }
   [bfg~="xl-nowrap"] {
@@ -222,6 +226,8 @@
     height: auto; } }
 
 @media (max-width: 991.98px) {
+  [bfg~="lg-height-auto"] {
+    height: auto; }
   [bfg~="lg-wrap"] {
     flex-wrap: wrap; }
   [bfg~="lg-nowrap"] {
@@ -283,6 +289,8 @@
     height: auto; } }
 
 @media (max-width: 767.98px) {
+  [bfg~="sm-height-auto"] {
+    height: auto; }
   [bfg~="sm-wrap"] {
     flex-wrap: wrap; }
   [bfg~="sm-nowrap"] {
@@ -344,6 +352,8 @@
     height: auto; } }
 
 @media (max-width: 575.98px) {
+  [bfg~="xs-height-auto"] {
+    height: auto; }
   [bfg~="xs-wrap"] {
     flex-wrap: wrap; }
   [bfg~="xs-nowrap"] {
@@ -504,4 +514,4 @@
   background: #E3F2FD; }
 
 
-/*# sourceMappingURL=/bem-flex-grid/15.bd3a0027.css.map */
+/*# sourceMappingURL=/bem-flex-grid/15.36291509.css.map */

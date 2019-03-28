@@ -17,7 +17,7 @@
 
   <link rel="stylesheet" href="/bem-flex-grid/demo.f6ac594d.css">
   <link rel="stylesheet" href="/bem-flex-grid/docs.cffe2555.css">
-  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid-class.71a6f28e.css">
+  <link rel="stylesheet" href="/bem-flex-grid/bem-flex-grid-class.2afa2030.css">
 </head>
 <body>
   <div class="docs-navbar docs-navbar--back">
@@ -273,10 +273,19 @@
 <blockquote>
 <p>When using <code>.bfg--col</code> modifier, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined.</p>
 </blockquote>
-<h4>Auto height: <code>.bfg--height-auto</code></h4>
+<h4>Auto height: <code>.bfg--[B]height-auto</code></h4>
+<p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>By default, the main <code>.bfg</code> block will try to fit to the height of its parent node, by using the <code>height: 100%</code> rule.</p>
 <p>Use <code>.bfg--height-auto</code> modifier to apply <code>height: auto</code> rule instead.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--height-auto&quot;&gt;...&lt;/div&gt;
+</code></pre>
+<p>As the grid is responsive, you can change this behavior at each breakpoint.</p>
+<p><em>Example:</em></p>
+<ul>
+<li>Fit to the parent height on all <em>screen sizes</em> (even greater than 1200px).</li>
+<li>Use auto height on <em>large screen</em> (until 992px).</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--lg-height-auto&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <h4>Wrap onto multiple lines: <code>.bfg--[B]wrap</code>,  <code>.bfg--[B]nowrap</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -726,7 +735,7 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Auto height:</em></p>
 <ul>
-<li><code>.bfg--height-auto</code></li>
+<li><code>.bfg--height-auto</code>, <code>.bfg--xl-height-auto</code>, <code>.bfg--lg-height-auto</code>, <code>.bfg--sm-height-auto</code>, <code>.bfg--xs-height-auto</code></li>
 </ul>
 <p><em>Wrap onto multiple lines:</em></p>
 <ul>
@@ -831,7 +840,7 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Auto height:</em></p>
 <ul>
-<li><code>bfg=&quot;height-auto&quot;</code></li>
+<li><code>bfg=&quot;height-auto | xl-height-auto | lg-height-auto | sm-height-auto | xs-height-auto&quot;</code></li>
 </ul>
 <p><em>Wrap onto multiple lines:</em></p>
 <ul>
