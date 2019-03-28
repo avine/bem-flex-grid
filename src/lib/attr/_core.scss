@@ -122,7 +122,7 @@
 
   [bfg~="#{$size + disabled}"],
   [bfg~="#{$size + disabled-all}"],
-  [bfg~="#{$size + disabled-all}"] .bfg {
+  [bfg~="#{$size + disabled-all}"] [bfg] {
     display: block;
     height: auto;
   }

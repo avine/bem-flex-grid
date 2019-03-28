@@ -151,7 +151,7 @@
 
 [bfg~="disabled"],
 [bfg~="disabled-all"],
-[bfg~="disabled-all"] .bfg {
+[bfg~="disabled-all"] [bfg] {
   display: block;
   height: auto; }
 
@@ -213,7 +213,7 @@
     width: 25%; }
   [bfg~="xl-disabled"],
   [bfg~="xl-disabled-all"],
-  [bfg~="xl-disabled-all"] .bfg {
+  [bfg~="xl-disabled-all"] [bfg] {
     display: block;
     height: auto; }
   [bfg~="xl-disabled"] > [bfg__box],
@@ -274,7 +274,7 @@
     width: 25%; }
   [bfg~="lg-disabled"],
   [bfg~="lg-disabled-all"],
-  [bfg~="lg-disabled-all"] .bfg {
+  [bfg~="lg-disabled-all"] [bfg] {
     display: block;
     height: auto; }
   [bfg~="lg-disabled"] > [bfg__box],
@@ -335,7 +335,7 @@
     width: 25%; }
   [bfg~="sm-disabled"],
   [bfg~="sm-disabled-all"],
-  [bfg~="sm-disabled-all"] .bfg {
+  [bfg~="sm-disabled-all"] [bfg] {
     display: block;
     height: auto; }
   [bfg~="sm-disabled"] > [bfg__box],
@@ -396,7 +396,7 @@
     width: 25%; }
   [bfg~="xs-disabled"],
   [bfg~="xs-disabled-all"],
-  [bfg~="xs-disabled-all"] .bfg {
+  [bfg~="xs-disabled-all"] [bfg] {
     display: block;
     height: auto; }
   [bfg~="xs-disabled"] > [bfg__box],
@@ -502,4 +502,4 @@
   background: #2a2a2a; }
 
 
-/*# sourceMappingURL=/bem-flex-grid/5.3e2686a5.css.map */
+/*# sourceMappingURL=/bem-flex-grid/5.c11dc68b.css.map */

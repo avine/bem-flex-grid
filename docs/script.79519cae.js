@@ -561,83 +561,83 @@ this.options.responsive,t=[],r=this.currentResponsive;!k&&p&&p.rules&&p.rules.fo
 c)):this.currentResponsive=void 0)};y.prototype.matchResponsiveRule=function(a,c){var p=a.condition;(p.callback||function(){return this.chartWidth<=k(p.maxWidth,Number.MAX_VALUE)&&this.chartHeight<=k(p.maxHeight,Number.MAX_VALUE)&&this.chartWidth>=k(p.minWidth,0)&&this.chartHeight>=k(p.minHeight,0)}).call(this)&&c.push(a._id)};y.prototype.currentOptions=function(k){function p(k,r,h,e){var l;a.objectEach(k,function(a,d){if(!e&&-1<["series","xAxis","yAxis"].indexOf(d))for(a=c(a),h[d]=[],l=0;l<a.length;l++)r[d][l]&&
 (h[d][l]={},p(a[l],r[d][l],h[d][l],e+1));else G(a)?(h[d]=F(a)?[]:{},p(a,r[d]||{},h[d],e+1)):h[d]=r[d]||null})}var v={};p(k,this.options,v,0);return v}})(I);return I});
 
-},{}],"sAzF":[function(require,module,exports) {
-"use strict";
-
-var __importDefault = this && this.__importDefault || function (mod) {
-  return mod && mod.__esModule ? mod : {
-    "default": mod
-  };
-};
+},{}],"MQ1b":[function(require,module,exports) {
+"use strict"; // tslint:disable:object-literal-sort-keys
 
 exports.__esModule = true;
-
-var highcharts_1 = __importDefault(require("highcharts")); // tslint:disable:object-literal-sort-keys
-
-
 var option1 = {
-  title: {
-    text: ''
-  },
-  // subtitle: {
-  //   text: 'Source: thesolarfoundation.com',
-  // },
-  yAxis: {
-    title: {
-      text: 'Number of Employees'
-    }
-  },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'middle'
-  },
-  plotOptions: {
-    series: {
-      label: {
-        connectorAllowed: false
-      },
-      pointStart: 2010
-    }
-  },
-  series: [{
-    name: 'Installation',
-    data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]
-  }, {
-    name: 'Manufacturing',
-    data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]
-  }, {
-    name: 'Sales & Distribution',
-    data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]
-  }, {
-    name: 'Project Development',
-    data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]
-  }, {
-    name: 'Other',
-    data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-  }]
-};
-var option2 = {
   chart: {
-    type: 'bar'
+    type: 'column'
   },
   title: {
     text: ''
   },
   xAxis: {
-    categories: ['Apples', 'Bananas', 'Oranges']
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    crosshair: true
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: ''
+    }
+  },
+  tooltip: {
+    headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+    pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' + '<td style="padding:0"><b>{point.y:.1f} mm</b></td></tr>',
+    footerFormat: '</table>',
+    shared: true,
+    useHTML: true
+  },
+  plotOptions: {
+    column: {
+      pointPadding: 0.2,
+      borderWidth: 0
+    }
+  },
+  series: [{
+    name: 'Tokyo',
+    data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4]
+  }, {
+    name: 'New York',
+    data: [83.6, 78.8, 98.5, 93.4, 106.0, 84.5, 105.0, 104.3, 91.2, 83.5, 106.6, 92.3]
+  }, {
+    name: 'London',
+    data: [48.9, 38.8, 39.3, 41.4, 47.0, 48.3, 59.0, 59.6, 52.4, 65.2, 59.3, 51.2]
+  }, {
+    name: 'Berlin',
+    data: [42.4, 33.2, 34.5, 39.7, 52.6, 75.5, 57.4, 60.4, 47.6, 39.1, 46.8, 51.1]
+  }]
+};
+var option2 = {
+  chart: {
+    type: 'line'
+  },
+  title: {
+    text: ''
+  },
+  xAxis: {
+    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
   },
   yAxis: {
     title: {
       text: ''
     }
   },
+  plotOptions: {
+    /*line: {
+      dataLabels: {
+        enabled: true
+      },
+      enableMouseTracking: false
+    }*/
+  },
   series: [{
-    name: 'Jane',
-    data: [1, 0, 4]
+    name: 'Tokyo',
+    data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
   }, {
-    name: 'John',
-    data: [5, 7, 3]
+    name: 'London',
+    data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
   }]
 };
 var option3 = {
@@ -700,7 +700,7 @@ var option3 = {
 };
 var option4 = {
   chart: {
-    type: 'column'
+    type: 'bar'
   },
   title: {
     text: ''
@@ -711,36 +711,15 @@ var option4 = {
   yAxis: {
     min: 0,
     title: {
-      text: 'Total fruit consumption'
-    },
-    stackLabels: {
-      enabled: true,
-      style: {
-        fontWeight: 'bold'
-      }
+      text: ''
     }
   },
   legend: {
-    align: 'right',
-    x: -30,
-    verticalAlign: 'top',
-    y: 25,
-    floating: true,
-    // backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
-    borderColor: '#CCC',
-    borderWidth: 1,
-    shadow: false
-  },
-  tooltip: {
-    headerFormat: '<b>{point.x}</b><br/>',
-    pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+    reversed: true
   },
   plotOptions: {
-    column: {
-      stacking: 'normal',
-      dataLabels: {
-        enabled: true
-      }
+    series: {
+      stacking: 'normal'
     }
   },
   series: [{
@@ -755,15 +734,30 @@ var option4 = {
   }]
 }; // tslint:enable:object-literal-sort-keys
 
-var options = [option1, option2, option3, option4];
+exports["default"] = [option1, option2, option3, option4];
+},{}],"sAzF":[function(require,module,exports) {
+"use strict";
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+exports.__esModule = true;
+
+var highcharts_1 = __importDefault(require("highcharts"));
+
+var chart_options_1 = __importDefault(require("./chart-options"));
+
 var optionIndex = 0;
 
 exports.chart = function (ctx) {
-  var option = options[optionIndex];
-  optionIndex = (optionIndex + 1) % options.length;
+  var option = chart_options_1["default"][optionIndex];
+  optionIndex = (optionIndex + 1) % chart_options_1["default"].length;
   return highcharts_1["default"].chart(ctx, option);
 };
-},{"highcharts":"H60v"}],"z9H4":[function(require,module,exports) {
+},{"highcharts":"H60v","./chart-options":"MQ1b"}],"z9H4":[function(require,module,exports) {
 "use strict";
 
 exports.__esModule = true; // Polyfill for IE11: Use "forEach" on DOM elements
@@ -2159,4 +2153,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.f2e1b9a0.js.map
+//# sourceMappingURL=/bem-flex-grid/script.79519cae.js.map
