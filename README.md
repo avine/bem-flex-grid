@@ -880,7 +880,7 @@ To customize the boxes gap, create a file `custo-bfg.scss` with the following co
 // Overwrite gap
 $bfg-gap: 2rem;
 
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 ```
 
 #### Mixin
@@ -896,7 +896,7 @@ The `bfg-card` mixin allows you to customize the look and feel of the box's cont
 To add a theme named `info`, create a file `custo-bfg.scss` with the following content:
 
 ```scss
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss";
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 
 // Add new theme
 @include bfg-card(info, (

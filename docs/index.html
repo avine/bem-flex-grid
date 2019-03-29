@@ -695,7 +695,7 @@ $bfg-card-primary-included: true !default;
 <pre><code class="language-scss">// Overwrite gap
 $bfg-gap: 2rem;
 
-@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
+@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
 </code></pre>
 <h4>Mixin</h4>
 <p>The <code>bfg-card</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
@@ -703,7 +703,7 @@ $bfg-gap: 2rem;
 </code></pre>
 <p><em>Example:</em></p>
 <p>To add a theme named <code>info</code>, create a file <code>custo-bfg.scss</code> with the following content:</p>
-<pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid.scss&quot;;
+<pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
 
 // Add new theme
 @include bfg-card(info, (
