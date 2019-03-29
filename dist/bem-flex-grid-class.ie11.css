@@ -184,6 +184,9 @@
 .bfg--row.bfg--4-lines > .bfg__box {
   height: 25%; }
 
+.bfg--row.bfg--5-lines > .bfg__box {
+  height: 20%; }
+
 .bfg--col > .bfg__box--1 {
   max-height: 8.33333%; }
 
@@ -228,6 +231,9 @@
 
 .bfg--col.bfg--4-lines > .bfg__box {
   width: 25%; }
+
+.bfg--col.bfg--5-lines > .bfg__box {
+  width: 20%; }
 
 .bfg--disabled,
 .bfg--disabled-all,
@@ -313,6 +319,8 @@
     height: 33.33333%; }
   .bfg--row.bfg--xl-4-lines > .bfg__box {
     height: 25%; }
+  .bfg--row.bfg--xl-5-lines > .bfg__box {
+    height: 20%; }
   .bfg--col > .bfg__box--xl-1 {
     max-height: 8.33333%; }
   .bfg--col > .bfg__box--xl-2 {
@@ -343,6 +351,8 @@
     width: 33.33333%; }
   .bfg--col.bfg--xl-4-lines > .bfg__box {
     width: 25%; }
+  .bfg--col.bfg--xl-5-lines > .bfg__box {
+    width: 20%; }
   .bfg--xl-disabled,
   .bfg--xl-disabled-all,
   .bfg--xl-disabled-all .bfg {
@@ -426,6 +436,8 @@
     height: 33.33333%; }
   .bfg--row.bfg--lg-4-lines > .bfg__box {
     height: 25%; }
+  .bfg--row.bfg--lg-5-lines > .bfg__box {
+    height: 20%; }
   .bfg--col > .bfg__box--lg-1 {
     max-height: 8.33333%; }
   .bfg--col > .bfg__box--lg-2 {
@@ -456,6 +468,8 @@
     width: 33.33333%; }
   .bfg--col.bfg--lg-4-lines > .bfg__box {
     width: 25%; }
+  .bfg--col.bfg--lg-5-lines > .bfg__box {
+    width: 20%; }
   .bfg--lg-disabled,
   .bfg--lg-disabled-all,
   .bfg--lg-disabled-all .bfg {
@@ -539,6 +553,8 @@
     height: 33.33333%; }
   .bfg--row.bfg--sm-4-lines > .bfg__box {
     height: 25%; }
+  .bfg--row.bfg--sm-5-lines > .bfg__box {
+    height: 20%; }
   .bfg--col > .bfg__box--sm-1 {
     max-height: 8.33333%; }
   .bfg--col > .bfg__box--sm-2 {
@@ -569,6 +585,8 @@
     width: 33.33333%; }
   .bfg--col.bfg--sm-4-lines > .bfg__box {
     width: 25%; }
+  .bfg--col.bfg--sm-5-lines > .bfg__box {
+    width: 20%; }
   .bfg--sm-disabled,
   .bfg--sm-disabled-all,
   .bfg--sm-disabled-all .bfg {
@@ -652,6 +670,8 @@
     height: 33.33333%; }
   .bfg--row.bfg--xs-4-lines > .bfg__box {
     height: 25%; }
+  .bfg--row.bfg--xs-5-lines > .bfg__box {
+    height: 20%; }
   .bfg--col > .bfg__box--xs-1 {
     max-height: 8.33333%; }
   .bfg--col > .bfg__box--xs-2 {
@@ -682,6 +702,8 @@
     width: 33.33333%; }
   .bfg--col.bfg--xs-4-lines > .bfg__box {
     width: 25%; }
+  .bfg--col.bfg--xs-5-lines > .bfg__box {
+    width: 20%; }
   .bfg--xs-disabled,
   .bfg--xs-disabled-all,
   .bfg--xs-disabled-all .bfg {

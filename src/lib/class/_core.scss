@@ -104,9 +104,9 @@
       }
     }
 
-    &.bfg--#{$size + 2-lines} > .bfg__box { height: 50%; }
-    &.bfg--#{$size + 3-lines} > .bfg__box { height: (100% / 3); }
-    &.bfg--#{$size + 4-lines} > .bfg__box { height: 25%; }
+    @for $i from 2 through 5 {
+      &.bfg--#{$size + $i}-lines > .bfg__box { height: (100% / $i); }
+    }
   }
 
   .bfg--col {
@@ -116,9 +116,9 @@
       }
     }
 
-    &.bfg--#{$size + 2-lines} > .bfg__box { width: 50%; }
-    &.bfg--#{$size + 3-lines} > .bfg__box { width: (100% / 3); }
-    &.bfg--#{$size + 4-lines} > .bfg__box { width: 25%; }
+    @for $i from 2 through 5 {
+      &.bfg--#{$size + $i}-lines > .bfg__box { width: (100% / $i); }
+    }
   }
 
   .bfg--#{$size + disabled},

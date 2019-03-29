@@ -352,7 +352,7 @@ As the grid is responsive, you can change this behavior at each breakpoint.
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
-**[N]** Number: `2`, `3` or `4`.
+**[N]** Number: `2`, `3`, `4` or `5`.
 
 As said above, if you use the markup `.bfg.bfg--row.bfg--wrap` then `.bfg__box` elements are placed in the row direction and wrapped onto multiple lines when needed.
 
@@ -360,7 +360,7 @@ But in this case the total height of all `.bfg__box` elements might be bigger th
 
 If you know that there's exactly 2 lines of `.bfg__box` elements, you can constrain them to fit into the `.bfg` block, by using `.bfg--2-lines` modifier.
 
-In the same way, use `.bfg--3-lines` or `.bfg--4-lines` modifiers to fit into exactly 3 or 4 lines respectively.
+In the same way, use `.bfg--3-lines`, `.bfg--4-lines` or `.bfg--5-lines` modifiers to fit into exactly 3, 4 or 5 lines respectively.
 
 ```html
 <div class="bfg bfg--row bfg--wrap bfg--2-lines">...</div>
@@ -372,6 +372,10 @@ In the same way, use `.bfg--3-lines` or `.bfg--4-lines` modifiers to fit into ex
 
 ```html
 <div class="bfg bfg--row bfg--wrap bfg--4-lines">...</div>
+```
+
+```html
+<div class="bfg bfg--row bfg--wrap bfg--5-lines">...</div>
 ```
 
 > Notice that all the rows will have the same height.
@@ -388,6 +392,10 @@ The same pattern applies to the markup `.bfg.bfg--col.bfg--wrap`.
 
 ```html
 <div class="bfg bfg--col bfg--wrap bfg--4-lines">...</div>
+```
+
+```html
+<div class="bfg bfg--col bfg--wrap bfg--5-lines">...</div>
 ```
 
 > Notice that all the columns will have the same width.
@@ -941,6 +949,7 @@ Now, let's use the `info` theme:
 - `.bfg--2-lines`, `.bfg--xl-2-lines`, `.bfg--lg-2-lines`, `.bfg--sm-2-lines`, `.bfg--xs-2-lines`
 - `.bfg--3-lines`, `.bfg--xl-3-lines`, `.bfg--lg-3-lines`, `.bfg--sm-3-lines`, `.bfg--xs-3-lines`
 - `.bfg--4-lines`, `.bfg--xl-4-lines`, `.bfg--lg-4-lines`, `.bfg--sm-4-lines`, `.bfg--xs-4-lines`
+- `.bfg--5-lines`, `.bfg--xl-5-lines`, `.bfg--lg-5-lines`, `.bfg--sm-5-lines`, `.bfg--xs-5-lines`
 
 *Gap:*
 
@@ -1052,6 +1061,7 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 - `bfg="2-lines | xl-2-lines | lg-2-lines | sm-2-lines | xs-2-lines"`
 - `bfg="3-lines | xl-3-lines | lg-3-lines | sm-3-lines | xs-3-lines"`
 - `bfg="4-lines | xl-4-lines | lg-4-lines | sm-4-lines | xs-4-lines"`
+- `bfg="5-lines | xl-5-lines | lg-5-lines | sm-5-lines | xs-5-lines"`
 
 *Gap:*
 
