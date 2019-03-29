@@ -2181,4 +2181,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   });
 }
 },{"./scripts/back-button":"DdMk","./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/util":"z9H4","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.9d352f53.js.map
+//# sourceMappingURL=/bem-flex-grid/script.a0f4b5d0.js.map
