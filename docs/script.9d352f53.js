@@ -117,7 +117,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"H60v":[function(require,module,exports) {
+})({"DdMk":[function(require,module,exports) {
+"use strict";
+
+exports.__esModule = true;
+
+function handleBackButton() {
+  var output = document.querySelector('.demo-layout__readme');
+
+  if (output) {
+    var btn = document.createElement('a');
+    btn.innerHTML = '&longleftarrow; back';
+    btn.href = '../demo.html';
+    btn.className = 'demo-layout__back-button';
+    output.appendChild(btn);
+  }
+}
+
+exports.handleBackButton = handleBackButton;
+},{}],"H60v":[function(require,module,exports) {
 var define;
 /*
  Highcharts JS v7.0.3 (2019-02-06)
@@ -776,6 +794,14 @@ function toggleAttributeValue(el, key, value) {
 }
 
 exports.toggleAttributeValue = toggleAttributeValue;
+
+exports.inIframe = function () {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true;
+  }
+};
 },{}],"6hKA":[function(require,module,exports) {
 var global = arguments[3];
 
@@ -1912,14 +1938,6 @@ exports.__esModule = true;
 
 var util_1 = require("./util");
 
-var inIframe = function inIframe() {
-  try {
-    return window.self !== window.top;
-  } catch (e) {
-    return true;
-  }
-};
-
 var fillTypeIndex = {
   get: function get() {
     return parseInt(window.sessionStorage.getItem('Demo.fillTypeIndex'), 10) || 0;
@@ -1933,7 +1951,7 @@ var fillTypes = ['container', 'text'];
 var getFillType = function getFillType() {
   var index = fillTypeIndex.get();
 
-  if (!inIframe()) {
+  if (!util_1.inIframe()) {
     fillTypeIndex.set((index + 1) % fillTypes.length);
   }
 
@@ -2125,6 +2143,8 @@ exports.handleTabs = function () {
 
 exports.__esModule = true;
 
+var back_button_1 = require("./scripts/back-button");
+
 var chart_1 = require("./scripts/chart");
 
 var enable_actions_1 = require("./scripts/enable-actions");
@@ -2134,6 +2154,8 @@ var fill_grid_1 = require("./scripts/fill-grid");
 var showcase_1 = require("./scripts/showcase");
 
 var tabs_1 = require("./scripts/tabs");
+
+var util_1 = require("./scripts/util");
 
 var view_code_1 = require("./scripts/view-code");
 /* ===== Export as global ===== */
@@ -2147,10 +2169,16 @@ window['Demo'] = {
   showcase: showcase_1.showcase,
   viewCode: view_code_1.viewCode
 };
-/* ===== Enable tabs navigation for small screen ===== */
+/* ===== Enable tabs-navigation and back-button ===== */
 
 if (!window.location.pathname.match(/\/demo\.html/)) {
-  document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
+  document.addEventListener('DOMContentLoaded', function () {
+    tabs_1.handleTabs();
+
+    if (!util_1.inIframe()) {
+      back_button_1.handleBackButton();
+    }
+  });
 }
-},{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.a5c9d37d.js.map
+},{"./scripts/back-button":"DdMk","./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/util":"z9H4","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
+//# sourceMappingURL=/bem-flex-grid/script.9d352f53.js.map

@@ -98,6 +98,18 @@ main {
   }
 }
 
+.demo-layout__back-button {
+  position: absolute;
+  z-index: 2;
+  top: 0.5rem;
+  right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.05);
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
 .demo-layout__code {
   flex-grow: 1;
   flex-shrink: 1;

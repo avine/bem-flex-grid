@@ -1,12 +1,4 @@
-import { forEach } from './util';
-
-const inIframe = () => {
-  try {
-    return window.self !== window.top;
-  } catch (e) {
-    return true;
-  }
-};
+import { forEach, inIframe } from './util';
 
 const fillTypeIndex = {
   get: () => parseInt(window.sessionStorage.getItem('Demo.fillTypeIndex'), 10) || 0,

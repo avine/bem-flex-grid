@@ -9,3 +9,11 @@ export function toggleAttributeValue(el: Element, key: string, value: string) {
   index === -1 ? attr.push(value) : attr.splice(index, 1);
   el.setAttribute(key, attr.join(' ').trim());
 }
+
+export const inIframe = () => {
+  try {
+    return window.self !== window.top;
+  } catch (e) {
+    return true;
+  }
+};
