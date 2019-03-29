@@ -296,16 +296,16 @@ It is required to define the direction the `.bfg__box` elements are placed in th
 
 > When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined.
 
-#### Auto height: `.bfg--[B]height-auto`
+#### Auto height: `.bfg--[B]auto-height`
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 By default, the main `.bfg` block will try to fit to the height of its parent node, by using the `height: 100%` rule.
 
-Use `.bfg--height-auto` modifier to apply `height: auto` rule instead.
+Use `.bfg--auto-height` modifier to apply `height: auto` rule instead.
 
 ```html
-<div class="bfg bfg--height-auto">...</div>
+<div class="bfg bfg--auto-height">...</div>
 ```
 
 As the grid is responsive, you can change this behavior at each breakpoint.
@@ -313,10 +313,10 @@ As the grid is responsive, you can change this behavior at each breakpoint.
 *Example:*
 
 - Fit to the parent height on all *screen sizes* (even greater than 1200px).
-- Use auto height on *large screen* (until 992px).
+- Use auto-height on *large screen* (until 992px).
 
 ```html
-<div class="bfg bfg--lg-height-auto">...</div>
+<div class="bfg bfg--lg-auto-height">...</div>
 ```
 
 #### Wrap onto multiple lines: `.bfg--[B]wrap`,  `.bfg--[B]nowrap`
@@ -348,7 +348,7 @@ As the grid is responsive, you can change this behavior at each breakpoint.
 </div>
 ```
 
-#### Number of lines: `.bfg--[B]lines-[N]`
+#### Number of lines: `.bfg--[B][N]-lines`
 
 **[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
@@ -358,20 +358,20 @@ As said above, if you use the markup `.bfg.bfg--row.bfg--wrap` then `.bfg__box` 
 
 But in this case the total height of all `.bfg__box` elements might be bigger than the `.bfg` block height itself!
 
-If you know that there's exactly 2 lines of `.bfg__box` elements, you can constrain them to fit into the `.bfg` block, by using `.bfg--lines-2` modifier.
+If you know that there's exactly 2 lines of `.bfg__box` elements, you can constrain them to fit into the `.bfg` block, by using `.bfg--2-lines` modifier.
 
-In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit into exactly 3 or 4 lines respectively.
+In the same way, use `.bfg--3-lines` or `.bfg--4-lines` modifiers to fit into exactly 3 or 4 lines respectively.
 
 ```html
-<div class="bfg bfg--row bfg--wrap bfg--lines-2">...</div>
+<div class="bfg bfg--row bfg--wrap bfg--2-lines">...</div>
 ```
 
 ```html
-<div class="bfg bfg--row bfg--wrap bfg--lines-3">...</div>
+<div class="bfg bfg--row bfg--wrap bfg--3-lines">...</div>
 ```
 
 ```html
-<div class="bfg bfg--row bfg--wrap bfg--lines-4">...</div>
+<div class="bfg bfg--row bfg--wrap bfg--4-lines">...</div>
 ```
 
 > Notice that all the rows will have the same height.
@@ -379,15 +379,15 @@ In the same way, use `.bfg--lines-3` or `.bfg--lines-4` modifiers to fit into ex
 The same pattern applies to the markup `.bfg.bfg--col.bfg--wrap`.
 
 ```html
-<div class="bfg bfg--col bfg--wrap bfg--lines-2">...</div>
+<div class="bfg bfg--col bfg--wrap bfg--2-lines">...</div>
 ```
 
 ```html
-<div class="bfg bfg--col bfg--wrap bfg--lines-3">...</div>
+<div class="bfg bfg--col bfg--wrap bfg--3-lines">...</div>
 ```
 
 ```html
-<div class="bfg bfg--col bfg--wrap bfg--lines-4">...</div>
+<div class="bfg bfg--col bfg--wrap bfg--4-lines">...</div>
 ```
 
 > Notice that all the columns will have the same width.
@@ -402,9 +402,9 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 
 ```html
 <div class="bfg bfg--wrap
-  bfg--lines-2
-  bfg--lg-lines-3
-  bfg--sm-lines-4">
+  bfg--2-lines
+  bfg--lg-3-lines
+  bfg--sm-4-lines">
   ...
 </div>
 ```
@@ -929,7 +929,7 @@ Now, let's use the `info` theme:
 
 *Auto height:*
 
-- `.bfg--height-auto`, `.bfg--xl-height-auto`, `.bfg--lg-height-auto`, `.bfg--sm-height-auto`, `.bfg--xs-height-auto`
+- `.bfg--auto-height`, `.bfg--xl-auto-height`, `.bfg--lg-auto-height`, `.bfg--sm-auto-height`, `.bfg--xs-auto-height`
 
 *Wrap onto multiple lines:*
 
@@ -938,9 +938,9 @@ Now, let's use the `info` theme:
 
 *Number of lines:*
 
-- `.bfg--lines-2`, `.bfg--xl-lines-2`, `.bfg--lg-lines-2`, `.bfg--sm-lines-2`, `.bfg--xs-lines-2`
-- `.bfg--lines-3`, `.bfg--xl-lines-3`, `.bfg--lg-lines-3`, `.bfg--sm-lines-3`, `.bfg--xs-lines-3`
-- `.bfg--lines-4`, `.bfg--xl-lines-4`, `.bfg--lg-lines-4`, `.bfg--sm-lines-4`, `.bfg--xs-lines-4`
+- `.bfg--2-lines`, `.bfg--xl-2-lines`, `.bfg--lg-2-lines`, `.bfg--sm-2-lines`, `.bfg--xs-2-lines`
+- `.bfg--3-lines`, `.bfg--xl-3-lines`, `.bfg--lg-3-lines`, `.bfg--sm-3-lines`, `.bfg--xs-3-lines`
+- `.bfg--4-lines`, `.bfg--xl-4-lines`, `.bfg--lg-4-lines`, `.bfg--sm-4-lines`, `.bfg--xs-4-lines`
 
 *Gap:*
 
@@ -1040,7 +1040,7 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 
 *Auto height:*
 
-- `bfg="height-auto | xl-height-auto | lg-height-auto | sm-height-auto | xs-height-auto"`
+- `bfg="auto-height | xl-auto-height | lg-auto-height | sm-auto-height | xs-auto-height"`
 
 *Wrap onto multiple lines:*
 
@@ -1049,9 +1049,9 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 
 *Number of lines:*
 
-- `bfg="lines-2 | xl-lines-2 | lg-lines-2 | sm-lines-2 | xs-lines-2"`
-- `bfg="lines-3 | xl-lines-3 | lg-lines-3 | sm-lines-3 | xs-lines-3"`
-- `bfg="lines-4 | xl-lines-4 | lg-lines-4 | sm-lines-4 | xs-lines-4"`
+- `bfg="2-lines | xl-2-lines | lg-2-lines | sm-2-lines | xs-2-lines"`
+- `bfg="3-lines | xl-3-lines | lg-3-lines | sm-3-lines | xs-3-lines"`
+- `bfg="4-lines | xl-4-lines | lg-4-lines | sm-4-lines | xs-4-lines"`
 
 *Gap:*
 

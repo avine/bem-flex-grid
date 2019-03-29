@@ -61,6 +61,10 @@ main {
   display: block; // For IE11
 }
 
+*::selection {
+  background-color: #FFECB3 !important; // Overwrite "prismjs"
+}
+
 /* ===== Handle layout ===== */
 
 .demo-layout__desc {

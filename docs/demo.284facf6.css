@@ -46,6 +46,9 @@ a {
 main {
   display: block; }
 
+*::selection {
+  background-color: #FFECB3 !important; }
+
 /* ===== Handle layout ===== */
 .demo-layout__desc {
   position: fixed;
@@ -171,19 +174,19 @@ pre.demo-layout__output--gray {
   background-color: #2196F3; }
 
 .demo-toolbox__action--full-screen {
-  background-image: url(/bem-flex-grid/desktop.f9af5d23.svg); }
+  background-image: url(/bem-flex-grid/desktop.bdd55cf9.svg); }
 
 .demo-toolbox__action--auto-height {
-  background-image: url(/bem-flex-grid/scroll.cf8815a9.svg); }
+  background-image: url(/bem-flex-grid/scroll.b65b86e7.svg); }
 
 .demo-toolbox__action--grid-direction {
-  background-image: url(/bem-flex-grid/directions.60bc070b.svg); }
+  background-image: url(/bem-flex-grid/directions.fc65af8e.svg); }
 
 .demo-toolbox__action--grid-gap {
-  background-image: url(/bem-flex-grid/th-large.792ba4b7.svg); }
+  background-image: url(/bem-flex-grid/th-large.58795f98.svg); }
 
 .demo-toolbox__action--theme {
-  background-image: url(/bem-flex-grid/palette.35d687da.svg); }
+  background-image: url(/bem-flex-grid/palette.21ef7445.svg); }
 
 /* ===== Handle dummy container and text ===== */
 .demo-container {
@@ -277,4 +280,4 @@ pre.demo-layout__output--gray {
     z-index: 2; } }
 
 
-/*# sourceMappingURL=/bem-flex-grid/demo.bd0f7177.css.map */
+/*# sourceMappingURL=/bem-flex-grid/demo.284facf6.css.map */

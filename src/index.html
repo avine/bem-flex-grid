@@ -273,19 +273,19 @@
 <blockquote>
 <p>When using <code>.bfg--col</code> modifier, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined.</p>
 </blockquote>
-<h4>Auto height: <code>.bfg--[B]height-auto</code></h4>
+<h4>Auto height: <code>.bfg--[B]auto-height</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>By default, the main <code>.bfg</code> block will try to fit to the height of its parent node, by using the <code>height: 100%</code> rule.</p>
-<p>Use <code>.bfg--height-auto</code> modifier to apply <code>height: auto</code> rule instead.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--height-auto&quot;&gt;...&lt;/div&gt;
+<p>Use <code>.bfg--auto-height</code> modifier to apply <code>height: auto</code> rule instead.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--auto-height&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <p>As the grid is responsive, you can change this behavior at each breakpoint.</p>
 <p><em>Example:</em></p>
 <ul>
 <li>Fit to the parent height on all <em>screen sizes</em> (even greater than 1200px).</li>
-<li>Use auto height on <em>large screen</em> (until 992px).</li>
+<li>Use auto-height on <em>large screen</em> (until 992px).</li>
 </ul>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--lg-height-auto&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--lg-auto-height&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <h4>Wrap onto multiple lines: <code>.bfg--[B]wrap</code>,  <code>.bfg--[B]nowrap</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -307,28 +307,28 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<h4>Number of lines: <code>.bfg--[B]lines-[N]</code></h4>
+<h4>Number of lines: <code>.bfg--[B][N]-lines</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p><strong>[N]</strong> Number: <code>2</code>, <code>3</code> or <code>4</code>.</p>
 <p>As said above, if you use the markup <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
 <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
-<p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--lines-2</code> modifier.</p>
-<p>In the same way, use <code>.bfg--lines-3</code> or <code>.bfg--lines-4</code> modifiers to fit into exactly 3 or 4 lines respectively.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
+<p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--2-lines</code> modifier.</p>
+<p>In the same way, use <code>.bfg--3-lines</code> or <code>.bfg--4-lines</code> modifiers to fit into exactly 3 or 4 lines respectively.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--2-lines&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--3-lines&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--row bfg--wrap bfg--4-lines&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
 <p>Notice that all the rows will have the same height.</p>
 </blockquote>
 <p>The same pattern applies to the markup <code>.bfg.bfg--col.bfg--wrap</code>.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-2&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--2-lines&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-3&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--3-lines&quot;&gt;...&lt;/div&gt;
 </code></pre>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--lines-4&quot;&gt;...&lt;/div&gt;
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--wrap bfg--4-lines&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
 <p>Notice that all the columns will have the same width.</p>
@@ -341,9 +341,9 @@
 <li>Fit boxes on 4 lines on <em>small screen</em> (until 768px).</li>
 </ul>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--wrap
-  bfg--lines-2
-  bfg--lg-lines-3
-  bfg--sm-lines-4&quot;&gt;
+  bfg--2-lines
+  bfg--lg-3-lines
+  bfg--sm-4-lines&quot;&gt;
   ...
 &lt;/div&gt;
 </code></pre>
@@ -735,7 +735,7 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Auto height:</em></p>
 <ul>
-<li><code>.bfg--height-auto</code>, <code>.bfg--xl-height-auto</code>, <code>.bfg--lg-height-auto</code>, <code>.bfg--sm-height-auto</code>, <code>.bfg--xs-height-auto</code></li>
+<li><code>.bfg--auto-height</code>, <code>.bfg--xl-auto-height</code>, <code>.bfg--lg-auto-height</code>, <code>.bfg--sm-auto-height</code>, <code>.bfg--xs-auto-height</code></li>
 </ul>
 <p><em>Wrap onto multiple lines:</em></p>
 <ul>
@@ -744,9 +744,9 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Number of lines:</em></p>
 <ul>
-<li><code>.bfg--lines-2</code>, <code>.bfg--xl-lines-2</code>, <code>.bfg--lg-lines-2</code>, <code>.bfg--sm-lines-2</code>, <code>.bfg--xs-lines-2</code></li>
-<li><code>.bfg--lines-3</code>, <code>.bfg--xl-lines-3</code>, <code>.bfg--lg-lines-3</code>, <code>.bfg--sm-lines-3</code>, <code>.bfg--xs-lines-3</code></li>
-<li><code>.bfg--lines-4</code>, <code>.bfg--xl-lines-4</code>, <code>.bfg--lg-lines-4</code>, <code>.bfg--sm-lines-4</code>, <code>.bfg--xs-lines-4</code></li>
+<li><code>.bfg--2-lines</code>, <code>.bfg--xl-2-lines</code>, <code>.bfg--lg-2-lines</code>, <code>.bfg--sm-2-lines</code>, <code>.bfg--xs-2-lines</code></li>
+<li><code>.bfg--3-lines</code>, <code>.bfg--xl-3-lines</code>, <code>.bfg--lg-3-lines</code>, <code>.bfg--sm-3-lines</code>, <code>.bfg--xs-3-lines</code></li>
+<li><code>.bfg--4-lines</code>, <code>.bfg--xl-4-lines</code>, <code>.bfg--lg-4-lines</code>, <code>.bfg--sm-4-lines</code>, <code>.bfg--xs-4-lines</code></li>
 </ul>
 <p><em>Gap:</em></p>
 <ul>
@@ -840,7 +840,7 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Auto height:</em></p>
 <ul>
-<li><code>bfg=&quot;height-auto | xl-height-auto | lg-height-auto | sm-height-auto | xs-height-auto&quot;</code></li>
+<li><code>bfg=&quot;auto-height | xl-auto-height | lg-auto-height | sm-auto-height | xs-auto-height&quot;</code></li>
 </ul>
 <p><em>Wrap onto multiple lines:</em></p>
 <ul>
@@ -849,9 +849,9 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Number of lines:</em></p>
 <ul>
-<li><code>bfg=&quot;lines-2 | xl-lines-2 | lg-lines-2 | sm-lines-2 | xs-lines-2&quot;</code></li>
-<li><code>bfg=&quot;lines-3 | xl-lines-3 | lg-lines-3 | sm-lines-3 | xs-lines-3&quot;</code></li>
-<li><code>bfg=&quot;lines-4 | xl-lines-4 | lg-lines-4 | sm-lines-4 | xs-lines-4&quot;</code></li>
+<li><code>bfg=&quot;2-lines | xl-2-lines | lg-2-lines | sm-2-lines | xs-2-lines&quot;</code></li>
+<li><code>bfg=&quot;3-lines | xl-3-lines | lg-3-lines | sm-3-lines | xs-3-lines&quot;</code></li>
+<li><code>bfg=&quot;4-lines | xl-4-lines | lg-4-lines | sm-4-lines | xs-4-lines&quot;</code></li>
 </ul>
 <p><em>Gap:</em></p>
 <ul>

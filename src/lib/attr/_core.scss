@@ -81,7 +81,7 @@
 }
 
 @mixin bfg-boxes($size: '') {
-  [bfg~="#{$size + height-auto}"] { height: auto; }
+  [bfg~="#{$size + auto-height}"] { height: auto; }
 
   [bfg~="#{$size + wrap}"] { flex-wrap: wrap; }
   [bfg~="#{$size + nowrap}"] { flex-wrap: nowrap; }
@@ -104,9 +104,9 @@
       }
     }
 
-    &[bfg~="#{$size + lines-2}"] > [bfg__box] { height: 50%; }
-    &[bfg~="#{$size + lines-3}"] > [bfg__box] { height: (100% / 3); }
-    &[bfg~="#{$size + lines-4}"] > [bfg__box] { height: 25%; }
+    &[bfg~="#{$size + 2-lines}"] > [bfg__box] { height: 50%; }
+    &[bfg~="#{$size + 3-lines}"] > [bfg__box] { height: (100% / 3); }
+    &[bfg~="#{$size + 4-lines}"] > [bfg__box] { height: 25%; }
   }
 
   [bfg~="col"] {
@@ -116,9 +116,9 @@
       }
     }
 
-    &[bfg~="#{$size + lines-2}"] > [bfg__box] { width: 50%; }
-    &[bfg~="#{$size + lines-3}"] > [bfg__box] { width: (100% / 3); }
-    &[bfg~="#{$size + lines-4}"] > [bfg__box] { width: 25%; }
+    &[bfg~="#{$size + 2-lines}"] > [bfg__box] { width: 50%; }
+    &[bfg~="#{$size + 3-lines}"] > [bfg__box] { width: (100% / 3); }
+    &[bfg~="#{$size + 4-lines}"] > [bfg__box] { width: 25%; }
   }
 
   [bfg~="#{$size + disabled}"],
