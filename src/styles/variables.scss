@@ -57,5 +57,8 @@ $docs-showcase: (
   border-color: map-get($docs-header, border),
 );
 
-// Just a shortcut :)
+// Some shortcuts :)
+
 $docs-showcase-border: map-get($docs-showcase, border-width) solid map-get($docs-showcase, border-color);
+
+$docs-container-margin: (map-get($docs-navbar, height) + map-get($docs-showcase, margin));

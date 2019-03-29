@@ -47,7 +47,7 @@ const FULL_WIDTH_SWITCHER_DURATION = 300;
 const fullWidthSwitcher = () => {
   const output = document.querySelector('.demo-layout__output');
   handleAction(
-    getAnchor('Toggle full screen', 'full-screen'),
+    getAnchor('Full screen', 'full-screen'),
     () => {
       output.classList.toggle('demo-layout__output--full');
       // Finally redraw Charts if any.
@@ -59,7 +59,7 @@ const fullWidthSwitcher = () => {
 const autoHeightSwitcher = () => {
   const playground = document.querySelector('.demo-layout__playground');
   handleAction(
-    getAnchor('Toggle auto height', 'auto-height'),
+    getAnchor('Auto height', 'auto-height'),
     () => {
       playground.classList.toggle('demo-layout__playground--auto');
       // Finally redraw Charts if any.
@@ -82,12 +82,12 @@ const toggleBfgDirection = (target: Element) => {
   });
 };
 
-const directionSwitcher = () => {
+const gridDirectionSwitcher = () => {
   const playground = document.querySelector('.demo-layout__playground');
   const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
 
   handleAction(
-    getAnchor('Switch direction', 'direction'),
+    getAnchor('Grid direction', 'grid-direction'),
     () => {
       // Update output
       toggleBfgDirection(playground);
@@ -122,7 +122,7 @@ const gridGapSwitcher = () => {
   const code = document.querySelector('.demo-layout__code > code') as HTMLElement;
 
   handleAction(
-    getAnchor('Toggle grid gap', 'grid-gap'),
+    getAnchor('Grid gap', 'grid-gap'),
     () => {
       // Update output
       toggleBfgGap(playground);
@@ -137,7 +137,7 @@ const gridGapSwitcher = () => {
   );
 };
 
-export type IActionType = 'all' | 'fullWidth' | 'autoHeight' | 'direction' | 'gridGap';
+export type IActionType = 'all' | 'fullWidth' | 'autoHeight' | 'gridDirection' | 'gridGap';
 
 export const actionEnabled = (actions: IActionType[], action) => {
   return actions.indexOf('all') !== -1 || actions.indexOf(action) !== -1;
@@ -146,7 +146,7 @@ export const actionEnabled = (actions: IActionType[], action) => {
 export const enableActions = (actions: IActionType[] = ['all']) => {
   if (actionEnabled(actions, 'fullWidth')) { fullWidthSwitcher(); }
   if (actionEnabled(actions, 'autoHeight')) { autoHeightSwitcher(); }
-  if (actionEnabled(actions, 'direction')) { directionSwitcher(); }
+  if (actionEnabled(actions, 'gridDirection')) { gridDirectionSwitcher(); }
   if (actionEnabled(actions, 'gridGap')) { gridGapSwitcher(); }
 
   document.querySelector('.demo-layout__output').appendChild(container);

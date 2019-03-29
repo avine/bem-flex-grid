@@ -12,6 +12,10 @@
   padding: 0 1rem;
 }
 
+.docs-container--main {
+  margin-top: $docs-container-margin;
+}
+
 /* ===== Navbar ===== */
 
 .docs-navbar {
@@ -52,6 +56,10 @@
     background-color: rgba(0, 0, 0, 0.35);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35) inset;
   }
+
+  .docs-navbar__link--active {
+    // TODO...
+  }
 }
 
 .docs-navbar__link {
@@ -64,7 +72,7 @@
 .docs-header {
   position: relative;
   z-index: 12;
-  margin-bottom: (map-get($docs-navbar, height) + map-get($docs-showcase, margin));
+  margin-bottom: $docs-container-margin;
   padding: (map-get($docs-navbar, height) + map-get($docs-header, padding)) 0 (map-get($docs-header, padding) / 2) 0;
   background-color: map-get($docs-header, background);
   border-bottom: 1px solid map-get($docs-header, border);

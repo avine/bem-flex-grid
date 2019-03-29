@@ -491,27 +491,5 @@
   border: 1px solid #ddd;
   background: #fff; }
 
-[bfg-card~="info"] [bfg-card__action],
-[bfg-card~="info"] [bfg-card__header] {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
-  border: 2px solid #BBDEFB;
-  border-bottom-width: 0;
-  background: #E3F2FD;
-  color: #1976D2;
-  line-height: calc(2rem - 4px); }
 
-[bfg-card~="info"] [bfg-card__action] {
-  border-top-right-radius: 6px;
-  border-left-width: 0; }
-
-[bfg-card~="info"] [bfg-card__header] {
-  border-radius: 6px 6px 0 0; }
-
-[bfg-card~="info"] [bfg-card__content] {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
-  border-radius: 6px;
-  border: 2px solid #BBDEFB;
-  background: #E3F2FD; }
-
-
-/*# sourceMappingURL=/bem-flex-grid/15.24adbca1.css.map */
+/*# sourceMappingURL=/bem-flex-grid/bem-flex-grid-attr.8770cf11.css.map */

@@ -1787,7 +1787,7 @@ var FULL_WIDTH_SWITCHER_DURATION = 300;
 
 var fullWidthSwitcher = function fullWidthSwitcher() {
   var output = document.querySelector('.demo-layout__output');
-  exports.handleAction(getAnchor('Toggle full screen', 'full-screen'), function () {
+  exports.handleAction(getAnchor('Full screen', 'full-screen'), function () {
     output.classList.toggle('demo-layout__output--full'); // Finally redraw Charts if any.
 
     exports.triggerResize(FULL_WIDTH_SWITCHER_DURATION);
@@ -1796,7 +1796,7 @@ var fullWidthSwitcher = function fullWidthSwitcher() {
 
 var autoHeightSwitcher = function autoHeightSwitcher() {
   var playground = document.querySelector('.demo-layout__playground');
-  exports.handleAction(getAnchor('Toggle auto height', 'auto-height'), function () {
+  exports.handleAction(getAnchor('Auto height', 'auto-height'), function () {
     playground.classList.toggle('demo-layout__playground--auto'); // Finally redraw Charts if any.
 
     exports.triggerResize();
@@ -1816,10 +1816,10 @@ var toggleBfgDirection = function toggleBfgDirection(target) {
   });
 };
 
-var directionSwitcher = function directionSwitcher() {
+var gridDirectionSwitcher = function gridDirectionSwitcher() {
   var playground = document.querySelector('.demo-layout__playground');
   var code = document.querySelector('.demo-layout__code > code');
-  exports.handleAction(getAnchor('Switch direction', 'direction'), function () {
+  exports.handleAction(getAnchor('Grid direction', 'grid-direction'), function () {
     // Update output
     toggleBfgDirection(playground); // Update source code (from original source code)
 
@@ -1850,7 +1850,7 @@ var toggleBfgGap = function toggleBfgGap(target) {
 var gridGapSwitcher = function gridGapSwitcher() {
   var playground = document.querySelector('.demo-layout__playground');
   var code = document.querySelector('.demo-layout__code > code');
-  exports.handleAction(getAnchor('Toggle grid gap', 'grid-gap'), function () {
+  exports.handleAction(getAnchor('Grid gap', 'grid-gap'), function () {
     // Update output
     toggleBfgGap(playground); // Update source code (from original source code)
 
@@ -1879,8 +1879,8 @@ exports.enableActions = function (actions) {
     autoHeightSwitcher();
   }
 
-  if (exports.actionEnabled(actions, 'direction')) {
-    directionSwitcher();
+  if (exports.actionEnabled(actions, 'gridDirection')) {
+    gridDirectionSwitcher();
   }
 
   if (exports.actionEnabled(actions, 'gridGap')) {
@@ -2153,4 +2153,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', tabs_1.handleTabs);
 }
 },{"./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.79519cae.js.map
+//# sourceMappingURL=/bem-flex-grid/script.13910a60.js.map

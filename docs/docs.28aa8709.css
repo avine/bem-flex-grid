@@ -8,6 +8,9 @@
   max-width: 992px;
   padding: 0 1rem; }
 
+.docs-container--main {
+  margin-top: 6rem; }
+
 /* ===== Navbar ===== */
 .docs-navbar {
   box-sizing: border-box;
@@ -210,4 +213,4 @@ h2.docs-header__subtitle {
     font-size: 3rem; } }
 
 
-/*# sourceMappingURL=/bem-flex-grid/docs.cffe2555.css.map */
+/*# sourceMappingURL=/bem-flex-grid/docs.28aa8709.css.map */
