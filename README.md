@@ -152,8 +152,8 @@ npm i bem-flex-grid
 ### Package content
 
 ```text
-bem-flex-grid
-├─ dist
+bem-flex-grid/
+├─ dist/
 │  ├─ bem-flex-grid-attr.css
 │  ├─ bem-flex-grid-attr.min.css
 │  ├─ bem-flex-grid-attr.ie11.css
@@ -162,13 +162,13 @@ bem-flex-grid
 │  ├─ bem-flex-grid-class.min.css
 │  ├─ bem-flex-grid-class.ie11.css
 │  └─ bem-flex-grid-class.ie11.min.css
-└─ src
-   └─ lib
-      ├─ attr
+└─ src/
+   └─ lib/
+      ├─ attr/
       │  ├─ _card.scss
       │  ├─ _core.scss
       │  └─ _mixins.scss
-      ├─ class
+      ├─ class/
       │  ├─ _card.scss
       │  ├─ _core.scss
       │  └─ _mixins.scss
@@ -846,13 +846,13 @@ $bfg-breakpoints: (
   xl: 1200px
 ) !default;
 
-$bfg-gap: 1rem !default;
+$bfg-gap: 1.5rem !default;
 
 $bfg-card-margin: 1.5rem !default;
 
-$bfg-card-padding: 0.5rem !default;
+$bfg-card-padding: 1rem !default;
 
-$bfg-card-header-height: 2rem !default;
+$bfg-card-header-height: 2.5rem !default;
 
 $bfg-card-primary: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),

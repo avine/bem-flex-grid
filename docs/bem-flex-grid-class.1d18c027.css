@@ -16,15 +16,15 @@
   flex-direction: column; }
 
 .bfg--gap {
-  padding: 0.5rem; }
+  padding: 0.75rem; }
 
 .bfg--gap-in {
-  margin: -0.5rem;
-  height: calc(100% + 1rem); }
+  margin: -0.75rem;
+  height: calc(100% + 1.5rem); }
 
 .bfg--gap .bfg__box,
 .bfg--gap-in .bfg__box {
-  padding: 0.5rem; }
+  padding: 0.75rem; }
 
 .bfg--gap .bfg__box.bfg,
 .bfg--gap .bfg__box--nopad,
@@ -437,7 +437,7 @@
     height: auto; } }
 
 .bfg-card {
-  margin: 1rem 0; }
+  margin: 1.5rem 0; }
 
 .bfg.bfg-card, .bfg .bfg-card {
   margin: 0; }
@@ -447,12 +447,12 @@
 
 .bfg-card__action,
 .bfg-card__header {
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  height: 2rem;
-  line-height: 2rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis; }
@@ -462,7 +462,7 @@
   max-width: 25%; }
 
 .bfg-card__content {
-  padding: 0.5rem;
+  padding: 1rem;
   box-sizing: border-box;
   position: relative;
   overflow: auto;
@@ -480,7 +480,7 @@
   overflow: hidden; }
 
 .bfg-card__header + .bfg-card__content {
-  height: calc(100% - 2rem); }
+  height: calc(100% - 2.5rem); }
 
 .bfg-card[class*="bfg-card--"] .bfg-card__action + .bfg-card__action,
 .bfg-card[class*="bfg-card--"] .bfg-card__action + .bfg-card__header {
@@ -498,7 +498,7 @@
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
   border: 1px solid #d5d5d5;
   background: #f6f6f6;
-  line-height: calc(2rem - 2px); }
+  line-height: calc(2.5rem - 2px); }
 
 .bfg-card--primary .bfg-card__action {
   border-top-right-radius: 3px;
@@ -514,4 +514,4 @@
   background: #fff; }
 
 
-/*# sourceMappingURL=/bem-flex-grid/bem-flex-grid-class.93199321.css.map */
+/*# sourceMappingURL=/bem-flex-grid/bem-flex-grid-class.1d18c027.css.map */

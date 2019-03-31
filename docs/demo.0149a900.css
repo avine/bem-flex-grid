@@ -37,8 +37,7 @@ h4,
 code {
   font-family: "IBM Plex Mono", monospace !important;
   font-size: 0.85rem;
-  line-height: 0.85rem;
-  white-space: pre; }
+  line-height: 0.85rem; }
 
 a {
   color: #2196F3; }
@@ -291,4 +290,4 @@ pre.demo-layout__output--gray {
     z-index: 2; } }
 
 
-/*# sourceMappingURL=/bem-flex-grid/demo.b6990a6b.css.map */
+/*# sourceMappingURL=/bem-flex-grid/demo.0149a900.css.map */
