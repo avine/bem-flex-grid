@@ -97,7 +97,7 @@
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css&quot;&gt;
   &lt;style&gt;
     html, body { height:100%; }
-    body { margin:0; padding:1rem; box-sizing:border-box; }
+    body { margin:0; padding:1.5rem; box-sizing:border-box; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -122,7 +122,7 @@
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css&quot;&gt;
   &lt;style&gt;
     html, body { height:100%; }
-    body { margin:0; padding:1rem; box-sizing:border-box; }
+    body { margin:0; padding:1.5rem; box-sizing:border-box; }
   &lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -357,17 +357,23 @@
 </code></pre>
 <p>In this case, the grid is self contained and you don't need to add margin (or padding) to the parent node of the <code>.bfg</code> block.</p>
 <p>But if you prefer to define a main margin (or padding) at the parent node of the <code>.bfg</code> block then use <code>.bfg--gap-in</code> modifier.</p>
-<pre><code class="language-html">&lt;div style=&quot;margin: 1rem&quot;&gt;
+<pre><code class="language-html">&lt;div style=&quot;margin: 1.5rem&quot;&gt;
   &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<pre><code class="language-html">&lt;div style=&quot;padding: 1rem&quot;&gt;
+<pre><code class="language-html">&lt;div style=&quot;padding: 1.5rem&quot;&gt;
   &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>The default value of the gap is <code>1rem</code> (see below the Sass variable <code>$bfg-gap</code>).</p>
+<p>The default value of the gap is <code>1.5rem</code> (see below the Sass variable <code>$bfg-gap</code>).</p>
 </blockquote>
+<p>The advantage of using <code>.bfg--gap-in</code> modifier is that you can reduce the main margin (or padding) up to <code>$bfg-gap/2</code> when needed.</p>
+<p><em>Here's an example using the minimal main margin:</em></p>
+<pre><code class="language-html">&lt;div style=&quot;margin: 0.75rem&quot;&gt;
+  &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
 <p>Use <code>.bfg--nogap</code> modifier to remove the gap on an inner grid.
 Here's an example with <em>chained</em> grid.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;

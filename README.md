@@ -65,7 +65,7 @@ Here's a simple grid in the vertical direction (column) that fits to the viewpor
   <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
   <style>
     html, body { height:100%; }
-    body { margin:0; padding:1rem; box-sizing:border-box; }
+    body { margin:0; padding:1.5rem; box-sizing:border-box; }
   </style>
 </head>
 <body>
@@ -96,7 +96,7 @@ Here's the same grid as above but this time with the attr syntax:
   <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
   <style>
     html, body { height:100%; }
-    body { margin:0; padding:1rem; box-sizing:border-box; }
+    body { margin:0; padding:1.5rem; box-sizing:border-box; }
   </style>
 </head>
 <body>
@@ -430,18 +430,28 @@ In this case, the grid is self contained and you don't need to add margin (or pa
 But if you prefer to define a main margin (or padding) at the parent node of the `.bfg` block then use `.bfg--gap-in` modifier.
 
 ```html
-<div style="margin: 1rem">
+<div style="margin: 1.5rem">
   <div class="bfg bfg--gap-in">...</div>
 </div>
 ```
 
 ```html
-<div style="padding: 1rem">
+<div style="padding: 1.5rem">
   <div class="bfg bfg--gap-in">...</div>
 </div>
 ```
 
-> The default value of the gap is `1rem` (see below the Sass variable `$bfg-gap`).
+> The default value of the gap is `1.5rem` (see below the Sass variable `$bfg-gap`).
+
+The advantage of using `.bfg--gap-in` modifier is that you can reduce the main margin (or padding) up to `$bfg-gap/2` when needed.
+
+*Here's an example using the minimal main margin:*
+
+```html
+<div style="margin: 0.75rem">
+  <div class="bfg bfg--gap-in">...</div>
+</div>
+```
 
 Use `.bfg--nogap` modifier to remove the gap on an inner grid.
 Here's an example with *chained* grid.
