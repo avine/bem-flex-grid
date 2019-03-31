@@ -722,6 +722,9 @@
 .bfg.bfg-card, .bfg .bfg-card {
   margin: 0; }
 
+.bfg--gap-in.bfg-card {
+  margin: -0.75rem; }
+
 .bfg__box > .bfg-card {
   height: 100%; }
 

@@ -8,6 +8,10 @@
   }
 }
 
+.bfg--gap-in.bfg-card {
+  margin: -($bfg-gap / 2);
+}
+
 .bfg__box > .bfg-card {
   height: 100%;
 }

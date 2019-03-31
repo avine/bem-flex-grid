@@ -442,6 +442,9 @@
 [bfg][bfg-card], [bfg] [bfg-card] {
   margin: 0; }
 
+[bfg~="gap-in"][bfg-card] {
+  margin: -0.75rem; }
+
 [bfg__box] > [bfg-card] {
   height: 100%; }
 
@@ -514,4 +517,4 @@
   background: #fff; }
 
 
-/*# sourceMappingURL=/bem-flex-grid/bem-flex-grid-attr.75672135.css.map */
+/*# sourceMappingURL=/bem-flex-grid/bem-flex-grid-attr.a5e28d64.css.map */
