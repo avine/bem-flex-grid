@@ -6,23 +6,25 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 [![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
 
-## Syntaxes overview
+## Getting started
 
-The library comes with 2 syntaxes: __class__ and __attributes__ (or __attr__ for short). Let's take a look at each of them.
+The library comes with 2 syntaxes: __class__ and __attribute__ (or __attr__ for short). Let's take a look at each of them.
 
 ### Class syntax
 
-The first implementation sticks to the BEM convention (with *Block*, *Element* and *Modifier*), but has a more verbose syntax.
+The first implementation sticks to the __BEM__ convention (*Block*, *Element* and *Modifier*), but has a more verbose syntax.
 
-*Let's take a typical BEM sample and see how this get converted to the attr syntax:*
+*Here's an example of a simple grid in the vertical direction (column) that uses the class syntax:*
 
 ```html
-<div class="user user--logged user--admin">
-  <div class="user__email user__email--validated">
-    john@doe.com
-  </div>
+<div class="bfg bfg--col bfg--gap">
+  <div class="bfg__box bfg__box--4">bem</div>
+  <div class="bfg__box bfg__box--4">flex</div>
+  <div class="bfg__box bfg__box--4">grid</div>
 </div>
 ```
+
+Don't worry, we'll explain this in detail below. For now, let's see how this get converted to the attr syntax.
 
 ### Attr syntax
 
@@ -30,30 +32,36 @@ The second implementation derives from the BEM convention, but has a more concis
 
 Here are the conversion rules:
 
-- any BEM *Block* or *Element* is directly used as an HTML tag *attribute*.
-- any BEM *Modifier* is used to construct the attribute's *value*.
+- any BEM *Block* or *Element* is directly used as an HTML tag __attribute__.
+- any BEM *Modifier* is used to construct the attribute's __value__.
 
-*The example above get converted as follows:*
+*The example above get converted to the attr syntax as follows:*
 
 ```html
-<div user="logged admin">
-  <div user__email="validated">
-    john@doe.com
-  </div>
+<div bfg="col gap">
+  <div bfg__box="4">bem</div>
+  <div bfg__box="4">flex</div>
+  <div bfg__box="4">grid</div>
 </div>
 ```
 
-## Getting started
+### Try it
 
-Get instant access by inserting the link tag into your web pages from *unpkg* CDN.
+To get instant access to the library, insert the link tag of the implementation of your choice into your web pages from *unpkg* CDN.
 
-### With class syntax
+*Class syntax:*
 
 ```html
 <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
 ```
 
-Here's a simple grid in the vertical direction (column) that fits to the viewport and uses the class syntax:
+*Attr syntax:*
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
+```
+
+*Here's the full markup of the example above using the class syntax:*
 
 ```html
 <!DOCTYPE html>
@@ -63,47 +71,13 @@ Here's a simple grid in the vertical direction (column) that fits to the viewpor
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bem Flex Grid - Class</title>
   <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
-  <style>
-    html, body { height:100%; }
-    body { margin:0; padding:1.5rem; box-sizing:border-box; }
-  </style>
+  <style>html, body { height:100%; margin:0; }</style>
 </head>
 <body>
-  <div class="bfg bfg--col">
+  <div class="bfg bfg--col bfg--gap">
     <div class="bfg__box bfg__box--4">bem</div>
     <div class="bfg__box bfg__box--4">flex</div>
     <div class="bfg__box bfg__box--4">grid</div>
-  </div>
-</body>
-</html>
-```
-
-### With attr syntax
-
-```html
-<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
-```
-
-Here's the same grid as above but this time with the attr syntax:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bem Flex Grid - Attr</title>
-  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
-  <style>
-    html, body { height:100%; }
-    body { margin:0; padding:1.5rem; box-sizing:border-box; }
-  </style>
-</head>
-<body>
-  <div bfg="col">
-    <div bfg__box="4">bem</div>
-    <div bfg__box="4">flex</div>
-    <div bfg__box="4">grid</div>
   </div>
 </body>
 </html>

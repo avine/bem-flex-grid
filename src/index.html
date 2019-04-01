@@ -57,37 +57,41 @@
 <p>CSS flex grid, <a href="http://getbem.com/">BEM</a> compliant.</p>
 <p><em>A responsive grid system based on the flex display property that perfectly fits to the viewport in both width and height when needed and lets you design native app layout as well as scrollable web page.</em></p>
 <p><a href="https://travis-ci.org/avine/bem-flex-grid"><img src="https://travis-ci.org/avine/bem-flex-grid.svg?branch=master" alt="Build Status"></a></p>
-<h2>Syntaxes overview</h2>
-<p>The library comes with 2 syntaxes: <strong>class</strong> and <strong>attributes</strong> (or <strong>attr</strong> for short). Let's take a look at each of them.</p>
+<h2>Getting started</h2>
+<p>The library comes with 2 syntaxes: <strong>class</strong> and <strong>attribute</strong> (or <strong>attr</strong> for short). Let's take a look at each of them.</p>
 <h3>Class syntax</h3>
-<p>The first implementation sticks to the BEM convention (with <em>Block</em>, <em>Element</em> and <em>Modifier</em>), but has a more verbose syntax.</p>
-<p><em>Let's take a typical BEM sample and see how this get converted to the attr syntax:</em></p>
-<pre><code class="language-html">&lt;div class=&quot;user user--logged user--admin&quot;&gt;
-  &lt;div class=&quot;user__email user__email--validated&quot;&gt;
-    john@doe.com
-  &lt;/div&gt;
+<p>The first implementation sticks to the <strong>BEM</strong> convention (<em>Block</em>, <em>Element</em> and <em>Modifier</em>), but has a more verbose syntax.</p>
+<p><em>Here's an example of a simple grid in the vertical direction (column) that uses the class syntax:</em></p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
+  &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;bem&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;flex&lt;/div&gt;
+  &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;grid&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
+<p>Don't worry, we'll explain this in detail below. For now, let's see how this get converted to the attr syntax.</p>
 <h3>Attr syntax</h3>
 <p>The second implementation derives from the BEM convention, but has a more concise syntax.</p>
 <p>Here are the conversion rules:</p>
 <ul>
-<li>any BEM <em>Block</em> or <em>Element</em> is directly used as an HTML tag <em>attribute</em>.</li>
-<li>any BEM <em>Modifier</em> is used to construct the attribute's <em>value</em>.</li>
+<li>any BEM <em>Block</em> or <em>Element</em> is directly used as an HTML tag <strong>attribute</strong>.</li>
+<li>any BEM <em>Modifier</em> is used to construct the attribute's <strong>value</strong>.</li>
 </ul>
-<p><em>The example above get converted as follows:</em></p>
-<pre><code class="language-html">&lt;div user=&quot;logged admin&quot;&gt;
-  &lt;div user__email=&quot;validated&quot;&gt;
-    john@doe.com
-  &lt;/div&gt;
+<p><em>The example above get converted to the attr syntax as follows:</em></p>
+<pre><code class="language-html">&lt;div bfg=&quot;col gap&quot;&gt;
+  &lt;div bfg__box=&quot;4&quot;&gt;bem&lt;/div&gt;
+  &lt;div bfg__box=&quot;4&quot;&gt;flex&lt;/div&gt;
+  &lt;div bfg__box=&quot;4&quot;&gt;grid&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h2>Getting started</h2>
-<p>Get instant access by inserting the link tag into your web pages from <em>unpkg</em> CDN.</p>
-<h3>With class syntax</h3>
+<h3>Try it</h3>
+<p>To get instant access to the library, insert the link tag of the implementation of your choice into your web pages from <em>unpkg</em> CDN.</p>
+<p><em>Class syntax:</em></p>
 <pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css&quot;&gt;
 </code></pre>
-<p>Here's a simple grid in the vertical direction (column) that fits to the viewport and uses the class syntax:</p>
+<p><em>Attr syntax:</em></p>
+<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css&quot;&gt;
+</code></pre>
+<p><em>Here's the full markup of the example above using the class syntax:</em></p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -95,41 +99,13 @@
   &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
   &lt;title&gt;Bem Flex Grid - Class&lt;/title&gt;
   &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css&quot;&gt;
-  &lt;style&gt;
-    html, body { height:100%; }
-    body { margin:0; padding:1.5rem; box-sizing:border-box; }
-  &lt;/style&gt;
+  &lt;style&gt;html, body { height:100%; margin:0; }&lt;/style&gt;
 &lt;/head&gt;
 &lt;body&gt;
-  &lt;div class=&quot;bfg bfg--col&quot;&gt;
+  &lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
     &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;bem&lt;/div&gt;
     &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;flex&lt;/div&gt;
     &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;grid&lt;/div&gt;
-  &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</code></pre>
-<h3>With attr syntax</h3>
-<pre><code class="language-html">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css&quot;&gt;
-</code></pre>
-<p>Here's the same grid as above but this time with the attr syntax:</p>
-<pre><code class="language-html">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-  &lt;meta charset=&quot;utf-8&quot;&gt;
-  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
-  &lt;title&gt;Bem Flex Grid - Attr&lt;/title&gt;
-  &lt;link rel=&quot;stylesheet&quot; href=&quot;https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css&quot;&gt;
-  &lt;style&gt;
-    html, body { height:100%; }
-    body { margin:0; padding:1.5rem; box-sizing:border-box; }
-  &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-  &lt;div bfg=&quot;col&quot;&gt;
-    &lt;div bfg__box=&quot;4&quot;&gt;bem&lt;/div&gt;
-    &lt;div bfg__box=&quot;4&quot;&gt;flex&lt;/div&gt;
-    &lt;div bfg__box=&quot;4&quot;&gt;grid&lt;/div&gt;
   &lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
