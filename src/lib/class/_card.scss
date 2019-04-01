@@ -60,21 +60,26 @@
   height: calc(100% - #{$bfg-card-header-height});
 }
 
-// Rules that are related in `bfg-card` mixin and have to be wrapped in some high level selector
-.bfg-card[class*="bfg-card--"] {
-  .bfg-card__action {
-    + .bfg-card__action,
-    + .bfg-card__header {
-      box-shadow: none;
-      border-top-right-radius: 0;
-      border-right-width: 0;
-    }
+.bfg-card__action {
+  + .bfg-card__action,
+  + .bfg-card__header {
+    box-shadow: none !important;
+    border-top-right-radius: 0 !important;
+    border-right-width: 0 !important;
   }
+}
 
-  .bfg-card__header + .bfg-card__content {
-    border-top: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+.bfg-card__header + .bfg-card__content {
+  border-top: none !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+.bfg-card--noradius {
+  .bfg-card__action,
+  .bfg-card__header,
+  .bfg-card__content {
+    border-radius: 0 !important;
   }
 }
 

@@ -60,22 +60,26 @@
   height: calc(100% - #{$bfg-card-header-height});
 }
 
-// Rules that are related in `bfg-card` mixin and have to be wrapped in some high level selector
-// But actually, we need to add "!important" rule in order to make work (for the "attr" implementation)
-[bfg-card] {
-  [bfg-card__action] {
-    + [bfg-card__action],
-    + [bfg-card__header] {
-      box-shadow: none !important;
-      border-top-right-radius: 0 !important;
-      border-right-width: 0 !important;
-    }
-  }
-
-  [bfg-card__header] + [bfg-card__content] {
-    border-top: none !important;
-    border-top-left-radius: 0 !important;
+[bfg-card__action] {
+  + [bfg-card__action],
+  + [bfg-card__header] {
+    box-shadow: none !important;
     border-top-right-radius: 0 !important;
+    border-right-width: 0 !important;
+  }
+}
+
+[bfg-card__header] + [bfg-card__content] {
+  border-top: none !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+[bfg-card~="noradius"] {
+  [bfg-card__action],
+  [bfg-card__header],
+  [bfg-card__content] {
+    border-radius: 0 !important;
   }
 }
 
