@@ -75,12 +75,32 @@
   border-top-right-radius: 0 !important;
 }
 
-.bfg-card--noradius {
-  .bfg-card__action,
-  .bfg-card__header,
-  .bfg-card__content {
-    border-radius: 0 !important;
+@mixin bfg-cards($size: '') {
+  .bfg--#{$size + nogap} {
+    .bfg-card__action,
+    .bfg-card__header,
+    .bfg-card__content {
+      border-radius: 0 !important;
+    }
   }
+}
+
+@include bfg-cards(); // any screen size even greater than "xl"
+
+@include bfg-media-breakpoint-down(xl) {
+  @include bfg-cards(xl-);
+}
+
+@include bfg-media-breakpoint-down(lg) {
+  @include bfg-cards(lg-);
+}
+
+@include bfg-media-breakpoint-down(sm) {
+  @include bfg-cards(sm-);
+}
+
+@include bfg-media-breakpoint-down(xs) {
+  @include bfg-cards(xs-);
 }
 
 @if $bfg-card-primary-included {

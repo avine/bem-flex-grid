@@ -745,16 +745,6 @@ Add "primary" look and feel to the card's content, header and actions using `.bf
 
 > See below the Sass mixin `bfg-card` to create your own card themes.
 
-#### Border radius: `.bfg-card--noradius`
-
-Use `.bfg-card--noradius` modifier to remove the `border-radius` applied on the card by the chosen theme.
-
-```html
-...
-  <div class="bfg-card bfg-card--primary bfg-card--noradius">...</div>
-...
-```
-
 ### `.bfg-card__content` modifiers
 
 #### Overflow: `.bfg-card__content--overflow-[T]`
@@ -1035,10 +1025,6 @@ Now, let's use the `info` theme:
 - `.bfg-card--primary`
 - ...
 
-*Border radius:*
-
-- `.bfg-card--noradius`
-
 #### `.bfg-card__content` element
 
 *Overflow:*
@@ -1140,10 +1126,6 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 
 - `bfg-card="primary"`
 - ...
-
-*Border radius:*
-
-- `bfg-card="noradius"`
 
 #### `bfg-card__content` element attribute
 
