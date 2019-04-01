@@ -391,7 +391,9 @@ As the grid is responsive, you can change the number of lines at each breakpoint
 </div>
 ```
 
-#### Gap: `.bfg--gap`, `.bfg--gap-in`, `.bfg--nogap`
+#### Gap: `.bfg--gap`, `.bfg--gap-in`, `.bfg--[B]nogap`
+
+**[B]** Breakpoint: `xl-`, `lg-`, `sm-`, `xs-` or none.
 
 Add a gap between `.bfg__box` elements, using `.bfg--gap` modifier.
 
@@ -445,6 +447,19 @@ Here's an example with *chained* grid.
 ```
 
 > See below *chained* and *nested* grids to learn how inner grids works.
+
+As the grid is responsive, you can remove the gap at each breakpoint.
+
+*Example:*
+
+- Add the gap on all *screen sizes* (even greater than 1200px).
+- Remove the gap on *small screen* (until 768px).
+
+```html
+<div class="bfg bfg--gap bfg--sm-nogap">...</div>
+```
+
+> In this case, the `.bfg--nogap` modifier becomes useful even at the main grid (and not only for inner grids).
 
 #### Main axis alignment: `.bfg--main-[P]`
 
@@ -949,7 +964,7 @@ Now, let's use the `info` theme:
 
 - `.bfg--gap`
 - `.bfg--gap-in`
-- `.bfg--nogap`
+- `.bfg--nogap`, `.bfg--xl-nogap`, `.bfg--lg-nogap`, `.bfg--sm-nogap`, `.bfg--xs-nogap`
 
 *Main axis alignment:*
 
@@ -1063,7 +1078,7 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 
 *Gap:*
 
-- `bfg="gap | gap-in | nogap"`
+- `bfg="gap | gap-in | nogap | xl-nogap | lg-nogap | sm-nogap | xs-nogap"`
 
 *Main axis alignment:*
 

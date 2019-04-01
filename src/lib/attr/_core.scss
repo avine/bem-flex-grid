@@ -39,10 +39,6 @@
   }
 }
 
-[bfg~="nogap"] [bfg__box] {
-  padding: 0;
-}
-
 // Justify content along the "main" axis
 [bfg~="main-center"]   { justify-content: center;        }
 [bfg~="main-end"]      { justify-content: flex-end;      }
@@ -86,6 +82,10 @@
   [bfg~="#{$size + wrap}"] { flex-wrap: wrap; }
   [bfg~="#{$size + nowrap}"] { flex-wrap: nowrap; }
 
+  [bfg~="#{$size + nogap}"] {
+    &, [bfg__box] { padding: 0; }
+  }
+  
   [bfg~="row"][bfg~="#{$size + reverse}"] { flex-direction: row-reverse; }
   [bfg~="col"][bfg~="#{$size + reverse}"] { flex-direction: column-reverse; }
 
