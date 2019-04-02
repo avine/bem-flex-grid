@@ -429,24 +429,45 @@ The advantage of using `.bfg--gap-in` modifier is that you can reduce the main m
 </div>
 ```
 
-Use `.bfg--nogap` modifier to remove the gap on an inner grid.
+The `.bfg--gap` modifier targets all `.bfg__box` elements, even those in the inner grids, if any.
+To remove the gap between `.bfg__box` elements of an inner grid, use the `.bfg--nogap` modifier at the __inner grid__ level.
+
 Here's an example with *chained* grid.
 
 ```html
+<!-- main grid -->
 <div class="bfg bfg--gap">
-  <div class="bfg__box"><!-- with gap --></div>
-  <div class="bfg__box"><!-- with gap --></div>
+  <div class="bfg__box"><!-- box with gap --></div>
+  <div class="bfg__box"><!-- box with gap --></div>
 
+  <!-- chained inner grid -->
   <div class="bfg__box bfg bfg--nogap">
 
-    <div class="bfg__box"><!-- without gap --></div>
-    <div class="bfg__box"><!-- without gap --></div>
+    <div class="bfg__box"><!-- box without gap --></div>
+    <div class="bfg__box"><!-- box without gap --></div>
 
   </div>
 </div>
 ```
 
 > See below *chained* and *nested* grids to learn how inner grids works.
+
+But the `.bfg--nogap` modifier can also be useful at the __main grid__ level.
+Let's say your grid contains some `.bfg-card` blocks that have a nice `border-radius`.
+In this case, putting the cards next to each other without gap will look weird.
+
+To reset the `border-radius` of the card's elements, add `.bfg--nogap` modifier at the main grid.
+
+```html
+<div class="bfg bfg--nogap bfg-card bfg-card--primary">
+  <div class="bfg__box">
+    <div class="bfg-card__content"><!-- card without border-radius --></div>
+  </div>
+  <div class="bfg__box">
+    <div class="bfg-card__content"><!-- card without border-radius --></div>
+  </div>
+</div>
+```
 
 As the grid is responsive, you can remove the gap at each breakpoint.
 
@@ -458,8 +479,6 @@ As the grid is responsive, you can remove the gap at each breakpoint.
 ```html
 <div class="bfg bfg--gap bfg--sm-nogap">...</div>
 ```
-
-> In this case, the `.bfg--nogap` modifier becomes useful even at the main grid (and not only for inner grids).
 
 #### Main axis alignment: `.bfg--main-[P]`
 
