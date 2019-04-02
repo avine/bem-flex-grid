@@ -32,9 +32,6 @@
 [bfg~="gap-in"] [bfg__box~="nopad"] {
   padding: 0; }
 
-[bfg~="nogap"] [bfg__box] {
-  padding: 0; }
-
 [bfg~="main-center"] {
   justify-content: center; }
 
@@ -87,6 +84,9 @@
 
 [bfg~="nowrap"] {
   flex-wrap: nowrap; }
+
+[bfg~="nogap"], [bfg~="nogap"] [bfg__box] {
+  padding: 0; }
 
 [bfg~="row"][bfg~="reverse"] {
   flex-direction: row-reverse; }
@@ -255,6 +255,8 @@
     flex-wrap: wrap; }
   [bfg~="xl-nowrap"] {
     flex-wrap: nowrap; }
+  [bfg~="xl-nogap"], [bfg~="xl-nogap"] [bfg__box] {
+    padding: 0; }
   [bfg~="row"][bfg~="xl-reverse"] {
     flex-direction: row-reverse; }
   [bfg~="col"][bfg~="xl-reverse"] {
@@ -372,6 +374,8 @@
     flex-wrap: wrap; }
   [bfg~="lg-nowrap"] {
     flex-wrap: nowrap; }
+  [bfg~="lg-nogap"], [bfg~="lg-nogap"] [bfg__box] {
+    padding: 0; }
   [bfg~="row"][bfg~="lg-reverse"] {
     flex-direction: row-reverse; }
   [bfg~="col"][bfg~="lg-reverse"] {
@@ -489,6 +493,8 @@
     flex-wrap: wrap; }
   [bfg~="sm-nowrap"] {
     flex-wrap: nowrap; }
+  [bfg~="sm-nogap"], [bfg~="sm-nogap"] [bfg__box] {
+    padding: 0; }
   [bfg~="row"][bfg~="sm-reverse"] {
     flex-direction: row-reverse; }
   [bfg~="col"][bfg~="sm-reverse"] {
@@ -606,6 +612,8 @@
     flex-wrap: wrap; }
   [bfg~="xs-nowrap"] {
     flex-wrap: nowrap; }
+  [bfg~="xs-nogap"], [bfg~="xs-nogap"] [bfg__box] {
+    padding: 0; }
   [bfg~="row"][bfg~="xs-reverse"] {
     flex-direction: row-reverse; }
   [bfg~="col"][bfg~="xs-reverse"] {
@@ -765,16 +773,45 @@
 [bfg-card__header] + [bfg-card__content] {
   height: calc(100% - 2.5rem); }
 
-[bfg-card] [bfg-card__action] + [bfg-card__action],
-[bfg-card] [bfg-card__action] + [bfg-card__header] {
+[bfg-card__action] + [bfg-card__action],
+[bfg-card__action] + [bfg-card__header] {
   box-shadow: none !important;
   border-top-right-radius: 0 !important;
   border-right-width: 0 !important; }
 
-[bfg-card] [bfg-card__header] + [bfg-card__content] {
+[bfg-card__header] + [bfg-card__content] {
   border-top: none !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important; }
+
+[bfg~="nogap"] [bfg-card__action],
+[bfg~="nogap"] [bfg-card__header],
+[bfg~="nogap"] [bfg-card__content] {
+  border-radius: 0 !important; }
+
+@media (max-width: 1199.98px) {
+  [bfg~="xl-nogap"] [bfg-card__action],
+  [bfg~="xl-nogap"] [bfg-card__header],
+  [bfg~="xl-nogap"] [bfg-card__content] {
+    border-radius: 0 !important; } }
+
+@media (max-width: 991.98px) {
+  [bfg~="lg-nogap"] [bfg-card__action],
+  [bfg~="lg-nogap"] [bfg-card__header],
+  [bfg~="lg-nogap"] [bfg-card__content] {
+    border-radius: 0 !important; } }
+
+@media (max-width: 767.98px) {
+  [bfg~="sm-nogap"] [bfg-card__action],
+  [bfg~="sm-nogap"] [bfg-card__header],
+  [bfg~="sm-nogap"] [bfg-card__content] {
+    border-radius: 0 !important; } }
+
+@media (max-width: 575.98px) {
+  [bfg~="xs-nogap"] [bfg-card__action],
+  [bfg~="xs-nogap"] [bfg-card__header],
+  [bfg~="xs-nogap"] [bfg-card__content] {
+    border-radius: 0 !important; } }
 
 [bfg-card~="primary"] [bfg-card__action],
 [bfg-card~="primary"] [bfg-card__header] {

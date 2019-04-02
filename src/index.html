@@ -327,7 +327,8 @@
   ...
 &lt;/div&gt;
 </code></pre>
-<h4>Gap: <code>.bfg--gap</code>, <code>.bfg--gap-in</code>, <code>.bfg--nogap</code></h4>
+<h4>Gap: <code>.bfg--gap</code>, <code>.bfg--gap-in</code>, <code>.bfg--[B]nogap</code></h4>
+<p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
 <p>Add a gap between <code>.bfg__box</code> elements, using <code>.bfg--gap</code> modifier.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;...&lt;/div&gt;
 </code></pre>
@@ -350,16 +351,19 @@
   &lt;div class=&quot;bfg bfg--gap-in&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Use <code>.bfg--nogap</code> modifier to remove the gap on an inner grid.
-Here's an example with <em>chained</em> grid.</p>
-<pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap&quot;&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- with gap --&gt;&lt;/div&gt;
-  &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- with gap --&gt;&lt;/div&gt;
+<p>The <code>.bfg--gap</code> modifier targets all <code>.bfg__box</code> elements, even those in the inner grids, if any.
+To remove the gap between <code>.bfg__box</code> elements of an inner grid, use the <code>.bfg--nogap</code> modifier at the <strong>inner grid</strong> level.</p>
+<p>Here's an example with <em>chained</em> grid.</p>
+<pre><code class="language-html">&lt;!-- main grid --&gt;
+&lt;div class=&quot;bfg bfg--gap&quot;&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- box with gap --&gt;&lt;/div&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- box with gap --&gt;&lt;/div&gt;
 
+  &lt;!-- chained inner grid --&gt;
   &lt;div class=&quot;bfg__box bfg bfg--nogap&quot;&gt;
 
-    &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- without gap --&gt;&lt;/div&gt;
-    &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- without gap --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- box without gap --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg__box&quot;&gt;&lt;!-- box without gap --&gt;&lt;/div&gt;
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -367,6 +371,27 @@ Here's an example with <em>chained</em> grid.</p>
 <blockquote>
 <p>See below <em>chained</em> and <em>nested</em> grids to learn how inner grids works.</p>
 </blockquote>
+<p>But the <code>.bfg--nogap</code> modifier can also be useful at the <strong>main grid</strong> level.
+Let's say your grid contains some <code>.bfg-card</code> blocks that have a nice <code>border-radius</code>.
+In this case, putting the cards next to each other without gap will look weird.</p>
+<p>To reset the <code>border-radius</code> of the card's elements, add <code>.bfg--nogap</code> modifier at the main grid.</p>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--nogap bfg-card bfg-card--primary&quot;&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- card without border-radius --&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;bfg__box&quot;&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- card without border-radius --&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>As the grid is responsive, you can remove the gap at each breakpoint.</p>
+<p><em>Example:</em></p>
+<ul>
+<li>Add the gap on all <em>screen sizes</em> (even greater than 1200px).</li>
+<li>Remove the gap on <em>small screen</em> (until 768px).</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;bfg bfg--gap bfg--sm-nogap&quot;&gt;...&lt;/div&gt;
+</code></pre>
 <h4>Main axis alignment: <code>.bfg--main-[P]</code></h4>
 <p><strong>[P]</strong> Position: <code>center</code>, <code>end</code>, <code>between</code>, <code>around</code>.</p>
 <p>Justify content along the &quot;main&quot; axis using <code>.bfg--main-*</code> modifiers.</p>
@@ -739,7 +764,7 @@ $bfg-gap: 2rem;
 <ul>
 <li><code>.bfg--gap</code></li>
 <li><code>.bfg--gap-in</code></li>
-<li><code>.bfg--nogap</code></li>
+<li><code>.bfg--nogap</code>, <code>.bfg--xl-nogap</code>, <code>.bfg--lg-nogap</code>, <code>.bfg--sm-nogap</code>, <code>.bfg--xs-nogap</code></li>
 </ul>
 <p><em>Main axis alignment:</em></p>
 <ul>
@@ -843,7 +868,7 @@ $bfg-gap: 2rem;
 </ul>
 <p><em>Gap:</em></p>
 <ul>
-<li><code>bfg=&quot;gap | gap-in | nogap&quot;</code></li>
+<li><code>bfg=&quot;gap | gap-in | nogap | xl-nogap | lg-nogap | sm-nogap | xs-nogap&quot;</code></li>
 </ul>
 <p><em>Main axis alignment:</em></p>
 <ul>
