@@ -104,5 +104,10 @@
 }
 
 @if $bfg-card-primary-included {
-  @include bfg-card(primary, $bfg-card-primary);
+  @include bfg-card(primary   , $bfg-card-primary   );
+  @include bfg-card(secondary , $bfg-card-secondary );
+  @include bfg-card(success   , $bfg-card-success   );
+  @include bfg-card(danger    , $bfg-card-danger    );
+  @include bfg-card(info      , $bfg-card-info      );
+  @include bfg-card(warning   , $bfg-card-warning   );
 }

@@ -18,7 +18,7 @@ $bfg-card-padding: 1rem !default;
 $bfg-card-header-height: 2.5rem !default;
 
 $bfg-card-primary: (
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
   border-radius: 3px,
   border-width: 1px,
 
@@ -30,6 +30,35 @@ $bfg-card-primary: (
   content-border: #ddd,
   content-background: #fff,
   content-forground: false
+) !default;
+
+$bfg-card-secondary: (
+  header-border: darken(#6c757d, 5),
+  header-background: #6c757d,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-success: (
+  header-border: darken(#28a745, 5),
+  header-background: #28a745,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-danger: (
+  header-border: darken(#dc3545, 5),
+  header-background: #dc3545,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-info: (
+  header-border: darken(#17a2b8, 5),
+  header-background: #17a2b8,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-warning: (
+  header-border: darken(#ffc107, 5),
+  header-background: #ffc107,
 ) !default;
 
 $bfg-card-primary-included: true !default;
