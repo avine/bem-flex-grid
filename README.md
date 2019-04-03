@@ -153,7 +153,7 @@ bem-flex-grid/
       └─ bem-flex-grid-class.ie11.scss
 ```
 
-> The `dist` folder also contains the __sourcemap__ for each css file.
+> The `dist` folder also contains the __sourcemap__ for each CSS file.
 
 ### Browser support
 
@@ -850,9 +850,11 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 </div>
 ```
 
-### Sass customization
+## Sass customization
 
-#### Variables
+### Variables
+
+You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source files afterwards.
 
 ```scss
 $bfg-ie11-support: false !default;
@@ -901,12 +903,14 @@ $bfg-gap: 2rem;
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 ```
 
-#### Mixin
+### Mixins
+
+#### Cards
 
 The `bfg-card` mixin allows you to customize the look and feel of the box's content, header and actions.
 
 ```scss
-@mixin bfg-card($name, $settings) { ... }
+@include bfg-card($name, $settings) { ... }
 ```
 
 *Example:*
@@ -944,7 +948,41 @@ Now, let's use the `info` theme:
 ...
 ```
 
-### Selectors summary
+#### Media breakpoints
+
+The `bfg-media-breakpoint-*` mixins lets you add CSS rules that target specific screen sizes.
+
+```scss
+@include bfg-media-breakpoint-up($size) { ... }
+
+@include bfg-media-breakpoint-down($size) { ... }
+```
+
+> Pick the `$size` value in the following list: `xl`, `lg`, `sm`, `xs`.
+
+*Example:*
+
+Let's add CSS rules that target only the screen whose size is greater than 992 pixels:
+
+```scss
+@include bfg-media-breakpoint-up(lg) {
+  body { margin: 3rem; }
+}
+```
+
+This is equivalent to:
+
+```scss
+@media (min-width: 992px) {
+  body { margin: 3rem; }
+}
+```
+
+## Selectors summary
+
+Let's recap the available selectors for both __class__ and __attr__ syntaxes.
+
+### For Class syntax
 
 #### `.bfg` block
 
@@ -1055,11 +1093,9 @@ Now, let's use the `info` theme:
 
 - `.bfg-card__content--nopad`
 
-### Selectors summary (for attr syntax)
+### For attr syntax
 
-To conlude this detailed presentation of the API, let's see how the selectors get converted to the attr syntax.
-
-#### `bfg` block attribute
+#### `.bfg` block attribute
 
 *Direction:*
 
@@ -1110,7 +1146,7 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 - `bfg="disabled | xl-disabled | lg-disabled | sm-disabled | xs-disabled"`
 - `bfg="disabled-all | xl-disabled-all | lg-disabled-all | sm-disabled-all | xs-disabled-all"`
 
-#### `bfg__box` element attribute
+#### `.bfg__box` element attribute
 
 *Size:*
 
@@ -1139,14 +1175,14 @@ To conlude this detailed presentation of the API, let's see how the selectors ge
 
 - `bfg__box="nopad"`
 
-#### `bfg-card` block attribute
+#### `.bfg-card` block attribute
 
 *Theme:*
 
 - `bfg-card="primary"`
 - ...
 
-#### `bfg-card__content` element attribute
+#### `.bfg-card__content` element attribute
 
 *Overflow:*
 
