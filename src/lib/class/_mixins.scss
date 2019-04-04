@@ -10,8 +10,8 @@
   }
 }
 
-@mixin bfg-card($name, $settings) {
-  $s: map-merge($bfg-card-primary, $settings);
+@mixin bfg-card($name, $settings: (), $defaults: ()) {
+  $s: map-merge($bfg-card-primary, map-merge($defaults, $settings));
 
   .bfg-card--#{$name} {
     .bfg-card__action,

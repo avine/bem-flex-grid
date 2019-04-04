@@ -894,7 +894,7 @@ $bfg-card-themes-included: true !default;
 
 *Example:*
 
-To customize the boxes gap, create a file `custo-bfg.scss` with the following content:
+To customize the boxes gap, create a file `my-custo-bfg.scss` with the following content:
 
 ```scss
 // Overwrite gap
@@ -910,12 +910,12 @@ $bfg-gap: 2rem;
 The `bfg-card` mixin allows you to customize the look and feel of the box's content, header and actions.
 
 ```scss
-@include bfg-card($name, $settings) { ... }
+@include bfg-card($name, $settings: (), $defaults: ()) { ... }
 ```
 
 *Example:*
 
-To add a theme named `info`, create a file `custo-bfg.scss` with the following content:
+To add a theme named `info`, create a file `my-custo-bfg.scss` with the following content:
 
 ```scss
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
