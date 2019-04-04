@@ -103,7 +103,7 @@
   @include bfg-cards(xs-);
 }
 
-@if $bfg-card-primary-included {
+@if $bfg-card-themes-included {
   @include bfg-card(primary   , $bfg-card-primary   );
   @include bfg-card(secondary , $bfg-card-secondary );
   @include bfg-card(success   , $bfg-card-success   );

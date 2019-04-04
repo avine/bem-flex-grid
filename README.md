@@ -889,7 +889,7 @@ $bfg-card-primary: (
   content-forground: false
 ) !default;
 
-$bfg-card-primary-included: true !default;
+$bfg-card-themes-included: true !default;
 ```
 
 *Example:*
