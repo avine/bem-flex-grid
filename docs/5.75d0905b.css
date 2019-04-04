@@ -535,7 +535,7 @@
 
 .bfg-card--primary .bfg-card__action,
 .bfg-card--primary .bfg-card__header {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   border: 1px solid #d5d5d5;
   background: #f6f6f6;
   line-height: calc(2.5rem - 2px); }
@@ -548,14 +548,14 @@
   border-radius: 3px 3px 0 0; }
 
 .bfg-card--primary .bfg-card__content {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   border: 1px solid #ddd;
   background: #fff; }
 
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   border: 1px solid #4a4a4a;
   background: #3a3a3a;
   line-height: calc(2.5rem - 2px); }
@@ -568,10 +568,10 @@
   border-radius: 3px 3px 0 0; }
 
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__content {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   border: 1px solid #4a4a4a;
   background: #2a2a2a; }
 
 
-/*# sourceMappingURL=/bem-flex-grid/5.0db34630.css.map */
+/*# sourceMappingURL=/bem-flex-grid/5.75d0905b.css.map */

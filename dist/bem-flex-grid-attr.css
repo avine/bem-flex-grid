@@ -535,7 +535,7 @@
 
 [bfg-card~="primary"] [bfg-card__action],
 [bfg-card~="primary"] [bfg-card__header] {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   border: 1px solid #d5d5d5;
   background: #f6f6f6;
   line-height: calc(2.5rem - 2px); }
@@ -548,7 +548,111 @@
   border-radius: 3px 3px 0 0; }
 
 [bfg-card~="primary"] [bfg-card__content] {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff; }
+
+[bfg-card~="secondary"] [bfg-card__action],
+[bfg-card~="secondary"] [bfg-card__header] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #60686f;
+  background: #6c757d;
+  color: #fff;
+  line-height: calc(2.5rem - 2px); }
+
+[bfg-card~="secondary"] [bfg-card__action] {
+  border-top-right-radius: 3px;
+  border-left-width: 0; }
+
+[bfg-card~="secondary"] [bfg-card__header] {
+  border-radius: 3px 3px 0 0; }
+
+[bfg-card~="secondary"] [bfg-card__content] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff; }
+
+[bfg-card~="success"] [bfg-card__action],
+[bfg-card~="success"] [bfg-card__header] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #23923d;
+  background: #28a745;
+  color: #fff;
+  line-height: calc(2.5rem - 2px); }
+
+[bfg-card~="success"] [bfg-card__action] {
+  border-top-right-radius: 3px;
+  border-left-width: 0; }
+
+[bfg-card~="success"] [bfg-card__header] {
+  border-radius: 3px 3px 0 0; }
+
+[bfg-card~="success"] [bfg-card__content] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff; }
+
+[bfg-card~="danger"] [bfg-card__action],
+[bfg-card~="danger"] [bfg-card__header] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d32535;
+  background: #dc3545;
+  color: #fff;
+  line-height: calc(2.5rem - 2px); }
+
+[bfg-card~="danger"] [bfg-card__action] {
+  border-top-right-radius: 3px;
+  border-left-width: 0; }
+
+[bfg-card~="danger"] [bfg-card__header] {
+  border-radius: 3px 3px 0 0; }
+
+[bfg-card~="danger"] [bfg-card__content] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff; }
+
+[bfg-card~="info"] [bfg-card__action],
+[bfg-card~="info"] [bfg-card__header] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #148ea1;
+  background: #17a2b8;
+  color: #fff;
+  line-height: calc(2.5rem - 2px); }
+
+[bfg-card~="info"] [bfg-card__action] {
+  border-top-right-radius: 3px;
+  border-left-width: 0; }
+
+[bfg-card~="info"] [bfg-card__header] {
+  border-radius: 3px 3px 0 0; }
+
+[bfg-card~="info"] [bfg-card__content] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
+  background: #fff; }
+
+[bfg-card~="warning"] [bfg-card__action],
+[bfg-card~="warning"] [bfg-card__header] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #edb100;
+  background: #ffc107;
+  line-height: calc(2.5rem - 2px); }
+
+[bfg-card~="warning"] [bfg-card__action] {
+  border-top-right-radius: 3px;
+  border-left-width: 0; }
+
+[bfg-card~="warning"] [bfg-card__header] {
+  border-radius: 3px 3px 0 0; }
+
+[bfg-card~="warning"] [bfg-card__content] {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
   border-radius: 3px;
   border: 1px solid #ddd;
   background: #fff; }

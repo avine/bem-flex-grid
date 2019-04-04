@@ -160,7 +160,7 @@
       └─ bem-flex-grid-class.ie11.scss
 </code></pre>
 <blockquote>
-<p>The <code>dist</code> folder also contains the <strong>sourcemap</strong> for each css file.</p>
+<p>The <code>dist</code> folder also contains the <strong>sourcemap</strong> for each CSS file.</p>
 </blockquote>
 <h3>Browser support</h3>
 <p>Bem-flex-grid supports the latest, stable releases of all major browsers, including Microsoft Internet Explorer 11 and Edge on Windows.</p>
@@ -661,8 +661,9 @@ Then you can choose the distribution mode of the remaining space.</p>
   &lt;div class=&quot;bfg__box bfg__box--3&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<h3>Sass customization</h3>
-<h4>Variables</h4>
+<h2>Sass customization</h2>
+<h3>Variables</h3>
+<p>You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source files afterwards.</p>
 <pre><code class="language-scss">$bfg-ie11-support: false !default;
 
 $bfg-breakpoints: (
@@ -695,21 +696,22 @@ $bfg-card-primary: (
   content-forground: false
 ) !default;
 
-$bfg-card-primary-included: true !default;
+$bfg-card-themes-included: true !default;
 </code></pre>
 <p><em>Example:</em></p>
-<p>To customize the boxes gap, create a file <code>custo-bfg.scss</code> with the following content:</p>
+<p>To customize the boxes gap, create a file <code>my-custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">// Overwrite gap
 $bfg-gap: 2rem;
 
 @import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
 </code></pre>
-<h4>Mixin</h4>
+<h3>Mixins</h3>
+<h4>Cards</h4>
 <p>The <code>bfg-card</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
-<pre><code class="language-scss">@mixin bfg-card($name, $settings) { ... }
+<pre><code class="language-scss">@include bfg-card($name, $settings: (), $defaults: ()) { ... }
 </code></pre>
 <p><em>Example:</em></p>
-<p>To add a theme named <code>info</code>, create a file <code>custo-bfg.scss</code> with the following content:</p>
+<p>To add a theme named <code>info</code>, create a file <code>my-custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
 
 // Add new theme
@@ -737,7 +739,29 @@ $bfg-gap: 2rem;
   &lt;/div&gt;
 ...
 </code></pre>
-<h3>Selectors summary</h3>
+<h4>Media breakpoints</h4>
+<p>The <code>bfg-media-breakpoint-*</code> mixins lets you add CSS rules that target specific screen sizes.</p>
+<pre><code class="language-scss">@include bfg-media-breakpoint-up($size) { ... }
+
+@include bfg-media-breakpoint-down($size) { ... }
+</code></pre>
+<blockquote>
+<p>Pick the <code>$size</code> value in the following list: <code>xl</code>, <code>lg</code>, <code>sm</code>, <code>xs</code>.</p>
+</blockquote>
+<p><em>Example:</em></p>
+<p>Let's add CSS rules that target only the screen whose size is greater than 992 pixels:</p>
+<pre><code class="language-scss">@include bfg-media-breakpoint-up(lg) {
+  body { margin: 3rem; }
+}
+</code></pre>
+<p>This is equivalent to:</p>
+<pre><code class="language-scss">@media (min-width: 992px) {
+  body { margin: 3rem; }
+}
+</code></pre>
+<h2>Selectors summary</h2>
+<p>Let's recap the available selectors for both <strong>class</strong> and <strong>attr</strong> syntaxes.</p>
+<h3>For Class syntax</h3>
 <h4><code>.bfg</code> block</h4>
 <p><em>Direction:</em></p>
 <ul>
@@ -843,9 +867,8 @@ $bfg-gap: 2rem;
 <ul>
 <li><code>.bfg-card__content--nopad</code></li>
 </ul>
-<h3>Selectors summary (for attr syntax)</h3>
-<p>To conlude this detailed presentation of the API, let's see how the selectors get converted to the attr syntax.</p>
-<h4><code>bfg</code> block attribute</h4>
+<h3>For attr syntax</h3>
+<h4><code>.bfg</code> block attribute</h4>
 <p><em>Direction:</em></p>
 <ul>
 <li><code>bfg=&quot;row | col&quot;</code></li>
@@ -895,7 +918,7 @@ $bfg-gap: 2rem;
 <li><code>bfg=&quot;disabled | xl-disabled | lg-disabled | sm-disabled | xs-disabled&quot;</code></li>
 <li><code>bfg=&quot;disabled-all | xl-disabled-all | lg-disabled-all | sm-disabled-all | xs-disabled-all&quot;</code></li>
 </ul>
-<h4><code>bfg__box</code> element attribute</h4>
+<h4><code>.bfg__box</code> element attribute</h4>
 <p><em>Size:</em></p>
 <ul>
 <li><code>bfg__box=&quot;1 | xl-1 | lg-1 | sm-1 | xs-1&quot;</code></li>
@@ -923,13 +946,13 @@ $bfg-gap: 2rem;
 <ul>
 <li><code>bfg__box=&quot;nopad&quot;</code></li>
 </ul>
-<h4><code>bfg-card</code> block attribute</h4>
+<h4><code>.bfg-card</code> block attribute</h4>
 <p><em>Theme:</em></p>
 <ul>
 <li><code>bfg-card=&quot;primary&quot;</code></li>
 <li>...</li>
 </ul>
-<h4><code>bfg-card__content</code> element attribute</h4>
+<h4><code>.bfg-card__content</code> element attribute</h4>
 <p><em>Overflow:</em></p>
 <ul>
 <li><code>bfg-card__content=&quot;overflow-visible | overflow-hidden&quot;</code></li>
