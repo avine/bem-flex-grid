@@ -583,8 +583,8 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h3><code>.bfg-card</code> modifier</h3>
 <h4>Theme: <code>.bfg-card--[T]</code></h4>
-<p><strong>[T]</strong> Theme: <code>primary</code> or any string.</p>
-<p>Add &quot;primary&quot; look and feel to the card's content, header and actions using <code>.bfg-card--primary</code> modifier.</p>
+<p><strong>[T]</strong> Theme: <code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>info</code>, <code>warning</code> or any string.</p>
+<p>For example, add &quot;primary&quot; look and feel to the card's content, header and actions using <code>.bfg-card--primary</code> modifier.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card bfg-card--primary&quot;&gt;
     &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
@@ -696,6 +696,35 @@ $bfg-card-primary: (
   content-forground: false
 ) !default;
 
+$bfg-card-secondary: (
+  header-border: darken(#6c757d, 5),
+  header-background: #6c757d,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-success: (
+  header-border: darken(#28a745, 5),
+  header-background: #28a745,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-danger: (
+  header-border: darken(#dc3545, 5),
+  header-background: #dc3545,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-info: (
+  header-border: darken(#17a2b8, 5),
+  header-background: #17a2b8,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-warning: (
+  header-border: darken(#ffc107, 5),
+  header-background: #ffc107,
+) !default;
+
 $bfg-card-themes-included: true !default;
 </code></pre>
 <p><em>Example:</em></p>
@@ -711,11 +740,11 @@ $bfg-gap: 2rem;
 <pre><code class="language-scss">@include bfg-card($name, $settings: (), $defaults: ()) { ... }
 </code></pre>
 <p><em>Example:</em></p>
-<p>To add a theme named <code>info</code>, create a file <code>my-custo-bfg.scss</code> with the following content:</p>
+<p>To add a theme named <code>hello</code>, create a file <code>my-custo-bfg.scss</code> with the following content:</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
 
 // Add new theme
-@include bfg-card(info, (
+@include bfg-card(hello, (
   border-radius: 0,
   border-width: 3px,
 
@@ -730,9 +759,9 @@ $bfg-gap: 2rem;
 <blockquote>
 <p>Notice that omitted map keys (<code>box-shadow</code>, <code>header-borderless</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the &quot;primary&quot; theme).</p>
 </blockquote>
-<p>Now, let's use the <code>info</code> theme:</p>
+<p>Now, let's use the <code>hello</code> theme:</p>
 <pre><code class="language-html">...
-  &lt;div class=&quot;bfg-card bfg-card--info&quot;&gt;
+  &lt;div class=&quot;bfg-card bfg-card--hello&quot;&gt;
     &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
     &lt;div class=&quot;bfg-card__header&quot;&gt;...&lt;/div&gt;
     &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
@@ -854,7 +883,7 @@ $bfg-gap: 2rem;
 <h4><code>.bfg-card</code> block</h4>
 <p><em>Theme:</em></p>
 <ul>
-<li><code>.bfg-card--primary</code></li>
+<li><code>.bfg-card--primary</code>, <code>.bfg-card--secondary</code>, <code>.bfg-card--success</code>, <code>.bfg-card--danger</code>, <code>.bfg-card--info</code>, <code>.bfg-card--warning</code></li>
 <li>...</li>
 </ul>
 <h4><code>.bfg-card__content</code> element</h4>
@@ -949,7 +978,7 @@ $bfg-gap: 2rem;
 <h4><code>.bfg-card</code> block attribute</h4>
 <p><em>Theme:</em></p>
 <ul>
-<li><code>bfg-card=&quot;primary&quot;</code></li>
+<li><code>bfg-card=&quot;primary | secondary | success | danger | info | warning&quot;</code></li>
 <li>...</li>
 </ul>
 <h4><code>.bfg-card__content</code> element attribute</h4>

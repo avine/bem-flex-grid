@@ -748,9 +748,9 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 
 #### Theme: `.bfg-card--[T]`
 
-**[T]** Theme: `primary` or any string.
+**[T]** Theme: `primary`, `secondary`, `success`, `danger`, `info`, `warning` or any string.
 
-Add "primary" look and feel to the card's content, header and actions using `.bfg-card--primary` modifier.
+For example, add "primary" look and feel to the card's content, header and actions using `.bfg-card--primary` modifier.
 
 ```html
 ...
@@ -889,6 +889,35 @@ $bfg-card-primary: (
   content-forground: false
 ) !default;
 
+$bfg-card-secondary: (
+  header-border: darken(#6c757d, 5),
+  header-background: #6c757d,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-success: (
+  header-border: darken(#28a745, 5),
+  header-background: #28a745,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-danger: (
+  header-border: darken(#dc3545, 5),
+  header-background: #dc3545,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-info: (
+  header-border: darken(#17a2b8, 5),
+  header-background: #17a2b8,
+  header-forground: #fff,
+) !default;
+
+$bfg-card-warning: (
+  header-border: darken(#ffc107, 5),
+  header-background: #ffc107,
+) !default;
+
 $bfg-card-themes-included: true !default;
 ```
 
@@ -915,13 +944,13 @@ The `bfg-card` mixin allows you to customize the look and feel of the box's cont
 
 *Example:*
 
-To add a theme named `info`, create a file `my-custo-bfg.scss` with the following content:
+To add a theme named `hello`, create a file `my-custo-bfg.scss` with the following content:
 
 ```scss
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 
 // Add new theme
-@include bfg-card(info, (
+@include bfg-card(hello, (
   border-radius: 0,
   border-width: 3px,
 
@@ -936,11 +965,11 @@ To add a theme named `info`, create a file `my-custo-bfg.scss` with the followin
 
 > Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
 
-Now, let's use the `info` theme:
+Now, let's use the `hello` theme:
 
 ```html
 ...
-  <div class="bfg-card bfg-card--info">
+  <div class="bfg-card bfg-card--hello">
     <div class="bfg-card__action">...</div>
     <div class="bfg-card__header">...</div>
     <div class="bfg-card__content">...</div>
@@ -1079,7 +1108,7 @@ Let's recap the available selectors for both __class__ and __attr__ syntaxes.
 
 *Theme:*
 
-- `.bfg-card--primary`
+- `.bfg-card--primary`, `.bfg-card--secondary`, `.bfg-card--success`, `.bfg-card--danger`, `.bfg-card--info`, `.bfg-card--warning`
 - ...
 
 #### `.bfg-card__content` element
@@ -1179,7 +1208,7 @@ Let's recap the available selectors for both __class__ and __attr__ syntaxes.
 
 *Theme:*
 
-- `bfg-card="primary"`
+- `bfg-card="primary | secondary | success | danger | info | warning"`
 - ...
 
 #### `.bfg-card__content` element attribute
