@@ -12,7 +12,7 @@ The library comes with 2 syntaxes: __class__ and __attribute__ (or __attr__ for 
 
 ### Class syntax
 
-The first implementation sticks to the __BEM__ convention (*Block*, *Element* and *Modifier*), but has a more verbose syntax.
+The first implementation sticks to the BEM convention (*Block*, *Element* and *Modifier*) using only __CSS class__, but has a more verbose syntax.
 
 *Here's an example of a simple grid in the vertical direction (column) that uses the class syntax:*
 
@@ -24,7 +24,7 @@ The first implementation sticks to the __BEM__ convention (*Block*, *Element* an
 </div>
 ```
 
-Don't worry, we'll explain this in detail below. For now, let's see how this get converted to the attr syntax.
+No worries, we'll explain all this step by step in detail below. For now, let's see how this get converted to the attr syntax.
 
 ### Attr syntax
 
@@ -162,6 +162,7 @@ Bem-flex-grid supports the latest, stable releases of all major browsers, includ
 ## API
 
 This documentation is based on the class syntax.
+But as we said above, it's really easy to switch from one syntax to another.
 
 ### Grid blocks and elements
 
@@ -175,7 +176,7 @@ At core the grid system consists of one `.bfg` block and one or more `.bfg__box`
 </div>
 ```
 
-The box's content can be anything, but the `.bfg-card` block can be used to fill the box with a card.
+The box's content can be anything, but the `.bfg-card` block (which is totally optional) can be used to fill the box with a card.
 
 > Only one card is allowed per box.
 
@@ -199,7 +200,7 @@ Then you can add an header to the card using the optional `.bfg-card__header` el
 </div>
 ```
 
-Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting technique)...
+Next, insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting technique)...
 
 ```html
 <div class="bfg">
@@ -223,28 +224,30 @@ Insert the `.bfg-card` *block* as a child of the `.bfg__box` *element* (nesting 
 
 Finally, using the markup `.bfg.bfg-card` simply tells that the `.bfg` *block* contains cards elements (content, header and actions) that are not direct children of the `.bfg-card` *block*.
 
-This allows you to define a default look and feel for all cards and lets you customize some of them, using the different `.bfg-card--*` modifiers (you'll see below how to define the card's look and feel).
+This allows you to define the default look and feel for all cards and lets you customize some of them, using the different `.bfg-card--*` modifiers (you'll see below how to define the card's look and feel).
+
+But order matters! This technique works only when using the `.bfg-card--primary` modifier as the global look and feel.
 
 ```html
 <!-- global card definition -->
 <div class="bfg bfg-card bfg-card--primary">
   <div class="bfg__box">
-    <div class="bfg-card__content"><!-- use global "primary" theme --></div>
+    <div class="bfg-card__content"><!-- use global "primary" card type --></div>
   </div>
 
   <div class="bfg__box">
-    <div class="bfg-card__content"><!-- use global "primary" theme --></div>
+    <div class="bfg-card__content"><!-- use global "primary" card type --></div>
   </div>
 
   <!-- chained card definition (at box level) -->
   <div class="bfg__box bfg-card bfg-card--secondary">
-    <div class="bfg-card__content"><!-- use local "secondary" theme --></div>
+    <div class="bfg-card__content"><!-- use local "secondary" card type --></div>
   </div>
 
   <div class="bfg__box">
     <!-- nested card definition (as box child) -->
     <div class="bfg-card bfg-card--secondary">
-      <div class="bfg-card__content"><!-- use local "secondary" theme --></div>
+      <div class="bfg-card__content"><!-- use local "secondary" card type --></div>
     </div>
   </div>
 </div>
@@ -262,13 +265,13 @@ It is required to define the direction the `.bfg__box` elements are placed in th
 <div class="bfg bfg--row">...</div>
 ```
 
-> When using `.bfg--row` modifier, the grid needs the `.bfg` block width (or its parent width) to be defined.
+> When using `.bfg--row` modifier, the grid needs the `.bfg` block width (or its parent width) to be defined (and that's usually the case).
 
 ```html
 <div class="bfg bfg--col">...</div>
 ```
 
-> When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined.
+> When using `.bfg--col` modifier, the grid needs the `.bfg` block height (or its parent height) to be defined (and that's not always the case!).
 
 #### Auto height: `.bfg--[B]auto-height`
 
@@ -746,9 +749,9 @@ When using `.bfg--gap` modifier, add `.bfg__box--nopad` modifier to remove the p
 
 ### `.bfg-card` modifier
 
-#### Theme: `.bfg-card--[T]`
+#### Type: `.bfg-card--[T]`
 
-**[T]** Theme: `primary`, `secondary`, `success`, `danger`, `info`, `warning` or any string.
+**[T]** Type: `primary`, `secondary`, `success`, `danger`, `info`, `warning` or any string.
 
 For example, add "primary" look and feel to the card's content, header and actions using `.bfg-card--primary` modifier.
 
@@ -762,7 +765,7 @@ For example, add "primary" look and feel to the card's content, header and actio
 ...
 ```
 
-> See below the Sass mixin `bfg-card` to create your own card themes.
+> See below the Sass mixin `bfg-card` to create your own card types.
 
 ### `.bfg-card__content` modifiers
 
@@ -918,12 +921,12 @@ $bfg-card-warning: (
   header-background: #ffc107,
 ) !default;
 
-$bfg-card-themes-included: true !default;
+$bfg-card-theme-included: true !default;
 ```
 
 *Example:*
 
-To customize the boxes gap, create a file `my-custo-bfg.scss` with the following content:
+Let's customize the boxes gap.
 
 ```scss
 // Overwrite gap
@@ -939,17 +942,52 @@ $bfg-gap: 2rem;
 The `bfg-card` mixin allows you to customize the look and feel of the box's content, header and actions.
 
 ```scss
-@include bfg-card($name, $settings: (), $defaults: ()) { ... }
+@include bfg-card($type, $settings: (), $defaults: ()) { ... }
 ```
+
+By default, the values of `$type` are: `primary`, `secondary`, `success`, `danger`, `info`, `warning`.
+But you are free to completely change this naming.
 
 *Example:*
 
-To add a theme named `hello`, create a file `my-custo-bfg.scss` with the following content:
+Let's remove the default list of types and define a single type named "fancy".
+
+```scss
+$bfg-card-theme-included: false;
+
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+
+@include bfg-card(fancy);
+```
+
+Now, let's use the card type `.bfg-card--fancy` instead of `.bfg-card--primary`.
+
+```html
+...
+  <div class="bfg-card bfg-card--fancy">
+    <div class="bfg-card__action">...</div>
+    <div class="bfg-card__header">...</div>
+    <div class="bfg-card__content">...</div>
+  </div>
+...
+```
+
+To understand the `bfg-card` mixin parameters, let's take a look at one of its internal lines of code:
+
+```scss
+map-merge($bfg-card-primary, map-merge($defaults, $settings));
+```
+
+It simply means that `$bfg-card-primary` is overwritten by your `$defaults` and `$settings` in this order.
+This is what defines the final look and feel of a card.
+
+*Example:*
+
+Let's add a card of type `hello` which will be available using the `.bfg-card--hello` modifier.
 
 ```scss
 @import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 
-// Add new theme
 @include bfg-card(hello, (
   border-radius: 0,
   border-width: 3px,
@@ -963,19 +1001,7 @@ To add a theme named `hello`, create a file `my-custo-bfg.scss` with the followi
 ));
 ```
 
-> Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the "primary" theme).
-
-Now, let's use the `hello` theme:
-
-```html
-...
-  <div class="bfg-card bfg-card--hello">
-    <div class="bfg-card__action">...</div>
-    <div class="bfg-card__header">...</div>
-    <div class="bfg-card__content">...</div>
-  </div>
-...
-```
+> Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the `$bfg-card-primary`).
 
 #### Media breakpoints
 
@@ -1106,7 +1132,7 @@ Let's recap the available selectors for both __class__ and __attr__ syntaxes.
 
 #### `.bfg-card` block
 
-*Theme:*
+*Type:*
 
 - `.bfg-card--primary`, `.bfg-card--secondary`, `.bfg-card--success`, `.bfg-card--danger`, `.bfg-card--info`, `.bfg-card--warning`
 - ...
@@ -1206,7 +1232,7 @@ Let's recap the available selectors for both __class__ and __attr__ syntaxes.
 
 #### `.bfg-card` block attribute
 
-*Theme:*
+*Type:*
 
 - `bfg-card="primary | secondary | success | danger | info | warning"`
 - ...
