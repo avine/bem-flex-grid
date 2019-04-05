@@ -857,7 +857,7 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 
 ### Variables
 
-You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source files afterwards.
+You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source file afterwards.
 
 ```scss
 $bfg-ie11-support: false !default;
@@ -942,7 +942,7 @@ $bfg-gap: 2rem;
 The `bfg-card` mixin allows you to customize the look and feel of the box's content, header and actions.
 
 ```scss
-@include bfg-card($type, $settings: (), $defaults: ()) { ... }
+@include bfg-card($type, $settings: (), $defaults: ());
 ```
 
 By default, the values of `$type` are: `primary`, `secondary`, `success`, `danger`, `info`, `warning`.
