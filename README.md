@@ -24,7 +24,7 @@ The first implementation sticks to the BEM convention (*Block*, *Element* and *M
 </div>
 ```
 
-No worries, we'll explain all this step by step in detail below. For now, let's see how this get converted to the attr syntax.
+No worries, we'll explain all this in detail below. For now, let's see how this get converted to the attr syntax.
 
 ### Attr syntax
 
@@ -176,7 +176,7 @@ At core the grid system consists of one `.bfg` block and one or more `.bfg__box`
 </div>
 ```
 
-The box's content can be anything, but the `.bfg-card` block (which is totally optional) can be used to fill the box with a card.
+The box's content can be anything, but the `.bfg-card` block can be used to fill the box with a card.
 
 > Only one card is allowed per box.
 
@@ -878,7 +878,7 @@ $bfg-card-padding: 1rem !default;
 $bfg-card-header-height: 2.5rem !default;
 
 $bfg-card-primary: (
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
   border-radius: 3px,
   border-width: 1px,
 
@@ -945,7 +945,7 @@ The `bfg-card` mixin allows you to customize the look and feel of the box's cont
 @include bfg-card($type, $settings: (), $defaults: ());
 ```
 
-By default, the values of `$type` are: `primary`, `secondary`, `success`, `danger`, `info`, `warning`.
+By default, Bem-flex-grid generates cards with the following values for the `$type` parameter: `primary`, `secondary`, `success`, `danger`, `info` and `warning`.
 But you are free to completely change this naming.
 
 *Example:*
@@ -960,7 +960,9 @@ $bfg-card-theme-included: false;
 @include bfg-card(fancy);
 ```
 
-Now, let's use the card type `.bfg-card--fancy` instead of `.bfg-card--primary`.
+As you can see, the `$settings`and `$defaults` parameters are optional.
+
+Now, let's use the "fancy" card using the `.bfg-card--fancy` modifier (instead of `.bfg-card--primary` which is no longer available).
 
 ```html
 ...
@@ -975,10 +977,10 @@ Now, let's use the card type `.bfg-card--fancy` instead of `.bfg-card--primary`.
 To understand the `bfg-card` mixin parameters, let's take a look at one of its internal lines of code:
 
 ```scss
-map-merge($bfg-card-primary, map-merge($defaults, $settings));
+$s: map-merge($bfg-card-primary, map-merge($defaults, $settings));
 ```
 
-It simply means that `$bfg-card-primary` is overwritten by your `$defaults` and `$settings` in this order.
+It simply means that the `$bfg-card-primary` variable is overwritten by your `$defaults` and `$settings` parameters in this order.
 This is what defines the final look and feel of a card.
 
 *Example:*
@@ -1002,6 +1004,51 @@ Let's add a card of type `hello` which will be available using the `.bfg-card--h
 ```
 
 > Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the `$bfg-card-primary`).
+
+An advanced use case of the card mixin consists to create 2 different sets of cards for "light" and "dark" themes.
+
+*Example:*
+
+```scss
+$bfg-card-theme-included: false;
+
+// Overwrite the "primary" card (let's use flat design)
+$bfg-card-primary: map-merge($bfg-card-primary, (
+  box-shadow: none,
+  border-radius: 0px
+));
+
+@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+
+body.theme--light {
+  @include bfg-card(primary);
+
+  @include bfg-card(secondary, (
+    header-border: darken(#6c757d, 5),
+    header-background: #6c757d,
+    header-forground: #fff
+  ));
+}
+
+body.theme--dark {
+  // Let's tweak the $bfg-card-primary for the "dark" theme
+  $bfg-card-dark-defaults: (
+    content-border: #4a4a4a,
+    content-background: #2a2a2a,
+    header-forground: #fff
+  );
+
+  @include bfg-card(primary, (
+    header-border: #4a4a4a,
+    header-background: #3a3a3a
+  ), $bfg-card-dark-defaults);
+
+  @include bfg-card(secondary, (
+    header-border: darken(#6c757d, 5),
+    header-background: #6c757d
+  ), $bfg-card-dark-defaults);
+}
+```
 
 #### Media breakpoints
 
