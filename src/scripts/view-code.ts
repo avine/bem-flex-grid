@@ -6,11 +6,13 @@ export const viewCode = () => {
     return;
   }
 
+  const sourceCode = cleanCode(formatCode(source.innerHTML));
+
   const wrapper = document.createElement('div');
   wrapper.innerHTML = '<pre class="demo-layout__code"><code></code></pre>';
 
   const code = wrapper.querySelector('code');
-  code.dataset.sourceCode = formatCode(source.innerHTML); // Store the initial source code for further modifification...
+  code.dataset.sourceCode = sourceCode; // Store the initial source code for further modifification...
   code.innerHTML = highlight(code.dataset.sourceCode, languages.html, languages.html);
 
   let desc = document.querySelector('.demo-layout__desc');
@@ -30,7 +32,7 @@ export const handleSourceCode = (code: HTMLElement) => {
 };
 
 export const updateCode = (code: HTMLElement, sourceCode: string) => {
-  code.dataset.sourceCode = formatCode(sourceCode);
+  code.dataset.sourceCode = cleanCode(formatCode(sourceCode));
   code.innerHTML = highlight(code.dataset.sourceCode, languages.html, languages.html);
 };
 
@@ -48,4 +50,9 @@ export function formatCode(code: string) {
     lines = lines.map((line) => line.substr(indent));
   }
   return lines.join('\n').trim().replace(/\n{2,}/g, '\n\n');
+}
+
+// Remove the empty values on HTML tag attributes
+export function cleanCode(code: string) {
+  return code.replace(/=""/g, '');
 }
