@@ -60,7 +60,7 @@
 <h2>Getting started</h2>
 <p>The library comes with 2 syntaxes: <strong>class</strong> and <strong>attribute</strong> (or <strong>attr</strong> for short). Let's take a look at each of them.</p>
 <h3>Class syntax</h3>
-<p>The first implementation sticks to the <strong>BEM</strong> convention (<em>Block</em>, <em>Element</em> and <em>Modifier</em>), but has a more verbose syntax.</p>
+<p>The first implementation sticks to the BEM convention (<em>Block</em>, <em>Element</em> and <em>Modifier</em>) using only <strong>CSS class</strong>, but has a more verbose syntax.</p>
 <p><em>Here's an example of a simple grid in the vertical direction (column) that uses the class syntax:</em></p>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col bfg--gap&quot;&gt;
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;bem&lt;/div&gt;
@@ -68,7 +68,7 @@
   &lt;div class=&quot;bfg__box bfg__box--4&quot;&gt;grid&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Don't worry, we'll explain this in detail below. For now, let's see how this get converted to the attr syntax.</p>
+<p>No worries, we'll explain all this in detail below. For now, let's see how this get converted to the attr syntax.</p>
 <h3>Attr syntax</h3>
 <p>The second implementation derives from the BEM convention, but has a more concise syntax.</p>
 <p>Here are the conversion rules:</p>
@@ -165,7 +165,8 @@
 <h3>Browser support</h3>
 <p>Bem-flex-grid supports the latest, stable releases of all major browsers, including Microsoft Internet Explorer 11 and Edge on Windows.</p>
 <h2>API</h2>
-<p>This documentation is based on the class syntax.</p>
+<p>This documentation is based on the class syntax.
+But as we said above, it's really easy to switch from one syntax to another.</p>
 <h3>Grid blocks and elements</h3>
 <p>At core the grid system consists of one <code>.bfg</code> block and one or more <code>.bfg__box</code> elements.</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
@@ -192,7 +193,7 @@
   &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-<p>Insert the <code>.bfg-card</code> <em>block</em> as a child of the <code>.bfg__box</code> <em>element</em> (nesting technique)...</p>
+<p>Next, insert the <code>.bfg-card</code> <em>block</em> as a child of the <code>.bfg__box</code> <em>element</em> (nesting technique)...</p>
 <pre><code class="language-html">&lt;div class=&quot;bfg&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;div class=&quot;bfg-card&quot;&gt;
@@ -209,26 +210,27 @@
 &lt;/div&gt;
 </code></pre>
 <p>Finally, using the markup <code>.bfg.bfg-card</code> simply tells that the <code>.bfg</code> <em>block</em> contains cards elements (content, header and actions) that are not direct children of the <code>.bfg-card</code> <em>block</em>.</p>
-<p>This allows you to define a default look and feel for all cards and lets you customize some of them, using the different <code>.bfg-card--*</code> modifiers (you'll see below how to define the card's look and feel).</p>
+<p>This allows you to define the default look and feel for all cards and lets you customize some of them, using the different <code>.bfg-card--*</code> modifiers (you'll see below how to define the card's look and feel).</p>
+<p>But order matters! This technique works only when using the <code>.bfg-card--primary</code> modifier as the global look and feel.</p>
 <pre><code class="language-html">&lt;!-- global card definition --&gt;
 &lt;div class=&quot;bfg bfg-card bfg-card--primary&quot;&gt;
   &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use global &quot;primary&quot; theme --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use global &quot;primary&quot; card type --&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;bfg__box&quot;&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use global &quot;primary&quot; theme --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use global &quot;primary&quot; card type --&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;!-- chained card definition (at box level) --&gt;
   &lt;div class=&quot;bfg__box bfg-card bfg-card--secondary&quot;&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use local &quot;secondary&quot; theme --&gt;&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use local &quot;secondary&quot; card type --&gt;&lt;/div&gt;
   &lt;/div&gt;
 
   &lt;div class=&quot;bfg__box&quot;&gt;
     &lt;!-- nested card definition (as box child) --&gt;
     &lt;div class=&quot;bfg-card bfg-card--secondary&quot;&gt;
-      &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use local &quot;secondary&quot; theme --&gt;&lt;/div&gt;
+      &lt;div class=&quot;bfg-card__content&quot;&gt;&lt;!-- use local &quot;secondary&quot; card type --&gt;&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
@@ -242,12 +244,12 @@
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--row&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>When using <code>.bfg--row</code> modifier, the grid needs the <code>.bfg</code> block width (or its parent width) to be defined.</p>
+<p>When using <code>.bfg--row</code> modifier, the grid needs the <code>.bfg</code> block width (or its parent width) to be defined (and that's usually the case).</p>
 </blockquote>
 <pre><code class="language-html">&lt;div class=&quot;bfg bfg--col&quot;&gt;...&lt;/div&gt;
 </code></pre>
 <blockquote>
-<p>When using <code>.bfg--col</code> modifier, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined.</p>
+<p>When using <code>.bfg--col</code> modifier, the grid needs the <code>.bfg</code> block height (or its parent height) to be defined (and that's not always the case!).</p>
 </blockquote>
 <h4>Auto height: <code>.bfg--[B]auto-height</code></h4>
 <p><strong>[B]</strong> Breakpoint: <code>xl-</code>, <code>lg-</code>, <code>sm-</code>, <code>xs-</code> or none.</p>
@@ -582,8 +584,8 @@ Then you can choose the distribution mode of the remaining space.</p>
 &lt;/div&gt;
 </code></pre>
 <h3><code>.bfg-card</code> modifier</h3>
-<h4>Theme: <code>.bfg-card--[T]</code></h4>
-<p><strong>[T]</strong> Theme: <code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>info</code>, <code>warning</code> or any string.</p>
+<h4>Type: <code>.bfg-card--[T]</code></h4>
+<p><strong>[T]</strong> Type: <code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>info</code>, <code>warning</code> or any string.</p>
 <p>For example, add &quot;primary&quot; look and feel to the card's content, header and actions using <code>.bfg-card--primary</code> modifier.</p>
 <pre><code class="language-html">...
   &lt;div class=&quot;bfg-card bfg-card--primary&quot;&gt;
@@ -594,7 +596,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 ...
 </code></pre>
 <blockquote>
-<p>See below the Sass mixin <code>bfg-card</code> to create your own card themes.</p>
+<p>See below the Sass mixin <code>bfg-card</code> to create your own card types.</p>
 </blockquote>
 <h3><code>.bfg-card__content</code> modifiers</h3>
 <h4>Overflow: <code>.bfg-card__content--overflow-[T]</code></h4>
@@ -663,7 +665,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 </code></pre>
 <h2>Sass customization</h2>
 <h3>Variables</h3>
-<p>You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source files afterwards.</p>
+<p>You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source file afterwards.</p>
 <pre><code class="language-scss">$bfg-ie11-support: false !default;
 
 $bfg-breakpoints: (
@@ -682,7 +684,7 @@ $bfg-card-padding: 1rem !default;
 $bfg-card-header-height: 2.5rem !default;
 
 $bfg-card-primary: (
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.075),
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
   border-radius: 3px,
   border-width: 1px,
 
@@ -725,10 +727,10 @@ $bfg-card-warning: (
   header-background: #ffc107,
 ) !default;
 
-$bfg-card-themes-included: true !default;
+$bfg-card-theme-included: true !default;
 </code></pre>
 <p><em>Example:</em></p>
-<p>To customize the boxes gap, create a file <code>my-custo-bfg.scss</code> with the following content:</p>
+<p>Let's customize the boxes gap.</p>
 <pre><code class="language-scss">// Overwrite gap
 $bfg-gap: 2rem;
 
@@ -737,13 +739,37 @@ $bfg-gap: 2rem;
 <h3>Mixins</h3>
 <h4>Cards</h4>
 <p>The <code>bfg-card</code> mixin allows you to customize the look and feel of the box's content, header and actions.</p>
-<pre><code class="language-scss">@include bfg-card($name, $settings: (), $defaults: ()) { ... }
+<pre><code class="language-scss">@include bfg-card($type, $settings: (), $defaults: ());
 </code></pre>
+<p>By default, Bem-flex-grid generates cards with the following values for the <code>$type</code> parameter: <code>primary</code>, <code>secondary</code>, <code>success</code>, <code>danger</code>, <code>info</code> and <code>warning</code>.
+But you are free to completely change this naming.</p>
 <p><em>Example:</em></p>
-<p>To add a theme named <code>hello</code>, create a file <code>my-custo-bfg.scss</code> with the following content:</p>
+<p>Let's remove the default list of types and define a single type named &quot;fancy&quot;.</p>
+<pre><code class="language-scss">$bfg-card-theme-included: false;
+
+@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
+
+@include bfg-card(fancy);
+</code></pre>
+<p>As you can see, the <code>$settings</code>and <code>$defaults</code> parameters are optional.</p>
+<p>Now, let's use the &quot;fancy&quot; card using the <code>.bfg-card--fancy</code> modifier (instead of <code>.bfg-card--primary</code> which is no longer available).</p>
+<pre><code class="language-html">...
+  &lt;div class=&quot;bfg-card bfg-card--fancy&quot;&gt;
+    &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__header&quot;&gt;...&lt;/div&gt;
+    &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
+  &lt;/div&gt;
+...
+</code></pre>
+<p>To understand the <code>bfg-card</code> mixin parameters, let's take a look at one of its internal lines of code:</p>
+<pre><code class="language-scss">$s: map-merge($bfg-card-primary, map-merge($defaults, $settings));
+</code></pre>
+<p>It simply means that the <code>$bfg-card-primary</code> variable is overwritten by your <code>$defaults</code> and <code>$settings</code> parameters in this order.
+This is what defines the final look and feel of a card.</p>
+<p><em>Example:</em></p>
+<p>Let's add a card of type <code>hello</code> which will be available using the <code>.bfg-card--hello</code> modifier.</p>
 <pre><code class="language-scss">@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
 
-// Add new theme
 @include bfg-card(hello, (
   border-radius: 0,
   border-width: 3px,
@@ -757,16 +783,48 @@ $bfg-gap: 2rem;
 ));
 </code></pre>
 <blockquote>
-<p>Notice that omitted map keys (<code>box-shadow</code>, <code>header-borderless</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the &quot;primary&quot; theme).</p>
+<p>Notice that omitted map keys (<code>box-shadow</code>, <code>header-borderless</code> and <code>content-forground</code> in this example) fall back to their default value (picked from the <code>$bfg-card-primary</code>).</p>
 </blockquote>
-<p>Now, let's use the <code>hello</code> theme:</p>
-<pre><code class="language-html">...
-  &lt;div class=&quot;bfg-card bfg-card--hello&quot;&gt;
-    &lt;div class=&quot;bfg-card__action&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;bfg-card__header&quot;&gt;...&lt;/div&gt;
-    &lt;div class=&quot;bfg-card__content&quot;&gt;...&lt;/div&gt;
-  &lt;/div&gt;
-...
+<p>An advanced use case of the card mixin consists to create 2 different sets of cards for &quot;light&quot; and &quot;dark&quot; themes.</p>
+<p><em>Example:</em></p>
+<pre><code class="language-scss">$bfg-card-theme-included: false;
+
+// Overwrite the &quot;primary&quot; card (let's use flat design)
+$bfg-card-primary: map-merge($bfg-card-primary, (
+  box-shadow: none,
+  border-radius: 0px
+));
+
+@import &quot;[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss&quot;;
+
+body.theme--light {
+  @include bfg-card(primary);
+
+  @include bfg-card(secondary, (
+    header-border: darken(#6c757d, 5),
+    header-background: #6c757d,
+    header-forground: #fff
+  ));
+}
+
+body.theme--dark {
+  // Let's tweak the $bfg-card-primary for the &quot;dark&quot; theme
+  $bfg-card-dark-defaults: (
+    content-border: #4a4a4a,
+    content-background: #2a2a2a,
+    header-forground: #fff
+  );
+
+  @include bfg-card(primary, (
+    header-border: #4a4a4a,
+    header-background: #3a3a3a
+  ), $bfg-card-dark-defaults);
+
+  @include bfg-card(secondary, (
+    header-border: darken(#6c757d, 5),
+    header-background: #6c757d
+  ), $bfg-card-dark-defaults);
+}
 </code></pre>
 <h4>Media breakpoints</h4>
 <p>The <code>bfg-media-breakpoint-*</code> mixins lets you add CSS rules that target specific screen sizes.</p>
@@ -881,7 +939,7 @@ $bfg-gap: 2rem;
 <li><code>.bfg__box--nopad</code></li>
 </ul>
 <h4><code>.bfg-card</code> block</h4>
-<p><em>Theme:</em></p>
+<p><em>Type:</em></p>
 <ul>
 <li><code>.bfg-card--primary</code>, <code>.bfg-card--secondary</code>, <code>.bfg-card--success</code>, <code>.bfg-card--danger</code>, <code>.bfg-card--info</code>, <code>.bfg-card--warning</code></li>
 <li>...</li>
@@ -976,7 +1034,7 @@ $bfg-gap: 2rem;
 <li><code>bfg__box=&quot;nopad&quot;</code></li>
 </ul>
 <h4><code>.bfg-card</code> block attribute</h4>
-<p><em>Theme:</em></p>
+<p><em>Type:</em></p>
 <ul>
 <li><code>bfg-card=&quot;primary | secondary | success | danger | info | warning&quot;</code></li>
 <li>...</li>
