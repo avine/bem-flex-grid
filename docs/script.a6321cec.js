@@ -1693,10 +1693,11 @@ exports.viewCode = function () {
     return;
   }
 
+  var sourceCode = cleanCode(formatCode(source.innerHTML));
   var wrapper = document.createElement('div');
   wrapper.innerHTML = '<pre class="demo-layout__code"><code></code></pre>';
   var code = wrapper.querySelector('code');
-  code.dataset.sourceCode = formatCode(source.innerHTML); // Store the initial source code for further modifification...
+  code.dataset.sourceCode = sourceCode; // Store the initial source code for further modifification...
 
   code.innerHTML = prismjs_1.highlight(code.dataset.sourceCode, prismjs_1.languages.html, prismjs_1.languages.html);
   var desc = document.querySelector('.demo-layout__desc');
@@ -1720,7 +1721,7 @@ exports.handleSourceCode = function (code) {
 };
 
 exports.updateCode = function (code, sourceCode) {
-  code.dataset.sourceCode = formatCode(sourceCode);
+  code.dataset.sourceCode = cleanCode(formatCode(sourceCode));
   code.innerHTML = prismjs_1.highlight(code.dataset.sourceCode, prismjs_1.languages.html, prismjs_1.languages.html);
 }; // Remove extra indentation
 
@@ -1745,7 +1746,13 @@ function formatCode(code) {
   return lines.join('\n').trim().replace(/\n{2,}/g, '\n\n');
 }
 
-exports.formatCode = formatCode;
+exports.formatCode = formatCode; // Remove the empty values on HTML tag attributes
+
+function cleanCode(code) {
+  return code.replace(/=""/g, '');
+}
+
+exports.cleanCode = cleanCode;
 },{"prismjs":"6hKA"}],"mza5":[function(require,module,exports) {
 "use strict";
 
@@ -2181,4 +2188,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   });
 }
 },{"./scripts/back-button":"DdMk","./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"8aet","./scripts/util":"z9H4","./scripts/view-code":"39yF"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.a0f4b5d0.js.map
+//# sourceMappingURL=/bem-flex-grid/script.a6321cec.js.map
