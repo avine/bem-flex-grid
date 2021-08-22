@@ -24,7 +24,7 @@ const packageSource = JSON.parse(readFileSync(
   { encoding: 'utf8' },
 ));
 
-const packageTarget = {};
+const packageTarget: Record<string, any> = {};
 [
   'name',
   'version',
@@ -77,10 +77,10 @@ if (!DRY_MODE) {
       const spawn = require('child_process').spawn;
       const child = spawn('npm', ['publish', targetDir]);
 
-      child.stdout.on('data', (data) => process.stdout.write(data));
-      child.stderr.on('data', (data) => process.stdout.write(data));
+      child.stdout.on('data', (data: any) => process.stdout.write(data));
+      child.stderr.on('data', (data: any) => process.stdout.write(data));
 
-      child.on('exit', (code) => {
+      child.on('exit', (code: any) => {
         if (code === 0) {
           process.stdout.write('\n\t* Package published successfully *\n\n');
         }

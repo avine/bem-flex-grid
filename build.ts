@@ -1,5 +1,5 @@
 import { writeFileSync } from 'fs';
-import * as sass from 'node-sass';
+import sass from 'sass';
 
 const targetDir = {
   dist: 'dist',
@@ -24,7 +24,7 @@ const build = (filename: string, compressed = false) => {
   sass.render({
     file: `${targetDir.src}/${filename}.scss`,
     outFile: outFile.css,
-    outputStyle: compressed ? 'compressed' : 'nested',
+    outputStyle: compressed ? 'compressed' : 'expanded',
     sourceMap: true,
   },
 

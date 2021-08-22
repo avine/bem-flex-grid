@@ -1,4 +1,8 @@
+# Project
 .cache/
 deploy/
 node_modules/
 output/
+
+# Miscellaneous
+.DS_Store

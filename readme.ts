@@ -2,7 +2,7 @@
  * Generate `./src/index.html` from `./README.md`.
  */
 import { readFileSync, watchFile, writeFileSync } from 'fs';
-import * as MarkdownIt from 'markdown-it';
+import MarkdownIt from 'markdown-it';
 import { join } from 'path';
 
 const md = new MarkdownIt();
