@@ -1,3 +1,5 @@
+@use "sass:math";
+
 @import "./functions";
 
 /* ===== demo ===== */
@@ -48,8 +50,8 @@ $docs-header: (
 );
 
 $docs-logo-size: 6rem;
-$docs-logo-border: ($docs-logo-size / 12);
-$docs-logo-shadow: ($docs-logo-border / 2);
+$docs-logo-border: math.div($docs-logo-size, 12);
+$docs-logo-shadow: ($docs-logo-border * 0.5);
 
 $docs-showcase: (
   margin: 3rem,

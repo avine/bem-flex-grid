@@ -1,3 +1,5 @@
+@use "sass:math";
+
 [bfg] {
   display: flex;
   justify-content: flex-start;
@@ -19,18 +21,18 @@
 }
 
 [bfg~="gap"] {
-  padding: ($bfg-gap / 2);
+  padding: ($bfg-gap * 0.5);
 }
 
 [bfg~="gap-in"] {
-  margin: -($bfg-gap / 2);
+  margin: -($bfg-gap * 0.5);
   height: calc(100% + #{$bfg-gap});
 }
 
 [bfg~="gap"],
 [bfg~="gap-in"] {
   [bfg__box] {
-    padding: ($bfg-gap / 2);
+    padding: ($bfg-gap * 0.5);
   }
 
   [bfg__box][bfg],
@@ -94,30 +96,30 @@
   [bfg__box~="#{$size + last}"] { order: 1; }
 
   @for $i from 1 through 12 {
-    [bfg__box~="#{$size + $i}"] { flex-basis: (100% * $i / 12); }
+    [bfg__box~="#{$size + $i}"] { flex-basis: math.div(100% * $i, 12); }
   }
 
   [bfg~="row"] {
     @if $bfg-ie11-support {
       @for $i from 1 through 12 {
-        > [bfg__box~="#{$size + $i}"] { max-width: (100% * $i / 12); }
+        > [bfg__box~="#{$size + $i}"] { max-width: math.div(100% * $i, 12); }
       }
     }
 
     @for $i from 2 through 5 {
-      &[bfg~="#{$size + $i}-lines"] > [bfg__box] { height: (100% / $i); }
+      &[bfg~="#{$size + $i}-lines"] > [bfg__box] { height: math.div(100%, $i); }
     }
   }
 
   [bfg~="col"] {
     @if $bfg-ie11-support {
       @for $i from 1 through 12 {
-        > [bfg__box~="#{$size + $i}"] { max-height: (100% * $i / 12); }
+        > [bfg__box~="#{$size + $i}"] { max-height: math.div(100% * $i, 12); }
       }
     }
 
     @for $i from 2 through 5 {
-      &[bfg~="#{$size + $i}-lines"] > [bfg__box] { width: (100% / $i); }
+      &[bfg~="#{$size + $i}-lines"] > [bfg__box] { width: math.div(100%, $i); }
     }
   }
 

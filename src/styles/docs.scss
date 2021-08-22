@@ -47,7 +47,7 @@
   .docs-container {
     margin: 0;
     min-width: 0;
-    max-width: ($docs-max-width / 2);
+    max-width: ($docs-max-width * 0.5);
   }
 
   .docs-navbar__link {
@@ -73,7 +73,7 @@
   position: relative;
   z-index: 12;
   margin-bottom: $docs-container-margin;
-  padding: (map-get($docs-navbar, height) + map-get($docs-header, padding)) 0 (map-get($docs-header, padding) / 2) 0;
+  padding: (map-get($docs-navbar, height) + map-get($docs-header, padding)) 0 (map-get($docs-header, padding) * 0.5) 0;
   background-color: map-get($docs-header, background);
   border-bottom: 1px solid map-get($docs-header, border);
   text-align: center;
@@ -81,7 +81,7 @@
 
 .docs-header__title {
   margin: 0;
-  margin-right: (map-get($docs-header, padding) / 2);
+  margin-right: (map-get($docs-header, padding) * 0.5);
   line-height: map-get($docs-header, padding);
   font-size: 4rem;
   font-weight: 200;
@@ -195,7 +195,7 @@ h2.docs-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 
 .docs-footer {
   margin-top: map-get($docs-header, padding);
-  margin-bottom: (map-get($docs-header, padding) / 2);
+  margin-bottom: (map-get($docs-header, padding) * 0.5);
   color: map-get($docs-header, forground);
   text-align: center;
 

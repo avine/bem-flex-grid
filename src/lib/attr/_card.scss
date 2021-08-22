@@ -9,7 +9,7 @@
 }
 
 [bfg~="gap-in"][bfg-card] {
-  margin: -($bfg-gap / 2);
+  margin: -($bfg-gap * 0.5);
 }
 
 [bfg__box] > [bfg-card] {
