@@ -1,7 +1,7 @@
 import { triggerResize } from './enable-actions';
 import { forEach } from './util';
 
-export const handleTabs = () => {
+export const handleTabs = (): void => {
   const wrapper = document.createElement('div');
 
   wrapper.innerHTML = `<div class="demo-layout__tabs-nav">

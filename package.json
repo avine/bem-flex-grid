@@ -11,6 +11,7 @@
     "start": "parcel serve src/index.html --out-dir output",
     "predocs": "rimraf docs && npm run readme",
     "docs": "parcel build src/index.html --out-dir docs --public-url /bem-flex-grid/ --no-minify",
+    "lint": "eslint . --ext .ts",
     "build": "ts-node build",
     "deploy": "npm run build && ts-node deploy",
     "all": "npm run clean && npm run docs && npm run build && ts-node deploy --dry",
@@ -41,6 +42,9 @@
     "@types/markdown-it": "12.2.0",
     "@types/prismjs": "^1.16.6",
     "@types/sass": "^1.16.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
     "fs-extra": "^10.0.0",
     "highcharts": "^9.2.1",
     "markdown-it": "^12.2.0",
@@ -51,7 +55,6 @@
     "rimraf": "^3.0.2",
     "sass": "^1.38.0",
     "ts-node": "^10.2.1",
-    "tslint": "^6.1.3",
     "typescript": "^4.3.5"
   }
 }

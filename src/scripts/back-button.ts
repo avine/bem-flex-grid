@@ -1,4 +1,4 @@
-export function handleBackButton() {
+export function handleBackButton(): void {
   const output = document.querySelector('.demo-layout__readme');
   if (output) {
     const btn = document.createElement('a');

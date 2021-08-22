@@ -1,6 +1,6 @@
 import { highlight, languages } from 'prismjs';
 
-export const viewCode = () => {
+export const viewCode = (): void => {
   const source = document.querySelector('.demo-layout__playground');
   if (!source) {
     return;
@@ -24,6 +24,7 @@ export const viewCode = () => {
   desc.appendChild(wrapper.firstChild);
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const handleSourceCode = (code: HTMLElement) => {
   return {
     sourceCode: code.dataset.sourceCode,
@@ -31,13 +32,13 @@ export const handleSourceCode = (code: HTMLElement) => {
   };
 };
 
-export const updateCode = (code: HTMLElement, sourceCode: string) => {
+export const updateCode = (code: HTMLElement, sourceCode: string): void => {
   code.dataset.sourceCode = cleanCode(formatCode(sourceCode));
   code.innerHTML = highlight(code.dataset.sourceCode, languages.html, languages.html);
 };
 
 // Remove extra indentation
-export function formatCode(code: string) {
+export function formatCode(code: string): string {
   let lines = code.split('\n');
   const indent = lines.reduce((idt, currLine) => {
     if (currLine.trim()) {
@@ -53,6 +54,6 @@ export function formatCode(code: string) {
 }
 
 // Remove the empty values on HTML tag attributes
-export function cleanCode(code: string) {
+export function cleanCode(code: string): string {
   return code.replace(/=""/g, '');
 }

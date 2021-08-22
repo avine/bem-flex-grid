@@ -62,7 +62,7 @@ const fillElement = (element: Element, options = { ...fillGridOptions }) => {
   }
 };
 
-export const fillGrid = (options: Partial<IFillGridOptions> = {}) => {
+export const fillGrid = (options: Partial<IFillGridOptions> = {}): void => {
   const opts: IFillGridOptions = { ...fillGridOptions, ...options };
 
   forEach<Element>(

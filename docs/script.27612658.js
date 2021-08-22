@@ -937,6 +937,7 @@ var chart_options_1 = __importDefault(require("./chart-options"));
 var optionIndex = 0;
 
 var chart = function chart(ctx) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   var option = chart_options_1.default[optionIndex];
   optionIndex = (optionIndex + 1) % chart_options_1.default.length;
   return highcharts_1.default.chart(ctx, option);
@@ -2798,7 +2799,7 @@ var viewCode = function viewCode() {
   desc.appendChild(wrapper.firstChild);
 };
 
-exports.viewCode = viewCode;
+exports.viewCode = viewCode; // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 
 var handleSourceCode = function handleSourceCode(code) {
   return {
@@ -3158,7 +3159,7 @@ var showcase = function showcase() {
   var element = document.querySelector('.docs-showcase');
 
   var mapper = function mapper(anchor, count) {
-    var filename = anchor.href.match(/\/([^\/]+)\.html$/)[1];
+    var filename = anchor.href.match(/\/([^/]+)\.html$/)[1];
     var id = "demo-" + filename;
     var css = 'demo-toolbox__action demo-toolbox__action--open-link';
     return "\n  <div class=\"docs-showcase__item\">\n    <iframe data-src=\"" + anchor.href + "\" class=\"docs-showcase__iframe\"></iframe>\n    <a href=\"" + anchor.href + "\" id=\"" + id + "\" class=\"" + css + "\" title=\"Open\">" + count + "</a>\n  </div>";
@@ -3307,4 +3308,4 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   });
 }
 },{"./scripts/back-button":"DdMk","./scripts/chart":"sAzF","./scripts/enable-actions":"mza5","./scripts/fill-grid":"YaHz","./scripts/showcase":"ruTo","./scripts/tabs":"aett","./scripts/util":"z9H4","./scripts/view-code":"yFV7"}]},{},["g4tf"], null)
-//# sourceMappingURL=/bem-flex-grid/script.92cbe838.js.map
+//# sourceMappingURL=/bem-flex-grid/script.27612658.js.map

@@ -1,10 +1,10 @@
 import { forEach } from './util';
 
-export const showcase = () => {
+export const showcase = (): void => {
   const element = document.querySelector('.docs-showcase');
 
   const mapper = (anchor: HTMLAnchorElement, count: number) => {
-    const filename = anchor.href.match(/\/([^\/]+)\.html$/)[1];
+    const filename = anchor.href.match(/\/([^/]+)\.html$/)[1];
     const id = `demo-${filename}`;
     const css = 'demo-toolbox__action demo-toolbox__action--open-link';
     return `

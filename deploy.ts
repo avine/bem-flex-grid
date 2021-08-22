@@ -1,9 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /*
  * Prepare the `./deploy` directory for NPM publish.
  */
 import { copySync, emptyDirSync, readFileSync, writeFileSync } from 'fs-extra';
 import { join } from 'path';
 import { createInterface } from 'readline';
+import { spawn } from 'child_process';
+import { Readable } from 'stream';
 
 // ===== Dry mode config =====
 
@@ -24,7 +28,7 @@ const packageSource = JSON.parse(readFileSync(
   { encoding: 'utf8' },
 ));
 
-const packageTarget: Record<string, any> = {};
+const packageTarget: any = {};
 [
   'name',
   'version',
@@ -74,11 +78,10 @@ if (!DRY_MODE) {
   rl.question('Confirm? (yes) ', (answer) => {
     console.log(''); // tslint:disable-line:no-console
     if (!answer || answer === 'yes') {
-      const spawn = require('child_process').spawn;
       const child = spawn('npm', ['publish', targetDir]);
 
-      child.stdout.on('data', (data: any) => process.stdout.write(data));
-      child.stderr.on('data', (data: any) => process.stdout.write(data));
+      (child.stdout as Readable).on('data', (data: any) => process.stdout.write(data));
+      (child.stderr as Readable).on('data', (data: any) => process.stdout.write(data));
 
       child.on('exit', (code: any) => {
         if (code === 0) {
