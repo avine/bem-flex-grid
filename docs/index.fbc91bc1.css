@@ -14,23 +14,18 @@ html code,
 .markdown-body code {
   padding: 0.15em 0.3em;
 }
-
 body {
   margin: 0;
 }
-
 h1, h2, h3, h4, h5, h6, p {
   margin: 1rem 0;
 }
-
 h1, h2, h3 {
   line-height: 1.2em;
 }
-
 h1, h2, h4 {
   font-family: "Expletus Sans", serif;
 }
-
 h4,
 .markdown-body h4 {
   color: #C62828;
@@ -41,25 +36,20 @@ h4 code,
 .markdown-body h4 code {
   font-size: 0.85em;
 }
-
 code {
   font-family: "IBM Plex Mono", monospace !important;
   font-size: 0.85rem;
   line-height: 0.85rem;
 }
-
 a {
   color: #2196F3;
 }
-
 main {
   display: block;
 }
-
 *::selection {
   background-color: #FFECB3 !important;
 }
-
 /* ===== Handle layout ===== */
 .demo-layout__desc {
   position: fixed;
@@ -72,7 +62,6 @@ main {
   display: flex;
   flex-direction: column;
 }
-
 .demo-layout__readme {
   padding: 1rem;
   flex-grow: 1;
@@ -89,7 +78,6 @@ main {
   border-radius: 3px;
   background-color: rgba(27, 31, 35, 0.05);
 }
-
 .demo-layout__back-button {
   position: absolute;
   z-index: 2;
@@ -101,7 +89,6 @@ main {
   font-size: 0.85rem;
   text-decoration: none;
 }
-
 .demo-layout__code {
   flex-grow: 1;
   flex-shrink: 1;
@@ -116,7 +103,6 @@ main {
   margin: 0;
   line-height: 1.2rem;
 }
-
 pre.demo-layout__output {
   position: fixed;
   top: 0;
@@ -133,30 +119,24 @@ pre.demo-layout__output {
   white-space: normal;
   margin: 0;
 }
-
 pre.demo-layout__output--full {
   width: 100%;
   box-shadow: -100px 0 100px rgba(0, 0, 0, 0.15);
 }
-
 pre.demo-layout__output--gray {
   background-color: #f5f5f5;
 }
-
 .demo-layout__playground {
   overflow: auto;
   height: 100%;
 }
-
 .demo-layout__playground--auto {
   height: auto;
 }
-
 .demo-layout__warn {
   color: #C62828;
   font-size: 0.875rem;
 }
-
 /* ===== Toolbox actions ===== */
 .demo-toolbox {
   position: fixed;
@@ -188,7 +168,6 @@ pre.demo-layout__output--gray {
 .demo-toolbox .demo-toolbox__action + .demo-toolbox__action {
   margin-top: -1px;
 }
-
 .demo-toolbox__action {
   display: block;
   width: 2rem;
@@ -211,32 +190,25 @@ pre.demo-layout__output--gray {
 .demo-toolbox__action:hover {
   opacity: 1;
 }
-
 .demo-toolbox__action--active {
   border-color: #1565C0;
   background-color: #2196F3;
 }
-
 .demo-toolbox__action--full-screen {
-  background-image: url(/bem-flex-grid/desktop.f9af5d23.svg);
+  background-image: url(desktop.72c8de68.svg);
 }
-
 .demo-toolbox__action--auto-height {
-  background-image: url(/bem-flex-grid/scroll.cf8815a9.svg);
+  background-image: url(scroll.6b6bdae0.svg);
 }
-
 .demo-toolbox__action--grid-direction {
-  background-image: url(/bem-flex-grid/directions.60bc070b.svg);
+  background-image: url(directions.6735dcc1.svg);
 }
-
 .demo-toolbox__action--grid-gap {
-  background-image: url(/bem-flex-grid/th-large.792ba4b7.svg);
+  background-image: url(th-large.0b87ac2a.svg);
 }
-
 .demo-toolbox__action--theme {
-  background-image: url(/bem-flex-grid/palette.35d687da.svg);
+  background-image: url(palette.f37eebf9.svg);
 }
-
 /* ===== Handle dummy container and text ===== */
 .demo-container {
   cursor: pointer;
@@ -257,7 +229,6 @@ pre.demo-layout__output--gray {
 .demo-container:after {
   content: "100% * 100%";
 }
-
 .demo-container--alt {
   width: 1000px;
   height: 1000px;
@@ -268,33 +239,26 @@ pre.demo-layout__output--gray {
 .demo-container--alt:after {
   content: "1000px * 1000px";
 }
-
 .demo-text__bg-1 {
   background-color: #FFF8E1;
 }
-
 .demo-text__bg-2 {
   background-color: #E1F5FE;
 }
-
 .demo-text__bg-3 {
   background-color: #E8F5E9;
 }
-
 .demo-text__bg-4 {
   background-color: #FFEBEE;
 }
-
 .demo-text__bg-5 {
   background-color: #F3E5F5;
 }
-
 /* ===== Chart ===== */
 .demo-chart {
   width: 100%;
   height: 100%;
 }
-
 /* ===== Responsive ===== */
 .demo-layout__tabs-nav {
   display: flex;
@@ -302,7 +266,6 @@ pre.demo-layout__output--gray {
   line-height: 2.5rem;
   background-color: #f5f5f5;
 }
-
 .demo-layout__tabs-nav-item {
   flex-grow: 1;
   text-align: center;
@@ -312,12 +275,10 @@ pre.demo-layout__output--gray {
 .demo-layout__tabs-nav-item + .demo-layout__tabs-nav-item {
   border-left: 1px solid #E0E0E0;
 }
-
 .demo-layout__tabs-nav-item--open {
   background-color: #2196F3;
   color: #fff;
 }
-
 @media (max-width: 767.98px) {
   .demo-layout__desc {
     position: static;
@@ -351,5 +312,4 @@ pre.demo-layout__output--gray {
     z-index: 2;
   }
 }
-
-/*# sourceMappingURL=/bem-flex-grid/demo.e17807d2.css.map */
+/*# sourceMappingURL=index.fbc91bc1.css.map */

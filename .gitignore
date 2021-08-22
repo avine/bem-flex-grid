@@ -1,5 +1,5 @@
 # Project
-.cache/
+.parcel-cache/
 deploy/
 node_modules/
 output/

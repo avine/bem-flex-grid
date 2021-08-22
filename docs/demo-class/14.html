@@ -6,15 +6,16 @@
 
   <title>Bem Flex Grid</title>
 
-  <link rel="stylesheet" href="/bem-flex-grid/prism.60d83685.css">
+  <link rel="stylesheet" href="/bem-flex-grid/index.04b86f8a.css">
 
-  <link rel="shortcut icon" href="/bem-flex-grid/favicon.d6231ddc.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/demo.e17807d2.css">
-  <link rel="stylesheet" href="/bem-flex-grid/14.1e37f745.css">
+  <link rel="shortcut icon" href="/bem-flex-grid/favicon.ce3d6aef.ico">
+  <link rel="stylesheet" href="/bem-flex-grid/index.fbc91bc1.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo-class/14.5ffe992d.css">
 
-  <script src="/bem-flex-grid/script.27612658.js"></script>
+  <script type="module" src="/bem-flex-grid/demo.fb8e72a6.js"></script>
 
-  <style>.demo-layout__playground {
+  <style>
+    .demo-layout__playground {
       box-sizing: border-box;
       padding: 1rem;
     }
@@ -24,7 +25,9 @@
     .demo-layout__playground--dark {
       background:#252525;
       color:#dedede;
-    }</style>
+    }
+  
+</style>
 </head>
 <body>
   <div class="demo-layout__desc">
@@ -100,12 +103,16 @@
   <a href="#" class="demo-toolbox__action demo-toolbox__action--theme"></a>
 
   <script>Demo.viewCode();
-Demo.enableActions(['fullWidth']); // Add another action to switch theme...
+Demo.enableActions([
+    'fullWidth'
+]);
+// Add another action to switch theme...
+const target = document.querySelector('.demo-layout__playground').classList;
+Demo.handleAction(document.querySelector('.demo-toolbox__action--theme'), ()=>{
+    target.toggle('demo-layout__playground--dark');
+    target.toggle('demo-layout__playground--light');
+});
 
-var target = document.querySelector('.demo-layout__playground').classList;
-Demo.handleAction(document.querySelector('.demo-toolbox__action--theme'), function () {
-  target.toggle('demo-layout__playground--dark');
-  target.toggle('demo-layout__playground--light');
-});</script>
+</script>
 </body>
 </html>
