@@ -4,16 +4,16 @@
   "description": "CSS flex grid, BEM compliant.",
   "scripts": {
     "clean": "rimraf src/index.html dist .cache output docs deploy && mkdirp dist",
-    "readme": "ts-node readme",
-    "readme:watch": "ts-node readme watch",
+    "readme": "ts-node scripts/readme",
+    "readme:watch": "ts-node scripts/readme watch",
     "prestart": "rimraf output && npm run readme",
     "start": "parcel serve src/index.html --dist-dir output --no-hmr",
     "predocs": "rimraf docs && npm run readme",
     "docs": "parcel build src/index.html --dist-dir docs --public-url /bem-flex-grid/ --no-optimize",
     "lint": "eslint . --ext .ts",
-    "build": "ts-node build",
-    "deploy": "npm run build && ts-node deploy",
-    "all": "npm run clean && npm run docs && npm run build && ts-node deploy --dry",
+    "build": "ts-node scripts/build",
+    "deploy": "npm run build && ts-node scripts/deploy",
+    "all": "npm run clean && npm run docs && npm run build && ts-node scripts/deploy --dry",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

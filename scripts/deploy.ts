@@ -18,13 +18,13 @@ if (process.argv[2] === '-d' || process.argv[2] === '--dry') {
 
 // ===== Empty target directory =====
 
-const targetDir = join(__dirname, './deploy');
+const targetDir = join(__dirname, '../', 'deploy');
 emptyDirSync(targetDir);
 
 // ===== Build `package.json` for target directory =====
 
 const packageSource = JSON.parse(readFileSync(
-  join(__dirname, './package.json'),
+  join(__dirname, '../', 'package.json'),
   { encoding: 'utf8' },
 ));
 
@@ -58,7 +58,7 @@ writeFileSync(
   './dist',
   './src/lib',
 ].forEach(
-  (file) => copySync(join(__dirname, file), join(targetDir, file)),
+  (file) => copySync(join(__dirname, '../', file), join(targetDir, file)),
 );
 
 // ===== Publish on NPM =====
