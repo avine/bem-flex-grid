@@ -59,16 +59,17 @@
   </pre>
 
   <script>
-    Demo.viewCode();
-    Demo.fillGrid({ type: 'text', textColor: false });
-    Demo.enableActions(['fullWidth']);
+    document.addEventListener('DOMContentLoaded', () => {
+      Demo.viewCode();
+      Demo.fillGrid({ type: 'text', textColor: false });
+      Demo.enableActions(['fullWidth']);
 
-    const target = document.querySelector('.demo-layout__playground').classList;
-    const switchTheme = (name) => {
-      ['light', 'dark'].forEach(n => target.remove(`demo-layout__playground--${n}`));
-      target.add(`demo-layout__playground--${name}`);
-    };
+      const target = document.querySelector('.demo-layout__playground').classList;
+      const switchTheme = (name) => {
+        ['light', 'dark'].forEach(n => target.remove(`demo-layout__playground--${n}`));
+        target.add(`demo-layout__playground--${name}`);
+      };
+    });
   </script>
-
 </body>
 </html>

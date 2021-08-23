@@ -53,6 +53,12 @@
     </div>
   </pre>
 
-  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions(['fullWidth', 'gridGap']);</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Demo.viewCode();
+      Demo.fillGrid();
+      Demo.enableActions(['fullWidth', 'gridGap']);
+    });
+  </script>
 </body>
 </html>
