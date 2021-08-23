@@ -43,6 +43,12 @@
     </div>
   </pre>
 
-  <script>Demo.viewCode(); Demo.fillGrid(); Demo.enableActions(['fullWidth', 'autoHeight', 'gridDirection']);</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      Demo.viewCode();
+      Demo.fillGrid();
+      Demo.enableActions(['fullWidth', 'autoHeight', 'gridDirection']);
+    });
+  </script>
 </body>
 </html>

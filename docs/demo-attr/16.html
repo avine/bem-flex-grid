@@ -65,17 +65,16 @@
     </div>
   </pre>
 
-  <script>Demo.viewCode();
-Demo.enableActions([
-    'fullWidth',
-    'gridDirection',
-    'gridGap'
-]);
-
-</script>
-
-  <script>const ctx = document.querySelectorAll('.demo-chart');
-for(let i = 0; i < ctx.length; i++)Demo.chart(ctx[i]);
+  <script>document.addEventListener('DOMContentLoaded', ()=>{
+    Demo.viewCode();
+    Demo.enableActions([
+        'fullWidth',
+        'gridDirection',
+        'gridGap'
+    ]);
+    const ctx = document.querySelectorAll('.demo-chart');
+    for(let i = 0; i < ctx.length; i++)Demo.chart(ctx[i]);
+});
 
 </script>
 </body>
