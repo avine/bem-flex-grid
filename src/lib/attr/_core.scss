@@ -76,11 +76,6 @@
   overflow: hidden;
 }
 
-@if $bfg-ie11-support {
-  [bfg~="row"] > [bfg__box] { max-width: 100%; }
-  [bfg~="col"] > [bfg__box] { max-height: 100%; }
-}
-
 @mixin bfg-boxes($size: '') {
   [bfg~="#{$size + auto-height}"] { height: auto; }
 
@@ -103,24 +98,12 @@
   }
 
   [bfg~="row"] {
-    @if $bfg-ie11-support {
-      @for $i from 1 through 12 {
-        > [bfg__box~="#{$size + $i}"] { max-width: math.div(100% * $i, 12); }
-      }
-    }
-
     @for $i from 2 through 5 {
       &[bfg~="#{$size + $i}-lines"] > [bfg__box] { height: math.div(100%, $i); }
     }
   }
 
   [bfg~="col"] {
-    @if $bfg-ie11-support {
-      @for $i from 1 through 12 {
-        > [bfg__box~="#{$size + $i}"] { max-height: math.div(100% * $i, 12); }
-      }
-    }
-
     @for $i from 2 through 5 {
       &[bfg~="#{$size + $i}-lines"] > [bfg__box] { width: math.div(100%, $i); }
     }
@@ -135,11 +118,6 @@
 
   [bfg~="#{$size + disabled}"] > [bfg__box],
   [bfg~="#{$size + disabled-all}"] [bfg__box] {
-    @if $bfg-ie11-support {
-      max-width: none;
-      max-height: none;
-    }
-
     width: auto;
     height: auto;
   }

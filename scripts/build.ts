@@ -8,9 +8,7 @@ const targetDir = {
 
 const filenames = [
   'bem-flex-grid-attr',
-  'bem-flex-grid-attr.ie11',
   'bem-flex-grid-class',
-  'bem-flex-grid-class.ie11',
 ];
 
 const build = (filename: string, compressed = false) => {

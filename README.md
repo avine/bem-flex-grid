@@ -130,12 +130,8 @@ bem-flex-grid/
 ├─ dist/
 │  ├─ bem-flex-grid-attr.css
 │  ├─ bem-flex-grid-attr.min.css
-│  ├─ bem-flex-grid-attr.ie11.css
-│  ├─ bem-flex-grid-attr.ie11.min.css
 │  ├─ bem-flex-grid-class.css
 │  ├─ bem-flex-grid-class.min.css
-│  ├─ bem-flex-grid-class.ie11.css
-│  └─ bem-flex-grid-class.ie11.min.css
 └─ src/
    └─ lib/
       ├─ attr/
@@ -148,16 +144,14 @@ bem-flex-grid/
       │  └─ _mixins.scss
       ├─ _variables.scss
       ├─ bem-flex-grid-attr.scss
-      ├─ bem-flex-grid-attr.ie11.scss
       ├─ bem-flex-grid-class.scss
-      └─ bem-flex-grid-class.ie11.scss
 ```
 
 > The `dist` folder also contains the __sourcemap__ for each CSS file.
 
 ### Browser support
 
-Bem-flex-grid supports the latest, stable releases of all major browsers, including Microsoft Internet Explorer 11 and Edge on Windows.
+Bem-flex-grid supports the latest, stable releases of all major browsers.
 
 ## API
 
@@ -860,8 +854,6 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source file afterwards.
 
 ```scss
-$bfg-ie11-support: false !default;
-
 $bfg-breakpoints: (
   xs: 576px,
   sm: 768px,

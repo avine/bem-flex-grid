@@ -137,12 +137,8 @@
 ├─ dist/
 │  ├─ bem-flex-grid-attr.css
 │  ├─ bem-flex-grid-attr.min.css
-│  ├─ bem-flex-grid-attr.ie11.css
-│  ├─ bem-flex-grid-attr.ie11.min.css
 │  ├─ bem-flex-grid-class.css
 │  ├─ bem-flex-grid-class.min.css
-│  ├─ bem-flex-grid-class.ie11.css
-│  └─ bem-flex-grid-class.ie11.min.css
 └─ src/
    └─ lib/
       ├─ attr/
@@ -155,15 +151,13 @@
       │  └─ _mixins.scss
       ├─ _variables.scss
       ├─ bem-flex-grid-attr.scss
-      ├─ bem-flex-grid-attr.ie11.scss
       ├─ bem-flex-grid-class.scss
-      └─ bem-flex-grid-class.ie11.scss
 </code></pre>
 <blockquote>
 <p>The <code>dist</code> folder also contains the <strong>sourcemap</strong> for each CSS file.</p>
 </blockquote>
 <h3>Browser support</h3>
-<p>Bem-flex-grid supports the latest, stable releases of all major browsers, including Microsoft Internet Explorer 11 and Edge on Windows.</p>
+<p>Bem-flex-grid supports the latest, stable releases of all major browsers.</p>
 <h2>API</h2>
 <p>This documentation is based on the class syntax.
 But as we said above, it's really easy to switch from one syntax to another.</p>
@@ -666,9 +660,7 @@ Then you can choose the distribution mode of the remaining space.</p>
 <h2>Sass customization</h2>
 <h3>Variables</h3>
 <p>You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source file afterwards.</p>
-<pre><code class="language-scss">$bfg-ie11-support: false !default;
-
-$bfg-breakpoints: (
+<pre><code class="language-scss">$bfg-breakpoints: (
   xs: 576px,
   sm: 768px,
   lg: 992px,
