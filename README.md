@@ -100,13 +100,13 @@ npm i bem-flex-grid
 *Link tag:*
 
 ```html
-<link rel="stylesheet" href="[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid-class.css">
+<link rel="stylesheet" href="[PATH_TO_NODE_MODULES]/bem-flex-grid/dist/bem-flex-grid-class.css">
 ```
 
 *Sass import:*
 
 ```scss
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 ```
 
 ### Usage with attr syntax
@@ -114,13 +114,13 @@ npm i bem-flex-grid
 *Link tag:*
 
 ```html
-<link rel="stylesheet" href="[PATH_TO]/node_modules/bem-flex-grid/dist/bem-flex-grid-attr.css">
+<link rel="stylesheet" href="[PATH_TO_NODE_MODULES]/bem-flex-grid/dist/bem-flex-grid-attr.css">
 ```
 
 *Sass import:*
 
 ```scss
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-attr.scss";
+@import "~/bem-flex-grid/src/lib/bem-flex-grid-attr.scss";
 ```
 
 ### Package content
@@ -921,10 +921,7 @@ $bfg-card-theme-included: true !default;
 Let's customize the boxes gap.
 
 ```scss
-// Overwrite gap
-$bfg-gap: 2rem;
-
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with ($bfg-gap: 2rem);
 ```
 
 ### Mixins
@@ -945,9 +942,7 @@ But you are free to completely change this naming.
 Let's remove the default list of types and define a single type named "fancy".
 
 ```scss
-$bfg-card-theme-included: false;
-
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with ($bfg-card-theme-included: false);
 
 @include bfg-card(fancy);
 ```
@@ -980,7 +975,7 @@ This is what defines the final look and feel of a card.
 Let's add a card of type `hello` which will be available using the `.bfg-card--hello` modifier.
 
 ```scss
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 
 @include bfg-card(hello, (
   border-radius: 0,
@@ -1002,15 +997,15 @@ An advanced use case of the card mixin consists to create 2 different sets of ca
 *Example:*
 
 ```scss
-$bfg-card-theme-included: false;
+@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with (
+  $bfg-card-theme-included: false,
 
-// Overwrite the "primary" card (let's use flat design)
-$bfg-card-primary: map-merge($bfg-card-primary, (
-  box-shadow: none,
-  border-radius: 0px
-));
-
-@import "[PATH_TO]/node_modules/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+  // Overwrite the "primary" card (let's use flat design)
+  $bfg-card-primary: map-merge($bfg-card-primary, (
+    box-shadow: none,
+    border-radius: 0px
+  ))
+);
 
 body.theme--light {
   @include bfg-card(primary);
