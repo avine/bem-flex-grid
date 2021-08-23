@@ -1,8 +1,6 @@
 // ===== Import grid system =====
 
-$bfg-card-theme-included: false;
-
-@import "../lib/bem-flex-grid-class";
+@use "../lib/bem-flex-grid-class" as * with ($bfg-card-theme-included: false);
 
 // ===== Add customized themes =====
 

@@ -1,3 +1,5 @@
+@use "../variables" as *;
+
 @mixin bfg-media-breakpoint-up($size) {
   @media (min-width: map-get($bfg-breakpoints, $size)) {
     @content;

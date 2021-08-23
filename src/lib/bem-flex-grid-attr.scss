@@ -1,5 +1,5 @@
-@import "./variables";
+@forward "./variables";
 
-@import "./attr/mixins";
-@import "./attr/core";
-@import "./attr/card";
+@forward "./attr/mixins";
+@forward "./attr/core";
+@forward "./attr/card";

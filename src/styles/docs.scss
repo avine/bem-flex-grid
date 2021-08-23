@@ -1,7 +1,7 @@
-@import "../lib/variables";
-@import "../lib/class/mixins";
+@use "../lib/variables" as *;
+@use "../lib/class/mixins" as *;
 
-@import "./variables.scss";
+@use "./variables.scss" as *;
 
 /* ===== Container ===== */
 

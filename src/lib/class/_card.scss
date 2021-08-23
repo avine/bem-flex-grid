@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "./mixins" as *;
+
 .bfg-card {
   margin: $bfg-card-margin 0;
 }
