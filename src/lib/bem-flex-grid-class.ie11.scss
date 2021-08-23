@@ -1,7 +1,5 @@
-$bfg-ie11-support: true;
+@forward "./variables" with ($bfg-ie11-support: true);
 
-@import "./variables";
-
-@import "./class/mixins";
-@import "./class/core";
-@import "./class/card";
+@forward "./class/mixins";
+@forward "./class/core";
+@forward "./class/card";
