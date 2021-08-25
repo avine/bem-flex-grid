@@ -2,7 +2,7 @@
 @use "./mixins" as *;
 
 [bfg-card] {
-  margin: $bfg-card-margin 0;
+  margin: var(--bfg-card-margin) 0;
 }
 
 [bfg] {
@@ -12,7 +12,7 @@
 }
 
 [bfg~="gap-in"][bfg-card] {
-  margin: -($bfg-gap * 0.5);
+  margin: -#{" "}var(--bfg-half-gap);
 }
 
 [bfg__box] > [bfg-card] {
@@ -21,12 +21,12 @@
 
 [bfg-card__action],
 [bfg-card__header] {
-  padding: 0 $bfg-card-padding;
+  padding: 0 var(--bfg-card-padding);
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  height: $bfg-card-header-height;
-  line-height: $bfg-card-header-height;
+  height: var(--bfg-card-header-height);
+  line-height: var(--bfg-card-header-height);
   font-size: 1rem;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -38,7 +38,7 @@
 }
 
 [bfg-card__content] {
-  padding: $bfg-card-padding;
+  padding: var(--bfg-card-padding);
   box-sizing: border-box;
   position: relative;
   overflow: auto;
@@ -60,7 +60,7 @@
 }
 
 [bfg-card__header] + [bfg-card__content] {
-  height: calc(100% - #{$bfg-card-header-height});
+  height: calc(100% - var(--bfg-card-header-height));
 }
 
 [bfg-card__action] {
@@ -78,7 +78,7 @@
   border-top-right-radius: 0 !important;
 }
 
-@mixin bfg-cards($size: '') {
+@mixin bfg-cards($size: "") {
   [bfg~="#{$size + nogap}"] {
     [bfg-card__action],
     [bfg-card__header],

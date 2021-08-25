@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Expletus+Sans:500|Krub:400,600|IBM+Plex+Mono");
 /*! bem-flex-grid | (c) Stephane Francel | github.com/avine/bem-flex-grid/blob/master/LICENSE */
+:root {
+  --bfg-half-gap: 0.75rem;
+  --bfg-card-margin: 1.5rem;
+  --bfg-card-padding: 1rem;
+  --bfg-card-header-height: 2.5rem;
+  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  --bfg-card-border-radius: 3px;
+  --bfg-card-border-width: 1px;
+}
 /* ===== demo ===== */
 /* ===== docs ===== */
 /* ===== Base ===== */
@@ -312,4 +321,4 @@ pre.demo-layout__output--gray {
     z-index: 2;
   }
 }
-/*# sourceMappingURL=index.581bd683.css.map */
+/*# sourceMappingURL=index.f1601bfe.css.map */

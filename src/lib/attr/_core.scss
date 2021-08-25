@@ -24,18 +24,18 @@
 }
 
 [bfg~="gap"] {
-  padding: ($bfg-gap * 0.5);
+  padding: var(--bfg-half-gap);
 }
 
 [bfg~="gap-in"] {
-  margin: -($bfg-gap * 0.5);
-  height: calc(100% + #{$bfg-gap});
+  margin: -#{" "}var(--bfg-half-gap);
+  height: calc(100% + var(--bfg-half-gap) * 2);
 }
 
 [bfg~="gap"],
 [bfg~="gap-in"] {
   [bfg__box] {
-    padding: ($bfg-gap * 0.5);
+    padding: var(--bfg-half-gap);
   }
 
   [bfg__box][bfg],
@@ -76,7 +76,7 @@
   overflow: hidden;
 }
 
-@mixin bfg-boxes($size: '') {
+@mixin bfg-boxes($size: "") {
   [bfg~="#{$size + auto-height}"] { height: auto; }
 
   [bfg~="#{$size + wrap}"] { flex-wrap: wrap; }
