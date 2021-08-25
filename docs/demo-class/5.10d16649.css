@@ -4,9 +4,6 @@
   --bfg-card-margin: 1.5rem;
   --bfg-card-padding: 1rem;
   --bfg-card-header-height: 2.5rem;
-  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
-  --bfg-card-border-radius: 3px;
-  --bfg-card-border-width: 1px;
 }
 
 .bfg {
@@ -826,43 +823,43 @@
 }
 .bfg-card--primary .bfg-card__action,
 .bfg-card--primary .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #d5d5d5;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d5d5d5;
   background: #f6f6f6;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .bfg-card--primary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .bfg-card--primary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .bfg-card--primary .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #4a4a4a;
   background: #3a3a3a;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
-/*# sourceMappingURL=5.e9dbe187.css.map */
+/*# sourceMappingURL=5.10d16649.css.map */

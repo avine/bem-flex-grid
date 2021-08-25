@@ -10,16 +10,8 @@ $bfg-breakpoints: (
 $bfg-half-gap: 0.75rem !default;
 
 $bfg-card-margin: 1.5rem !default;
-
 $bfg-card-padding: 1rem !default;
-
 $bfg-card-header-height: 2.5rem !default;
-
-$bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05) !default;
-
-$bfg-card-border-radius: 3px !default;
-
-$bfg-card-border-width: 1px !default;
 
 :root {
   --bfg-half-gap: #{$bfg-half-gap};
@@ -27,16 +19,14 @@ $bfg-card-border-width: 1px !default;
   --bfg-card-margin: #{$bfg-card-margin};
   --bfg-card-padding: #{$bfg-card-padding};
   --bfg-card-header-height: #{$bfg-card-header-height};
-
-  --bfg-card-box-shadow: #{$bfg-card-box-shadow};
-  --bfg-card-border-radius: #{$bfg-card-border-radius};
-  --bfg-card-border-width: #{$bfg-card-border-width};
 }
 
+$bfg-card-theme-included: true !default;
+
 $bfg-card-primary: (
-  box-shadow: var(--bfg-card-box-shadow),
-  border-radius: var(--bfg-card-border-radius),
-  border-width: var(--bfg-card-border-width),
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
+  border-radius: 3px,
+  border-width: 1px,
 
   header-borderless: false,
   header-border: #d5d5d5,
@@ -76,5 +66,3 @@ $bfg-card-warning: (
   header-border: darken(#ffc107, 5),
   header-background: #ffc107,
 ) !default;
-
-$bfg-card-theme-included: true !default;

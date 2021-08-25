@@ -4,9 +4,6 @@
   --bfg-card-margin: 1.5rem;
   --bfg-card-padding: 1rem;
   --bfg-card-header-height: 2.5rem;
-  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
-  --bfg-card-border-radius: 3px;
-  --bfg-card-border-width: 1px;
 }
 
 .bfg {
@@ -826,254 +823,254 @@
 }
 .demo-layout__playground--light .bfg-card--primary .bfg-card__action,
 .demo-layout__playground--light .bfg-card--primary .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #d5d5d5;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d5d5d5;
   background: #f6f6f6;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--light .bfg-card--primary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--light .bfg-card--primary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--light .bfg-card--primary .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 .demo-layout__playground--light .bfg-card--secondary .bfg-card__action,
 .demo-layout__playground--light .bfg-card--secondary .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #60686f;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #60686f;
   background: #6c757d;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--light .bfg-card--secondary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--light .bfg-card--secondary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--light .bfg-card--secondary .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 .demo-layout__playground--light .bfg-card--success .bfg-card__action,
 .demo-layout__playground--light .bfg-card--success .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #23923d;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #23923d;
   background: #28a745;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--light .bfg-card--success .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--light .bfg-card--success .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--light .bfg-card--success .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 .demo-layout__playground--light .bfg-card--danger .bfg-card__action,
 .demo-layout__playground--light .bfg-card--danger .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #d32535;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #d32535;
   background: #dc3545;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--light .bfg-card--danger .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--light .bfg-card--danger .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--light .bfg-card--danger .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 .demo-layout__playground--light .bfg-card--info .bfg-card__action,
 .demo-layout__playground--light .bfg-card--info .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #148ea1;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #148ea1;
   background: #17a2b8;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--light .bfg-card--info .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--light .bfg-card--info .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--light .bfg-card--info .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 .demo-layout__playground--light .bfg-card--warning .bfg-card__action,
 .demo-layout__playground--light .bfg-card--warning .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #edb100;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border: 1px solid #edb100;
   background: #ffc107;
   color: #000;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--light .bfg-card--warning .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--light .bfg-card--warning .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--light .bfg-card--warning .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #ddd;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  border: 1px solid #ddd;
   background: #fff;
 }
 
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border: 1px solid #4a4a4a;
   background: #3a3a3a;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
 .demo-layout__playground--dark .bfg-card--secondary .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--secondary .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: var(--bfg-card-border-width) solid #60686f;
+  border: 1px solid #60686f;
   background: #6c757d;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--secondary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--secondary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--secondary .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
 .demo-layout__playground--dark .bfg-card--success .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--success .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: var(--bfg-card-border-width) solid #23923d;
+  border: 1px solid #23923d;
   background: #28a745;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--success .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--success .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--success .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
 .demo-layout__playground--dark .bfg-card--danger .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--danger .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: var(--bfg-card-border-width) solid #d32535;
+  border: 1px solid #d32535;
   background: #dc3545;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--danger .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--danger .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--danger .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
 .demo-layout__playground--dark .bfg-card--info .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--info .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: var(--bfg-card-border-width) solid #148ea1;
+  border: 1px solid #148ea1;
   background: #17a2b8;
   color: #fff;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--info .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--info .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--info .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
 .demo-layout__playground--dark .bfg-card--warning .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--warning .bfg-card__header {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border: var(--bfg-card-border-width) solid #edb100;
+  border: 1px solid #edb100;
   background: #ffc107;
   color: #000;
-  line-height: calc(var(--bfg-card-header-height) - 2 * var(--bfg-card-border-width));
+  line-height: calc(var(--bfg-card-header-height) - 2 * 1px);
 }
 .demo-layout__playground--dark .bfg-card--warning .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
+  border-top-right-radius: 3px;
   border-left-width: 0;
 }
 .demo-layout__playground--dark .bfg-card--warning .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border-radius: 3px 3px 0 0;
 }
 .demo-layout__playground--dark .bfg-card--warning .bfg-card__content {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
+  border-radius: 3px;
+  border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
-/*# sourceMappingURL=14.252f6c18.css.map */
+/*# sourceMappingURL=14.497be617.css.map */
