@@ -1,7 +1,10 @@
-@use "../lib/variables" as *;
-@use "../lib/class/mixins" as *;
+@use "../lib/variables/core" as *;
+@use "../lib/variables/card" as *;
 
-@use "./variables.scss" as *;
+@use "../lib/class/mixins/core" as *;
+@use "../lib/class/mixins/card" as *;
+
+@use "./variables" as *;
 
 @import url($demo-font-url);
 

@@ -1,9 +1,6 @@
 /*! bem-flex-grid | (c) Stephane Francel | github.com/avine/bem-flex-grid/blob/master/LICENSE */
 :root {
   --bfg-half-gap: 0.75rem;
-  --bfg-card-margin: 1.5rem;
-  --bfg-card-padding: 1rem;
-  --bfg-card-header-height: 2.5rem;
 }
 
 .bfg {
@@ -714,6 +711,12 @@
     height: auto;
   }
 }
+:root {
+  --bfg-card-margin: 1.5rem;
+  --bfg-card-padding: 1rem;
+  --bfg-card-header-height: 2.5rem;
+}
+
 .bfg-card {
   margin: var(--bfg-card-margin) 0;
 }
@@ -862,4 +865,4 @@
   border: 1px solid #4a4a4a;
   background: #2a2a2a;
 }
-/*# sourceMappingURL=5.10d16649.css.map */
+/*# sourceMappingURL=5.5ec491ec.css.map */

@@ -102,14 +102,16 @@
   <a href="#" class="demo-toolbox__action demo-toolbox__action--theme"></a>
 
   <script>
-    Demo.viewCode();
-    Demo.enableActions(['fullWidth']);
+    document.addEventListener('DOMContentLoaded', () => {
+      Demo.viewCode();
+      Demo.enableActions(['fullWidth']);
 
-    // Add another action to switch theme...
-    const target = document.querySelector('.demo-layout__playground').classList;
-    Demo.handleAction(document.querySelector('.demo-toolbox__action--theme'), () => {
-      target.toggle('demo-layout__playground--dark');
-      target.toggle('demo-layout__playground--light');
+      // Add another action to switch theme...
+      const target = document.querySelector('.demo-layout__playground').classList;
+      Demo.handleAction(document.querySelector('.demo-toolbox__action--theme'), () => {
+        target.toggle('demo-layout__playground--dark');
+        target.toggle('demo-layout__playground--light');
+      });
     });
   </script>
 </body>

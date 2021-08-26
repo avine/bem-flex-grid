@@ -1,7 +1,11 @@
 @use "sass:math";
 
-@use "../variables" as *;
-@use "./mixins" as *;
+@use "../variables/core" as *;
+@use "./mixins/core" as *;
+
+:root {
+  --bfg-half-gap: #{$bfg-half-gap};
+}
 
 [bfg] {
   display: flex;

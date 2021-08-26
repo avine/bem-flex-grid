@@ -1,23 +1,12 @@
-@use "../variables" as *;
-
-@mixin bfg-media-breakpoint-up($size) {
-  @media (min-width: map-get($bfg-breakpoints, $size)) {
-    @content;
-  }
-}
-
-@mixin bfg-media-breakpoint-down($size) {
-  @media (max-width: map-get($bfg-breakpoints, $size) - 0.02) {
-    @content;
-  }
-}
+@use "../../variables/core" as *;
+@use "../../variables/card" as *;
 
 @mixin bfg-card($type, $settings: (), $defaults: ()) {
   $s: map-merge($bfg-card-primary, map-merge($defaults, $settings));
 
-  [bfg-card~="#{$type}"] {
-    [bfg-card__action],
-    [bfg-card__header] {
+  .bfg-card--#{$type} {
+    .bfg-card__action,
+    .bfg-card__header {
       box-shadow: map-get($s, box-shadow);
       border: map-get($s, border-width) solid map-get($s, header-border);
       @if map-get($s, header-borderless) { border-bottom-width: 0; }
@@ -26,16 +15,16 @@
       line-height: calc(var(--bfg-card-header-height) - 2 * #{map-get($s, border-width)});
     }
 
-    [bfg-card__action] {
+    .bfg-card__action {
       border-top-right-radius: map-get($s, border-radius);
       border-left-width: 0;
     }
 
-    [bfg-card__header] {
+    .bfg-card__header {
       border-radius: map-get($s, border-radius) map-get($s, border-radius) 0 0;
     }
 
-    [bfg-card__content] {
+    .bfg-card__content {
       box-shadow: map-get($s, box-shadow);
       border-radius: map-get($s, border-radius);
       border: map-get($s, border-width) solid map-get($s, content-border);

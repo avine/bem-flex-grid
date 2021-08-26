@@ -1,5 +1,14 @@
-@use "../variables" as *;
-@use "./mixins" as *;
+@use "../variables/core" as *;
+@use "../variables/card" as *;
+
+@use "./mixins/core" as *;
+@use "./mixins/card" as *;
+
+:root {
+  --bfg-card-margin: #{$bfg-card-margin};
+  --bfg-card-padding: #{$bfg-card-padding};
+  --bfg-card-header-height: #{$bfg-card-header-height};
+}
 
 [bfg-card] {
   margin: var(--bfg-card-margin) 0;

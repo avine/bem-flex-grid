@@ -1,26 +1,10 @@
-/*! bem-flex-grid | (c) Stephane Francel | github.com/avine/bem-flex-grid/blob/master/LICENSE */
-
-$bfg-breakpoints: (
-  xs: 576px,
-  sm: 768px,
-  lg: 992px,
-  xl: 1200px
-) !default;
-
-$bfg-half-gap: 0.75rem !default;
+@use "./core" as *;
 
 $bfg-card-margin: 1.5rem !default;
 
 $bfg-card-padding: 1rem !default;
 
 $bfg-card-header-height: 2.5rem !default;
-
-:root {
-  --bfg-half-gap: #{$bfg-half-gap};
-  --bfg-card-margin: #{$bfg-card-margin};
-  --bfg-card-padding: #{$bfg-card-padding};
-  --bfg-card-header-height: #{$bfg-card-header-height};
-}
 
 $bfg-card-theme-included: true !default;
 

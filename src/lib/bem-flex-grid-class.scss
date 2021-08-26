@@ -1,5 +1,8 @@
-@forward "./variables";
+@forward "./variables/core";
+@forward "./variables/card";
 
-@forward "./class/mixins";
+@forward "./class/mixins/core";
+@forward "./class/mixins/card";
+
 @forward "./class/core";
 @forward "./class/card";

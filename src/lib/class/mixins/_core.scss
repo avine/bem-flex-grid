@@ -1,0 +1,13 @@
+@use "../../variables/core" as *;
+
+@mixin bfg-media-breakpoint-up($size) {
+  @media (min-width: map-get($bfg-breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin bfg-media-breakpoint-down($size) {
+  @media (max-width: map-get($bfg-breakpoints, $size) - 0.02) {
+    @content;
+  }
+}
