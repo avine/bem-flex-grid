@@ -44,9 +44,6 @@ code {
 a {
   color: #2196F3;
 }
-main {
-  display: block;
-}
 *::selection {
   background-color: #FFECB3 !important;
 }
@@ -77,6 +74,14 @@ main {
   padding: 0.15em 0.3em;
   border-radius: 3px;
   background-color: rgba(27, 31, 35, 0.05);
+}
+.demo-layout__full-page-button {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  vertical-align: super;
+  background-image: url(external-link.ed0231fa.svg);
 }
 .demo-layout__back-button {
   position: absolute;
@@ -312,4 +317,4 @@ pre.demo-layout__output--gray {
     z-index: 2;
   }
 }
-/*# sourceMappingURL=index.581bd683.css.map */
+/*# sourceMappingURL=index.5437c346.css.map */

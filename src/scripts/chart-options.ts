@@ -1,5 +1,3 @@
-// tslint:disable:object-literal-sort-keys
-
 const option1 = {
   chart: {
     type: 'column',
@@ -197,6 +195,5 @@ const option4 = {
     },
   ],
 };
-// tslint:enable:object-literal-sort-keys
 
 export default [option1, option2, option3, option4];

@@ -1,5 +1,4 @@
 import { triggerResize } from './enable-actions';
-import { forEach } from './util';
 
 export const handleTabs = (): void => {
   const wrapper = document.createElement('div');
@@ -15,7 +14,7 @@ export const handleTabs = (): void => {
   const navItems = wrapper.querySelectorAll('.demo-layout__tabs-nav-item');
 
   const openNavItem = (navItem: HTMLElement) => {
-    forEach<HTMLElement>(navItems, (element) => {
+    navItems.forEach((element) => {
       element.classList[element === navItem ? 'add' : 'remove']('demo-layout__tabs-nav-item--open');
     });
   };
@@ -23,10 +22,10 @@ export const handleTabs = (): void => {
   // ===== Tabs content =====
 
   const contents = document.querySelectorAll('.demo-layout__readme, .demo-layout__code, .demo-layout__output');
-  forEach<HTMLElement>(contents, (content) => content.classList.add('demo-layout__tabs-content'));
+  contents.forEach((element) => element.classList.add('demo-layout__tabs-content'));
 
   const openContent = (tab: string) => {
-    forEach<HTMLElement>(contents, (element) => {
+    contents.forEach((element) => {
       element.classList[element.classList.contains(tab) ? 'add' : 'remove']('demo-layout__tabs-content--open');
     });
     // Hack to redraw Charts if any.

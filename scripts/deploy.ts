@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 
 /*
  * Prepare the `./deploy` directory for NPM publish.
@@ -28,12 +27,12 @@ const packageSource = JSON.parse(readFileSync(
   { encoding: 'utf8' },
 ));
 
-const packageTarget: any = {};
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const packageTarget: Record<string, any> = {};
 [
   'name',
   'version',
   'description',
-  'main',
   'repository',
   'keywords',
   'author',
@@ -63,34 +62,33 @@ writeFileSync(
 
 // ===== Publish on NPM =====
 
-// tslint:disable-next-line:no-console
 console.log(`
 Ready to publish on NPM${DRY_MODE ? ' (dry mode):' : ':'}
 ${targetDir}
 `);
 
 if (!DRY_MODE) {
-  const rl = createInterface({
+  const readline = createInterface({
     input: process.stdin,
     output: process.stdout,
   });
 
-  rl.question('Confirm? (yes) ', (answer) => {
-    console.log(''); // tslint:disable-line:no-console
+  readline.question('Confirm? (yes) ', (answer) => {
+    console.log('');
     if (!answer || answer === 'yes') {
       const child = spawn('npm', ['publish', targetDir]);
 
-      (child.stdout as Readable).on('data', (data: any) => process.stdout.write(data));
-      (child.stderr as Readable).on('data', (data: any) => process.stdout.write(data));
+      (child.stdout as Readable).on('data', (data) => process.stdout.write(data));
+      (child.stderr as Readable).on('data', (data) => process.stdout.write(data));
 
-      child.on('exit', (code: any) => {
+      child.on('exit', (code) => {
         if (code === 0) {
           process.stdout.write('\n\t* Package published successfully *\n\n');
         }
       });
     } else {
-      console.log('\n\t! Package NOT published !\n\n'); // tslint:disable-line:no-console
+      console.log('\n\t! Package NOT published !\n\n');
     }
-    rl.close();
+    readline.close();
   });
 }

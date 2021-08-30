@@ -186,14 +186,6 @@ h2.docs-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
   border: none;
 }
 
-// Use the action from "demo" universe
-.demo-toolbox__action--open-link {
-  position: absolute;
-  top: -1rem;
-  left: -1rem;
-  z-index: 9;
-}
-
 /* ===== Footer ===== */
 
 .docs-footer {

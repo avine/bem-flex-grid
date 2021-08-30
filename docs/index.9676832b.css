@@ -223,13 +223,6 @@ h2.docs-header__subtitle {
   border: none;
 }
 
-.demo-toolbox__action--open-link {
-  position: absolute;
-  top: -1rem;
-  left: -1rem;
-  z-index: 9;
-}
-
 /* ===== Footer ===== */
 .docs-footer {
   margin-top: 6rem;
@@ -253,4 +246,4 @@ h2.docs-header__subtitle {
     font-size: 3rem;
   }
 }
-/*# sourceMappingURL=index.97da65aa.css.map */
+/*# sourceMappingURL=index.9676832b.css.map */

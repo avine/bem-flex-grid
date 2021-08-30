@@ -18,12 +18,12 @@ const updateFile = () => {
   const html = template.replace('{{markdown}}', md.render(markdown));
 
   writeFileSync(targetPath, html, { encoding: 'utf8' });
-  console.log('Updated:', targetPath); // tslint:disable-line:no-console
+  console.log('Updated:', targetPath);
 };
 
 updateFile();
 
 if (process.argv[2] === 'watch') {
   watchFile(sourcePath, updateFile);
-  console.log('Watching:', sourcePath); // tslint:disable-line:no-console
+  console.log('Watching:', sourcePath);
 }

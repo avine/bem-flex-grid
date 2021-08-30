@@ -1,4 +1,4 @@
-import { forEach, toggleAttributeValue } from './util';
+import { toggleAttributeValue } from './util';
 import { handleSourceCode } from './view-code';
 
 /* ===== Helpers ===== */
@@ -28,17 +28,10 @@ export const handleAction = (anchor: HTMLAnchorElement, callback: (isActive: boo
 };
 
 export const triggerResize = (delay = 0): NodeJS.Timeout => setTimeout(() => {
-  try {
-    window.dispatchEvent(new Event('resize'));
-  } catch (e) {
-    // For IE11 support
-    const event = document.createEvent('Event');
-    event.initEvent('resize', true, true);
-    window.dispatchEvent(event);
-  }
+  window.dispatchEvent(new Event('resize'));
 }, delay);
 
-// Quick fix to `triggerResize` after the end of the transition.
+// Quick win to `triggerResize` after the end of the transition.
 // Should be the same value as: `$demo-duration` in `src/styles/variables.scss`.
 const FULL_WIDTH_SWITCHER_DURATION = 300;
 
@@ -70,13 +63,13 @@ const autoHeightSwitcher = () => {
 
 const toggleBfgDirection = (target: Element): void => {
   let bfgs = target.querySelectorAll('.bfg--row, .bfg--col');
-  forEach<Element>(bfgs, (bfg) => {
+  bfgs.forEach((bfg) => {
     bfg.classList.toggle('bfg--row');
     bfg.classList.toggle('bfg--col');
   });
 
   bfgs = target.querySelectorAll('[bfg~="row"], [bfg~="col"]');
-  forEach<Element>(bfgs, (bfg) => {
+  bfgs.forEach((bfg) => {
     toggleAttributeValue(bfg, 'bfg', 'row');
     toggleAttributeValue(bfg, 'bfg', 'col');
   });

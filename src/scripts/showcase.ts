@@ -1,28 +1,22 @@
-import { forEach } from './util';
+export const buildShowcaseId = (href: string): string => {
+  const match = href.match(/\/([^/]+)\.html$/);
+  return match ? `demo-${match[1]}` : '';
+};
 
 export const showcase = (): void => {
   const element = document.querySelector('.docs-showcase');
 
-  const mapper = (anchor: HTMLAnchorElement, count: number) => {
-    const filename = anchor.href.match(/\/([^/]+)\.html$/)[1];
-    const id = `demo-${filename}`;
-    const css = 'demo-toolbox__action demo-toolbox__action--open-link';
-    return `
-  <div class="docs-showcase__item">
+  const mapper = (anchor: HTMLAnchorElement) => `
+  <div id="${buildShowcaseId(anchor.href)}" class="docs-showcase__item">
     <iframe data-src="${anchor.href}" class="docs-showcase__iframe"></iframe>
-    <a href="${anchor.href}" id="${id}" class="${css}" title="Open">${count}</a>
   </div>`;
-  };
 
   const mappedHtml = [];
-  forEach<HTMLAnchorElement>(
-    element.querySelectorAll('a'),
-    (anchor, index) => mappedHtml.push(mapper(anchor, index + 1)),
-  );
+  element.querySelectorAll('a').forEach((anchor) => mappedHtml.push(mapper(anchor)));
   element.innerHTML = mappedHtml.join('\n') + '\n';
 
   let buffer: Array<{ elem: HTMLElement; iframe: HTMLIFrameElement; }> = [];
-  forEach<HTMLElement>(element.querySelectorAll('.docs-showcase__item'), (elem) => {
+  element.querySelectorAll<HTMLElement>('.docs-showcase__item').forEach((elem) => {
     buffer.push({ elem, iframe: elem.querySelector('iframe') });
   });
   const loadIframes = () => {

@@ -29,7 +29,6 @@ const build = (filename: string, compressed = false) => {
   },
 
   (error, result) => {
-    // tslint:disable:no-console
     if (!error) {
       try {
         writeFileSync(outFile.css, result.css, { encoding: 'utf8' });
@@ -41,11 +40,10 @@ const build = (filename: string, compressed = false) => {
     } else {
       console.error(error.message);
     }
-    // tslint:enable:no-console
   });
 };
 
-console.log('Build (css and source map):'); // tslint:disable-line:no-console
+console.log('Build (css and source map):');
 
 filenames.forEach((filename) => {
   build(filename);

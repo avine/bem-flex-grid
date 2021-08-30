@@ -11,12 +11,60 @@ typeof globalThis !== 'undefined'
   : typeof global !== 'undefined'
   ? global
   : {};
+const $0151182b700eda01$export$a1067628bc3e4831 = (href)=>{
+    const match = href.match(/\/([^/]+)\.html$/);
+    return match ? `demo-${match[1]}` : '';
+};
+const $0151182b700eda01$export$69617f3bdbe545f8 = ()=>{
+    const element = document.querySelector('.docs-showcase');
+    const mapper = (anchor)=>`\n  <div id="${$0151182b700eda01$export$a1067628bc3e4831(anchor.href)}" class="docs-showcase__item">\n    <iframe data-src="${anchor.href}" class="docs-showcase__iframe"></iframe>\n  </div>`
+    ;
+    const mappedHtml = [];
+    element.querySelectorAll('a').forEach((anchor)=>mappedHtml.push(mapper(anchor))
+    );
+    element.innerHTML = mappedHtml.join('\n') + '\n';
+    let buffer = [];
+    element.querySelectorAll('.docs-showcase__item').forEach((elem)=>{
+        buffer.push({
+            elem: elem,
+            iframe: elem.querySelector('iframe')
+        });
+    });
+    const loadIframes = ()=>{
+        const delta = 100;
+        const pageYOffset = window.pageYOffset || document.documentElement.scrollTop;
+        const Ytop = pageYOffset - delta;
+        const Ybottom = pageYOffset + window.innerHeight + delta;
+        buffer = buffer.filter((item)=>{
+            const itemTop = item.elem.offsetTop;
+            const itemBottom = item.elem.offsetTop + item.elem.offsetHeight;
+            const inViewport = itemTop > Ytop && itemTop < Ybottom || itemBottom > Ytop && itemBottom < Ybottom;
+            if (inViewport) {
+                const src = item.iframe.getAttribute('data-src');
+                item.iframe.src = src;
+            }
+            return !inViewport;
+        });
+        if (!buffer.length) window.removeEventListener('scroll', debounce);
+    };
+    let timeout;
+    const debounce = ()=>{
+        clearTimeout(timeout);
+        timeout = setTimeout(loadIframes, 100);
+    };
+    window.addEventListener('scroll', debounce);
+    loadIframes();
+};
+
+
 function $c977bb2ab633c24c$export$942ed9735dae0de1() {
     const output = document.querySelector('.demo-layout__readme');
     if (output) {
+        const id = $0151182b700eda01$export$a1067628bc3e4831(window.document.location.pathname);
+        const hash = id ? `#${id}` : '';
         const btn = document.createElement('a');
         btn.innerHTML = '&longleftarrow; back';
-        btn.href = '../demo.html';
+        btn.href = `../demo.html${hash}`;
         btn.className = 'demo-layout__back-button';
         output.appendChild(btn);
     }
@@ -11968,7 +12016,6 @@ var $d24923853890643b$exports = {};
 });
 
 
-// tslint:disable:object-literal-sort-keys
 const $602e6be15ef65726$var$option1 = {
     chart: {
         type: 'column'
@@ -12283,8 +12330,7 @@ const $602e6be15ef65726$var$option4 = {
         }, 
     ]
 };
-var // tslint:enable:object-literal-sort-keys
-$602e6be15ef65726$export$9099ad97b570f7c = [
+var $602e6be15ef65726$export$9099ad97b570f7c = [
     $602e6be15ef65726$var$option1,
     $602e6be15ef65726$var$option2,
     $602e6be15ef65726$var$option3,
@@ -12301,9 +12347,6 @@ const $ea4828d40e484091$export$7806c7ec05c1ec22 = (ctx)=>{
 };
 
 
-function $885154c3de97d42e$export$40f3d9558cf6e846(elements, callback) {
-    Array.prototype.forEach.call(elements, callback);
-}
 function $885154c3de97d42e$export$16f1cf26c931d50f(el, key, value) {
     const attr = (el.getAttribute(key) || '').trim().replace(/\s+/g, ' ').split(' ');
     const index = attr.indexOf(value);
@@ -13814,17 +13857,10 @@ const $bbf69772a00c71b7$export$ac622ed92eeab375 = (anchor, callback)=>{
     $bbf69772a00c71b7$var$container.appendChild(anchor);
 };
 const $bbf69772a00c71b7$export$bf4c249ff278f2d4 = (delay = 0)=>setTimeout(()=>{
-        try {
-            window.dispatchEvent(new Event('resize'));
-        } catch (e) {
-            // For IE11 support
-            const event = document.createEvent('Event');
-            event.initEvent('resize', true, true);
-            window.dispatchEvent(event);
-        }
+        window.dispatchEvent(new Event('resize'));
     }, delay)
 ;
-// Quick fix to `triggerResize` after the end of the transition.
+// Quick win to `triggerResize` after the end of the transition.
 // Should be the same value as: `$demo-duration` in `src/styles/variables.scss`.
 const $bbf69772a00c71b7$var$FULL_WIDTH_SWITCHER_DURATION = 300;
 /* ===== Actions ===== */ const $bbf69772a00c71b7$var$fullWidthSwitcher = ()=>{
@@ -13845,12 +13881,12 @@ const $bbf69772a00c71b7$var$autoHeightSwitcher = ()=>{
 };
 const $bbf69772a00c71b7$var$toggleBfgDirection = (target)=>{
     let bfgs = target.querySelectorAll('.bfg--row, .bfg--col');
-    $885154c3de97d42e$export$40f3d9558cf6e846(bfgs, (bfg)=>{
+    bfgs.forEach((bfg)=>{
         bfg.classList.toggle('bfg--row');
         bfg.classList.toggle('bfg--col');
     });
     bfgs = target.querySelectorAll('[bfg~="row"], [bfg~="col"]');
-    $885154c3de97d42e$export$40f3d9558cf6e846(bfgs, (bfg)=>{
+    bfgs.forEach((bfg)=>{
         $885154c3de97d42e$export$16f1cf26c931d50f(bfg, 'bfg', 'row');
         $885154c3de97d42e$export$16f1cf26c931d50f(bfg, 'bfg', 'col');
     });
@@ -13922,12 +13958,11 @@ const $ef4fdcba15e63dfd$var$getFillType = ()=>{
 };
 const $ef4fdcba15e63dfd$var$fillType = $ef4fdcba15e63dfd$var$getFillType();
 const $ef4fdcba15e63dfd$var$texts = [
-    // tslint:disable:max-line-length
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lobortis libero ut augue sagittis ornare. Integer nisl ligula, porttitor non bibendum eget, varius non enim. Mauris et ex id lacus mollis lacinia id eget lacus. In convallis aliquet tortor eget luctus. Morbi eu ultrices nulla. Vestibulum luctus magna quis tellus vulputate, id gravida elit efficitur. Donec pharetra ultrices arcu, vitae porttitor enim congue nec.',
     'Integer feugiat mauris non magna malesuada ornare. Suspendisse consectetur massa elementum, sodales turpis at, mollis ex. Vestibulum sed quam dignissim, consequat orci sed, pellentesque felis. Suspendisse fermentum quam pharetra elit euismod dapibus. Nam interdum, turpis non posuere tempus, diam urna luctus justo, ut suscipit urna odio at velit. Maecenas bibendum porta ante, vitae faucibus lectus consectetur non. Donec molestie quam libero, sit amet rutrum libero egestas sit amet.',
     'Proin nec neque non turpis convallis feugiat quis ut elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce malesuada, nisi blandit viverra tristique, turpis lectus malesuada tortor, non vestibulum arcu nibh non massa. Vivamus hendrerit nibh tortor, vel venenatis risus hendrerit quis. Nam facilisis, risus a fringilla vehicula, justo purus congue dolor, et tincidunt metus est ac nisl. In finibus a nulla in iaculis. Fusce vel dui nisi. Aenean efficitur risus diam, sit amet molestie augue luctus id.',
     'Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque ligula lorem, consequat quis turpis in, auctor luctus leo. Nullam accumsan blandit tempor. Nunc suscipit est nunc, a dignissim sem luctus in. Donec fringilla sodales mollis. Morbi non dolor ultrices, congue lorem id, suscipit elit. Etiam vestibulum, ligula vitae finibus dictum, elit arcu molestie eros, in condimentum turpis orci eu risus.',
-    'Suspendisse egestas velit sit amet cursus cursus. Ut ultricies porttitor sapien quis eleifend. Fusce lobortis lacinia sem, eget tempor magna porta id. Pellentesque a congue nisi, in euismod erat. Cras consectetur, lectus nec eleifend tempor, augue dolor laoreet ante, ut condimentum dui nunc nec sem. Cras rutrum feugiat erat, ut porttitor tellus aliquam vitae. Proin at efficitur dui, sodales volutpat leo.'
+    'Suspendisse egestas velit sit amet cursus cursus. Ut ultricies porttitor sapien quis eleifend. Fusce lobortis lacinia sem, eget tempor magna porta id. Pellentesque a congue nisi, in euismod erat. Cras consectetur, lectus nec eleifend tempor, augue dolor laoreet ante, ut condimentum dui nunc nec sem. Cras rutrum feugiat erat, ut porttitor tellus aliquam vitae. Proin at efficitur dui, sodales volutpat leo.', 
 ];
 let $ef4fdcba15e63dfd$var$textIndex = -1;
 const $ef4fdcba15e63dfd$var$getText = (color = true)=>{
@@ -13966,9 +14001,9 @@ const $ef4fdcba15e63dfd$export$f687eee0e8048e8f = (options = {
         ...$ef4fdcba15e63dfd$var$fillGridOptions,
         ...options
     };
-    $885154c3de97d42e$export$40f3d9558cf6e846(document.querySelectorAll('.bfg__box, [bfg__box]'), (element)=>$ef4fdcba15e63dfd$var$fillElement(element, opts)
+    document.querySelectorAll('.bfg__box, [bfg__box]').forEach((element)=>$ef4fdcba15e63dfd$var$fillElement(element, opts)
     );
-    $885154c3de97d42e$export$40f3d9558cf6e846(document.querySelectorAll('.bfg-card__content, [bfg-card__content]'), (element)=>$ef4fdcba15e63dfd$var$fillElement(element, opts)
+    document.querySelectorAll('.bfg-card__content, [bfg-card__content]').forEach((element)=>$ef4fdcba15e63dfd$var$fillElement(element, opts)
     );
 };
 window.addEventListener('click', (event)=>{
@@ -13977,51 +14012,17 @@ window.addEventListener('click', (event)=>{
 });
 
 
-
-const $0151182b700eda01$export$69617f3bdbe545f8 = ()=>{
-    const element = document.querySelector('.docs-showcase');
-    const mapper = (anchor, count)=>{
-        const filename = anchor.href.match(/\/([^/]+)\.html$/)[1];
-        const id = `demo-${filename}`;
-        const css = 'demo-toolbox__action demo-toolbox__action--open-link';
-        return `\n  <div class="docs-showcase__item">\n    <iframe data-src="${anchor.href}" class="docs-showcase__iframe"></iframe>\n    <a href="${anchor.href}" id="${id}" class="${css}" title="Open">${count}</a>\n  </div>`;
-    };
-    const mappedHtml = [];
-    $885154c3de97d42e$export$40f3d9558cf6e846(element.querySelectorAll('a'), (anchor, index)=>mappedHtml.push(mapper(anchor, index + 1))
-    );
-    element.innerHTML = mappedHtml.join('\n') + '\n';
-    let buffer = [];
-    $885154c3de97d42e$export$40f3d9558cf6e846(element.querySelectorAll('.docs-showcase__item'), (elem)=>{
-        buffer.push({
-            elem: elem,
-            iframe: elem.querySelector('iframe')
-        });
-    });
-    const loadIframes = ()=>{
-        const delta = 100;
-        const pageYOffset = window.pageYOffset || document.documentElement.scrollTop;
-        const Ytop = pageYOffset - delta;
-        const Ybottom = pageYOffset + window.innerHeight + delta;
-        buffer = buffer.filter((item)=>{
-            const itemTop = item.elem.offsetTop;
-            const itemBottom = item.elem.offsetTop + item.elem.offsetHeight;
-            const inViewport = itemTop > Ytop && itemTop < Ybottom || itemBottom > Ytop && itemBottom < Ybottom;
-            if (inViewport) {
-                const src = item.iframe.getAttribute('data-src');
-                item.iframe.src = src;
-            }
-            return !inViewport;
-        });
-        if (!buffer.length) window.removeEventListener('scroll', debounce);
-    };
-    let timeout;
-    const debounce = ()=>{
-        clearTimeout(timeout);
-        timeout = setTimeout(loadIframes, 100);
-    };
-    window.addEventListener('scroll', debounce);
-    loadIframes();
-};
+function $b1d5e306b929e782$export$b34d8836fab7b385() {
+    const output = document.querySelector('.demo-layout__readme > h1');
+    if (output) {
+        const btn = document.createElement('a');
+        btn.title = 'Open';
+        btn.href = window.location.href;
+        btn.target = '_parent';
+        btn.className = 'demo-layout__full-page-button';
+        output.appendChild(btn);
+    }
+}
 
 
 
@@ -14032,16 +14033,16 @@ const $76e3878fd8e4da8b$export$92c43f0c4637eec = ()=>{
     // ===== Tabs Nav =====
     const navItems = wrapper.querySelectorAll('.demo-layout__tabs-nav-item');
     const openNavItem = (navItem)=>{
-        $885154c3de97d42e$export$40f3d9558cf6e846(navItems, (element)=>{
+        navItems.forEach((element)=>{
             element.classList[element === navItem ? 'add' : 'remove']('demo-layout__tabs-nav-item--open');
         });
     };
     // ===== Tabs content =====
     const contents = document.querySelectorAll('.demo-layout__readme, .demo-layout__code, .demo-layout__output');
-    $885154c3de97d42e$export$40f3d9558cf6e846(contents, (content)=>content.classList.add('demo-layout__tabs-content')
+    contents.forEach((element)=>element.classList.add('demo-layout__tabs-content')
     );
     const openContent = (tab)=>{
-        $885154c3de97d42e$export$40f3d9558cf6e846(contents, (element)=>{
+        contents.forEach((element)=>{
             element.classList[element.classList.contains(tab) ? 'add' : 'remove']('demo-layout__tabs-content--open');
         });
         // Hack to redraw Charts if any.
@@ -14071,8 +14072,9 @@ const $76e3878fd8e4da8b$export$92c43f0c4637eec = ()=>{
 };
 /* ===== Enable tabs-navigation and back-button ===== */ if (!window.location.pathname.match(/\/demo\.html/)) document.addEventListener('DOMContentLoaded', ()=>{
     $76e3878fd8e4da8b$export$92c43f0c4637eec();
-    if (!$885154c3de97d42e$export$dd20c6dad8c9f5a3()) $c977bb2ab633c24c$export$942ed9735dae0de1();
+    if ($885154c3de97d42e$export$dd20c6dad8c9f5a3()) $b1d5e306b929e782$export$b34d8836fab7b385();
+    else $c977bb2ab633c24c$export$942ed9735dae0de1();
 });
 
 
-//# sourceMappingURL=demo.fb8e72a6.js.map
+//# sourceMappingURL=demo.c739501d.js.map

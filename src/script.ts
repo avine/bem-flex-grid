@@ -2,6 +2,7 @@ import { handleBackButton } from './scripts/back-button';
 import { chart } from './scripts/chart';
 import { enableActions, handleAction } from './scripts/enable-actions';
 import { fillGrid } from './scripts/fill-grid';
+import { handleFullPageButton } from './scripts/full-page-button';
 import { showcase } from './scripts/showcase';
 import { handleTabs } from './scripts/tabs';
 import { inIframe } from './scripts/util';
@@ -24,7 +25,9 @@ if (!window.location.pathname.match(/\/demo\.html/)) {
   document.addEventListener('DOMContentLoaded', () => {
     handleTabs();
 
-    if (!inIframe()) {
+    if (inIframe()) {
+      handleFullPageButton();
+    } else {
       handleBackButton();
     }
   });
