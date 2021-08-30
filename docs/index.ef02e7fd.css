@@ -10,7 +10,7 @@
 }
 
 .docs-container--main {
-  margin-top: 6rem;
+  margin-top: 7rem;
 }
 
 /* ===== Navbar ===== */
@@ -60,7 +60,7 @@
 .docs-header {
   position: relative;
   z-index: 12;
-  margin-bottom: 6rem;
+  margin-bottom: 7rem;
   padding: 9rem 0 3rem 0;
   background-color: #F5F5F5;
   border-bottom: 1px solid #E0E0E0;
@@ -208,7 +208,7 @@ h2.docs-header__subtitle {
 /* ===== Showcase ===== */
 .docs-showcase__item {
   position: relative;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
   border-radius: 3px;
   border: 1px solid #E0E0E0;
   box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.075) inset;
@@ -246,4 +246,4 @@ h2.docs-header__subtitle {
     font-size: 3rem;
   }
 }
-/*# sourceMappingURL=index.9676832b.css.map */
+/*# sourceMappingURL=index.ef02e7fd.css.map */

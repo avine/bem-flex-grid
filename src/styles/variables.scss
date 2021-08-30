@@ -54,7 +54,7 @@ $docs-logo-border: math.div($docs-logo-size, 12);
 $docs-logo-shadow: ($docs-logo-border * 0.5);
 
 $docs-showcase: (
-  margin: 3rem,
+  margin: 4rem,
   border-width: 1px,
   border-color: map-get($docs-header, border),
 );

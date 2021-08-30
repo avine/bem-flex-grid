@@ -189,7 +189,7 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   bottom: 1rem;
   box-shadow: $demo-toolbox-shadow;
   border-radius: $docs-border-radius;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity ease $demo-duration;
 
   &:hover {
@@ -236,7 +236,7 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   text-shadow: -1px -1px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.85;
   transition: opacity ease $demo-duration;
 
   // The 2 following rules are designed to use `.demo-toolbox__action`
@@ -254,11 +254,11 @@ $demo-toolbox-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   background-color: map-get($demo-action, active);
 }
 
-.demo-toolbox__action--full-screen    { background-image: url(../images/desktop.svg);     }
-.demo-toolbox__action--auto-height    { background-image: url(../images/scroll.svg);      }
-.demo-toolbox__action--grid-direction { background-image: url(../images/directions.svg);  }
-.demo-toolbox__action--grid-gap       { background-image: url(../images/th-large.svg);    }
-.demo-toolbox__action--theme          { background-image: url(../images/palette.svg);     }
+.demo-toolbox__action--full-screen    { background-image: url(../images/expand-solid.svg);       }
+.demo-toolbox__action--auto-height    { background-image: url(../images/arrows-alt-v-solid.svg); }
+.demo-toolbox__action--grid-direction { background-image: url(../images/directions.svg);         }
+.demo-toolbox__action--grid-gap       { background-image: url(../images/th-large.svg);           }
+.demo-toolbox__action--theme          { background-image: url(../images/palette.svg);            }
 
 /* ===== Handle dummy container and text ===== */
 
