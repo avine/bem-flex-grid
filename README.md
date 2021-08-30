@@ -52,13 +52,13 @@ To get instant access to the library, insert the link tag of the implementation 
 *Class syntax:*
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.min.css">
 ```
 
 *Attr syntax:*
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.css">
+<link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-attr.min.css">
 ```
 
 *Here's the full markup of the example above using the class syntax:*
@@ -70,7 +70,7 @@ To get instant access to the library, insert the link tag of the implementation 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bem Flex Grid - Class</title>
-  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.css">
+  <link rel="stylesheet" href="https://unpkg.com/bem-flex-grid/dist/bem-flex-grid-class.min.css">
   <style>html, body { height:100%; margin:0; }</style>
 </head>
 <body>
@@ -144,7 +144,7 @@ bem-flex-grid/
       │  └─ _mixins.scss
       ├─ _variables.scss
       ├─ bem-flex-grid-attr.scss
-      ├─ bem-flex-grid-class.scss
+      └─ bem-flex-grid-class.scss
 ```
 
 > The `dist` folder also contains the __sourcemap__ for each CSS file.

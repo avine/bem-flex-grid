@@ -1,18 +1,32 @@
-@use "../../variables/core" as *;
 @use "../../variables/card" as *;
 
+$-bfg-card-default: (
+  box-shadow: var(--bfg-card-box-shadow),
+  border-radius: var(--bfg-card-border-radius),
+  border-width: var(--bfg-card-border-width),
+
+  header-border-bottom-width: var(--bfg-card-header-border-bottom-width),
+  header-border-color: var(--bfg-card-header-border-color),
+  header-background-color: var(--bfg-card-header-background-color),
+  header-color: var(--bfg-card-header-color),
+
+  content-border-color: var(--bfg-card-content-border-color),
+  content-background-color: var(--bfg-card-content-background-color),
+  content-color: var(--bfg-card-content-color)
+);
+
 @mixin bfg-card($type, $settings: (), $defaults: ()) {
-  $s: map-merge($bfg-card-primary, map-merge($defaults, $settings));
+  $s: map-merge($-bfg-card-default, map-merge($defaults, $settings));
 
   .bfg-card--#{$type} {
     .bfg-card__action,
     .bfg-card__header {
       box-shadow: map-get($s, box-shadow);
-      border: map-get($s, border-width) solid map-get($s, header-border);
-      @if map-get($s, header-borderless) { border-bottom-width: 0; }
-      background: map-get($s, header-background);
-      @if map-get($s, header-forground) { color: map-get($s, header-forground); }
-      line-height: calc(var(--bfg-card-header-height) - 2 * #{map-get($s, border-width)});
+      border: map-get($s, border-width) solid map-get($s, header-border-color);
+      border-bottom-width: map-get($s, header-border-bottom-width);
+      background: map-get($s, header-background-color);
+      color: map-get($s, header-color);
+      line-height: calc(var(--bfg-card-header-height) - #{map-get($s, header-border-bottom-width)} - #{map-get($s, border-width)});
     }
 
     .bfg-card__action {
@@ -27,9 +41,9 @@
     .bfg-card__content {
       box-shadow: map-get($s, box-shadow);
       border-radius: map-get($s, border-radius);
-      border: map-get($s, border-width) solid map-get($s, content-border);
-      background: map-get($s, content-background);
-      @if map-get($s, content-forground) { color: map-get($s, content-forground); }
+      border: map-get($s, border-width) solid map-get($s, content-border-color);
+      background: map-get($s, content-background-color);
+      color: map-get($s, content-color);
     }
   }
 }

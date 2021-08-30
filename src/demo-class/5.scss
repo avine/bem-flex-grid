@@ -8,10 +8,10 @@
 
 .demo-layout__playground--dark {
   @include bfg-card(primary, (
-    header-border: #4a4a4a,
-    header-background: #3a3a3a,
+    header-border-color: #4a4a4a,
+    header-background-color: #3a3a3a,
 
-    content-border: #4a4a4a,
-    content-background: #2a2a2a,
+    content-border-color: #4a4a4a,
+    content-background-color: #2a2a2a,
   ));
 }

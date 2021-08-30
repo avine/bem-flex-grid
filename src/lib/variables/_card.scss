@@ -1,53 +1,51 @@
-@use "./core" as *;
-
 $bfg-card-margin: 1.5rem !default;
 
 $bfg-card-padding: 1rem !default;
 
 $bfg-card-header-height: 2.5rem !default;
 
-$bfg-card-theme-included: true !default;
-
-$bfg-card-primary: (
+$bfg-card-default: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
   border-radius: 3px,
   border-width: 1px,
 
-  header-borderless: false,
-  header-border: #d5d5d5,
-  header-background: #f6f6f6,
-  header-forground: false,
+  header-border-bottom-width: 1px,
+  header-border-color: #d5d5d5,
+  header-background-color: #f6f6f6,
+  header-color: inherit,
 
-  content-border: #ddd,
-  content-background: #fff,
-  content-forground: false
+  content-border-color: #ddd,
+  content-background-color: #fff,
+  content-color: inherit
 ) !default;
 
 $bfg-card-secondary: (
-  header-border: darken(#6c757d, 5),
-  header-background: #6c757d,
-  header-forground: #fff,
+  header-border-color: darken(#6c757d, 5),
+  header-background-color: #6c757d,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-success: (
-  header-border: darken(#28a745, 5),
-  header-background: #28a745,
-  header-forground: #fff,
+  header-border-color: darken(#28a745, 5),
+  header-background-color: #28a745,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-danger: (
-  header-border: darken(#dc3545, 5),
-  header-background: #dc3545,
-  header-forground: #fff,
+  header-border-color: darken(#dc3545, 5),
+  header-background-color: #dc3545,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-info: (
-  header-border: darken(#17a2b8, 5),
-  header-background: #17a2b8,
-  header-forground: #fff,
+  header-border-color: darken(#17a2b8, 5),
+  header-background-color: #17a2b8,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-warning: (
-  header-border: darken(#ffc107, 5),
-  header-background: #ffc107,
+  header-border-color: darken(#ffc107, 5),
+  header-background-color: #ffc107,
 ) !default;
+
+$bfg-card-theme-included: true !default;
