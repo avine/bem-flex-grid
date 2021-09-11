@@ -4,7 +4,7 @@ CSS flex grid, [BEM](http://getbem.com/) compliant.
 
 *A responsive grid system based on the flex display property that perfectly fits to the viewport in both width and height when needed and lets you design native app layout as well as scrollable web page.*
 
-[![Build Status](https://travis-ci.org/avine/bem-flex-grid.svg?branch=master)](https://travis-ci.org/avine/bem-flex-grid)
+[![Build Status](https://app.travis-ci.com/avine/bem-flex-grid.svg?branch=master)](https://app.travis-ci.com/github/avine/bem-flex-grid)
 
 ## Getting started
 
