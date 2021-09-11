@@ -170,6 +170,7 @@ h2.docs-header__subtitle { // Add "h2" selector to overwrite "primer-markdown".
 /* ===== Showcase ===== */
 
 .docs-showcase__item {
+  overflow: hidden;
   position: relative;
   margin-bottom: map-get($docs-showcase, margin);
   border-radius: $docs-border-radius;

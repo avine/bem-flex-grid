@@ -207,6 +207,7 @@ h2.docs-header__subtitle {
 }
 /* ===== Showcase ===== */
 .docs-showcase__item {
+  overflow: hidden;
   position: relative;
   margin-bottom: 4rem;
   border-radius: 3px;
@@ -246,4 +247,4 @@ h2.docs-header__subtitle {
     font-size: 3rem;
   }
 }
-/*# sourceMappingURL=index.ef02e7fd.css.map */
+/*# sourceMappingURL=index.87c2d381.css.map */
