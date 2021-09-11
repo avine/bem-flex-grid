@@ -26,6 +26,12 @@ h1, h2, h3 {
 h1, h2, h4 {
   font-family: "Expletus Sans", serif;
 }
+.markdown-body h2 {
+  margin-top: 56px;
+}
+.markdown-body h3 {
+  margin-top: 36px;
+}
 h4,
 .markdown-body h4 {
   color: #C62828;
@@ -317,4 +323,4 @@ pre.demo-layout__output--gray {
     z-index: 2;
   }
 }
-/*# sourceMappingURL=index.293533bb.css.map */
+/*# sourceMappingURL=index.660a2868.css.map */

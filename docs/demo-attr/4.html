@@ -9,8 +9,8 @@
   <link rel="stylesheet" href="/bem-flex-grid/index.04b86f8a.css">
 
   <link rel="shortcut icon" href="/bem-flex-grid/favicon.ce3d6aef.ico">
-  <link rel="stylesheet" href="/bem-flex-grid/index.293533bb.css">
-  <link rel="stylesheet" href="/bem-flex-grid/demo-attr/1.72f2641f.css">
+  <link rel="stylesheet" href="/bem-flex-grid/index.660a2868.css">
+  <link rel="stylesheet" href="/bem-flex-grid/demo-attr/1.cadb6a0c.css">
 
   <script type="module" src="/bem-flex-grid/demo.c739501d.js"></script>
 </head>
@@ -22,7 +22,12 @@
       <p>If you use the markup <code>.bfg.bfg--row.bfg--wrap</code> then <code>.bfg__box</code> elements are placed in the row direction and wrapped onto multiple lines when needed.</p>
       <p>But in this case the total height of all <code>.bfg__box</code> elements might be bigger than the <code>.bfg</code> block height itself!</p>
       <p>If you know that there's exactly 2 lines of <code>.bfg__box</code> elements, you can constrain them to fit into the <code>.bfg</code> block, by using <code>.bfg--2-lines</code> modifier.</p>
-      <p>With this technique, all the rows will have the same height.</p>
+      <p>
+        With this technique, all the rows will have the same height.
+        If you need each row to have a different height, use
+        <a href="/bem-flex-grid/demo.html#demo-6" target="_parent">chained</a> or 
+        <a href="/bem-flex-grid/demo.html#demo-7" target="_parent">nested</a> grids techniques.
+      </p>
       <p>The same pattern applies to the markup <code>.bfg.bfg--col.bfg--wrap</code>.</p>
 
       <p><a href="/bem-flex-grid/demo-class/4.html">Compare with class syntax &rtrif;</a></p>

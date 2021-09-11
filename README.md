@@ -106,7 +106,7 @@ npm i bem-flex-grid
 *Sass import:*
 
 ```scss
-@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
+@use "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
 ```
 
 ### Usage with attr syntax
@@ -120,31 +120,50 @@ npm i bem-flex-grid
 *Sass import:*
 
 ```scss
-@import "~/bem-flex-grid/src/lib/bem-flex-grid-attr.scss";
+@use "~/bem-flex-grid/src/lib/bem-flex-grid-attr.scss";
 ```
 
 ### Package content
 
 ```text
 bem-flex-grid/
-├─ dist/
+├─ dist
 │  ├─ bem-flex-grid-attr.css
 │  ├─ bem-flex-grid-attr.min.css
+│  │
 │  ├─ bem-flex-grid-class.css
 │  ├─ bem-flex-grid-class.min.css
-└─ src/
-   └─ lib/
-      ├─ attr/
+│  │
+│  ├─ bem-flex-grid-core-attr.css
+│  ├─ bem-flex-grid-core-attr.min.css
+│  │
+│  ├─ bem-flex-grid-core-class.css
+│  └─ bem-flex-grid-core-class.min.css
+└─ src
+   └─ lib
+      ├─ attr
       │  ├─ _card.scss
       │  ├─ _core.scss
-      │  └─ _mixins.scss
-      ├─ class/
+      │  └─ mixins
+      │     ├─ _card.scss
+      │     └─ _core.scss
+      │
+      ├─ class
       │  ├─ _card.scss
       │  ├─ _core.scss
-      │  └─ _mixins.scss
-      ├─ _variables.scss
+      │  └─ mixins
+      │     ├─ _card.scss
+      │     └─ _core.scss
+      │
+      ├─ variables
+      │  ├─ _card.scss
+      │  └─ _core.scss
+      │
       ├─ bem-flex-grid-attr.scss
-      └─ bem-flex-grid-class.scss
+      ├─ bem-flex-grid-class.scss
+      │
+      ├─ bem-flex-grid-core-attr.scss
+      └─ bem-flex-grid-core-class.scss
 ```
 
 > The `dist` folder also contains the __sourcemap__ for each CSS file.
@@ -414,9 +433,9 @@ But if you prefer to define a main margin (or padding) at the parent node of the
 </div>
 ```
 
-> The default value of the gap is `1.5rem` (see below the Sass variable `$bfg-gap`).
+> The default value of the gap is `1.5rem` (see below the Sass variable `$bfg-half-gap`).
 
-The advantage of using `.bfg--gap-in` modifier is that you can reduce the main margin (or padding) up to `$bfg-gap/2` when needed.
+The advantage of using `.bfg--gap-in` modifier is that you can reduce the main margin (or padding) up to `$bfg-half-gap` when needed.
 
 *Here's an example using the minimal main margin:*
 
@@ -851,9 +870,11 @@ An alternative to chained grids consists to simply nest a new `.bfg` *block* ins
 
 ### Variables
 
-You can change the grid look and feel using Sass, by overriding the variables value and referencing the Sass source file afterwards.
+You can change the grid and cards look and feel using Sass, by overriding the default variables value.
 
 ```scss
+// ------ src/lib/variables/_core.scss ------
+
 $bfg-breakpoints: (
   xs: 576px,
   sm: 768px,
@@ -861,7 +882,9 @@ $bfg-breakpoints: (
   xl: 1200px
 ) !default;
 
-$bfg-gap: 1.5rem !default;
+$bfg-half-gap: 0.75rem !default;
+
+// ------ src/lib/variables/_card.scss ------
 
 $bfg-card-margin: 1.5rem !default;
 
@@ -869,69 +892,106 @@ $bfg-card-padding: 1rem !default;
 
 $bfg-card-header-height: 2.5rem !default;
 
-$bfg-card-primary: (
+$bfg-card-default: (
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
   border-radius: 3px,
   border-width: 1px,
 
-  header-borderless: false,
-  header-border: #d5d5d5,
-  header-background: #f6f6f6,
-  header-forground: false,
+  header-border-bottom-width: 1px,
+  header-border-color: #d5d5d5,
+  header-background-color: #f6f6f6,
+  header-color: inherit,
 
-  content-border: #ddd,
-  content-background: #fff,
-  content-forground: false
+  content-border-color: #ddd,
+  content-background-color: #fff,
+  content-color: inherit
 ) !default;
 
 $bfg-card-secondary: (
-  header-border: darken(#6c757d, 5),
-  header-background: #6c757d,
-  header-forground: #fff,
+  header-border-color: darken(#6c757d, 5),
+  header-background-color: #6c757d,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-success: (
-  header-border: darken(#28a745, 5),
-  header-background: #28a745,
-  header-forground: #fff,
+  header-border-color: darken(#28a745, 5),
+  header-background-color: #28a745,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-danger: (
-  header-border: darken(#dc3545, 5),
-  header-background: #dc3545,
-  header-forground: #fff,
+  header-border-color: darken(#dc3545, 5),
+  header-background-color: #dc3545,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-info: (
-  header-border: darken(#17a2b8, 5),
-  header-background: #17a2b8,
-  header-forground: #fff,
+  header-border-color: darken(#17a2b8, 5),
+  header-background-color: #17a2b8,
+  header-color: #fff,
 ) !default;
 
 $bfg-card-warning: (
-  header-border: darken(#ffc107, 5),
-  header-background: #ffc107,
+  header-border-color: darken(#ffc107, 5),
+  header-background-color: #ffc107,
 ) !default;
 
 $bfg-card-theme-included: true !default;
 ```
 
+It's important to note that Bem-flex-grid generates __CSS variables__ based on the __Sass variables__.
+
+For example, the Sass variable `$bfg-half-gap` becomes the CSS variable `--bfg-half-gap`.
+Thus, the compiled version (`dist/bem-flex-grid-class.css` for example) contains the following rule:
+
+```css
+:root {
+  --bfg-half-gap: 0.75rem;
+}
+```
+
+The same idea applies to the Sass variables of the card.
+
+For example, `$bfg-card-default` contains a `box-shadow` property.
+Thus, the compiled version contains the following rule:
+
+```css
+:root {
+  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+}
+```
+
+For cards other than the default card, only the overwritten properties produce CSS variables.
+
+For example, `$bfg-card-secondary` overwrites the `header-background-color` property.
+Thus, the compiled version contains the following rule:
+
+```css
+:root {
+  --bfg-card-secondary-header-background-color: #6c757d;
+}
+```
+
+> Note that the CSS variables for the "primary" card (which are based on the default card) do NOT contain the word `primary`!
+> Thus, there's no CSS variable `--bfg-card-primary-box-shadow` but only `--bfg-card-box-shadow`.
+> On the other hand, the CSS variables for the "secondary" card do contain the word `secondary`.
+
 *Example:*
 
-Let's customize the boxes gap.
+Let's customize the boxes gap to be bigger than the default.
 
 ```scss
-@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with ($bfg-gap: 2rem);
+@use "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with ($bfg-alf-gap: 1.25rem);
 ```
 
 ### Mixins
 
 #### Cards
 
-The `bfg-card` mixin allows you to customize the look and feel of the box's content, header and actions.
+The `bfg-card` mixin allows you to customize the look and feel of the card's content, header and actions.
 
 ```scss
-@include bfg-card($type, $settings: (), $defaults: ());
+@include bfg-card($type, $settings: ());
 ```
 
 By default, Bem-flex-grid generates cards with the following values for the `$type` parameter: `primary`, `secondary`, `success`, `danger`, `info` and `warning`.
@@ -942,12 +1002,16 @@ But you are free to completely change this naming.
 Let's remove the default list of types and define a single type named "fancy".
 
 ```scss
-@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with ($bfg-card-theme-included: false);
+@use "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" as * with ($bfg-card-theme-included: false);
 
-@include bfg-card(fancy);
+@include bfg-card(fancy, (
+  box-shadow: none,
+  border-radius: 0px
+));
 ```
 
-As you can see, the `$settings`and `$defaults` parameters are optional.
+The `$settings` parameter is optional.
+In this example, the "fancy" card looks like the default card (picked from the `$bfg-card-default`), but with a different `box-shadow` and `border-radius`.
 
 Now, let's use the "fancy" card using the `.bfg-card--fancy` modifier (instead of `.bfg-card--primary` which is no longer available).
 
@@ -961,80 +1025,66 @@ Now, let's use the "fancy" card using the `.bfg-card--fancy` modifier (instead o
 ...
 ```
 
-To understand the `bfg-card` mixin parameters, let's take a look at one of its internal lines of code:
-
-```scss
-$s: map-merge($bfg-card-primary, map-merge($defaults, $settings));
-```
-
-It simply means that the `$bfg-card-primary` variable is overwritten by your `$defaults` and `$settings` parameters in this order.
-This is what defines the final look and feel of a card.
-
-*Example:*
-
-Let's add a card of type `hello` which will be available using the `.bfg-card--hello` modifier.
-
-```scss
-@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss";
-
-@include bfg-card(hello, (
-  border-radius: 0,
-  border-width: 3px,
-
-  header-border: #90CAF9,
-  header-background: #BBDEFB,
-  header-forground: #1E88E5,
-
-  content-border: #BBDEFB,
-  content-background: #E3F2FD,
-));
-```
-
-> Notice that omitted map keys (`box-shadow`, `header-borderless` and `content-forground` in this example) fall back to their default value (picked from the `$bfg-card-primary`).
-
-An advanced use case of the card mixin consists to create 2 different sets of cards for "light" and "dark" themes.
+An advanced use case of the card mixin is to create 2 different sets of cards for "light" and "dark" themes.
 
 *Example:*
 
 ```scss
-@import "~/bem-flex-grid/src/lib/bem-flex-grid-class.scss" with (
+@use "../lib/bem-flex-grid-class" as * with (
   $bfg-card-theme-included: false,
 
-  // Overwrite the "primary" card (let's use flat design)
-  $bfg-card-primary: map-merge($bfg-card-primary, (
+  // Let's define the default card using flat design (no box-shadow nor border-radius)
+  $bfg-card-default: (
     box-shadow: none,
-    border-radius: 0px
-  ))
+    border-radius: 0px,
+    border-width: 1px,
+
+    header-border-bottom-width: 1px,
+    header-border-color: #d5d5d5,
+    header-background-color: #f6f6f6,
+    header-color: inherit,
+
+    content-border-color: #ddd,
+    content-background-color: #fff,
+    content-color: inherit
+  )
 );
 
-body.theme--light {
-  @include bfg-card(primary);
+// Let's define the "primary" card based on the `$bfg-card-default`
+@include bfg-card(primary);
 
-  @include bfg-card(secondary, (
-    header-border: darken(#6c757d, 5),
-    header-background: #6c757d,
-    header-forground: #fff
-  ));
-}
+// Let's define the "warning" card by overwriting some properties 
+@include bfg-card(warning, (
+  header-border-color: darken(#ffc107, 5),
+  header-background-color: #ffc107,
+  header-color: #fff,
+));
 
 body.theme--dark {
-  // Let's tweak the $bfg-card-primary for the "dark" theme
-  $bfg-card-dark-defaults: (
-    content-border: #4a4a4a,
-    content-background: #2a2a2a,
-    header-forground: #fff
-  );
+  // Let's redefine the CSS variables of the "primary" card for the "dark" theme
+  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  --bfg-card-header-border-color: #4a4a4a;
+  --bfg-card-header-background-color: #3a3a3a;
+  --bfg-card-header-color: #fff;
+  --bfg-card-content-border-color: #4a4a4a;
+  --bfg-card-content-background-color: #2a2a2a;
 
-  @include bfg-card(primary, (
-    header-border: #4a4a4a,
-    header-background: #3a3a3a
-  ), $bfg-card-dark-defaults);
-
-  @include bfg-card(secondary, (
-    header-border: darken(#6c757d, 5),
-    header-background: #6c757d
-  ), $bfg-card-dark-defaults);
+  // Because the "warning" card have a "header-color" property in its definition,
+  // we have access to the associated CSS variable
+  --bfg-card-warning-header-color: #000;
 }
+
+// Let's imagine this is the global look and feel of our "light" and "dark" themes
+body {
+  background: #fff;
+  color: #424242;
+
+  &.theme--dark {
+    background: #252525;
+    color: #dedede;
+  }
+}
+
 ```
 
 #### Media breakpoints

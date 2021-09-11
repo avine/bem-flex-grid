@@ -8,19 +8,6 @@
   --bfg-card-margin: #{$bfg-card-margin};
   --bfg-card-padding: #{$bfg-card-padding};
   --bfg-card-header-height: #{$bfg-card-header-height};
-
-  --bfg-card-box-shadow: #{map-get($bfg-card-default, box-shadow)};
-  --bfg-card-border-radius: #{map-get($bfg-card-default, border-radius)};
-  --bfg-card-border-width: #{map-get($bfg-card-default, border-width)};
-
-  --bfg-card-header-border-bottom-width: #{map-get($bfg-card-default, header-border-bottom-width)};
-  --bfg-card-header-border-color: #{map-get($bfg-card-default, header-border-color)};
-  --bfg-card-header-background-color: #{map-get($bfg-card-default, header-background-color)};
-  --bfg-card-header-color: #{map-get($bfg-card-default, header-color)};
-
-  --bfg-card-content-border-color: #{map-get($bfg-card-default, content-border-color)};
-  --bfg-card-content-background-color: #{map-get($bfg-card-default, content-background-color)};
-  --bfg-card-content-color: #{map-get($bfg-card-default, content-color)};
 }
 
 .bfg-card {
@@ -57,6 +44,7 @@
 .bfg-card__action {
   float: right;
   max-width: 25%; // Up to 4 actions per box
+  border-left-width: 0 !important;
 }
 
 .bfg-card__content {

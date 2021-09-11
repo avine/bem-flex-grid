@@ -1,49 +1,103 @@
 @use "../../variables/card" as *;
 
-$-bfg-card-default: (
-  box-shadow: var(--bfg-card-box-shadow),
-  border-radius: var(--bfg-card-border-radius),
-  border-width: var(--bfg-card-border-width),
+@function bfg-card-get-var($type, $prop) {
+  @return "--bfg-card-" + if($type == "", "",  $type + "-") + $prop;
+}
 
-  header-border-bottom-width: var(--bfg-card-header-border-bottom-width),
-  header-border-color: var(--bfg-card-header-border-color),
-  header-background-color: var(--bfg-card-header-background-color),
-  header-color: var(--bfg-card-header-color),
+@mixin bfg-card-define-vars($type, $rules) {
+  @each $prop, $value in $rules {
+    #{bfg-card-get-var($type, $prop)}: #{$value};
+  }
+}
 
-  content-border-color: var(--bfg-card-content-border-color),
-  content-background-color: var(--bfg-card-content-background-color),
-  content-color: var(--bfg-card-content-color)
-);
+@function bfg-card-get-vars-map($type, $rules) {
+  $map: ();
+  @each $prop, $value in $rules {
+    $map: map-merge($map, (
+      #{$prop}: var(#{bfg-card-get-var($type, $prop)})
+    ));
+  }
+  @return $map;
+}
 
-@mixin bfg-card($type, $settings: (), $defaults: ()) {
-  $s: map-merge($-bfg-card-default, map-merge($defaults, $settings));
+@function bfg-card-map-includes($map, $keys...) {
+  @each $key in $keys {
+    @if map-has-key($map, $key) {
+      @return true;
+    }
+  }
+  @return false;
+}
 
-  .bfg-card--#{$type} {
+@mixin bfg-card($type, $settings: ()) {
+  :root {
+    @if $settings == () {
+      @include bfg-card-define-vars("", $bfg-card-default);
+    } @else {
+      @include bfg-card-define-vars($type, $settings);
+    }
+  }
+
+  $vars: map-merge(
+    bfg-card-get-vars-map("", $bfg-card-default), 
+    bfg-card-get-vars-map($type, $settings)
+  );
+
+  $input: if($settings == (), $bfg-card-default, $settings);
+
+  $selector: if($settings == (), ".bfg-card", ".bfg-card--#{$type}");
+
+  #{$selector} {
     .bfg-card__action,
     .bfg-card__header {
-      box-shadow: map-get($s, box-shadow);
-      border: map-get($s, border-width) solid map-get($s, header-border-color);
-      border-bottom-width: map-get($s, header-border-bottom-width);
-      background: map-get($s, header-background-color);
-      color: map-get($s, header-color);
-      line-height: calc(var(--bfg-card-header-height) - #{map-get($s, header-border-bottom-width)} - #{map-get($s, border-width)});
+      @if bfg-card-map-includes($input, box-shadow) {
+        box-shadow: map-get($vars, box-shadow);
+      }
+      @if bfg-card-map-includes($input, border-width, header-border-color) {
+        border: map-get($vars, border-width) solid map-get($vars, header-border-color);
+      }
+      @if bfg-card-map-includes($input, header-border-bottom-width) {
+        border-bottom-width: map-get($vars, header-border-bottom-width);
+      }
+      @if bfg-card-map-includes($input, header-background-color) {
+        background: map-get($vars, header-background-color);
+      }
+      @if bfg-card-map-includes($input, header-color) {
+        color: map-get($vars, header-color);
+      }
+      @if bfg-card-map-includes($input, header-border-bottom-width, border-width) {
+        line-height: calc(var(--bfg-card-header-height) - #{map-get($vars, header-border-bottom-width)} - #{map-get($vars, border-width)});
+      }
     }
 
     .bfg-card__action {
-      border-top-right-radius: map-get($s, border-radius);
-      border-left-width: 0;
+      @if bfg-card-map-includes($input, border-radius) {
+        border-top-right-radius: map-get($vars, border-radius);
+      }
     }
 
     .bfg-card__header {
-      border-radius: map-get($s, border-radius) map-get($s, border-radius) 0 0;
+      @if bfg-card-map-includes($input, border-radius) {
+        border-radius: map-get($vars, border-radius) map-get($vars, border-radius) 0 0;
+      }
     }
 
     .bfg-card__content {
-      box-shadow: map-get($s, box-shadow);
-      border-radius: map-get($s, border-radius);
-      border: map-get($s, border-width) solid map-get($s, content-border-color);
-      background: map-get($s, content-background-color);
-      color: map-get($s, content-color);
+      @if bfg-card-map-includes($input, box-shadow) {
+        box-shadow: map-get($vars, box-shadow);
+      }
+      @if bfg-card-map-includes($input, border-radius) {
+        border-radius: map-get($vars, border-radius);
+      }
+      @if bfg-card-map-includes($input, border-width, content-border-color) {
+        border: map-get($vars, border-width) solid map-get($vars, content-border-color);
+      }
+      @if bfg-card-map-includes($input, content-background-color) {
+        background: map-get($vars, content-background-color);
+      }
+      @if bfg-card-map-includes($input, content-color) {
+        color: map-get($vars, content-color);
+      }
     }
   }
 }

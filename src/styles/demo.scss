@@ -38,6 +38,16 @@ h1, h2, h4 {
   font-family: map-get($demo-fonts, title), serif;
 }
 
+.markdown-body { // Overwrite default "primer-markdown"
+  h2 {
+    margin-top: 56px;
+  }
+
+  h3 {
+    margin-top: 36px;
+  }
+}
+
 h4,
 .markdown-body h4 {
   color: #C62828;

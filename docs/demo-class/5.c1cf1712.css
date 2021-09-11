@@ -715,16 +715,6 @@
   --bfg-card-margin: 1.5rem;
   --bfg-card-padding: 1rem;
   --bfg-card-header-height: 2.5rem;
-  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
-  --bfg-card-border-radius: 3px;
-  --bfg-card-border-width: 1px;
-  --bfg-card-header-border-bottom-width: 1px;
-  --bfg-card-header-border-color: #d5d5d5;
-  --bfg-card-header-background-color: #f6f6f6;
-  --bfg-card-header-color: inherit;
-  --bfg-card-content-border-color: #ddd;
-  --bfg-card-content-background-color: #fff;
-  --bfg-card-content-color: inherit;
 }
 
 .bfg-card {
@@ -759,6 +749,7 @@
 .bfg-card__action {
   float: right;
   max-width: 25%;
+  border-left-width: 0 !important;
 }
 
 .bfg-card__content {
@@ -834,8 +825,21 @@
     border-radius: 0 !important;
   }
 }
-.bfg-card--primary .bfg-card__action,
-.bfg-card--primary .bfg-card__header {
+:root {
+  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+  --bfg-card-border-radius: 3px;
+  --bfg-card-border-width: 1px;
+  --bfg-card-header-border-bottom-width: 1px;
+  --bfg-card-header-border-color: #d5d5d5;
+  --bfg-card-header-background-color: #f6f6f6;
+  --bfg-card-header-color: inherit;
+  --bfg-card-content-border-color: #ddd;
+  --bfg-card-content-background-color: #fff;
+  --bfg-card-content-color: inherit;
+}
+
+.bfg-card .bfg-card__action,
+.bfg-card .bfg-card__header {
   box-shadow: var(--bfg-card-box-shadow);
   border: var(--bfg-card-border-width) solid var(--bfg-card-header-border-color);
   border-bottom-width: var(--bfg-card-header-border-bottom-width);
@@ -843,14 +847,13 @@
   color: var(--bfg-card-header-color);
   line-height: calc(var(--bfg-card-header-height) - var(--bfg-card-header-border-bottom-width) - var(--bfg-card-border-width));
 }
-.bfg-card--primary .bfg-card__action {
+.bfg-card .bfg-card__action {
   border-top-right-radius: var(--bfg-card-border-radius);
-  border-left-width: 0;
 }
-.bfg-card--primary .bfg-card__header {
+.bfg-card .bfg-card__header {
   border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
 }
-.bfg-card--primary .bfg-card__content {
+.bfg-card .bfg-card__content {
   box-shadow: var(--bfg-card-box-shadow);
   border-radius: var(--bfg-card-border-radius);
   border: var(--bfg-card-border-width) solid var(--bfg-card-content-border-color);
@@ -858,27 +861,19 @@
   color: var(--bfg-card-content-color);
 }
 
+.demo-layout__playground--dark :root {
+  --bfg-card-primary-header-border-color: #4a4a4a;
+  --bfg-card-primary-header-background-color: #3a3a3a;
+  --bfg-card-primary-content-border-color: #4a4a4a;
+  --bfg-card-primary-content-background-color: #2a2a2a;
+}
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__action,
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
-  box-shadow: var(--bfg-card-box-shadow);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
-  border-bottom-width: var(--bfg-card-header-border-bottom-width);
-  background: #3a3a3a;
-  color: var(--bfg-card-header-color);
-  line-height: calc(var(--bfg-card-header-height) - var(--bfg-card-header-border-bottom-width) - var(--bfg-card-border-width));
-}
-.demo-layout__playground--dark .bfg-card--primary .bfg-card__action {
-  border-top-right-radius: var(--bfg-card-border-radius);
-  border-left-width: 0;
-}
-.demo-layout__playground--dark .bfg-card--primary .bfg-card__header {
-  border-radius: var(--bfg-card-border-radius) var(--bfg-card-border-radius) 0 0;
+  border: var(--bfg-card-border-width) solid var(--bfg-card-primary-header-border-color);
+  background: var(--bfg-card-primary-header-background-color);
 }
 .demo-layout__playground--dark .bfg-card--primary .bfg-card__content {
-  box-shadow: var(--bfg-card-box-shadow);
-  border-radius: var(--bfg-card-border-radius);
-  border: var(--bfg-card-border-width) solid #4a4a4a;
-  background: #2a2a2a;
-  color: var(--bfg-card-content-color);
+  border: var(--bfg-card-border-width) solid var(--bfg-card-primary-content-border-color);
+  background: var(--bfg-card-primary-content-background-color);
 }
-/*# sourceMappingURL=5.69e9a057.css.map */
+/*# sourceMappingURL=5.c1cf1712.css.map */

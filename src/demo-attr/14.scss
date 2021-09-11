@@ -1,79 +1,61 @@
-// ===== Import grid system =====
+@use "../lib/bem-flex-grid-attr" as * with (
+  $bfg-card-theme-included: false,
 
-@use "../lib/bem-flex-grid-attr" as * with ($bfg-card-theme-included: false);
+  $bfg-card-default: (
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05),
+    border-radius: 3px,
+    border-width: 1px,
 
-// ===== Add customized themes =====
+    header-border-bottom-width: 1px,
+    header-border-color: #d5d5d5,
+    header-background-color: #f6f6f6,
+    header-color: inherit,
 
-.demo-layout__playground--light {
-  @include bfg-card(primary);
+    content-border-color: #ddd,
+    content-background-color: #fff,
+    content-color: inherit
+  )
+);
 
-  @include bfg-card(secondary, (
-    header-border-color: darken(#6c757d, 5),
-    header-background-color: #6c757d,
-    header-color: #fff
-  ));
+@include bfg-card(primary);
 
-  @include bfg-card(success, (
-    header-border-color: darken(#28a745, 5),
-    header-background-color: #28a745,
-    header-color: #fff
-  ));
+@include bfg-card(secondary, (
+  header-border-color: darken(#6c757d, 5),
+  header-background-color: #6c757d,
+  header-color: #fff,
+));
 
-  @include bfg-card(danger, (
-    header-border-color: darken(#dc3545, 5),
-    header-background-color: #dc3545,
-    header-color: #fff
-  ));
+@include bfg-card(success, (
+  header-border-color: darken(#28a745, 5),
+  header-background-color: #28a745,
+  header-color: #fff,
+));
 
-  @include bfg-card(info, (
-    header-border-color: darken(#17a2b8, 5),
-    header-background-color: #17a2b8,
-    header-color: #fff
-  ));
+@include bfg-card(danger, (
+  header-border-color: darken(#dc3545, 5),
+  header-background-color: #dc3545,
+  header-color: #fff,
+));
 
-  @include bfg-card(warning, (
-    header-border-color: darken(#ffc107, 5),
-    header-background-color: #ffc107,
-    header-color: #000,
-  ));
-}
+@include bfg-card(info, (
+  header-border-color: darken(#17a2b8, 5),
+  header-background-color: #17a2b8,
+  header-color: #fff,
+));
+
+@include bfg-card(warning, (
+  header-border-color: darken(#ffc107, 5),
+  header-background-color: #ffc107,
+  header-color: inherit,
+));
 
 .demo-layout__playground--dark {
-  $bfg-card-dark-defaults: (
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2),
-    content-border-color: #4a4a4a,
-    content-background-color: #2a2a2a,
-    header-color: #fff
-  );
-
-  @include bfg-card(primary, (
-    header-border-color: #4a4a4a,
-    header-background-color: #3a3a3a
-  ), $bfg-card-dark-defaults);
-
-  @include bfg-card(secondary, (
-    header-border-color: darken(#6c757d, 5),
-    header-background-color: #6c757d
-  ), $bfg-card-dark-defaults);
-
-  @include bfg-card(success, (
-    header-borde-colorr: darken(#28a745, 5),
-    header-background-color: #28a745
-  ), $bfg-card-dark-defaults);
-
-  @include bfg-card(danger, (
-    header-border-color: darken(#dc3545, 5),
-    header-background-color: #dc3545
-  ), $bfg-card-dark-defaults);
-
-  @include bfg-card(info, (
-    header-border-color: darken(#17a2b8, 5),
-    header-background-color: #17a2b8
-  ), $bfg-card-dark-defaults);
-
-  @include bfg-card(warning, (
-    header-border-color: darken(#ffc107, 5),
-    header-background-color: #ffc107,
-    header-color: #000,
-  ), $bfg-card-dark-defaults);
+  --bfg-card-box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  --bfg-card-header-border-color: #4a4a4a;
+  --bfg-card-header-background-color: #3a3a3a;
+  --bfg-card-header-color: #fff;
+  --bfg-card-content-border-color: #4a4a4a;
+  --bfg-card-content-background-color: #2a2a2a;
+  
+  --bfg-card-warning-header-color: #000;
 }
