@@ -1,6 +1,6 @@
 {
   "name": "bem-flex-grid",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "CSS flex grid, BEM compliant.",
   "scripts": {
     "clean": "rimraf src/index.html dist .cache output docs deploy && mkdirp dist",
